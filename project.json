@@ -1,0 +1,9 @@
+{
+  "version": "0.17.0",
+  "title": "旧地狱全域",
+  "threeRevision": "185",
+  "worldBuilders": [
+    "src/world-builder.js",
+    "src/old-hell.js"
+  ]
+}

@@ -1,0 +1,6264 @@
+{
+  "meta": {
+    "title": "幻想乡全域地图：建造前置资料包",
+    "version": "0.1",
+    "date": "2026-09-26",
+    "status": "待审阅的工程基线，不是官方测绘图",
+    "coordinate_system": {
+      "up": "+Y",
+      "east": "+X",
+      "south": "+Z",
+      "units": "1 unit = 1 metre for local asset authoring only",
+      "ground_extent": [
+        -2048,
+        -2048,
+        2048,
+        2048
+      ],
+      "all_coordinates_are_project_design": true
+    },
+    "evidence_codes": {
+      "T": "核对官方文本的社区转载/译文",
+      "C": "社区资料整理；有作品索引，未全部回查原书",
+      "I": "考据推定",
+      "F": "指定同人参考",
+      "P": "本作设计提案",
+      "U": "待核：不得作为已知事实",
+      "D": "官方技术文档／创作准则（来源类别）"
+    },
+    "scope": "地表主干、地下、异界、外界/秘封、旧作；本轮目录不是全部出版物逐页穷尽审计",
+    "visual_reference_status": "完成文字与图像出处索引；未逐张查看所有原图，不能视为全建筑多视图复原完成",
+    "performance_status": "未运行Three.js，不含性能实测",
+    "model_status": "未开始3D建模"
+  },
+  "locations": [
+    {
+      "id": "hakurei",
+      "name": "博丽神社",
+      "aliases": [],
+      "world": "surface",
+      "group": "博丽神社",
+      "parent_id": null,
+      "kind": "地标",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S03",
+        "S14",
+        "S33"
+      ],
+      "source_locator": "危险区域指南／博丽神社",
+      "verified_fact": "东端边界；与人里有兽道联系",
+      "project_treatment": "采用心绮楼/凭依华外观版本为制作候选，正背面需分开验图",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "beast_path",
+      "name": "妖怪兽道",
+      "aliases": [],
+      "world": "surface",
+      "group": "博丽神社",
+      "parent_id": null,
+      "kind": "道路",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "source_locator": "危险区域指南／博丽神社",
+      "verified_fact": "联系博丽神社和人里",
+      "project_treatment": "曲线、宽度为本作设计",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "hakurei_store",
+      "name": "博丽神社仓库",
+      "aliases": [],
+      "world": "surface",
+      "group": "博丽神社",
+      "parent_id": "hakurei",
+      "kind": "附属建筑",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S03",
+        "S14",
+        "S33"
+      ],
+      "source_locator": "危险区域指南／博丽神社",
+      "verified_fact": "神社范围内的仓储建筑",
+      "project_treatment": "勿用标签代替结构",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "hakurei_woods",
+      "name": "神社后方林地",
+      "aliases": [],
+      "world": "surface",
+      "group": "博丽神社",
+      "parent_id": "hakurei",
+      "kind": "植被区",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S03",
+        "S14",
+        "S33"
+      ],
+      "source_locator": "危险区域指南／博丽神社",
+      "verified_fact": "神社后方林地",
+      "project_treatment": "保留背景树群与边界感",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "fairies_new",
+      "name": "三妖精新居",
+      "aliases": [],
+      "world": "surface",
+      "group": "博丽神社",
+      "parent_id": "hakurei_woods",
+      "kind": "住居",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S33"
+      ],
+      "source_locator": "危险区域指南／博丽神社",
+      "verified_fact": "新居与神社边界大树相关",
+      "project_treatment": "常态新居；旧居保留历史状态",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "geyser_shrine",
+      "name": "神社附近小间歇泉",
+      "aliases": [],
+      "world": "surface",
+      "group": "博丽神社",
+      "parent_id": "hakurei",
+      "kind": "自然点",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "source_locator": "危险区域指南／博丽神社",
+      "verified_fact": "与神社附近喷发相关的地点",
+      "project_treatment": "独立ID；不合并山麓间歇泉",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "village",
+      "name": "人类村落",
+      "aliases": [
+        "人里",
+        "人间之里"
+      ],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": null,
+      "kind": "聚落",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "主要人类聚落",
+      "project_treatment": "显示别名便于搜索",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "hieda",
+      "name": "稗田邸",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": "village",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "村中稗田家宅邸",
+      "project_treatment": "宅地与庭院整体建造",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "school",
+      "name": "寺子屋",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": "village",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "村中教学场所",
+      "project_treatment": "不自动等同命莲寺",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "suzunaan",
+      "name": "铃奈庵",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": "village",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "借书屋",
+      "project_treatment": "书架等室内另包",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "geidontei",
+      "name": "鲵吞亭",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": "village",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "村中居酒屋",
+      "project_treatment": "普通夜晚与妖怪营业状态分开",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "unshou",
+      "name": "运松庵",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": "village",
+      "kind": "住宅",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "运松翁居所",
+      "project_treatment": "不是大型寺院",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "dragon",
+      "name": "龙神像",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": "village",
+      "kind": "小地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "与天气相关的雕像",
+      "project_treatment": "尺寸本作设定",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "salt_estate",
+      "name": "盐家大院",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": "village",
+      "kind": "宅邸",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "村内大户宅院",
+      "project_treatment": "更正：不列为村外独立地区",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "firetower",
+      "name": "火警塔",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": "village",
+      "kind": "小地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "鲵吞亭附近；有毁坏与重建状态",
+      "project_treatment": "原物/毁坏/重建互斥",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "village_fields",
+      "name": "人里外围农田",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": null,
+      "kind": "农业区",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "外围农田与水渠",
+      "project_treatment": "田块数量、形状为本作设计",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "village_cemetery",
+      "name": "人里共同墓地",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": null,
+      "kind": "墓地",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "与命莲寺墓地分别登记",
+      "project_treatment": "勿合并成同一公墓",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "village_gate",
+      "name": "人里入口及围墙",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": "village",
+      "kind": "防护设施",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "有入口和围墙的场景表现",
+      "project_treatment": "不宣称每版都是同一城墙平面",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "willow_canal",
+      "name": "柳之运河",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": null,
+      "kind": "水域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "人里附近运河",
+      "project_treatment": "与山中河流的连接暂不锁定",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "inari",
+      "name": "稻荷祠堂",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": null,
+      "kind": "小地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "村落周边道路附近",
+      "project_treatment": "供奉内容与比例待验图",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "dormouse",
+      "name": "睡鼠神祠",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": null,
+      "kind": "小地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "与村落防火信仰相关",
+      "project_treatment": "小体量；不做大型神社",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "ashiarai",
+      "name": "足洗邸",
+      "aliases": [],
+      "world": "surface",
+      "group": "人里",
+      "parent_id": null,
+      "kind": "废屋",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "村落边缘废屋",
+      "project_treatment": "与森林幽灵洋馆独立",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "myouren",
+      "name": "命莲寺",
+      "aliases": [],
+      "world": "surface",
+      "group": "命莲寺",
+      "parent_id": null,
+      "kind": "寺院",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S16",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "靠近人里",
+      "project_treatment": "寺院而非神社；寺前路不是人里主街",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "myouren_gate",
+      "name": "命莲寺山门",
+      "aliases": [],
+      "world": "surface",
+      "group": "命莲寺",
+      "parent_id": "myouren",
+      "kind": "附属建筑",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S16",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "山门",
+      "project_treatment": "依主参考版本",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "myouren_bell",
+      "name": "命莲寺钟楼",
+      "aliases": [],
+      "world": "surface",
+      "group": "命莲寺",
+      "parent_id": "myouren",
+      "kind": "附属建筑",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S16",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "钟楼",
+      "project_treatment": "不得与山门模型混用",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "myouren_cemetery",
+      "name": "命莲寺墓地",
+      "aliases": [],
+      "world": "surface",
+      "group": "命莲寺",
+      "parent_id": "myouren",
+      "kind": "墓地",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S16",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "寺院管理的墓地",
+      "project_treatment": "墓地下方另场景",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "mausoleum",
+      "name": "梦殿大祀庙",
+      "aliases": [],
+      "world": "underground",
+      "group": "命莲寺地下",
+      "parent_id": null,
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S16",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "位于命莲寺墓地下",
+      "project_treatment": "与仙界神灵庙分开；旧状态可选",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "mausoleum_pool",
+      "name": "大祀庙莲池",
+      "aliases": [],
+      "world": "underground",
+      "group": "命莲寺地下",
+      "parent_id": "mausoleum",
+      "kind": "水景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S16",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "与木塔主体相关的莲池",
+      "project_treatment": "室内/洞内水面预算独立",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "forest",
+      "name": "魔法森林",
+      "aliases": [],
+      "world": "surface",
+      "group": "魔法森林",
+      "parent_id": null,
+      "kind": "区域",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S07",
+        "S26"
+      ],
+      "source_locator": "危险区域指南／魔法森林",
+      "verified_fact": "近人里的原始森林，潮湿多蘑菇",
+      "project_treatment": "森林边缘与深处不同密度",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "forest_haunted",
+      "name": "森林幽灵洋馆",
+      "aliases": [],
+      "world": "surface",
+      "group": "魔法森林",
+      "parent_id": "forest",
+      "kind": "废宅",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S07",
+        "S26"
+      ],
+      "source_locator": "危险区域指南／魔法森林",
+      "verified_fact": "森林中的废弃洋馆",
+      "project_treatment": "不等于骚灵姐妹洋馆",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "signal_tower",
+      "name": "被遗忘的信号塔",
+      "aliases": [],
+      "world": "surface",
+      "group": "魔法森林",
+      "parent_id": "forest",
+      "kind": "小地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S07",
+        "S26"
+      ],
+      "source_locator": "危险区域指南／魔法森林",
+      "verified_fact": "森林内的外界遗落设施",
+      "project_treatment": "禁止自动加现代通信功能",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "larva_burrow",
+      "name": "拉尔瓦冬眠处",
+      "aliases": [],
+      "world": "surface",
+      "group": "魔法森林",
+      "parent_id": "forest",
+      "kind": "小地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S07",
+        "S26"
+      ],
+      "source_locator": "危险区域指南／魔法森林",
+      "verified_fact": "冬眠地洞",
+      "project_treatment": "季节状态；内部另包",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "chirei_cave",
+      "name": "地灵虹洞",
+      "aliases": [],
+      "world": "surface",
+      "group": "魔法森林",
+      "parent_id": "forest",
+      "kind": "洞穴入口",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S07",
+        "S26"
+      ],
+      "source_locator": "危险区域指南／魔法森林",
+      "verified_fact": "森林内通往地下的洞穴",
+      "project_treatment": "不等于虹龙洞",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "alice",
+      "name": "玛格特洛依德邸",
+      "aliases": [
+        "爱丽丝家"
+      ],
+      "world": "surface",
+      "group": "森林住居",
+      "parent_id": "forest",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S19"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "爱丽丝的森林住居",
+      "project_treatment": "只复原已知住居；原创附属设施单独标P",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "doll_forest",
+      "name": "人偶森林",
+      "aliases": [],
+      "world": "surface",
+      "group": "森林住居",
+      "parent_id": "forest",
+      "kind": "子区域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S19"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "爱丽丝宅附近森林称呼",
+      "project_treatment": "不是另一片与魔法森林无关的森林",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "marisa",
+      "name": "雾雨邸",
+      "aliases": [
+        "雾雨魔法店",
+        "魔理沙家"
+      ],
+      "world": "surface",
+      "group": "森林住居",
+      "parent_id": "forest",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S20"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "魔理沙住居兼魔法店",
+      "project_treatment": "选绯想天外观候选，其他版本不拼接",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "fairies_old",
+      "name": "三妖精旧居",
+      "aliases": [],
+      "world": "surface",
+      "group": "森林住居",
+      "parent_id": "forest",
+      "kind": "历史住居",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S33"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "森林大树中的旧住居",
+      "project_treatment": "历史图层；不默认有第二组三妖精",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "kourindou",
+      "name": "香霖堂",
+      "aliases": [],
+      "world": "surface",
+      "group": "森林入口与水域",
+      "parent_id": null,
+      "kind": "地标",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S04",
+        "S17"
+      ],
+      "source_locator": "危险区域指南／香霖堂",
+      "verified_fact": "人里至森林途中；靠近入口",
+      "project_treatment": "店面、仓库、连廊区别建造",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "okina_pond",
+      "name": "置行堀",
+      "aliases": [],
+      "world": "surface",
+      "group": "森林入口与水域",
+      "parent_id": null,
+      "kind": "池塘",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "source_locator": "危险区域指南／香霖堂",
+      "verified_fact": "森林附近河童相关池塘",
+      "project_treatment": "不是河流节点的必经点",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "genbu",
+      "name": "玄武涧",
+      "aliases": [],
+      "world": "surface",
+      "group": "森林入口与水域",
+      "parent_id": null,
+      "kind": "峡谷",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S27"
+      ],
+      "source_locator": "危险区域指南／香霖堂",
+      "verified_fact": "山脚、森林内或附近峡谷",
+      "project_treatment": "柱状岩壁和水流形成识别",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "kappa_base",
+      "name": "河童的据点",
+      "aliases": [],
+      "world": "surface",
+      "group": "森林入口与水域",
+      "parent_id": "genbu",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S27"
+      ],
+      "source_locator": "危险区域指南／香霖堂",
+      "verified_fact": "玄武涧洞内设施",
+      "project_treatment": "洞口可见；内部按需加载",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "reconsider",
+      "name": "再思之道",
+      "aliases": [],
+      "world": "surface",
+      "group": "再思之道与无缘塚",
+      "parent_id": null,
+      "kind": "道路",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S08",
+        "S09"
+      ],
+      "source_locator": "危险区域指南／无缘塚",
+      "verified_fact": "森林更深处通往无缘塚",
+      "project_treatment": "分清自然路与跨界出口",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "muenzuka",
+      "name": "无缘塚",
+      "aliases": [],
+      "world": "surface",
+      "group": "再思之道与无缘塚",
+      "parent_id": null,
+      "kind": "区域",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S08",
+        "S09"
+      ],
+      "source_locator": "危险区域指南／无缘塚",
+      "verified_fact": "再思之道尽头；边界薄弱",
+      "project_treatment": "不是命莲寺墓地",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "purple_cherry",
+      "name": "紫之樱",
+      "aliases": [],
+      "world": "surface",
+      "group": "再思之道与无缘塚",
+      "parent_id": "muenzuka",
+      "kind": "自然地标",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S08",
+        "S09"
+      ],
+      "source_locator": "危险区域指南／无缘塚",
+      "verified_fact": "无缘塚特殊樱树",
+      "project_treatment": "不是西行妖",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "mountain",
+      "name": "妖怪之山",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": null,
+      "kind": "区域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "主山地",
+      "project_treatment": "多山脊、台地、溪谷；非单圆锥",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "sea_trees",
+      "name": "妖怪的树海",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "mountain",
+      "kind": "森林",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "山麓树海",
+      "project_treatment": "与魔法森林分开",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "valley",
+      "name": "阻绝人迹的溪谷",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "mountain",
+      "kind": "峡谷",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "上游九天瀑布",
+      "project_treatment": "水流方向不可颠倒",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "waterfall",
+      "name": "九天瀑布",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "mountain",
+      "kind": "自然地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "大型瀑布",
+      "project_treatment": "瀑后洞口另建",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "waterfall_cave",
+      "name": "瀑后洞穴",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "waterfall",
+      "kind": "入口",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "有通向偏远河童种植地的记述",
+      "project_treatment": "路程与出入口位置待核",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "cucumber_farm",
+      "name": "河童黄瓜田",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": null,
+      "kind": "农业设施",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "偏远种植与工厂环境",
+      "project_treatment": "保留未知坐标；不要紧贴瀑布",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "toad_pond",
+      "name": "大蛤蟆之池",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "mountain",
+      "kind": "池塘",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "位于山腹",
+      "project_treatment": "不是风神之湖",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "tengu",
+      "name": "天狗聚落",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "mountain",
+      "kind": "聚落",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "山内聚居地",
+      "project_treatment": "精确位置未定",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "hiten",
+      "name": "秘天崖",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "mountain",
+      "kind": "崖地",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "山童活动地区",
+      "project_treatment": "上下高差与可建台地",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "false_ceiling",
+      "name": "伪天棚",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "mountain",
+      "kind": "高地",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "高山草甸与矿洞入口",
+      "project_treatment": "与积雪带衔接",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "casino",
+      "name": "驹草的赌场",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "false_ceiling",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "伪天棚相关场所",
+      "project_treatment": "外形先核原图",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "rainbow_mine",
+      "name": "虹龙洞",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "false_ceiling",
+      "kind": "矿洞",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "采矿洞穴",
+      "project_treatment": "与地灵虹洞不同",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "mayohiga",
+      "name": "迷途之家",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "mountain",
+      "kind": "废弃聚落",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "山内荒废村落",
+      "project_treatment": "不等同八云宅",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "wind_cave",
+      "name": "幻想风穴",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": null,
+      "kind": "入口",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "山麓通往地下",
+      "project_treatment": "与其他地底入口并存",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "geyser_mountain",
+      "name": "山麓间歇泉／地狱谷",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": null,
+      "kind": "自然点",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "山麓地热区域",
+      "project_treatment": "区别神社附近小间歇泉",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "geyser_center",
+      "name": "间歇泉地下中心",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "geyser_mountain",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S25",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "地热研究设施，连通核聚变炉",
+      "project_treatment": "电梯是单独连接类型",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "peony_field",
+      "name": "芍药田",
+      "aliases": [],
+      "world": "surface",
+      "group": "妖怪之山",
+      "parent_id": "mountain",
+      "kind": "候选地点",
+      "existence_evidence": "U",
+      "source_ids": [],
+      "source_locator": "本作设计／待进一步核对",
+      "verified_fact": "此前目录提到，当前未完成原文核验",
+      "project_treatment": "先保留候选，不落坐标",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "HOLD",
+      "status": "待核原文"
+    },
+    {
+      "id": "moriya",
+      "name": "守矢神社",
+      "aliases": [],
+      "world": "surface",
+      "group": "守矢神社",
+      "parent_id": "mountain",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S15"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "风神之湖附近的神社",
+      "project_treatment": "规模大于博丽；无官方倍数",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "wind_lake",
+      "name": "风神之湖",
+      "aliases": [
+        "八坂之湖"
+      ],
+      "world": "surface",
+      "group": "守矢神社",
+      "parent_id": "mountain",
+      "kind": "湖泊",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S15"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "与神社相关的独立湖泊",
+      "project_treatment": "不能与雾之湖合并",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "ropeway",
+      "name": "守矢索道",
+      "aliases": [],
+      "world": "surface",
+      "group": "守矢神社",
+      "parent_id": null,
+      "kind": "交通设施",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S15"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "联系山下与神社",
+      "project_treatment": "线路走向本作设计",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "ropeway_lower",
+      "name": "索道下站",
+      "aliases": [],
+      "world": "surface",
+      "group": "守矢神社",
+      "parent_id": null,
+      "kind": "交通节点",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S15"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "山下站点",
+      "project_treatment": "具体坐标本作补完",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "ropeway_upper",
+      "name": "索道上站",
+      "aliases": [],
+      "world": "surface",
+      "group": "守矢神社",
+      "parent_id": "moriya",
+      "kind": "交通节点",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S15"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "山上站点",
+      "project_treatment": "需与参道顺接",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "sanctuary",
+      "name": "圣域",
+      "aliases": [],
+      "world": "surface",
+      "group": "圣域",
+      "parent_id": "mountain",
+      "kind": "区域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S30"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "山麓森林中的特殊地域",
+      "project_treatment": "入口与隔绝环境另行设计",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "red_mountain",
+      "name": "红叶尽染的山",
+      "aliases": [],
+      "world": "surface",
+      "group": "圣域",
+      "parent_id": "sanctuary",
+      "kind": "版本场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S30"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "与圣域相关的作品场景",
+      "project_treatment": "优先版本/季节子场景，不增一座同名山",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "asama",
+      "name": "浅间净秽山",
+      "aliases": [
+        "金字塔"
+      ],
+      "world": "underground",
+      "group": "浅间净秽山",
+      "parent_id": null,
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S31"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "圣域地下相关设施；有前后状态",
+      "project_treatment": "先保留变体；后续位置变化未从缺损文本推断",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "four_seasons_shaft",
+      "name": "四季竖穴",
+      "aliases": [],
+      "world": "underground",
+      "group": "浅间净秽山",
+      "parent_id": "asama",
+      "kind": "子场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S31"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "四面相关场景",
+      "project_treatment": "不是永久混季地表",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "labyrinth",
+      "name": "佐塔克斯迷宫",
+      "aliases": [],
+      "world": "underground",
+      "group": "浅间净秽山",
+      "parent_id": "asama",
+      "kind": "子场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S31"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "四面迷宫；有不同色调场景",
+      "project_treatment": "颜色变体，不计四座迷宫",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "asama_depth",
+      "name": "浅间净秽山深处",
+      "aliases": [],
+      "world": "underground",
+      "group": "浅间净秽山",
+      "parent_id": "asama",
+      "kind": "子场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S31"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "五面相关深层空间",
+      "project_treatment": "确切连通待逐路线核对",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "asama_deepest",
+      "name": "浅间净秽山最深处",
+      "aliases": [],
+      "world": "underground",
+      "group": "浅间净秽山",
+      "parent_id": "asama",
+      "kind": "子场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S31"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "六面/更深处相关空间",
+      "project_treatment": "不把全部战斗背景等同一房间",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "fossil_forest",
+      "name": "化石森林",
+      "aliases": [],
+      "world": "underground",
+      "group": "浅间净秽山",
+      "parent_id": "asama",
+      "kind": "子场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S31"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "净秽山深处相关地点",
+      "project_treatment": "细节暂不固定",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "mist_lake",
+      "name": "雾之湖",
+      "aliases": [],
+      "world": "surface",
+      "group": "雾之湖",
+      "parent_id": null,
+      "kind": "湖泊",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S05",
+        "S18",
+        "S01"
+      ],
+      "source_locator": "危险区域指南／雾之湖",
+      "verified_fact": "山脚；山中河流注入；周长有时间线索",
+      "project_treatment": "工程椭圆仅草案，非官方尺寸",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "scarlet",
+      "name": "红魔馆",
+      "aliases": [],
+      "world": "surface",
+      "group": "雾之湖",
+      "parent_id": null,
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S05",
+        "S18",
+        "S01"
+      ],
+      "source_locator": "危险区域指南／雾之湖",
+      "verified_fact": "与雾之湖相关洋馆",
+      "project_treatment": "暂选湖畔；保留湖岛变体",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "scarlet_garden",
+      "name": "红魔馆庭园",
+      "aliases": [],
+      "world": "surface",
+      "group": "雾之湖",
+      "parent_id": "scarlet",
+      "kind": "庭园",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S05",
+        "S18",
+        "S01"
+      ],
+      "source_locator": "危险区域指南／雾之湖",
+      "verified_fact": "馆前庭园",
+      "project_treatment": "围墙和入口属于同一资产组",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "scarlet_clock",
+      "name": "红魔馆钟楼",
+      "aliases": [],
+      "world": "surface",
+      "group": "雾之湖",
+      "parent_id": "scarlet",
+      "kind": "附属建筑",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S05",
+        "S18",
+        "S01"
+      ],
+      "source_locator": "危险区域指南／雾之湖",
+      "verified_fact": "钟楼",
+      "project_treatment": "保留远景剪影",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "cirno_igloo",
+      "name": "琪露诺的冰屋",
+      "aliases": [],
+      "world": "surface",
+      "group": "雾之湖",
+      "parent_id": null,
+      "kind": "住居",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S05",
+        "S18",
+        "S01"
+      ],
+      "source_locator": "危险区域指南／雾之湖",
+      "verified_fact": "湖边冰屋",
+      "project_treatment": "不自动加全年暴雪",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "prismriver",
+      "name": "普莉兹姆利巴废弃洋馆",
+      "aliases": [],
+      "world": "surface",
+      "group": "雾之湖",
+      "parent_id": null,
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S05",
+        "S18",
+        "S01"
+      ],
+      "source_locator": "危险区域指南／雾之湖",
+      "verified_fact": "距湖有一定距离的废弃洋馆",
+      "project_treatment": "不要与森林幽灵洋馆合并",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "scarlet_hall",
+      "name": "红魔馆大厅",
+      "aliases": [],
+      "world": "interior",
+      "group": "红魔馆室内",
+      "parent_id": null,
+      "kind": "室内",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S18"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "馆内大厅",
+      "project_treatment": "独立室内包",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "scarlet_library",
+      "name": "红魔馆大图书馆",
+      "aliases": [
+        "图书馆"
+      ],
+      "world": "interior",
+      "group": "红魔馆室内",
+      "parent_id": null,
+      "kind": "室内",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S18"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "地下大型图书馆",
+      "project_treatment": "不是图书馆的官方名字“巴瓦鲁”",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "scarlet_basement",
+      "name": "红魔馆其他地下室",
+      "aliases": [],
+      "world": "interior",
+      "group": "红魔馆室内",
+      "parent_id": null,
+      "kind": "室内",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S18"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "馆地下空间",
+      "project_treatment": "只给占位；未确认房间不自命名",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "bamboo",
+      "name": "迷途竹林",
+      "aliases": [],
+      "world": "surface",
+      "group": "竹林与花田",
+      "parent_id": null,
+      "kind": "区域",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S06"
+      ],
+      "source_locator": "危险区域指南／迷途竹林",
+      "verified_fact": "从人里看与山处于相反方向",
+      "project_treatment": "保留起伏和遮蔽",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "eientei",
+      "name": "永远亭",
+      "aliases": [],
+      "world": "surface",
+      "group": "竹林与花田",
+      "parent_id": "bamboo",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S21"
+      ],
+      "source_locator": "危险区域指南／迷途竹林",
+      "verified_fact": "竹林内大型宅邸",
+      "project_treatment": "庭院与回廊为横向体量",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "mokou_home",
+      "name": "妹红住所（候选）",
+      "aliases": [],
+      "world": "surface",
+      "group": "竹林与花田",
+      "parent_id": "bamboo",
+      "kind": "候选住居",
+      "existence_evidence": "U",
+      "source_ids": [],
+      "source_locator": "本作设计／待进一步核对",
+      "verified_fact": "具体外观位置未在本轮核实",
+      "project_treatment": "不套用同人烧烤店",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "HOLD",
+      "status": "待核原文"
+    },
+    {
+      "id": "sunflower",
+      "name": "太阳花田",
+      "aliases": [],
+      "world": "surface",
+      "group": "竹林与花田",
+      "parent_id": null,
+      "kind": "区域",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S10"
+      ],
+      "source_locator": "危险区域指南／迷途竹林",
+      "verified_fact": "远离人里；钵状地形有朝向描述",
+      "project_treatment": "南侧方案是本作布局，不是原文坐标",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "sun_stage",
+      "name": "太阳花田演奏舞台",
+      "aliases": [],
+      "world": "surface",
+      "group": "竹林与花田",
+      "parent_id": "sunflower",
+      "kind": "事件设施",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S10"
+      ],
+      "source_locator": "危险区域指南／迷途竹林",
+      "verified_fact": "夏季演奏活动场景",
+      "project_treatment": "非全年同一舞台",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "nameless",
+      "name": "无名之丘",
+      "aliases": [],
+      "world": "surface",
+      "group": "竹林与花田",
+      "parent_id": null,
+      "kind": "区域",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S11"
+      ],
+      "source_locator": "危险区域指南／迷途竹林",
+      "verified_fact": "低山山腹铃兰田",
+      "project_treatment": "与向日葵田区分",
+      "coordinate_status": "P：已有工程候选锚点，待灰盒验收",
+      "build_stage": "M1→M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "eientei_clinic",
+      "name": "永远亭诊疗与药房",
+      "aliases": [],
+      "world": "interior",
+      "group": "永远亭室内",
+      "parent_id": null,
+      "kind": "室内",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S21"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "诊疗、药品相关空间",
+      "project_treatment": "不照搬现实医院平面",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "eientei_corridor",
+      "name": "永远亭无限回廊",
+      "aliases": [],
+      "world": "interior",
+      "group": "永远亭室内",
+      "parent_id": null,
+      "kind": "事件空间",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S21"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "抵御入侵的特殊走廊状态",
+      "project_treatment": "事件模式，不延长地表建筑",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "yukari_home",
+      "name": "八云紫的家",
+      "aliases": [],
+      "world": "surface",
+      "group": "位置待定",
+      "parent_id": null,
+      "kind": "住居",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S40"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "确切坐标未定",
+      "project_treatment": "以目录或特殊入口访问；不是迷途之家",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "phantom_field",
+      "name": "幻草原",
+      "aliases": [],
+      "world": "surface",
+      "group": "位置待定",
+      "parent_id": null,
+      "kind": "场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S40"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "位置未定的花原",
+      "project_treatment": "暂不独立划地",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "snow_path",
+      "name": "残雪之道",
+      "aliases": [],
+      "world": "surface",
+      "group": "位置待定",
+      "parent_id": null,
+      "kind": "场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S40"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "位置未定道路",
+      "project_treatment": "季节场景可复用，但不能直接宣布同一路",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "spring_path",
+      "name": "春之小径",
+      "aliases": [],
+      "world": "surface",
+      "group": "位置待定",
+      "parent_id": null,
+      "kind": "场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S40"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "位置未定道路",
+      "project_treatment": "与夜樱怪道保留不同ID",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "night_path",
+      "name": "夜樱怪道",
+      "aliases": [],
+      "world": "surface",
+      "group": "位置待定",
+      "parent_id": null,
+      "kind": "场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S40"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "位置未定道路",
+      "project_treatment": "不能因画面相似就合并",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "tanuki_forest",
+      "name": "妖怪狸森林",
+      "aliases": [],
+      "world": "surface",
+      "group": "位置待定",
+      "parent_id": null,
+      "kind": "区域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S40"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "精确位置未定的狸聚居森林",
+      "project_treatment": "设定树种与占地前再核图",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "mystia_stall",
+      "name": "米斯蒂娅屋台",
+      "aliases": [],
+      "world": "surface",
+      "group": "位置待定",
+      "parent_id": null,
+      "kind": "可移动设施",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S42"
+      ],
+      "source_locator": "《文花帖》58–59页报道",
+      "verified_fact": "夜之道上经营的移动烧烤摊",
+      "project_treatment": "移动设施，不把同人游戏多处分店设成原作固定地标",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "nazrin_home",
+      "name": "娜兹玲住所（候选）",
+      "aliases": [],
+      "world": "surface",
+      "group": "位置待定",
+      "parent_id": null,
+      "kind": "候选住居",
+      "existence_evidence": "U",
+      "source_ids": [],
+      "source_locator": "本作设计／待进一步核对",
+      "verified_fact": "本轮未核实具体地点与形制",
+      "project_treatment": "只保留待查条目",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "HOLD",
+      "status": "待核原文"
+    },
+    {
+      "id": "sky",
+      "name": "幻想乡上空",
+      "aliases": [],
+      "world": "sky",
+      "group": "幻想乡上空",
+      "parent_id": null,
+      "kind": "空间层",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S29"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "地表上空总称",
+      "project_treatment": "不是固定高度平板",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "needle",
+      "name": "辉针城",
+      "aliases": [],
+      "world": "sky",
+      "group": "幻想乡上空",
+      "parent_id": "sky",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S29"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "漂浮的逆城",
+      "project_treatment": "位置本作配置；不得永久落地",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "needle_storm",
+      "name": "辉针城魔力风暴",
+      "aliases": [],
+      "world": "sky",
+      "group": "幻想乡上空",
+      "parent_id": "sky",
+      "kind": "事件场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S29"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "辉针城相关风暴",
+      "project_treatment": "事件开关",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "palanquin",
+      "name": "圣辇船",
+      "aliases": [],
+      "world": "sky",
+      "group": "幻想乡上空",
+      "parent_id": "sky",
+      "kind": "移动地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S29"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "可航行到魔界的船",
+      "project_treatment": "与寺院关联状态约束",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "moon_market",
+      "name": "月虹市场",
+      "aliases": [],
+      "world": "sky",
+      "group": "幻想乡上空",
+      "parent_id": "sky",
+      "kind": "事件场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S29"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "山上空、月虹条件相关",
+      "project_treatment": "非恒久天空城镇",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "spring_cloud",
+      "name": "春之云",
+      "aliases": [],
+      "world": "sky",
+      "group": "幻想乡上空",
+      "parent_id": "sky",
+      "kind": "场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S29"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "星莲船二面相关天空",
+      "project_treatment": "不强行划成固定行政区",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "summer_sky",
+      "name": "仲夏的高空",
+      "aliases": [],
+      "world": "sky",
+      "group": "幻想乡上空",
+      "parent_id": "sky",
+      "kind": "场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S29"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "山麓森林上方相关场景",
+      "project_treatment": "采用季节/事件变体",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "iamp_sky",
+      "name": "萃梦想中的上空",
+      "aliases": [],
+      "world": "sky",
+      "group": "幻想乡上空",
+      "parent_id": "sky",
+      "kind": "场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S29"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "位置不明的天空背景",
+      "project_treatment": "保留来源名，不补坐标",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "youmei",
+      "name": "幽明结界",
+      "aliases": [],
+      "world": "sky",
+      "group": "幻想乡上空",
+      "parent_id": "sky",
+      "kind": "入口",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S29"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "幻想乡上空与冥界的边界",
+      "project_treatment": "具体空域未定",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "unkai",
+      "name": "玄云海",
+      "aliases": [],
+      "world": "sky",
+      "group": "幻想乡上空",
+      "parent_id": "sky",
+      "kind": "入口",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S29"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "山顶高空通向天界",
+      "project_treatment": "地表可见远景，深层独立场景",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M3",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "old_hell",
+      "name": "旧地狱",
+      "aliases": [],
+      "world": "underground",
+      "group": "旧地狱",
+      "parent_id": null,
+      "kind": "世界分区",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S28",
+        "S32",
+        "S01",
+        "H1701"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "幻想乡地下的旧地狱区域",
+      "project_treatment": "与现行地狱分别存储",
+      "coordinate_status": "P：独立地底坐标；宫殿高于灼热遗址，精确高程为设计值",
+      "build_stage": "M4",
+      "status": "v0.17 已建立可浏览三维场景"
+    },
+    {
+      "id": "deep_road",
+      "name": "地狱的深道",
+      "aliases": [],
+      "world": "underground",
+      "group": "旧地狱",
+      "parent_id": "old_hell",
+      "kind": "道路",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S28",
+        "S32",
+        "S01",
+        "H1705"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "风穴深处至旧都的通路",
+      "project_treatment": "桥与通道地形一体",
+      "coordinate_status": "P：独立地底坐标；宫殿高于灼热遗址，精确高程为设计值",
+      "build_stage": "M4",
+      "status": "v0.17 已建立可浏览三维场景"
+    },
+    {
+      "id": "parsee_bridge",
+      "name": "地上地下分界桥",
+      "aliases": [],
+      "world": "underground",
+      "group": "旧地狱",
+      "parent_id": "deep_road",
+      "kind": "交通地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S28",
+        "S32",
+        "S01",
+        "H1705"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "深道中帕露西相关桥梁",
+      "project_treatment": "不是官方专名；工作标签",
+      "coordinate_status": "P：独立地底坐标；宫殿高于灼热遗址，精确高程为设计值",
+      "build_stage": "M4",
+      "status": "v0.17 已建立可浏览三维场景"
+    },
+    {
+      "id": "old_capital",
+      "name": "旧都",
+      "aliases": [],
+      "world": "underground",
+      "group": "旧地狱",
+      "parent_id": "old_hell",
+      "kind": "聚落",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S28",
+        "S32",
+        "S01",
+        "H1701"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧地狱内城市",
+      "project_treatment": "街区不铺成熔岩地面",
+      "coordinate_status": "P：独立地底坐标；宫殿高于灼热遗址，精确高程为设计值",
+      "build_stage": "M4",
+      "status": "v0.17 已建立可浏览三维场景"
+    },
+    {
+      "id": "chireiden",
+      "name": "地灵殿",
+      "aliases": [],
+      "world": "underground",
+      "group": "旧地狱",
+      "parent_id": "old_capital",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S32",
+        "H1702"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧都/旧地狱中心相关洋馆",
+      "project_treatment": "旧都外景与大厅分包",
+      "coordinate_status": "P：独立地底坐标；宫殿高于灼热遗址，精确高程为设计值",
+      "build_stage": "M4",
+      "status": "v0.17 已建立可浏览三维场景"
+    },
+    {
+      "id": "hell_spa",
+      "name": "旧地狱温泉街",
+      "aliases": [],
+      "world": "underground",
+      "group": "旧地狱",
+      "parent_id": "old_hell",
+      "kind": "聚落",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S28",
+        "S32",
+        "S01",
+        "H1701"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧地狱深部温泉街",
+      "project_treatment": "与地面温泉设施分开",
+      "coordinate_status": "P：独立地底坐标；宫殿高于灼热遗址，精确高程为设计值",
+      "build_stage": "M4",
+      "status": "v0.17 已建立可浏览三维场景"
+    },
+    {
+      "id": "blazing_remains",
+      "name": "灼热地狱遗址",
+      "aliases": [],
+      "world": "underground",
+      "group": "旧地狱",
+      "parent_id": "old_hell",
+      "kind": "区域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S28",
+        "S32",
+        "S01",
+        "H1701"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "地灵殿下方相关遗址",
+      "project_treatment": "单独气氛与火焰预算",
+      "coordinate_status": "P：独立地底坐标；宫殿高于灼热遗址，精确高程为设计值",
+      "build_stage": "M4",
+      "status": "v0.17 已建立可浏览三维场景"
+    },
+    {
+      "id": "reactor",
+      "name": "核聚变炉",
+      "aliases": [],
+      "world": "underground",
+      "group": "旧地狱",
+      "parent_id": "blazing_remains",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S28",
+        "S32",
+        "S01",
+        "H1703"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "遗址深处能源设施",
+      "project_treatment": "连接地热中心电梯",
+      "coordinate_status": "P：独立地底坐标；宫殿高于灼热遗址，精确高程为设计值",
+      "build_stage": "M4",
+      "status": "v0.17 已建立可浏览三维场景"
+    },
+    {
+      "id": "blood_old",
+      "name": "旧血池地狱",
+      "aliases": [],
+      "world": "underground",
+      "group": "旧地狱",
+      "parent_id": "old_hell",
+      "kind": "区域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S28",
+        "S32",
+        "S01",
+        "H1704"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "核聚变炉更深处相关区域",
+      "project_treatment": "不是旧作血之湖",
+      "coordinate_status": "P：独立地底坐标；宫殿高于灼热遗址，精确高程为设计值",
+      "build_stage": "M4",
+      "status": "v0.17 已建立可浏览三维场景"
+    },
+    {
+      "id": "liminal",
+      "name": "中有之道",
+      "aliases": [],
+      "world": "border_afterlife",
+      "group": "此岸至彼岸",
+      "parent_id": null,
+      "kind": "道路",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S12",
+        "S13",
+        "S01"
+      ],
+      "source_locator": "危险区域指南／中有之道",
+      "verified_fact": "赴三途河的道路",
+      "project_treatment": "入口放在山后方向为本作落实",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "sai",
+      "name": "赛之河原",
+      "aliases": [],
+      "world": "border_afterlife",
+      "group": "此岸至彼岸",
+      "parent_id": null,
+      "kind": "河岸",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S12",
+        "S13",
+        "S01"
+      ],
+      "source_locator": "危险区域指南／中有之道",
+      "verified_fact": "三途河此岸相关石滩",
+      "project_treatment": "不等同整条河",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "sanzu",
+      "name": "三途河",
+      "aliases": [],
+      "world": "border_afterlife",
+      "group": "此岸至彼岸",
+      "parent_id": null,
+      "kind": "跨界水域",
+      "existence_evidence": "T",
+      "source_ids": [
+        "S12",
+        "S13",
+        "S01"
+      ],
+      "source_locator": "危险区域指南／中有之道",
+      "verified_fact": "山背侧相关河流；宽度随渡者变化",
+      "project_treatment": "不并入普通水系",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "higan",
+      "name": "彼岸",
+      "aliases": [],
+      "world": "border_afterlife",
+      "group": "此岸至彼岸",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S12",
+        "S13",
+        "S01"
+      ],
+      "source_locator": "危险区域指南／中有之道",
+      "verified_fact": "三途河彼方",
+      "project_treatment": "非地表同尺度陆地",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "hell",
+      "name": "地狱",
+      "aliases": [],
+      "world": "hell",
+      "group": "地狱与畜生界",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S37",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "与旧地狱不同的世界范围",
+      "project_treatment": "不把背景全部固定为同一洞室",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "animal",
+      "name": "畜生界",
+      "aliases": [],
+      "world": "hell",
+      "group": "地狱与畜生界",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S37",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "动物灵相关都市世界",
+      "project_treatment": "可设计城市围合空间",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "primate",
+      "name": "灵长园",
+      "aliases": [],
+      "world": "hell",
+      "group": "地狱与畜生界",
+      "parent_id": "animal",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S37",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "畜生界中心设施",
+      "project_treatment": "不同于灵长新益京",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "animal_hq",
+      "name": "动物灵组织据点（候选）",
+      "aliases": [],
+      "world": "hell",
+      "group": "地狱与畜生界",
+      "parent_id": "animal",
+      "kind": "候选地标",
+      "existence_evidence": "U",
+      "source_ids": [],
+      "source_locator": "本作设计／待进一步核对",
+      "verified_fact": "具体组织建筑原图未核",
+      "project_treatment": "不凭首领身份虚构官方总部",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "HOLD",
+      "status": "待核原文"
+    },
+    {
+      "id": "netherworld",
+      "name": "冥界",
+      "aliases": [],
+      "world": "netherworld",
+      "group": "冥界",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S22",
+        "S01"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "独立于地表的世界",
+      "project_treatment": "不能当作山后普通院子",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "hakugyoku_stairs",
+      "name": "白玉楼阶梯",
+      "aliases": [],
+      "world": "netherworld",
+      "group": "冥界",
+      "parent_id": "netherworld",
+      "kind": "道路",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S22"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "白玉楼前长阶梯",
+      "project_treatment": "长度为本作压缩设计",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "hakugyokurou",
+      "name": "白玉楼",
+      "aliases": [],
+      "world": "netherworld",
+      "group": "冥界",
+      "parent_id": "netherworld",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S22"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "大宅与樱庭",
+      "project_treatment": "主景为院落，不是白色高楼",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "saigyou",
+      "name": "西行妖",
+      "aliases": [],
+      "world": "netherworld",
+      "group": "冥界",
+      "parent_id": "hakugyokurou",
+      "kind": "自然地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S22"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "特殊老樱树",
+      "project_treatment": "非紫之樱；开花状态单独控制",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "heaven",
+      "name": "天界",
+      "aliases": [],
+      "world": "heaven",
+      "group": "天界",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "经玄云海访问的世界",
+      "project_treatment": "不用地表海拔解释",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "bhava",
+      "name": "有顶天",
+      "aliases": [],
+      "world": "heaven",
+      "group": "天界",
+      "parent_id": "heaven",
+      "kind": "子区域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "天界的一层",
+      "project_treatment": "桃林与云海版本待核",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "miko_senkai",
+      "name": "神子的仙界",
+      "aliases": [],
+      "world": "senkai_miko",
+      "group": "神子仙界",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S23"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "神子开辟的仙界",
+      "project_treatment": "不是华扇仙界",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "miko_dojo",
+      "name": "神灵庙",
+      "aliases": [],
+      "world": "senkai_miko",
+      "group": "神子仙界",
+      "parent_id": "miko_senkai",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S23"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "迁入仙界的灵庙",
+      "project_treatment": "与地下大祀庙独立记录",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "kasen_senkai",
+      "name": "华扇的仙界",
+      "aliases": [],
+      "world": "senkai_kasen",
+      "group": "华扇仙界",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S38"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "独立仙界",
+      "project_treatment": "地表入口与内景不同坐标空间",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "kasen_home",
+      "name": "茨华仙邸",
+      "aliases": [],
+      "world": "senkai_kasen",
+      "group": "华扇仙界",
+      "parent_id": "kasen_senkai",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S38"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "仙界中的住居",
+      "project_treatment": "中式相关造型独立参考",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "lunar",
+      "name": "月世界",
+      "aliases": [],
+      "world": "lunar",
+      "group": "月世界",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S34"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "现实侧月面与幻想侧区分",
+      "project_treatment": "禁止用“月背”直接解释天文背面",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "lunar_capital",
+      "name": "月之都",
+      "aliases": [],
+      "world": "lunar",
+      "group": "月世界",
+      "parent_id": "lunar",
+      "kind": "聚落",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S34"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "月世界城市",
+      "project_treatment": "优先儚月抄/绀珠传候选；版本差异登记",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "tranquility",
+      "name": "静海",
+      "aliases": [],
+      "world": "lunar",
+      "group": "月世界",
+      "parent_id": "lunar",
+      "kind": "区域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S34"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "表里表现不同的月海",
+      "project_treatment": "荒凉月面与有海水版本互斥",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "fertility",
+      "name": "丰富海",
+      "aliases": [],
+      "world": "lunar",
+      "group": "月世界",
+      "parent_id": "lunar",
+      "kind": "区域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S34"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "月都相关月海",
+      "project_treatment": "地形位置不做测绘断言",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "lunar_peaches",
+      "name": "月都桃园",
+      "aliases": [],
+      "world": "lunar",
+      "group": "月世界",
+      "parent_id": "lunar",
+      "kind": "农业区",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S34"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "儚月抄相关桃园",
+      "project_treatment": "不可用现代城市模板取代",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "watatsuki",
+      "name": "绵月宅邸",
+      "aliases": [],
+      "world": "lunar",
+      "group": "月世界",
+      "parent_id": "lunar_capital",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S34"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "绵月家相关住居",
+      "project_treatment": "布局和比例待验图",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "dream",
+      "name": "梦境世界",
+      "aliases": [],
+      "world": "dream",
+      "group": "梦境",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S35"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "梦相连的世界",
+      "project_treatment": "独立坐标；不在地表后方",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "kaian",
+      "name": "第四槐安通道",
+      "aliases": [],
+      "world": "dream",
+      "group": "梦境",
+      "parent_id": "dream",
+      "kind": "通道",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S35"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "联系幻想乡与月都的梦中通道",
+      "project_treatment": "不能等同整片梦境",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "makai",
+      "name": "魔界（Windows相关）",
+      "aliases": [],
+      "world": "makai_windows",
+      "group": "魔界",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "与星莲船航行相关的世界",
+      "project_treatment": "保留与旧作对照；不假定两套完整地形一一吻合",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "hokkai",
+      "name": "法界",
+      "aliases": [],
+      "world": "makai_windows",
+      "group": "魔界",
+      "parent_id": "makai",
+      "kind": "子区域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "魔界内被隔离的部分",
+      "project_treatment": "入口与法界内景分开",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "backdoor",
+      "name": "后户之国",
+      "aliases": [],
+      "world": "backdoor",
+      "group": "后户之国",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S36"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "门与背后连接相关空间",
+      "project_treatment": "“关联”不等于常态公众入口",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M4",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "outside",
+      "name": "外面世界",
+      "aliases": [],
+      "world": "outside",
+      "group": "外界与秘封",
+      "parent_id": null,
+      "kind": "世界层",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S39"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "大结界外的现实侧世界",
+      "project_treatment": "不把真实日本全国做入本期",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "higashifukami",
+      "name": "东深见高中",
+      "aliases": [],
+      "world": "outside",
+      "group": "外界与秘封",
+      "parent_id": "outside",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S39"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "堇子相关外界学校",
+      "project_treatment": "不是幻想乡寺子屋",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "rendaino",
+      "name": "莲台野",
+      "aliases": [],
+      "world": "outside",
+      "group": "外界与秘封",
+      "parent_id": "outside",
+      "kind": "地点",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S39"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "秘封相关墓园",
+      "project_treatment": "特定时间入口为事件，不建普通道路",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "bouyu",
+      "name": "卯酉新干线",
+      "aliases": [],
+      "world": "outside",
+      "group": "外界与秘封",
+      "parent_id": "outside",
+      "kind": "交通设施",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S39"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "秘封相关地下铁路",
+      "project_treatment": "不是人里交通",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "torifune",
+      "name": "鸟船",
+      "aliases": [],
+      "world": "outside",
+      "group": "外界与秘封",
+      "parent_id": "outside",
+      "kind": "空间站",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S39"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "秘封相关空间站",
+      "project_treatment": "单独场景，非漂浮在神社上",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "zenkouji",
+      "name": "善光寺",
+      "aliases": [],
+      "world": "outside",
+      "group": "外界与秘封",
+      "parent_id": "outside",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S39"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "秘封相关外界寺院",
+      "project_treatment": "与命莲寺分开",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "old_adam",
+      "name": "Bar Old Adam",
+      "aliases": [],
+      "world": "outside",
+      "group": "外界与秘封",
+      "parent_id": "outside",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S39"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "秘封相关酒馆",
+      "project_treatment": "具体城市块未纳入本期",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "tanabata",
+      "name": "七夕坂",
+      "aliases": [],
+      "world": "outside",
+      "group": "外界与秘封",
+      "parent_id": "outside",
+      "kind": "地点",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S01",
+        "S39"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "秘封相关坂道与事件",
+      "project_treatment": "入口时刻属于事件参数",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "aramashi",
+      "name": "灵长新益京",
+      "aliases": [],
+      "world": "outside",
+      "group": "外界与秘封",
+      "parent_id": "outside",
+      "kind": "城市",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S39"
+      ],
+      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "verified_fact": "2026专辑相关场景",
+      "project_treatment": "不等同灵长园；单独外界资料层",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_east",
+      "name": "东之国（旧作）",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": null,
+      "kind": "世界层",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景分类",
+      "project_treatment": "不当作Windows精确历史坐标",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_shrine",
+      "name": "博丽神社（旧作）",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_east",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作神社表现",
+      "project_treatment": "版本独立",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_backhill",
+      "name": "神社后山（旧作）",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_east",
+      "kind": "地点",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作地点",
+      "project_treatment": "不自动覆盖现代后山",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_space",
+      "name": "异空",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_east",
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "独立场景",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_ruins",
+      "name": "梦幻遗迹",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_east",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作遗迹相关场景",
+      "project_treatment": "可能性空间移动船相关别名待具体版本核",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_ellen",
+      "name": "蓬松松爱莲魔法店",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_east",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作相关店铺",
+      "project_treatment": "未核外形不建精模",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_phantom",
+      "name": "幻梦界",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "与梦境世界分ID",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_reima",
+      "name": "灵魔殿",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_phantom",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "不套用现代地灵殿",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_dream",
+      "name": "梦幻世界",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "与幻梦界、现代梦境分ID",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_blood",
+      "name": "血之湖",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_dream",
+      "kind": "水域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作湖泊",
+      "project_treatment": "不等同旧血池地狱",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_mugen",
+      "name": "梦幻馆",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_dream",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作相关住居",
+      "project_treatment": "不默认迁到太阳花田",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_makai",
+      "name": "魔界（旧作）",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作魔界场景",
+      "project_treatment": "与Windows相关版本保留映射待核",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_gate",
+      "name": "魔界之门",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_makai",
+      "kind": "入口",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "通关路线不自动转为直线地理",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_vina",
+      "name": "维纳的废墟",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_makai",
+      "kind": "地点",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "区域尺度待核",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_fallen",
+      "name": "堕落神殿",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_makai",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "不要与灵魔殿混同",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_maspace",
+      "name": "魔空间",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_makai",
+      "kind": "场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "保留抽象性",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_street",
+      "name": "魔界街道",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_makai",
+      "kind": "场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "不自动产生都市全图",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_ice",
+      "name": "冰雪世界",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_makai",
+      "kind": "区域",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "独立环境",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_panda",
+      "name": "万魔殿",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_makai",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "专用造型参考",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_hell",
+      "name": "地狱（旧作）",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": null,
+      "kind": "异界",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作地狱路线",
+      "project_treatment": "不强行对齐现代地狱",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_hokora",
+      "name": "祠",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_hell",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "保留来源名",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_rot",
+      "name": "炎之腐界",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_hell",
+      "kind": "场景",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "独立场景",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    },
+    {
+      "id": "pc98_silent",
+      "name": "静寂神殿",
+      "aliases": [],
+      "world": "pc98",
+      "group": "旧作档案",
+      "parent_id": "pc98_hell",
+      "kind": "地标",
+      "existence_evidence": "C",
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "相关设定／结构与造型",
+      "verified_fact": "旧作场景",
+      "project_treatment": "专用造型参考",
+      "coordinate_status": "待布局；没有官方测量坐标",
+      "build_stage": "M5",
+      "status": "目录已核；待建模"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "E001",
+      "from": "village",
+      "to": "beast_path",
+      "type": "road",
+      "evidence": "T",
+      "source_ids": [
+        "S03"
+      ],
+      "statement": "村与神社间存在兽道",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E002",
+      "from": "beast_path",
+      "to": "hakurei",
+      "type": "road",
+      "evidence": "T",
+      "source_ids": [
+        "S03"
+      ],
+      "statement": "兽道通往神社",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E003",
+      "from": "village",
+      "to": "kourindou",
+      "type": "road",
+      "evidence": "T",
+      "source_ids": [
+        "S04"
+      ],
+      "statement": "香霖堂在人里至森林途中",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E004",
+      "from": "kourindou",
+      "to": "forest",
+      "type": "road",
+      "evidence": "T",
+      "source_ids": [
+        "S04"
+      ],
+      "statement": "接近森林入口",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E005",
+      "from": "forest",
+      "to": "alice",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S19"
+      ],
+      "statement": "爱丽丝家在森林",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E006",
+      "from": "forest",
+      "to": "marisa",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S20"
+      ],
+      "statement": "魔理沙家在森林",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E007",
+      "from": "alice",
+      "to": "doll_forest",
+      "type": "associated",
+      "evidence": "C",
+      "source_ids": [
+        "S19"
+      ],
+      "statement": "住宅周边森林之称",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E008",
+      "from": "forest",
+      "to": "reconsider",
+      "type": "road",
+      "evidence": "T",
+      "source_ids": [
+        "S09"
+      ],
+      "statement": "森林深处相关小道",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E009",
+      "from": "reconsider",
+      "to": "muenzuka",
+      "type": "road",
+      "evidence": "T",
+      "source_ids": [
+        "S08"
+      ],
+      "statement": "沿路深处尽头到无缘塚",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E010",
+      "from": "village",
+      "to": "myouren",
+      "type": "near",
+      "evidence": "C",
+      "source_ids": [
+        "S16"
+      ],
+      "statement": "寺院在人里附近",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E011",
+      "from": "myouren",
+      "to": "myouren_cemetery",
+      "type": "associated",
+      "evidence": "C",
+      "source_ids": [
+        "S16"
+      ],
+      "statement": "墓地由寺院管理",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E012",
+      "from": "myouren_cemetery",
+      "to": "mausoleum",
+      "type": "below",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "墓地下方为大祀庙",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E013",
+      "from": "mausoleum",
+      "to": "miko_dojo",
+      "type": "historical_migration",
+      "evidence": "C",
+      "source_ids": [
+        "S01",
+        "S23"
+      ],
+      "statement": "灵庙迁入仙界；不是证明有常驻直通门",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "特定时期/条件；默认不开放",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E014",
+      "from": "mountain",
+      "to": "bamboo",
+      "type": "opposite_from_village",
+      "evidence": "T",
+      "source_ids": [
+        "S06"
+      ],
+      "statement": "从人里观察，竹林与山相反",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E015",
+      "from": "mountain",
+      "to": "sunflower",
+      "type": "opposite_general",
+      "evidence": "T",
+      "source_ids": [
+        "S10"
+      ],
+      "statement": "往山相反方向抵达花田；不量化为180度",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E016",
+      "from": "mountain",
+      "to": "nameless",
+      "type": "opposite_general",
+      "evidence": "T",
+      "source_ids": [
+        "S11"
+      ],
+      "statement": "与山相对的低山",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E017",
+      "from": "bamboo",
+      "to": "eientei",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S21"
+      ],
+      "statement": "永远亭位于竹林",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E018",
+      "from": "mountain",
+      "to": "mist_lake",
+      "type": "foothill",
+      "evidence": "T",
+      "source_ids": [
+        "S05"
+      ],
+      "statement": "湖在山脚",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E019",
+      "from": "mountain",
+      "to": "mist_lake",
+      "type": "river_flow",
+      "evidence": "T",
+      "source_ids": [
+        "S05"
+      ],
+      "statement": "来自山的水流入湖",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E020",
+      "from": "mist_lake",
+      "to": "scarlet",
+      "type": "waterside_variant",
+      "evidence": "C",
+      "source_ids": [
+        "S18"
+      ],
+      "statement": "有湖畔/湖岛不同表现",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E021",
+      "from": "mist_lake",
+      "to": "cirno_igloo",
+      "type": "near",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "冰屋在湖边",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E022",
+      "from": "mist_lake",
+      "to": "prismriver",
+      "type": "near_not_adjacent",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "洋馆距湖一段距离",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E023",
+      "from": "mountain",
+      "to": "genbu",
+      "type": "foothill",
+      "evidence": "C",
+      "source_ids": [
+        "S27"
+      ],
+      "statement": "峡谷在山脚",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E024",
+      "from": "forest",
+      "to": "genbu",
+      "type": "near_or_within",
+      "evidence": "C",
+      "source_ids": [
+        "S27"
+      ],
+      "statement": "森林内或附近，不强定边界",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E025",
+      "from": "genbu",
+      "to": "kappa_base",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S27"
+      ],
+      "statement": "据点位于峡谷",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E026",
+      "from": "waterfall",
+      "to": "valley",
+      "type": "river_flow",
+      "evidence": "C",
+      "source_ids": [
+        "S25"
+      ],
+      "statement": "瀑布位于溪谷上游",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E027",
+      "from": "waterfall",
+      "to": "waterfall_cave",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "瀑后洞穴",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E028",
+      "from": "waterfall_cave",
+      "to": "cucumber_farm",
+      "type": "cave_route",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "通向偏远种植基地，未量化距离",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E029",
+      "from": "mountain",
+      "to": "toad_pond",
+      "type": "mountainside",
+      "evidence": "C",
+      "source_ids": [
+        "S25"
+      ],
+      "statement": "山腹池塘",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E030",
+      "from": "mountain",
+      "to": "tengu",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S25"
+      ],
+      "statement": "天狗居于山内，位置不精确",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E031",
+      "from": "mountain",
+      "to": "false_ceiling",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S25"
+      ],
+      "statement": "高山地带",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E032",
+      "from": "false_ceiling",
+      "to": "rainbow_mine",
+      "type": "entrance",
+      "evidence": "C",
+      "source_ids": [
+        "S25"
+      ],
+      "statement": "矿洞入口所在",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E033",
+      "from": "false_ceiling",
+      "to": "casino",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S25"
+      ],
+      "statement": "赌场相关地点",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E034",
+      "from": "mountain",
+      "to": "mayohiga",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S25"
+      ],
+      "statement": "山中废村",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E035",
+      "from": "mountain",
+      "to": "wind_lake",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S15"
+      ],
+      "statement": "山上湖泊",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E036",
+      "from": "wind_lake",
+      "to": "moriya",
+      "type": "waterside",
+      "evidence": "C",
+      "source_ids": [
+        "S15"
+      ],
+      "statement": "神社与湖相邻",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E037",
+      "from": "ropeway_lower",
+      "to": "ropeway_upper",
+      "type": "ropeway",
+      "evidence": "C",
+      "source_ids": [
+        "S15"
+      ],
+      "statement": "索道联系山下与神社附近",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E038",
+      "from": "ropeway_upper",
+      "to": "moriya",
+      "type": "near",
+      "evidence": "C",
+      "source_ids": [
+        "S15"
+      ],
+      "statement": "上站与神社联系",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E039",
+      "from": "sanctuary",
+      "to": "asama",
+      "type": "below",
+      "evidence": "C",
+      "source_ids": [
+        "S30",
+        "S31"
+      ],
+      "statement": "地下关联采用相关时期状态",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E040",
+      "from": "asama",
+      "to": "four_seasons_shaft",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S31"
+      ],
+      "statement": "内部子场景",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E041",
+      "from": "asama",
+      "to": "labyrinth",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S31"
+      ],
+      "statement": "内部子场景",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E042",
+      "from": "mountain",
+      "to": "wind_cave",
+      "type": "foothill",
+      "evidence": "C",
+      "source_ids": [
+        "S25"
+      ],
+      "statement": "山麓入口",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E043",
+      "from": "wind_cave",
+      "to": "deep_road",
+      "type": "cave_route",
+      "evidence": "C",
+      "source_ids": [
+        "S28"
+      ],
+      "statement": "风穴深处通道",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E044",
+      "from": "deep_road",
+      "to": "old_capital",
+      "type": "cave_route",
+      "evidence": "C",
+      "source_ids": [
+        "S28"
+      ],
+      "statement": "通道到旧都",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E045",
+      "from": "deep_road",
+      "to": "parsee_bridge",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "桥在通路上",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E046",
+      "from": "old_capital",
+      "to": "chireiden",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S32"
+      ],
+      "statement": "地灵殿与旧都",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E047",
+      "from": "chireiden",
+      "to": "blazing_remains",
+      "type": "below",
+      "evidence": "C",
+      "source_ids": [
+        "S32"
+      ],
+      "statement": "遗址在下方",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E048",
+      "from": "blazing_remains",
+      "to": "reactor",
+      "type": "deeper",
+      "evidence": "C",
+      "source_ids": [
+        "S28"
+      ],
+      "statement": "核聚变炉在深处",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E049",
+      "from": "reactor",
+      "to": "blood_old",
+      "type": "deeper",
+      "evidence": "C",
+      "source_ids": [
+        "S28"
+      ],
+      "statement": "旧血池更深",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E050",
+      "from": "geyser_mountain",
+      "to": "geyser_center",
+      "type": "associated",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "山麓间歇泉相关设施",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E051",
+      "from": "geyser_center",
+      "to": "reactor",
+      "type": "elevator",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "电梯通达",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E052",
+      "from": "forest",
+      "to": "chirei_cave",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S26"
+      ],
+      "statement": "森林内洞穴",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E053",
+      "from": "chirei_cave",
+      "to": "old_hell",
+      "type": "cave_route",
+      "evidence": "C",
+      "source_ids": [
+        "S28"
+      ],
+      "statement": "通往地底；具体落点未知",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E054",
+      "from": "mountain",
+      "to": "sanzu",
+      "type": "back_side",
+      "evidence": "T",
+      "source_ids": [
+        "S13"
+      ],
+      "statement": "三途河在山背侧相关方向",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E055",
+      "from": "liminal",
+      "to": "sanzu",
+      "type": "road",
+      "evidence": "T",
+      "source_ids": [
+        "S12"
+      ],
+      "statement": "道路通往三途河",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E056",
+      "from": "sai",
+      "to": "sanzu",
+      "type": "shore",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "此岸石滩",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E057",
+      "from": "sanzu",
+      "to": "higan",
+      "type": "crossing",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "渡河到彼岸；渡者/条件限制",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E058",
+      "from": "hell",
+      "to": "animal",
+      "type": "associated_world",
+      "evidence": "C",
+      "source_ids": [
+        "S37"
+      ],
+      "statement": "相邻/相关异界，不指定普通陆路",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E059",
+      "from": "animal",
+      "to": "primate",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S37"
+      ],
+      "statement": "灵长园在畜生界",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E060",
+      "from": "sky",
+      "to": "youmei",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "结界在某处上空",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E061",
+      "from": "youmei",
+      "to": "netherworld",
+      "type": "portal",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "通向冥界",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E062",
+      "from": "netherworld",
+      "to": "hakugyokurou",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S22"
+      ],
+      "statement": "白玉楼位于冥界",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E063",
+      "from": "hakugyoku_stairs",
+      "to": "hakugyokurou",
+      "type": "road",
+      "evidence": "C",
+      "source_ids": [
+        "S22"
+      ],
+      "statement": "台阶联系宅邸",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E064",
+      "from": "mountain",
+      "to": "unkai",
+      "type": "above",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "山顶高空云海",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E065",
+      "from": "unkai",
+      "to": "heaven",
+      "type": "portal",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "经玄云海到天界",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E066",
+      "from": "heaven",
+      "to": "bhava",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "有顶天为其中一层",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E067",
+      "from": "miko_senkai",
+      "to": "miko_dojo",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S23"
+      ],
+      "statement": "神灵庙在神子仙界",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E068",
+      "from": "mountain",
+      "to": "kasen_senkai",
+      "type": "portal_unspecified",
+      "evidence": "C",
+      "source_ids": [
+        "S25",
+        "S38"
+      ],
+      "statement": "山中相关入口，精确位置未定",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E069",
+      "from": "kasen_senkai",
+      "to": "kasen_home",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S38"
+      ],
+      "statement": "住居在仙界内部",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E070",
+      "from": "dream",
+      "to": "kaian",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S35"
+      ],
+      "statement": "通道为梦境的一部分",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E071",
+      "from": "kaian",
+      "to": "lunar_capital",
+      "type": "conditional_route",
+      "evidence": "C",
+      "source_ids": [
+        "S35"
+      ],
+      "statement": "梦境通道联系月都",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "特定时期/条件；默认不开放",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E072",
+      "from": "sky",
+      "to": "needle",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S29"
+      ],
+      "statement": "漂浮逆城",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E073",
+      "from": "mountain",
+      "to": "moon_market",
+      "type": "above_event",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "市场在山上空，条件出现",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "特定时期/条件；默认不开放",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E074",
+      "from": "palanquin",
+      "to": "makai",
+      "type": "travel_capability",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "圣辇船可航行到魔界",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "特定时期/条件；默认不开放",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E075",
+      "from": "makai",
+      "to": "hokkai",
+      "type": "contains",
+      "evidence": "C",
+      "source_ids": [
+        "S01"
+      ],
+      "statement": "法界为其中一部分",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": true,
+      "navigable": false
+    },
+    {
+      "id": "E076",
+      "from": "hakurei",
+      "to": "outside",
+      "type": "boundary",
+      "evidence": "T",
+      "source_ids": [
+        "S03"
+      ],
+      "statement": "神社处于内外边界；不是任意访客可直接穿越",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "常态",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E077",
+      "from": "muenzuka",
+      "to": "netherworld",
+      "type": "unstable_boundary",
+      "evidence": "T",
+      "source_ids": [
+        "S08"
+      ],
+      "statement": "可能接壤，不是固定旅游门",
+      "physical_route": "未知；如建路线则为本作补完",
+      "state": "特定时期/条件；默认不开放",
+      "directed": false,
+      "navigable": false
+    },
+    {
+      "id": "E078",
+      "from": "village",
+      "to": "ropeway_lower",
+      "type": "project_road",
+      "evidence": "P",
+      "source_ids": [],
+      "statement": "为游览接入下站的道路",
+      "physical_route": "P：本作规划，待地形灰盒通过",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E079",
+      "from": "village",
+      "to": "bamboo",
+      "type": "project_road",
+      "evidence": "P",
+      "source_ids": [],
+      "statement": "本作设计竹林入路",
+      "physical_route": "P：本作规划，待地形灰盒通过",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E080",
+      "from": "village",
+      "to": "sunflower",
+      "type": "project_road",
+      "evidence": "P",
+      "source_ids": [],
+      "statement": "本作设计乡间路",
+      "physical_route": "P：本作规划，待地形灰盒通过",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E081",
+      "from": "kourindou",
+      "to": "mist_lake",
+      "type": "project_road",
+      "evidence": "P",
+      "source_ids": [],
+      "statement": "本作设计沿林路",
+      "physical_route": "P：本作规划，待地形灰盒通过",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E082",
+      "from": "village",
+      "to": "myouren",
+      "type": "project_road",
+      "evidence": "P",
+      "source_ids": [],
+      "statement": "将附近关系落实成道路",
+      "physical_route": "P：本作规划，待地形灰盒通过",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    },
+    {
+      "id": "E083",
+      "from": "village",
+      "to": "willow_canal",
+      "type": "project_road",
+      "evidence": "P",
+      "source_ids": [],
+      "statement": "本作河岸入口",
+      "physical_route": "P：本作规划，待地形灰盒通过",
+      "state": "常态",
+      "directed": false,
+      "navigable": true
+    }
+  ],
+  "placements": [
+    {
+      "id": "village",
+      "name": "人类村落",
+      "x": 0,
+      "z": 0,
+      "y_base": 30,
+      "width_x": 520,
+      "depth_z": 440,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "中心交通枢纽；不是官方地理中心",
+      "stage": "M1"
+    },
+    {
+      "id": "hakurei",
+      "name": "博丽神社",
+      "x": 1620,
+      "z": 160,
+      "y_base": 180,
+      "width_x": 180,
+      "depth_z": 180,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "落实东端，前方眺望盆地；大结界边线为本作表达",
+      "stage": "M1"
+    },
+    {
+      "id": "mountain",
+      "name": "妖怪之山",
+      "x": -450,
+      "z": -1120,
+      "y_base": 240,
+      "width_x": 1850,
+      "depth_z": 1450,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "主山地包络；山峰可达1100，具体高程为设计值",
+      "stage": "M1"
+    },
+    {
+      "id": "forest",
+      "name": "魔法森林",
+      "x": -1080,
+      "z": -60,
+      "y_base": 65,
+      "width_x": 1000,
+      "depth_z": 820,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "位于山脚南侧，向人里保留草地过渡",
+      "stage": "M1"
+    },
+    {
+      "id": "kourindou",
+      "name": "香霖堂",
+      "x": -560,
+      "z": 0,
+      "y_base": 45,
+      "width_x": 100,
+      "depth_z": 100,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "人里—森林过渡路旁",
+      "stage": "M1"
+    },
+    {
+      "id": "mist_lake",
+      "name": "雾之湖",
+      "x": 450,
+      "z": -730,
+      "y_base": 100,
+      "width_x": 600,
+      "depth_z": 420,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "山脚东侧，山中水流入湖；湖面工程标高",
+      "stage": "M1"
+    },
+    {
+      "id": "scarlet",
+      "name": "红魔馆",
+      "x": 820,
+      "z": -680,
+      "y_base": 110,
+      "width_x": 200,
+      "depth_z": 180,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "暂选湖畔方案；与湖岸留过渡",
+      "stage": "M1"
+    },
+    {
+      "id": "genbu",
+      "name": "玄武涧",
+      "x": -980,
+      "z": -610,
+      "y_base": 150,
+      "width_x": 340,
+      "depth_z": 220,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "森林与山地交界峡谷",
+      "stage": "M1"
+    },
+    {
+      "id": "myouren",
+      "name": "命莲寺",
+      "x": 300,
+      "z": 380,
+      "y_base": 40,
+      "width_x": 240,
+      "depth_z": 220,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "村外步行可达；墓地在局部后方",
+      "stage": "M1"
+    },
+    {
+      "id": "bamboo",
+      "name": "迷途竹林",
+      "x": 500,
+      "z": 1220,
+      "y_base": 65,
+      "width_x": 1040,
+      "depth_z": 920,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "与山在村子的相反半平面",
+      "stage": "M1"
+    },
+    {
+      "id": "eientei",
+      "name": "永远亭",
+      "x": 690,
+      "z": 1440,
+      "y_base": 70,
+      "width_x": 210,
+      "depth_z": 150,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "竹林深处；入口不能从村口直视",
+      "stage": "M1"
+    },
+    {
+      "id": "sunflower",
+      "name": "太阳花田",
+      "x": -580,
+      "z": 1190,
+      "y_base": 90,
+      "width_x": 660,
+      "depth_z": 450,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "南侧独立凹地；与竹林用缓坡隔开",
+      "stage": "M1"
+    },
+    {
+      "id": "nameless",
+      "name": "无名之丘",
+      "x": -1330,
+      "z": 1050,
+      "y_base": 180,
+      "width_x": 420,
+      "depth_z": 340,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "低山半腰铃兰地；不与花田合并",
+      "stage": "M1"
+    },
+    {
+      "id": "muenzuka",
+      "name": "无缘塚",
+      "x": -1730,
+      "z": 570,
+      "y_base": 70,
+      "width_x": 210,
+      "depth_z": 210,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "森林更深处边缘；保持偏僻",
+      "stage": "M1"
+    },
+    {
+      "id": "sanctuary",
+      "name": "圣域",
+      "x": -1170,
+      "z": -1060,
+      "y_base": 190,
+      "width_x": 450,
+      "depth_z": 420,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "山麓侧谷；浅间净秽山入口待版本确认",
+      "stage": "M1"
+    },
+    {
+      "id": "wind_lake",
+      "name": "风神之湖",
+      "x": -200,
+      "z": -1370,
+      "y_base": 680,
+      "width_x": 460,
+      "depth_z": 300,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "山上独立湖盆；海拔为工程值",
+      "stage": "M1"
+    },
+    {
+      "id": "moriya",
+      "name": "守矢神社",
+      "x": 100,
+      "z": -1360,
+      "y_base": 700,
+      "width_x": 220,
+      "depth_z": 200,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "湖岸台地；不位于湖中央",
+      "stage": "M1"
+    },
+    {
+      "id": "ropeway_lower",
+      "name": "索道下站",
+      "x": 70,
+      "z": -390,
+      "y_base": 65,
+      "width_x": 80,
+      "depth_z": 70,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "山下与人里之间的交通节点",
+      "stage": "M1"
+    },
+    {
+      "id": "wind_cave",
+      "name": "幻想风穴",
+      "x": -440,
+      "z": -520,
+      "y_base": 120,
+      "width_x": 90,
+      "depth_z": 90,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "山麓通往地底的单独入口",
+      "stage": "M1"
+    },
+    {
+      "id": "geyser_mountain",
+      "name": "山麓间歇泉／地狱谷",
+      "x": -1240,
+      "z": -420,
+      "y_base": 120,
+      "width_x": 150,
+      "depth_z": 140,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "接近森林边缘但不合并风穴",
+      "stage": "M1"
+    },
+    {
+      "id": "alice",
+      "name": "玛格特洛依德邸",
+      "x": -1140,
+      "z": -260,
+      "y_base": 85,
+      "width_x": 95,
+      "depth_z": 100,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "森林北部方案；与魔理沙家不是邻铺",
+      "stage": "M1"
+    },
+    {
+      "id": "marisa",
+      "name": "雾雨邸",
+      "x": -1000,
+      "z": 140,
+      "y_base": 70,
+      "width_x": 100,
+      "depth_z": 100,
+      "coordinate_basis": "P：本作工程布局，不是官方坐标/面积",
+      "design_reason": "森林南部方案；住宅间距是本作设计",
+      "stage": "M1"
+    }
+  ],
+  "architecture": [
+    {
+      "node_id": "hakurei",
+      "name": "博丽神社",
+      "main_reference_candidate": "心绮楼/凭依华神社场景",
+      "sourced_features": "神社主体、参道、缘侧及林地",
+      "project_modules": "主体屋顶/檐下/居所/仓库/鸟居/参道/庭院",
+      "project_extent_m": "主屋18×14；境内90×100",
+      "unknown_or_conflict": "作品屋顶差异；背面与房间布局未定",
+      "near_triangles_target": 65000,
+      "source_ids": [
+        "S03",
+        "S14",
+        "S33"
+      ],
+      "reference_locator": "博丽神社→结构与造型/游戏内图像",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "moriya",
+      "name": "守矢神社",
+      "main_reference_candidate": "风神录五面＋醉蝶华相关外观候选",
+      "sourced_features": "湖畔神社、御柱、注连绳；规模大于博丽",
+      "project_modules": "主体/御柱/湖岸/参道/索道站",
+      "project_extent_m": "主屋28×22；院落130×100",
+      "unknown_or_conflict": "柱数与布局逐图核；面积无官方倍数",
+      "near_triangles_target": 80000,
+      "source_ids": [
+        "S15"
+      ],
+      "reference_locator": "守矢神社→相关设定/图像",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "myouren",
+      "name": "命莲寺",
+      "main_reference_candidate": "心绮楼/深秘录寺院场景",
+      "sourced_features": "山门、正殿、钟楼与墓地联系",
+      "project_modules": "山门/主殿/钟楼/参道/墓地入口",
+      "project_extent_m": "寺院160×130",
+      "unknown_or_conflict": "背面屋舍与建筑轴线待核",
+      "near_triangles_target": 110000,
+      "source_ids": [
+        "S16",
+        "S01"
+      ],
+      "reference_locator": "命莲寺→结构与造型",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "kourindou",
+      "name": "香霖堂",
+      "main_reference_candidate": "深秘录香霖堂场景",
+      "sourced_features": "店面、土藏仓库和连接走廊",
+      "project_modules": "三体块/窗门/屋外可辨物件",
+      "project_extent_m": "建筑30×18；宅地55×45",
+      "unknown_or_conflict": "不把所有收藏变可交互资产",
+      "near_triangles_target": 40000,
+      "source_ids": [
+        "S04",
+        "S17"
+      ],
+      "reference_locator": "香霖堂→结构与造型",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "scarlet",
+      "name": "红魔馆",
+      "main_reference_candidate": "绯想天外景/钟楼/大厅候选",
+      "sourced_features": "洋馆、庭园、钟楼和地下空间",
+      "project_modules": "主楼/翼部/塔/围墙/门/庭院",
+      "project_extent_m": "外部150×110",
+      "unknown_or_conflict": "湖畔与湖岛；门窗数量和背立面待核",
+      "near_triangles_target": 140000,
+      "source_ids": [
+        "S05",
+        "S18",
+        "S01"
+      ],
+      "reference_locator": "红魔馆→结构与造型/游戏内图像",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "alice",
+      "name": "玛格特洛依德邸",
+      "main_reference_candidate": "绯想天外景＋三月精S5、S6",
+      "sourced_features": "西洋小洋馆、侧塔、人偶陈设",
+      "project_modules": "主体/侧塔/门廊/壁炉/人偶陈列",
+      "project_extent_m": "主屋20×16；宅地55×60",
+      "unknown_or_conflict": "背面待补；不自动加大工厂",
+      "near_triangles_target": 55000,
+      "source_ids": [
+        "S19"
+      ],
+      "reference_locator": "玛格特洛依德邸→三月精S5话12/S6话2",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "marisa",
+      "name": "雾雨邸",
+      "main_reference_candidate": "绯想天/非想天则外景",
+      "sourced_features": "偏西洋旧屋、藤蔓与杂物",
+      "project_modules": "主屋/门口收集物/壁炉/棚架",
+      "project_extent_m": "主屋18×16；宅地55×50",
+      "unknown_or_conflict": "铃奈庵屋顶、朝向、天文台为另一版本",
+      "near_triangles_target": 55000,
+      "source_ids": [
+        "S20"
+      ],
+      "reference_locator": "雾雨邸→绯想天/非想天则场景；铃奈庵对照",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "eientei",
+      "name": "永远亭",
+      "main_reference_candidate": "永夜抄＋儚月抄/漫画外观候选",
+      "sourced_features": "大型日式宅邸和回廊",
+      "project_modules": "主屋/两翼/回廊/庭院/药房入口",
+      "project_extent_m": "主体90×55；宅地140×100",
+      "unknown_or_conflict": "无限回廊独立；房间连接未明确",
+      "near_triangles_target": 100000,
+      "source_ids": [
+        "S21"
+      ],
+      "reference_locator": "永远亭→结构与造型/游戏内图像",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "hakugyokurou",
+      "name": "白玉楼",
+      "main_reference_candidate": "绯想天庭景＋求闻史纪描述",
+      "sourced_features": "大宅、枯山水庭与长阶梯、樱庭",
+      "project_modules": "宅邸/中庭/外庭/门/阶梯",
+      "project_extent_m": "近看核心180×150；樱庭另区",
+      "unknown_or_conflict": "不能把大庭院硬缩进小宅地",
+      "near_triangles_target": 100000,
+      "source_ids": [
+        "S22"
+      ],
+      "reference_locator": "白玉楼→相关出版物/结构与造型",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "chireiden",
+      "name": "地灵殿",
+      "main_reference_candidate": "心绮楼/深秘录＋地灵殿背景",
+      "sourced_features": "西洋风大宅与宽阔大厅",
+      "project_modules": "外壳/大堂/彩窗候选/楼梯/地下入口",
+      "project_extent_m": "外部130×90",
+      "unknown_or_conflict": "外形与室内完整关系待核",
+      "near_triangles_target": 100000,
+      "source_ids": [
+        "S32"
+      ],
+      "reference_locator": "地灵殿（场景）→结构与造型",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "miko_dojo",
+      "name": "神灵庙",
+      "main_reference_candidate": "心绮楼神灵庙场景",
+      "sourced_features": "道教庙宇风格、装饰较繁",
+      "project_modules": "入口/庙宇/塔/院/雾区",
+      "project_extent_m": "近看核心110×100",
+      "unknown_or_conflict": "不与地下梦殿复用整栋造型",
+      "near_triangles_target": 85000,
+      "source_ids": [
+        "S23"
+      ],
+      "reference_locator": "神灵庙（场景）→游戏内图像",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "kasen_home",
+      "name": "茨华仙邸",
+      "main_reference_candidate": "茨歌仙/凭依华候选",
+      "sourced_features": "仙界住居、中式相关外观",
+      "project_modules": "主体/高台/庭院/动物活动环境",
+      "project_extent_m": "宅地100×100",
+      "unknown_or_conflict": "三层比例、背立面和院落连接待核",
+      "near_triangles_target": 70000,
+      "source_ids": [
+        "S38"
+      ],
+      "reference_locator": "华扇的仙界→图像与相关描述",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "needle",
+      "name": "辉针城",
+      "main_reference_candidate": "深秘录辉针城场景",
+      "sourced_features": "逆向天守，内部也逆置",
+      "project_modules": "石垣/主殿/望楼/逆向屋顶/入口",
+      "project_extent_m": "外轮廓90×90",
+      "unknown_or_conflict": "不同作品层数有差别；不以负缩放翻模",
+      "near_triangles_target": 90000,
+      "source_ids": [
+        "S29"
+      ],
+      "reference_locator": "辉针城（场景）→版本外观",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "hieda",
+      "name": "稗田邸",
+      "main_reference_candidate": "铃奈庵等稗田邸外观候选（原图待核）",
+      "sourced_features": "带庭院的大宅",
+      "project_modules": "围墙/门/主屋/庭/连廊",
+      "project_extent_m": "宅地100×80",
+      "unknown_or_conflict": "尚无统一全宅测绘",
+      "near_triangles_target": 75000,
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "reference_locator": "人类村落→稗田邸索引",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "suzunaan",
+      "name": "铃奈庵",
+      "main_reference_candidate": "铃奈庵漫画外观与店内",
+      "sourced_features": "书店/借书屋",
+      "project_modules": "门面/书架/柜台/储书空间",
+      "project_extent_m": "主体14×12",
+      "unknown_or_conflict": "精确书本不逐本建模；背面未核",
+      "near_triangles_target": 30000,
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "reference_locator": "人类村落→铃奈庵索引；精模前再核专页",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "geidontei",
+      "name": "鲵吞亭",
+      "main_reference_candidate": "醉蝶华店面及室内",
+      "sourced_features": "居酒屋",
+      "project_modules": "门面/暖帘/柜台/座席/厨房候选",
+      "project_extent_m": "主体20×15",
+      "unknown_or_conflict": "昼夜经营状态不是两栋建筑",
+      "near_triangles_target": 35000,
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "reference_locator": "官方场景→鲵吞亭；精模前核对应漫画",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "school",
+      "name": "寺子屋",
+      "main_reference_candidate": "铃奈庵教学场景",
+      "sourced_features": "村中教学场所",
+      "project_modules": "门/教室/庭/储物",
+      "project_extent_m": "主体22×15",
+      "unknown_or_conflict": "专用外观需原图确认",
+      "near_triangles_target": 30000,
+      "source_ids": [
+        "S24",
+        "S01"
+      ],
+      "reference_locator": "官方场景→寺子屋；精模前核漫画",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "kappa_base",
+      "name": "河童的据点",
+      "main_reference_candidate": "深秘录玄武涧及相关漫画",
+      "sourced_features": "岩壁洞窟设施、管道",
+      "project_modules": "洞口/平台/管路/仓储/机械",
+      "project_extent_m": "核心70×50",
+      "unknown_or_conflict": "不能全改成现代工业园",
+      "near_triangles_target": 65000,
+      "source_ids": [
+        "S27"
+      ],
+      "reference_locator": "玄武涧→结构与造型",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "prismriver",
+      "name": "普莉兹姆利巴废弃洋馆",
+      "main_reference_candidate": "求闻史纪/角色住居资料索引",
+      "sourced_features": "废弃洋馆",
+      "project_modules": "主屋/破损屋顶/枯庭/围栏",
+      "project_extent_m": "主体35×25",
+      "unknown_or_conflict": "本轮未核完整外观，不生成豪华城堡",
+      "near_triangles_target": 50000,
+      "source_ids": [
+        "S05",
+        "S18",
+        "S01"
+      ],
+      "reference_locator": "官方场景→雾之湖周边废弃洋馆",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    },
+    {
+      "node_id": "mausoleum",
+      "name": "梦殿大祀庙",
+      "main_reference_candidate": "神灵庙/深秘录地下场景",
+      "sourced_features": "塔楼与莲池相关主体",
+      "project_modules": "洞壳/大门/塔/莲池/桥廊候选",
+      "project_extent_m": "核心120×120",
+      "unknown_or_conflict": "桥廊形制待核；不复制仙界道场",
+      "near_triangles_target": 85000,
+      "source_ids": [
+        "S16",
+        "S01"
+      ],
+      "reference_locator": "官方场景→梦殿大祀庙",
+      "visual_review": "已核文字和图像索引；原图未逐张核验",
+      "gate": "灰盒可用；精模前须逐图确认主参考"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D01",
+      "topic": "总体范围",
+      "default": "Windows及官方出版物为主；旧作/秘封/同人分别归档",
+      "status": "制作基线",
+      "guardrail": "不把三套世界揉成一个测绘平面",
+      "source_ids": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "id": "D02",
+      "topic": "展示时间",
+      "default": "常态选集；版本状态由地点单独切换",
+      "status": "制作基线",
+      "guardrail": "不是声称所有地点同一日同一状态共存",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "id": "D03",
+      "topic": "红魔馆位置",
+      "default": "暂用湖畔；湖岛作为互斥备选",
+      "status": "可逆方案",
+      "guardrail": "不宣称湖畔是唯一正确答案",
+      "source_ids": [
+        "S18"
+      ]
+    },
+    {
+      "id": "D04",
+      "topic": "三妖精",
+      "default": "默认新居活跃；旧居显示历史标记",
+      "status": "状态规则",
+      "guardrail": "禁止复制同一组角色入住两处",
+      "source_ids": [
+        "S33"
+      ]
+    },
+    {
+      "id": "D05",
+      "topic": "梦殿/神灵庙",
+      "default": "地下大祀庙与仙界神灵庙两记录",
+      "status": "事实约束",
+      "guardrail": "迁移关系不是永久传送门",
+      "source_ids": [
+        "S23",
+        "S01"
+      ]
+    },
+    {
+      "id": "D06",
+      "topic": "船与寺",
+      "default": "寺院常态、航行事件分别配置",
+      "status": "状态规则",
+      "guardrail": "具体可共存形态需原文再核；不批量同时生成",
+      "source_ids": [
+        "S16"
+      ]
+    },
+    {
+      "id": "D07",
+      "topic": "浅间净秽山",
+      "default": "保留异变中/之后两状态，位置变化待核",
+      "status": "待核不阻主地表",
+      "guardrail": "抓取文本部分缺失，禁止补写缺失结论",
+      "source_ids": [
+        "S31"
+      ]
+    },
+    {
+      "id": "D08",
+      "topic": "月之都",
+      "default": "优先儚月抄/绀珠传建筑候选",
+      "status": "可逆方案",
+      "guardrail": "不把表里之月解释为现实天文月背；不混入全现代摩天楼",
+      "source_ids": [
+        "S34"
+      ]
+    },
+    {
+      "id": "D09",
+      "topic": "八云宅",
+      "default": "不放确定坐标；特殊入口/目录访问",
+      "status": "未定位置处理",
+      "guardrail": "不等同迷途之家",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "id": "D10",
+      "topic": "两个间歇泉地点",
+      "default": "神社附近/山麓地狱谷分别ID",
+      "status": "事实约束",
+      "guardrail": "不擅自合并为同一洞口",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "id": "D11",
+      "topic": "同人扩展",
+      "default": "默认不加入同人独占地标；借鉴有出处的表现方式",
+      "status": "制作基线",
+      "guardrail": "未指定具体同人版本的地点不进入一设层",
+      "source_ids": [
+        "F01",
+        "F02",
+        "F03"
+      ]
+    },
+    {
+      "id": "D12",
+      "topic": "原创设施",
+      "default": "未经明确选定的原创店铺、角色住所和同人独占建筑不进入主图",
+      "status": "制作基线",
+      "guardrail": "不把美术补完包装成官方地点",
+      "source_ids": []
+    },
+    {
+      "id": "D13",
+      "topic": "地理方位",
+      "default": "只有明确的相对约束为硬条件；其余坐标全部P",
+      "status": "事实/设计分离",
+      "guardrail": "任何AI输出的毫米级细节不得包装成原作数据",
+      "source_ids": [
+        "S03",
+        "S06",
+        "S41"
+      ]
+    },
+    {
+      "id": "D14",
+      "topic": "季节天气",
+      "default": "初期固定一季；事件层后开",
+      "status": "制作基线",
+      "guardrail": "不同世界不自动共用地表四季；事件状态单独记录",
+      "source_ids": []
+    },
+    {
+      "id": "D15",
+      "topic": "建筑完整性",
+      "default": "一栋建筑选一个主版本；缺失背面允许本作补完",
+      "status": "制作基线",
+      "guardrail": "各面可旋转观看；不把二维背景当完整平面",
+      "source_ids": [
+        "S14",
+        "S18",
+        "S20"
+      ]
+    },
+    {
+      "id": "D16",
+      "topic": "角色与UI",
+      "default": "初期无角色；仅检索/定位/图层/来源/回总览",
+      "status": "制作基线",
+      "guardrail": "不加资金库存任务面板、常驻操作废话",
+      "source_ids": []
+    }
+  ],
+  "budgets": [
+    {
+      "profile": "标准桌面",
+      "metric": "目标刷新率",
+      "target": 60,
+      "unit": "fps",
+      "kind": "P目标",
+      "test": "1080p输出；记录浏览器/CPU/GPU/驱动",
+      "sources": [
+        "T07",
+        "T08"
+      ]
+    },
+    {
+      "profile": "兼容档",
+      "metric": "目标刷新率",
+      "target": 30,
+      "unit": "fps",
+      "kind": "P目标",
+      "test": "1280×720起；集显实机校准",
+      "sources": [
+        "T08"
+      ]
+    },
+    {
+      "profile": "标准桌面",
+      "metric": "稳定巡游帧时间P95",
+      "target": 20,
+      "unit": "ms",
+      "kind": "P验收阈值",
+      "test": "排除首次资源加载另记；不等同所有帧都60fps",
+      "sources": []
+    },
+    {
+      "profile": "标准桌面",
+      "metric": "稳定巡游帧时间P99",
+      "target": 33.3,
+      "unit": "ms",
+      "kind": "P验收阈值",
+      "test": "5分钟路线；切区峰值独立统计",
+      "sources": []
+    },
+    {
+      "profile": "标准桌面",
+      "metric": "全图总draw calls起始预算",
+      "target": 200,
+      "unit": "calls/frame",
+      "kind": "P软预算",
+      "test": "记录主通道+阴影+额外通道；超限须解释",
+      "sources": [
+        "T07"
+      ]
+    },
+    {
+      "profile": "标准桌面",
+      "metric": "局部总draw calls起始预算",
+      "target": 400,
+      "unit": "calls/frame",
+      "kind": "P软预算",
+      "test": "不能只报主场景的一次render",
+      "sources": [
+        "T07"
+      ]
+    },
+    {
+      "profile": "标准桌面",
+      "metric": "近景主通道三角形起始预算",
+      "target": 1200000,
+      "unit": "triangles/frame",
+      "kind": "P软预算",
+      "test": "阴影额外三角形另记；非硬件极限",
+      "sources": []
+    },
+    {
+      "profile": "标准桌面",
+      "metric": "应用资源估算驻留上限",
+      "target": 512,
+      "unit": "MiB",
+      "kind": "P软预算",
+      "test": "纹理/几何/渲染目标分项估算；非浏览器真实显存读数",
+      "sources": [
+        "T08"
+      ]
+    },
+    {
+      "profile": "兼容档",
+      "metric": "应用资源估算驻留上限",
+      "target": 256,
+      "unit": "MiB",
+      "kind": "P软预算",
+      "test": "仍需实机OOM/context-loss测试",
+      "sources": [
+        "T08"
+      ]
+    },
+    {
+      "profile": "首屏",
+      "metric": "首次可交互传输预算",
+      "target": 12,
+      "unit": "MiB",
+      "kind": "P目标",
+      "test": "含引擎、解码器、地表代理、初始UI；实测编码后体积",
+      "sources": []
+    },
+    {
+      "profile": "加载",
+      "metric": "单个普通区域压缩包起始预算",
+      "target": 8,
+      "unit": "MiB",
+      "kind": "P目标",
+      "test": "大地标可拆外景/室内，不强求所有地区相同",
+      "sources": [
+        "T05",
+        "T06"
+      ]
+    },
+    {
+      "profile": "加载",
+      "metric": "地形分块边长",
+      "target": 256,
+      "unit": "m(工程)",
+      "kind": "P参数",
+      "test": "16×16覆盖4096×4096；分块不是行政区",
+      "sources": []
+    },
+    {
+      "profile": "加载",
+      "metric": "近景驻留上限",
+      "target": 9,
+      "unit": "chunks",
+      "kind": "P初值",
+      "test": "以资源预算/视野为主，非固定邻九块永不变化",
+      "sources": []
+    },
+    {
+      "profile": "标准桌面",
+      "metric": "阴影投射主光数",
+      "target": 1,
+      "unit": "light",
+      "kind": "P初值",
+      "test": "太阳主光；远景烘焙/简化遮蔽",
+      "sources": []
+    },
+    {
+      "profile": "标准桌面",
+      "metric": "最大像素比",
+      "target": 1.5,
+      "unit": "DPR",
+      "kind": "P上限",
+      "test": "动态降分辨率；截图模式另设",
+      "sources": [
+        "T08"
+      ]
+    },
+    {
+      "profile": "切区",
+      "metric": "往返压力路线次数",
+      "target": 20,
+      "unit": "round trips",
+      "kind": "P验收",
+      "test": "缓存预热后观察是否持续增长，允许有限缓存平台期",
+      "sources": [
+        "T05",
+        "T07"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "title": "官方场景索引",
+      "url": "https://thbwiki.cc/官方场景",
+      "kind": "C",
+      "locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S02",
+      "title": "旧作场景索引",
+      "url": "https://thbwiki.cc/官方场景（旧作）",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S03",
+      "title": "《求闻史纪》／博丽神社",
+      "url": "https://thbwiki.cc/东方求闻史纪/博丽神社",
+      "kind": "T",
+      "locator": "危险区域指南／博丽神社",
+      "reviewed": "2026-09-26",
+      "note": "核对THBWiki所载官方文本中文译文；非直接检视原书"
+    },
+    {
+      "id": "S04",
+      "title": "《求闻史纪》／香霖堂",
+      "url": "https://thbwiki.cc/东方求闻史纪/香霖堂",
+      "kind": "T",
+      "locator": "危险区域指南／香霖堂",
+      "reviewed": "2026-09-26",
+      "note": "核对THBWiki所载官方文本中文译文；非直接检视原书"
+    },
+    {
+      "id": "S05",
+      "title": "《求闻史纪》／雾之湖",
+      "url": "https://thbwiki.cc/东方求闻史纪/雾之湖",
+      "kind": "T",
+      "locator": "危险区域指南／雾之湖",
+      "reviewed": "2026-09-26",
+      "note": "核对THBWiki所载官方文本中文译文；非直接检视原书"
+    },
+    {
+      "id": "S06",
+      "title": "《求闻史纪》／迷途竹林",
+      "url": "https://thbwiki.cc/东方求闻史纪/迷途竹林",
+      "kind": "T",
+      "locator": "危险区域指南／迷途竹林",
+      "reviewed": "2026-09-26",
+      "note": "核对THBWiki所载官方文本中文译文；非直接检视原书"
+    },
+    {
+      "id": "S07",
+      "title": "《求闻史纪》／魔法森林",
+      "url": "https://thbwiki.cc/东方求闻史纪/魔法森林",
+      "kind": "T",
+      "locator": "危险区域指南／魔法森林",
+      "reviewed": "2026-09-26",
+      "note": "核对THBWiki所载官方文本中文译文；非直接检视原书"
+    },
+    {
+      "id": "S08",
+      "title": "《求闻史纪》／无缘塚",
+      "url": "https://thbwiki.cc/东方求闻史纪/无缘塚",
+      "kind": "T",
+      "locator": "危险区域指南／无缘塚",
+      "reviewed": "2026-09-26",
+      "note": "核对THBWiki所载官方文本中文译文；非直接检视原书"
+    },
+    {
+      "id": "S09",
+      "title": "《求闻史纪》／再思之道",
+      "url": "https://thbwiki.cc/东方求闻史纪/再思之道",
+      "kind": "T",
+      "locator": "危险区域指南／再思之道",
+      "reviewed": "2026-09-26",
+      "note": "核对THBWiki所载官方文本中文译文；非直接检视原书"
+    },
+    {
+      "id": "S10",
+      "title": "《求闻史纪》／太阳花田",
+      "url": "https://thbwiki.cc/东方求闻史纪/太阳花田",
+      "kind": "T",
+      "locator": "危险区域指南／太阳花田",
+      "reviewed": "2026-09-26",
+      "note": "核对THBWiki所载官方文本中文译文；非直接检视原书"
+    },
+    {
+      "id": "S11",
+      "title": "《求闻史纪》／无名之丘",
+      "url": "https://thbwiki.cc/东方求闻史纪/无名之丘",
+      "kind": "T",
+      "locator": "危险区域指南／无名之丘",
+      "reviewed": "2026-09-26",
+      "note": "核对THBWiki所载官方文本中文译文；非直接检视原书"
+    },
+    {
+      "id": "S12",
+      "title": "《求闻史纪》／中有之道",
+      "url": "https://thbwiki.cc/东方求闻史纪/中有之道",
+      "kind": "T",
+      "locator": "危险区域指南／中有之道",
+      "reviewed": "2026-09-26",
+      "note": "核对THBWiki所载官方文本中文译文；非直接检视原书"
+    },
+    {
+      "id": "S13",
+      "title": "《求闻史纪》／三途河",
+      "url": "https://thbwiki.cc/东方求闻史纪/三途河",
+      "kind": "T",
+      "locator": "危险区域指南／三途河",
+      "reviewed": "2026-09-26",
+      "note": "核对THBWiki所载官方文本中文译文；非直接检视原书"
+    },
+    {
+      "id": "S14",
+      "title": "博丽神社",
+      "url": "https://thbwiki.cc/博丽神社",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S15",
+      "title": "守矢神社",
+      "url": "https://thbwiki.cc/守矢神社",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S16",
+      "title": "命莲寺",
+      "url": "https://thbwiki.cc/命莲寺",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S17",
+      "title": "香霖堂",
+      "url": "https://thbwiki.cc/香霖堂",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S18",
+      "title": "红魔馆",
+      "url": "https://thbwiki.cc/红魔馆",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S19",
+      "title": "玛格特洛依德邸",
+      "url": "https://thbwiki.cc/玛格特洛依德邸",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S20",
+      "title": "雾雨邸",
+      "url": "https://thbwiki.cc/雾雨邸",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S21",
+      "title": "永远亭",
+      "url": "https://thbwiki.cc/永远亭",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S22",
+      "title": "白玉楼",
+      "url": "https://thbwiki.cc/白玉楼",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S23",
+      "title": "神灵庙（场景）",
+      "url": "https://thbwiki.cc/神灵庙（场景）",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S24",
+      "title": "人类村落",
+      "url": "https://thbwiki.cc/人类村落",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S25",
+      "title": "妖怪之山",
+      "url": "https://thbwiki.cc/妖怪之山",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S26",
+      "title": "魔法森林",
+      "url": "https://thbwiki.cc/魔法森林",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S27",
+      "title": "玄武涧",
+      "url": "https://thbwiki.cc/玄武涧",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S28",
+      "title": "旧地狱",
+      "url": "https://thbwiki.cc/旧地狱",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S29",
+      "title": "辉针城（场景）",
+      "url": "https://thbwiki.cc/辉针城（场景）",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S30",
+      "title": "圣域",
+      "url": "https://thbwiki.cc/圣域",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S31",
+      "title": "浅间净秽山",
+      "url": "https://thbwiki.cc/浅间净秽山",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S32",
+      "title": "地灵殿（场景）",
+      "url": "https://thbwiki.cc/地灵殿（场景）",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S33",
+      "title": "三妖精的家",
+      "url": "https://thbwiki.cc/三妖精的家",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S34",
+      "title": "月之都",
+      "url": "https://thbwiki.cc/月之都",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S35",
+      "title": "梦境世界",
+      "url": "https://thbwiki.cc/梦境世界",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S36",
+      "title": "后户之国",
+      "url": "https://thbwiki.cc/后户之国",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S37",
+      "title": "畜生界",
+      "url": "https://thbwiki.cc/畜生界",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S38",
+      "title": "华扇的仙界",
+      "url": "https://thbwiki.cc/华扇的仙界",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S39",
+      "title": "灵长新益京（场景）",
+      "url": "https://thbwiki.cc/灵长新益京（场景）",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S40",
+      "title": "米斯蒂娅·萝蕾拉",
+      "url": "https://thbwiki.cc/米斯蒂娅·萝蕾拉",
+      "kind": "C",
+      "locator": "相关设定／结构与造型",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页文字；原作图像未逐张核验"
+    },
+    {
+      "id": "S42",
+      "title": "《文花帖》／米斯蒂娅报道",
+      "url": "https://thbwiki.cc/东方文花帖（书籍）/米斯蒂娅·萝蕾拉",
+      "kind": "T",
+      "locator": "文文新闻／58–59页",
+      "reviewed": "2026-09-26",
+      "note": "核对官方文本的社区译文：移动烧烤摊；不证明固定坐标"
+    },
+    {
+      "id": "S41",
+      "title": "《外来韦编》2018 Spring! 地理考察",
+      "url": "https://thbwiki.cc/东方外来韦编/2018_Spring!/幻想乡地理",
+      "kind": "I",
+      "locator": "幻想乡地理专栏",
+      "reviewed": "2026-09-26",
+      "note": "刊载于官方出版物的地理考察；推断不自动等于ZUN明确设定"
+    },
+    {
+      "id": "F01",
+      "title": "TouhouCraft：Gensokyo Minecraft world",
+      "url": "https://www.planetminecraft.com/project/touhou-gensokyo/",
+      "kind": "F",
+      "locator": "作者项目页／Locations on Map",
+      "reviewed": "2026-09-26",
+      "note": "核对作者自述与地点目录；未实测世界文件；不可当作官方坐标或可自由转载资产"
+    },
+    {
+      "id": "F02",
+      "title": "彁蟐暃袮：幻想郷・最新版地理考察",
+      "url": "https://yotogiluminary.wixsite.com/website/post/000014",
+      "kind": "F",
+      "locator": "2021-04-11文章；原文依据与作者推论分段",
+      "reviewed": "2026-09-26",
+      "note": "核对文章；五行方位属于作者推断，未采纳为硬约束"
+    },
+    {
+      "id": "F03",
+      "title": "东方夜雀食堂 Steam产品页",
+      "url": "https://store.steampowered.com/app/1584090/Touhou_Mystias_Izakaya/?l=schinese",
+      "kind": "F",
+      "locator": "产品描述与展示",
+      "reviewed": "2026-09-26",
+      "note": "用于同人体验参考清单；未据此测量地理距离"
+    },
+    {
+      "id": "T01",
+      "title": "Three.js WebGPURenderer",
+      "url": "https://threejs.org/docs/pages/WebGPURenderer.html",
+      "kind": "D",
+      "locator": "官方文档／相应API或指导方针",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页；实现时锁定依赖版本。数值预算另标本作提案，不冒充文档保证"
+    },
+    {
+      "id": "T02",
+      "title": "Three.js InstancedMesh",
+      "url": "https://threejs.org/docs/pages/InstancedMesh.html",
+      "kind": "D",
+      "locator": "官方文档／相应API或指导方针",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页；实现时锁定依赖版本。数值预算另标本作提案，不冒充文档保证"
+    },
+    {
+      "id": "T03",
+      "title": "Three.js BatchedMesh",
+      "url": "https://threejs.org/docs/pages/BatchedMesh.html",
+      "kind": "D",
+      "locator": "官方文档／相应API或指导方针",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页；实现时锁定依赖版本。数值预算另标本作提案，不冒充文档保证"
+    },
+    {
+      "id": "T04",
+      "title": "Three.js LOD",
+      "url": "https://threejs.org/docs/pages/LOD.html",
+      "kind": "D",
+      "locator": "官方文档／相应API或指导方针",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页；实现时锁定依赖版本。数值预算另标本作提案，不冒充文档保证"
+    },
+    {
+      "id": "T05",
+      "title": "Three.js GLTFLoader",
+      "url": "https://threejs.org/docs/pages/GLTFLoader.html",
+      "kind": "D",
+      "locator": "官方文档／相应API或指导方针",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页；实现时锁定依赖版本。数值预算另标本作提案，不冒充文档保证"
+    },
+    {
+      "id": "T06",
+      "title": "Three.js KTX2Loader",
+      "url": "https://threejs.org/docs/pages/KTX2Loader.html",
+      "kind": "D",
+      "locator": "官方文档／相应API或指导方针",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页；实现时锁定依赖版本。数值预算另标本作提案，不冒充文档保证"
+    },
+    {
+      "id": "T07",
+      "title": "Three.js WebGLRenderer",
+      "url": "https://threejs.org/docs/pages/WebGLRenderer.html",
+      "kind": "D",
+      "locator": "官方文档／相应API或指导方针",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页；实现时锁定依赖版本。数值预算另标本作提案，不冒充文档保证"
+    },
+    {
+      "id": "T08",
+      "title": "MDN WebGL best practices",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/WebGL_best_practices",
+      "kind": "D",
+      "locator": "官方文档／相应API或指导方针",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页；实现时锁定依赖版本。数值预算另标本作提案，不冒充文档保证"
+    },
+    {
+      "id": "T09",
+      "title": "东方Project二次创作指导方针",
+      "url": "https://touhou-project.news/guidelines_en/",
+      "kind": "D",
+      "locator": "官方文档／相应API或指导方针",
+      "reviewed": "2026-09-26",
+      "note": "已核对网页；实现时锁定依赖版本。数值预算另标本作提案，不冒充文档保证"
+    },
+    {
+      "id": "H1701",
+      "title": "旧都／地灵殿三面与 ZUN 交叉评论",
+      "url": "https://thbwiki.cc/旧都",
+      "type": "C",
+      "note": "v0.17 场景依据；具体几何与布局由本作补完。"
+    },
+    {
+      "id": "H1702",
+      "title": "地灵殿／原作大堂与官方出版物索引",
+      "url": "https://thbwiki.cc/地灵殿（场景）",
+      "type": "C",
+      "note": "v0.17 场景依据；具体几何与布局由本作补完。"
+    },
+    {
+      "id": "H1703",
+      "title": "核聚变炉／非想天则能源中心",
+      "url": "https://thbwiki.cc/核聚变炉",
+      "type": "C",
+      "note": "v0.17 场景依据；具体几何与布局由本作补完。"
+    },
+    {
+      "id": "H1704",
+      "title": "旧血池地狱／刚欲异闻",
+      "url": "https://thbwiki.cc/旧血池地狱",
+      "type": "C",
+      "note": "v0.17 场景依据；具体几何与布局由本作补完。"
+    },
+    {
+      "id": "H1705",
+      "title": "地狱的深道",
+      "url": "https://thbwiki.cc/地狱的深道",
+      "type": "C",
+      "note": "v0.17 场景依据；具体几何与布局由本作补完。"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#131d2b"><title>幻想乡 · 立体风物志 / {{RELEASE_TAG}} {{PROJECT_TITLE}}</title><style>{{STYLES}}</style><!-- Three.js license
+{{THREE_LICENSE}}
+-->
+</head><body>
+<canvas id="scene" tabindex="0" aria-label="幻想乡三维沙盘，左键旋转、滚轮缩放、右键平移"></canvas><div id="labels"></div><svg id="layer-lines" aria-hidden="true"><path id="layer-line"/></svg><div id="character-pins"></div>
+<header class="ui"><button class="brand" id="brand-home" title="全岛总览"><span class="seal">幻</span><span><strong>幻想乡</strong><small>立体风物志 · GENSOKYO</small></span></button><nav class="tools">
+<button id="btn-overview" class="tool">▱ <span>全岛总览</span></button><button id="btn-hell" class="tool">◈ <span>地底全域</span></button><button id="btn-layers" class="tool">≋ <span>地下剖切</span></button><button id="btn-search" class="tool">⌕ <span>地点</span></button><button id="btn-characters" class="tool">♧ <span>角色</span></button><button id="btn-settings" class="tool" title="画面设置">☷</button><button id="btn-photo" class="tool" title="保存三维画面">▣</button></nav></header>
+<section class="caption ui"><div id="scene-index">GENSOKYO / ONE CONNECTED WORLD</div><h1 id="scene-title">幻想乡 · 云上大地</h1><p id="scene-subtitle">一整块空岛，山川林野彼此相连。</p><div class="caption-line"></div><div class="lighting-switch"><button id="light-neutral" class="active">日间</button><button id="light-dusk">黄昏</button><span id="build-status" role="status">准备整岛</span></div><div class="weather-switch"><button data-weather="clear" class="active">☀ 晴天</button><button data-weather="cloudy">☁ 多云</button><button data-weather="rain">☂ 小雨</button></div></section>
+<section id="layer-bar" class="layer-bar glass ui" hidden><span>命莲寺后山 · TH13 局部历史剖切</span><button id="btn-align">恢复完整地表</button><button id="btn-layer-underground">进入地下</button><button id="btn-layer-senkai">进入仙界</button></section>
+<section id="space-nav" class="space-nav glass ui" hidden><button data-view="myouren">地表寺院</button><button data-view="mausoleumCorridor">TH13 地下旧址</button><button data-view="senkai">迁址后仙界</button><button data-view="templeSection">原位剖面</button><button id="btn-cave-roof">隐藏洞顶与廊顶</button></section>
+<nav id="hell-nav" class="space-nav glass ui" hidden><button id="hell-home">全域</button><button data-hell-view="hellStreet">旧都</button><button data-hell-view="hellPalace">地灵殿</button><button data-hell-view="hellBlazing">灼热地狱</button><button id="hell-roof">隐藏顶盖</button><button id="hell-return">返回地表</button></nav><nav class="dock glass ui"><select id="region-select" aria-label="选择地区"></select><div class="view-buttons" id="view-buttons"></div></nav>
+<div class="bottom-note ui"><span id="mode-note">连续地表 · 天气与日光</span><span id="engine-label">THREE.JS r185</span></div>
+<aside id="drawer" class="drawer glass hidden ui"><div class="drawer-head"><h2>地点簿</h2><button id="close-drawer" class="close">×</button></div><input id="search" placeholder="名称、别名或地点 ID…" aria-label="查找地点"><div class="filters"><button data-filter="placed" class="active">可定位</button><button data-filter="all">全部目录</button><button data-filter="other">独立世界</button></div><small id="result-count"></small><div class="results" id="results"></div></aside>
+<aside id="detail" class="detail glass hidden ui"><div class="detail-head"><span id="detail-tag" class="tag"></span><button class="close" id="close-detail">×</button></div><h2 id="detail-name"></h2><small id="detail-state"></small><p id="detail-fact"></p><p id="detail-design"></p><div id="detail-sources"></div><div id="detail-relations"></div></aside>
+<section id="settings" class="popup glass hidden ui"><div class="drawer-head"><h2>画面与资源</h2><button id="close-settings" class="close">×</button></div><label>精度<select id="quality"><option value="low">轻量</option><option value="balanced" selected>标准</option><option value="high">精细</option></select></label><label>接触遮蔽<input type="checkbox" id="opt-ao" checked></label><label>微光扩散<input type="checkbox" id="opt-bloom" checked></label><label>植被与花群<input type="checkbox" id="opt-plants" checked></label><label>环境动态<input type="checkbox" id="opt-motion" checked></label><label>地名<input type="checkbox" id="opt-labels"></label><label>原作角色标记<input type="checkbox" id="opt-characters"></label><label>局部水面反射<input type="checkbox" id="opt-reflections" checked></label><label>夏季演奏会场<input type="checkbox" id="opt-flower-event"></label><label>动态更新上限<select id="animation-fps"><option value="30">30 / 秒</option><option value="60">60 / 秒</option></select></label><button id="btn-fly" class="full-button">自由镜头 / WASD</button><button id="btn-continuous" class="full-button">全岛俯瞰</button><button id="btn-clear-cache" class="full-button">释放非当前区域 CPU / GPU 缓存</button><button id="btn-export" class="full-button">导出运行状态 JSON</button><p class="muted">左键旋转 · 右键平移 · 滚轮缩放<br>H 全域 · Tab 隐藏界面 · F2 统计<br>原图联网；精细模型按需生成。自由镜头无碰撞。</p></section>
+<aside class="drawer glass hidden ui" id="characters-panel"><div class="drawer-head"><h2>人物簿</h2><button class="close" id="close-characters">×</button></div><input id="character-search" placeholder="姓名、区域、角色 ID…"><div class="filters"><button id="characters-all">全部角色</button><button id="characters-retry">重试原图</button></div><small id="character-result-count"></small><div class="results" id="character-list"></div><small id="portrait-status"></small></aside>
+<aside class="detail glass hidden character-detail ui" id="character-detail"><div class="detail-head"><span id="character-kind" class="tag"></span><button class="close" id="close-character-detail">×</button></div><h2 id="character-name"></h2><div id="character-portrait" class="portrait-slot hero-portrait"></div><small id="character-location"></small><p id="character-note"></p><p id="character-position-note"></p><small id="character-credit"></small><div id="character-visits"></div><div id="character-sources"></div><small>原图版权归原权利人；此处为位置关联，不是实时行踪。</small></aside>
+<pre class="diagnostic glass hidden ui" id="diagnostic"></pre><div id="toast" class="toast" role="status"></div>
+<div id="loader" class="loader"><div class="seal">幻</div><h2>打开一方幻想</h2><p id="load-status">解压连续空岛，不预建全图精模…</p><div class="progress"><i id="load-progress"></i></div><small>THREE.JS r185 · OFFLINE GEOMETRY</small></div>
+<script id="character-data" type="application/json">{{CHARACTER_DATA}}</script><script id="atlas-data" type="application/json">{{ATLAS_DATA}}</script><script id="expansion-data" type="application/json">{{EXPANSION_DATA}}</script><script id="overview-pack" type="text/plain">{{OVERVIEW_PACK}}</script><script id="legacy-pack" type="text/plain">{{LEGACY_PACK}}</script>
+<script id="three-inline-core" type="text/plain">{{THREE_CORE}}</script><script id="three-inline-module" type="text/plain">{{THREE_MODULE}}</script><!-- The MIT License
+
+Copyright © 2010-2026 three.js authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+ -->
+<script id="world-builder" type="text/plain">{{WORLD_BUILDER}}</script><script>{{WORLD_BUILDER}}</script><script>{{CAMERA}}</script><script>{{RENDERER}}</script><script>
+{{HELL_RENDERER}}
+</script><script>{{CHARACTERS}}</script><script>{{STREAMING}}</script><script>{{APP}}</script></body></html>

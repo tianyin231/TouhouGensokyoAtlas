@@ -1,0 +1,1738 @@
+{
+  "version": "0.16.0",
+  "scope": "第一批地表关联角色；不是全部正作角色，也不是同一时刻的位置模拟。",
+  "assetMode": "official-remote-with-optional-local-cache",
+  "rights": "角色立绘版权归 ZUN / 上海爱丽丝幻乐团等原权利人。Wiki 整理页的文本许可不自动覆盖图片；本项目不重新授权这些图片。",
+  "characters": [
+    {
+      "id": "reimu",
+      "name": "博丽灵梦",
+      "locationId": "hakurei",
+      "kind": "居所／职责",
+      "note": "博丽神社的巫女，居住于神社。",
+      "view": "hakurei",
+      "position": [
+        1618,
+        181.9,
+        160
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "博丽灵梦（红魔乡立绘）.png",
+        "work": "东方红魔乡",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/d/db/%E5%8D%9A%E4%B8%BD%E7%81%B5%E6%A2%A6%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/d/db/%E5%8D%9A%E4%B8%BD%E7%81%B5%E6%A2%A6%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:博丽灵梦（红魔乡立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方红魔乡/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/博丽灵梦"
+      ]
+    },
+    {
+      "id": "aunn",
+      "name": "高丽野阿吽",
+      "locationId": "hakurei",
+      "kind": "守护／活动",
+      "note": "守护神社与寺院；本图在博丽神社显示关联标记，不代表唯一住址。",
+      "view": "shrineGate",
+      "position": [
+        1575,
+        180.6,
+        169
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "高丽野阿吽（天空璋立绘）.png",
+        "work": "东方天空璋",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/e/e2/%E9%AB%98%E4%B8%BD%E9%87%8E%E9%98%BF%E5%90%BD%EF%BC%88%E5%A4%A9%E7%A9%BA%E7%92%8B%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://storage.moegirl.org.cn/moegirl/commons/e/e2/%E9%AB%98%E4%B8%BD%E9%87%8E%E9%98%BF%E5%90%BD%EF%BC%88%E5%A4%A9%E7%A9%BA%E7%92%8B%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/e/e2/%E9%AB%98%E4%B8%BD%E9%87%8E%E9%98%BF%E5%90%BD%EF%BC%88%E5%A4%A9%E7%A9%BA%E7%92%8B%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:高丽野阿吽（天空璋立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方天空璋/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/高丽野阿吽"
+      ]
+    },
+    {
+      "id": "suika",
+      "name": "伊吹萃香",
+      "locationId": "hakurei",
+      "kind": "经常活动",
+      "note": "经常到访博丽神社；这里不是对她永久住址的断言。",
+      "view": "shrineFront",
+      "position": [
+        1629,
+        182.0,
+        179
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "伊吹萃香（兽王园立绘）.png",
+        "work": "东方兽王园",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/2/2d/%E4%BC%8A%E5%90%B9%E8%90%83%E9%A6%99%EF%BC%88%E5%85%BD%E7%8E%8B%E5%9B%AD%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/2/2d/%E4%BC%8A%E5%90%B9%E8%90%83%E9%A6%99%EF%BC%88%E5%85%BD%E7%8E%8B%E5%9B%AD%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:伊吹萃香（兽王园立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方兽王园/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/伊吹萃香"
+      ]
+    },
+    {
+      "id": "clownpiece",
+      "name": "克劳恩皮丝",
+      "locationId": "hakurei",
+      "kind": "地下关联",
+      "note": "与神社地下空间有关；地表标记只指向所属建筑，未生成地下房间。",
+      "view": "shrineFront",
+      "position": [
+        1631,
+        181,
+        147
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "克劳恩皮丝（绀珠传立绘）.png",
+        "work": "东方绀珠传",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/d/da/%E5%85%8B%E5%8A%B3%E6%81%A9%E7%9A%AE%E4%B8%9D%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/d/da/%E5%85%8B%E5%8A%B3%E6%81%A9%E7%9A%AE%E4%B8%9D%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:克劳恩皮丝（绀珠传立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方绀珠传/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/克劳恩皮丝"
+      ]
+    },
+    {
+      "id": "mystia",
+      "name": "米斯蒂娅·萝蕾拉",
+      "locationId": "beast_path",
+      "kind": "移动屋台经营者 · 本作营业场景",
+      "note": "原作的移动烧烤摊在后侧保留；此处扩成有吧台、客席和音乐角的夜雀屋，参考《东方夜雀食堂》的生活氛围，属于 F/P 本作布局，不是新增的官方固定住宅。",
+      "view": "mystiaCounter",
+      "position": [
+        1072,
+        45.8,
+        274
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "米斯蒂娅·萝蕾拉（永夜抄立绘）.png",
+        "work": "东方永夜抄",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/3/35/%E7%B1%B3%E6%96%AF%E8%92%82%E5%A8%85%C2%B7%E8%90%9D%E8%95%BE%E6%8B%89%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/3/35/%E7%B1%B3%E6%96%AF%E8%92%82%E5%A8%85%C2%B7%E8%90%9D%E8%95%BE%E6%8B%89%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:米斯蒂娅·萝蕾拉（永夜抄立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方永夜抄/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/东方文花帖（书籍）/米斯蒂娅·萝蕾拉",
+        "https://thbwiki.cc/东方求闻口授/幽谷响子&米斯蒂娅·萝蕾拉（文文新闻）/中日对照",
+        "https://store.steampowered.com/app/1584090/Touhou_Mystias_Izakaya/"
+      ],
+      "aliases": [
+        "夜雀",
+        "米斯琪",
+        "米斯蒂娅",
+        "夜雀屋",
+        "夜雀食堂"
+      ],
+      "visits": [
+        {
+          "locationId": "beast_path",
+          "position": [
+            1093.5,
+            45,
+            269
+          ],
+          "view": "mystiaStage",
+          "kind": "原作活动关联 · 鸟兽伎乐",
+          "note": "与响子的道路演出关联；仅按预设显示一种站位，不同时复制两位米斯蒂娅。",
+          "locationSources": [
+            "https://thbwiki.cc/东方求闻口授/幽谷响子&米斯蒂娅·萝蕾拉（文文新闻）/中日对照"
+          ],
+          "positionBasis": "P：舞台布局和站位。"
+        }
+      ]
+    },
+    {
+      "id": "marisa",
+      "name": "雾雨魔理沙",
+      "locationId": "marisa",
+      "kind": "居所",
+      "note": "居住在魔法森林的雾雨邸。",
+      "view": "marisa",
+      "position": null,
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "雾雨魔理沙（红魔乡立绘）.png",
+        "work": "东方红魔乡",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/1/1a/%E9%9B%BE%E9%9B%A8%E9%AD%94%E7%90%86%E6%B2%99%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/1/1a/%E9%9B%BE%E9%9B%A8%E9%AD%94%E7%90%86%E6%B2%99%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:雾雨魔理沙（红魔乡立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方红魔乡/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/雾雨魔理沙"
+      ]
+    },
+    {
+      "id": "alice",
+      "name": "爱丽丝·玛格特洛依德",
+      "locationId": "alice",
+      "kind": "居所",
+      "note": "居住在魔法森林的玛格特洛依德邸。",
+      "view": "alice",
+      "position": null,
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "爱丽丝·玛格特洛依德（妖妖梦立绘）.png",
+        "work": "东方妖妖梦",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/9/96/%E7%88%B1%E4%B8%BD%E4%B8%9D%C2%B7%E7%8E%9B%E6%A0%BC%E7%89%B9%E6%B4%9B%E4%BE%9D%E5%BE%B7%EF%BC%88%E5%A6%96%E5%A6%96%E6%A2%A6%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/9/96/%E7%88%B1%E4%B8%BD%E4%B8%9D%C2%B7%E7%8E%9B%E6%A0%BC%E7%89%B9%E6%B4%9B%E4%BE%9D%E5%BE%B7%EF%BC%88%E5%A6%96%E5%A6%96%E6%A2%A6%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:爱丽丝·玛格特洛依德（妖妖梦立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方妖妖梦/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/爱丽丝·玛格特洛依德"
+      ]
+    },
+    {
+      "id": "cirno",
+      "name": "琪露诺",
+      "locationId": "mist_lake",
+      "kind": "活动区域 · 雾之湖",
+      "note": "湖边的活动关联代表点；不把此处假定为精确冰屋住址。",
+      "view": "scarletLake",
+      "position": [
+        676,
+        102.5,
+        -675
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "琪露诺（红魔乡立绘）.png",
+        "work": "东方红魔乡",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/4/40/%E7%90%AA%E9%9C%B2%E8%AF%BA%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/4/40/%E7%90%AA%E9%9C%B2%E8%AF%BA%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:琪露诺（红魔乡立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方红魔乡/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/琪露诺"
+      ]
+    },
+    {
+      "id": "remilia",
+      "name": "蕾米莉亚·斯卡蕾特",
+      "locationId": "scarlet",
+      "kind": "居所关联 · 阳台",
+      "note": "红魔馆主人。阳台只作为地点关联标注；不是声明吸血鬼正在阳光下活动。",
+      "view": "scarletFront",
+      "position": [
+        831,
+        118.2,
+        -704
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "蕾米莉亚·斯卡蕾特（红魔乡立绘）.png",
+        "work": "东方红魔乡",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/8/82/%E8%95%BE%E7%B1%B3%E8%8E%89%E4%BA%9A%C2%B7%E6%96%AF%E5%8D%A1%E8%95%BE%E7%89%B9%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/8/82/%E8%95%BE%E7%B1%B3%E8%8E%89%E4%BA%9A%C2%B7%E6%96%AF%E5%8D%A1%E8%95%BE%E7%89%B9%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:蕾米莉亚·斯卡蕾特（红魔乡立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方红魔乡/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/蕾米莉亚·斯卡蕾特"
+      ]
+    },
+    {
+      "id": "sakuya",
+      "name": "十六夜咲夜",
+      "locationId": "scarlet",
+      "kind": "职责关联 · 门廊",
+      "note": "馆内女仆长的职责关联；该点为庭园与门廊的导览位置，不是永久站位。",
+      "view": "scarletFront",
+      "position": [
+        839,
+        111.7,
+        -687
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "十六夜咲夜（红魔乡立绘）.png",
+        "work": "东方红魔乡",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/4/42/%E5%8D%81%E5%85%AD%E5%A4%9C%E5%92%B2%E5%A4%9C%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/4/42/%E5%8D%81%E5%85%AD%E5%A4%9C%E5%92%B2%E5%A4%9C%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:十六夜咲夜（红魔乡立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方红魔乡/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/十六夜咲夜"
+      ]
+    },
+    {
+      "id": "meiling",
+      "name": "红美铃",
+      "locationId": "scarlet",
+      "kind": "职责关联 · 正门",
+      "note": "门卫职责关联到前门侧，不堵住开启的铁门。精确站位为 P。",
+      "view": "scarletGate",
+      "position": [
+        827,
+        111.5,
+        -547
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "红美铃（红魔乡立绘）.png",
+        "work": "东方红魔乡",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/0/0b/%E7%BA%A2%E7%BE%8E%E9%93%83%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/0/0b/%E7%BA%A2%E7%BE%8E%E9%93%83%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:红美铃（红魔乡立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方红魔乡/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/红美铃"
+      ]
+    },
+    {
+      "id": "patchouli",
+      "name": "帕秋莉·诺蕾姬",
+      "locationId": "scarlet",
+      "kind": "馆内关联 · 地下图书馆",
+      "note": "角色关联到红魔馆地下图书馆。本轮只建设外部，图标浮在地表指示关联，不表示她站在庭院。",
+      "view": "scarletFront",
+      "position": [
+        805,
+        111.5,
+        -717
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "帕秋莉·诺蕾姬（红魔乡立绘）.png",
+        "work": "东方红魔乡",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/2/2c/%E5%B8%95%E7%A7%8B%E8%8E%89%C2%B7%E8%AF%BA%E8%95%BE%E5%A7%AC%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/2/2c/%E5%B8%95%E7%A7%8B%E8%8E%89%C2%B7%E8%AF%BA%E8%95%BE%E5%A7%AC%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:帕秋莉·诺蕾姬（红魔乡立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方红魔乡/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/帕秋莉·诺蕾姬"
+      ]
+    },
+    {
+      "id": "flandre",
+      "name": "芙兰朵露·斯卡蕾特",
+      "locationId": "scarlet",
+      "kind": "馆内关联 · 地下空间",
+      "note": "角色关联到馆内地下空间；没有把地下室建成地表小屋，也没有声称本轮已有可游览室内。",
+      "view": "scarletClock",
+      "position": [
+        858,
+        111.5,
+        -731
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "芙兰朵露·斯卡蕾特（红魔乡立绘）.png",
+        "work": "东方红魔乡",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/4/4d/%E8%8A%99%E5%85%B0%E6%9C%B5%E9%9C%B2%C2%B7%E6%96%AF%E5%8D%A1%E8%95%BE%E7%89%B9%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/4/4d/%E8%8A%99%E5%85%B0%E6%9C%B5%E9%9C%B2%C2%B7%E6%96%AF%E5%8D%A1%E8%95%BE%E7%89%B9%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:芙兰朵露·斯卡蕾特（红魔乡立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方红魔乡/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/芙兰朵露·斯卡蕾特"
+      ]
+    },
+    {
+      "id": "sanae",
+      "name": "东风谷早苗",
+      "locationId": "moriya",
+      "kind": "居所／风祝职责",
+      "note": "守矢神社的风祝；导览点设在拜殿前，不等同实时位置。",
+      "view": "moriyaFront",
+      "position": [
+        102,
+        702,
+        -1354
+      ],
+      "positionBasis": "P：本作山中导览代表点，不是官方坐标、住址或实时位置。",
+      "art": {
+        "file": "东风谷早苗（风神录立绘）.png",
+        "work": "东方风神录",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/7/7c/%E4%B8%9C%E9%A3%8E%E8%B0%B7%E6%97%A9%E8%8B%97%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/7/7c/%E4%B8%9C%E9%A3%8E%E8%B0%B7%E6%97%A9%E8%8B%97%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:东风谷早苗（风神录立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方风神录/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/东风谷早苗",
+        "https://thbwiki.cc/附带文档:东方风神录/角色设定"
+      ]
+    },
+    {
+      "id": "kanako",
+      "name": "八坂神奈子",
+      "locationId": "wind_lake",
+      "kind": "山神／湖畔活动关联",
+      "note": "《风神录》EX文档提到神奈子在湖上出现，并自称真正的住所是山本身；这里是湖畔导览点，不给她虚构固定房间。",
+      "view": "windLake",
+      "position": [
+        1,
+        683,
+        -1379
+      ],
+      "positionBasis": "P：本作山中导览代表点，不是官方坐标、住址或实时位置。",
+      "art": {
+        "file": "八坂神奈子（风神录立绘）.png",
+        "work": "东方风神录",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/3/3e/%E5%85%AB%E5%9D%82%E7%A5%9E%E5%A5%88%E5%AD%90%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/3/3e/%E5%85%AB%E5%9D%82%E7%A5%9E%E5%A5%88%E5%AD%90%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:八坂神奈子（风神录立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方风神录/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/八坂神奈子",
+        "https://thbwiki.cc/附带文档:东方风神录/角色设定"
+      ]
+    },
+    {
+      "id": "suwako",
+      "name": "洩矢诹访子",
+      "locationId": "moriya",
+      "kind": "神社关联",
+      "note": "守矢神社的神明之一；庭院示意点为本作安排，不是另一座私人住所。",
+      "view": "moriyaCourt",
+      "position": [
+        144,
+        702,
+        -1387
+      ],
+      "positionBasis": "P：本作山中导览代表点，不是官方坐标、住址或实时位置。",
+      "art": {
+        "file": "洩矢诹访子（风神录立绘）.png",
+        "work": "东方风神录",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/7/71/%E6%B4%A9%E7%9F%A2%E8%AF%B9%E8%AE%BF%E5%AD%90%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/7/71/%E6%B4%A9%E7%9F%A2%E8%AF%B9%E8%AE%BF%E5%AD%90%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:洩矢诹访子（风神录立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方风神录/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/洩矢诹访子",
+        "https://thbwiki.cc/附带文档:东方风神录/角色设定"
+      ]
+    },
+    {
+      "id": "eirin",
+      "name": "八意永琳",
+      "locationId": "eientei",
+      "kind": "居所／工作",
+      "note": "居住于永远亭，并从事药事与诊疗。",
+      "view": "eienteiGarden",
+      "position": [
+        736,
+        74,
+        1440
+      ],
+      "positionBasis": "P：本作导览代表点；不是官方站位、实时行踪或对住所精确位置的证明。",
+      "art": {
+        "file": "八意永琳（永夜抄立绘）.png",
+        "work": "东方永夜抄",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/9/9e/%E5%85%AB%E6%84%8F%E6%B0%B8%E7%90%B3%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/9/9e/%E5%85%AB%E6%84%8F%E6%B0%B8%E7%90%B3%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:八意永琳（永夜抄立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方永夜抄/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/八意永琳"
+      ]
+    },
+    {
+      "id": "kaguya",
+      "name": "蓬莱山辉夜",
+      "locationId": "eientei",
+      "kind": "居所",
+      "note": "居住于迷途竹林深处的永远亭。",
+      "view": "eienteiGarden",
+      "position": [
+        690,
+        74,
+        1407
+      ],
+      "positionBasis": "P：本作导览代表点；不是官方站位、实时行踪或对住所精确位置的证明。",
+      "art": {
+        "file": "蓬莱山辉夜（永夜抄立绘）.png",
+        "work": "东方永夜抄",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/9/9c/%E8%93%AC%E8%8E%B1%E5%B1%B1%E8%BE%89%E5%A4%9C%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/9/9c/%E8%93%AC%E8%8E%B1%E5%B1%B1%E8%BE%89%E5%A4%9C%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:蓬莱山辉夜（永夜抄立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方永夜抄/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/蓬莱山辉夜"
+      ]
+    },
+    {
+      "id": "reisen",
+      "name": "铃仙·优昙华院·因幡",
+      "locationId": "eientei",
+      "kind": "居所／工作",
+      "note": "居住于永远亭；也会外出，不表示她始终停留在此。",
+      "view": "eientei",
+      "position": [
+        686,
+        72,
+        1487
+      ],
+      "positionBasis": "P：本作导览代表点；不是官方站位、实时行踪或对住所精确位置的证明。",
+      "art": {
+        "file": "铃仙·优昙华院·因幡（永夜抄立绘）.png",
+        "work": "东方永夜抄",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/c/ca/%E9%93%83%E4%BB%99%C2%B7%E4%BC%98%E6%98%99%E5%8D%8E%E9%99%A2%C2%B7%E5%9B%A0%E5%B9%A1%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/c/ca/%E9%93%83%E4%BB%99%C2%B7%E4%BC%98%E6%98%99%E5%8D%8E%E9%99%A2%C2%B7%E5%9B%A0%E5%B9%A1%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:铃仙·优昙华院·因幡（永夜抄立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方永夜抄/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/铃仙·优昙华院·因幡"
+      ]
+    },
+    {
+      "id": "tewi",
+      "name": "因幡帝",
+      "locationId": "eientei",
+      "kind": "永远亭／竹林关联",
+      "note": "与永远亭及竹林兔群相关；此为区域级标记。",
+      "view": "eientei",
+      "position": [
+        701,
+        72,
+        1485
+      ],
+      "positionBasis": "P：本作导览代表点；不是官方站位、实时行踪或对住所精确位置的证明。",
+      "art": {
+        "file": "因幡帝（永夜抄立绘）.png",
+        "work": "东方永夜抄",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/6/69/%E5%9B%A0%E5%B9%A1%E5%B8%9D%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/6/69/%E5%9B%A0%E5%B9%A1%E5%B8%9D%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:因幡帝（永夜抄立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方永夜抄/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/因幡帝"
+      ],
+      "visits": [
+        {
+          "kind": "竹林兔群 · 活动关联",
+          "locationId": "bamboo",
+          "view": "bambooRabbits",
+          "position": [
+            713,
+            75,
+            1347
+          ],
+          "positionBasis": "P：本作导览代表点；不是官方站位、实时行踪或对住所精确位置的证明。",
+          "note": "竹林是其主要活动场所；兔群小空地与具体位置由本作设计，不表示常驻同一地点。",
+          "locationSources": [
+            "https://thwiki.cc/东方求闻史纪/因幡帝/中日对照"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mokou",
+      "name": "藤原妹红",
+      "locationId": "bamboo",
+      "kind": "区域活动",
+      "note": "在迷途竹林一带活动并帮助迷途者。此处是本作采笋歇脚点，不是妹红已确认的住所。",
+      "view": "bambooRest",
+      "position": [
+        364,
+        78.4,
+        1150
+      ],
+      "positionBasis": "P：本作导览代表点；不是官方站位、实时行踪或对住所精确位置的证明。",
+      "art": {
+        "file": "藤原妹红（永夜抄立绘）.png",
+        "work": "东方永夜抄",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/6/6b/%E8%97%A4%E5%8E%9F%E5%A6%B9%E7%BA%A2%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/6/6b/%E8%97%A4%E5%8E%9F%E5%A6%B9%E7%BA%A2%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:藤原妹红（永夜抄立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方永夜抄/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thwiki.cc/东方求闻史纪/藤原妹红/中日对照"
+      ]
+    },
+    {
+      "id": "byakuren",
+      "name": "圣白莲",
+      "locationId": "myouren",
+      "kind": "住持／寺院关联",
+      "note": "命莲寺的住持。寺院仍为体量预览，本轮不改造其建筑。",
+      "view": "templeHall",
+      "position": [
+        299,
+        114,
+        398
+      ],
+      "positionBasis": "P：本作寺院／墓地代表站位，不是原作精确坐标或同一时刻的行踪。",
+      "art": {
+        "file": "圣白莲（星莲船立绘）.png",
+        "work": "东方星莲船",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/7/74/%E5%9C%A3%E7%99%BD%E8%8E%B2%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/7/74/%E5%9C%A3%E7%99%BD%E8%8E%B2%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:圣白莲（星莲船立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方星莲船/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/圣白莲"
+      ],
+      "space": "surface",
+      "era": "常态选集"
+    },
+    {
+      "id": "kyouko",
+      "name": "幽谷响子",
+      "locationId": "myouren",
+      "kind": "寺院杂务／门前活动",
+      "note": "在命莲寺修行并负责打扫；没有据此推定她的独立住所。",
+      "view": "templeGate",
+      "position": [
+        303,
+        58,
+        296
+      ],
+      "positionBasis": "P：本作寺院／墓地代表站位，不是原作精确坐标或同一时刻的行踪。",
+      "art": {
+        "file": "幽谷响子（神灵庙立绘）.png",
+        "work": "东方神灵庙",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/7/7c/%E5%B9%BD%E8%B0%B7%E5%93%8D%E5%AD%90%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/7/7c/%E5%B9%BD%E8%B0%B7%E5%93%8D%E5%AD%90%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:幽谷响子（神灵庙立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方神灵庙/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/幽谷响子"
+      ],
+      "visits": [
+        {
+          "locationId": "beast_path",
+          "position": [
+            1092,
+            45,
+            269
+          ],
+          "view": "mystiaStage",
+          "kind": "原作活动关联 · 鸟兽伎乐",
+          "note": "《求闻口授》记载响子与米斯蒂娅在人里通往博丽神社的路上举办夜间演出。舞台形状与具体站位是 P 补完；寺院关联仍保留。",
+          "locationSources": [
+            "https://thbwiki.cc/东方求闻口授/幽谷响子&米斯蒂娅·萝蕾拉（文文新闻）/中日对照"
+          ],
+          "positionBasis": "P：演出关联代表点，不是第二个住所，也不表示此时同步演出。"
+        }
+      ],
+      "space": "surface",
+      "era": "常态选集"
+    },
+    {
+      "id": "kogasa",
+      "name": "多多良小伞",
+      "locationId": "myouren_cemetery",
+      "kind": "墓地活动关联；不是固定住所",
+      "note": "与命莲寺墓地一带的活动有关；标记为周边关联，不是寺院常住者名单。",
+      "view": "cemetery",
+      "position": [
+        315,
+        132,
+        474
+      ],
+      "positionBasis": "P：本作寺院／墓地代表站位，不是原作精确坐标或同一时刻的行踪。",
+      "art": {
+        "file": "多多良小伞（星莲船立绘）.png",
+        "work": "东方星莲船",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/a/a0/%E5%A4%9A%E5%A4%9A%E8%89%AF%E5%B0%8F%E4%BC%9E%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/a/a0/%E5%A4%9A%E5%A4%9A%E8%89%AF%E5%B0%8F%E4%BC%9E%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:多多良小伞（星莲船立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方星莲船/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/多多良小伞"
+      ],
+      "space": "surface",
+      "era": "常态选集"
+    },
+    {
+      "id": "keine",
+      "name": "上白泽慧音",
+      "locationId": "village",
+      "kind": "工作／区域活动",
+      "note": "在人里授课并保护村落。寺子屋的局部位置未定，标记不指认某栋普通民居。",
+      "view": null,
+      "position": null,
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "上白泽慧音（永夜抄立绘）.png",
+        "work": "东方永夜抄",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/f/f1/%E4%B8%8A%E7%99%BD%E6%B3%BD%E6%85%A7%E9%9F%B3%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/f/f1/%E4%B8%8A%E7%99%BD%E6%B3%BD%E6%85%A7%E9%9F%B3%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:上白泽慧音（永夜抄立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方永夜抄/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/上白泽慧音"
+      ]
+    },
+    {
+      "id": "yuuka",
+      "name": "风见幽香",
+      "locationId": "sunflower",
+      "kind": "区域活动",
+      "note": "太阳花田的区域关联；伞旁为本作导览站位，不是住所或实时行踪。",
+      "view": "sunflowerParasol",
+      "position": [
+        -590,
+        90,
+        1126
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "风见幽香（花映塚立绘）.png",
+        "work": "东方花映塚",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/d/d5/%E9%A3%8E%E8%A7%81%E5%B9%BD%E9%A6%99%EF%BC%88%E8%8A%B1%E6%98%A0%E5%A1%9A%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/d/d5/%E9%A3%8E%E8%A7%81%E5%B9%BD%E9%A6%99%EF%BC%88%E8%8A%B1%E6%98%A0%E5%A1%9A%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:风见幽香（花映塚立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方花映塚/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/风见幽香",
+        "https://thwiki.cc/东方求闻史纪/风见幽香/中日对照"
+      ]
+    },
+    {
+      "id": "medicine",
+      "name": "梅蒂欣·梅兰可莉",
+      "locationId": "nameless",
+      "kind": "区域关联",
+      "note": "无名之丘的铃兰地关联；石座旁为本作导览站位，没有新增固定住宅。",
+      "view": "namelessRock",
+      "position": [
+        -1251,
+        188,
+        987
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "梅蒂欣·梅兰可莉（花映塚立绘）.png",
+        "work": "东方花映塚",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/7/7b/%E6%A2%85%E8%92%82%E6%AC%A3%C2%B7%E6%A2%85%E5%85%B0%E5%8F%AF%E8%8E%89%EF%BC%88%E8%8A%B1%E6%98%A0%E5%A1%9A%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/7/7b/%E6%A2%85%E8%92%82%E6%AC%A3%C2%B7%E6%A2%85%E5%85%B0%E5%8F%AF%E8%8E%89%EF%BC%88%E8%8A%B1%E6%98%A0%E5%A1%9A%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:梅蒂欣·梅兰可莉（花映塚立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方花映塚/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/梅蒂欣·梅兰可莉",
+        "https://thwiki.cc/东方求闻史纪/梅蒂欣·梅兰可莉/中日对照"
+      ]
+    },
+    {
+      "id": "nitori",
+      "name": "河城荷取",
+      "locationId": "genbu",
+      "kind": "河童水域活动",
+      "note": "玄武涧河童据点的作业平台导览。岩洞据点有作品关联，平台形状与站位为P；不宣称已完成全部基地或固定私人住所。",
+      "view": "genbuWorkshop",
+      "position": [
+        -945,
+        46.2,
+        -603
+      ],
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "河城荷取（风神录立绘）.png",
+        "work": "东方风神录",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/b/bc/%E6%B2%B3%E5%9F%8E%E8%8D%B7%E5%8F%96%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/b/bc/%E6%B2%B3%E5%9F%8E%E8%8D%B7%E5%8F%96%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:河城荷取（风神录立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方风神录/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/河城荷取"
+      ],
+      "visits": [
+        {
+          "locationId": "valley",
+          "view": "mountainValley",
+          "position": [
+            -295,
+            185,
+            -796
+          ],
+          "kind": "溪谷活动关联",
+          "note": "保留玄武涧主关联；这里是有水流的山中溪谷示意点，不新增河童住所。",
+          "positionBasis": "P：本作水域活动代表点。",
+          "locationSources": [
+            "https://thbwiki.cc/附带文档:东方风神录/角色设定"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aya",
+      "name": "射命丸文",
+      "locationId": "mountain",
+      "kind": "山中记者／活动关联",
+      "note": "妖怪之山的天狗记者；导览点选在登山路，不推定她的住宅。",
+      "view": "mountainTrail",
+      "position": [
+        -444,
+        258,
+        -1006
+      ],
+      "positionBasis": "P：本作山中导览代表点，不是官方坐标、住址或实时位置。",
+      "art": {
+        "file": "射命丸文（风神录立绘）.png",
+        "work": "东方风神录",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/b/ba/%E5%B0%84%E5%91%BD%E4%B8%B8%E6%96%87%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/b/ba/%E5%B0%84%E5%91%BD%E4%B8%B8%E6%96%87%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:射命丸文（风神录立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方风神录/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/射命丸文",
+        "https://thbwiki.cc/附带文档:东方风神录/角色设定"
+      ]
+    },
+    {
+      "id": "yukari",
+      "name": "八云紫",
+      "locationId": null,
+      "kind": "住所未定位",
+      "note": "八云宅的确切位置未定；保留角色资料，不将迷途之家或地图原点当作她的住址。",
+      "view": null,
+      "position": null,
+      "positionBasis": "P：地图中的代表点；非原作精确坐标或实时位置",
+      "art": {
+        "file": "八云紫（永夜抄立绘）.png",
+        "work": "东方永夜抄",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/1/1f/%E5%85%AB%E4%BA%91%E7%B4%AB%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/1/1f/%E5%85%AB%E4%BA%91%E7%B4%AB%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:八云紫（永夜抄立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方永夜抄/角色立绘",
+        "kind": "原作立绘"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/八云紫"
+      ]
+    },
+    {
+      "id": "wriggle",
+      "name": "莉格露·奈特巴格",
+      "locationId": "beast_path",
+      "kind": "同人来客 · 萤火草地",
+      "note": "原作记载其常在草丛活动；这里借鉴《东方夜雀食堂》的兽道来客关系，在夜雀屋旁设置萤火草地代表点。她的住宅位置仍未确定。",
+      "position": [
+        1108,
+        45,
+        274
+      ],
+      "view": "mystiaStage",
+      "positionBasis": "P：本作导览代表点，不是原作实测坐标或此时的真实行踪。",
+      "locationSources": [
+        "https://thbwiki.cc/东方求闻史纪/莉格露·奈特巴格",
+        "https://www.bilibili.com/video/BV1NG411q7G1/"
+      ],
+      "art": {
+        "file": "莉格露·奈特巴格（永夜抄立绘）.png",
+        "work": "东方永夜抄",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/1/10/%E8%8E%89%E6%A0%BC%E9%9C%B2%C2%B7%E5%A5%88%E7%89%B9%E5%B7%B4%E6%A0%BC%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/1/10/%E8%8E%89%E6%A0%BC%E9%9C%B2%C2%B7%E5%A5%88%E7%89%B9%E5%B7%B4%E6%A0%BC%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:莉格露·奈特巴格（永夜抄立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方永夜抄/角色立绘",
+        "verification": "原作角色图索引；下载可用性需由 PNG 解码结果确认"
+      },
+      "aliases": [
+        "莉格露",
+        "小虫",
+        "Wriggle"
+      ],
+      "associationEvidence": "F/P"
+    },
+    {
+      "id": "rumia",
+      "name": "露米娅",
+      "locationId": "beast_path",
+      "kind": "同人来客 · 林间停留",
+      "note": "原作角色露米娅的林间活动与《东方夜雀食堂》的兽道来客氛围分开记录。此处是本作游览标记，不是固定住所。",
+      "position": [
+        1038,
+        44,
+        265
+      ],
+      "view": "trailCart",
+      "positionBasis": "P：本作导览代表点，不是原作实测坐标或此时的真实行踪。",
+      "locationSources": [
+        "https://thbwiki.cc/东方求闻史纪/露米娅",
+        "https://www.bilibili.com/video/BV1NG411q7G1/"
+      ],
+      "art": {
+        "file": "露米娅（红魔乡立绘）.png",
+        "work": "东方红魔乡",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/5/56/%E9%9C%B2%E7%B1%B3%E5%A8%85%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/5/56/%E9%9C%B2%E7%B1%B3%E5%A8%85%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:露米娅（红魔乡立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方红魔乡/角色立绘",
+        "verification": "原作角色图索引；下载可用性需由 PNG 解码结果确认"
+      },
+      "aliases": [
+        "露米亚",
+        "宵暗",
+        "Rumia"
+      ],
+      "associationEvidence": "F/P"
+    },
+    {
+      "id": "chen",
+      "name": "橙",
+      "locationId": "beast_path",
+      "kind": "同人来客 · 夜雀屋附近",
+      "note": "本次以《东方夜雀食堂》的兽道来客关系放在小路旁；迷途之家的原作关联没有改为兽道住宅。这里只表示一次来访。",
+      "position": [
+        1082,
+        44,
+        258
+      ],
+      "view": "trailCart",
+      "positionBasis": "P：本作导览代表点，不是原作实测坐标或此时的真实行踪。",
+      "locationSources": [
+        "https://thbwiki.cc/东方求闻史纪/橙",
+        "https://www.bilibili.com/video/BV1NG411q7G1/"
+      ],
+      "art": {
+        "file": "橙（妖妖梦立绘）.png",
+        "work": "东方妖妖梦",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/f/f6/%E6%A9%99%EF%BC%88%E5%A6%96%E5%A6%96%E6%A2%A6%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/f/f6/%E6%A9%99%EF%BC%88%E5%A6%96%E5%A6%96%E6%A2%A6%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:橙（妖妖梦立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方妖妖梦/角色立绘",
+        "verification": "原作角色图索引；下载可用性需由 PNG 解码结果确认"
+      },
+      "aliases": [
+        "Chen",
+        "八云橙"
+      ],
+      "associationEvidence": "F/P",
+      "homeAssociation": "迷途之家"
+    },
+    {
+      "id": "wakasagihime",
+      "name": "若鹭姬",
+      "locationId": "mist_lake",
+      "kind": "活动区域 · 湖中人鱼",
+      "note": "《辉针城》的雾之湖人鱼。此点是水域导览位置，不是与岸边建筑对应的住宅。",
+      "position": [
+        637,
+        101.8,
+        -633
+      ],
+      "view": "scarletLake",
+      "positionBasis": "P：本作导览代表点，不是原作实测坐标或此时的真实行踪。",
+      "locationSources": [
+        "https://thbwiki.cc/若鹭姬"
+      ],
+      "art": {
+        "file": "若鹭姬（辉针城立绘）.png",
+        "work": "东方辉针城",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/1/14/%E8%8B%A5%E9%B9%AD%E5%A7%AC%EF%BC%88%E8%BE%89%E9%92%88%E5%9F%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/1/14/%E8%8B%A5%E9%B9%AD%E5%A7%AC%EF%BC%88%E8%BE%89%E9%92%88%E5%9F%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:若鹭姬（辉针城立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方辉针城/角色立绘",
+        "verification": "原作角色图索引；下载可用性需由 PNG 解码结果确认"
+      },
+      "aliases": [
+        "Wakasagihime"
+      ],
+      "associationEvidence": "T/P"
+    },
+    {
+      "id": "koakuma",
+      "name": "小恶魔",
+      "locationId": "scarlet",
+      "kind": "馆内关联 · 图书馆",
+      "note": "原作《红魔乡》四面中Boss。本版使用原作像素绘（并无该作正式对话立绘）；仅标图书馆场景关联，不采用同人全身图冒充原作。",
+      "position": [
+        798,
+        111.5,
+        -734
+      ],
+      "view": "scarletFront",
+      "positionBasis": "P：本作导览代表点，不是原作实测坐标或此时的真实行踪。",
+      "locationSources": [
+        "https://thbwiki.cc/小恶魔"
+      ],
+      "art": {
+        "file": "小恶魔（红魔乡像素绘）.png",
+        "work": "东方红魔乡",
+        "kind": "原作像素绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/5/5a/%E5%B0%8F%E6%81%B6%E9%AD%94%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E5%83%8F%E7%B4%A0%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/5/5a/%E5%B0%8F%E6%81%B6%E9%AD%94%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E5%83%8F%E7%B4%A0%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:小恶魔（红魔乡像素绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方红魔乡/角色立绘",
+        "verification": "原作角色图索引；下载可用性需由 PNG 解码结果确认"
+      },
+      "associationEvidence": "T/P"
+    },
+    {
+      "id": "daiyousei",
+      "name": "大妖精",
+      "locationId": "mist_lake",
+      "kind": "活动区域 · 湖畔妖精",
+      "note": "原作《红魔乡》二面中Boss。没有该作正式对话立绘，此处注明使用原作像素绘；站位是湖边的 P 示意点。",
+      "position": [
+        684,
+        102,
+        -654
+      ],
+      "view": "scarletLake",
+      "positionBasis": "P：本作导览代表点，不是原作实测坐标或此时的真实行踪。",
+      "locationSources": [
+        "https://thbwiki.cc/大妖精"
+      ],
+      "art": {
+        "file": "大妖精（红魔乡像素绘）.png",
+        "work": "东方红魔乡",
+        "kind": "原作像素绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/2/2f/%E5%A4%A7%E5%A6%96%E7%B2%BE%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E5%83%8F%E7%B4%A0%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/2/2f/%E5%A4%A7%E5%A6%96%E7%B2%BE%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E5%83%8F%E7%B4%A0%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:大妖精（红魔乡像素绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方红魔乡/角色立绘",
+        "verification": "原作角色图索引；下载可用性需由 PNG 解码结果确认"
+      },
+      "associationEvidence": "T/P"
+    },
+    {
+      "id": "ichirin",
+      "name": "云居一轮",
+      "aliases": [],
+      "locationId": "myouren",
+      "kind": "寺院修行关联",
+      "note": "角色的区域关联与本作代表站位分开记录；不模拟实时行踪。",
+      "view": "templeHall",
+      "position": [
+        284,
+        114,
+        389
+      ],
+      "space": "surface",
+      "era": "常态选集",
+      "positionBasis": "P：本作局部坐标；不同空间与年代分别显示。",
+      "locationSources": [
+        "https://thbwiki.cc/云居一轮",
+        "https://thbwiki.cc/命莲寺"
+      ],
+      "art": {
+        "file": "云居一轮（星莲船立绘）.png",
+        "work": "东方星莲船",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "filePage": "https://thbwiki.cc/文件:云居一轮（星莲船立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方星莲船/角色立绘",
+        "urls": [
+          "https://upload.thwiki.cc/4/44/%E4%BA%91%E5%B1%85%E4%B8%80%E8%BD%AE%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thbwiki.cc/4/44/%E4%BA%91%E5%B1%85%E4%B8%80%E8%BD%AE%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "availability": "仅原作图像索引；本环境未取得并验证 PNG 像素。"
+      }
+    },
+    {
+      "id": "shou",
+      "name": "寅丸星",
+      "aliases": [],
+      "locationId": "myouren",
+      "kind": "毘沙门天信仰／寺院关联",
+      "note": "角色的区域关联与本作代表站位分开记录；不模拟实时行踪。",
+      "view": "templeHall",
+      "position": [
+        308,
+        114,
+        404
+      ],
+      "space": "surface",
+      "era": "常态选集",
+      "positionBasis": "P：本作局部坐标；不同空间与年代分别显示。",
+      "locationSources": [
+        "https://thbwiki.cc/寅丸星",
+        "https://thbwiki.cc/命莲寺"
+      ],
+      "art": {
+        "file": "寅丸星（星莲船立绘）.png",
+        "work": "东方星莲船",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "filePage": "https://thbwiki.cc/文件:寅丸星（星莲船立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方星莲船/角色立绘",
+        "urls": [
+          "https://upload.thwiki.cc/3/3c/%E5%AF%85%E4%B8%B8%E6%98%9F%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thbwiki.cc/3/3c/%E5%AF%85%E4%B8%B8%E6%98%9F%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "availability": "仅原作图像索引；本环境未取得并验证 PNG 像素。"
+      }
+    },
+    {
+      "id": "murasa",
+      "name": "村纱水蜜",
+      "aliases": [],
+      "locationId": "myouren",
+      "kind": "寺院关联；非停泊圣辇船",
+      "note": "角色的区域关联与本作代表站位分开记录；不模拟实时行踪。",
+      "view": "templeBell",
+      "position": [
+        365,
+        114,
+        412
+      ],
+      "space": "surface",
+      "era": "常态选集",
+      "positionBasis": "P：本作局部坐标；不同空间与年代分别显示。",
+      "locationSources": [
+        "https://thbwiki.cc/村纱水蜜",
+        "https://thbwiki.cc/命莲寺"
+      ],
+      "art": {
+        "file": "村纱水蜜（星莲船立绘）.png",
+        "work": "东方星莲船",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "filePage": "https://thbwiki.cc/文件:村纱水蜜（星莲船立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方星莲船/角色立绘",
+        "urls": [
+          "https://upload.thwiki.cc/8/86/%E6%9D%91%E7%BA%B1%E6%B0%B4%E8%9C%9C%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thbwiki.cc/8/86/%E6%9D%91%E7%BA%B1%E6%B0%B4%E8%9C%9C%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "availability": "仅原作图像索引；本环境未取得并验证 PNG 像素。"
+      }
+    },
+    {
+      "id": "nue",
+      "name": "封兽鵺",
+      "aliases": [],
+      "locationId": "myouren",
+      "kind": "寺院附近活动关联",
+      "note": "角色的区域关联与本作代表站位分开记录；不模拟实时行踪。",
+      "view": "cemetery",
+      "position": [
+        357,
+        114,
+        459
+      ],
+      "space": "surface",
+      "era": "常态选集",
+      "positionBasis": "P：本作局部坐标；不同空间与年代分别显示。",
+      "locationSources": [
+        "https://thbwiki.cc/封兽鵺",
+        "https://thbwiki.cc/命莲寺"
+      ],
+      "art": {
+        "file": "封兽鵺（星莲船立绘）.png",
+        "work": "东方星莲船",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "filePage": "https://thbwiki.cc/文件:封兽鵺（星莲船立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方星莲船/角色立绘",
+        "urls": [
+          "https://upload.thwiki.cc/9/95/%E5%B0%81%E5%85%BD%E9%B5%BA%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thbwiki.cc/9/95/%E5%B0%81%E5%85%BD%E9%B5%BA%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "availability": "仅原作图像索引；本环境未取得并验证 PNG 像素。"
+      }
+    },
+    {
+      "id": "mamizou",
+      "name": "二岩猯藏",
+      "aliases": [],
+      "locationId": "myouren",
+      "kind": "寺院寄居关联",
+      "note": "角色的区域关联与本作代表站位分开记录；不模拟实时行踪。",
+      "view": "myouren",
+      "position": [
+        238,
+        114,
+        444
+      ],
+      "space": "surface",
+      "era": "常态选集",
+      "positionBasis": "P：本作局部坐标；不同空间与年代分别显示。",
+      "locationSources": [
+        "https://thbwiki.cc/二岩猯藏",
+        "https://thbwiki.cc/命莲寺"
+      ],
+      "art": {
+        "file": "二岩猯藏（神灵庙立绘）.png",
+        "work": "东方神灵庙",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "filePage": "https://thbwiki.cc/文件:二岩猯藏（神灵庙立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方神灵庙/角色立绘",
+        "urls": [
+          "https://upload.thwiki.cc/e/e3/%E4%BA%8C%E5%B2%A9%E7%8C%AF%E8%97%8F%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thbwiki.cc/e/e3/%E4%BA%8C%E5%B2%A9%E7%8C%AF%E8%97%8F%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "availability": "仅原作图像索引；本环境未取得并验证 PNG 像素。"
+      }
+    },
+    {
+      "id": "miko",
+      "name": "丰聪耳神子",
+      "aliases": [],
+      "locationId": "miko_dojo",
+      "kind": "迁址后的仙界道场",
+      "note": "本图的主要关联是迁址后的神子仙界；可用下方按钮回看 TH13 时期的地下旧址。精确站位是本作导览设计，不表示角色同一时刻出现在两处。",
+      "view": "senkaiGate",
+      "position": [
+        0,
+        3.2,
+        22
+      ],
+      "space": "senkai",
+      "era": "relocated",
+      "positionBasis": "P：本作局部坐标；不同空间与年代分别显示。",
+      "locationSources": [
+        "https://thbwiki.cc/丰聪耳神子",
+        "https://thbwiki.cc/神灵庙（场景）"
+      ],
+      "art": {
+        "file": "丰聪耳神子（神灵庙立绘）.png",
+        "work": "东方神灵庙",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "filePage": "https://thbwiki.cc/文件:丰聪耳神子（神灵庙立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方神灵庙/角色立绘",
+        "urls": [
+          "https://upload.thwiki.cc/3/38/%E4%B8%B0%E8%81%AA%E8%80%B3%E7%A5%9E%E5%AD%90%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thbwiki.cc/3/38/%E4%B8%B0%E8%81%AA%E8%80%B3%E7%A5%9E%E5%AD%90%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "availability": "仅原作图像索引；本环境未取得并验证 PNG 像素。"
+      },
+      "visits": [
+        {
+          "locationId": "mausoleum",
+          "kind": "TH13时期 · 地下旧址",
+          "position": [
+            307,
+            -40,
+            505
+          ],
+          "view": "mausoleum",
+          "space": "mausoleum",
+          "era": "th13",
+          "positionBasis": "P：历史回看层，非迁址后的现居位置。",
+          "note": "此前在大祀庙相关剧情中的关联。本标记只在历史地下层显示，不在当前地表或仙界重复出现。",
+          "locationSources": [
+            "https://thbwiki.cc/梦殿大祀庙（场景）"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "futo",
+      "name": "物部布都",
+      "aliases": [],
+      "locationId": "miko_dojo",
+      "kind": "仙界道场居住关联",
+      "note": "本图的主要关联是迁址后的神子仙界；可用下方按钮回看 TH13 时期的地下旧址。精确站位是本作导览设计，不表示角色同一时刻出现在两处。",
+      "view": "senkaiGate",
+      "position": [
+        -22,
+        3.0,
+        19
+      ],
+      "space": "senkai",
+      "era": "relocated",
+      "positionBasis": "P：本作局部坐标；不同空间与年代分别显示。",
+      "locationSources": [
+        "https://thbwiki.cc/物部布都",
+        "https://thbwiki.cc/神灵庙（场景）"
+      ],
+      "art": {
+        "file": "物部布都（神灵庙立绘）.png",
+        "work": "东方神灵庙",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "filePage": "https://thbwiki.cc/文件:物部布都（神灵庙立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方神灵庙/角色立绘",
+        "urls": [
+          "https://upload.thwiki.cc/a/a9/%E7%89%A9%E9%83%A8%E5%B8%83%E9%83%BD%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thbwiki.cc/a/a9/%E7%89%A9%E9%83%A8%E5%B8%83%E9%83%BD%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "availability": "仅原作图像索引；本环境未取得并验证 PNG 像素。"
+      },
+      "visits": [
+        {
+          "locationId": "mausoleum",
+          "kind": "TH13时期 · 地下旧址",
+          "position": [
+            295,
+            -40,
+            494
+          ],
+          "view": "mausoleum",
+          "space": "mausoleum",
+          "era": "th13",
+          "positionBasis": "P：历史回看层，非迁址后的现居位置。",
+          "note": "此前在大祀庙相关剧情中的关联。本标记只在历史地下层显示，不在当前地表或仙界重复出现。",
+          "locationSources": [
+            "https://thbwiki.cc/梦殿大祀庙（场景）"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tojiko",
+      "name": "苏我屠自古",
+      "aliases": [],
+      "locationId": "miko_dojo",
+      "kind": "仙界道场居住关联",
+      "note": "本图的主要关联是迁址后的神子仙界；可用下方按钮回看 TH13 时期的地下旧址。精确站位是本作导览设计，不表示角色同一时刻出现在两处。",
+      "view": "senkai",
+      "position": [
+        24,
+        3.5,
+        16
+      ],
+      "space": "senkai",
+      "era": "relocated",
+      "positionBasis": "P：本作局部坐标；不同空间与年代分别显示。",
+      "locationSources": [
+        "https://thbwiki.cc/苏我屠自古",
+        "https://thbwiki.cc/神灵庙（场景）"
+      ],
+      "art": {
+        "file": "苏我屠自古（神灵庙立绘）.png",
+        "work": "东方神灵庙",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "filePage": "https://thbwiki.cc/文件:苏我屠自古（神灵庙立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方神灵庙/角色立绘",
+        "urls": [
+          "https://upload.thwiki.cc/b/bb/%E8%8B%8F%E6%88%91%E5%B1%A0%E8%87%AA%E5%8F%A4%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thbwiki.cc/b/bb/%E8%8B%8F%E6%88%91%E5%B1%A0%E8%87%AA%E5%8F%A4%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "availability": "仅原作图像索引；本环境未取得并验证 PNG 像素。"
+      },
+      "visits": [
+        {
+          "locationId": "mausoleum",
+          "kind": "TH13时期 · 地下旧址",
+          "position": [
+            319,
+            -40,
+            525
+          ],
+          "view": "mausoleum",
+          "space": "mausoleum",
+          "era": "th13",
+          "positionBasis": "P：历史回看层，非迁址后的现居位置。",
+          "note": "此前在大祀庙相关剧情中的关联。本标记只在历史地下层显示，不在当前地表或仙界重复出现。",
+          "locationSources": [
+            "https://thbwiki.cc/梦殿大祀庙（场景）"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seiga",
+      "name": "霍青娥",
+      "aliases": [],
+      "locationId": "miko_dojo",
+      "kind": "仙界／迁址大祀庙关联",
+      "note": "本图的主要关联是迁址后的神子仙界；可用下方按钮回看 TH13 时期的地下旧址。精确站位是本作导览设计，不表示角色同一时刻出现在两处。",
+      "view": "senkaiMausoleum",
+      "position": [
+        -83,
+        3.2,
+        -65
+      ],
+      "space": "senkai",
+      "era": "relocated",
+      "positionBasis": "P：本作局部坐标；不同空间与年代分别显示。",
+      "locationSources": [
+        "https://thbwiki.cc/霍青娥",
+        "https://thbwiki.cc/神灵庙（场景）"
+      ],
+      "art": {
+        "file": "霍青娥（神灵庙立绘）.png",
+        "work": "东方神灵庙",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "filePage": "https://thbwiki.cc/文件:霍青娥（神灵庙立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方神灵庙/角色立绘",
+        "urls": [
+          "https://upload.thwiki.cc/1/18/%E9%9C%8D%E9%9D%92%E5%A8%A5%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thbwiki.cc/1/18/%E9%9C%8D%E9%9D%92%E5%A8%A5%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "availability": "仅原作图像索引；本环境未取得并验证 PNG 像素。"
+      },
+      "visits": [
+        {
+          "locationId": "mausoleum",
+          "kind": "TH13时期 · 地下旧址",
+          "position": [
+            312,
+            -40,
+            451
+          ],
+          "view": "mausoleumGate",
+          "space": "mausoleum",
+          "era": "th13",
+          "positionBasis": "P：历史回看层，非迁址后的现居位置。",
+          "note": "此前在大祀庙相关剧情中的关联。本标记只在历史地下层显示，不在当前地表或仙界重复出现。",
+          "locationSources": [
+            "https://thbwiki.cc/梦殿大祀庙（场景）"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yoshika",
+      "name": "宫古芳香",
+      "aliases": [],
+      "locationId": "mausoleum",
+      "kind": "TH13时期入口守卫",
+      "note": "TH13 历史回看：入口守卫的角色关联；不推定迁址后仍固定住在命莲寺地下。",
+      "view": "mausoleumGate",
+      "position": [
+        302,
+        -40,
+        449
+      ],
+      "space": "mausoleum",
+      "era": "th13",
+      "positionBasis": "P：本作局部坐标；不同空间与年代分别显示。",
+      "locationSources": [
+        "https://thbwiki.cc/宫古芳香",
+        "https://thbwiki.cc/梦殿大祀庙（场景）"
+      ],
+      "art": {
+        "file": "宫古芳香（神灵庙立绘）.png",
+        "work": "东方神灵庙",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "filePage": "https://thbwiki.cc/文件:宫古芳香（神灵庙立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方神灵庙/角色立绘",
+        "urls": [
+          "https://upload.thwiki.cc/c/ca/%E5%AE%AB%E5%8F%A4%E8%8A%B3%E9%A6%99%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thbwiki.cc/c/ca/%E5%AE%AB%E5%8F%A4%E8%8A%B3%E9%A6%99%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "availability": "仅原作图像索引；本环境未取得并验证 PNG 像素。"
+      }
+    },
+    {
+      "id": "momiji",
+      "name": "犬走椛",
+      "locationId": "waterfall",
+      "kind": "瀑布巡逻／警卫",
+      "note": "《风神录》设定说明她在山中巡逻、部队通常在瀑布内侧待机。这里标注的是观瀑方向，不代表内部驻地已完成。",
+      "view": "mountainFalls",
+      "position": [
+        -443,
+        258,
+        -1007
+      ],
+      "positionBasis": "P：活动区域代表点，非原作精确坐标或实时行踪。",
+      "art": {
+        "file": "犬走椛（风神录立绘）.png",
+        "work": "东方风神录",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/7/70/%E7%8A%AC%E8%B5%B0%E6%A4%9B%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/7/70/%E7%8A%AC%E8%B5%B0%E6%A4%9B%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:犬走椛（风神录立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方风神录/角色立绘",
+        "kind": "原作像素绘",
+        "verification": "来源目录已核；图片字节未成功获取，网址按站点文件规则生成；不声称已解码或视觉核验。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方风神录/角色设定",
+        "https://thbwiki.cc/犬走椛"
+      ]
+    },
+    {
+      "id": "hina",
+      "name": "键山雏",
+      "locationId": "sea_trees",
+      "kind": "树海活动关联",
+      "note": "《风神录》二面活动区域关联；站位仅供导览，不虚构厄神神社。",
+      "view": "mountainValley",
+      "position": [
+        -205,
+        157,
+        -712
+      ],
+      "positionBasis": "P：活动区域代表点，非原作精确坐标或实时行踪。",
+      "art": {
+        "file": "键山雏（风神录立绘）.png",
+        "work": "东方风神录",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/1/12/%E9%94%AE%E5%B1%B1%E9%9B%8F%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/1/12/%E9%94%AE%E5%B1%B1%E9%9B%8F%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:键山雏（风神录立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方风神录/角色立绘",
+        "kind": "原作立绘",
+        "verification": "来源目录已核；图片字节未成功获取，网址按站点文件规则生成；不声称已解码或视觉核验。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方风神录/角色设定",
+        "https://thbwiki.cc/键山雏"
+      ]
+    },
+    {
+      "id": "shizuha",
+      "name": "秋静叶",
+      "locationId": "mountain",
+      "kind": "山麓红叶／活动关联",
+      "note": "《风神录》山麓出场与秋之神身份；不是固定住所，不意味着全年处于秋天。",
+      "view": "ropewayLower",
+      "position": [
+        -34,
+        89,
+        -520
+      ],
+      "positionBasis": "P：活动区域代表点，非原作精确坐标或实时行踪。",
+      "art": {
+        "file": "秋静叶（风神录立绘）.png",
+        "work": "东方风神录",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/0/05/%E7%A7%8B%E9%9D%99%E5%8F%B6%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/0/05/%E7%A7%8B%E9%9D%99%E5%8F%B6%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:秋静叶（风神录立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方风神录/角色立绘",
+        "kind": "原作立绘",
+        "verification": "来源目录已核；图片字节未成功获取，网址按站点文件规则生成；不声称已解码或视觉核验。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方风神录/角色设定",
+        "https://thbwiki.cc/秋静叶"
+      ]
+    },
+    {
+      "id": "minoriko",
+      "name": "秋穰子",
+      "locationId": "mountain",
+      "kind": "山麓丰收／活动关联",
+      "note": "《风神录》一面出场，角色设定还记载人里的收获祭邀请。这里为山麓示意站位。",
+      "view": "ropewayLower",
+      "position": [
+        -24,
+        86,
+        -510
+      ],
+      "positionBasis": "P：活动区域代表点，非原作精确坐标或实时行踪。",
+      "art": {
+        "file": "秋穰子（风神录立绘）.png",
+        "work": "东方风神录",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "urls": [
+          "https://upload.thbwiki.cc/d/d1/%E7%A7%8B%E7%A9%B0%E5%AD%90%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/d/d1/%E7%A7%8B%E7%A9%B0%E5%AD%90%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:秋穰子（风神录立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方风神录/角色立绘",
+        "kind": "原作立绘",
+        "verification": "来源目录已核；图片字节未成功获取，网址按站点文件规则生成；不声称已解码或视觉核验。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方风神录/角色设定",
+        "https://thbwiki.cc/秋穰子"
+      ]
+    },
+    {
+      "id": "nazrin",
+      "name": "娜兹玲",
+      "aliases": [
+        "ナズーリン",
+        "Nazrin",
+        "纳兹琳"
+      ],
+      "locationId": "muenzuka",
+      "space": "surface",
+      "era": "常态选集",
+      "kind": "无缘塚附近临时小屋／探宝",
+      "note": "《求闻口授》说明她在无缘塚附近搭建临时小屋。本作只制作棚屋外部与浅展示开口；外观、陈列及站位属于P，不是官方施工图。",
+      "view": "muenzukaNazrin",
+      "position": [
+        -1645,
+        71.2,
+        591
+      ],
+      "positionBasis": "P：本作临时棚屋门前导览点，非原作精确坐标或实时位置",
+      "locationSources": [
+        "https://thbwiki.cc/东方求闻口授/娜兹玲"
+      ],
+      "art": {
+        "file": "娜兹玲（星莲船立绘）.png",
+        "work": "东方星莲船",
+        "kind": "原作立绘",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "sourcePage": "https://thwiki.cc/东方星莲船/角色立绘",
+        "filePage": "https://thbwiki.cc/文件:娜兹玲（星莲船立绘）.png",
+        "urls": [
+          "https://upload.thbwiki.cc/4/42/%E5%A8%9C%E5%85%B9%E7%8E%B2%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://upload.thwiki.cc/4/42/%E5%A8%9C%E5%85%B9%E7%8E%B2%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "availability": "原作游戏图像索引已核；本环境未成功缓存及解码图片。"
+      }
+    }
+  ],
+  "scopeNote": "50条唯一角色记录；既有记录保留，新补妖怪之山4位。地图位置均为区域关联，不是同时行踪。",
+  "note": "36个既有角色保留，新增10个寺院／灵庙角色。层间年代互斥；原作图像仅索引，未内嵌下载成功的PNG。"
+}
