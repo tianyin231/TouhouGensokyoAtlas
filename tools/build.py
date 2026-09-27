@@ -85,7 +85,8 @@ def build(output_dir):
     read_bytes('tools/build.py')
     read_bytes('tools/check.mjs')
     output_dir.mkdir(parents=True, exist_ok=True)
-    filename = f"幻想乡大地图_{tag}_{project['title']}.html"
+    # GitHub 会清洗非 ASCII 附件名，发布名称与校验文件必须一致。
+    filename = f'TouhouGensokyoAtlas-{tag}.html'
     output = output_dir / filename
     output.write_bytes(content)
     digest = hashlib.sha256(content).hexdigest()

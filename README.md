@@ -18,7 +18,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 
 打开 http://127.0.0.1:8765/ ，点击构建出的 HTML。使用支持 WebGL2 的现代浏览器。通过本地 HTTP 预览，避免各浏览器对 `file://` 下 Worker 等能力的差异。
 
-构建在 `dist/` 中生成版本化 HTML、`SHA256SUMS.txt` 和 `release.json`。后者记录本次输出和输入文件的校验值；它们都不提交到 Git。修改源码后重新构建，浏览器刷新后才会看到修改。
+构建在 `dist/` 中生成 `TouhouGensokyoAtlas-v0.17.html` 这样的版本化 HTML、`SHA256SUMS.txt` 和 `release.json`。后者记录本次输出和输入文件的校验值；它们都不提交到 Git。修改源码后重新构建，浏览器刷新后才会看到修改。
 
 引擎、地图数据和模型资源内嵌在 HTML 内；角色头像与资料链接可能访问外部网站。构建不会自动下载或重新授权这些图片。
 
@@ -69,10 +69,12 @@ git commit -m "发布 v0.17 旧地狱全域"
 git push origin main
 git tag -a v0.17 -m "v0.17 旧地狱全域"
 git push origin v0.17
-gh release create v0.17 "dist/幻想乡大地图_v0.17_旧地狱全域.html" dist/SHA256SUMS.txt --verify-tag --title "v0.17 旧地狱全域" --notes-from-tag
+gh release create v0.17 dist/TouhouGensokyoAtlas-v0.17.html dist/SHA256SUMS.txt --verify-tag --title "v0.17 旧地狱全域" --notes-from-tag
 ```
 
-发布需要 GitHub CLI 已登录且有仓库写入权限。上传时指定本次产物，不使用 `dist/*.html`，避免上传遗留的其他版本。不要移动已发布标签或覆盖其成品；修订后发布新版本。
+发布需要 GitHub CLI 已登录且有仓库写入权限。附件使用 ASCII 文件名，避免 GitHub 自动改名后与校验文件不一致。上传时指定本次产物，不使用 `dist/*.html`，避免上传遗留的其他版本。不要移动已发布标签或覆盖 HTML 内容；场景修订后发布新版本。
+
+首次 `v0.17` 标签中的构建工具输出中文文件名，Release 附件已统一为 ASCII 名称，HTML 内容的 SHA-256 相同。当前主分支已直接生成 ASCII 名称，后续版本遵循上述流程。
 
 ## 旧版本与仓库体积
 

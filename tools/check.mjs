@@ -71,7 +71,7 @@ for (const id of pack.meta.locations) assert(locations.has(id), `地下模型引
 // 即使误用 git add -f，也会在发布检查时阻止把成品再次塞回源码历史。
 const tracked = spawnSync('git', ['ls-files', '-z'], { cwd: root, encoding: 'utf8' });
 if (tracked.status === 0) {
-  const artifacts = tracked.stdout.split('\0').filter(name => name.startsWith('dist/') || /^幻想乡大地图_v.*\.html$/.test(name));
+  const artifacts = tracked.stdout.split('\0').filter(name => name.startsWith('dist/') || /^(幻想乡大地图_v.*|TouhouGensokyoAtlas-v.*)\.html$/.test(name));
   assert.equal(artifacts.length, 0, `不应跟踪构建成品：${artifacts.join('、')}`);
 }
 console.log(`检查通过：${atlas.locations.length} 个地点，${pack.meshes.length} 个地下网格，脚本、资源与构建来源一致。`);
