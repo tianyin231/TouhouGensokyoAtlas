@@ -71,6 +71,7 @@ def build(output_dir):
         'CAMERA': source('src/camera.js'),
         'RENDERER': source('src/renderer.js'),
         'HELL_RENDERER': source('src/old-hell-renderer.js'),
+        'CASTLE_RENDERER': source('src/kishinjou-renderer.js'),
         'CHARACTERS': source('src/characters.js'),
         'STREAMING': source('src/streaming.js'),
         'APP': source('src/app.js'),
@@ -84,6 +85,8 @@ def build(output_dir):
     # 校验器可据此发现“改过源码但忘记重新构建”的成品。
     read_bytes('tools/build.py')
     read_bytes('tools/check.mjs')
+    read_bytes('tools/check-kishinjou.mjs')
+    read_bytes('tools/kishinjou-baseline.json')
     output_dir.mkdir(parents=True, exist_ok=True)
     # GitHub 会清洗非 ASCII 附件名，发布名称与校验文件必须一致。
     filename = f'TouhouGensokyoAtlas-{tag}.html'

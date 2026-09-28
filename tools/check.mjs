@@ -1,4 +1,5 @@
 // 构建集成检查：过期输出、嵌入脚本、资源包与地下模型；不需要安装 npm 依赖。
+import {checkKishinjou} from './check-kishinjou.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -74,4 +75,6 @@ if (tracked.status === 0) {
   const artifacts = tracked.stdout.split('\0').filter(name => name.startsWith('dist/') || /^(幻想乡大地图_v.*|TouhouGensokyoAtlas-v.*)\.html$/.test(name));
   assert.equal(artifacts.length, 0, `不应跟踪构建成品：${artifacts.join('、')}`);
 }
+const castle = await checkKishinjou(context.GA,atlas,JSON.parse(script('character-data')),read);
+console.log('辉针城检查通过：'+JSON.stringify(castle));
 console.log(`检查通过：${atlas.locations.length} 个地点，${pack.meshes.length} 个地下网格，脚本、资源与构建来源一致。`);

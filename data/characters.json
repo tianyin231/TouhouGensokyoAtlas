@@ -1731,8 +1731,73 @@
         ],
         "availability": "原作游戏图像索引已核；本环境未成功缓存及解码图片。"
       }
+    },
+    {
+      "id": "shinmyoumaru",
+      "name": "少名针妙丸",
+      "locationId": "needle",
+      "region": "kishinjou",
+      "space": "surface",
+      "kind": "城主／居所关联",
+      "note": "城主关联，不模拟当前行踪；TH14异变后受灵梦监管的时期与本场景不是同时居住状态。",
+      "view": "needleEaves",
+      "position": [
+        1060,
+        916,
+        -1103
+      ],
+      "positionBasis": "P：空中建筑关联点，不是原作精确坐标；历史角色不表示同时在场",
+      "art": {
+        "file": "chara_12.jpg",
+        "work": "东方深秘录",
+        "credit": "上海爱丽丝幻乐团 / 黄昏边境；版权归原权利人",
+        "kind": "官方角色图",
+        "urls": [
+          "https://tasofro.net/touhou145/img/chara_12.jpg"
+        ],
+        "sourcePage": "https://tasofro.net/touhou145/chara.html",
+        "filePage": "https://tasofro.net/touhou145/chara.html",
+        "availability": "URL来自官方角色页；当前环境未成功解码外链图片。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方辉针城/Omake",
+        "https://thbwiki.cc/辉针城（场景）"
+      ]
+    },
+    {
+      "id": "seija",
+      "name": "鬼人正邪",
+      "locationId": "needle",
+      "region": "kishinjou",
+      "space": "surface",
+      "kind": "TH14历史活动",
+      "note": "在辉针城五面登场的历史关联。不是确认她为TH145时代常住居民；不把她的能力当作城最初逆转的原因。",
+      "view": "needleHall",
+      "position": [
+        1050,
+        939,
+        -1100
+      ],
+      "positionBasis": "P：空中建筑关联点，不是原作精确坐标；历史角色不表示同时在场",
+      "art": {
+        "file": "鬼人正邪（辉针城立绘）.png",
+        "work": "东方辉针城",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "kind": "原作立绘",
+        "urls": [
+          "https://thbwiki.cc/Special:Redirect/file/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88%E8%BE%89%E9%92%88%E5%9F%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png",
+          "https://thwiki.cc/Special:Redirect/file/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88%E8%BE%89%E9%92%88%E5%9F%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:鬼人正邪（辉针城立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方辉针城/角色立绘",
+        "availability": "原作角色立绘索引已核；此环境未取得PNG字节，外链加载失败时显示名称，不提供替代图片。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方辉针城/Omake",
+        "https://thbwiki.cc/辉针城（场景）"
+      ]
     }
   ],
-  "scopeNote": "50条唯一角色记录；既有记录保留，新补妖怪之山4位。地图位置均为区域关联，不是同时行踪。",
+  "scopeNote": "53条唯一角色记录；原记录保留，新补辉针城城主及TH14历史活动关联。地图位置不是同时行踪。",
   "note": "36个既有角色保留，新增10个寺院／灵庙角色。层间年代互斥；原作图像仅索引，未内嵌下载成功的PNG。"
 }

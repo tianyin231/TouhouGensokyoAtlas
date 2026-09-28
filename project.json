@@ -1,9 +1,10 @@
 {
-  "version": "0.17.0",
-  "title": "旧地狱全域",
+  "version": "0.18.0",
+  "title": "辉针城 · 云中逆城",
   "threeRevision": "185",
   "worldBuilders": [
     "src/world-builder.js",
-    "src/old-hell.js"
+    "src/old-hell.js",
+    "src/kishinjou.js"
   ]
 }

@@ -4,6 +4,10 @@
 
 直接体验请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 下载 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
+## 当前源码：辉针城（0.18.0）
+
+顶部“辉针城”或地区下拉菜单进入。提供外观、空中来路、背侧、石垣、望楼、大殿、可逆剖览和事件风暴八个机位；地点检索也支持“逆城”与“Kishinjou”。TH145三层外形与TH14逆向室内的依据、版本差异、同人参照和P补完见[辉针城考据与实现](docs/kishinjou-reference.md)。这次更新源码，不自动创建或覆盖Release；构建后才能看到新场景。
+
 ## 构建与预览
 
 需要 Python 3.10 或更高版本；检查脚本需要 Node.js 22 或更高版本。不需要安装 npm 或 pip 包，构建不下载网络资源。
@@ -30,6 +34,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 | `src/index.html`、`src/styles.css` | 页面模板、界面和样式；模板本身不能直接预览 |
 | `src/app.js` | 地点选择、导览、界面状态和启动逻辑 |
 | `src/world-builder.js` | 基础数学、地形及已有地表区域的程序化建模 |
+| `src/kishinjou.js`、`src/kishinjou-renderer.js` | 辉针城近远景、独立空中定位、局部材质与可逆剖览 |
 | `src/old-hell.js` | 旧地狱区域的建模、地点映射与导览镜头 |
 | `src/renderer.js`、`src/old-hell-renderer.js` | 渲染、材质、光照与地下专用效果 |
 | `src/camera.js`、`src/streaming.js` | 相机操作、区域 Worker、缓存和资源释放 |

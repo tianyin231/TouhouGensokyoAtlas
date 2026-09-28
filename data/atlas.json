@@ -2018,41 +2018,56 @@
     {
       "id": "needle",
       "name": "辉针城",
-      "aliases": [],
+      "aliases": [
+        "輝針城",
+        "きしんじょう",
+        "Kishinjou",
+        "Kishinjo",
+        "Shining Needle Castle",
+        "逆城"
+      ],
       "world": "sky",
       "group": "幻想乡上空",
       "parent_id": "sky",
       "kind": "地标",
       "existence_evidence": "C",
       "source_ids": [
-        "S29"
+        "S29",
+        "K14O",
+        "K145",
+        "KF4"
       ],
-      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
-      "verified_fact": "漂浮的逆城",
-      "project_treatment": "位置本作配置；不得永久落地",
-      "coordinate_status": "待布局；没有官方测量坐标",
-      "build_stage": "M3",
-      "status": "目录已核；待建模"
+      "source_locator": "TH14 omake设定及五／六面；TH145辉针城场景（主外观）；夜雀食堂DLC4仅F对照，不作为官方建筑图",
+      "verified_fact": "幻想乡上空的逆向城郭，少名针妙丸为城主。原作内部同样逆置。各作品造型有差别。",
+      "project_treatment": "以TH145三层天守为主外形；TH14室内逆置作为构造依据，房间与背立面为P补完。不拼入TH155两层山体版本，不照搬同人餐馆和居民配置。空中来路仅为观察机位，不铺地面道路。",
+      "coordinate_status": "P工程空中锚点 [1060,960,-1120]；非官方方位、高度或固定航路；不进入地形placements",
+      "build_stage": "M3：独立按需近景与轻量总览",
+      "status": "已建模：近景、总览、机位与出处已接入"
     },
     {
       "id": "needle_storm",
       "name": "辉针城魔力风暴",
-      "aliases": [],
+      "aliases": [
+        "魔力嵐",
+        "魔力风暴"
+      ],
       "world": "sky",
       "group": "幻想乡上空",
       "parent_id": "sky",
       "kind": "事件场景",
       "existence_evidence": "C",
       "source_ids": [
-        "S01",
-        "S29"
+        "S29",
+        "K14O",
+        "K145",
+        "KF4"
       ],
-      "source_locator": "各区域条目；此为社区整理索引，不是官方出版页面",
+      "source_locator": "TH14 omake设定及五／六面；TH145辉针城场景（主外观）；夜雀食堂DLC4仅F对照，不作为官方建筑图",
       "verified_fact": "辉针城相关风暴",
-      "project_treatment": "事件开关",
-      "coordinate_status": "待布局；没有官方测量坐标",
-      "build_stage": "M3",
-      "status": "目录已核；待建模"
+      "project_treatment": "TH14事件的局部风带示意，点击事件机位开启，切换其他机位关闭。默认晴空；不是常驻天气，也不宣称复现Extra关的完整风暴空间。",
+      "coordinate_status": "P工程空中锚点 [1060,960,-1120]；非官方方位、高度或固定航路；不进入地形placements",
+      "build_stage": "M2：可关闭的局部事件示意，非完整关卡",
+      "status": "已建局部风带；默认关闭，不纳入总览，不代表完整Extra空间"
     },
     {
       "id": "palanquin",
@@ -5274,18 +5289,18 @@
     {
       "node_id": "needle",
       "name": "辉针城",
-      "main_reference_candidate": "深秘录辉针城场景",
+      "main_reference_candidate": "TH145三层逆向天守（已选定）",
       "sourced_features": "逆向天守，内部也逆置",
-      "project_modules": "石垣/主殿/望楼/逆向屋顶/入口",
-      "project_extent_m": "外轮廓90×90",
+      "project_modules": "完整石垣／三层天守／瓦垄与破风／四面窗廊／TH14逆向大殿／事件风带",
+      "project_extent_m": "主建筑约86×76，垂直约71；P工程尺度",
       "unknown_or_conflict": "不同作品层数有差别；不以负缩放翻模",
       "near_triangles_target": 90000,
       "source_ids": [
         "S29"
       ],
       "reference_locator": "辉针城（场景）→版本外观",
-      "visual_review": "已核文字和图像索引；原图未逐张核验",
-      "gate": "灰盒可用；精模前须逐图确认主参考"
+      "visual_review": "核对TH14五面截图与TH145社区转载画面及外形整理；未取得官方建筑测绘图",
+      "gate": "程序化近景与同尺度总览已实现；完整背立面和房间为P补完"
     },
     {
       "node_id": "hieda",
@@ -6259,6 +6274,27 @@
       "url": "https://thbwiki.cc/地狱的深道",
       "type": "C",
       "note": "v0.17 场景依据；具体几何与布局由本作补完。"
+    },
+    {
+      "id": "K14O",
+      "title": "TH14 omake：鬼人正邪／少名针妙丸／Extra Story（官方文本的社区转录）",
+      "url": "https://thbwiki.cc/附带文档:东方辉针城/Omake",
+      "source_type": "官方原文转录；译文为社区翻译",
+      "note": "原文署名ZUN，2013-08-12。城的逆转来自万宝槌历史；不能归因为本次正邪临时翻转。"
+    },
+    {
+      "id": "K145",
+      "title": "东方深秘录：官方作品页／主外观版本",
+      "url": "https://tasofro.net/touhou145/",
+      "source_type": "官方作品网站",
+      "note": "外观参照TH145游戏场景；三层形态的图像索引见S29。没有官方平面测绘图。"
+    },
+    {
+      "id": "KF4",
+      "title": "F：东方夜雀食堂DLC4－太阳花田＆辉针城（开发者介绍）",
+      "url": "https://store.steampowered.com/app/2399330/?l=schinese",
+      "source_type": "指定同人作品；不是ZUN正作",
+      "note": "仅比较可探索区域和生活感；未挪用地图、餐馆、食材、NPC或图片。"
     }
   ]
 }

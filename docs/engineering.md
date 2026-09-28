@@ -16,7 +16,7 @@ project.json + src/index.html/styles.css
 
 命令是 `python tools/build.py`，随后 `node tools/check.mjs`。Python构建不读取旧HTML／Git历史、不临时下载依赖。`dist/` 是产物，不人工修改或提交；使用标签与Release分发成品，不恢复根目录版本化HTML集合。
 
-`project.json` 当前为0.17.0、Three.js185，worldBuilders依次为 `src/world-builder.js` 与 `src/old-hell.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
+`project.json` 当前为0.18.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
 
 发布版本、原研究数据版本、区域元数据版本和历史来源身份分开。不能对全仓库替换所有0.16／0.17字符串；项目版本映射到标签和产物名由构建器统一完成。
 
@@ -79,3 +79,10 @@ CPU数组、实例数据、Three.js几何、贴图、阴影／反射／后期目
 `tools/check.mjs` 会核对产物SHA和输入是否过期、模板替换、内嵌脚本语法、主线程与Worker一致性、源包／引擎一致性，实际调用 `buildOldHell()` 检查地下模型ID／有限三角数据／字节和地点引用，并拒绝Git跟踪发布HTML。它不是所有地区视觉、碰撞或缓存压力验证。
 
 已完成的工程改进是源码／资源独立和Release流程，不再把这项列为尚未迁移。仍需改善基础大文件的可维护性、总览资源更新链、独立地区覆盖与浏览器自动化、原图成功路径，以及大详情包的首次进入成本；应分阶段实施，不在补文档时改变运行代码。
+
+
+## 9. 辉针城总览补充与回归
+
+辉针城以廉价程序化外形补入解包后的总览，不改旧源包，也不触发全图或该城高模生成。详情仅由按区Worker建立；相机在该城高度范围内才使用空中归属，地面归属多边形为空。材质层在旧地狱之后追加，遵守同一太阳、天气和暂停时钟。详情卸载与原图失败均保留独立回退路径。
+
+`tools/check-kishinjou.mjs` 纳入主检查器；固定旧源码／源包哈希保护、原数据关系与几何期望在 `tools/kishinjou-baseline.json`，不能随每次运行自动更新。可选 `tools/check-browser.py` 单独依赖Playwright，不改变离线构建的依赖和流程。详见[模块说明](kishinjou-reference.md)。

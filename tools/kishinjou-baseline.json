@@ -1,0 +1,26 @@
+{
+  "description": "Reviewed 2026-09-28. Protection baseline upstream f959fc4; castle geometry intentionally reviewed after window/eave refinement. Never regenerate in the test runner.",
+  "baseline": "f959fc441b5c154375400a4bb47d4c3d173eaa84",
+  "protectedFiles": {
+    "src/world-builder.js": "e0a9df6c0199ca278137c7212e97f9e0d8e4cc08aeaa47136741ab91b50fe669",
+    "src/old-hell.js": "fde1ded5cfad70061c9a69b09b000fbd35bab17edcd583ed4d7973d5c9cfa643",
+    "src/old-hell-renderer.js": "fb91047212002fd1f9933189dceed6033c39883bde32f63437967e6b8f594870",
+    "src/streaming.js": "f636e6c1bb5917931b27038de6b45bcdfae95f13b4551450382693959cef8982",
+    "src/renderer.js": "b020de9f08b5544843c6efdf4f8a40a0251d19f5ca54ca360977a788edbde25c",
+    "data/expansion.json": "0ffb83baa4a828bbc3366b8b49df4602f18ef8db99d22f03e6079c6ee1c274a1",
+    "assets/packs/overview.pack.gz": "35a3d61769be2d62aabc29eb106a339eff1411d945be2268315739d1118d1ffa",
+    "assets/packs/legacy.pack.gz": "46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88"
+  },
+  "placements": "703af94d17bb907dec1f171e9ada74ffffa1d7ca45c356567709f0399f1c8ab3",
+  "relationships": "3510a47f23ce5e9449676ad50944a871825dc27fee90f212bff5ff6d21618a0a",
+  "originalCharacters": "1c1a25cbb7b530f900a8ff379a647efe43e6f023f99dc35131f3c37313755607",
+  "originalCharacterCount": 51,
+  "castle": {
+    "detailMeshes": 42,
+    "detailBytes": 6214428,
+    "detailGeometry": "f83c05a8eff6c1d357e2ec780d1356c6bfc3d5efa933368f1f95bf66ca13e33b",
+    "farMeshes": 28,
+    "farBytes": 916812,
+    "farGeometry": "64996ca60344abbe65d906a617514ccfb93dffe96f3a4e47808c9ce23741c253"
+  }
+}
