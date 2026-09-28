@@ -139,6 +139,8 @@ function planting(t){const R=G.rng(260928),sites=[],occupied=[],rocks=new Geomet
  return{sites,trees:occupied,meshes:[...meshesForSites(sites,'landscape:planting:'),G.ISLAND.indexed(rocks.mesh('landscape:stones','architecture',{owner:'island',overview:true,globalSurface:true,component:'transition-fields',material:'landscapeStone'})),G.ISLAND.indexed(details.mesh('landscape:fallen-wood','architecture',{owner:'island',overview:true,globalSurface:true,component:'transition-fields',material:'timber'}))]};
 }
 function apply(pack,t){if(pack.meta?.landscapeQuality)return pack;const start=performance.now();
+ // 高程必须来自当前地图资料；缺失 placements 的默认地形不能定位近景。
+ for(const [id,offsets]of Object.entries(viewOffsets)){const p=G.PRESETS[id];for(const [i,key]of ['eye','target'].entries())p[key][1]=t.height(p[key][0],p[key][2])+offsets[i];}
  let meshes=refineTrees(pack.meshes).map(m=>{
   if(m.component==='island-terrain'&&m.tile[0]>=-768&&m.tile[0]<-256&&m.tile[1]>=-256&&m.tile[1]<256)return tile(t,m);
   return removeOldRoad(m);
@@ -146,9 +148,9 @@ function apply(pack,t){if(pack.meta?.landscapeQuality)return pack;const start=pe
  const plants=planting(t);meshes.push(roadGeometry(t),...plants.meshes);pack.meshes=meshes;
  pack.meta={...pack.meta,landscapeQuality:{basis:'P',zone,plantedTrees:plants.trees.length,plantInstances:plants.sites.length,builtMs:performance.now()-start}};return pack;
 }
-const terrain=new G.Terrain({placements:[]});
-function eye(x,z){return[x,terrain.height(x,z)+1.72,z];}
-G.PRESETS.meadowPath={label:'村口田径',region:'connections',eye:[-359,terrain.height(-359,39)+2.8,39],target:[-471,terrain.height(-471,48)+4,48],fov:62,detailNeighbors:['forest','village']};
+const viewOffsets={meadowPath:[2.8,4],forestApproach:[1.72,1.72],meadowReturn:[1.72,1.72],meadowWalk:[1.82,1.82]};
+function eye(x,z){return[x,0,z];}
+G.PRESETS.meadowPath={label:'村口田径',region:'connections',eye:eye(-359,39),target:eye(-471,48),fov:62,detailNeighbors:['forest','village']};
 G.PRESETS.forestApproach={label:'林缘近看',region:'connections',eye:eye(-474,49),target:eye(-522,55),fov:64,detailNeighbors:['forest','village']};
 G.PRESETS.meadowReturn={label:'林缘回望',region:'connections',eye:eye(-507,53),target:eye(-405,42),fov:64,detailNeighbors:['forest','village']};
 G.PRESETS.meadowWalk={label:'林缘步行试走',region:'connections',eye:eye(...path[0]),target:eye(...path[8]),fov:66,walkPath:path,detailNeighbors:['forest','village']};

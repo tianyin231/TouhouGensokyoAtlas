@@ -8,6 +8,7 @@ export function checkLandscape(G,atlas,read){
  const decoded=G.decodePack(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength));
  const old=new Map(decoded.meshes.map(m=>[m.id,m])),terrain=new G.Terrain(atlas);
  G.LANDSCAPE.apply(decoded,terrain);
+ for(const id of ['meadowPath','forestApproach','meadowReturn','meadowWalk'])for(const key of ['eye','target']){const p=G.PRESETS[id][key];assert(p[1]-terrain.height(p[0],p[2])>=1.7,`${id} 机位低于实际地图地表`);}
  assert.equal(new Set(decoded.meshes.map(m=>m.id)).size,decoded.meshes.length,'模型 ID 重复');
  assert(decoded.meshes.length<old.size+180,'样板不应拆成大量绘制批次');
  for(const [id,m]of old)if(!m.globalSurface)assert.equal(decoded.meshes.find(n=>n.id===id),m,`原地区模型被替换：${id}`);
