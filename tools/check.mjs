@@ -2,6 +2,7 @@
 import {checkKishinjou} from './check-kishinjou.mjs';
 import {checkLunar} from './check-lunar.mjs';
 import {checkMakai} from './check-makai.mjs';
+import {checkNetherworld} from './check-netherworld.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -85,3 +86,5 @@ const lunar = await checkLunar(context.GA,atlas,JSON.parse(script('character-dat
 console.log('月世界检查通过：'+JSON.stringify(lunar));
 
 console.log('魔界检查通过：'+JSON.stringify(await checkMakai(context.GA,atlas,JSON.parse(script('character-data')),read)));
+
+console.log('冥界及目录检查通过：'+JSON.stringify(await checkNetherworld(context.GA,atlas,JSON.parse(script('character-data')),read)));

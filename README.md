@@ -4,7 +4,13 @@
 
 直接体验请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 下载 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
-## 魔界场景（0.20.0）
+## 冥界与目录修正（0.21.0）
+
+顶部「冥界」进入幽明结界、长阶、白玉楼和西行妖，共13个机位。白玉楼采用コ字形本殿、枯山水中庭与低墙外樱庭；西行妖默认封印不开花，花苞事件、雪庭和本殿剖览均可恢复。[依据与P补完边界](docs/netherworld-reference.md)单独记录。
+
+同时补上8条已有模型的目录绑定，取消幻想风穴／山麓间歇泉／圣域3条错误邻区回退。179条中77条可导航、102条待处理，**这是导航覆盖，不是竣工比例**。`node tools/audit-landmarks.mjs`生成与界面使用同一解析器的完整核对表。新增源码、资料与测试；原地表、旧地狱、辉针城、月世界和魔界不重建覆盖。
+
+## 保留场景：魔界（0.20.0加入）
 
 顶部「魔界」进入：星莲船的红黑封印与法界、怪绮谈的洞口／街道／冰雪世界／万魔殿、灵异传的维纳废墟与堕落神殿。共19个机位，万魔殿包括大堂、侧廊、后庭和可逆剖览。按作品分图展示，不主张它们是三个不同的官方宇宙，也不悬置在幻想乡上空。
 
@@ -46,6 +52,8 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 | `src/index.html`、`src/styles.css` | 页面模板、界面和样式；模板本身不能直接预览 |
 | `src/app.js` | 地点选择、导览、界面状态和启动逻辑 |
 | `src/world-builder.js` | 基础数学、地形及已有地表区域的程序化建模 |
+| `src/netherworld.js`、`src/netherworld-renderer.js`、`data/netherworld.json` | 冥界几何、春雪／封印状态及人物资料 |
+| `src/landmarks.js`、`tools/audit-landmarks.mjs` | 显式地点导航与同源核对报告 |
 | `src/makai.js`、`src/makai-renderer.js`、`data/makai.json` | 魔界版本选集、万魔殿内外、封印与历史人物关联 |
 | `src/lunar.js`、`src/lunar-renderer.js`、`data/lunar.json` | 月都、静海与梦境独立空间、近远景、资料追加与人物身份 |
 | `src/kishinjou.js`、`src/kishinjou-renderer.js` | 辉针城近远景、独立空中定位、局部材质与可逆剖览 |

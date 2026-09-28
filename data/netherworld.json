@@ -1,0 +1,244 @@
+{
+  "version": "0.21.0",
+  "baseline": "719c1d7e31507d2ce10e544501cc2076792fee37",
+  "note": "五项冥界选景、八项既有模型补绑定、三项错误回退修正。原地形与人物不覆盖。",
+  "locationUpdates": [
+    {
+      "id": "youmei",
+      "aliases": [
+        "幽明结界",
+        "Yuumei Barrier"
+      ],
+      "project_treatment": "云中大门与八芒星结界意象；立面和本地位置是P，不在幻想乡地表新增固定传送点。",
+      "status": "已建对应三维选景／P补完，非全域竣工",
+      "coordinate_status": "P：独立冥界工程坐标，不是地表海拔",
+      "source_ids": [
+        "NW-PMISS",
+        "NW-TH07",
+        "NW-SCENE",
+        "NW-BARRIER"
+      ]
+    },
+    {
+      "id": "netherworld",
+      "aliases": [
+        "冥界",
+        "Netherworld"
+      ],
+      "project_treatment": "已建白玉楼周边的冥界选景与连续长阶，不代表整个冥界穷尽。",
+      "status": "已建对应三维选景／P补完，非全域竣工",
+      "coordinate_status": "P：独立冥界工程坐标，不是地表海拔",
+      "source_ids": [
+        "NW-PMISS",
+        "NW-TH07",
+        "NW-SCENE"
+      ]
+    },
+    {
+      "id": "hakugyoku_stairs",
+      "aliases": [
+        "白玉楼阶梯",
+        "Hakugyokurou Stairs"
+      ],
+      "project_treatment": "长阶、两侧樱林与殿前道路实际相连；距离与高差P，不把两百由旬当测量长度。",
+      "status": "已建对应三维选景／P补完，非全域竣工",
+      "coordinate_status": "P：独立冥界工程坐标，不是地表海拔",
+      "source_ids": [
+        "NW-PMISS",
+        "NW-TH07",
+        "NW-SCENE"
+      ]
+    },
+    {
+      "id": "hakugyokurou",
+      "aliases": [
+        "白玉楼",
+        "Hakugyokurou"
+      ],
+      "project_treatment": "采用求闻史纪コ字布局、枯山水中庭、低墙外樱庭；茶室、本殿内部与所有背面是P。",
+      "status": "已建对应三维选景／P补完，非全域竣工",
+      "coordinate_status": "P：独立冥界工程坐标，不是地表海拔",
+      "source_ids": [
+        "NW-PMISS",
+        "NW-TH07",
+        "NW-SCENE"
+      ]
+    },
+    {
+      "id": "saigyou",
+      "aliases": [
+        "西行妖",
+        "Saigyou Ayakashi"
+      ],
+      "project_treatment": "默认封印不开花，区别普通樱树；TH07将开未满另列示意，绝不默认满开。",
+      "status": "已建对应三维选景／P补完，非全域竣工",
+      "coordinate_status": "P：独立冥界工程坐标，不是地表海拔",
+      "source_ids": [
+        "NW-PMISS",
+        "NW-TH07",
+        "NW-SCENE"
+      ]
+    },
+    {
+      "id": "beast_path",
+      "project_treatment": "兽道已建；补绑定trail。",
+      "status": "既有三维构件已补目录绑定；本轮未重复建模"
+    },
+    {
+      "id": "mystia_stall",
+      "project_treatment": "屋台席位已建；补绑定mystiaCounter；固定食堂展示仍为F/P。",
+      "status": "既有三维构件已补目录绑定；本轮未重复建模"
+    },
+    {
+      "id": "hakurei_store",
+      "project_treatment": "神社仓库及后庭已建；补绑定shrineGarden，非完整室内。",
+      "status": "既有三维构件已补目录绑定；本轮未重复建模"
+    },
+    {
+      "id": "firetower",
+      "project_treatment": "人里火警望楼已建；本轮只补近景机位。",
+      "status": "既有三维构件已补目录绑定；本轮未重复建模"
+    },
+    {
+      "id": "village_fields",
+      "project_treatment": "人里南侧农田已建；补绑定fields。",
+      "status": "既有三维构件已补目录绑定；本轮未重复建模"
+    },
+    {
+      "id": "scarlet_garden",
+      "project_treatment": "红魔馆庭园已建；补绑定scarletGarden。",
+      "status": "既有三维构件已补目录绑定；本轮未重复建模"
+    },
+    {
+      "id": "scarlet_clock",
+      "project_treatment": "红魔馆钟楼已建；补绑定scarletClock。",
+      "status": "既有三维构件已补目录绑定；本轮未重复建模"
+    },
+    {
+      "id": "purple_cherry",
+      "project_treatment": "无缘塚紫樱已建；补绑定muenzukaSakura，不等同西行妖。",
+      "status": "既有三维构件已补目录绑定；本轮未重复建模"
+    },
+    {
+      "id": "wind_cave",
+      "status": "尚未建立本地点的独立可浏览场景",
+      "project_treatment": "研究锚点保留，但不再回退到无关地区；待专项搭建。"
+    },
+    {
+      "id": "geyser_mountain",
+      "status": "尚未建立本地点的独立可浏览场景",
+      "project_treatment": "研究锚点保留，但不再回退到无关地区；待专项搭建。"
+    },
+    {
+      "id": "sanctuary",
+      "status": "尚未建立本地点的独立可浏览场景",
+      "project_treatment": "研究锚点保留，但不再回退到无关地区；待专项搭建。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "NW-PMISS",
+      "title": "T：求闻史纪白玉楼原文及中译",
+      "url": "https://thbwiki.cc/东方求闻史纪/白玉楼/中日对照",
+      "source_type": "T",
+      "note": "原作描述中本殿结构为传闻；庭院、低墙与樱园，不是精确施工图。"
+    },
+    {
+      "id": "NW-TH07",
+      "title": "T：妖妖梦角色设定原文",
+      "url": "https://thbwiki.cc/附带文档:东方妖妖梦/角色设定",
+      "source_type": "T",
+      "note": "西行妖平时不开花，两百由旬为夸张；妖忌去向未知。"
+    },
+    {
+      "id": "NW-SCENE",
+      "title": "C：白玉楼／幽明结界版本索引",
+      "url": "https://thbwiki.cc/白玉楼",
+      "source_type": "C",
+      "note": "TH105雪庭对照，不拼入智灵奇传寝殿造池庭；未作全视角原图测绘。"
+    },
+    {
+      "id": "NW-REALM",
+      "title": "T：求闻史纪冥界",
+      "url": "https://thbwiki.cc/东方求闻史纪/冥界",
+      "source_type": "T",
+      "note": "冥界独立于地狱、彼岸，具有季节；在场普通动物不作为活物。"
+    },
+    {
+      "id": "NW-FAN",
+      "title": "F：具名同人画作的庭院构图参照",
+      "url": "https://www.zerochan.net/622194",
+      "source_type": "F",
+      "note": "Aoha (Twintail)，2011-06-18上传的白玉楼庭景索引；仅观察缘廊、石庭与樱林构图，不复制图片，不作正作出处。"
+    },
+    {
+      "id": "NW-BARRIER",
+      "title": "C：幽明结界原作画面／出处索引",
+      "url": "https://thbwiki.cc/幽明结界",
+      "source_type": "社区原作场景索引",
+      "note": "八芒星、门与四柱意象。门开状态、云带和实体展示路为P；不补全解析缺损的精确位置。"
+    }
+  ],
+  "characters": [
+    {
+      "id": "youmu",
+      "name": "魂魄妖梦",
+      "locationId": "hakugyokurou",
+      "region": "netherworld",
+      "space": "netherworld",
+      "kind": "白玉楼园艺师／护卫及居所关联",
+      "note": "代表站位为P，不是实时行踪；妖忌去向未知，不将他自动放在此处。",
+      "view": "netherGate",
+      "position": [
+        -18,
+        98,
+        45
+      ],
+      "positionBasis": "P：独立冥界场景关联点；不按幻想乡山体抬高。",
+      "art": {
+        "file": "",
+        "work": "东方妖妖梦",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/东方妖妖梦/角色立绘",
+        "sourcePage": "https://thbwiki.cc/东方妖妖梦/角色立绘",
+        "availability": "已核对原作立绘索引；未取得可验证文件，不伪造直链或使用替代图。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方妖妖梦/角色设定",
+        "https://thbwiki.cc/东方求闻史纪/白玉楼/中日对照"
+      ]
+    },
+    {
+      "id": "yuyuko",
+      "name": "西行寺幽幽子",
+      "locationId": "hakugyokurou",
+      "region": "netherworld",
+      "space": "netherworld",
+      "kind": "白玉楼主人／幽灵管理职责",
+      "note": "代表站位为P，不是实时行踪；妖忌去向未知，不将他自动放在此处。",
+      "view": "hakugyokuHall",
+      "position": [
+        28,
+        99,
+        -119
+      ],
+      "positionBasis": "P：独立冥界场景关联点；不按幻想乡山体抬高。",
+      "art": {
+        "file": "",
+        "work": "东方妖妖梦",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/东方妖妖梦/角色立绘",
+        "sourcePage": "https://thbwiki.cc/东方妖妖梦/角色立绘",
+        "availability": "已核对原作立绘索引；未取得可验证文件，不伪造直链或使用替代图。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方妖妖梦/角色设定",
+        "https://thbwiki.cc/东方求闻史纪/白玉楼/中日对照"
+      ]
+    }
+  ]
+}

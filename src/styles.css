@@ -16,3 +16,10 @@
 #makai-nav{max-width:calc(100vw - 32px);overflow-x:auto;white-space:nowrap}
 .in-makai .caption{max-width:390px}
 @media(max-width:760px){.in-makai .caption{max-width:calc(100vw - 40px)}}
+
+/* Independent netherworld views retain the surface weather for the return. */
+.in-nether .weather-switch,.in-nether #light-neutral,.in-nether #light-dusk{display:none}
+#nether-nav{max-width:calc(100vw - 32px);overflow-x:auto;white-space:nowrap}
+@media(max-width:760px){.in-nether .caption{max-width:calc(100vw - 40px)}}
+
+.in-nether #btn-nether.active{background:#3c4050;color:#f1d2d4;border-color:#dac0bd65}

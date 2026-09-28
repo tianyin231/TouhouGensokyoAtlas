@@ -7,7 +7,7 @@ export async function checkMakai(G,atlas,characters,read){
  const fixed=JSON.parse(read('tools/makai-baseline.json'));
  for(const[f,d]of Object.entries(fixed.protectedFiles))assert.equal(hash(read(f)),d,`${f}: inherited bytes changed`);
  assert.equal(hash(JSON.stringify(characters.characters.slice(0,57))),fixed.original57,'Original residents and lunar identities changed');
- assert.equal(characters.characters.length,65);assert.equal(new Set(characters.characters.map(c=>c.id)).size,65);
+ assert(characters.characters.length>=65);assert.equal(new Set(characters.characters.map(c=>c.id)).size,characters.characters.length);
  assert.equal(atlas.locations.length,179);assert.equal(new Set(atlas.locations.map(l=>l.id)).size,179);
  assert.equal(hash(JSON.stringify(atlas.placements)),fixed.placements);assert.equal(hash(JSON.stringify(atlas.relationships)),fixed.relationships);
  const patches=JSON.parse(read('data/makai.json')),ids=new Set(atlas.locations.map(l=>l.id)),sources=new Set(atlas.sources.map(s=>s.id));
@@ -47,7 +47,7 @@ export async function checkMakai(G,atlas,characters,read){
  assert(modern.meshes.some(m=>m.makaiPart==='seal'));assert(modern.meshes.some(m=>m.makaiPart==='spectrum'));assert(first.meshes.some(m=>m.makaiZone==='vina'));assert(first.meshes.some(m=>m.makaiZone==='sanctuary'));
  for(const[id,p]of Object.entries(G.MAKAI.views)){assert.equal(p.space,p.region);assert.equal(G.DIORAMA.regionOf(id),p.region);assert(G.MAKAI.regions.includes(p.region));assert(p.eye.every(Number.isFinite)&&p.target.every(Number.isFinite));assert(G.length(G.sub(p.eye,p.target))>5);assert(p.era);}
  assert.equal(G.MAKAI.views.makaiSeal.makaiSeal,true);assert(!G.MAKAI.views.hokkai.makaiSeal);assert(G.MAKAI.views.pandemoniumSection.makaiSection);
- for(const c of characters.characters.slice(57)){assert(c.position.every(Number.isFinite));assert.equal(G.PRESETS[c.view].space,c.space);assert(c.positionBasis.startsWith('P'));assert(c.locationSources.length);assert.equal(c.art.urls.length,0,'Unverified PC98 portraits must not be fabricated');}
+ for(const c of characters.characters.slice(57,65)){assert(c.position.every(Number.isFinite));assert.equal(G.PRESETS[c.view].space,c.space);assert(c.positionBasis.startsWith('P'));assert(c.locationSources.length);assert.equal(c.art.urls.length,0,'Unverified PC98 portraits must not be fabricated');}
  assert.equal(characters.additionalVisits.length,2);
  for(const v of characters.additionalVisits){assert(['alice','byakuren'].includes(v.characterId));assert.equal(G.PRESETS[v.view].space,v.space);assert(v.positionBasis.startsWith('P'));}
  assert.equal(characters.characters.find(c=>c.id==='byakuren').locationId,'myouren');assert.equal(characters.characters.find(c=>c.id==='alice').locationId,'alice');

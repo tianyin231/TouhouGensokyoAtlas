@@ -1,12 +1,14 @@
 {
-  "version": "0.20.0",
-  "title": "魔界 · 万魔殿与法界",
+  "version": "0.21.0",
+  "title": "冥界 · 白玉楼与西行妖",
   "threeRevision": "185",
   "worldBuilders": [
     "src/world-builder.js",
     "src/old-hell.js",
     "src/kishinjou.js",
     "src/lunar.js",
-    "src/makai.js"
+    "src/makai.js",
+    "src/netherworld.js",
+    "src/landmarks.js"
   ]
 }
