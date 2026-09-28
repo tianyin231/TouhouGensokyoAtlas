@@ -1,4 +1,4 @@
-/* 样板材质与受限路线步行；其余空间继续使用原有渲染器和镜头。 */
+/* 样板材质与相机交互；不修改旧场景的几何和相机基线。 */
 (function(G){'use strict';
 const noiseGLSL=`
 varying vec3 vLandscapePosition;
@@ -47,7 +47,7 @@ G.DioramaRenderer=LandscapeRenderer;
 
 class LandscapeCamera extends G.CameraRig{
  constructor(...args){super(...args);window.addEventListener('keydown',e=>{if(this.mode==='walk'&&e.code==='Space'&&!e.repeat&&!/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)){e.preventDefault();this.walkAuto=!this.walkAuto;this.changed();}});}
- setView(view,animate=true){super.setView(view,view.walkPath?false:animate);this.walkTrack=null;this.walkAuto=false;
+ setView(view,animate=true){super.setView(view,view.walkPath?false:animate);this.walkTrack=null;this.walkAuto=false;this.keys.clear();
   if(view.walkPath){let length=0;const nodes=view.walkPath.map((p,i,a)=>{if(i)length+=Math.hypot(p[0]-a[i-1][0],p[1]-a[i-1][1]);return{p,length};});
    this.walkTrack={nodes,length};this.walkDistance=0;this.walkSide=0;this.walkLook=[0,0];this.mode='walk';this.updateWalk(0);
   }
@@ -68,11 +68,72 @@ class LandscapeCamera extends G.CameraRig{
   this.flyPitch=G.clamp(Math.atan(grade)*.65+this.walkLook[1],-1.1,1.1);
   this.target=G.add(this.eye,G.mul(this.direction(),35));this.updateMatrices();
  }
- update(dt){if(this.mode==='walk'&&this.walkTrack){this.updateWalk(dt);return;}super.update(dt);}
- rotate(dx,dy){if(this.mode!=='walk')return super.rotate(dx,dy);this.walkLook[0]-=dx*.003;this.walkLook[1]=G.clamp(this.walkLook[1]-dy*.0025,-.85,.85);this.changed();}
- pan(dx,dy){if(this.mode==='walk')return this.rotate(dx,dy);super.pan(dx,dy);}
- zoom(delta){if(this.mode==='walk')return;super.zoom(delta);}
- toggleFly(){if(this.mode==='walk'){this.walkTrack=null;this.walkAuto=false;this.mode='orbit';this.fromEye();}return super.toggleFly();}
+ setMode(mode){
+  if(mode==='ground'&&(this.space!=='surface'||this.cutaway))return this.mode;
+  if(mode===this.mode)return mode;
+  this.transition=null;this.walkAuto=false;this.walkTrack=null;this.keys.clear();
+  const d=G.norm(G.sub(this.target,this.eye));
+  this.flyYaw=Math.atan2(d[0],d[2]);this.flyPitch=Math.asin(G.clamp(d[1],-1,1));
+  this.mode=mode;
+  if(mode==='orbit')this.fromEye();
+  else{
+   if(mode==='ground'){
+    // 从岛外总览落地时使用当前注视点；岛内切换保持原来的水平位置。
+    const p=G.ISLAND.inside(this.eye[0],this.eye[2])?this.eye:G.ISLAND.inside(this.target[0],this.target[2])?this.target:G.PRESETS.meadowPath.eye;
+    this.eye=[p[0],this.terrain.height(p[0],p[2])+1.82,p[2]];
+    this.flyPitch=G.clamp(this.flyPitch,-.35,.35);this.fov=66;
+   }
+   this.aim();
+  }
+  this.updateMatrices();this.changed();return mode;
+ }
+ aim(){this.target=G.add(this.eye,G.mul(this.direction(),50));}
+ update(dt){
+  if(this.mode==='walk'&&this.walkTrack){this.updateWalk(dt);return;}
+  if(this.mode==='orbit'||this.transition){super.update(dt);return;}
+  const ground=this.mode==='ground',k=this.keys;
+  const forward=ground?[Math.sin(this.flyYaw),0,Math.cos(this.flyYaw)]:this.direction();
+  const right=[-Math.cos(this.flyYaw),0,Math.sin(this.flyYaw)];
+  const ahead=(k.has('KeyW')||k.has('ArrowUp')?1:0)-(k.has('KeyS')||k.has('ArrowDown')?1:0);
+  const side=(k.has('KeyD')||k.has('ArrowRight')?1:0)-(k.has('KeyA')||k.has('ArrowLeft')?1:0);
+  const v=G.add(G.mul(forward,ahead),G.mul(right,side));
+  if(!ground)v[1]+=(k.has('KeyE')||k.has('Space')?1:0)-(k.has('KeyQ')?1:0);
+  const fast=k.has('ShiftLeft')||k.has('ShiftRight'),speed=ground?(fast?10:4.8):this.flySpeed*(fast?4:1);
+  const next=G.add(this.eye,G.mul(G.norm(v),dt*speed));
+  if(ground){
+   // 只跟随真实地表与岛边界；建筑、桥梁和台阶仍需独立碰撞层。
+   if(G.ISLAND.inside(next[0],next[2]))this.eye=next;
+   this.eye[1]=this.terrain.height(this.eye[0],this.eye[2])+1.82;
+  }else this.eye=next;
+  this.aim();this.updateMatrices();
+ }
+ rotate(dx,dy){
+  if(this.mode==='orbit')return super.rotate(dx,dy);
+  if(this.mode==='walk'){
+   this.walkLook[0]-=dx*.003;this.walkLook[1]=G.clamp(this.walkLook[1]-dy*.0025,-.85,.85);
+  }else{
+   this.flyYaw-=dx*.004;this.flyPitch=G.clamp(this.flyPitch-dy*.003,-1.48,1.48);this.aim();
+  }
+  this.changed();
+ }
+ pan(dx,dy){
+  if(this.mode==='orbit')return super.pan(dx,dy);
+  if(this.mode!=='fly')return this.rotate(dx,dy);
+  // 平移相机本身，避免下一帧用 eye + direction 把拖动结果覆盖。
+  const right=[-Math.cos(this.flyYaw),0,Math.sin(this.flyYaw)],up=G.cross(right,this.direction());
+  const scale=this.flySpeed*.006;
+  this.eye=G.add(this.eye,G.add(G.mul(right,-dx*scale),G.mul(up,dy*scale)));
+  this.aim();this.changed();
+ }
+ zoom(delta){
+  this.transition=null;
+  if(this.mode==='fly'){
+   this.eye=G.add(this.eye,G.mul(this.direction(),-G.clamp(delta,-240,240)*this.flySpeed*.0035));this.aim();
+  }else if(this.mode==='ground'||this.mode==='walk')this.fov=G.clamp(this.fov*Math.exp(delta*.001),32,86);
+  else this.radius=G.clamp(this.radius*Math.exp(delta*.001),1.2,8500);
+  this.updateMatrices();this.changed();
+ }
+ toggleFly(){return this.setMode(this.mode==='fly'?'orbit':'fly');}
 }
 G.CameraRig=LandscapeCamera;
 })(globalThis.GA);

@@ -32,7 +32,8 @@ export function checkLandscape(G,atlas,read){
  const context=vm.createContext({GA:copy,performance,window:{addEventListener(){}}});
  vm.runInContext(read('src/camera.js').toString(),context);
  vm.runInContext(read('src/landscape-renderer.js').toString(),context);
- const rig=new copy.CameraRig({addEventListener(){}},terrain);
+ const events=new Map();
+ const rig=new copy.CameraRig({addEventListener(name,fn){events.set(name,fn);},setPointerCapture(){},focus(){}},terrain);
  rig.setView(G.PRESETS.meadowWalk,false);assert.equal(rig.mode,'walk');
  const start=rig.eye.slice();rig.keys.add('KeyW');let samples=0;
  for(let i=0;i<2400;i++){rig.update(1/60);assert(Math.abs(rig.eye[1]-terrain.height(rig.eye[0],rig.eye[2])-1.82)<1e-6);assert(rig.eye.every(Number.isFinite));samples++;}
@@ -42,6 +43,35 @@ export function checkLandscape(G,atlas,read){
  assert.equal(rig.walkDistance,0);assert(G.length(G.sub(rig.eye,start))<1e-6,'返回起点漂移');
  rig.keys.clear();rig.keys.add('KeyA');for(let i=0;i<300;i++)rig.update(1/60);
  assert.equal(rig.walkSide,-1.15,'试走不应离开已检查的路面');
+ const routeEye=rig.eye.slice(),routeFov=rig.fov;rig.zoom(-120);
+ assert(rig.fov<routeFov,'路线导览的缩放失效');assert.equal(G.length(G.sub(routeEye,rig.eye)),0,'步行缩放不应改变站位');
+
+ rig.setMode('ground');assert.equal(rig.walkTrack,null);assert.equal(rig.walkAuto,false);
+ const groundStart=rig.eye.slice();rig.keys.add('KeyA');
+ for(let i=0;i<180;i++){rig.update(1/60);assert(Math.abs(rig.eye[1]-terrain.height(rig.eye[0],rig.eye[2])-1.82)<1e-6);}
+ assert(Math.hypot(rig.eye[0]-groundStart[0],rig.eye[2]-groundStart[2])>10,'地面行走仍被锁在路线宽度内');
+ rig.keys.clear();rig.rotate(160,-45);const facing=G.norm([rig.direction()[0],0,rig.direction()[2]]),beforeForward=rig.eye.slice();
+ rig.keys.add('KeyW');rig.update(.5);rig.keys.clear();
+ assert(G.dot(G.sub(rig.eye,beforeForward),facing)>2,'步行未按环顾后的方向前进');
+
+ const beforeFly=rig.eye.slice();rig.setMode('fly');assert(G.length(G.sub(rig.eye,beforeFly))<1e-6,'进入飞行时相机跳位');
+ const oldEye=rig.eye.slice(),oldDirection=rig.direction(),oldSpeed=rig.flySpeed;
+ events.get('wheel')({deltaY:-120,preventDefault(){}});rig.update(0);
+ assert(G.dot(G.sub(rig.eye,oldEye),oldDirection)>1,'自由飞行滚轮没有推近');assert.equal(rig.flySpeed,oldSpeed,'滚轮不应只调整飞行速度');
+ const beforePan=rig.eye.slice(),beforePanDirection=rig.direction();
+ events.get('pointerdown')({pointerId:1,clientX:100,clientY:100,button:2});
+ events.get('pointermove')({pointerId:1,clientX:150,clientY:120,shiftKey:false});
+ events.get('pointerup')({pointerId:1});rig.update(0);
+ assert(G.length(G.sub(rig.eye,beforePan))>1,'右键平移被下一帧覆盖');assert(G.length(G.sub(rig.direction(),beforePanDirection))<1e-6,'平移不应改变朝向');
+ const beforeOrbit=rig.eye.slice(),directionBeforeOrbit=rig.direction();rig.setMode('orbit');rig.update(0);
+ assert(G.length(G.sub(rig.eye,beforeOrbit))<1e-6,'返回观察时相机跳位');assert(G.length(G.sub(G.norm(G.sub(rig.target,rig.eye)),directionBeforeOrbit))<1e-6);
+
+ rig.setView(G.PRESETS.diorama,false);rig.setMode('ground');rig.update(0);
+ assert(G.ISLAND.inside(rig.eye[0],rig.eye[2]),'总览落地不在岛内');assert(Math.abs(rig.eye[1]-terrain.height(rig.eye[0],rig.eye[2])-1.82)<1e-6);
  rig.setView(G.PRESETS.hellHall,false);assert.equal(rig.walkTrack,null);assert.equal(rig.mode,'orbit');
+ assert.equal(rig.setMode('ground'),'orbit','独立地下空间不应使用地表高度');
+ rig.displayMode='focus';rig.setMode('fly');const undergroundY=rig.eye[1];rig.keys.add('KeyQ');rig.update(.5);
+ assert(rig.eye[1]<undergroundY,'地下自由镜头无法下降');assert(rig.eye[1]<0,'地下镜头被弹回地表');
+ rig.setView(G.PRESETS.meadowPath,false);rig.cutaway=true;assert.equal(rig.setMode('ground'),'orbit','剖切状态不能进入地面行走');
  return{meshRecords:decoded.meshes.length,protectedRegionMeshes:[...old.values()].filter(m=>!m.globalSurface).length,checkedBoundaryVertices:borders,walkSamples:samples,routeLength:+G.LANDSCAPE.path.slice(1).reduce((s,p,i)=>s+Math.hypot(p[0]-G.LANDSCAPE.path[i][0],p[1]-G.LANDSCAPE.path[i][1]),0).toFixed(1)};
 }

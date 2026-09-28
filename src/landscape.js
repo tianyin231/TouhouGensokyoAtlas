@@ -153,6 +153,6 @@ function eye(x,z){return[x,0,z];}
 G.PRESETS.meadowPath={label:'村口田径',region:'connections',eye:eye(-359,39),target:eye(-471,48),fov:62,detailNeighbors:['forest','village']};
 G.PRESETS.forestApproach={label:'林缘近看',region:'connections',eye:eye(-474,49),target:eye(-522,55),fov:64,detailNeighbors:['forest','village']};
 G.PRESETS.meadowReturn={label:'林缘回望',region:'connections',eye:eye(-507,53),target:eye(-405,42),fov:64,detailNeighbors:['forest','village']};
-G.PRESETS.meadowWalk={label:'林缘步行试走',region:'connections',eye:eye(...path[0]),target:eye(...path[8]),fov:66,walkPath:path,detailNeighbors:['forest','village']};
+G.PRESETS.meadowWalk={label:'林缘路线导览',region:'connections',eye:eye(...path[0]),target:eye(...path[8]),fov:66,walkPath:path,detailNeighbors:['forest','village']};
 G.LANDSCAPE={apply,weight,zone,path,groundColor};
 })(globalThis.GA);

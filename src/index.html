@@ -2,7 +2,7 @@
 {{THREE_LICENSE}}
 -->
 </head><body>
-<canvas id="scene" tabindex="0" aria-label="幻想乡三维沙盘，左键旋转、滚轮缩放、右键平移"></canvas><div id="labels"></div><svg id="layer-lines" aria-hidden="true"><path id="layer-line"/></svg><div id="character-pins"></div>
+<canvas id="scene" tabindex="0" aria-label="幻想乡三维场景" aria-describedby="camera-help"></canvas><div id="labels"></div><svg id="layer-lines" aria-hidden="true"><path id="layer-line"/></svg><div id="character-pins"></div>
 <header class="ui"><button class="brand" id="brand-home" title="全岛总览"><span class="seal">幻</span><span><strong>幻想乡</strong><small>立体风物志 · GENSOKYO</small></span></button><nav class="tools">
 <button id="btn-overview" class="tool">▱ <span>全岛总览</span></button><button id="btn-hell" class="tool">◈ <span>地底全域</span></button><button id="btn-higan" class="tool">舟 <span>彼岸</span></button><button id="btn-heaven" class="tool">☁ <span>天界</span></button><button id="btn-nether" class="tool">❀ <span>冥界</span></button><button id="btn-makai" class="tool">◇ <span>魔界</span></button><button id="btn-lunar" class="tool">☾ <span>月之都</span></button><button id="btn-needle" class="tool">⌁ <span>辉针城</span></button><button id="btn-layers" class="tool">≋ <span>地下剖切</span></button><button id="btn-search" class="tool">⌕ <span>地点</span></button><button id="btn-characters" class="tool">♧ <span>角色</span></button><button id="btn-settings" class="tool" title="画面设置">☷</button><button id="btn-photo" class="tool" title="保存三维画面">▣</button></nav></header>
 <section class="caption ui"><div id="scene-index">GENSOKYO / ONE CONNECTED WORLD</div><h1 id="scene-title">幻想乡 · 云上大地</h1><p id="scene-subtitle">一整块空岛，山川林野彼此相连。</p><div class="caption-line"></div><div class="lighting-switch"><button id="light-neutral" class="active">日间</button><button id="light-dusk">黄昏</button><span id="build-status" role="status">准备整岛</span></div><div class="weather-switch"><button data-weather="clear" class="active">☀ 晴天</button><button data-weather="cloudy">☁ 多云</button><button data-weather="rain">☂ 小雨</button></div></section>
@@ -14,6 +14,15 @@
 <nav id="makai-nav" class="space-nav glass ui" hidden><button data-makai-view="makaiSeal">星莲船 · 法界</button><button data-makai-view="makai05Overview">怪绮谈 · 万魔殿</button><button data-makai-view="vinaRuins">灵异传 · 遗迹</button><button data-makai-view="diorama">返回幻想乡</button></nav>
 <nav id="lunar-nav" class="space-nav glass ui" hidden><button data-lunar-view="moonOverview">月都与桃海</button><button data-lunar-view="moonSeaInner">静海 · 表里</button><button data-lunar-view="dreamPassage">第四槐安</button><button data-lunar-view="diorama">返回幻想乡</button></nav>
 <nav id="hell-nav" class="space-nav glass ui" hidden><button id="hell-home">全域</button><button data-hell-view="hellStreet">旧都</button><button data-hell-view="hellPalace">地灵殿</button><button data-hell-view="hellBlazing">灼热地狱</button><button id="hell-roof">隐藏顶盖</button><button id="hell-return">返回地表</button></nav><nav class="dock glass ui"><select id="region-select" aria-label="选择地区"></select><div class="view-buttons" id="view-buttons"></div></nav>
+<section class="camera-controls glass ui" aria-label="相机操作">
+ <div class="camera-buttons" role="group" aria-label="相机模式">
+  <button data-camera-mode="orbit" aria-keyshortcuts="1" title="观察（1）" aria-pressed="true" class="active">观察</button><button data-camera-mode="fly" aria-keyshortcuts="2" title="自由飞行（2）" aria-pressed="false">自由飞行</button><button data-camera-mode="ground" aria-keyshortcuts="3" aria-pressed="false">地面行走</button>
+  <span class="camera-zoom"><button id="camera-zoom-out" aria-label="缩小" title="缩小 / 拉远">−</button><button id="camera-zoom-in" aria-label="放大" title="放大 / 推近">＋</button></span>
+ </div>
+ <p id="camera-help">左键拖动旋转 · 右键拖动平移 · 滚轮缩放</p>
+ <p id="camera-status"></p>
+ <button id="camera-tour" hidden>开始自动导览</button>
+</section>
 <div class="bottom-note ui"><span id="mode-note">连续地表 · 天气与日光</span><span id="engine-label">THREE.JS r185</span></div>
 <aside id="drawer" class="drawer glass hidden ui"><div class="drawer-head"><h2>地点簿</h2><button id="close-drawer" class="close">×</button></div><input id="search" placeholder="名称、别名或地点 ID…" aria-label="查找地点"><div class="filters"><button data-filter="placed" class="active">可定位</button><button data-filter="all">全部目录</button><button data-filter="other">独立世界</button></div><small id="result-count"></small><div class="results" id="results"></div></aside>
 <aside id="detail" class="detail glass hidden ui"><div class="detail-head"><span id="detail-tag" class="tag"></span><button class="close" id="close-detail">×</button></div><h2 id="detail-name"></h2><small id="detail-state"></small><p id="detail-fact"></p><p id="detail-design"></p><div id="detail-sources"></div><div id="detail-relations"></div></aside>
