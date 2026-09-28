@@ -19,9 +19,16 @@ jobs:
           python3 tools/build.py
           node tools/check.mjs
           node tools/audit-landmarks.mjs
-          cp dist/SHA256SUMS.txt /tmp/first.sha
-          python3 tools/build.py
-          cmp dist/SHA256SUMS.txt /tmp/first.sha
+      - name: Rebuild from a clean tracked-source snapshot
+        run: |
+          git archive --format=tar.gz --output=/tmp/atlas-source.tar.gz HEAD
+          mkdir /tmp/clean-atlas
+          tar -xzf /tmp/atlas-source.tar.gz -C /tmp/clean-atlas
+          python3 /tmp/clean-atlas/tools/build.py
+          node /tmp/clean-atlas/tools/check.mjs /tmp/clean-atlas/dist
+          cmp dist/SHA256SUMS.txt /tmp/clean-atlas/dist/SHA256SUMS.txt
+          cp /tmp/atlas-source.tar.gz dist/atlas-source.tar.gz
+          git rev-parse HEAD > dist/source-commit.txt
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -32,4 +39,6 @@ jobs:
             dist/SHA256SUMS.txt
             dist/landmarks-*.json
             dist/landmarks-*.md
+            dist/atlas-source.tar.gz
+            dist/source-commit.txt
           retention-days: 7
