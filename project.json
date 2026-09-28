@@ -1,6 +1,6 @@
 {
-  "version": "0.22.0",
-  "title": "天界 · 有顶天与玄云海",
+  "version": "0.23.0",
+  "title": "彼岸 · 中有之道与三途河",
   "threeRevision": "185",
   "worldBuilders": [
     "src/world-builder.js",
@@ -10,6 +10,7 @@
     "src/makai.js",
     "src/netherworld.js",
     "src/landmarks.js",
-    "src/heaven.js"
+    "src/heaven.js",
+    "src/higan.js"
   ]
 }

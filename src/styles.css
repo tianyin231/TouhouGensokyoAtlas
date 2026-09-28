@@ -29,3 +29,11 @@
 #heaven-nav{max-width:calc(100vw - 24px);overflow-x:auto}
 @media(max-width:1080px){.tools{max-width:calc(100vw - 185px);overflow-x:auto;flex-wrap:nowrap}.tools .tool{flex-shrink:0}}
 @media(max-width:520px){.tools{max-width:calc(100vw - 126px)}}
+
+/* The liminal charts retain surface controls without applying its climate. */
+.in-higan .weather-switch,.in-higan #light-neutral,.in-higan #light-dusk{display:none}
+#higan-nav{max-width:calc(100vw - 32px);overflow-x:auto}
+.tools{max-width:calc(100vw - 195px);overflow-x:auto;flex-shrink:1}.tools .tool{flex-shrink:0}
+@media(max-width:520px){.tools{max-width:calc(100vw - 110px)}}
+
+.tools{scrollbar-width:thin;scrollbar-color:#4d6170 transparent}

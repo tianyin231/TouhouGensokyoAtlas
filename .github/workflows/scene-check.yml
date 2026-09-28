@@ -27,8 +27,17 @@ jobs:
           python3 /tmp/clean-atlas/tools/build.py
           node /tmp/clean-atlas/tools/check.mjs /tmp/clean-atlas/dist
           cmp dist/SHA256SUMS.txt /tmp/clean-atlas/dist/SHA256SUMS.txt
+          cmp dist/release.json /tmp/clean-atlas/dist/release.json
           cp /tmp/atlas-source.tar.gz dist/atlas-source.tar.gz
           git rev-parse HEAD > dist/source-commit.txt
+      - name: Install optional browser regression dependencies
+        run: |
+          python3 -m pip install playwright==1.57.0
+          python3 -m playwright install --with-deps chromium
+      - name: Verify real HTTP WebGL and native Worker integration
+        run: |
+          python3 tools/check-higan-browser.py
+          python3 tools/check-browser.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -41,4 +50,6 @@ jobs:
             dist/landmarks-*.md
             dist/atlas-source.tar.gz
             dist/source-commit.txt
+            dist/higan-browser-check/
+            dist/browser-check/
           retention-days: 7

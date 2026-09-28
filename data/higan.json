@@ -1,0 +1,241 @@
+{
+  "version": "0.23.0",
+  "baseline": "78f5b1ed3bf6035c42c7f07d076df0e21c9dbbbe",
+  "note": "此岸与彼岸分图为P展示组织；原地表、人物、源资源和资料原表保留。",
+  "locationUpdates": [
+    {
+      "id": "liminal",
+      "aliases": [
+        "中有之道",
+        "Road of Liminality"
+      ],
+      "project_treatment": "缘日摊街和到石滩的连续路径已建，纸灯、棚架、摊品、树木与布局为P；不把它与彼岸的候判花原混同。",
+      "status": "已建三维P选景，不代表全域竣工",
+      "coordinate_status": "P：独立展示坐标；两岸未按官方里程配准",
+      "source_ids": [
+        "HG-ROAD"
+      ]
+    },
+    {
+      "id": "sai",
+      "aliases": [
+        "赛之河原",
+        "賽の河原",
+        "Sai no Kawara"
+      ],
+      "project_treatment": "河滩圆石、垒石、卒塔婆与红绿风车选景；竞赛机位仅增加P布置，无垒石游戏系统。",
+      "status": "已建三维P选景，不代表全域竣工",
+      "coordinate_status": "P：独立展示坐标；两岸未按官方里程配准",
+      "source_ids": [
+        "HG-SAI",
+        "HG-TH17"
+      ]
+    },
+    {
+      "id": "sanzu",
+      "aliases": [
+        "三途河",
+        "三途の河",
+        "Sanzu River"
+      ],
+      "project_treatment": "独立图中的静水、雾感、苔尖石、渡口和空心木舟；渡河宽度、费用与里程不固定，未建立横跨两岸的桥。码头及船体为P。",
+      "status": "已建三维P选景，不代表全域竣工",
+      "coordinate_status": "P：独立展示坐标；两岸未按官方里程配准",
+      "source_ids": [
+        "HG-SANZU",
+        "HG-KOMACHI",
+        "HG-FAN"
+      ]
+    },
+    {
+      "id": "higan",
+      "aliases": [
+        "彼岸",
+        "Higan"
+      ],
+      "project_treatment": "柔光花原、候判幽灵与无专名关口的P选景；关口外形为功能性补完，不是是非曲直厅总部、阎魔宫或久侘歌私宅。",
+      "status": "已建三维P选景，不代表全域竣工",
+      "coordinate_status": "P：独立展示坐标；两岸未按官方里程配准",
+      "source_ids": [
+        "HG-HIGAN",
+        "HG-TH17"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "HG-ROAD",
+      "title": "T/C：中有之道原作转录与场景索引",
+      "url": "https://thbwiki.cc/中有之道",
+      "source_type": "官方文字转录／社区索引",
+      "note": "缘日般的摊位和通向三途河的道路；摊位布局与背面为P。"
+    },
+    {
+      "id": "HG-SANZU",
+      "title": "T：求闻史纪三途河原文／译文",
+      "url": "https://thbwiki.cc/东方求闻史纪/三途河/中日对照",
+      "source_type": "官方文本社区转录",
+      "note": "幽雾、尖石、静流与死神渡船。未做可乘船玩法或固定收费／河宽。"
+    },
+    {
+      "id": "HG-HIGAN",
+      "title": "T：求闻史纪彼岸原文／译文",
+      "url": "https://thbwiki.cc/东方求闻史纪/彼岸/中日对照",
+      "source_type": "官方文本社区转录",
+      "note": "无分日夜季节的柔光花原与候判；不等同冥界或地狱。"
+    },
+    {
+      "id": "HG-TH17",
+      "title": "T：鬼形兽附带角色文档",
+      "url": "https://thbwiki.cc/附带文档:东方鬼形兽/Omake",
+      "source_type": "官方文本社区转录",
+      "note": "璎花垒石活动、久侘歌的关口职责。久侘歌不在彼岸居住，建筑为P。"
+    },
+    {
+      "id": "HG-SAI",
+      "title": "C：赛之河原原作场景索引",
+      "url": "https://thbwiki.cc/赛之河原",
+      "source_type": "社区场景索引",
+      "note": "TH17圆石、卒塔婆与红绿纸风车；没有逐帧测绘原作。"
+    },
+    {
+      "id": "HG-KOMACHI",
+      "title": "T：求闻史纪小野塚小町原文／译文",
+      "url": "https://thbwiki.cc/东方求闻史纪/小野塚小町/中日对照",
+      "source_type": "官方文本社区转录",
+      "note": "摆渡职责及距离能力；码头和船体尺寸均是P。"
+    },
+    {
+      "id": "HG-EIKI",
+      "title": "T：求闻史纪四季映姬原文／译文",
+      "url": "https://thbwiki.cc/东方求闻史纪/四季映姬·夜摩仙那度/中日对照",
+      "source_type": "官方文本社区转录",
+      "note": "裁决职责与彼岸活动关联；没有构建或命名是非曲直厅总部。"
+    },
+    {
+      "id": "HG-FAN",
+      "title": "F：Touhou 9 - Sanzu River (9.3/CMC+)模组场景",
+      "url": "https://gamebanana.com/mods/150051",
+      "source_type": "具名同人模组发布页",
+      "note": "仅参考公开预览的渡舟、花岸与雾水构图；非官方、未移植资源或复制舞台。发布页部分内容未解析，不据此作作者授权声明。"
+    }
+  ],
+  "characters": [
+    {
+      "id": "komachi",
+      "name": "小野塚小町",
+      "locationId": "sanzu",
+      "region": "shigan",
+      "space": "shigan",
+      "view": "sanzuLanding",
+      "position": [
+        40,
+        4,
+        151
+      ],
+      "kind": "三途河摆渡职责／活动关联",
+      "note": "渡舟、站位和码头为P；不是小町住宅，也不是实时行踪。",
+      "positionBasis": "P：独立此岸／彼岸注记，不按幻想乡地表高度抬升。",
+      "art": {
+        "file": "",
+        "work": "东方求闻史纪／东方花映塚",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/东方求闻史纪/小野塚小町/中日对照",
+        "sourcePage": "https://thbwiki.cc/东方求闻史纪/小野塚小町/中日对照",
+        "availability": "本轮核对文字与场景出处，未取得可验证的原作肖像文件；不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/东方求闻史纪/小野塚小町/中日对照"
+      ]
+    },
+    {
+      "id": "eika",
+      "name": "戎璎花",
+      "locationId": "sai",
+      "region": "shigan",
+      "space": "shigan",
+      "view": "saiStones",
+      "position": [
+        -18,
+        10,
+        -71
+      ],
+      "kind": "TH17赛之河原的垒石活动",
+      "note": "水子之灵的领袖；小会是P景观，不是重演某次原作事件。",
+      "positionBasis": "P：独立此岸／彼岸注记，不按幻想乡地表高度抬升。",
+      "art": {
+        "file": "",
+        "work": "东方鬼形兽",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/附带文档:东方鬼形兽/Omake",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方鬼形兽/Omake",
+        "availability": "本轮核对文字与场景出处，未取得可验证的原作肖像文件；不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方鬼形兽/Omake"
+      ]
+    },
+    {
+      "id": "kutaka",
+      "name": "庭渡久侘歌",
+      "locationId": "higan",
+      "region": "higan",
+      "space": "higan",
+      "view": "higanGate",
+      "position": [
+        10,
+        26,
+        -221
+      ],
+      "kind": "TH17彼岸关口工作关联",
+      "note": "彼岸仅为工作地点，居所仍在妖怪之山瀑布上方相关地带；不把本作关口命名为私宅。",
+      "positionBasis": "P：独立此岸／彼岸注记，不按幻想乡地表高度抬升。",
+      "art": {
+        "file": "",
+        "work": "东方鬼形兽",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/附带文档:东方鬼形兽/Omake",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方鬼形兽/Omake",
+        "availability": "本轮核对文字与场景出处，未取得可验证的原作肖像文件；不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方鬼形兽/Omake"
+      ]
+    },
+    {
+      "id": "eiki",
+      "name": "四季映姬·夜摩仙那度",
+      "locationId": "higan",
+      "region": "higan",
+      "space": "higan",
+      "view": "higanFlowers",
+      "position": [
+        16,
+        26,
+        -103
+      ],
+      "kind": "彼岸裁决职责／区域关联",
+      "note": "标记表示职责关联，不表示在此花丛中办公；没有虚构总部或专属宫殿。",
+      "positionBasis": "P：独立此岸／彼岸注记，不按幻想乡地表高度抬升。",
+      "art": {
+        "file": "",
+        "work": "东方求闻史纪／东方花映塚",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/东方求闻史纪/四季映姬·夜摩仙那度/中日对照",
+        "sourcePage": "https://thbwiki.cc/东方求闻史纪/四季映姬·夜摩仙那度/中日对照",
+        "availability": "本轮核对文字与场景出处，未取得可验证的原作肖像文件；不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/东方求闻史纪/四季映姬·夜摩仙那度/中日对照"
+      ]
+    }
+  ]
+}
