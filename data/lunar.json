@@ -1,0 +1,256 @@
+{
+  "version": "0.19.0",
+  "baseline": "dc9194e71f32c04b5ed98eec9e0383d394d05cea",
+  "note": "构建时追加的月世界资料：不覆盖原地点ID、原关系、地形锚点或原53位人物；不重新授权原作图片。",
+  "locationUpdates": [
+    {
+      "id": "lunar_capital",
+      "aliases": [
+        "月都",
+        "月之都",
+        "Lunar Capital"
+      ],
+      "project_treatment": "P补完：都城街区、内院、绵月宅与丰富海／桃园已建；冻结事件另选机位。",
+      "status": "已建三维场景／P补完，非完整世界穷尽",
+      "coordinate_status": "独立空间工程坐标P；没有官方测量比例",
+      "source_ids": [
+        "LUN-CILR3",
+        "LUN-TH15",
+        "LUN-F5"
+      ]
+    },
+    {
+      "id": "watatsuki",
+      "aliases": [
+        "绵月家",
+        "綿月邸",
+        "Watatsuki Residence"
+      ],
+      "project_treatment": "独立月都图中的绵月宅、前缘廊、茶室和背庭已建；完整外观、陈设与方位均为P。",
+      "status": "已建三维场景／P补完，非完整宅邸室内穷尽",
+      "coordinate_status": "独立空间工程坐标P；没有官方测量比例",
+      "source_ids": [
+        "LUN-CILR3"
+      ]
+    },
+    {
+      "id": "lunar_peaches",
+      "aliases": [
+        "桃园",
+        "月都桃园",
+        "Lunar Peach Orchard"
+      ],
+      "project_treatment": "桃园与丰富海岸、城外步径实际相连；树形、数量和位置为P。",
+      "status": "已建三维场景／P补完，非完整世界穷尽",
+      "coordinate_status": "独立空间工程坐标P；没有官方测量比例",
+      "source_ids": [
+        "LUN-CILR3",
+        "LUN-TH15",
+        "LUN-F5"
+      ]
+    },
+    {
+      "id": "fertility",
+      "aliases": [
+        "丰富之海",
+        "豊かの海",
+        "Sea of Fertility"
+      ],
+      "project_treatment": "独立月都图中的海岸；海水没有鱼、海鸟或普通生态装饰。岸形为P。",
+      "status": "已建三维场景／P补完，非完整世界穷尽",
+      "coordinate_status": "独立空间工程坐标P；没有官方测量比例",
+      "source_ids": [
+        "LUN-CILR3",
+        "LUN-TH15",
+        "LUN-F5"
+      ]
+    },
+    {
+      "id": "tranquility",
+      "aliases": [
+        "静寂之海",
+        "静かの海",
+        "Sea of Tranquility"
+      ],
+      "project_treatment": "内侧海水与表月荒原互斥切换；不接城外短街，不按官方米数标定。",
+      "status": "已建三维场景／P补完，非完整世界穷尽",
+      "coordinate_status": "独立空间工程坐标P；没有官方测量比例",
+      "source_ids": [
+        "LUN-CILR3",
+        "LUN-TH15",
+        "LUN-F5"
+      ]
+    },
+    {
+      "id": "kaian",
+      "aliases": [
+        "第四槐安",
+        "Fourth Kaian Passage"
+      ],
+      "project_treatment": "TH15梦境通道片段已建，格网与飞鹤为P三维重构；不代表整个梦境或常开月都航路。",
+      "status": "已建三维场景／P补完，非完整世界穷尽",
+      "coordinate_status": "独立空间工程坐标P；没有官方测量比例",
+      "source_ids": [
+        "LUN-DREAM",
+        "LUN-TH15",
+        "LUN-F5"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "LUN-CILR3",
+      "title": "T：ZUN《儚月抄》小说第三话原文／中译",
+      "url": "https://thbwiki.cc/东方儚月抄_～_Cage_in_Lunatic_Runagate./第三话/中日对照",
+      "source_type": "官方原文社区转录",
+      "note": "海无生物、桃树、兔的职责、绵月家、静海与月都背面关系；并非建筑施工图。"
+    },
+    {
+      "id": "LUN-TH15",
+      "title": "T：TH15附带文档－梦中月都与冻结／撤离",
+      "url": "https://thbwiki.cc/附带文档:东方绀珠传/Omake",
+      "source_type": "官方原文社区转录",
+      "note": "梦中复制品与真实冻结月都区分。"
+    },
+    {
+      "id": "LUN-F5",
+      "title": "F：东方夜雀食堂DLC5－月都＆魔界",
+      "url": "https://store.steampowered.com/app/2399331/?l=schinese",
+      "source_type": "具名同人开发者介绍",
+      "note": "借鉴可探索与生活感；未复制地图、贴图、商店或剧情。"
+    },
+    {
+      "id": "LUN-DREAM",
+      "title": "C：第四槐安与梦境版本索引",
+      "url": "https://thbwiki.cc/梦境世界",
+      "source_type": "社区整理／原作评论转录",
+      "note": "TH15格网与鹤形意象；不是TH155游乐园，未建完整梦都。"
+    }
+  ],
+  "characters": [
+    {
+      "id": "toyohime",
+      "name": "绵月丰姬",
+      "locationId": "watatsuki",
+      "region": "lunar",
+      "space": "lunar",
+      "kind": "绵月家居所／职责关联",
+      "note": "关联位置不代表当前行踪或所有时期同时在场；建筑和站位为P补完。",
+      "view": "moonResidence",
+      "position": [
+        159,
+        24,
+        -116
+      ],
+      "period": "daily",
+      "positionBasis": "P：独立月世界／梦境关联点；不投影到幻想乡地表。",
+      "art": {
+        "file": "",
+        "work": "东方儚月抄",
+        "credit": "原作相关图像版权归原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/东方儚月抄_～_Cage_in_Lunatic_Runagate./第三话/中日对照",
+        "sourcePage": "https://thbwiki.cc/东方儚月抄_～_Cage_in_Lunatic_Runagate./第三话/中日对照",
+        "availability": "本轮未取得可核验的原作肖像文件；只显示姓名与身份，不使用替代图。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/东方儚月抄_～_Cage_in_Lunatic_Runagate./第三话/中日对照"
+      ]
+    },
+    {
+      "id": "yorihime",
+      "name": "绵月依姬",
+      "locationId": "watatsuki",
+      "region": "lunar",
+      "space": "lunar",
+      "kind": "绵月家居所／月使训练职责",
+      "note": "关联位置不代表当前行踪或所有时期同时在场；建筑和站位为P补完。",
+      "view": "moonResidenceRear",
+      "position": [
+        192,
+        23,
+        -179
+      ],
+      "period": "daily",
+      "positionBasis": "P：独立月世界／梦境关联点；不投影到幻想乡地表。",
+      "art": {
+        "file": "",
+        "work": "东方儚月抄",
+        "credit": "原作相关图像版权归原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/东方儚月抄_～_Cage_in_Lunatic_Runagate./第三话/中日对照",
+        "sourcePage": "https://thbwiki.cc/东方儚月抄_～_Cage_in_Lunatic_Runagate./第三话/中日对照",
+        "availability": "本轮未取得可核验的原作肖像文件；只显示姓名与身份，不使用替代图。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/东方儚月抄_～_Cage_in_Lunatic_Runagate./第三话/中日对照"
+      ]
+    },
+    {
+      "id": "sagume",
+      "name": "稀神探女",
+      "locationId": "lunar_capital",
+      "region": "lunar",
+      "space": "lunar",
+      "kind": "TH15历史活动／月都高官",
+      "note": "关联位置不代表当前行踪或所有时期同时在场；建筑和站位为P补完。未把探女的住所指派为内院。",
+      "view": "moonSealed",
+      "position": [
+        0,
+        20,
+        140
+      ],
+      "period": "sealed",
+      "positionBasis": "P：独立月世界／梦境关联点；不投影到幻想乡地表。",
+      "art": {
+        "file": "稀神探女（绀珠传立绘）.png",
+        "work": "东方绀珠传",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "kind": "原作立绘",
+        "urls": [
+          "https://thbwiki.cc/Special:Redirect/file/%E7%A8%80%E7%A5%9E%E6%8E%A2%E5%A5%B3%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:稀神探女（绀珠传立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方绀珠传/角色立绘",
+        "availability": "原作立绘索引已核；外链可用性不保证，没有离线复制图像。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方绀珠传/Omake"
+      ]
+    },
+    {
+      "id": "doremy",
+      "name": "哆来咪·苏伊特",
+      "locationId": "kaian",
+      "region": "kaian",
+      "space": "dream",
+      "kind": "TH15梦境通道活动；不在月都居住",
+      "note": "关联位置不代表当前行踪或所有时期同时在场；建筑和站位为P补完。",
+      "view": "dreamWithin",
+      "position": [
+        0,
+        77,
+        -63
+      ],
+      "period": "dream",
+      "positionBasis": "P：独立月世界／梦境关联点；不投影到幻想乡地表。",
+      "art": {
+        "file": "哆来咪·苏伊特（绀珠传立绘）.png",
+        "work": "东方绀珠传",
+        "credit": "ZUN / 上海爱丽丝幻乐团",
+        "kind": "原作立绘",
+        "urls": [
+          "https://thbwiki.cc/Special:Redirect/file/%E5%93%86%E6%9D%A5%E5%92%AA%C2%B7%E8%8B%8F%E4%BC%8A%E7%89%B9%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+        ],
+        "filePage": "https://thbwiki.cc/文件:哆来咪·苏伊特（绀珠传立绘）.png",
+        "sourcePage": "https://thbwiki.cc/东方绀珠传/角色立绘",
+        "availability": "原作立绘索引已核；外链可用性不保证，没有离线复制图像。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方绀珠传/Omake"
+      ]
+    }
+  ]
+}

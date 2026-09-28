@@ -9,7 +9,7 @@ class CharacterLayer{
   this.parent=document.getElementById('character-pins');this.panel=document.getElementById('characters-panel');this.list=document.getElementById('character-list');this.detail=document.getElementById('character-detail');
   const locs=new Map(world.data.locations.map(l=>[l.id,l]));this.locs=locs;
   for(const c of this.data){c.runtimePosition=this.position(c);this.status.set(c.id,'pending');}
-  const groups=new Map();this.occurrences=this.data.flatMap(c=>[c,...(c.visits||[]).map((v,i)=>({...c,...v,occurrence:i,runtimePosition:this.position(v)}))]);for(const c of this.occurrences){if(!c.runtimePosition)continue;const key=(c.space||'surface')+'|'+c.locationId;if(!groups.has(key))groups.set(key,[]);groups.get(key).push(c);}
+  const groups=new Map();this.occurrences=this.data.flatMap(c=>[c,...(c.visits||[]).map((v,i)=>({...c,...v,occurrence:i,runtimePosition:this.position(v)}))]);for(const c of this.occurrences){if(!c.runtimePosition)continue;const key=(c.space||'surface')+'|'+c.locationId+(c.period?'|'+c.period:'');if(!groups.has(key))groups.set(key,[]);groups.get(key).push(c);}
   for(const[key,cs]of groups){const id=cs[0].locationId;const el=this.makePin(cs,id,true);this.elements.push({cs,el,grouped:true,id});if(cs.length>1&&cs.some(c=>c.position))for(const c of cs)this.elements.push({cs:[c],el:this.makePin([c],id,false),grouped:false,id});}
   document.getElementById('btn-characters').onclick=()=>this.toggle();
   document.getElementById('close-characters').onclick=()=>this.panel.classList.add('hidden');
@@ -20,7 +20,7 @@ class CharacterLayer{
   document.getElementById('characters-retry').onclick=()=>{for(const c of this.data)if(this.status.get(c.id)==='failed'){this.assets.delete(c.id);this.status.set(c.id,'pending');}this.update(true);this.renderList();};
   this.renderList();
  }
- position(c){if(!c.locationId)return null;if(c.position){const p=c.position.slice();p[1]=Math.max(p[1],(c.space==='mausoleum'?-44:c.space==='senkai'?0:this.world.terrain.height(p[0],p[2]))+1.2);return p;}
+ position(c){if(!c.locationId)return null;if(G.LUNAR?.spaces.includes(c.space))return c.position?.every(Number.isFinite)?c.position.slice():null;if(c.position){const p=c.position.slice();p[1]=Math.max(p[1],(c.space==='mausoleum'?-44:c.space==='senkai'?0:this.world.terrain.height(p[0],p[2]))+1.2);return p;}
  const p=this.world.placementMap.get(c.locationId);return p?[p.x,this.world.terrain.height(p.x,p.z)+4,p.z]:null;}
  makePin(cs,locationId,grouped){const b=document.createElement('button');b.className='character-pin';b.dataset.character=cs[0].id;b.dataset.group=locationId;b.hidden=true;
  b.setAttribute('aria-label',cs.length>1?`${this.locs.get(locationId)?.name||locationId}：${new Set(cs.map(c=>c.id)).size}位关联角色`:`${cs[0].name}，${cs[0].kind}`);
@@ -30,6 +30,7 @@ class CharacterLayer{
  b.onclick=()=>{if(cs.length>1){this.group=locationId;this.filter='';document.getElementById('character-search').value='';this.panel.classList.remove('hidden');this.renderList();}else this.select(cs[0].id,true,cs[0].occurrence);};
  this.parent.append(b);return b;}
  imageFor(c,slot){
+  if(!c.art.embedded&&!c.art.urls?.length){slot.replaceChildren();const t=document.createElement('span');t.className='portrait-error';t.textContent='原作图待核';slot.append(t);slot.classList.add('portrait-unavailable');this.status.set(c.id,'unavailable');return;}
   if(slot.dataset.loadedFor===c.id)return;slot.dataset.loadedFor=c.id;slot.replaceChildren();
   const img=document.createElement('img');img.alt=c.name+' · '+c.art.work+(c.art.kind||'原作立绘');img.decoding='async';img.referrerPolicy='no-referrer';img.hidden=true;
   const text=document.createElement('span');text.className='portrait-error';text.textContent='原图加载中';slot.append(img,text);
@@ -85,8 +86,8 @@ G.CharacterLayer=CharacterLayer;
 class DisplayCharacters extends Base{
  select(id,animate=true,occurrence){const base=this.data.find(c=>c.id===id);if(!base)return;const c=Number.isInteger(occurrence)?base.visits?.[occurrence]:base;if(c&&!c.view&&c.locationId){const p=this.position(c);if(p){const owner=c.region||(c.space==='mausoleum'?'mausoleum':c.space==='senkai'?'senkai':G.DIORAMA.owner(p[0],p[2]));c.view=G.REGION_DEFAULTS?.[owner];}}super.select(id,animate,occurrence);this.state.changed?.();}
  update(retry=false){if(!this.rig)return;const atlas=this.state.displayMode==='atlas',active=this.state.characters!==false&&!this.state.uiHidden,boxes=[];
- for(const item of this.elements){const c=item.cs[0],el=item.el;let pos=c.runtimePosition,owner=c.region||(c.space==='mausoleum'?'mausoleum':c.space==='senkai'?'senkai':G.DIORAMA.owner(pos[0],pos[2]));let space=c.space||'surface';const matching=(atlas&&(space==='surface'||this.state.cutaway&&space==='mausoleum'))||(!atlas&&(this.state.space==='section'?['myouren','mausoleum'].includes(owner):space===this.state.space&&(this.state.displayMode==='continuous'||owner===this.state.focus)));let show=active&&matching;
- if(atlas){if(!item.grouped||Number.isInteger(c.occurrence))show=false;}else{let singles=this.elements.some(e=>!e.grouped&&e.id===item.id);let near=G.length(G.sub(this.rig.eye,pos))<(item.id==='scarlet'?200:140);if(singles)show=show&&(item.grouped?!near:near);if(!item.grouped&&c.id==='mystia'&&((this.state.view==='mystiaStage')!==Number.isInteger(c.occurrence)))show=false;}
+ for(const item of this.elements){const c=item.cs[0],el=item.el;let pos=c.runtimePosition,owner=c.region||(c.space==='mausoleum'?'mausoleum':c.space==='senkai'?'senkai':G.DIORAMA.owner(pos[0],pos[2]));let space=c.space||'surface';const matching=(atlas&&(space==='surface'||this.state.cutaway&&space==='mausoleum'))||(!atlas&&(this.state.space==='section'?['myouren','mausoleum'].includes(owner):space===this.state.space&&(this.state.displayMode==='continuous'||owner===this.state.focus)));let show=active&&matching;if(c.period==='daily'&&this.state.lunarSealed||c.period==='sealed'&&!this.state.lunarSealed)show=false;
+ if(atlas){if(!item.grouped||Number.isInteger(c.occurrence))show=false;}else{let singles=this.elements.some(e=>!e.grouped&&e.id===item.id&&e.cs[0].period===c.period);let near=G.length(G.sub(this.rig.eye,pos))<(item.id==='scarlet'?200:140);if(singles)show=show&&(item.grouped?!near:near);if(!item.grouped&&c.id==='mystia'&&((this.state.view==='mystiaStage')!==Number.isInteger(c.occurrence)))show=false;}
  if(!show){el.hidden=true;continue;}if(atlas)pos=G.DIORAMA.point(pos,owner,'atlas',this.state.aligned);let d=G.length(G.sub(this.rig.eye,pos)),p=this.rig.project([pos[0],pos[1]+(atlas?28:2),pos[2]]);if(!p.visible){el.hidden=true;continue;}let x=p.x*innerWidth,y=p.y*innerHeight,h=80,w=100,shift=0;if(x<40||x>innerWidth-40||y<95||y>innerHeight-96){el.hidden=true;continue;}for(let k=0;k<3&&boxes.some(b=>Math.abs(b.x-x)<105&&Math.abs(b.y-y-shift)<h);k++)shift-=85;if(y+shift<90){el.hidden=true;continue;}el.hidden=false;el.style.left=x+'px';el.style.top=(y+shift)+'px';el.style.setProperty('--leader',(8-shift)+'px');el.style.zIndex=String(Math.round(10000/(d+1)));boxes.push({x,y:y+shift});const slot=el.querySelector('.portrait-slot');if(retry)slot.dataset.loadedFor='';this.imageFor(c,slot);
  }
  }

@@ -51,6 +51,30 @@ def build(output_dir):
         json.loads(text)
         return text.rstrip('\n')
 
+    lunar = json.loads(data('data/lunar.json'))
+    atlas = json.loads(data('data/atlas.json'))
+    characters = json.loads(data('data/characters.json'))
+    locations = {v['id']: v for v in atlas['locations']}
+    for patch in lunar['locationUpdates']:
+        if patch['id'] not in locations:
+            raise ValueError('月世界补丁引用了未知地点：' + patch['id'])
+        target = locations[patch['id']]
+        for key, value in patch.items():
+            if key in ('aliases', 'source_ids'):
+                target[key] = list(dict.fromkeys(target.get(key, []) + value))
+            elif key in ('status', 'project_treatment', 'coordinate_status'):
+                target[key] = value
+            elif key != 'id':
+                raise ValueError('月世界补丁不允许覆盖字段：' + key)
+    for key, base in [('sources', atlas), ('characters', characters)]:
+        ids = {v['id'] for v in base[key]}
+        for record in lunar[key]:
+            if record['id'] in ids:
+                raise ValueError('月世界追加ID重复：' + record['id'])
+            ids.add(record['id'])
+            base[key].append(record)
+    characters['scopeNote'] = f"当前合计{len(characters['characters'])}条；月世界关联由data/lunar.json追加，原表保留。"
+
     core = read_bytes('vendor/three/three.core.js')
     if f"const REVISION = '{project['threeRevision']}';".encode() not in core:
         raise ValueError('Three.js 引擎版本与 project.json 的 threeRevision 不一致')
@@ -59,8 +83,8 @@ def build(output_dir):
     world_builder = '\n'.join(source(name) for name in project['worldBuilders'])
     parts = {
         'STYLES': read_text('src/styles.css'),
-        'CHARACTER_DATA': data('data/characters.json'),
-        'ATLAS_DATA': data('data/atlas.json'),
+        'CHARACTER_DATA': json.dumps(characters, ensure_ascii=False),
+        'ATLAS_DATA': json.dumps(atlas, ensure_ascii=False),
         'EXPANSION_DATA': data('data/expansion.json'),
         'OVERVIEW_PACK': base64.b64encode(read_bytes('assets/packs/overview.pack.gz')).decode('ascii'),
         'LEGACY_PACK': base64.b64encode(read_bytes('assets/packs/legacy.pack.gz')).decode('ascii'),
@@ -72,6 +96,7 @@ def build(output_dir):
         'RENDERER': source('src/renderer.js'),
         'HELL_RENDERER': source('src/old-hell-renderer.js'),
         'CASTLE_RENDERER': source('src/kishinjou-renderer.js'),
+        'LUNAR_RENDERER': source('src/lunar-renderer.js'),
         'CHARACTERS': source('src/characters.js'),
         'STREAMING': source('src/streaming.js'),
         'APP': source('src/app.js'),
@@ -87,6 +112,8 @@ def build(output_dir):
     read_bytes('tools/check.mjs')
     read_bytes('tools/check-kishinjou.mjs')
     read_bytes('tools/kishinjou-baseline.json')
+    read_bytes('tools/check-lunar.mjs')
+    read_bytes('tools/lunar-baseline.json')
     output_dir.mkdir(parents=True, exist_ok=True)
     # GitHub 会清洗非 ASCII 附件名，发布名称与校验文件必须一致。
     filename = f'TouhouGensokyoAtlas-{tag}.html'

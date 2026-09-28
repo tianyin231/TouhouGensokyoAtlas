@@ -1,13 +1,13 @@
 # 工程架构与性能约定
 
-> 当前结构快照：`5775e35a25e7eca9bb7ae02ef022bf2df92ecd37`。维护者已完成源码／资源拆分；旧HTML注入链仅是历史，不是当前构建方式。具体命令和版本规则以根目录README及 `project.json` 为准。
+> 基础拆分快照：`5775e35a25e7eca9bb7ae02ef022bf2df92ecd37`。维护者已完成源码／资源拆分；旧HTML注入链仅是历史，不是当前构建方式。具体命令和版本规则以根目录README及 `project.json` 为准。
 
 ## 1. 当前独立构建链
 
 ```text
 project.json + src/index.html/styles.css
-  + data/atlas.json、characters.json、expansion.json
-  + project.worldBuilders 指定的基础及地底建模脚本
+  + data/atlas.json、characters.json、expansion.json + lunar.json受限追加
+  + project.worldBuilders 指定的基础、地底、辉针城与月世界建模脚本
   + 渲染、相机、人物、调度、应用脚本
   + assets/packs/ 两个必需源包
   + vendor/three/ 固定引擎与许可证
@@ -16,7 +16,7 @@ project.json + src/index.html/styles.css
 
 命令是 `python tools/build.py`，随后 `node tools/check.mjs`。Python构建不读取旧HTML／Git历史、不临时下载依赖。`dist/` 是产物，不人工修改或提交；使用标签与Release分发成品，不恢复根目录版本化HTML集合。
 
-`project.json` 当前为0.18.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
+`project.json` 当前为0.19.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
 
 发布版本、原研究数据版本、区域元数据版本和历史来源身份分开。不能对全仓库替换所有0.16／0.17字符串；项目版本映射到标签和产物名由构建器统一完成。
 
@@ -86,3 +86,11 @@ CPU数组、实例数据、Three.js几何、贴图、阴影／反射／后期目
 辉针城以廉价程序化外形补入解包后的总览，不改旧源包，也不触发全图或该城高模生成。详情仅由按区Worker建立；相机在该城高度范围内才使用空中归属，地面归属多边形为空。材质层在旧地狱之后追加，遵守同一太阳、天气和暂停时钟。详情卸载与原图失败均保留独立回退路径。
 
 `tools/check-kishinjou.mjs` 纳入主检查器；固定旧源码／源包哈希保护、原数据关系与几何期望在 `tools/kishinjou-baseline.json`，不能随每次运行自动更新。可选 `tools/check-browser.py` 单独依赖Playwright，不改变离线构建的依赖和流程。详见[模块说明](kishinjou-reference.md)。
+
+## 月世界独立模块（0.19.0）
+
+`worldBuilders` 在辉针城后追加 `src/lunar.js`，三个区域分别为 `lunar`／`tranquility`／`kaian`，对应独立 `lunar`／`lunarsea`／`dream` 空间。`src/lunar-renderer.js`最后继承渲染器并隔离显隐、时钟、局部补光、月空、静海形态；返回旧空间恢复阴影和天气参数。独立图的总览变换是恒等变换，不套用仙界展开偏移。
+
+构建读取 `data/lunar.json` 并限制可更新字段、去重别名和来源、拒绝未知地点与重复新人物；旧atlas和characters源文件不改。运行使用一次编译后的资料，主线程／Worker依然同源。原两份pack.gz不改；启动时生成1,764,396字节总览补充，详情由既有原生Worker按需生成。近远各自有固定几何期望，详情取消与CPU/GPU回收沿用原调度器，不通过先生成全部高模实现伪按需。
+
+离线检查包含 `check-lunar.mjs`，额外浏览器检查为 `check-lunar-browser.py`。既有浏览器脚本仅增加可选 `--headed` 支持；本轮使用Xvfb有头Chromium以及明确标注的 `--content` 装入路径验证真实WebGL／Blob Worker，不把它称为HTTP或file://验收。预算和未测项见 [lunar-reference.md](lunar-reference.md)。

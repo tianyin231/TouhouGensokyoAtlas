@@ -1,10 +1,11 @@
 {
-  "version": "0.18.0",
-  "title": "辉针城 · 云中逆城",
+  "version": "0.19.0",
+  "title": "月之都 · 桃海与梦径",
   "threeRevision": "185",
   "worldBuilders": [
     "src/world-builder.js",
     "src/old-hell.js",
-    "src/kishinjou.js"
+    "src/kishinjou.js",
+    "src/lunar.js"
   ]
 }

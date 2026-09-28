@@ -4,7 +4,13 @@
 
 直接体验请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 下载 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
-## 当前源码：辉针城（0.18.0）
+## 月世界场景（0.19.0）
+
+顶部「月之都」进入城内、绵月宅、桃园和丰富海；底部可切换静海表里与第四槐安通道，也可返回完整幻想乡。共有14个机位，封存事件与日常场景分开。不是把月都悬在地表上空。
+
+新增 `src/lunar.js`、`src/lunar-renderer.js` 与构建资料补丁 `data/lunar.json`。旧地点及人物源数据不覆盖；详细身份与边界见 [月世界考据与实现](docs/lunar-reference.md)。集成检查仍为 `node tools/check.mjs`，另有可选 `python tools/check-lunar-browser.py`；浏览器脚本需要Playwright／Chromium，不是构建依赖。
+
+## 保留场景：辉针城（0.18.0加入）
 
 顶部“辉针城”或地区下拉菜单进入。提供外观、空中来路、背侧、石垣、望楼、大殿、可逆剖览和事件风暴八个机位；地点检索也支持“逆城”与“Kishinjou”。TH145三层外形与TH14逆向室内的依据、版本差异、同人参照和P补完见[辉针城考据与实现](docs/kishinjou-reference.md)。这次更新源码，不自动创建或覆盖Release；构建后才能看到新场景。
 
@@ -34,6 +40,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 | `src/index.html`、`src/styles.css` | 页面模板、界面和样式；模板本身不能直接预览 |
 | `src/app.js` | 地点选择、导览、界面状态和启动逻辑 |
 | `src/world-builder.js` | 基础数学、地形及已有地表区域的程序化建模 |
+| `src/lunar.js`、`src/lunar-renderer.js`、`data/lunar.json` | 月都、静海与梦境独立空间、近远景、资料追加与人物身份 |
 | `src/kishinjou.js`、`src/kishinjou-renderer.js` | 辉针城近远景、独立空中定位、局部材质与可逆剖览 |
 | `src/old-hell.js` | 旧地狱区域的建模、地点映射与导览镜头 |
 | `src/renderer.js`、`src/old-hell-renderer.js` | 渲染、材质、光照与地下专用效果 |

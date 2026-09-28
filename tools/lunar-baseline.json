@@ -1,0 +1,57 @@
+{
+  "description": "Reviewed geometry after roof, shader, terrain and passage inspection, 2026-09-28. Do not regenerate from the test runner.",
+  "baseline": "dc9194e71f32c04b5ed98eec9e0383d394d05cea",
+  "protectedFiles": {
+    "src/kishinjou.js": "a90ac62e8244c71583fa85b007186bd8798454eba406136199f66949024a2899",
+    "src/kishinjou-renderer.js": "031b0edcbe51d900c4dfc9dd8da72a453c65d33076765109e48b10df46cf4130",
+    "src/camera.js": "0bc9225d4a9b3eff946464b36619b7d17da180d4ca43a6dd31f1e3e160f6d721",
+    "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
+    "data/characters.json": "b87604e876804b5b9469657adf653451eccd561cddecdbb578f8966745beacc9"
+  },
+  "originalCharacterCount": 53,
+  "originalCharacters": "bb3b821dcc9eb2a902e074d943cb290ba4a42f80c0311bcaefb44741e337906f",
+  "packs": {
+    "lunar": {
+      "detail": {
+        "meshes": 65,
+        "bytes": 17824752,
+        "triangles": 165044,
+        "geometry": "7660ba571009b702365eb5193c145f8f7f26ff91a991ee466484e26d0889a0c2"
+      },
+      "overview": {
+        "meshes": 47,
+        "bytes": 1187676,
+        "triangles": 10997,
+        "geometry": "fe5d4676bed1e2234a6d9a05191488f1c16c1bbd847f97bef3a8d43723c7bb80"
+      }
+    },
+    "tranquility": {
+      "detail": {
+        "meshes": 4,
+        "bytes": 3904416,
+        "triangles": 36152,
+        "geometry": "858583edb9dcfd56ddb5948c2cdcda107d22b7c1981eedbdc061998bf5654bba"
+      },
+      "overview": {
+        "meshes": 3,
+        "bytes": 205200,
+        "triangles": 1900,
+        "geometry": "1319c0900121a86a53d12ecc153dcf1e6959e558c0210056cae7eb052bba3aed"
+      }
+    },
+    "kaian": {
+      "detail": {
+        "meshes": 3,
+        "bytes": 908604,
+        "triangles": 8413,
+        "geometry": "a4cbe0bb402fd974d2bb4c539e2d9fa0deed3f7de59b8a5b2a621e287e337264"
+      },
+      "overview": {
+        "meshes": 2,
+        "bytes": 371520,
+        "triangles": 3440,
+        "geometry": "6c83c34f22d8075bfb107b0bbacb1a47e768d90bb2a27b3e7fe7ab323611235b"
+      }
+    }
+  }
+}

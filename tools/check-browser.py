@@ -21,6 +21,7 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 p = argparse.ArgumentParser(description=__doc__)
 p.add_argument('--content', action='store_true')
+p.add_argument('--headed', action='store_true', help='Use a visible browser, e.g. under Linux Xvfb')
 p.add_argument('--chromium', help='Optional installed Chromium executable')
 p.add_argument('--output', type=Path, default=ROOT / 'dist/browser-check')
 args = p.parse_args()
@@ -39,7 +40,7 @@ try:
         server = ThreadingHTTPServer(('127.0.0.1', 0), partial(SimpleHTTPRequestHandler, directory=str(ROOT/'dist')))
         threading.Thread(target=server.serve_forever, daemon=True).start()
     with sync_playwright() as pw:
-        launch = {'headless': True, 'args': ['--no-sandbox', '--enable-unsafe-swiftshader', '--use-angle=swiftshader', '--disable-dev-shm-usage']}
+        launch = {'headless': not args.headed, 'args': ['--no-sandbox', '--enable-unsafe-swiftshader', '--use-angle=swiftshader', '--disable-dev-shm-usage']}
         if args.chromium:
             launch['executable_path'] = args.chromium
         browser = pw.chromium.launch(**launch)
