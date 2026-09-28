@@ -6,8 +6,8 @@
 
 ```text
 project.json + src/index.html/styles.css
-  + data/atlas.json、characters.json、expansion.json + lunar.json/makai.json/netherworld.json/heaven.json/higan.json受限追加
-  + project.worldBuilders 指定的基础、地底、辉针城、月世界、魔界、冥界、天界与此岸彼岸建模脚本及导航注册
+  + data/atlas.json、characters.json、expansion.json + lunar.json/makai.json/netherworld.json/heaven.json/higan.json/animal.json受限追加
+  + project.worldBuilders 指定的基础、地底、辉针城、月世界、魔界、冥界、天界、此岸彼岸与畜生界建模脚本及导航注册
   + 渲染、相机、人物、调度、应用脚本
   + assets/packs/ 两个必需源包
   + vendor/three/ 固定引擎与许可证
@@ -16,7 +16,7 @@ project.json + src/index.html/styles.css
 
 命令是 `python tools/build.py`，随后 `node tools/check.mjs`。Python构建不读取旧HTML／Git历史、不临时下载依赖。`dist/` 是产物，不人工修改或提交；使用标签与Release分发成品，不恢复根目录版本化HTML集合。
 
-`project.json` 当前为0.23.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
+`project.json` 当前为0.24.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`、`src/animal.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
 
 发布版本、原研究数据版本、区域元数据版本和历史来源身份分开。不能对全仓库替换所有0.16／0.17字符串；项目版本映射到标签和产物名由构建器统一完成。
 
@@ -129,3 +129,10 @@ CPU数组、实例数据、Three.js几何、贴图、阴影／反射／后期目
 `data/higan.json`沿用受限追加，原69人物和2条历史访问不变，新增4条，最终73。天界旧数量断言改为可扩展下限并限定其新增两人的切片，旧基线不改；新`check-higan.mjs`验证全部旧80条映射、84导航、95待处理、原资料及26个继承文件。两图详情约10.2MiB和23.2MiB顶点源数组，启动代理合计1,963,764字节；不是实际显存占用。原生Worker取消、缓存清理及独立近远几何期望仍保留。
 
 新增`.github/workflows/scene-check.yml`以contents:read运行构建／审计、干净Git源快照重建对比与HTTP浏览器回归。Playwright只为可选测试安装，不成为离线构建依赖；Action附件保留7天，不写回仓库、不创建Release。当前具体测试与边界以`current-status.md`为准，不把workflow存在当作测试通过。
+
+
+## 畜生界模块（0.24.0）
+
+建模模块`animal.js`在Higan之后登记；两个区域`animal`与`primate_core`使用恒等展示变换、空多边形。后者是灵长园内部的P展示，不作为另一个官方世界。新增渲染层通过自身材质路由保证护岸水面不误用全岛普通水材质，近共面的窄铺装、窗格和水面采用局部深度偏移；不修改原相机或其他区域着色器。
+
+冷启动代理2,329,992字节，详情分两包按需生成；原资源包不改。新静态检查保护29个继承文件、原73人物、旧访问与84个旧入口，并精确验证75人物／86导航。原Higan数量断言只允许追加，旧模型期望不更新；可选新浏览器回归替代CI中上一轮的Higan专用任务，通用26项继承任务保留。全部历史专用套件未因此自动逐个重跑。

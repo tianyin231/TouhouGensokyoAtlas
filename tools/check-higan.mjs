@@ -9,8 +9,8 @@ export async function checkHigan(G,atlas,characters,read){
  assert.equal(hash(JSON.stringify(characters.characters.slice(0,69))),fixed.original69);
  assert.equal(hash(JSON.stringify(characters.additionalVisits)),fixed.visits);
  assert.equal(hash(JSON.stringify(atlas.placements)),fixed.placements);assert.equal(hash(JSON.stringify(atlas.relationships)),fixed.relationships);
- assert.equal(characters.characters.length,73);assert.equal(new Set(characters.characters.map(c=>c.id)).size,73);
- const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,84);assert.equal(audit.pending,95);assert.equal(audit.version,'0.23.0');
+ assert(characters.characters.length>=73);assert.equal(new Set(characters.characters.map(c=>c.id)).size,characters.characters.length);
+ const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert(audit.navigable>=84);assert(audit.pending<=95);
  for(const [id,view]of Object.entries(fixed.previousMappings))assert.equal(G.resolveLocation(id).view,view);
  for(const id of ['wind_cave','geyser_mountain','sanctuary'])assert.equal(G.resolveLocation(id).view,null);
  assert.equal(Object.keys(G.HIGAN.views).length,16);assert.equal(Object.keys(G.HIGAN.locations).length,4);
@@ -45,7 +45,7 @@ export async function checkHigan(G,atlas,characters,read){
  assert(near.meshes.some(m=>m.higanPart==='contest'));assert(!G.buildShigan(true).meshes.some(m=>m.higanPart==='contest'));
  assert(!far.meshes.some(m=>m.higanZone.startsWith('market')));
  for(const [id,p]of Object.entries(G.HIGAN.views)){assert.equal(p.space,p.region);assert.equal(G.DIORAMA.regionOf(id),p.region);assert(p.eye.every(Number.isFinite)&&p.target.every(Number.isFinite));assert(G.length(G.sub(p.eye,p.target))>5);assert(p.era);}
- for(const c of characters.characters.slice(69)){assert(['komachi','eika','kutaka','eiki'].includes(c.id));assert.equal(G.PRESETS[c.view].space,c.space);assert(c.position.every(Number.isFinite));assert(c.positionBasis.startsWith('P'));assert(c.locationSources.length);assert.equal(c.art.urls.length,0);}
+ for(const c of characters.characters.slice(69,73)){assert(['komachi','eika','kutaka','eiki'].includes(c.id));assert.equal(G.PRESETS[c.view].space,c.space);assert(c.position.every(Number.isFinite));assert(c.positionBasis.startsWith('P'));assert(c.locationSources.length);assert.equal(c.art.urls.length,0);}
  assert(characters.characters.find(c=>c.id==='kutaka').note.includes('工作'));
- return{packs:stats,overviewBytes,presets:16,locations:4,navigable:84,pending:95,protectedFiles:Object.keys(fixed.protectedFiles).length};
+ return{packs:stats,overviewBytes,presets:16,locations:4,navigable:audit.navigable,pending:audit.pending,protectedFiles:Object.keys(fixed.protectedFiles).length};
 }

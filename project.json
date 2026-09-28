@@ -1,6 +1,6 @@
 {
-  "version": "0.23.0",
-  "title": "彼岸 · 中有之道与三途河",
+  "version": "0.24.0",
+  "title": "畜生界 · 灵长园与电子遗产",
   "threeRevision": "185",
   "worldBuilders": [
     "src/world-builder.js",
@@ -12,6 +12,7 @@
     "src/landmarks.js",
     "src/heaven.js",
     "src/higan.js",
-    "src/landscape.js"
+    "src/landscape.js",
+    "src/animal.js"
   ]
 }
