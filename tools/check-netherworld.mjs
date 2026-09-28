@@ -6,10 +6,10 @@ const geo=p=>hash(Buffer.concat(p.meshes.map(m=>Buffer.from(m.vertices.buffer,m.
 export async function checkNetherworld(G,atlas,characters,read){
  const fixed=JSON.parse(read('tools/netherworld-baseline.json'));
  for(const[f,h]of Object.entries(fixed.protectedFiles))assert.equal(hash(read(f)),h,`${f}: inherited source changed`);
- assert.equal(characters.characters.length,67);assert.equal(new Set(characters.characters.map(c=>c.id)).size,67);
+ assert(characters.characters.length>=67);assert.equal(new Set(characters.characters.map(c=>c.id)).size,characters.characters.length);
  assert.equal(hash(JSON.stringify(characters.characters.slice(0,65))),fixed.original65,'Existing residents must not be moved');
  assert.equal(hash(JSON.stringify(characters.additionalVisits)),fixed.originalVisits,'Old visits must be preserved');
- const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,77);assert.equal(audit.pending,102);
+ const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert(audit.navigable>=77);assert(audit.pending<=102);assert.equal(audit.navigable+audit.pending,179);
  assert.equal(Object.keys(G.LANDMARKS.repaired).length,8);assert.equal(Object.keys(G.LANDMARKS.pending).length,3);
  for(const[id,view]of Object.entries(fixed.repaired)){assert.equal(G.resolveLocation(id).view,view);assert.equal(G.resolveLocation(id).status,'component');}
  for(const id of ['wind_cave','geyser_mountain','sanctuary']){
@@ -50,6 +50,6 @@ export async function checkNetherworld(G,atlas,characters,read){
  const stairs=detail.meshes.find(m=>m.netherZone==='stairs');assert.equal(stairs.vertices.length/27,122*36);
  for(const[id,p]of Object.entries(G.NETHERWORLD.views)){assert.equal(p.space,'netherworld');assert.equal(p.region,'netherworld');assert.equal(G.DIORAMA.regionOf(id),'netherworld');assert(p.eye.every(Number.isFinite)&&p.target.every(Number.isFinite));assert(G.length(G.sub(p.eye,p.target))>5);assert(p.era);}
  assert(G.NETHERWORLD.views.saigyouBuds.netherBuds);assert(!G.NETHERWORLD.views.saigyouSealed.netherBuds);assert(G.NETHERWORLD.views.hakugyokuSnow.netherWinter);assert(G.NETHERWORLD.views.hakugyokuSection.netherSection);
- for(const c of characters.characters.slice(65)){assert(['youmu','yuyuko'].includes(c.id));assert.equal(c.locationId,'hakugyokurou');assert.equal(c.space,'netherworld');assert(c.position.every(Number.isFinite));assert.equal(G.PRESETS[c.view].space,c.space);assert(c.locationSources.length);assert.equal(c.art.urls.length,0,'Do not invent unverified portrait files');}
- return{detailMeshes:detail.meshes.length,triangles:detail.bytes/108,detailBytes:detail.bytes,overviewBytes:far.bytes,trees:detail.meta.treeCount,presets:13,newLocations:5,repairedBindings:8,removedFallbacks:3,navigable:77,pending:102,protectedFiles:Object.keys(fixed.protectedFiles).length};
+ for(const c of characters.characters.slice(65,67)){assert(['youmu','yuyuko'].includes(c.id));assert.equal(c.locationId,'hakugyokurou');assert.equal(c.space,'netherworld');assert(c.position.every(Number.isFinite));assert.equal(G.PRESETS[c.view].space,c.space);assert(c.locationSources.length);assert.equal(c.art.urls.length,0,'Do not invent unverified portrait files');}
+ return{detailMeshes:detail.meshes.length,triangles:detail.bytes/108,detailBytes:detail.bytes,overviewBytes:far.bytes,trees:detail.meta.treeCount,presets:13,newLocations:5,repairedBindings:8,removedFallbacks:3,navigable:audit.navigable,pending:audit.pending,protectedFiles:Object.keys(fixed.protectedFiles).length};
 }

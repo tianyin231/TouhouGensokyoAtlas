@@ -23,3 +23,9 @@
 @media(max-width:760px){.in-nether .caption{max-width:calc(100vw - 40px)}}
 
 .in-nether #btn-nether.active{background:#3c4050;color:#f1d2d4;border-color:#dac0bd65}
+
+/* Heaven uses its selected local climate; earth weather remains saved in state. */
+.in-heaven .weather-switch,.in-heaven #light-neutral,.in-heaven #light-dusk{display:none}
+#heaven-nav{max-width:calc(100vw - 24px);overflow-x:auto}
+@media(max-width:1080px){.tools{max-width:calc(100vw - 185px);overflow-x:auto;flex-wrap:nowrap}.tools .tool{flex-shrink:0}}
+@media(max-width:520px){.tools{max-width:calc(100vw - 126px)}}

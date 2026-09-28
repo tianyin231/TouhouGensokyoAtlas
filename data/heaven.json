@@ -1,0 +1,161 @@
+{
+  "version": "0.22.0",
+  "baseline": "20f8ed3bbc7d66ca7675f6aea03601b4b5d241b8",
+  "note": "三项天界相关目录、两个独立空间和两位人物。原资料与原世界模型逐项保留。",
+  "locationUpdates": [
+    {
+      "id": "unkai",
+      "aliases": [
+        "玄云海",
+        "Genkumoumi",
+        "Sea of Clouds"
+      ],
+      "project_treatment": "玄云海的山顶岩地与浓云选景已建；绯云征兆为局部可关闭事件。它不对应地表上新开的一条道路或固定传送门。 石形、云带、尺寸和展示坐标均为P补完。",
+      "status": "已建三维选景／P补完，非全域竣工",
+      "coordinate_status": "P：独立展示坐标；玄云海和天界不按官方米数配准",
+      "source_ids": [
+        "HV-CLOUD",
+        "HV-IKU",
+        "HV-OFFICIAL"
+      ]
+    },
+    {
+      "id": "heaven",
+      "aliases": [
+        "天界",
+        "Heaven"
+      ],
+      "project_treatment": "天界有顶天周边选景已建，TH105桃林花原与TH155土石极光分状态展示；不代表全部天界层次、天人住居或宫殿穷尽。 共用展示台地与未见背面为P，不将两作场景混称原作唯一全图。",
+      "status": "已建三维选景／P补完，非全域竣工",
+      "coordinate_status": "P：独立展示坐标；玄云海和天界不按官方米数配准",
+      "source_ids": [
+        "HV-REALM",
+        "HV-OFFICIAL",
+        "HV-FAN"
+      ]
+    },
+    {
+      "id": "bhava",
+      "aliases": [
+        "有顶天",
+        "有頂天",
+        "Bhavaagra"
+      ],
+      "project_treatment": "TH105花原、桃林、要石意象；小亭、棋具、宴席、路形、背面和岩基皆为P补完，不给天帝或天子指定虚构宫殿。",
+      "status": "已建三维选景／P补完，非全域竣工",
+      "coordinate_status": "P：独立展示坐标；玄云海和天界不按官方米数配准",
+      "source_ids": [
+        "HV-REALM",
+        "HV-TENSHI"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "HV-OFFICIAL",
+      "title": "D：东方绯想天官方网站／故事",
+      "url": "https://tasofro.net/touhou105/story.html",
+      "source_type": "官方作品网站",
+      "note": "核对天气异变背景；不据此推导天界建筑尺寸。"
+    },
+    {
+      "id": "HV-REALM",
+      "title": "T/C：天界与有顶天的作品资料及原文转录",
+      "url": "https://thbwiki.cc/天界",
+      "source_type": "官方文本转录与社区版本索引",
+      "note": "TH105草地花原、桃林；TH155土石与极光分别处理。天界位置记述存在不同版本，不主张米级地表高程。"
+    },
+    {
+      "id": "HV-CLOUD",
+      "title": "C：玄云海场景索引",
+      "url": "https://thbwiki.cc/玄云海",
+      "source_type": "社区场景索引",
+      "note": "山顶岩地、浓云和绯色征兆；本轮未测绘原作所有视角。"
+    },
+    {
+      "id": "HV-IKU",
+      "title": "T/C：永江衣玖原作附带文档转录",
+      "url": "https://thbwiki.cc/永江衣玖",
+      "source_type": "官方文本转录与社区人物索引",
+      "note": "云中龙宫使者及重要预兆的传递，不是天子的女仆。"
+    },
+    {
+      "id": "HV-TENSHI",
+      "title": "C：比那名居天子作品与时代索引",
+      "url": "https://thbwiki.cc/比那名居天子",
+      "source_type": "社区人物索引",
+      "note": "本景使用TH105时期关联，不把后续放逐前住处当恒定的当前住所。"
+    },
+    {
+      "id": "HV-FAN",
+      "title": "F：天子与云海的同人构图参考（转载索引）",
+      "url": "https://wallpapercrafter.com/1712798-hinanawi-tenshi-touhou-sky-clouds-dress-sword-of-hisou.html",
+      "source_type": "同人图片转载索引",
+      "note": "仅观察大面积蓝天、云层层次与留白。图片文件名指向Shirayuki Mutsumi，但未核验原发布作者与授权；不将转载图视为官方、原始出处或可再分发资产。未入库图片。"
+    }
+  ],
+  "characters": [
+    {
+      "id": "tenshi",
+      "name": "比那名居天子",
+      "locationId": "bhava",
+      "region": "heaven",
+      "space": "heaven",
+      "kind": "TH105时期天界居所／活动关联",
+      "note": "使用TH105时期身份；后续有被放逐的记载，不能把该站位当成现在的恒定行踪。要石与小亭尺寸都是P。",
+      "view": "heavenKeystone",
+      "position": [
+        80,
+        75,
+        -63
+      ],
+      "positionBasis": "P：独立天界／云海选景关联点，不按地表山体高度抬升。",
+      "art": {
+        "file": "",
+        "work": "东方绯想天",
+        "credit": "ZUN / 上海爱丽丝幻乐团、黄昏边境等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/比那名居天子",
+        "sourcePage": "https://thbwiki.cc/比那名居天子",
+        "availability": "本轮核对原作文字和索引，未取得可验证的原作肖像文件。不猜测图片直链，不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/比那名居天子",
+        "https://thbwiki.cc/天界"
+      ],
+      "heavenEdition": "th105"
+    },
+    {
+      "id": "iku",
+      "name": "永江衣玖",
+      "locationId": "unkai",
+      "region": "genkumoumi",
+      "space": "genkumoumi",
+      "kind": "TH105云中龙宫使者／预兆传递",
+      "note": "居于云中、传达重要信息的使者；不是天子的仆人，未为她建立虚构住宅。站位是活动关联，不代表实时行踪。",
+      "view": "cloudLedge",
+      "position": [
+        -18,
+        29,
+        -15
+      ],
+      "positionBasis": "P：独立天界／云海选景关联点，不按地表山体高度抬升。",
+      "art": {
+        "file": "",
+        "work": "东方绯想天",
+        "credit": "ZUN / 上海爱丽丝幻乐团、黄昏边境等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/永江衣玖",
+        "sourcePage": "https://thbwiki.cc/永江衣玖",
+        "availability": "本轮核对原作文字和索引，未取得可验证的原作肖像文件。不猜测图片直链，不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/永江衣玖",
+        "https://thbwiki.cc/天界"
+      ],
+      "heavenEdition": "th105"
+    }
+  ]
+}

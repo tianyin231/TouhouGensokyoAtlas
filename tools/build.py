@@ -51,7 +51,7 @@ def build(output_dir):
         json.loads(text)
         return text.rstrip('\n')
 
-    additions = [json.loads(data(name)) for name in ('data/lunar.json', 'data/makai.json', 'data/netherworld.json')]
+    additions = [json.loads(data(name)) for name in ('data/lunar.json', 'data/makai.json', 'data/netherworld.json', 'data/heaven.json')]
     atlas = json.loads(data('data/atlas.json'))
     characters = json.loads(data('data/characters.json'))
     locations = {v['id']: v for v in atlas['locations']}
@@ -107,6 +107,7 @@ def build(output_dir):
         'LUNAR_RENDERER': source('src/lunar-renderer.js'),
         'MAKAI_RENDERER': source('src/makai-renderer.js'),
         'NETHER_RENDERER': source('src/netherworld-renderer.js'),
+        'HEAVEN_RENDERER': source('src/heaven-renderer.js'),
         'CHARACTERS': source('src/characters.js'),
         'STREAMING': source('src/streaming.js'),
         'APP': source('src/app.js'),
@@ -129,6 +130,8 @@ def build(output_dir):
     read_bytes('tools/check-netherworld.mjs')
     read_bytes('tools/netherworld-baseline.json')
     read_bytes('tools/audit-landmarks.mjs')
+    read_bytes('tools/check-heaven.mjs')
+    read_bytes('tools/heaven-baseline.json')
     output_dir.mkdir(parents=True, exist_ok=True)
     # GitHub 会清洗非 ASCII 附件名，发布名称与校验文件必须一致。
     filename = f'TouhouGensokyoAtlas-{tag}.html'

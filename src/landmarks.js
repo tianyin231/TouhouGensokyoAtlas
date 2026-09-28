@@ -13,6 +13,6 @@ function resolve(loc){
  if(!view||!G.PRESETS[view])return{view:null,status:'pending',note:'已登记；未绑定可浏览场景。'};
  return{view,status:partial.has(id)?'selection':Object.hasOwn(repaired,id)?'component':'scene',note:partial.has(id)?'可浏览对应选景，不代表整个世界或全部室内已建成。':Object.hasOwn(repaired,id)?'既有模型补绑定，未重复建模。':'已接入三维选景；不等于最终美术或全套室内验收。'};
 }
-function audit(data){const items=data.locations.map(l=>({id:l.id,name:l.name,world:l.world,group:l.group,...resolve(l)}));return{version:'0.21.0',meaning:'导航覆盖，不是竣工比例',total:items.length,navigable:items.filter(l=>l.view).length,pending:items.filter(l=>!l.view).length,repaired:Object.keys(repaired),removedMisleadingFallbacks:Object.keys(pending),items};}
+function audit(data){const items=data.locations.map(l=>({id:l.id,name:l.name,world:l.world,group:l.group,...resolve(l)}));return{version:'{{VERSION}}',meaning:'导航覆盖，不是竣工比例',total:items.length,navigable:items.filter(l=>l.view).length,pending:items.filter(l=>!l.view).length,repaired:Object.keys(repaired),removedMisleadingFallbacks:Object.keys(pending),items};}
 Object.assign(G,{LANDMARKS:{repaired,pending,partial},resolveLocation:resolve,auditLandmarks:audit});
 })(globalThis.GA);

@@ -4,11 +4,17 @@
 
 直接体验请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 下载 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
-## 冥界与目录修正（0.21.0）
+## 天界与玄云海（0.22.0）
+
+顶部「天界」进入有顶天桃林与花原、临云小亭、要石、玄云海山顶岩地；14机位包含背侧／岩基、局部绯云征兆、宴席和TH155土石极光选景。三项已有目录接入后为 **80条可导航、99条待处理／共179条**，不是竣工比例。未把天界合并到神子仙界、月都或幻想乡地表。
+
+新模块为 `src/heaven.js`、`src/heaven-renderer.js`、`data/heaven.json`。小亭、路形、岩基、未见立面与所有尺寸标P；TH105与TH155场景不同时叠加。[考据、版本边界与预算](docs/heaven-reference.md)可查。构建检查命令不变，新增可选 `python tools/check-heaven-browser.py`，原作图仍按真实加载状态显示。本轮不自动创建Release。
+
+## 保留场景：冥界与目录修正（0.21.0加入）
 
 顶部「冥界」进入幽明结界、长阶、白玉楼和西行妖，共13个机位。白玉楼采用コ字形本殿、枯山水中庭与低墙外樱庭；西行妖默认封印不开花，花苞事件、雪庭和本殿剖览均可恢复。[依据与P补完边界](docs/netherworld-reference.md)单独记录。
 
-同时补上8条已有模型的目录绑定，取消幻想风穴／山麓间歇泉／圣域3条错误邻区回退。179条中77条可导航、102条待处理，**这是导航覆盖，不是竣工比例**。`node tools/audit-landmarks.mjs`生成与界面使用同一解析器的完整核对表。新增源码、资料与测试；原地表、旧地狱、辉针城、月世界和魔界不重建覆盖。
+同时补上8条已有模型的目录绑定，取消幻想风穴／山麓间歇泉／圣域3条错误邻区回退。在0.21版本时，179条中77条可导航、102条待处理，**这是导航覆盖，不是竣工比例**。`node tools/audit-landmarks.mjs`生成与界面使用同一解析器的完整核对表。新增源码、资料与测试；原地表、旧地狱、辉针城、月世界和魔界不重建覆盖。
 
 ## 保留场景：魔界（0.20.0加入）
 
@@ -52,6 +58,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 | `src/index.html`、`src/styles.css` | 页面模板、界面和样式；模板本身不能直接预览 |
 | `src/app.js` | 地点选择、导览、界面状态和启动逻辑 |
 | `src/world-builder.js` | 基础数学、地形及已有地表区域的程序化建模 |
+| `src/heaven.js`、`src/heaven-renderer.js`、`data/heaven.json` | 天界与玄云海的近远景、版本显隐与人物出处 |
 | `src/netherworld.js`、`src/netherworld-renderer.js`、`data/netherworld.json` | 冥界几何、春雪／封印状态及人物资料 |
 | `src/landmarks.js`、`tools/audit-landmarks.mjs` | 显式地点导航与同源核对报告 |
 | `src/makai.js`、`src/makai-renderer.js`、`data/makai.json` | 魔界版本选集、万魔殿内外、封印与历史人物关联 |

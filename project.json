@@ -1,6 +1,6 @@
 {
-  "version": "0.21.0",
-  "title": "冥界 · 白玉楼与西行妖",
+  "version": "0.22.0",
+  "title": "天界 · 有顶天与玄云海",
   "threeRevision": "185",
   "worldBuilders": [
     "src/world-builder.js",
@@ -9,6 +9,7 @@
     "src/lunar.js",
     "src/makai.js",
     "src/netherworld.js",
-    "src/landmarks.js"
+    "src/landmarks.js",
+    "src/heaven.js"
   ]
 }
