@@ -11,6 +11,7 @@
     "src/netherworld.js",
     "src/landmarks.js",
     "src/heaven.js",
-    "src/higan.js"
+    "src/higan.js",
+    "src/landscape.js"
   ]
 }

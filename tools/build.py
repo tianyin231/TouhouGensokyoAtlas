@@ -109,6 +109,7 @@ def build(output_dir):
         'NETHER_RENDERER': source('src/netherworld-renderer.js'),
         'HEAVEN_RENDERER': source('src/heaven-renderer.js'),
         'HIGAN_RENDERER': source('src/higan-renderer.js'),
+        'LANDSCAPE_RENDERER': source('src/landscape-renderer.js'),
         'CHARACTERS': source('src/characters.js'),
         'STREAMING': source('src/streaming.js'),
         'APP': source('src/app.js'),
@@ -122,6 +123,7 @@ def build(output_dir):
     # 校验器可据此发现“改过源码但忘记重新构建”的成品。
     read_bytes('tools/build.py')
     read_bytes('tools/check.mjs')
+    read_bytes('tools/check-landscape.mjs')
     read_bytes('tools/check-kishinjou.mjs')
     read_bytes('tools/kishinjou-baseline.json')
     read_bytes('tools/check-lunar.mjs')
