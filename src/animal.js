@@ -227,7 +227,8 @@
     for(let i=0;i<p.length;i++){const a=scaled(p[i],.71),b=scaled(p[(i+1)%p.length],.71);top.tri([0,44,-30],[b[0],44,b[1]],[a[0],44,a[1]],C.turf);}
     // The park access rises on the actual mound. No bridge links this chart to Gensokyo.
     const access=B.get('access','Stone');
-    access.box(0,10,251,25,3,53,C.concrete);
+    const bridgeZ=251,bridgeDepth=53,bridgeRise=3;
+    access.box(0,10,bridgeZ,25,bridgeRise,bridgeDepth,C.concrete);
     rail(B,'access',[-12,228],[-12,277],13);rail(B,'access',[12,228],[12,277],13);
     const samples=[],path=B.get('gardenPath','Paving');
     path.quad([-7,13,240],[-7,parkHeight(-7,235)+.72,235],[7,parkHeight(7,235)+.72,235],[7,13,240],C.pale);
@@ -235,7 +236,9 @@
       const a=[-7,parkHeight(-7,z)+.72,z],b=[-7,parkHeight(-7,z1)+.72,z1],c=[7,parkHeight(7,z1)+.72,z1],d=[7,parkHeight(7,z)+.72,z];
       path.quad(a,b,c,d,C.pale);samples.push([0,y+.72,z]);
     }
-    for(let i=0;i<4;i++)access.box(0,10,284-i*1.6,24,(i+1)*.76,1.65,C.concrete);
+    // 从桥端向外排台阶，最高阶与桥面齐平；踏面略搭接，避免桥头断口。
+    const bridgeEnd=bridgeZ+bridgeDepth/2,stepRun=1.6;
+    for(let i=0;i<4;i++)access.box(0,10,bridgeEnd+(3.5-i)*stepRun,24,bridgeRise*(i+1)/4,stepRun+.05,C.concrete);
     const gate=B.get('gate','Concrete','base','keiki');
     for(const x of[-19,19])gate.box(x,10,222,11,12,15,C.concrete);
     for(const x of[-19,19]) {gate.box(x,22,222,8,17,10,C.pale);gate.box(x,24,228,10,2,2,C.rust);}

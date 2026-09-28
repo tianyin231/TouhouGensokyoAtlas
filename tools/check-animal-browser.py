@@ -149,6 +149,31 @@ try:
   assert max(v['textures'] for v in cycles)-min(v['textures'] for v in cycles)<=2
   assert max(v['geometries'] for v in cycles)-min(v['geometries'] for v in cycles)<=2
   passed('Three native rebuild/cache cycles with bounded resource counts',cycles)
+  # 保持生产动画运行，通过真实控件切区；此段不手动绘制或调用 gl.finish。
+  phase['name']='Production animated cross-chart switching'
+  page.evaluate('ATLAS.state.motion=true;globalThis.ATLAS_TEST_PAUSE=false;ATLAS.wake()')
+  live=[]
+  for weather,lighting in [('clear','neutral'),('rain','dusk')]:
+   page.locator('#region-select').select_option('hakurei')
+   page.locator(f'[data-weather="{weather}"]').click();page.locator(f'#light-{lighting}').click()
+   for region in ['animal','primate_core','hakurei']:
+    before=page.evaluate('ATLAS.state.drawnFrames')
+    page.locator('#region-select').select_option(region)
+    page.wait_for_function('a=>ATLAS.stream.cache.has(a.region)&&ATLAS.state.drawnFrames>=a.before+3&&!ATLAS.rig.transition',arg={'region':region,'before':before},polling=300)
+   for _ in range(3):
+    page.locator('#btn-animal').click()
+    page.locator('[data-animal-view="primateCore"]').click()
+    page.locator('#region-select').select_option('hakurei')
+   before=page.evaluate('ATLAS.state.drawnFrames')
+   page.wait_for_function('n=>ATLAS.state.drawnFrames>=n+3&&!ATLAS.rig.transition',arg=before,polling=300)
+   snap=page.evaluate('({view:ATLAS.state.view,weather:ATLAS.state.weather,lighting:ATLAS.state.lighting,motion:ATLAS.state.motion,paused:!!globalThis.ATLAS_TEST_PAUSE,gpuError:ATLAS.renderer.engine.getContext().getError(),animalLights:ATLAS.renderer.animalLights.some(l=>l.visible),surfaceSky:ATLAS.renderer.sky.visible})')
+   assert snap=={'view':'shrineDiorama','weather':weather,'lighting':lighting,'motion':True,'paused':False,'gpuError':0,'animalLights':False,'surfaceSky':True},snap
+   live.append(snap)
+  assert not report['errors'],'\n'.join(report['errors'])[:4000]
+  passed('Production animation: six rapid city/interior/shrine round trips in clear/day and rain/dusk',live)
+  page.evaluate('''async()=>{globalThis.ATLAS_TEST_PAUSE=true;ATLAS.state.motion=false;
+    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    ATLAS.renderer.engine.getContext().finish();}''');render()
   visit('primateCore','primate_core');page.locator('#btn-settings').click()
   page.locator('#opt-ao').uncheck();page.locator('#opt-bloom').uncheck();page.locator('#quality').select_option('low');render()
   assert page.evaluate('ATLAS.renderer.stats.detailDrawObjects')>0 and not page.evaluate('ATLAS.state.ao||ATLAS.state.bloom')

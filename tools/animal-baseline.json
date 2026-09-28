@@ -1,6 +1,13 @@
 {
   "baseline": "b551a150e1cbc5d5f705a11688f45cec01356f5a",
   "description": "Reviewed TH17 city/woodland and P electrical interior: corrected terrace normals, open gate plinths, reserved perimeter, surface offsets and stair joins. 2026-09-28. Test runners only read this file.",
+  "geometryReview": {
+    "reason": "2026-09-29: 修复灵长园桥头断口，最高阶与桥面同高并搭接 0.025；近远景仅 access:Stone 网格改变，数量和字节预算不变。",
+    "previousAnimalGeometry": {
+      "detail": "c85a0de6b9fd11e77713f7ea1b8d5b7d6f0ee38248178ee5bbefc8fc803bb9db",
+      "overview": "ee8558eb9c7858dfeec54e31d2c05c73cf13928e6ebd2168389812e76681fb6a"
+    }
+  },
   "protectedFiles": {
     "src/world-builder.js": "e0a9df6c0199ca278137c7212e97f9e0d8e4cc08aeaa47136741ab91b50fe669",
     "src/old-hell.js": "fde1ded5cfad70061c9a69b09b000fbd35bab17edcd583ed4d7973d5c9cfa643",
@@ -128,13 +135,13 @@
         "meshes": 36,
         "bytes": 22994388,
         "triangles": 212911,
-        "geometry": "c85a0de6b9fd11e77713f7ea1b8d5b7d6f0ee38248178ee5bbefc8fc803bb9db"
+        "geometry": "49ed053728b1903b5d9dfed955d4b26dc2d9b6f212ee64a2981b845f742a753d"
       },
       "overview": {
         "meshes": 25,
         "bytes": 1837512,
         "triangles": 17014,
-        "geometry": "ee8558eb9c7858dfeec54e31d2c05c73cf13928e6ebd2168389812e76681fb6a"
+        "geometry": "9bc186b9aa590cac3aa106679ee2651a86373e06de3768b922ac12345a928729"
       }
     },
     "primate_core": {
