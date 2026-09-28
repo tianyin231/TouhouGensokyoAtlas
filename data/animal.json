@@ -1,0 +1,138 @@
+{
+  "version": "0.24.0",
+  "baseline": "b551a150e1cbc5d5f705a11688f45cec01356f5a",
+  "note": "TH17畜生界与灵长园选集。展示图不是官方精确地理，不建立未经核实的组织总部。",
+  "locationUpdates": [
+    {
+      "id": "animal",
+      "aliases": [
+        "Beast Metropolis",
+        "Animal Realm",
+        "Chikushoukai",
+        "畜生都市"
+      ],
+      "project_treatment": "P：高楼街区、暗红窗光与中央锁孔林地；此图只表达TH17都市选景，不是无限都市全图，不包含现行地狱。",
+      "status": "已接入TH17三维选景／P补完，非全域竣工",
+      "coordinate_status": "P：独立展示坐标；内外高程与里程未作官方测定",
+      "source_ids": [
+        "AN-OMAKE",
+        "AN-CITY",
+        "AN-GARDEN",
+        "AN-FAN"
+      ]
+    },
+    {
+      "id": "primate",
+      "aliases": [
+        "Primate Spirit Garden",
+        "Reichouen",
+        "霊長園",
+        "电子遗产",
+        "Electric Heritage"
+      ],
+      "project_treatment": "P：锁孔形林地、分层土垒、埴轮守备与电子遗产内部展示图。改造前意象另列；内外连接、制作间、楼梯和设备均为补完，非原作全室内测绘。",
+      "status": "已接入TH17三维选景／P补完，非全域竣工",
+      "coordinate_status": "P：独立展示坐标；内外高程与里程未作官方测定",
+      "source_ids": [
+        "AN-OMAKE",
+        "AN-CITY",
+        "AN-GARDEN",
+        "AN-FAN"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "AN-OMAKE",
+      "title": "T：鬼形兽附带文档／人类灵、造形神与埴轮兵团",
+      "url": "https://thbwiki.cc/附带文档:东方鬼形兽/Omake",
+      "source_type": "官方文本社区转录",
+      "note": "原文与翻译分栏核对；不同角色叙述立场保留，不扩展成统一三维施工图。"
+    },
+    {
+      "id": "AN-CITY",
+      "title": "C：畜生界的作品与场景索引",
+      "url": "https://thbwiki.cc/畜生界",
+      "source_type": "社区场景索引",
+      "note": "TH17现代高楼与暗红窗光；临近现行地狱，但不是旧地狱都市。"
+    },
+    {
+      "id": "AN-GARDEN",
+      "title": "C/T：灵长园结构与Electric Heritage原作评论",
+      "url": "https://thbwiki.cc/灵长园",
+      "source_type": "社区索引／官方音乐评论转录",
+      "note": "锁孔林地外形、先进内部构造；前后历史状态与未知内部尺度分别处理。"
+    },
+    {
+      "id": "AN-FAN",
+      "title": "F：东方异域见闻／Touhou Dystopian开发者介绍",
+      "url": "https://store.steampowered.com/app/3265060/?l=schinese",
+      "source_type": "具名同人开发者商品页",
+      "note": "Kay Lnk的畜生界与灵长园三维探索案例；仅对照空间可读性，不移植地图、怪物、资产或系统。"
+    }
+  ],
+  "characters": [
+    {
+      "id": "mayumi",
+      "name": "杖刀偶磨弓",
+      "locationId": "primate",
+      "region": "animal",
+      "space": "animal",
+      "kind": "TH17埴轮兵长／灵长园守备",
+      "view": "primateHaniwa",
+      "position": [
+        -15,
+        42,
+        165
+      ],
+      "animalEra": "keiki",
+      "note": "袿姬创造的埴轮兵团首长，平时守护灵长园。此点是职责关联，不是住宅，也不代表所有时代仍处在此地。",
+      "positionBasis": "P：角色职责的展示站位；不读取幻想乡地表高度，不冒称实时行踪。",
+      "art": {
+        "file": "",
+        "work": "东方鬼形兽",
+        "credit": "ZUN／上海爱丽丝幻乐团",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/附带文档:东方鬼形兽/Omake",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方鬼形兽/Omake",
+        "availability": "本轮未取得可核验的原作肖像；保留姓名与文字出处，不用同人或生成图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方鬼形兽/Omake",
+        "https://thbwiki.cc/灵长园"
+      ]
+    },
+    {
+      "id": "keiki",
+      "name": "埴安神袿姬",
+      "locationId": "primate",
+      "region": "primate_core",
+      "space": "primate_core",
+      "kind": "TH17人类灵召唤的造形神／园内活动",
+      "view": "primateWorkshop",
+      "position": [
+        -77,
+        12,
+        -145
+      ],
+      "animalEra": "keiki",
+      "note": "以鬼形兽占据灵长园时期的造形职责为依据。制作间和代表站位是P，未宣称此房间是原作住所或官方作业室。",
+      "positionBasis": "P：角色职责的展示站位；不读取幻想乡地表高度，不冒称实时行踪。",
+      "art": {
+        "file": "",
+        "work": "东方鬼形兽",
+        "credit": "ZUN／上海爱丽丝幻乐团",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/附带文档:东方鬼形兽/Omake",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方鬼形兽/Omake",
+        "availability": "本轮未取得可核验的原作肖像；保留姓名与文字出处，不用同人或生成图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方鬼形兽/Omake",
+        "https://thbwiki.cc/灵长园"
+      ]
+    }
+  ]
+}

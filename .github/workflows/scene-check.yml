@@ -1,7 +1,7 @@
 name: Scene build and regression
 on:
   push:
-    branches: [main, work/higan]
+    branches: [main, work/animal]
   pull_request:
 permissions:
   contents: read
@@ -36,7 +36,7 @@ jobs:
           python3 -m playwright install --with-deps chromium
       - name: Verify real HTTP WebGL and native Worker integration
         run: |
-          python3 tools/check-higan-browser.py
+          python3 tools/check-animal-browser.py
           python3 tools/check-browser.py
       - uses: actions/upload-artifact@v4
         if: always()
@@ -50,6 +50,6 @@ jobs:
             dist/landmarks-*.md
             dist/atlas-source.tar.gz
             dist/source-commit.txt
-            dist/higan-browser-check/
+            dist/animal-browser-check/
             dist/browser-check/
           retention-days: 7

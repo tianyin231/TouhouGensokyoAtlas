@@ -4,11 +4,19 @@
 
 在线体验：[幻想乡立体风物志](https://tianyin231.github.io/TouhouGensokyoAtlas/)。下载版本请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 获取 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
-## 彼岸与三途河（0.23.0）
+## 畜生界与灵长园（0.24.0候选）
+
+按用户明确要求，将已交付的v0.24候选源码纳入本次提交。建模起点为`b551a15`，提交基线为`19ddc91`，保留维护者的Pages配置与README说明。运行输入与已交付候选完全一致；快速未同步切回博丽神社的着色器校验错误仍未确认根因，详见[当前状态](docs/current-status.md)，不因入库而改称稳定版。
+
+顶部「畜生界」进入高楼都市与锁孔形林地；导航可切到电子遗产内景。16个机位覆盖街巷、退台楼顶、土垒、守备口、陶偶、制作区、高廊与可逆剖览。TH17袿姬时期与改造前意象分开；后者不代表完整历史地图。新建筑与室内均为P补完，不给普通大楼命名组织总部。
+
+新增`src/animal.js`、`src/animal-renderer.js`、`data/animal.json`及[出处与边界](docs/animal-reference.md)。原73位人物及全部旧场景保留，新增磨弓、袿姬；原作图未核时明确显示。目录现在为179项中的86可导航／93待处理，不是竣工比例。可选浏览器检查：`python tools/check-animal-browser.py`。
+
+## 保留场景：彼岸与三途河（0.23.0加入）
 
 顶部「彼岸」进入中有之道摊街、赛之河原、三途河渡口和彼岸花原；共16机位，两岸分别导览，不设跨河桥或固定渡河里程。码头、空心木舟、石堆风车、反卷红花与无专名关口均为真实几何。关口不是是非曲直厅总部，布局和背面保留P标记。
 
-[考据与范围](docs/higan-reference.md)记录原作文字、同人预览与补完区别。当前目录为179条中84可导航、95待处理，不是竣工比例。新增 `src/higan.js`、`src/higan-renderer.js`和`data/higan.json`，原地区与源资产不改。可选回归为`python tools/check-higan-browser.py`；`.github/workflows/scene-check.yml`以只读权限独立重建并运行HTTP浏览器检查，短期附件不替代正式Release。
+[考据与范围](docs/higan-reference.md)记录原作文字、同人预览与补完区别。0.23版本时目录为179条中84可导航、95待处理，不是竣工比例。新增 `src/higan.js`、`src/higan-renderer.js`和`data/higan.json`，原地区与源资产不改。可选回归为`python tools/check-higan-browser.py`；`.github/workflows/scene-check.yml`以只读权限独立重建并运行HTTP浏览器检查，短期附件不替代正式Release。
 
 ## 保留场景：天界与玄云海（0.22.0加入）
 
@@ -63,6 +71,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 | `project.json` | 当前版本、发布标题、Three.js 版本及建模模块的拼接顺序 |
 | `src/index.html`、`src/styles.css` | 页面模板、界面和样式；模板本身不能直接预览 |
 | `src/app.js` | 地点选择、导览、界面状态和启动逻辑 |
+| `src/animal.js`、`src/animal-renderer.js`、`data/animal.json` | 畜生都市、灵长园内外、历史状态、按区加载和人物来源 |
 | `src/higan.js`、`src/higan-renderer.js`、`data/higan.json` | 此岸与彼岸两图、渡舟／花原、人物出处及四项目录入口 |
 | `src/world-builder.js` | 基础数学、地形及已有地表区域的程序化建模 |
 | `src/heaven.js`、`src/heaven-renderer.js`、`data/heaven.json` | 天界与玄云海的近远景、版本显隐与人物出处 |
