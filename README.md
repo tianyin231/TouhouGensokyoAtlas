@@ -2,7 +2,7 @@
 
 使用 Three.js 构建可浏览的幻想乡地图。地点、资料来源和工程补完分别记录；目录当前包含 179 个地点，目录收录不等于全部已建成。
 
-直接体验请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 下载 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
+在线体验：[幻想乡立体风物志](https://tianyin231.github.io/TouhouGensokyoAtlas/)。下载版本请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 获取 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
 ## 彼岸与三途河（0.23.0）
 
@@ -96,6 +96,10 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 ## 提交与发布
 
 日常提交维护同一套源码。Git 提交保存修改记录，标签标记正式版本；无需把 `v0.16.html`、`v0.17.html` 等完整副本长期放在主分支。
+
+在线体验跟随 `main` 分支，可能包含尚在打磨的内容。推送后，`.github/workflows/pages.yml` 自动运行构建和检查，将通过检查的 HTML 以 `index.html` 发布到 GitHub Pages；也可在 Actions 中手动运行。仓库 Settings → Pages 的 Source 应保持为 **GitHub Actions**。不要改成从源码分支直接发布，也不要把 `dist/` 或网站成品提交到 Git。构建或检查失败时，本次更新不会发布，可在 Actions 中查看原因。
+
+网站部署与正式 Release 独立：更新网站无需创建标签或覆盖已有附件。Pages 仅上传 `dist/pages/`，临时部署制品保留 1 天；该保留期不影响已上线网站。正式版本仍按以下流程发布。
 
 发布顺序：更新版本与内容 → 构建和检查 → 浏览器验收 → 提交并推送源码 → 创建并推送标签 → 上传本次 HTML 与校验文件。
 

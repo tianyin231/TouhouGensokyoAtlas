@@ -1,0 +1,63 @@
+name: 部署幻想乡地图到 GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 让正在发布的版本完成，后续推送依次更新线上版本。
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 读取源码
+        uses: actions/checkout@v7
+      - name: 配置 Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: 配置 Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - name: 构建并检查
+        run: |
+          python tools/build.py
+          node tools/check.mjs
+      - name: 准备网站入口
+        # 只发布通过检查的成品，不把源码目录或历史 HTML 上传为网站。
+        run: |
+          python - <<'PY'
+          import json
+          import shutil
+          from pathlib import Path
+
+          dist = Path('dist')
+          release = json.loads((dist / 'release.json').read_text(encoding='utf-8'))
+          site = dist / 'pages'
+          site.mkdir(parents=True, exist_ok=True)
+          shutil.copyfile(dist / release['artifact'], site / 'index.html')
+          PY
+      - name: 配置 GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: 上传网站成品
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist/pages
+          retention-days: 1
+      - name: 发布网站
+        id: deployment
+        uses: actions/deploy-pages@v5
