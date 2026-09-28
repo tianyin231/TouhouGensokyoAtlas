@@ -1,0 +1,69 @@
+{
+  "description": "Makai recovery inspection 2026-09-28. Fixed reviewed geometry; tests never regenerate this file.",
+  "baseline": "1da263ec8a4140d18238289f0fdcb39b4f929028",
+  "protectedFiles": {
+    "src/world-builder.js": "e0a9df6c0199ca278137c7212e97f9e0d8e4cc08aeaa47136741ab91b50fe669",
+    "src/old-hell.js": "fde1ded5cfad70061c9a69b09b000fbd35bab17edcd583ed4d7973d5c9cfa643",
+    "src/old-hell-renderer.js": "fb91047212002fd1f9933189dceed6033c39883bde32f63437967e6b8f594870",
+    "src/streaming.js": "f636e6c1bb5917931b27038de6b45bcdfae95f13b4551450382693959cef8982",
+    "src/renderer.js": "b020de9f08b5544843c6efdf4f8a40a0251d19f5ca54ca360977a788edbde25c",
+    "data/expansion.json": "0ffb83baa4a828bbc3366b8b49df4602f18ef8db99d22f03e6079c6ee1c274a1",
+    "assets/packs/overview.pack.gz": "35a3d61769be2d62aabc29eb106a339eff1411d945be2268315739d1118d1ffa",
+    "assets/packs/legacy.pack.gz": "46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88",
+    "src/kishinjou.js": "a90ac62e8244c71583fa85b007186bd8798454eba406136199f66949024a2899",
+    "src/kishinjou-renderer.js": "031b0edcbe51d900c4dfc9dd8da72a453c65d33076765109e48b10df46cf4130",
+    "src/camera.js": "0bc9225d4a9b3eff946464b36619b7d17da180d4ca43a6dd31f1e3e160f6d721",
+    "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
+    "data/characters.json": "b87604e876804b5b9469657adf653451eccd561cddecdbb578f8966745beacc9",
+    "src/lunar.js": "b7a870cf111ffa1ad4c68c5a9fed5d7f31ae08e4fb2c85dce1e8c60308243203",
+    "src/lunar-renderer.js": "c472465371e21d441072ac44ffb1cb09195fa26c8d3a22c8225f192461f62360",
+    "data/lunar.json": "92abf8f26344ef31bee7cb197330fe6cb7b4854a590e2687cfc7565dd4827ccc"
+  },
+  "original57": "cabbb4216ae2140bb651e303cd8135d14be272f85ad4a009b0122e9ae3a5b934",
+  "placements": "703af94d17bb907dec1f171e9ada74ffffa1d7ca45c356567709f0399f1c8ab3",
+  "relationships": "3510a47f23ce5e9449676ad50944a871825dc27fee90f212bff5ff6d21618a0a",
+  "packs": {
+    "makai12": {
+      "detail": {
+        "meshes": 7,
+        "bytes": 2677860,
+        "triangles": 24795,
+        "geometry": "898fdd2cdc3e0a097fa3062e591d1498bf2d73e8eccac8d6b883146cb0ce99b2"
+      },
+      "overview": {
+        "meshes": 5,
+        "bytes": 386532,
+        "triangles": 3579,
+        "geometry": "4a407c6fa61c2ab0ea9cef520752b8b44a7dead66edbd66ebadeeb74957bf3c2"
+      }
+    },
+    "makai05": {
+      "detail": {
+        "meshes": 73,
+        "bytes": 10397160,
+        "triangles": 96270,
+        "geometry": "a07c000a46171b15cab196d570cb429f2dba30643b73c38adf1b280c19b02367"
+      },
+      "overview": {
+        "meshes": 40,
+        "bytes": 1283472,
+        "triangles": 11884,
+        "geometry": "cf424c0fcc77bac32b8133ecff0db47735f0c9ce3d7c1d21881da672a20fd6fd"
+      }
+    },
+    "makai01": {
+      "detail": {
+        "meshes": 32,
+        "bytes": 3145608,
+        "triangles": 29126,
+        "geometry": "30acf3a619ee442c8d7ba7908df383cfd776b54059ba7e368ae9bdf73ebfe1a7"
+      },
+      "overview": {
+        "meshes": 18,
+        "bytes": 283176,
+        "triangles": 2622,
+        "geometry": "23e4e46a0ea2d2eab2b74674d9c69a746f76af37dc723e4abb116330c4131282"
+      }
+    }
+  }
+}

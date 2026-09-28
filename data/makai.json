@@ -1,0 +1,475 @@
+{
+  "version": "0.20.0",
+  "baseline": "1da263ec8a4140d18238289f0fdcb39b4f929028",
+  "note": "分别显示同名魔界在TH12、TH05、TH01中的版本片段；分图不表示官方三个互不相干的世界。",
+  "locationUpdates": [
+    {
+      "id": "makai",
+      "aliases": [
+        "Makai",
+        "魔界（星莲船）"
+      ],
+      "project_treatment": "TH12法界上空：红黑封印与下方法界分状态展示；独立版本图，不代表无限魔界已穷尽。",
+      "status": "已建对应版本片段／三维P补完，非世界全域",
+      "coordinate_status": "独立版本展示坐标P；没有官方测量比例",
+      "source_ids": [
+        "MK-TH12",
+        "MK-SCENE"
+      ]
+    },
+    {
+      "id": "hokkai",
+      "aliases": [
+        "Hokkai"
+      ],
+      "project_treatment": "TH12解除封印后的法界片段：黑土、虹光格网、远都及日轮状发光体；所有尺寸和几何为P。",
+      "status": "已建对应版本片段／三维P补完，非世界全域",
+      "coordinate_status": "独立版本展示坐标P；没有官方测量比例",
+      "source_ids": [
+        "MK-TH12",
+        "MK-SCENE"
+      ]
+    },
+    {
+      "id": "pc98_makai",
+      "aliases": [
+        "魔界（怪绮谈）",
+        "Mystic Square Makai"
+      ],
+      "project_treatment": "TH05选集：魔界之门、魔空间、街道、冰雪世界与万魔殿；排列和连接是P导览，不是官方测绘。",
+      "status": "已建对应版本片段／三维P补完，非世界全域",
+      "coordinate_status": "独立版本展示坐标P；没有官方测量比例",
+      "source_ids": [
+        "MK-TH05",
+        "MK-OLD",
+        "MK-F5"
+      ]
+    },
+    {
+      "id": "pc98_gate",
+      "aliases": [
+        "魔界入口",
+        "Sara Gate"
+      ],
+      "project_treatment": "TH05魔界之门洞口选集；在独立图中展示旧作入口，不改当前博丽神社，不把导览当常开传送门。",
+      "status": "已建对应版本片段／三维P补完，非世界全域",
+      "coordinate_status": "独立版本展示坐标P；没有官方测量比例",
+      "source_ids": [
+        "MK-TH05",
+        "MK-OLD"
+      ]
+    },
+    {
+      "id": "pc98_maspace",
+      "aliases": [
+        "魔空间",
+        "Border Space"
+      ],
+      "project_treatment": "TH05第二面意象的P三维深道：岩拱、晶体、边界光。原作关卡长度与实际里程未知。",
+      "status": "已建对应版本片段／三维P补完，非世界全域",
+      "coordinate_status": "独立版本展示坐标P；没有官方测量比例",
+      "source_ids": [
+        "MK-TH05",
+        "MK-OLD"
+      ]
+    },
+    {
+      "id": "pc98_street",
+      "aliases": [
+        "魔界街道",
+        "Makai Streets"
+      ],
+      "project_treatment": "TH05街道意象、斜向铺装与P店铺；商品陈设和街区布局为补完，不照搬同人店铺。",
+      "status": "已建对应版本片段／三维P补完，非世界全域",
+      "coordinate_status": "独立版本展示坐标P；没有官方测量比例",
+      "source_ids": [
+        "MK-TH05",
+        "MK-OLD",
+        "MK-F5"
+      ]
+    },
+    {
+      "id": "pc98_ice",
+      "aliases": [
+        "冰封世界",
+        "Ice Dream"
+      ],
+      "project_treatment": "TH05第四面冰雪区域选集；沿同一P地表连接街道和殿前，不认定关卡距离为官方尺度。",
+      "status": "已建对应版本片段／三维P补完，非世界全域",
+      "coordinate_status": "独立版本展示坐标P；没有官方测量比例",
+      "source_ids": [
+        "MK-TH05",
+        "MK-OLD"
+      ]
+    },
+    {
+      "id": "pc98_panda",
+      "aliases": [
+        "Pandemonium",
+        "Pandæmonium",
+        "万魔殿"
+      ],
+      "project_treatment": "TH05万魔殿：本作解释的多塔外观、台基、殿庭、大堂与侧廊；外形和所有室内是P，不是原图测绘。",
+      "status": "已建对应版本片段／三维P补完，非世界全域",
+      "coordinate_status": "独立版本展示坐标P；没有官方测量比例",
+      "source_ids": [
+        "MK-TH05",
+        "MK-OLD"
+      ]
+    },
+    {
+      "id": "pc98_vina",
+      "aliases": [
+        "Vina Ruins",
+        "Vina"
+      ],
+      "project_treatment": "TH01魔界路线的维纳废墟；断柱与残垣为P体量补完，不移到TH05城市或旧地狱。",
+      "status": "已建对应版本片段／三维P补完，非世界全域",
+      "coordinate_status": "独立版本展示坐标P；没有官方测量比例",
+      "source_ids": [
+        "MK-OLD",
+        "MK-TH01"
+      ]
+    },
+    {
+      "id": "pc98_fallen",
+      "aliases": [
+        "Fallen Temple"
+      ],
+      "project_treatment": "TH01堕落神殿外部与内殿P重构；未重现手河、全部弹幕状态或整套关卡。",
+      "status": "已建对应版本片段／三维P补完，非世界全域",
+      "coordinate_status": "独立版本展示坐标P；没有官方测量比例",
+      "source_ids": [
+        "MK-OLD",
+        "MK-TH01"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "MK-TH12",
+      "title": "T：星莲船魔理沙A路线原文与译文",
+      "url": "https://thbwiki.cc/游戏对话:东方星莲船/雾雨魔理沙A/中日对照",
+      "source_type": "官方文本社区转录",
+      "note": "法界是魔界一角，封印与解封状态区别；不推导精确方位和尺寸。"
+    },
+    {
+      "id": "MK-TH05",
+      "title": "T：怪绮谈灵梦路线对话转录",
+      "url": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+      "source_type": "官方文本社区转录",
+      "note": "入口、城市与神绮的创造者身份；不推导完整城市平面图。"
+    },
+    {
+      "id": "MK-OLD",
+      "title": "C：旧作官方场景出处索引",
+      "url": "https://thbwiki.cc/官方场景（旧作）",
+      "source_type": "社区索引",
+      "note": "版本与关卡区分；本轮未逐帧测绘全部原作图片。"
+    },
+    {
+      "id": "MK-SCENE",
+      "title": "C/T：魔界各版本场景索引",
+      "url": "https://thbwiki.cc/魔界",
+      "source_type": "社区整理及原作评论转录",
+      "note": "TH12封印、虹光格网、远都与发光体意象；几何重构为P。"
+    },
+    {
+      "id": "MK-TH01",
+      "title": "T：灵异传附带Manual原文",
+      "url": "https://thbwiki.cc/附带文档:东方灵异传/Manual",
+      "source_type": "官方文本社区转录",
+      "note": "TH01与后续版本分开；不把未见的背面或内部说成原作实测。"
+    },
+    {
+      "id": "MK-F5",
+      "title": "F：东方夜雀食堂DLC5—月都＆魔界",
+      "url": "https://store.steampowered.com/app/2399331/?l=schinese",
+      "source_type": "具名同人开发者介绍",
+      "note": "借鉴可探索场景与生活细节，不复制贴图、地图或剧情，不作为正作地理证据。"
+    }
+  ],
+  "characters": [
+    {
+      "id": "shinki",
+      "name": "神绮",
+      "locationId": "pc98_panda",
+      "region": "makai05",
+      "space": "makai05",
+      "kind": "TH05创造者／万魔殿关联",
+      "note": "作品关联不等于实时行踪；坐标与建筑布局为P补完，不表示所有人物同时在场。",
+      "view": "pandemonium",
+      "position": [
+        0,
+        76,
+        -678
+      ],
+      "positionBasis": "P：独立版本图关联点；不映射到幻想乡地形或原点。",
+      "art": {
+        "file": "",
+        "work": "东方怪绮谈",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "sourcePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "availability": "本轮未取得可核验的旧作原图文件。只显示姓名／出处，不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦"
+      ]
+    },
+    {
+      "id": "yumeko",
+      "name": "梦子",
+      "locationId": "pc98_panda",
+      "region": "makai05",
+      "space": "makai05",
+      "kind": "TH05侍奉神绮／殿内活动",
+      "note": "作品关联不等于实时行踪；坐标与建筑布局为P补完，不表示所有人物同时在场。",
+      "view": "pandemoniumHall",
+      "position": [
+        22,
+        70,
+        -585
+      ],
+      "positionBasis": "P：独立版本图关联点；不映射到幻想乡地形或原点。",
+      "art": {
+        "file": "",
+        "work": "东方怪绮谈",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "sourcePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "availability": "本轮未取得可核验的旧作原图文件。只显示姓名／出处，不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦"
+      ]
+    },
+    {
+      "id": "sara",
+      "name": "萨拉",
+      "locationId": "pc98_gate",
+      "region": "makai05",
+      "space": "makai05",
+      "kind": "TH05入口守卫关联",
+      "note": "作品关联不等于实时行踪；坐标与建筑布局为P补完，不表示所有人物同时在场。",
+      "view": "makaiGate",
+      "position": [
+        -25,
+        20,
+        580
+      ],
+      "positionBasis": "P：独立版本图关联点；不映射到幻想乡地形或原点。",
+      "art": {
+        "file": "",
+        "work": "东方怪绮谈",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "sourcePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "availability": "本轮未取得可核验的旧作原图文件。只显示姓名／出处，不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦"
+      ]
+    },
+    {
+      "id": "louise",
+      "name": "露易兹",
+      "locationId": "pc98_maspace",
+      "region": "makai05",
+      "space": "makai05",
+      "kind": "TH05魔空间相遇；不是此处住宅",
+      "note": "作品关联不等于实时行踪；坐标与建筑布局为P补完，不表示所有人物同时在场。",
+      "view": "makaiSpace",
+      "position": [
+        17,
+        20,
+        421
+      ],
+      "positionBasis": "P：独立版本图关联点；不映射到幻想乡地形或原点。",
+      "art": {
+        "file": "",
+        "work": "东方怪绮谈",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "sourcePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "availability": "本轮未取得可核验的旧作原图文件。只显示姓名／出处，不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦"
+      ]
+    },
+    {
+      "id": "yuki",
+      "name": "雪",
+      "locationId": "pc98_ice",
+      "region": "makai05",
+      "space": "makai05",
+      "kind": "TH05冰雪世界活动；非地表同名角色",
+      "note": "作品关联不等于实时行踪；坐标与建筑布局为P补完，不表示所有人物同时在场。",
+      "view": "makaiIce",
+      "position": [
+        119,
+        37,
+        -244
+      ],
+      "positionBasis": "P：独立版本图关联点；不映射到幻想乡地形或原点。",
+      "art": {
+        "file": "",
+        "work": "东方怪绮谈",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "sourcePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "availability": "本轮未取得可核验的旧作原图文件。只显示姓名／出处，不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦"
+      ]
+    },
+    {
+      "id": "mai",
+      "name": "舞",
+      "locationId": "pc98_ice",
+      "region": "makai05",
+      "space": "makai05",
+      "kind": "TH05冰雪世界活动；不与丁礼田舞混同",
+      "note": "作品关联不等于实时行踪；坐标与建筑布局为P补完，不表示所有人物同时在场。",
+      "view": "makaiIce",
+      "position": [
+        150,
+        39,
+        -283
+      ],
+      "positionBasis": "P：独立版本图关联点；不映射到幻想乡地形或原点。",
+      "art": {
+        "file": "",
+        "work": "东方怪绮谈",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "sourcePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "availability": "本轮未取得可核验的旧作原图文件。只显示姓名／出处，不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦"
+      ]
+    },
+    {
+      "id": "elis",
+      "name": "依莉斯",
+      "locationId": "pc98_vina",
+      "region": "makai01",
+      "space": "makai01",
+      "kind": "TH01维纳废墟战斗场景关联",
+      "note": "作品关联不等于实时行踪；坐标与建筑布局为P补完，不表示所有人物同时在场。",
+      "view": "vinaCourtyard",
+      "position": [
+        -35,
+        28,
+        31
+      ],
+      "positionBasis": "P：独立版本图关联点；不映射到幻想乡地形或原点。",
+      "art": {
+        "file": "",
+        "work": "东方灵异传",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/官方场景（旧作）",
+        "sourcePage": "https://thbwiki.cc/官方场景（旧作）",
+        "availability": "本轮未取得可核验的旧作原图文件。只显示姓名／出处，不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/官方场景（旧作）"
+      ]
+    },
+    {
+      "id": "sariel",
+      "name": "萨丽爱尔",
+      "locationId": "pc98_fallen",
+      "region": "makai01",
+      "space": "makai01",
+      "kind": "TH01堕落神殿战斗场景关联；不推定住宅",
+      "note": "作品关联不等于实时行踪；坐标与建筑布局为P补完，不表示所有人物同时在场。",
+      "view": "fallenSanctuary",
+      "position": [
+        0,
+        33,
+        -458
+      ],
+      "positionBasis": "P：独立版本图关联点；不映射到幻想乡地形或原点。",
+      "art": {
+        "file": "",
+        "work": "东方灵异传",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/官方场景（旧作）",
+        "sourcePage": "https://thbwiki.cc/官方场景（旧作）",
+        "availability": "本轮未取得可核验的旧作原图文件。只显示姓名／出处，不用生成图或同人图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/官方场景（旧作）"
+      ]
+    }
+  ],
+  "characterVisits": [
+    {
+      "characterId": "byakuren",
+      "locationId": "hokkai",
+      "region": "makai12",
+      "space": "makai12",
+      "view": "hokkai",
+      "position": [
+        0,
+        18,
+        -42
+      ],
+      "makaiPhase": "released",
+      "kind": "TH12法界历史封印／解封关联",
+      "note": "保留命莲寺的主要居所；此处是TH12历史活动关联。",
+      "positionBasis": "P：法界历史观察点，不改变地表现居位置。",
+      "locationSources": [
+        "https://thbwiki.cc/游戏对话:东方星莲船/雾雨魔理沙A/中日对照"
+      ]
+    },
+    {
+      "characterId": "alice",
+      "locationId": "pc98_street",
+      "region": "makai05",
+      "space": "makai05",
+      "view": "makaiStreet",
+      "position": [
+        -12,
+        22,
+        75
+      ],
+      "kind": "TH05爱丽丝历史相遇；身份版本分开",
+      "note": "不迁移魔法森林住宅；不推定神绮与爱丽丝的官方亲子关系。",
+      "positionBasis": "P：TH05关联位置，非原作测绘坐标。",
+      "locationSources": [
+        "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦"
+      ],
+      "art": {
+        "file": "",
+        "work": "东方怪绮谈",
+        "credit": "原作图像权利归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "sourcePage": "https://thbwiki.cc/游戏对话:东方怪绮谈/博丽灵梦",
+        "availability": "本轮未取得可核验的旧作原图文件。只显示姓名／出处，不用生成图或同人图替代。"
+      }
+    }
+  ]
+}

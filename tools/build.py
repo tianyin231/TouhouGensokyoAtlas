@@ -51,29 +51,37 @@ def build(output_dir):
         json.loads(text)
         return text.rstrip('\n')
 
-    lunar = json.loads(data('data/lunar.json'))
+    additions = [json.loads(data(name)) for name in ('data/lunar.json', 'data/makai.json')]
     atlas = json.loads(data('data/atlas.json'))
     characters = json.loads(data('data/characters.json'))
     locations = {v['id']: v for v in atlas['locations']}
-    for patch in lunar['locationUpdates']:
-        if patch['id'] not in locations:
-            raise ValueError('月世界补丁引用了未知地点：' + patch['id'])
-        target = locations[patch['id']]
-        for key, value in patch.items():
-            if key in ('aliases', 'source_ids'):
-                target[key] = list(dict.fromkeys(target.get(key, []) + value))
-            elif key in ('status', 'project_treatment', 'coordinate_status'):
-                target[key] = value
-            elif key != 'id':
-                raise ValueError('月世界补丁不允许覆盖字段：' + key)
-    for key, base in [('sources', atlas), ('characters', characters)]:
-        ids = {v['id'] for v in base[key]}
-        for record in lunar[key]:
-            if record['id'] in ids:
-                raise ValueError('月世界追加ID重复：' + record['id'])
-            ids.add(record['id'])
-            base[key].append(record)
-    characters['scopeNote'] = f"当前合计{len(characters['characters'])}条；月世界关联由data/lunar.json追加，原表保留。"
+    for module in additions:
+        for patch in module['locationUpdates']:
+            if patch['id'] not in locations:
+                raise ValueError('地区补丁引用了未知地点：' + patch['id'])
+            target = locations[patch['id']]
+            for key, value in patch.items():
+                if key in ('aliases', 'source_ids'):
+                    target[key] = list(dict.fromkeys(target.get(key, []) + value))
+                elif key in ('status', 'project_treatment', 'coordinate_status'):
+                    target[key] = value
+                elif key != 'id':
+                    raise ValueError('地区补丁不允许覆盖字段：' + key)
+        for key, base in [('sources', atlas), ('characters', characters)]:
+            ids = {v['id'] for v in base[key]}
+            for record in module[key]:
+                if record['id'] in ids:
+                    raise ValueError('地区追加ID重复：' + record['id'])
+                ids.add(record['id'])
+                base[key].append(record)
+    characters['additionalVisits'] = []
+    ids = {c['id'] for c in characters['characters']}
+    for module in additions:
+        for visit in module.get('characterVisits', []):
+            if visit['characterId'] not in ids or visit['locationId'] not in locations:
+                raise ValueError('历史活动引用未知人物或地点')
+            characters['additionalVisits'].append(visit)
+    characters['scopeNote'] = f"当前合计{len(characters['characters'])}条；独立世界追加资料与历史活动分开，原记录保留。"
 
     core = read_bytes('vendor/three/three.core.js')
     if f"const REVISION = '{project['threeRevision']}';".encode() not in core:
@@ -97,6 +105,7 @@ def build(output_dir):
         'HELL_RENDERER': source('src/old-hell-renderer.js'),
         'CASTLE_RENDERER': source('src/kishinjou-renderer.js'),
         'LUNAR_RENDERER': source('src/lunar-renderer.js'),
+        'MAKAI_RENDERER': source('src/makai-renderer.js'),
         'CHARACTERS': source('src/characters.js'),
         'STREAMING': source('src/streaming.js'),
         'APP': source('src/app.js'),
@@ -114,6 +123,8 @@ def build(output_dir):
     read_bytes('tools/kishinjou-baseline.json')
     read_bytes('tools/check-lunar.mjs')
     read_bytes('tools/lunar-baseline.json')
+    read_bytes('tools/check-makai.mjs')
+    read_bytes('tools/makai-baseline.json')
     output_dir.mkdir(parents=True, exist_ok=True)
     # GitHub 会清洗非 ASCII 附件名，发布名称与校验文件必须一致。
     filename = f'TouhouGensokyoAtlas-{tag}.html'

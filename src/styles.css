@@ -10,3 +10,9 @@
 .in-lunar .weather-switch,.in-lunar #light-neutral,.in-lunar #light-dusk{display:none}
 #lunar-nav{max-width:calc(100vw - 32px);overflow-x:auto;white-space:nowrap}
 @media(max-width:760px){.tools{max-width:calc(100vw - 92px);overflow-x:auto;flex-wrap:nowrap}.tools .tool{flex-shrink:0}.in-lunar .caption{max-width:calc(100vw - 40px)}}
+
+/* Realm climates are local; surface controls retain their values on return. */
+.in-makai .weather-switch,.in-makai #light-neutral,.in-makai #light-dusk{display:none}
+#makai-nav{max-width:calc(100vw - 32px);overflow-x:auto;white-space:nowrap}
+.in-makai .caption{max-width:390px}
+@media(max-width:760px){.in-makai .caption{max-width:calc(100vw - 40px)}}

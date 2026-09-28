@@ -6,8 +6,8 @@
 
 ```text
 project.json + src/index.html/styles.css
-  + data/atlas.json、characters.json、expansion.json + lunar.json受限追加
-  + project.worldBuilders 指定的基础、地底、辉针城与月世界建模脚本
+  + data/atlas.json、characters.json、expansion.json + lunar.json/makai.json受限追加
+  + project.worldBuilders 指定的基础、地底、辉针城、月世界与魔界建模脚本
   + 渲染、相机、人物、调度、应用脚本
   + assets/packs/ 两个必需源包
   + vendor/three/ 固定引擎与许可证
@@ -16,7 +16,7 @@ project.json + src/index.html/styles.css
 
 命令是 `python tools/build.py`，随后 `node tools/check.mjs`。Python构建不读取旧HTML／Git历史、不临时下载依赖。`dist/` 是产物，不人工修改或提交；使用标签与Release分发成品，不恢复根目录版本化HTML集合。
 
-`project.json` 当前为0.19.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
+`project.json` 当前为0.20.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
 
 发布版本、原研究数据版本、区域元数据版本和历史来源身份分开。不能对全仓库替换所有0.16／0.17字符串；项目版本映射到标签和产物名由构建器统一完成。
 
@@ -87,10 +87,18 @@ CPU数组、实例数据、Three.js几何、贴图、阴影／反射／后期目
 
 `tools/check-kishinjou.mjs` 纳入主检查器；固定旧源码／源包哈希保护、原数据关系与几何期望在 `tools/kishinjou-baseline.json`，不能随每次运行自动更新。可选 `tools/check-browser.py` 单独依赖Playwright，不改变离线构建的依赖和流程。详见[模块说明](kishinjou-reference.md)。
 
-## 月世界独立模块（0.19.0）
+## 月世界独立模块（0.19.0加入）
 
-`worldBuilders` 在辉针城后追加 `src/lunar.js`，三个区域分别为 `lunar`／`tranquility`／`kaian`，对应独立 `lunar`／`lunarsea`／`dream` 空间。`src/lunar-renderer.js`最后继承渲染器并隔离显隐、时钟、局部补光、月空、静海形态；返回旧空间恢复阴影和天气参数。独立图的总览变换是恒等变换，不套用仙界展开偏移。
+`src/lunar.js`建立 `lunar`／`tranquility`／`kaian` 三个区域，对应独立 `lunar`／`lunarsea`／`dream` 空间。`src/lunar-renderer.js`继承渲染器并隔离月空、静海形态、局部补光、时钟和时代显隐；返回旧空间恢复阴影与天气参数。独立图采用恒等展示变换，不套用仙界偏移。
 
-构建读取 `data/lunar.json` 并限制可更新字段、去重别名和来源、拒绝未知地点与重复新人物；旧atlas和characters源文件不改。运行使用一次编译后的资料，主线程／Worker依然同源。原两份pack.gz不改；启动时生成1,764,396字节总览补充，详情由既有原生Worker按需生成。近远各自有固定几何期望，详情取消与CPU/GPU回收沿用原调度器，不通过先生成全部高模实现伪按需。
+`data/lunar.json`作为构建追加资料，旧atlas和characters源文件不改。原两份pack.gz不改，启动追加1,764,396字节总览，详情由Worker按需生成。近远各有固定只读期望；离线检查为 `check-lunar.mjs`，可选浏览器检查为 `check-lunar-browser.py`。0.19原报告与图像限制见 [lunar-reference.md](lunar-reference.md)。
 
-离线检查包含 `check-lunar.mjs`，额外浏览器检查为 `check-lunar-browser.py`。既有浏览器脚本仅增加可选 `--headed` 支持；本轮使用Xvfb有头Chromium以及明确标注的 `--content` 装入路径验证真实WebGL／Blob Worker，不把它称为HTTP或file://验收。预算和未测项见 [lunar-reference.md](lunar-reference.md)。
+## 魔界版本模块（0.20.0）
+
+新建模模块在月世界之后注册，三个区域是 `makai12`、`makai05`、`makai01`，各带作品时代。空多边形不进入地表归属或地形锚点；恒等变换避免套用仙界缩放。版本视图不是物理传送门。新渲染器通过继承隔离天空、4盏室内补光、封印／虹光和剖览；没有改动原 `src/renderer.js` 或旧地区建模器。
+
+高远地形只接收阴影，不向聚焦阴影图写入：仅新模块通过 `ensure()` 设置自己的 `customDepthMaterial`，仍可能产生阴影pass提交，不声称消除了对应绘制调用。其余建筑正常投射阴影。新动态统一使用已有时钟；返回地表恢复天气、阴影参数和局部灯显隐。
+
+构建以 `data/makai.json` 追加10个已有地点的允许字段、6条来源、8个人物及2条历史活动。活动保存在独立 `additionalVisits`，不改原57个人物记录；运行时生成新的访问列表。旧作未核原图明确缺失，异步现代图像回调不能覆盖旧作缺图占位。
+
+三图总览共1,953,180字节，启动不生成详情。详情分三包沿用原Worker取消与CPU/GPU回收；不是网络逐包下载，也尚未细分万魔殿和城市街区。离线新增 `check-makai.mjs` 与只读 `makai-baseline.json`；原月都人物数量下限调整为57，新检查精确验证原57条及最终65条，不修改旧几何期望。可选 `check-makai-browser.py` 与独立构建无依赖关系。具体当前验证及边界见 [current-status.md](current-status.md)。

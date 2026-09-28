@@ -1,6 +1,7 @@
 // 构建集成检查：过期输出、嵌入脚本、资源包与地下模型；不需要安装 npm 依赖。
 import {checkKishinjou} from './check-kishinjou.mjs';
 import {checkLunar} from './check-lunar.mjs';
+import {checkMakai} from './check-makai.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -82,3 +83,5 @@ console.log(`检查通过：${atlas.locations.length} 个地点，${pack.meshes.
 
 const lunar = await checkLunar(context.GA,atlas,JSON.parse(script('character-data')),read);
 console.log('月世界检查通过：'+JSON.stringify(lunar));
+
+console.log('魔界检查通过：'+JSON.stringify(await checkMakai(context.GA,atlas,JSON.parse(script('character-data')),read)));

@@ -7,7 +7,7 @@ export async function checkLunar(G,atlas,characters,read){
  const fixed=JSON.parse(read('tools/lunar-baseline.json'));
  for(const [f,h]of Object.entries(fixed.protectedFiles))assert.equal(hash(read(f)),h,`${f}: v0.18 inheritance changed`);
  assert.equal(hash(JSON.stringify(characters.characters.slice(0,53))),fixed.originalCharacters);
- assert.equal(characters.characters.length,57);assert.equal(atlas.locations.length,179);
+ assert(characters.characters.length>=57);assert.equal(atlas.locations.length,179);
  const sources=new Set(atlas.sources.map(s=>s.id));assert.equal(sources.size,atlas.sources.length);
  assert.equal(Object.keys(G.LUNAR.views).length,14);
  assert(!G.IMPLEMENTED.dream,'A passage fragment is not the entire dream world');

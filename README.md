@@ -4,7 +4,13 @@
 
 直接体验请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 下载 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
-## 月世界场景（0.19.0）
+## 魔界场景（0.20.0）
+
+顶部「魔界」进入：星莲船的红黑封印与法界、怪绮谈的洞口／街道／冰雪世界／万魔殿、灵异传的维纳废墟与堕落神殿。共19个机位，万魔殿包括大堂、侧廊、后庭和可逆剖览。按作品分图展示，不主张它们是三个不同的官方宇宙，也不悬置在幻想乡上空。
+
+新增 `src/makai.js`、`src/makai-renderer.js`、`data/makai.json`；[来源与P补完边界](docs/makai-reference.md)单独记录。离线构建与检查命令不变，可选浏览器回归为 `python tools/check-makai-browser.py`。原地表、旧地狱、辉针城和月世界源资产保留。本轮直接推送源码，不自动创建Release。
+
+## 保留场景：月世界（0.19.0加入）
 
 顶部「月之都」进入城内、绵月宅、桃园和丰富海；底部可切换静海表里与第四槐安通道，也可返回完整幻想乡。共有14个机位，封存事件与日常场景分开。不是把月都悬在地表上空。
 
@@ -40,6 +46,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 | `src/index.html`、`src/styles.css` | 页面模板、界面和样式；模板本身不能直接预览 |
 | `src/app.js` | 地点选择、导览、界面状态和启动逻辑 |
 | `src/world-builder.js` | 基础数学、地形及已有地表区域的程序化建模 |
+| `src/makai.js`、`src/makai-renderer.js`、`data/makai.json` | 魔界版本选集、万魔殿内外、封印与历史人物关联 |
 | `src/lunar.js`、`src/lunar-renderer.js`、`data/lunar.json` | 月都、静海与梦境独立空间、近远景、资料追加与人物身份 |
 | `src/kishinjou.js`、`src/kishinjou-renderer.js` | 辉针城近远景、独立空中定位、局部材质与可逆剖览 |
 | `src/old-hell.js` | 旧地狱区域的建模、地点映射与导览镜头 |
