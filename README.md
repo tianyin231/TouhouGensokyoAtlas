@@ -4,9 +4,15 @@
 
 直接体验请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 下载 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
-## 天界与玄云海（0.22.0）
+## 彼岸与三途河（0.23.0）
 
-顶部「天界」进入有顶天桃林与花原、临云小亭、要石、玄云海山顶岩地；14机位包含背侧／岩基、局部绯云征兆、宴席和TH155土石极光选景。三项已有目录接入后为 **80条可导航、99条待处理／共179条**，不是竣工比例。未把天界合并到神子仙界、月都或幻想乡地表。
+顶部「彼岸」进入中有之道摊街、赛之河原、三途河渡口和彼岸花原；共16机位，两岸分别导览，不设跨河桥或固定渡河里程。码头、空心木舟、石堆风车、反卷红花与无专名关口均为真实几何。关口不是是非曲直厅总部，布局和背面保留P标记。
+
+[考据与范围](docs/higan-reference.md)记录原作文字、同人预览与补完区别。当前目录为179条中84可导航、95待处理，不是竣工比例。新增 `src/higan.js`、`src/higan-renderer.js`和`data/higan.json`，原地区与源资产不改。可选回归为`python tools/check-higan-browser.py`；`.github/workflows/scene-check.yml`以只读权限独立重建并运行HTTP浏览器检查，短期附件不替代正式Release。
+
+## 保留场景：天界与玄云海（0.22.0加入）
+
+顶部「天界」进入有顶天桃林与花原、临云小亭、要石、玄云海山顶岩地；14机位包含背侧／岩基、局部绯云征兆、宴席和TH155土石极光选景。在0.22版本时，三项已有目录接入后为 **80条可导航、99条待处理／共179条**，不是竣工比例。未把天界合并到神子仙界、月都或幻想乡地表。
 
 新模块为 `src/heaven.js`、`src/heaven-renderer.js`、`data/heaven.json`。小亭、路形、岩基、未见立面与所有尺寸标P；TH105与TH155场景不同时叠加。[考据、版本边界与预算](docs/heaven-reference.md)可查。构建检查命令不变，新增可选 `python tools/check-heaven-browser.py`，原作图仍按真实加载状态显示。本轮不自动创建Release。
 
@@ -57,6 +63,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 | `project.json` | 当前版本、发布标题、Three.js 版本及建模模块的拼接顺序 |
 | `src/index.html`、`src/styles.css` | 页面模板、界面和样式；模板本身不能直接预览 |
 | `src/app.js` | 地点选择、导览、界面状态和启动逻辑 |
+| `src/higan.js`、`src/higan-renderer.js`、`data/higan.json` | 此岸与彼岸两图、渡舟／花原、人物出处及四项目录入口 |
 | `src/world-builder.js` | 基础数学、地形及已有地表区域的程序化建模 |
 | `src/heaven.js`、`src/heaven-renderer.js`、`data/heaven.json` | 天界与玄云海的近远景、版本显隐与人物出处 |
 | `src/netherworld.js`、`src/netherworld-renderer.js`、`data/netherworld.json` | 冥界几何、春雪／封印状态及人物资料 |

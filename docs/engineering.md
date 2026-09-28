@@ -6,8 +6,8 @@
 
 ```text
 project.json + src/index.html/styles.css
-  + data/atlas.json、characters.json、expansion.json + lunar.json/makai.json/netherworld.json/heaven.json受限追加
-  + project.worldBuilders 指定的基础、地底、辉针城、月世界、魔界、冥界、天界建模脚本及导航注册
+  + data/atlas.json、characters.json、expansion.json + lunar.json/makai.json/netherworld.json/heaven.json/higan.json受限追加
+  + project.worldBuilders 指定的基础、地底、辉针城、月世界、魔界、冥界、天界与此岸彼岸建模脚本及导航注册
   + 渲染、相机、人物、调度、应用脚本
   + assets/packs/ 两个必需源包
   + vendor/three/ 固定引擎与许可证
@@ -16,7 +16,7 @@ project.json + src/index.html/styles.css
 
 命令是 `python tools/build.py`，随后 `node tools/check.mjs`。Python构建不读取旧HTML／Git历史、不临时下载依赖。`dist/` 是产物，不人工修改或提交；使用标签与Release分发成品，不恢复根目录版本化HTML集合。
 
-`project.json` 当前为0.22.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
+`project.json` 当前为0.23.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
 
 发布版本、原研究数据版本、区域元数据版本和历史来源身份分开。不能对全仓库替换所有0.16／0.17字符串；项目版本映射到标签和产物名由构建器统一完成。
 
@@ -119,4 +119,13 @@ CPU数组、实例数据、Three.js几何、贴图、阴影／反射／后期目
 
 `heaven-renderer.js`最后继承渲染器，自有天空、云带、极光和一盏小亭局部补光。TH105与TH155植被／亭子／浮石互斥，绯云只影响云海事件，不改变地表天气状态；广域地形使用专用深度材质避免写入聚焦阴影图，仍有提交成本。新相机子类只在两个新空间允许岩基下方旋转，其他模式委托原相机，不改受保护的`camera.js`。
 
-`data/heaven.json`追加天子和衣玖，原67条与历史访问保持不变，最终69条。TH105人物标记不叠到TH155选景；未核原图明确缺失。冥界旧检查仅改为允许人数／导航数量后续增长、限定原新增两人的切片，旧几何与旧映射期望不更新。`check-heaven.mjs`独立精确核验179／80／99、69人物、旧67条和22个继承文件；新基线是只读期望，测试不会自动改写。浏览器依赖仍与离线构建分离。
+`data/heaven.json`追加天子和衣玖，原67条与历史访问保持不变，最终69条。TH105人物标记不叠到TH155选景；未核原图明确缺失。冥界旧检查仅改为允许人数／导航数量后续增长、限定原新增两人的切片，旧几何与旧映射期望不更新。0.22时`check-heaven.mjs`独立精确核验179／80／99、69人物、旧67条和22个继承文件；0.23允许未来条目追加，由新检查器验证最终总数；新基线是只读期望，测试不会自动改写。浏览器依赖仍与离线构建分离。
+
+
+## 此岸与彼岸（0.23.0）
+
+`src/higan.js`在天界之后追加`shigan`和`higan`，对应四个目录入口，空多边形和恒等展示变换不更改地表或原空间。渲染器最后继承并只在新图使用自有天空、水面、材质及关口补光。水面是程序着色近似而非新增反射pass；广域地形不写局部阴影但仍有提交成本。原材质／灯光的恢复由原渲染链及新层显隐共同处理，并需跨区回归。
+
+`data/higan.json`沿用受限追加，原69人物和2条历史访问不变，新增4条，最终73。天界旧数量断言改为可扩展下限并限定其新增两人的切片，旧基线不改；新`check-higan.mjs`验证全部旧80条映射、84导航、95待处理、原资料及26个继承文件。两图详情约10.2MiB和23.2MiB顶点源数组，启动代理合计1,963,764字节；不是实际显存占用。原生Worker取消、缓存清理及独立近远几何期望仍保留。
+
+新增`.github/workflows/scene-check.yml`以contents:read运行构建／审计、干净Git源快照重建对比与HTTP浏览器回归。Playwright只为可选测试安装，不成为离线构建依赖；Action附件保留7天，不写回仓库、不创建Release。当前具体测试与边界以`current-status.md`为准，不把workflow存在当作测试通过。
