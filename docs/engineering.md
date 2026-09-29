@@ -16,7 +16,9 @@ project.json + src/index.html/styles.css
 
 命令是 `python tools/build.py`，随后 `node tools/check.mjs`。Python构建不读取旧HTML／Git历史、不临时下载依赖。`dist/` 是产物，不人工修改或提交；使用标签与Release分发成品，不恢复根目录版本化HTML集合。
 
-`project.json` 当前为0.28.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`、`src/landscape.js`、`src/animal.js`、`src/backdoor.js`、`src/kasen.js`、`src/current-hell.js`、`src/rainbow-mine.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
+`project.json` 当前为0.29.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`、`src/landscape.js`、`src/animal.js`、`src/backdoor.js`、`src/kasen.js`、`src/current-hell.js`、`src/rainbow-mine.js`、`src/highland.js`、`src/hakurei-plants.js`、`src/hakurei-transition.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
+
+神社精修的渲染尾链为 `HighlandRenderer → HakureiRenderer → NightRenderer`，具体由 `src/index.html` 与 `tools/build.py` 接入，不能只登记建模模块。`NightRenderer` 仅在地表夜晚覆盖光照，离开时恢复环境强度、环境光颜色、天空及灯参数；高地室内补光和独立空间继续走原继承链。神社总览通过 `node tools/update-hakurei-overview.mjs` 显式更新，不由普通构建或测试重写；其余源包几何受保护。材质、LOD与灯光预算见[画面升级策略](visual-upgrade.md)。
 
 发布版本、原研究数据版本、区域元数据版本和历史来源身份分开。不能对全仓库替换所有0.16／0.17字符串；项目版本映射到标签和产物名由构建器统一完成。
 
@@ -163,3 +165,10 @@ CPU数组、实例数据、Three.js几何、贴图、阴影／反射／后期目
 ## 虹龙洞增量（0.28.0）
 
 `rainbowmine / mountain_mine`是矿洞的局部工程图，不是独立官方世界。仅新增`rainbow_mine`导航，保留地表锚点、源包与相机实现；主线程／Worker按列表同源，最后追加局部矿井渲染层。洞顶可逆显隐，最近8盏灯退区关闭，彩雾和排水共用原时钟。新检查保护45个继承文件，原现行地狱检查只开放追加数量。[完整范围、预算与测试](rainbow-mine-reference.md)。
+
+
+## 伪天棚地表扩建（0.29.0）
+
+`highland`属于已有surface，不能按独立仙界处理。启动时以有限抬升修改12个原近／远地形记录，范围外顶点和其他记录保持原值；没有重叠草皮或地形开孔。公共山路分别在实际近／远索引三角面上采样，按原地块LOD选择，共16记录，独立于房屋详情生命周期。源包保持原文件字节，改动由模块运行时明确施加；房屋详情仍由原生Worker按区建立。
+
+公共路径4,414,176源字节、房屋代理1,062,180字节；详情6,553,980字节。局部烟雾共用时钟，室内补光退出关闭；不修改地表天气状态。固定检查验证48个继承文件、旧84人物与91导航、限定范围的地形变化和道路绕序；旧虹龙洞检查仅允许后续数量增加并取消伪天棚／赌场必须未建的约束，不改旧矿道几何。[详细边界与验收](highland-reference.md)。

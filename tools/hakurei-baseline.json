@@ -11,10 +11,18 @@
     "bamboo": "3312677814fc2323303b5453b59d7bc9ad63ad6955afee93e85eb41715c4aa8a",
     "sunflower": "9071b82b2a121e04808696b96925c720efb70e7bcab49750c75a35e54dc3563a",
     "nameless": "3c3b2ce4e78c02a2128bedefc7bdafcf036e192a80f86a2660550e8bcf5f35c5",
-    "mountain": "11109364aac2227c2dfcdba8b96f400de09c9fee023ff13a28ee73cdd45c7e21",
+    "mountain": "60c85c21d85ad70b158155458d9b35c66a51e19aa8fc7b2f094dfce8458de521",
     "forest": "b0e046c49b52281597ba4c76cdd2bec8f080c84c838c9a0f87497f712a7ccb2b",
     "muenzuka": "fce019a1625ad753025841ebb396bf84a5844c9d9284dce9f45250789514a058",
     "genbu": "f6a4a51132c512ff3087115e67c5ed1497f51ddde07995eceda55825826ca188"
+  },
+  "reviewedUpstreamChanges": {
+    "mountain": {
+      "commit": "ca737d6",
+      "before": "11109364aac2227c2dfcdba8b96f400de09c9fee023ff13a28ee73cdd45c7e21",
+      "after": "60c85c21d85ad70b158155458d9b35c66a51e19aa8fc7b2f094dfce8458de521",
+      "reason": "合并v0.29伪天棚的局部高地；上游完整建模链与合并后mountain摘要逐字节一致，其他12区保持旧摘要。"
+    }
   },
   "reviewedSourceChanges": {
     "src/world-builder.js": {

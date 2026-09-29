@@ -51,7 +51,7 @@ def build(output_dir):
         json.loads(text)
         return text.rstrip('\n')
 
-    additions = [json.loads(data(name)) for name in ('data/lunar.json', 'data/makai.json', 'data/netherworld.json', 'data/heaven.json', 'data/higan.json', 'data/animal.json', 'data/backdoor.json', 'data/kasen.json', 'data/current-hell.json', 'data/rainbow-mine.json')]
+    additions = [json.loads(data(name)) for name in ('data/lunar.json', 'data/makai.json', 'data/netherworld.json', 'data/heaven.json', 'data/higan.json', 'data/animal.json', 'data/backdoor.json', 'data/kasen.json', 'data/current-hell.json', 'data/rainbow-mine.json', 'data/highland.json')]
     atlas = json.loads(data('data/atlas.json'))
     characters = json.loads(data('data/characters.json'))
     locations = {v['id']: v for v in atlas['locations']}
@@ -115,6 +115,7 @@ def build(output_dir):
         'KASEN_RENDERER': source('src/kasen-renderer.js'),
         'CURRENT_HELL_RENDERER': source('src/current-hell-renderer.js'),
         'RAINBOW_MINE_RENDERER': source('src/rainbow-mine-renderer.js'),
+        'HIGHLAND_RENDERER': source('src/highland-renderer.js'),
         'HAKUREI_RENDERER': source('src/hakurei-renderer.js'),
         'NIGHT_RENDERER': source('src/night-renderer.js'),
         'CHARACTERS': source('src/characters.js'),
@@ -154,6 +155,8 @@ def build(output_dir):
     read_bytes('tools/current-hell-baseline.json')
     read_bytes('tools/check-rainbow-mine.mjs')
     read_bytes('tools/rainbow-mine-baseline.json')
+    read_bytes('tools/check-highland.mjs')
+    read_bytes('tools/highland-baseline.json')
     read_bytes('tools/check-hakurei.mjs')
     read_bytes('tools/hakurei-baseline.json')
     output_dir.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,116 @@
+{
+  "version": "0.29.0",
+  "baseline": "a45816b6b76584aae4f54d58d772223e48ecee2b",
+  "note": "仅伪天棚、驹草赌场两入口。位置、山路、建筑背面及尺度P；不算已完成秘天崖或地表进矿。",
+  "locationUpdates": [
+    {
+      "id": "false_ceiling",
+      "aliases": [
+        "偽天棚",
+        "False Heaven Shelf"
+      ],
+      "status": "已接入三维局部选景，非全域竣工",
+      "project_treatment": "P山肩高地、残雪、花甸、旧屋与连接山路；新增地形只抬高局部低洼，保留原高峰及湖区。与原登山支路连接为本作提案；秘天崖尚未专建。",
+      "coordinate_status": "P地表布局；没有官方测量坐标",
+      "source_ids": [
+        "SHELF-SCENE",
+        "SHELF-LE29",
+        "SHELF-LE30",
+        "SHELF-OMAKE",
+        "SHELF-FAN"
+      ]
+    },
+    {
+      "id": "casino",
+      "aliases": [
+        "驹草赌场",
+        "駒草の賭場",
+        "Komakusa Gambling Den"
+      ],
+      "status": "已接入三维局部选景，非全域竣工",
+      "project_treatment": "选取一间旧屋作开设／散场示意，不主张永久营业或固定在这栋屋子；门口龙形烟管、静态桌案赌具与室内为P建模。",
+      "coordinate_status": "P地表布局；没有官方测量坐标",
+      "source_ids": [
+        "SHELF-SCENE",
+        "SHELF-LE29",
+        "SHELF-LE30",
+        "SHELF-OMAKE",
+        "SHELF-FAN"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "SHELF-SCENE",
+      "title": "C：伪天棚与赌场场景索引",
+      "url": "https://thbwiki.cc/伪天棚",
+      "source_type": "C",
+      "note": "社区整理；未获取全部漫画原图，外观及地表位置为P"
+    },
+    {
+      "id": "SHELF-LE29",
+      "title": "T：醉蝶华第29话——不定期开设的旧屋赌场",
+      "url": "https://thbwiki.cc/东方醉蝶华/第二十九话",
+      "source_type": "T",
+      "note": "原作文字社区转录；标记与轮换语义，不提供精确建筑施工图"
+    },
+    {
+      "id": "SHELF-LE30",
+      "title": "T：醉蝶华第30话——赌具与散场",
+      "url": "https://thbwiki.cc/东方醉蝶华/第三十话",
+      "source_type": "T",
+      "note": "原作文字转录；展示静态场景，不做赌博玩法"
+    },
+    {
+      "id": "SHELF-OMAKE",
+      "title": "T：TH18附带设定——驹草山如",
+      "url": "https://thbwiki.cc/附带文档:东方虹龙洞/Omake",
+      "source_type": "T",
+      "note": "山如活动／职责，不标定永久住所"
+    },
+    {
+      "id": "SHELF-FAN",
+      "title": "F/C：LostWord山如角色资料",
+      "url": "https://touhoulostword.wiki.gg/wiki/Sannyo_Komakusa_(L1)",
+      "source_type": "F/C",
+      "note": "具名同人游戏的社区资料，仅对照高地意象，不复制图像地图或当一设"
+    }
+  ],
+  "characters": [
+    {
+      "id": "sannyo",
+      "name": "驹草山如",
+      "aliases": [
+        "驹草太夫",
+        "Sannyo Komakusa"
+      ],
+      "locationId": "casino",
+      "region": "highland",
+      "space": "surface",
+      "view": "denHall",
+      "position": [
+        -1102,
+        741,
+        -1843
+      ],
+      "highlandSession": true,
+      "kind": "赌场经营／活动关联",
+      "note": "高地赌场在特定日于旧屋间轮换；本作只选一屋示意，不代表私人住宅或实时在场。",
+      "positionBasis": "P：本作地表放置与室内关联点。",
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方虹龙洞/Omake",
+        "https://thbwiki.cc/东方醉蝶华/第二十九话"
+      ],
+      "art": {
+        "file": "",
+        "urls": [],
+        "work": "东方虹龙洞",
+        "credit": "ZUN／上海爱丽丝幻乐团",
+        "kind": "原作图待核",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方虹龙洞/Omake",
+        "filePage": "https://thbwiki.cc/附带文档:东方虹龙洞/Omake",
+        "availability": "未取得可核验的肖像文件；保留姓名，不用替代图。"
+      }
+    }
+  ]
+}

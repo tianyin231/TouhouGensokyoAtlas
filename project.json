@@ -1,6 +1,6 @@
 {
-  "version": "0.28.0",
-  "title": "虹龙洞 · 矿轨与深层龙珠",
+  "version": "0.29.0",
+  "title": "伪天棚 · 残雪高地与驹草旧屋",
   "threeRevision": "185",
   "worldBuilders": [
     "src/world-builder.js",
@@ -18,6 +18,7 @@
     "src/kasen.js",
     "src/current-hell.js",
     "src/rainbow-mine.js",
+    "src/highland.js",
     "src/hakurei-plants.js",
     "src/hakurei-transition.js"
   ]
