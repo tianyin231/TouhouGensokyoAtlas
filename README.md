@@ -4,17 +4,25 @@
 
 在线体验：[幻想乡立体风物志](https://tianyin231.github.io/TouhouGensokyoAtlas/)。下载版本请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 获取 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
-## 后户之国（0.25.0）
+## 华扇仙界与茨华仙邸（0.26.0）
+
+顶部「华扇仙界」进入独立山居，14个机位包含三层中式宅邸、真实圆窗书室、环廊与背面、花庭曲径、木桥涧水、开放鸟栖、夜庭、水墨选景及可恢复剖览。第48话八芒星只为事件示意，不实现去往地狱的传送。房屋尺寸、庭院与入庭路线均为P，不在妖怪之山地表猜测入口。
+
+新增`src/kasen.js`、`src/kasen-renderer.js`、`data/kasen.json`，以及[来源、实现与验收边界](docs/kasen-reference.md)。基于`126b822`，完整保留畜生界、后户之国、林缘、路线导览、地面行走／自由飞行及Pages部署。目录为179条中89可导航／90待处理，人物79条；导航数不是竣工比例，未核原作肖像继续明确缺图。
+
+构建和目录检查命令不变，新增可选`python tools/check-kasen-browser.py`。CI运行本区域与公共回归，结果以对应运行记录为准；先前快速切回神社的着色器问题未被本次选定路径检查证明全面解决。
+
+## 保留场景：后户之国（0.25.0加入）
 
 顶部「后户之国」进入TH16绿色门群，14机位覆盖四季窥景、门背合页、二童子活动处、座席、上下纹样、第六面黑暗串门和Extra选景。四季窗口是本作三维小景的一次性离屏渲染，不是实时地表传送门；门与上层地面可关闭／恢复。布局、尺寸及座席保留P标记。
 
-基于已合并的`b25a778`追加，原畜生界、林缘景观、路线导览、地面行走、自由飞行及Pages配置全部保留。当前179条目录中87可导航、92待处理；人物78条，新增三人未核原图明确显示缺图。新模块为`src/backdoor.js`、`src/backdoor-renderer.js`与`data/backdoor.json`，具体[依据、四季窗口预算与边界](docs/backdoor-reference.md)可查。
+基于已合并的`b25a778`追加，原畜生界、林缘景观、路线导览、地面行走、自由飞行及Pages配置全部保留。0.25版本时179条目录中87可导航、92待处理；人物78条，新增三人未核原图明确显示缺图。新模块为`src/backdoor.js`、`src/backdoor-renderer.js`与`data/backdoor.json`，具体[依据、四季窗口预算与边界](docs/backdoor-reference.md)可查。
 
 构建与静态检查命令不变；可选新回归为`python tools/check-backdoor-browser.py`。CI对本次区域和公共回归通过HTTP检查，其结果以每次运行记录为准，不把工作流存在当成通过。旧的快速切换着色器问题不因本轮选定测试通过而宣称已修复。
 
 ## 保留场景：畜生界与灵长园（0.24.0加入）
 
-0.24候选经PR #1合并到主分支，包含其后整合的林缘和相机功能；当前以合并后的`b25a778`继续开发。此前快速未同步切回博丽神社的着色器校验错误仍未确认根因，详见[当前状态](docs/current-status.md)，不因合并或本轮检查通过而改称已修复。
+0.24候选经PR #1合并到主分支，包含其后整合的林缘和相机功能；当时以合并后的`b25a778`继续开发。此前快速未同步切回博丽神社的着色器校验错误仍未确认根因，详见[当前状态](docs/current-status.md)，不因合并或本轮检查通过而改称已修复。
 
 顶部「畜生界」进入高楼都市与锁孔形林地；导航可切到电子遗产内景。16个机位覆盖街巷、退台楼顶、土垒、守备口、陶偶、制作区、高廊与可逆剖览。TH17袿姬时期与改造前意象分开；后者不代表完整历史地图。新建筑与室内均为P补完，不给普通大楼命名组织总部。
 
@@ -79,6 +87,8 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 | `project.json` | 当前版本、发布标题、Three.js 版本及建模模块的拼接顺序 |
 | `src/index.html`、`src/styles.css` | 页面模板、界面和样式；模板本身不能直接预览 |
 | `src/app.js` | 地点选择、导览、界面状态和启动逻辑 |
+| `src/kasen.js`、`src/kasen-renderer.js`、`data/kasen.json` | 华扇仙界与宅邸、书室／夜庭／水墨选景及出处 |
+| `src/backdoor.js`、`src/backdoor-renderer.js`、`data/backdoor.json` | 后户之国门群、有限四季窥景与版本状态 |
 | `src/animal.js`、`src/animal-renderer.js`、`data/animal.json` | 畜生都市、灵长园内外、历史状态、按区加载和人物来源 |
 | `src/higan.js`、`src/higan-renderer.js`、`data/higan.json` | 此岸与彼岸两图、渡舟／花原、人物出处及四项目录入口 |
 | `src/world-builder.js` | 基础数学、地形及已有地表区域的程序化建模 |

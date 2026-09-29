@@ -54,3 +54,6 @@
 .in-backdoor .weather-switch,.in-backdoor #light-neutral,.in-backdoor #light-dusk{display:none}
 #backdoor-nav{max-width:calc(100vw - 28px);overflow-x:auto;white-space:nowrap}
 #backdoor-nav button:disabled{opacity:.35;cursor:default}
+
+.in-kasen .weather-switch,.in-kasen #light-neutral,.in-kasen #light-dusk{display:none}
+#kasen-nav{max-width:calc(100vw - 28px);overflow:auto}

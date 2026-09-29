@@ -6,8 +6,8 @@
 
 ```text
 project.json + src/index.html/styles.css
-  + data/atlas.json、characters.json、expansion.json + lunar.json/makai.json/netherworld.json/heaven.json/higan.json/animal.json/backdoor.json受限追加
-  + project.worldBuilders 指定的基础、地底、辉针城、月世界、魔界、冥界、天界、此岸彼岸、畜生界与后户之国建模脚本及导航／林缘注册
+  + data/atlas.json、characters.json、expansion.json + lunar.json/makai.json/netherworld.json/heaven.json/higan.json/animal.json/backdoor.json/kasen.json受限追加
+  + project.worldBuilders 指定的基础、地底、辉针城、月世界、魔界、冥界、天界、此岸彼岸、畜生界、后户之国与华扇仙界建模脚本及导航／林缘注册
   + 渲染、相机、人物、调度、应用脚本
   + assets/packs/ 两个必需源包
   + vendor/three/ 固定引擎与许可证
@@ -16,7 +16,7 @@ project.json + src/index.html/styles.css
 
 命令是 `python tools/build.py`，随后 `node tools/check.mjs`。Python构建不读取旧HTML／Git历史、不临时下载依赖。`dist/` 是产物，不人工修改或提交；使用标签与Release分发成品，不恢复根目录版本化HTML集合。
 
-`project.json` 当前为0.25.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`、`src/landscape.js`、`src/animal.js`、`src/backdoor.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
+`project.json` 当前为0.26.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`、`src/landscape.js`、`src/animal.js`、`src/backdoor.js`、`src/kasen.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
 
 发布版本、原研究数据版本、区域元数据版本和历史来源身份分开。不能对全仓库替换所有0.16／0.17字符串；项目版本映射到标签和产物名由构建器统一完成。
 
@@ -143,3 +143,12 @@ CPU数组、实例数据、Three.js几何、贴图、阴影／反射／后期目
 以合并后b25a778为基线，保留林缘与相机扩展，新增`src/backdoor.js`和最后继承的渲染层。四个季节小景不依赖远程图或地表详情包，在当前详情首次显示时顺序渲染为4个有上限的目标；所有临时几何释放，目标随详情回收。显式恢复渲染目标、视口、剪裁、清除与色调映射状态。初始化4次额外pass在`stats.backdoorWindows`单列，旧主场景计数不含它，稳态不再绘制小景。
 
 0.25独立建模、构建补丁和只读检查保护原75人物、旧86映射及36文件。启动代理971,568源字节，详细顶点8,092,980字节；不是总显存统计。窗口P场景没有相机视差／递归／穿越功能。原Pages工作流不改，只读场景CI改为本次专用套件及公共回归；实际结果逐次记录。见[模块边界](backdoor-reference.md)与[当前状态](current-status.md)。
+
+
+## 华扇仙界独立模块（0.26.0）
+
+`kasen.js`接在后户之后，主线程与原生Worker同源。`kasen-renderer.js`最后继承，只在`senkai_kasen`图内替换天空、灯光、雾和水墨色调；自己的局部补光随包释放，返回旧区仍走原渲染链。相机／林缘扩展、原地形与压缩资产及Pages流程不改。院内、桥梁和独立空间尚无碰撞行走。
+
+追加两项显式导航，依旧不依赖研究锚点回退。新检查精确验证89导航、90待处理、79人物和原39个继承文件；旧后户检查只允许后续增量并限制原三人切片，旧几何不重写。原`.github/workflows/scene-check.yml`将当前新场景浏览器脚本切换为`check-kasen-browser.py`，公共回归与干净源重建仍保留。
+
+详情14,209,560顶点源字节、代理1,959,768字节；可见精度／缓存生命周期与旧区域一致，不以源数组代称物理显存。水面、薄雾与夜庭用同一暂停时钟，水墨是局部材质处理，不依靠平面背景图替换主场景。具体测试记录与未测项见[当前状态](current-status.md)和[模块说明](kasen-reference.md)。

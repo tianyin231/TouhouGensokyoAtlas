@@ -9,10 +9,10 @@ export async function checkBackdoor(G,atlas,characters,read){
  for(const [file,digest]of Object.entries(fixed.protectedFiles))assert.equal(hash(read(file)),digest,`Inherited file changed: ${file}`);
  assert.equal(hash(JSON.stringify(characters.characters.slice(0,75))),fixed.original75);
  for(const [k,v]of [['placements',atlas.placements],['relationships',atlas.relationships],['visits',characters.additionalVisits]])assert.equal(hash(JSON.stringify(v)),fixed[k]);
- assert.equal(characters.characters.length,78);assert.equal(new Set(characters.characters.map(c=>c.id)).size,78);
+ assert(characters.characters.length>=78);assert.equal(new Set(characters.characters.map(c=>c.id)).size,characters.characters.length);
  for(const [id,view]of Object.entries(fixed.previousMappings))assert.equal(G.resolveLocation(id).view,view);
- const audit=G.auditLandmarks(atlas);same([audit.version,audit.total,audit.navigable,audit.pending],['0.25.0',179,87,92]);
- for(const id of ['wind_cave','geyser_mountain','sanctuary','animal_hq','hell','kasen_senkai'])assert.equal(G.resolveLocation(id).view,null);
+ const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert(audit.navigable>=87&&audit.pending<=92);
+ for(const id of ['wind_cave','geyser_mountain','sanctuary','animal_hq','hell'])assert.equal(G.resolveLocation(id).view,null);
  assert.equal(G.resolveLocation('backdoor').view,'backdoorOverview');assert.equal(G.resolveLocation('backdoor').status,'selection');
  assert(!atlas.placements.some(p=>p.id==='backdoor'));const b=G.DIORAMA.map.get('backdoor');assert(b.independent&&b.poly.length===0&&b.space==='backdoor');
  same(G.DIORAMA.transform('backdoor','atlas'),{scale:1,offset:[0,0,0]});for(const f of ['point','inverse'])same(G.DIORAMA[f]([45,7,-32],'backdoor','atlas'),[45,7,-32]);
@@ -33,7 +33,7 @@ export async function checkBackdoor(G,atlas,characters,read){
  let tableauBytes=0;for(const d of G.BACKDOOR.windows){const p=G.buildBackdoorGlimpse(d.id);validate(p.mesh);tableauBytes+=p.mesh.vertices.byteLength;assert.equal(hash(Buffer.from(p.mesh.vertices.buffer)),fixed.tableaux[d.id]);assert(detail.meshes.some(m=>m.material==='backdoorWindow'+d.id&&m.backdoorState==='open'));}
  assert(tableauBytes<4*1048576);assert.equal(G.BACKDOOR.livePortals,false);
  const l=atlas.locations.find(l=>l.id==='backdoor');assert(l.coordinate_status.startsWith('P'));assert(l.source_ids.includes('BD-TH16'));const sources=new Set(atlas.sources.map(s=>s.id));assert.equal(sources.size,atlas.sources.length);for(const id of l.source_ids)assert(sources.has(id));
- for(const c of characters.characters.slice(75)){assert(['okina','satono','mai_teireida'].includes(c.id));assert.equal(c.space,'backdoor');assert.equal(G.PRESETS[c.view].space,c.space);assert(c.position.every(Number.isFinite));assert(c.positionBasis.startsWith('P'));assert(c.locationSources.length);assert.equal(c.art.urls.length,0);}
+ for(const c of characters.characters.slice(75,78)){assert(['okina','satono','mai_teireida'].includes(c.id));assert.equal(c.space,'backdoor');assert.equal(G.PRESETS[c.view].space,c.space);assert(c.position.every(Number.isFinite));assert(c.positionBasis.startsWith('P'));assert(c.locationSources.length);assert.equal(c.art.urls.length,0);}
  assert(characters.characters.some(c=>c.id==='mai'&&c.space!=='backdoor')||characters.characters.some(c=>c.name==='舞'&&c.space!=='backdoor'));
  return{detailMeshes:detail.meshes.length,triangles:detail.bytes/108,detailBytes:detail.bytes,overviewBytes:far.bytes,tableauBytes,presets:14,locations:1,characters:78,navigable:87,pending:92,protectedFiles:Object.keys(fixed.protectedFiles).length};
 }

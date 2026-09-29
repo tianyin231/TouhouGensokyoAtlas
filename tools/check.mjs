@@ -1,3 +1,4 @@
+import {checkKasen} from './check-kasen.mjs';
 import {checkAnimal} from './check-animal.mjs';
 import {checkBackdoor} from './check-backdoor.mjs';
 import {checkHigan} from './check-higan.mjs';
@@ -102,3 +103,5 @@ console.log('林缘样板检查通过：'+JSON.stringify(checkLandscape(context.
 console.log('畜生界检查通过：'+JSON.stringify(await checkAnimal(context.GA,atlas,JSON.parse(script('character-data')),read)));
 
 console.log('后户之国检查通过：'+JSON.stringify(await checkBackdoor(context.GA,atlas,JSON.parse(script('character-data')),read)));
+
+console.log('华扇仙界检查通过：'+JSON.stringify(await checkKasen(context.GA,atlas,JSON.parse(script('character-data')),read)));

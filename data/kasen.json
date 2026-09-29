@@ -1,0 +1,119 @@
+{
+  "version": "0.26.0",
+  "baseline": "126b822e63bb9ec508f05152c75910f748294e6a",
+  "locationUpdates": [
+    {
+      "id": "kasen_senkai",
+      "aliases": [
+        "华扇仙界",
+        "Kasen's Senkai",
+        "Kasen's Hermit World"
+      ],
+      "project_treatment": "温暖山居与TH155水墨山川分开显示；山地、涧水、桥梁和花庭均为P布局。",
+      "status": "已建选景，非完整仙界／全部住宅空间",
+      "coordinate_status": "P：独立仙界坐标；不在地表猜测入口，不等同神子仙界。",
+      "source_ids": [
+        "KS-MANOR",
+        "KS-PATH",
+        "KS-LIFE",
+        "KS-WARM",
+        "KS-48",
+        "KS-FAN"
+      ]
+    },
+    {
+      "id": "kasen_home",
+      "aliases": [
+        "茨華仙の屋敷",
+        "Kasen's House",
+        "华扇的家"
+      ],
+      "project_treatment": "三层中式宅邸、圆窗书室、环廊与后院；背面、房间、附屋、鸟栖器具及第48话事件阵纹为P补完。",
+      "status": "已建选景，非完整仙界／全部住宅空间",
+      "coordinate_status": "P：独立仙界坐标；不在地表猜测入口，不等同神子仙界。",
+      "source_ids": [
+        "KS-MANOR",
+        "KS-PATH",
+        "KS-LIFE",
+        "KS-WARM",
+        "KS-48",
+        "KS-FAN"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "KS-MANOR",
+      "title": "C：华扇仙界与茨华仙邸作品图像索引",
+      "url": "https://thbwiki.cc/华扇的仙界",
+      "note": "三层中式宅邸、圆窗、藏书与水墨山川；部分正文有解析缺损，不补成事实。"
+    },
+    {
+      "id": "KS-PATH",
+      "title": "T：茨歌仙第十话原文转录",
+      "url": "https://thbwiki.cc/东方茨歌仙/第十话",
+      "note": "方术隐藏与正路、大榉树记号；不推定入口在地表的精确位置。"
+    },
+    {
+      "id": "KS-LIFE",
+      "title": "T：茨歌仙第三话原文转录",
+      "url": "https://thbwiki.cc/东方茨歌仙/第三话",
+      "note": "宅邸冥想与小町来访，不给小町迁移居所。"
+    },
+    {
+      "id": "KS-WARM",
+      "title": "T：茨歌仙第三十七话原文转录",
+      "url": "https://thbwiki.cc/东方茨歌仙/第三十七话",
+      "note": "外界雪天与居所环境的作品对照。"
+    },
+    {
+      "id": "KS-48",
+      "title": "T：茨歌仙第四十八话原文转录",
+      "url": "https://thbwiki.cc/东方茨歌仙/第四十八话",
+      "note": "室内阵纹作为事件背景；本作不实现去往地狱的传送。"
+    },
+    {
+      "id": "KS-FAN",
+      "title": "F：AQUASTYLE 不思议的幻想乡TOD RELOADED 华扇介绍",
+      "url": "https://www.aquastyle.org/fushigentod_r/charKasen.html",
+      "note": "具名同人开发者将其塑造成修行引导者；仅借鉴生活与修行并置，不复制试炼地图或同人肖像。"
+    }
+  ],
+  "characters": [
+    {
+      "id": "kasen",
+      "name": "茨木华扇",
+      "aliases": [
+        "茨華仙",
+        "Kasen Ibaraki"
+      ],
+      "locationId": "kasen_home",
+      "region": "kasen",
+      "space": "senkai_kasen",
+      "view": "kasenCourtyard",
+      "position": [
+        41,
+        28,
+        -3
+      ],
+      "kind": "茨歌仙时期居所／修行关联",
+      "note": "主人身份与动物照料来自原作文字；具体站位、庭园及器具为P，不是实时行踪。",
+      "positionBasis": "P：华扇仙界独立坐标，不取幻想乡地表高度。",
+      "art": {
+        "file": "",
+        "work": "东方茨歌仙",
+        "credit": "ZUN／あずまあや及原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/东方茨歌仙/第三话",
+        "sourcePage": "https://thbwiki.cc/东方茨歌仙/第三话",
+        "availability": "已核文字与场景索引，未取得可核验原作肖像文件；不使用同人或生成图替代。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/东方茨歌仙/第三话",
+        "https://thbwiki.cc/东方茨歌仙/第十话"
+      ],
+      "kasenEdition": "manga"
+    }
+  ]
+}

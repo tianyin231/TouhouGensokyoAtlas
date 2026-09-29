@@ -1,6 +1,6 @@
 {
-  "version": "0.25.0",
-  "title": "后户之国 · 万物背后的四季",
+  "version": "0.26.0",
+  "title": "华扇仙界 · 雾隐山居与茨华仙邸",
   "threeRevision": "185",
   "worldBuilders": [
     "src/world-builder.js",
@@ -14,6 +14,7 @@
     "src/higan.js",
     "src/landscape.js",
     "src/animal.js",
-    "src/backdoor.js"
+    "src/backdoor.js",
+    "src/kasen.js"
   ]
 }
