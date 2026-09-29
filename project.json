@@ -1,6 +1,6 @@
 {
-  "version": "0.27.0",
-  "title": "现行地狱 · 骸原业风与无间",
+  "version": "0.28.0",
+  "title": "虹龙洞 · 矿轨与深层龙珠",
   "threeRevision": "185",
   "worldBuilders": [
     "src/world-builder.js",
@@ -16,6 +16,7 @@
     "src/animal.js",
     "src/backdoor.js",
     "src/kasen.js",
-    "src/current-hell.js"
+    "src/current-hell.js",
+    "src/rainbow-mine.js"
   ]
 }

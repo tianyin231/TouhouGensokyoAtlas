@@ -64,3 +64,5 @@
 
 .in-currenthell .caption{max-width:390px}.in-currenthell .caption h1{font-size:29px;letter-spacing:2px}
 @media(max-width:600px){.in-currenthell .caption h1{font-size:24px}.in-currenthell .caption{max-width:270px}}
+
+.in-mine .weather-switch,.in-mine #light-neutral,.in-mine #light-dusk{display:none}#mine-nav{max-width:calc(100vw - 32px);overflow-x:auto}

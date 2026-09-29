@@ -10,6 +10,7 @@ import {checkLunar} from './check-lunar.mjs';
 import {checkMakai} from './check-makai.mjs';
 import {checkNetherworld} from './check-netherworld.mjs';
 import {checkHeaven} from './check-heaven.mjs';
+import {checkRainbowMine} from './check-rainbow-mine.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -108,3 +109,5 @@ console.log('后户之国检查通过：'+JSON.stringify(await checkBackdoor(con
 console.log('华扇仙界检查通过：'+JSON.stringify(await checkKasen(context.GA,atlas,JSON.parse(script('character-data')),read)));
 
 console.log('现行地狱检查通过：'+JSON.stringify(await checkCurrentHell(context.GA,atlas,JSON.parse(script('character-data')),read)));
+
+console.log('虹龙洞检查通过：'+JSON.stringify(await checkRainbowMine(context.GA,atlas,JSON.parse(script('character-data')),read)));

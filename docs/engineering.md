@@ -6,8 +6,8 @@
 
 ```text
 project.json + src/index.html/styles.css
-  + data/atlas.json、characters.json、expansion.json + lunar.json/makai.json/netherworld.json/heaven.json/higan.json/animal.json/backdoor.json/kasen.json/current-hell.json受限追加
-  + project.worldBuilders 指定的基础、地底、辉针城、月世界、魔界、冥界、天界、此岸彼岸、畜生界、后户之国、华扇仙界与现行地狱建模脚本及导航／林缘注册
+  + data/atlas.json、characters.json、expansion.json + lunar.json/makai.json/netherworld.json/heaven.json/higan.json/animal.json/backdoor.json/kasen.json/current-hell.json/rainbow-mine.json受限追加
+  + project.worldBuilders 指定的基础、地底、辉针城、月世界、魔界、冥界、天界、此岸彼岸、畜生界、后户之国、华扇仙界、现行地狱与虹龙洞建模脚本及导航／林缘注册
   + 渲染、相机、人物、调度、应用脚本
   + assets/packs/ 两个必需源包
   + vendor/three/ 固定引擎与许可证
@@ -16,7 +16,7 @@ project.json + src/index.html/styles.css
 
 命令是 `python tools/build.py`，随后 `node tools/check.mjs`。Python构建不读取旧HTML／Git历史、不临时下载依赖。`dist/` 是产物，不人工修改或提交；使用标签与Release分发成品，不恢复根目录版本化HTML集合。
 
-`project.json` 当前为0.27.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`、`src/landscape.js`、`src/animal.js`、`src/backdoor.js`、`src/kasen.js`、`src/current-hell.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
+`project.json` 当前为0.28.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`、`src/landscape.js`、`src/animal.js`、`src/backdoor.js`、`src/kasen.js`、`src/current-hell.js`、`src/rainbow-mine.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
 
 发布版本、原研究数据版本、区域元数据版本和历史来源身份分开。不能对全仓库替换所有0.16／0.17字符串；项目版本映射到标签和产物名由构建器统一完成。
 
@@ -158,3 +158,8 @@ CPU数组、实例数据、Three.js几何、贴图、阴影／反射／后期目
 在华扇后追加current-hell建模／渲染模块；currenthell与avici为空归属多边形、恒等变换的两张版本选景。启动新增1,055,808字节廉价代理，主图和无间详情分别由原生Worker构建，沿用取消与CPU/GPU回收。红风共享时钟，无间没有可见动态；新材质和天空只在对应空间生效，不改全局着色器。新人物的时代字段加入分组键，防止跨版本分组图钉泄漏。
 
 新只读检查保护42个继承文件、原79人物／两条历史访问／89映射，并核验两组近远几何、14机位、源预算和90／89目录。原检查器仅撤销hell必须未建的断言并允许后续追加计数，不更新旧几何fixture。CI改为执行本次地区与公共浏览器回归；Pages工作流保持原字节。完整边界及实测状态见[current-hell-reference.md](current-hell-reference.md)与[current-status.md](current-status.md)。
+
+
+## 虹龙洞增量（0.28.0）
+
+`rainbowmine / mountain_mine`是矿洞的局部工程图，不是独立官方世界。仅新增`rainbow_mine`导航，保留地表锚点、源包与相机实现；主线程／Worker按列表同源，最后追加局部矿井渲染层。洞顶可逆显隐，最近8盏灯退区关闭，彩雾和排水共用原时钟。新检查保护45个继承文件，原现行地狱检查只开放追加数量。[完整范围、预算与测试](rainbow-mine-reference.md)。

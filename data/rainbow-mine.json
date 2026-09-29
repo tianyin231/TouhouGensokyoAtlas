@@ -1,0 +1,131 @@
+{
+  "version": "0.28.0",
+  "baseline": "990fad5e11f38ef193d762c4a920149b9f07b146",
+  "note": "局部矿道选景；不是地灵虹洞，不虚构地表入口坐标。",
+  "locationUpdates": [
+    {
+      "id": "rainbow_mine",
+      "aliases": [
+        "虹龍洞",
+        "Rainbow Dragon Cave",
+        "Kouryuudou",
+        "虹龙洞矿道"
+      ],
+      "status": "可浏览局部矿口、分支及深部，非全矿穷尽",
+      "project_treatment": "P：矿口—浅层—道岔—深部连续的本作地下布局。轨距、矿车、支护、灯具及排水为工程补完；不代表已完成伪天棚地表或赌场。TH18缺氧与TH18.5充氧状态分开。",
+      "coordinate_status": "P：独立地下展示坐标，不是第二个官方世界或测量定位",
+      "source_ids": [
+        "MINE-TEXT",
+        "MINE-SCENE",
+        "MINE-SHELF",
+        "MINE-DIALOGUE",
+        "MINE-F"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "MINE-TEXT",
+      "title": "T：TH18附带设定——采掘与现场调查",
+      "url": "https://thbwiki.cc/附带文档:东方虹龙洞/Omake",
+      "source_type": "官方附带文字社区转录",
+      "note": "官方附带文字的社区转录；不是建筑图纸"
+    },
+    {
+      "id": "MINE-SCENE",
+      "title": "C/T：虹龙洞场景、轨道与音乐评论",
+      "url": "https://thbwiki.cc/虹龙洞（场景）",
+      "source_type": "社区场景整理／官方音乐评论转录",
+      "note": "矿轨、多彩雾气与深部发光矿物；尺寸P"
+    },
+    {
+      "id": "MINE-SHELF",
+      "title": "C：伪天棚与矿口关系",
+      "url": "https://thbwiki.cc/伪天棚",
+      "source_type": "社区地理索引",
+      "note": "入口在高地；本轮未绘制完整高原或赌场"
+    },
+    {
+      "id": "MINE-DIALOGUE",
+      "title": "T：TH18灵梦篇第三至四面对话",
+      "url": "https://thbwiki.cc/游戏对话:东方虹龙洞/博丽灵梦/中日对照",
+      "source_type": "官方游戏对话社区转录",
+      "note": "原作对话转录；通路长度和路形为P"
+    },
+    {
+      "id": "MINE-F",
+      "title": "F：Touhou LostWord的Rainbow Dragon Cave绘札",
+      "url": "https://global.touhoulostword.com/2023/10/10/193954/",
+      "source_type": "具名同人开发者公告",
+      "note": "同人开发者公开介绍，未复制图片、地图、战斗系统；不作为地理依据"
+    }
+  ],
+  "characters": [
+    {
+      "id": "misumaru",
+      "name": "玉造魅须丸",
+      "aliases": [
+        "Misumaru Tamatsukuri"
+      ],
+      "locationId": "rainbow_mine",
+      "region": "rainbowmine",
+      "space": "mountain_mine",
+      "view": "mineInvestigation",
+      "mineEdition": "th18",
+      "position": [
+        14,
+        5,
+        -158
+      ],
+      "kind": "TH18第四面／现场调查",
+      "note": "调查龙珠开采，不将工作点认作她的住宅或永久工坊。",
+      "positionBasis": "P：局部矿道注记，非官方尺寸、固定站位或实时行踪。",
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方虹龙洞/Omake"
+      ],
+      "art": {
+        "file": "",
+        "urls": [],
+        "work": "东方虹龙洞",
+        "credit": "ZUN／上海爱丽丝幻乐团",
+        "kind": "原作图待核",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方虹龙洞/Omake",
+        "filePage": "https://thbwiki.cc/附带文档:东方虹龙洞/Omake",
+        "availability": "未取得可核验肖像文件，保留姓名与出处，不使用替代图。"
+      }
+    },
+    {
+      "id": "momoyo",
+      "name": "姬虫百百世",
+      "aliases": [
+        "Momoyo Himemushi"
+      ],
+      "locationId": "rainbow_mine",
+      "region": "rainbowmine",
+      "space": "mountain_mine",
+      "view": "mineDepth",
+      "mineEdition": "extra",
+      "position": [
+        4,
+        -4,
+        -277
+      ],
+      "kind": "TH18 Extra／开凿与采掘职责",
+      "note": "与饭纲丸龙的采矿合作；不在浅层时代标记中同时出现。",
+      "positionBasis": "P：局部矿道注记，非官方尺寸、固定站位或实时行踪。",
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方虹龙洞/Omake"
+      ],
+      "art": {
+        "file": "",
+        "urls": [],
+        "work": "东方虹龙洞",
+        "credit": "ZUN／上海爱丽丝幻乐团",
+        "kind": "原作图待核",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方虹龙洞/Omake",
+        "filePage": "https://thbwiki.cc/附带文档:东方虹龙洞/Omake",
+        "availability": "未取得可核验肖像文件，保留姓名与出处，不使用替代图。"
+      }
+    }
+  ]
+}

@@ -4,7 +4,13 @@
 
 在线体验：[幻想乡立体风物志](https://tianyin231.github.io/TouhouGensokyoAtlas/)。下载版本请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 获取 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
-## 现行地狱与无间选景（0.27.0）
+## 虹龙洞矿道（0.28.0）
+
+顶部「虹龙洞」进入矿口、双轨浅层、道岔空车、采样工作点、东支巷和深部矿脉，共14机位；支持洞顶剖览和TH18.5充氧状态。只有局部洞口背景，不算完整伪天棚、赌场或从地表走入矿井。轨道、空心矿车、支护和背面都是P几何补完，与地灵虹洞不同。
+
+[考据与范围](docs/rainbow-mine-reference.md)区分原作、社区索引和具名同人。目录179条中91可导航、88待处理；新增魅须丸与百百世后人物84条，未核原作肖像仍明确缺图。源码模块为`src/rainbow-mine.js`、`src/rainbow-mine-renderer.js`和`data/rainbow-mine.json`；可选测试`python tools/check-rainbow-mine-browser.py`。保留原地区、相机与Pages。
+
+## 保留场景：现行地狱与无间选景（0.27.0）
 
 顶部「现行地狱」进入TH17骸原、风蚀地层与猩红业风，另有《茨歌仙》无间暗处及TH19人物关联机位，共14机位。它不同于旧地狱的街区、宫殿与熔岩设施；没有虚构总部、固定地表入口或可穿越的跨界通道。骨壳、眼窝、肋架和地层为真实三维几何，路线与数量标P。
 

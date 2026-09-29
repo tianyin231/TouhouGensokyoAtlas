@@ -9,8 +9,8 @@ export async function checkCurrentHell(G,atlas,characters,read){
  assert.equal(hash(JSON.stringify(characters.characters.slice(0,79))),f.original79);
  for(const [key,value]of [['placements',atlas.placements],['relationships',atlas.relationships],['visits',characters.additionalVisits]])assert.equal(hash(JSON.stringify(value)),f[key]);
  for(const [id,view]of Object.entries(f.previousMappings))assert.equal(G.resolveLocation(id).view,view,`Old navigation changed: ${id}`);
- const a=G.auditLandmarks(atlas);assert.equal(a.version,'0.27.0');assert.equal(a.total,179);assert.equal(a.navigable,90);assert.equal(a.pending,89);
- assert.equal(characters.characters.length,82);assert.equal(new Set(characters.characters.map(c=>c.id)).size,82);
+ const a=G.auditLandmarks(atlas);assert(/^0\.\d+\.\d+$/.test(a.version));assert.equal(a.total,179);assert(a.navigable>=90);assert(a.pending<=89);
+ assert(characters.characters.length>=82);assert.equal(new Set(characters.characters.map(c=>c.id)).size,characters.characters.length);
  for(const id of ['wind_cave','geyser_mountain','sanctuary','animal_hq'])assert.equal(G.resolveLocation(id).view,null);
  assert.equal(G.resolveLocation('hell').view,'jigokuOverview');assert.equal(G.resolveLocation('hell').status,'selection');
  assert(!atlas.placements.some(p=>p.id==='hell'),'Do not invent a surface entrance');
