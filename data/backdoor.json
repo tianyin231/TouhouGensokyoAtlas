@@ -1,0 +1,141 @@
+{
+  "version": "0.25.0",
+  "baseline": "b25a77852d16b634626f1a67150181cdeb03cc45",
+  "note": "一个已有世界条目，四季窥景不是四个新官方地区。",
+  "locationUpdates": [
+    {
+      "id": "backdoor",
+      "aliases": [
+        "後戸の国",
+        "Ushirodo no Kuni",
+        "Land of the Back Door"
+      ],
+      "project_treatment": "TH16第五面／Extra绿色门群、上下红黑纹样与第六面黑暗串门分开显示。门内为本作P三维季节窥景，非当前地表的实时传送画面。",
+      "status": "已建TH16选景，非无限后户世界穷尽",
+      "coordinate_status": "P：独立展示坐标，门序、座席、四季窥景和尺度为本作补完。",
+      "source_ids": [
+        "BD-TH16",
+        "BD-SCENE",
+        "BD-FAN"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "BD-TH16",
+      "title": "T：天空璋Omake原文与译文",
+      "url": "https://thbwiki.cc/附带文档:东方天空璋/Omake",
+      "source_type": "官方附带文本社区转录",
+      "note": "隐岐奈与二童子能力、背门与季节异变，非建筑实测。"
+    },
+    {
+      "id": "BD-SCENE",
+      "title": "C/T：后户之国作品场景索引及曲目评论",
+      "url": "https://thbwiki.cc/后户之国",
+      "source_type": "社区场景整理与原作评论转录",
+      "note": "第五面/EX与第六面视觉分开；门和上下纹样采用，精确模型为P。"
+    },
+    {
+      "id": "BD-FAN",
+      "title": "F：東方流星群「後戸の国(固定)」关卡索引",
+      "url": "https://w.atwiki.jp/thpwiki/pages/271.html",
+      "source_type": "具名同人关卡社区记录",
+      "note": "核对有固定关卡式二创呈现；图像附件获取失败，不据此宣称复刻其地图或使用其资产。"
+    }
+  ],
+  "characters": [
+    {
+      "id": "okina",
+      "name": "摩多罗隐岐奈",
+      "locationId": "backdoor",
+      "region": "backdoor",
+      "space": "backdoor",
+      "kind": "TH16秘神／支配者活动关联",
+      "note": "TH16人物活动关联，不是实时行踪；座席、站位和几何布局均为P。丁礼田舞不与TH05的舞混同。",
+      "view": "backdoorSeat",
+      "position": [
+        0,
+        7,
+        -187
+      ],
+      "period": "backdoor_ruler",
+      "positionBasis": "P：独立后户之国坐标；不改变地表住所或使用未定位原点。",
+      "art": {
+        "file": "",
+        "work": "东方天空璋",
+        "credit": "原作图像版权归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/附带文档:东方天空璋/Omake",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方天空璋/Omake",
+        "availability": "本轮核对了原作文字，未取得三个角色完整可验证图像文件；不猜直链，不用替代图。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方天空璋/Omake",
+        "https://thbwiki.cc/后户之国"
+      ]
+    },
+    {
+      "id": "satono",
+      "name": "尔子田里乃",
+      "locationId": "backdoor",
+      "region": "backdoor",
+      "space": "backdoor",
+      "kind": "TH16二童子／精神力的背景舞者",
+      "note": "TH16人物活动关联，不是实时行踪；座席、站位和几何布局均为P。丁礼田舞不与TH05的舞混同。",
+      "view": "backdoorDancers",
+      "position": [
+        -13,
+        0,
+        -151
+      ],
+      "period": "backdoor_dancer",
+      "positionBasis": "P：独立后户之国坐标；不改变地表住所或使用未定位原点。",
+      "art": {
+        "file": "",
+        "work": "东方天空璋",
+        "credit": "原作图像版权归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/附带文档:东方天空璋/Omake",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方天空璋/Omake",
+        "availability": "本轮核对了原作文字，未取得三个角色完整可验证图像文件；不猜直链，不用替代图。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方天空璋/Omake",
+        "https://thbwiki.cc/后户之国"
+      ]
+    },
+    {
+      "id": "mai_teireida",
+      "name": "丁礼田舞",
+      "locationId": "backdoor",
+      "region": "backdoor",
+      "space": "backdoor",
+      "kind": "TH16二童子／生命力的背景舞者",
+      "note": "TH16人物活动关联，不是实时行踪；座席、站位和几何布局均为P。丁礼田舞不与TH05的舞混同。",
+      "view": "backdoorDancers",
+      "position": [
+        13,
+        0,
+        -151
+      ],
+      "period": "backdoor_dancer",
+      "positionBasis": "P：独立后户之国坐标；不改变地表住所或使用未定位原点。",
+      "art": {
+        "file": "",
+        "work": "东方天空璋",
+        "credit": "原作图像版权归ZUN／上海爱丽丝幻乐团等原权利人",
+        "kind": "原作图待核",
+        "urls": [],
+        "filePage": "https://thbwiki.cc/附带文档:东方天空璋/Omake",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方天空璋/Omake",
+        "availability": "本轮核对了原作文字，未取得三个角色完整可验证图像文件；不猜直链，不用替代图。"
+      },
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方天空璋/Omake",
+        "https://thbwiki.cc/后户之国"
+      ]
+    }
+  ]
+}

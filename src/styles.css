@@ -49,3 +49,8 @@
 /* Keep growing region shortcuts reachable without squeezing the brand or hiding buttons. */
 .tools{max-width:calc(100vw - 220px);overflow-x:auto;flex-wrap:nowrap;scrollbar-width:thin}.tools .tool{flex-shrink:0}
 @media(max-width:520px){.tools{max-width:calc(100vw - 150px)}}
+
+/* The backdoor realm preserves, but does not apply, earth climate choices. */
+.in-backdoor .weather-switch,.in-backdoor #light-neutral,.in-backdoor #light-dusk{display:none}
+#backdoor-nav{max-width:calc(100vw - 28px);overflow-x:auto;white-space:nowrap}
+#backdoor-nav button:disabled{opacity:.35;cursor:default}

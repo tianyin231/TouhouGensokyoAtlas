@@ -4,13 +4,21 @@
 
 在线体验：[幻想乡立体风物志](https://tianyin231.github.io/TouhouGensokyoAtlas/)。下载版本请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 获取 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
-## 畜生界与灵长园（0.24.0候选）
+## 后户之国（0.25.0）
 
-按用户明确要求，将已交付的v0.24候选源码纳入本次提交。建模起点为`b551a15`，提交基线为`19ddc91`，保留维护者的Pages配置与README说明。运行输入与已交付候选完全一致；快速未同步切回博丽神社的着色器校验错误仍未确认根因，详见[当前状态](docs/current-status.md)，不因入库而改称稳定版。
+顶部「后户之国」进入TH16绿色门群，14机位覆盖四季窥景、门背合页、二童子活动处、座席、上下纹样、第六面黑暗串门和Extra选景。四季窗口是本作三维小景的一次性离屏渲染，不是实时地表传送门；门与上层地面可关闭／恢复。布局、尺寸及座席保留P标记。
+
+基于已合并的`b25a778`追加，原畜生界、林缘景观、路线导览、地面行走、自由飞行及Pages配置全部保留。当前179条目录中87可导航、92待处理；人物78条，新增三人未核原图明确显示缺图。新模块为`src/backdoor.js`、`src/backdoor-renderer.js`与`data/backdoor.json`，具体[依据、四季窗口预算与边界](docs/backdoor-reference.md)可查。
+
+构建与静态检查命令不变；可选新回归为`python tools/check-backdoor-browser.py`。CI对本次区域和公共回归通过HTTP检查，其结果以每次运行记录为准，不把工作流存在当成通过。旧的快速切换着色器问题不因本轮选定测试通过而宣称已修复。
+
+## 保留场景：畜生界与灵长园（0.24.0加入）
+
+0.24候选经PR #1合并到主分支，包含其后整合的林缘和相机功能；当前以合并后的`b25a778`继续开发。此前快速未同步切回博丽神社的着色器校验错误仍未确认根因，详见[当前状态](docs/current-status.md)，不因合并或本轮检查通过而改称已修复。
 
 顶部「畜生界」进入高楼都市与锁孔形林地；导航可切到电子遗产内景。16个机位覆盖街巷、退台楼顶、土垒、守备口、陶偶、制作区、高廊与可逆剖览。TH17袿姬时期与改造前意象分开；后者不代表完整历史地图。新建筑与室内均为P补完，不给普通大楼命名组织总部。
 
-新增`src/animal.js`、`src/animal-renderer.js`、`data/animal.json`及[出处与边界](docs/animal-reference.md)。原73位人物及全部旧场景保留，新增磨弓、袿姬；原作图未核时明确显示。目录现在为179项中的86可导航／93待处理，不是竣工比例。可选浏览器检查：`python tools/check-animal-browser.py`。
+新增`src/animal.js`、`src/animal-renderer.js`、`data/animal.json`及[出处与边界](docs/animal-reference.md)。原73位人物及全部旧场景保留，新增磨弓、袿姬；原作图未核时明确显示。0.24目录为179项中的86可导航／93待处理，不是竣工比例。可选浏览器检查：`python tools/check-animal-browser.py`。
 
 ## 保留场景：彼岸与三途河（0.23.0加入）
 

@@ -1,6 +1,6 @@
 {
-  "version": "0.24.0",
-  "title": "畜生界 · 灵长园与电子遗产",
+  "version": "0.25.0",
+  "title": "后户之国 · 万物背后的四季",
   "threeRevision": "185",
   "worldBuilders": [
     "src/world-builder.js",
@@ -13,6 +13,7 @@
     "src/heaven.js",
     "src/higan.js",
     "src/landscape.js",
-    "src/animal.js"
+    "src/animal.js",
+    "src/backdoor.js"
   ]
 }

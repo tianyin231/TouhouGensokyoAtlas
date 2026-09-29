@@ -6,8 +6,8 @@
 
 ```text
 project.json + src/index.html/styles.css
-  + data/atlas.json、characters.json、expansion.json + lunar.json/makai.json/netherworld.json/heaven.json/higan.json/animal.json受限追加
-  + project.worldBuilders 指定的基础、地底、辉针城、月世界、魔界、冥界、天界、此岸彼岸与畜生界建模脚本及导航注册
+  + data/atlas.json、characters.json、expansion.json + lunar.json/makai.json/netherworld.json/heaven.json/higan.json/animal.json/backdoor.json受限追加
+  + project.worldBuilders 指定的基础、地底、辉针城、月世界、魔界、冥界、天界、此岸彼岸、畜生界与后户之国建模脚本及导航／林缘注册
   + 渲染、相机、人物、调度、应用脚本
   + assets/packs/ 两个必需源包
   + vendor/three/ 固定引擎与许可证
@@ -16,7 +16,7 @@ project.json + src/index.html/styles.css
 
 命令是 `python tools/build.py`，随后 `node tools/check.mjs`。Python构建不读取旧HTML／Git历史、不临时下载依赖。`dist/` 是产物，不人工修改或提交；使用标签与Release分发成品，不恢复根目录版本化HTML集合。
 
-`project.json` 当前为0.24.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`、`src/animal.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
+`project.json` 当前为0.25.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`、`src/landscape.js`、`src/animal.js`、`src/backdoor.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
 
 发布版本、原研究数据版本、区域元数据版本和历史来源身份分开。不能对全仓库替换所有0.16／0.17字符串；项目版本映射到标签和产物名由构建器统一完成。
 
@@ -136,3 +136,10 @@ CPU数组、实例数据、Three.js几何、贴图、阴影／反射／后期目
 建模模块`animal.js`在Higan之后登记；两个区域`animal`与`primate_core`使用恒等展示变换、空多边形。后者是灵长园内部的P展示，不作为另一个官方世界。新增渲染层通过自身材质路由保证护岸水面不误用全岛普通水材质，近共面的窄铺装、窗格和水面采用局部深度偏移；不修改原相机或其他区域着色器。
 
 冷启动代理2,329,992字节，详情分两包按需生成；原资源包不改。新静态检查保护29个继承文件、原73人物、旧访问与84个旧入口，并精确验证75人物／86导航。原Higan数量断言只允许追加，旧模型期望不更新；可选新浏览器回归替代CI中上一轮的Higan专用任务，通用26项继承任务保留。全部历史专用套件未因此自动逐个重跑。
+
+
+## 后户之国模块（0.25.0）
+
+以合并后b25a778为基线，保留林缘与相机扩展，新增`src/backdoor.js`和最后继承的渲染层。四个季节小景不依赖远程图或地表详情包，在当前详情首次显示时顺序渲染为4个有上限的目标；所有临时几何释放，目标随详情回收。显式恢复渲染目标、视口、剪裁、清除与色调映射状态。初始化4次额外pass在`stats.backdoorWindows`单列，旧主场景计数不含它，稳态不再绘制小景。
+
+0.25独立建模、构建补丁和只读检查保护原75人物、旧86映射及36文件。启动代理971,568源字节，详细顶点8,092,980字节；不是总显存统计。窗口P场景没有相机视差／递归／穿越功能。原Pages工作流不改，只读场景CI改为本次专用套件及公共回归；实际结果逐次记录。见[模块边界](backdoor-reference.md)与[当前状态](current-status.md)。

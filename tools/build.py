@@ -51,7 +51,7 @@ def build(output_dir):
         json.loads(text)
         return text.rstrip('\n')
 
-    additions = [json.loads(data(name)) for name in ('data/lunar.json', 'data/makai.json', 'data/netherworld.json', 'data/heaven.json', 'data/higan.json', 'data/animal.json')]
+    additions = [json.loads(data(name)) for name in ('data/lunar.json', 'data/makai.json', 'data/netherworld.json', 'data/heaven.json', 'data/higan.json', 'data/animal.json', 'data/backdoor.json')]
     atlas = json.loads(data('data/atlas.json'))
     characters = json.loads(data('data/characters.json'))
     locations = {v['id']: v for v in atlas['locations']}
@@ -111,6 +111,7 @@ def build(output_dir):
         'HIGAN_RENDERER': source('src/higan-renderer.js'),
         'LANDSCAPE_RENDERER': source('src/landscape-renderer.js'),
         'ANIMAL_RENDERER': source('src/animal-renderer.js'),
+        'BACKDOOR_RENDERER': source('src/backdoor-renderer.js'),
         'CHARACTERS': source('src/characters.js'),
         'STREAMING': source('src/streaming.js'),
         'APP': source('src/app.js'),
@@ -140,6 +141,8 @@ def build(output_dir):
     read_bytes('tools/higan-baseline.json')
     read_bytes('tools/check-animal.mjs')
     read_bytes('tools/animal-baseline.json')
+    read_bytes('tools/check-backdoor.mjs')
+    read_bytes('tools/backdoor-baseline.json')
     output_dir.mkdir(parents=True, exist_ok=True)
     # GitHub 会清洗非 ASCII 附件名，发布名称与校验文件必须一致。
     filename = f'TouhouGensokyoAtlas-{tag}.html'

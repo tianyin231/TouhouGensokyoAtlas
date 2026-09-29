@@ -1,4 +1,5 @@
 import {checkAnimal} from './check-animal.mjs';
+import {checkBackdoor} from './check-backdoor.mjs';
 import {checkHigan} from './check-higan.mjs';
 import {checkLandscape} from './check-landscape.mjs';
 // 构建集成检查：过期输出、嵌入脚本、资源包与地下模型；不需要安装 npm 依赖。
@@ -99,3 +100,5 @@ console.log('此岸彼岸检查通过：'+JSON.stringify(await checkHigan(contex
 console.log('林缘样板检查通过：'+JSON.stringify(checkLandscape(context.GA,atlas,read)));
 
 console.log('畜生界检查通过：'+JSON.stringify(await checkAnimal(context.GA,atlas,JSON.parse(script('character-data')),read)));
+
+console.log('后户之国检查通过：'+JSON.stringify(await checkBackdoor(context.GA,atlas,JSON.parse(script('character-data')),read)));
