@@ -1,0 +1,54 @@
+name: Highland resume verification
+on:
+  push:
+    branches: [work/highland-resume-20260929]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: bfb6c7b7fc6484b5f658cd942493d2b1b29f8239
+      - name: Preserve exact candidate source
+        run: |
+          git archive --format=tar.gz --output=/tmp/highland-source.tar.gz HEAD
+          git rev-parse HEAD > /tmp/highland-source-commit.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: highland-source-v029
+          path: |
+            /tmp/highland-source.tar.gz
+            /tmp/highland-source-commit.txt
+          retention-days: 3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build and verify
+        run: |
+          python3 tools/build.py
+          node tools/check.mjs
+          node tools/audit-landmarks.mjs
+      - name: Install browser test dependencies
+        run: |
+          python3 -m pip install playwright==1.57.0
+          python3 -m playwright install --with-deps chromium
+      - name: HTTP highland and inherited-scene regression
+        run: |
+          python3 tools/check-highland-browser.py
+          python3 tools/check-browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: highland-resume-results
+          path: |
+            dist/*.html
+            dist/release.json
+            dist/SHA256SUMS.txt
+            dist/landmarks-*.json
+            dist/landmarks-*.md
+            dist/highland-browser-check/
+            dist/browser-check/
+          retention-days: 7
