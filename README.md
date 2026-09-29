@@ -203,6 +203,7 @@ gh release create v0.17 dist/TouhouGensokyoAtlas-v0.17.html dist/SHA256SUMS.txt 
 |---|---|
 | [AGENTS.md](AGENTS.md) | 当前维护约定、不可回退的需求、验证与交付边界 |
 | [画面升级策略与神社试点](docs/visual-upgrade.md) | 本次改动、后续画面标准、性能与过渡策略、逐区实施与视觉核验 |
+| [v0.29剩余目录与原作出处](gensokyo-v029-remaining-origins.md) | 86条未绑定目录的分组、主要出处、待核事项与补建边界；后续选区前结合当前源码复核 |
 | [需求与决策记忆](docs/project-context.md) | 用户要求、参考图意图、已否定方案、森林补建与历史交付教训 |
 | [当前状态与实现覆盖](docs/current-status.md) | 当前仓库结构、已建地表与地下、维护者新增旧地狱、尚未完成的部分 |
 | [世界观、地理与来源](docs/world-reference.md) | 地区关系、22个研究锚点、时代／空间区分、原作与同人出处 |
