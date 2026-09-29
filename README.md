@@ -4,7 +4,13 @@
 
 在线体验：[幻想乡立体风物志](https://tianyin231.github.io/TouhouGensokyoAtlas/)。下载版本请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 获取 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
-## 华扇仙界与茨华仙邸（0.26.0）
+## 现行地狱与无间选景（0.27.0）
+
+顶部「现行地狱」进入TH17骸原、风蚀地层与猩红业风，另有《茨歌仙》无间暗处及TH19人物关联机位，共14机位。它不同于旧地狱的街区、宫殿与熔岩设施；没有虚构总部、固定地表入口或可穿越的跨界通道。骨壳、眼窝、肋架和地层为真实三维几何，路线与数量标P。
+
+[考据与实现边界](docs/current-hell-reference.md)分开记录原文转录、场景索引与同人排除对照。只接入原目录`hell`，现为179条中90可导航、89待处理，人物82条；不是竣工比例。新模块`src/current-hell.js`、`src/current-hell-renderer.js`和`data/current-hell.json`，可选回归`python tools/check-current-hell-browser.py`。原全部地区、相机和Pages保留。
+
+## 保留场景：华扇仙界与茨华仙邸（0.26.0）
 
 顶部「华扇仙界」进入独立山居，14个机位包含三层中式宅邸、真实圆窗书室、环廊与背面、花庭曲径、木桥涧水、开放鸟栖、夜庭、水墨选景及可恢复剖览。第48话八芒星只为事件示意，不实现去往地狱的传送。房屋尺寸、庭院与入庭路线均为P，不在妖怪之山地表猜测入口。
 
@@ -87,6 +93,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 | `project.json` | 当前版本、发布标题、Three.js 版本及建模模块的拼接顺序 |
 | `src/index.html`、`src/styles.css` | 页面模板、界面和样式；模板本身不能直接预览 |
 | `src/app.js` | 地点选择、导览、界面状态和启动逻辑 |
+| `src/current-hell.js`、`src/current-hell-renderer.js`、`data/current-hell.json` | 现行地狱骸原、无间选景与时代关联 |
 | `src/kasen.js`、`src/kasen-renderer.js`、`data/kasen.json` | 华扇仙界与宅邸、书室／夜庭／水墨选景及出处 |
 | `src/backdoor.js`、`src/backdoor-renderer.js`、`data/backdoor.json` | 后户之国门群、有限四季窥景与版本状态 |
 | `src/animal.js`、`src/animal-renderer.js`、`data/animal.json` | 畜生都市、灵长园内外、历史状态、按区加载和人物来源 |

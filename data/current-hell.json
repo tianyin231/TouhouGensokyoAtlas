@@ -1,0 +1,175 @@
+{
+  "version": "0.27.0",
+  "baseline": "cb73df0df19cc2898f8709994351293efb14bf18",
+  "note": "现行地狱的TH17骸原与无间选景；非全部地狱。建筑和地表入口不虚构，尺度、地点站位及地貌为P。",
+  "locationUpdates": [
+    {
+      "id": "hell",
+      "aliases": [
+        "现行地狱",
+        "新地狱",
+        "Jigoku",
+        "Unlocated Hell",
+        "无间地狱",
+        "Avici"
+      ],
+      "status": "可浏览TH17骸原与无间选景；并非地狱全域竣工",
+      "project_treatment": "P：风蚀地貌、骨群、红风及无间荒野；无间为同一总括目录下的独立选景，不是主场景换色。TH19人物活动借用P骸原，不据此复原原作地图。不与旧地狱、畜生界或旧作地狱合并。",
+      "coordinate_status": "P：独立展示坐标，无官方测量里程或地表入口",
+      "source_ids": [
+        "JIG-INTERVIEW",
+        "JIG-SCENE",
+        "JIG-AVICI",
+        "JIG-19",
+        "JIG-15",
+        "JIG-F-COMPARE"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "JIG-INTERVIEW",
+      "title": "T：ZUN鬼形兽访谈－地狱、骷髅与狂风",
+      "url": "https://thbwiki.cc/东方外来韦编/2019_Autumn!/鬼形兽访谈",
+      "source_type": "官方访谈原文社区转录",
+      "note": "采用广大、混乱、埋骨与风的约束；不是精确地理。"
+    },
+    {
+      "id": "JIG-SCENE",
+      "title": "C：地狱的作品与场景索引",
+      "url": "https://thbwiki.cc/地狱",
+      "source_type": "社区场景整理",
+      "note": "TH17、TH19与茨歌仙分别记录；没有取得全部出版物原图。"
+    },
+    {
+      "id": "JIG-AVICI",
+      "title": "T：茨歌仙49话上－无间地狱",
+      "url": "https://thbwiki.cc/东方茨歌仙/第四十九话上",
+      "source_type": "官方文字社区转录",
+      "note": "空寂与停滞意象；不制作暴力事件或全域。"
+    },
+    {
+      "id": "JIG-19",
+      "title": "T：兽王园Omake－残无与日狭美",
+      "url": "https://thbwiki.cc/附带文档:东方兽王园/Omake",
+      "source_type": "官方附带设定转录",
+      "note": "人物活动不等于本作地貌是原作舞台地图。"
+    },
+    {
+      "id": "JIG-15",
+      "title": "T：绀珠传Omake－赫卡提亚",
+      "url": "https://thbwiki.cc/附带文档:东方绀珠传/Omake",
+      "source_type": "官方附带设定转录",
+      "note": "多个世界的地狱关联，不据此给神明建造一座虚构总部。"
+    },
+    {
+      "id": "JIG-F-COMPARE",
+      "title": "F对照：夜雀食堂DLC2——旧地狱街道＆地灵殿",
+      "url": "https://store.steampowered.com/app/1927110/DLC2/",
+      "source_type": "具名同人开发者说明／不采用的空间对照",
+      "note": "此为旧地狱而非现行地狱，作为避免挪用街区和宫殿的对照；没有移植资源或声称获取现代地狱同人地图。"
+    }
+  ],
+  "characters": [
+    {
+      "id": "hecatia",
+      "name": "赫卡提亚·拉碧斯拉祖利",
+      "aliases": [
+        "Hecatia Lapislazuli"
+      ],
+      "locationId": "hell",
+      "region": "currenthell",
+      "space": "hell_present",
+      "view": "jigokuOverview",
+      "position": [
+        -2,
+        18,
+        4
+      ],
+      "jigokuEra": "any",
+      "kind": "地狱女神／世界关联，非特定住宅",
+      "note": "统辖多个世界地狱的身份关联；站位仅为P注记，不表示在TH17或TH19此时在场。",
+      "positionBasis": "P：本作独立空间注记，非实时行踪。",
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方绀珠传/Omake"
+      ],
+      "art": {
+        "file": "",
+        "urls": [],
+        "work": "东方绀珠传",
+        "credit": "ZUN／上海爱丽丝幻乐团",
+        "kind": "原作图待核",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方绀珠传/Omake",
+        "filePage": "https://thbwiki.cc/附带文档:东方绀珠传/Omake",
+        "availability": "没有取得可核验原作肖像文件，不使用替代图。"
+      }
+    },
+    {
+      "id": "zanmu",
+      "name": "日白残无",
+      "aliases": [
+        "日白残無",
+        "Zanmu Nippaku"
+      ],
+      "locationId": "hell",
+      "region": "currenthell",
+      "space": "hell_present",
+      "view": "jigokuAudience",
+      "position": [
+        -16,
+        12,
+        -223
+      ],
+      "jigokuEra": "th19",
+      "kind": "TH19地狱活动／鬼",
+      "note": "TH19活动关联，不能推导残无宅邸或组织总部。场景地貌为本作P补完。",
+      "positionBasis": "P：独立骸原展示点，不是原作固定站位。",
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方兽王园/Omake"
+      ],
+      "art": {
+        "file": "",
+        "urls": [],
+        "work": "东方兽王园",
+        "credit": "ZUN／上海爱丽丝幻乐团",
+        "kind": "原作图待核",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方兽王园/Omake",
+        "filePage": "https://thbwiki.cc/附带文档:东方兽王园/Omake",
+        "availability": "没有取得可核验原作肖像文件，不使用替代图。"
+      }
+    },
+    {
+      "id": "hisami",
+      "name": "豫母都日狭美",
+      "aliases": [
+        "Hisami Yomotsu"
+      ],
+      "locationId": "hell",
+      "region": "currenthell",
+      "space": "hell_present",
+      "view": "jigokuGuide",
+      "position": [
+        36,
+        21,
+        105
+      ],
+      "jigokuEra": "th19",
+      "kind": "TH19地狱引路活动",
+      "note": "引入地狱的职责关联；本作没有设置她的住所或永久入口。",
+      "positionBasis": "P：独立骸原展示点，不是原作固定站位。",
+      "locationSources": [
+        "https://thbwiki.cc/附带文档:东方兽王园/Omake"
+      ],
+      "art": {
+        "file": "",
+        "urls": [],
+        "work": "东方兽王园",
+        "credit": "ZUN／上海爱丽丝幻乐团",
+        "kind": "原作图待核",
+        "sourcePage": "https://thbwiki.cc/附带文档:东方兽王园/Omake",
+        "filePage": "https://thbwiki.cc/附带文档:东方兽王园/Omake",
+        "availability": "没有取得可核验原作肖像文件，不使用替代图。"
+      }
+    }
+  ]
+}

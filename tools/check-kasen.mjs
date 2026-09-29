@@ -9,9 +9,9 @@ export async function checkKasen(G,atlas,characters,read){
  assert.equal(hash(JSON.stringify(characters.characters.slice(0,78))),fixed.original78);
  for(const [k,v]of [['placements',atlas.placements],['relationships',atlas.relationships],['visits',characters.additionalVisits]])assert.equal(hash(JSON.stringify(v)),fixed[k]);
  for(const [id,view]of Object.entries(fixed.previousMappings))assert.equal(G.resolveLocation(id).view,view);
- const audit=G.auditLandmarks(atlas);assert.equal(audit.version,'0.26.0');assert.equal(audit.total,179);assert.equal(audit.navigable,89);assert.equal(audit.pending,90);
- assert.equal(characters.characters.length,79);assert.equal(new Set(characters.characters.map(c=>c.id)).size,79);
- for(const id of ['wind_cave','geyser_mountain','sanctuary','animal_hq','hell'])assert.equal(G.resolveLocation(id).view,null);
+ const audit=G.auditLandmarks(atlas);assert.match(audit.version,/^\d+\.\d+\.\d+$/);assert.equal(audit.total,179);assert(audit.navigable>=89&&audit.pending<=90);
+ assert(characters.characters.length>=79);assert.equal(new Set(characters.characters.map(c=>c.id)).size,characters.characters.length);
+ for(const id of ['wind_cave','geyser_mountain','sanctuary','animal_hq'])assert.equal(G.resolveLocation(id).view,null);
  for(const [id,view]of Object.entries(G.KASEN.locations)){assert.equal(G.resolveLocation(id).view,view);const loc=atlas.locations.find(l=>l.id===id);assert(loc.coordinate_status.startsWith('P'));assert(loc.source_ids.includes('KS-MANOR'));assert(!atlas.placements.some(p=>p.id===id));}
  const b=G.DIORAMA.map.get('kasen');assert(b.independent&&b.poly.length===0&&b.space==='senkai_kasen');assert.deepEqual(JSON.parse(JSON.stringify(G.DIORAMA.transform('kasen','atlas'))),{scale:1,offset:[0,0,0]});
  const detail=G.buildKasen(),far=G.buildKasenOverview();

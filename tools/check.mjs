@@ -1,3 +1,4 @@
+import {checkCurrentHell} from './check-current-hell.mjs';
 import {checkKasen} from './check-kasen.mjs';
 import {checkAnimal} from './check-animal.mjs';
 import {checkBackdoor} from './check-backdoor.mjs';
@@ -105,3 +106,5 @@ console.log('畜生界检查通过：'+JSON.stringify(await checkAnimal(context.
 console.log('后户之国检查通过：'+JSON.stringify(await checkBackdoor(context.GA,atlas,JSON.parse(script('character-data')),read)));
 
 console.log('华扇仙界检查通过：'+JSON.stringify(await checkKasen(context.GA,atlas,JSON.parse(script('character-data')),read)));
+
+console.log('现行地狱检查通过：'+JSON.stringify(await checkCurrentHell(context.GA,atlas,JSON.parse(script('character-data')),read)));

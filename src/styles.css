@@ -57,3 +57,10 @@
 
 .in-kasen .weather-switch,.in-kasen #light-neutral,.in-kasen #light-dusk{display:none}
 #kasen-nav{max-width:calc(100vw - 28px);overflow:auto}
+
+/* Independent current Hell climate never overwrites the saved earth weather. */
+.in-currenthell .weather-switch,.in-currenthell #light-neutral,.in-currenthell #light-dusk{display:none}
+#currenthell-nav{max-width:calc(100vw - 28px);overflow-x:auto;white-space:nowrap}
+
+.in-currenthell .caption{max-width:390px}.in-currenthell .caption h1{font-size:29px;letter-spacing:2px}
+@media(max-width:600px){.in-currenthell .caption h1{font-size:24px}.in-currenthell .caption{max-width:270px}}

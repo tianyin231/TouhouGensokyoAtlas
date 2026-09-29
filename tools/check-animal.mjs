@@ -12,7 +12,7 @@ export async function checkAnimal(G,atlas,characters,read){
  assert(characters.characters.length>=75);assert.equal(new Set(characters.characters.map(c=>c.id)).size,characters.characters.length);
  const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert(audit.navigable>=86);assert.equal(audit.navigable+audit.pending,179);
  for(const [id,view]of Object.entries(fixed.previousMappings))assert.equal(G.resolveLocation(id).view,view,`Previous navigation changed: ${id}`);
- for(const id of ['wind_cave','geyser_mountain','sanctuary','animal_hq','hell'])assert.equal(G.resolveLocation(id).view,null);
+ for(const id of ['wind_cave','geyser_mountain','sanctuary','animal_hq'])assert.equal(G.resolveLocation(id).view,null);
  assert.equal(G.ANIMAL.version,'0.24.0');assert.equal(Object.keys(G.ANIMAL.views).length,16);assert.equal(Object.keys(G.ANIMAL.locations).length,2);
  const sourceIds=new Set(atlas.sources.map(s=>s.id));assert.equal(sourceIds.size,atlas.sources.length);
  for(const [id,view]of Object.entries(G.ANIMAL.locations)){
