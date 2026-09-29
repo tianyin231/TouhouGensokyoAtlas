@@ -17,6 +17,8 @@
     "src/backdoor.js",
     "src/kasen.js",
     "src/current-hell.js",
-    "src/rainbow-mine.js"
+    "src/rainbow-mine.js",
+    "src/hakurei-plants.js",
+    "src/hakurei-transition.js"
   ]
 }

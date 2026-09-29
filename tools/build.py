@@ -115,6 +115,8 @@ def build(output_dir):
         'KASEN_RENDERER': source('src/kasen-renderer.js'),
         'CURRENT_HELL_RENDERER': source('src/current-hell-renderer.js'),
         'RAINBOW_MINE_RENDERER': source('src/rainbow-mine-renderer.js'),
+        'HAKUREI_RENDERER': source('src/hakurei-renderer.js'),
+        'NIGHT_RENDERER': source('src/night-renderer.js'),
         'CHARACTERS': source('src/characters.js'),
         'STREAMING': source('src/streaming.js'),
         'APP': source('src/app.js'),
@@ -152,6 +154,8 @@ def build(output_dir):
     read_bytes('tools/current-hell-baseline.json')
     read_bytes('tools/check-rainbow-mine.mjs')
     read_bytes('tools/rainbow-mine-baseline.json')
+    read_bytes('tools/check-hakurei.mjs')
+    read_bytes('tools/hakurei-baseline.json')
     output_dir.mkdir(parents=True, exist_ok=True)
     # GitHub 会清洗非 ASCII 附件名，发布名称与校验文件必须一致。
     filename = f'TouhouGensokyoAtlas-{tag}.html'

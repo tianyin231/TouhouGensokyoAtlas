@@ -11,6 +11,7 @@ import {checkMakai} from './check-makai.mjs';
 import {checkNetherworld} from './check-netherworld.mjs';
 import {checkHeaven} from './check-heaven.mjs';
 import {checkRainbowMine} from './check-rainbow-mine.mjs';
+import {checkHakurei} from './check-hakurei.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -70,6 +71,7 @@ for (const [id, file] of [
 }
 const context = vm.createContext({ performance, TextDecoder, TextEncoder });
 vm.runInContext(builder, context);
+console.log('博丽神社检查通过：'+JSON.stringify(await checkHakurei(context.GA,atlas,read)));
 const pack = context.GA.buildOldHell();
 assert.equal(new Set(pack.meshes.map(mesh => mesh.id)).size, pack.meshes.length, '地下模型 ID 重复');
 let bytes = 0;

@@ -1,0 +1,36 @@
+{
+  "baseline": "a45816b6b76584aae4f54d58d772223e48ecee2b",
+  "description": "神社改造前固定的其他主区域输出；不由测试改写。",
+  "regions": {
+    "village": "2875880afaab25b7a49f7845ac6e7be50496a4485839399f5e1b7fe145a6993c",
+    "trail": "7db23fd0ef0d28b6540795370cdd7653dbaaf2dc82f3755f837f52fdeae1aef3",
+    "scarlet": "2437235f0b9fac3413104f785eeaa91fda6853135da7d15da0f750ff41d6e0fb",
+    "myouren": "0286d2f49c75e5f6c613c8ef68373cf1f090ee2799245c267427055b403672c6",
+    "mausoleum": "a8116e9b215b7711b1903df0c5b976e54edb8b42f1f74512f7fd853e562e4948",
+    "senkai": "d4a85ae46a542e92888bd06d82ecf26b9392c44a5908378b6d253014e2574798",
+    "bamboo": "3312677814fc2323303b5453b59d7bc9ad63ad6955afee93e85eb41715c4aa8a",
+    "sunflower": "9071b82b2a121e04808696b96925c720efb70e7bcab49750c75a35e54dc3563a",
+    "nameless": "3c3b2ce4e78c02a2128bedefc7bdafcf036e192a80f86a2660550e8bcf5f35c5",
+    "mountain": "11109364aac2227c2dfcdba8b96f400de09c9fee023ff13a28ee73cdd45c7e21",
+    "forest": "b0e046c49b52281597ba4c76cdd2bec8f080c84c838c9a0f87497f712a7ccb2b",
+    "muenzuka": "fce019a1625ad753025841ebb396bf84a5844c9d9284dce9f45250789514a058",
+    "genbu": "f6a4a51132c512ff3087115e67c5ed1497f51ddde07995eceda55825826ca188"
+  },
+  "reviewedSourceChanges": {
+    "src/world-builder.js": {
+      "before": "e0a9df6c0199ca278137c7212e97f9e0d8e4cc08aeaa47136741ab91b50fe669",
+      "after": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+      "reason": "仅神社屋瓦、立面、庭院与材质分类；13个其他地表区域由固定几何摘要保护。"
+    },
+    "src/renderer.js": {
+      "before": "b020de9f08b5544843c6efdf4f8a40a0251d19f5ca54ca360977a788edbde25c",
+      "after": "970f026894bc7729a810224b2ddb1ef597a665eced3ba625f7d8d70061110b70",
+      "reason": "AO深度取样和反投影对齐同一像素中心，消除条纹。"
+    },
+    "assets/packs/overview.pack.gz": {
+      "before": "35a3d61769be2d62aabc29eb106a339eff1411d945be2268315739d1118d1ffa",
+      "after": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+      "reason": "仅重建神社远景；其余1013批次几何逐字节核对不变。"
+    }
+  }
+}

@@ -749,34 +749,58 @@ G.Terrain.prototype.height=function(x,z){return shrineHeight(this,x,z);};
 // Extension terrain only changes the two new areas; village geometry remains unchanged.
 const originalColor=G.Terrain.prototype.color;
 G.Terrain.prototype.color=function(x,z,h,n){let c=originalColor.call(this,x,z,h,n);if(x>540&&x<1490&&z>-10&&z<480){const d=Math.min(...route.samples.filter((_,i)=>i%7===0).map(p=>Math.hypot(x-p[0],z-p[1])));c=blend(c,rgb('#607653'),(1-smooth(25,96,d))*.65);}return c;};
-function roofHip(g,detail,w,d,y,h){
- // Lower hipped skirt and an upper gabled roof. Ridge runs along local X.
- const levels=[{w,d,y},{w:w*.75,d:d*.42,y:y+h*.44}];
- const p=(l,sx,sz)=>[sx*l.w/2,l.y,sz*l.d/2-10];
- for(const sx of[-1,1])g.quad(p(levels[0],sx,-1),p(levels[0],sx,1),p(levels[1],sx,1),p(levels[1],sx,-1),C.slate);
- for(const sz of[-1,1])g.quad(p(levels[0],-1,sz),p(levels[1],-1,sz),p(levels[1],1,sz),p(levels[0],1,sz),C.slate);
- G.roof(g,0,y+h*.42,-10,w*.79,d*.47,h*.6,C.slate,detail,false);
- for(const sz of[-1,1]){g.box(0,y-.12,-10+sz*d/2,w,.26,.28,C.woodDark);g.box(0,y+.05,-10+sz*d/2,w+.2,.18,.31,C.slate2);}
- for(const sx of[-1,1])g.box(sx*w/2,y-.14,-10,.30,.24,d,C.woodDark);
- // Tile crests follow the hip, rather than floating above a plain triangle.
- for(let x=-w*.36;x<=w*.36;x+=.52)for(let sz of[-1,1]){
-   const a=[x,y+.08,-10+sz*d/2],b=[x*.95,y+h*.44+.09,-10+sz*d*.21];detail.tube(a,b,.055,blend(C.slate,C.slate2,.40),4);
+function roofHip(g,detail,w,d,y,h,wood){
+ // Preserve the irimoya silhouette. Each course has a shallow curved face
+ // and a real overlapping nose; the transverse seams are short tile edges,
+ // not rods laid over a corrugated sheet.
+ const slate=rgb('#586364'),edge=rgb('#697371'),sides=[-1,1];
+ const surface=(length,rows,point)=>{const n=Math.ceil(length/.52),step=length/n,rising=point(0,1)[1]>point(0,0)[1];
+  const v=(x,q,lift)=>{const p=point(x,q);p[1]+=.018*(1-Math.cos((x+length/2)/step*Math.PI*2))+.018+lift;return p;};
+  for(let i=0;i<n;i++)for(let j=0;j<rows;j++){
+   const t=j/rows,u=(j+1)/rows,low=rising?t:u,col=blend(slate,edge,.06+.10*G.noise(i*.71,j*.63)),lip=col.map(c=>c*.77);
+   for(let k=0;k<2;k++){
+    const a=-length/2+i*step+k*step/2,b=a+step/2;
+    g.quad(v(a,t,rising?.06:0),v(a,u,rising?0:.06),v(b,u,rising?0:.06),v(b,t,rising?.06:0),col);
+    g.quad(v(a,low,0),v(a,low,.06),v(b,low,.06),v(b,low,0),lip);
+   }
+  }
+ };
+ for(const s of sides){
+  surface(w,7,(x,t)=>[x*(1-.25*t),y+h*.44*t+.13*(1-t)**4,-10+s*d/2*(1-.58*t)]);
+  surface(d,5,(z,t)=>[s*w/2*(1-.25*t),y+h*.44*t+.13*(1-t)**4,-10+z*(1-.58*t)]);
+  wood.box(0,y-.34,-10+s*(d/2-.11),w,.33,.40,C.woodDark);
+  wood.box(s*(w/2-.11),y-.34,-10,.40,.33,d,C.woodDark);
+  g.box(0,y-.04,-10+s*d/2,w+.08,.16,.31,edge);
+  g.box(s*w/2,y-.04,-10,.31,.16,d,edge);
+  for(let x=-w/2+.26;x<w/2;x+=.52){
+   detail.cone(x,y+.01,-10+s*d/2,.075,.075,.07,edge,8);
+   wood.box(x,y-.52,-10+s*(d/2-.7),.095,.18,1.55,C.timber);
+  }
  }
- for(const sx of[-1,1])for(let z=-d*.32;z<=d*.32;z+=.58)detail.tube([sx*w/2,y+.10,z-10],[sx*w*.375,y+h*.44+.08,z*.50-10],.053,C.slate2,4);
- for(let x=-w/2+.4;x<w/2;x+=.52)for(const sz of[-1,1])detail.box(x,y-.34,-10+sz*(d/2-.48),.10,.16,1.40,C.timber);
+ const upperW=w*.79,upperD=d*.47,base=y+h*.42,rise=h*.6;
+ for(const s of sides){
+  surface(upperW,7,(x,t)=>[x,base+rise*(1-t)+.14*t**4,-10+s*upperD/2*t]);
+  wood.box(0,base-.23,-10+s*upperD/2,upperW,.27,.35,C.woodDark);
+  for(let x=-upperW/2+.26;x<upperW/2;x+=.52)detail.box(x,base+.03,-10+s*upperD/2,.44,.11,.32,edge);
+  wood.tri([s*(upperW/2-.12),base-.16,-10-upperD/2],[s*(upperW/2-.12),base+rise-.1,-10],[s*(upperW/2-.12),base-.16,-10+upperD/2],C.woodDark);
+ }
+ g.box(0,base+rise+.06,-10,upperW+.48,.24,.48,edge);
+ g.box(0,base+rise+.27,-10,upperW+.60,.12,.32,slate);
+ for(const sx of sides)for(const sz of sides)wood.tube([sx*upperW/2,base+.06,-10+sz*upperD/2],[sx*upperW/2,base+rise+.03,-10],.10,C.timber,6);
 }
-function curvedPortico(g,detail){
+function curvedPortico(g,detail,wood=g){
  // Karahafu-inspired front canopy, not a generic pyramidal roof.
  const curve=x=>7.65+1.65*Math.exp(-((x/2.1)**2))+.32*Math.pow(Math.abs(x)/3.9,3);
  for(let i=0;i<48;i++){const x=-4+i/6,u=x+1/6;g.quad([x,curve(x),1.2],[u,curve(u),1.2],[u,curve(u)+.27,-4.2],[x,curve(x)+.27,-4.2],C.slate);
- g.quad([x,curve(x)-.34,1.27],[u,curve(u)-.34,1.27],[u,curve(u)+.05,1.27],[x,curve(x)+.05,1.27],C.timber);}
+ wood.quad([x,curve(x)-.34,1.27],[u,curve(u)-.34,1.27],[u,curve(u)+.05,1.27],[x,curve(x)+.05,1.27],C.timber);
+ wood.quad([x,curve(x)-.34,1.27],[x,curve(x)-.08,-4.2],[u,curve(u)-.08,-4.2],[u,curve(u)-.34,1.27],C.woodDark);}
  for(let x=-3.9;x<4;x+=.48)detail.tube([x,curve(x)+.09,1.28],[x,curve(x)+.36,-4.1],.064,C.slate2,4);
- for(let x of[-3.1,3.1]){g.box(x,.65,.4,.40,7.12,.40,C.wood);g.box(x,6.5,.4,.72,.42,.65,C.timber);g.tube([x,5.6,.4],[x+Math.sign(x)*1.0,7.05,.4],.12,C.timber,4);}
- g.box(0,6.95,.4,7.8,.30,.32,C.wood);g.box(0,7.33,.40,6.1,.19,.35,C.timber);
+ for(let x of[-3.1,3.1]){wood.box(x,.65,.4,.40,7.12,.40,C.wood);wood.box(x,6.5,.4,.72,.42,.65,C.timber);wood.tube([x,5.6,.4],[x+Math.sign(x)*1.0,7.05,.4],.12,C.timber,4);}
+ wood.box(0,6.95,.4,7.8,.30,.32,C.wood);wood.box(0,7.33,.40,6.1,.19,.35,C.timber);
  // Front triangular gable behind the curved canopy.
- g.tri([-3.0,8.5,-4.05],[3.0,8.5,-4.05],[0,11.3,-4.05],C.woodDark);
- for(let s of[-1,1])g.tube([s*3.3,8.5,-4],[0,11.6,-4],.15,C.timber,4);
- for(let x=-2.6;x<2.7;x+=.37)detail.box(x,8.5,-3.94,.075,Math.max(.12,2.6-Math.abs(x)*.88),.08,C.timber);
+ wood.tri([-3.0,8.5,-4.05],[3.0,8.5,-4.05],[0,11.3,-4.05],C.woodDark);
+ for(let s of[-1,1])wood.tube([s*3.3,8.5,-4],[0,11.6,-4],.15,C.timber,4);
+ for(let x=-2.6;x<2.7;x+=.37)wood.box(x,8.5,-3.94,.075,Math.max(.12,2.6-Math.abs(x)*.88),.08,C.timber);
 }
 function rope(g,a,b,r=.11){const N=28;let last=null;for(let i=0;i<=N;i++){const t=i/N,p=[mix(a[0],b[0],t),mix(a[1],b[1],t)-.5*Math.sin(t*Math.PI),mix(a[2],b[2],t)];if(last)g.tube(last,p,r,C.gold,7);last=p;}}
 function shide(g,x,y,z){let width=.21;for(let i=0;i<4;i++){g.box(x+(i%2?-.12:.07),y-i*.18,z,width,.26,.04,C.cream);}}
@@ -792,38 +816,80 @@ function torii(g,z,w=14,h=10.5){for(const sx of[-1,1]){g.box(sx*w*.34,0,z,1.35,.
  for(let i=0;i<24;i++){let x=-(w+2)/2+i*(w+2)/24,u=x+(w+2)/24,py=v=>h+.35*Math.pow(Math.abs(v)/(w*.5),3);g.quad([x,py(x),z+.52],[u,py(u),z+.52],[u,py(u),z-.52],[x,py(x),z-.52],C.woodDark);g.quad([x,py(x)-.35,z+.52],[u,py(u)-.35,z+.52],[u,py(u),z+.52],[x,py(x),z+.52],C.wood);}
  g.box(0,h-2,z,.58,1.35,.24,C.woodDark);rope(g,[-4.5,h-2.45,z],[4.5,h-2.45,z],.09);for(const x of[-2.8,-.9,.9,2.8])shide(g,x,h-2.8-Math.cos(x*.3)*.35,z);
 }
+function hakureiFacade(wall,wood,paper,dark,x,z,width,angle,front=false){
+ // A wall assembled around openings. Pane, reveals and dark bay have separate
+ // depths; no solid wall remains behind the entrance or the paper panels.
+ const parts=[wall,wood,paper,dark],saved=parts.map(g=>[g.origin.slice(),g.angle]);
+ for(let i=0;i<parts.length;i++){const g=parts[i],p=g.point([x,0,z]);g.place(...p,g.angle+angle);}
+ const cols=width>20?7:5,spacing=(width-3.2)/(cols-1),holes=[];
+ for(let i=0;i<cols;i++){const X=-(width-3.2)/2+i*spacing,isDoor=front&&i===(cols-1)/2;
+  holes.push({x:X,w:isDoor?3.6:spacing-.43,y:isDoor?1.64:2.43,h:isDoor?3.92:2.73,door:isDoor});
+ }
+ const cuts=[-width/2,width/2,...holes.flatMap(p=>[p.x-p.w/2,p.x+p.w/2])].sort((a,b)=>a-b);
+ for(let i=0;i<cuts.length-1;i++){const a=cuts[i],b=cuts[i+1],mid=(a+b)/2,hole=holes.find(p=>mid>p.x-p.w/2&&mid<p.x+p.w/2);
+  for(const [lo,hi]of hole?[[1.64,hole.y],[hole.y+hole.h,6.24]]:[[1.64,6.24]])if(hi>lo+.001)wall.box(mid,lo,-.18,b-a,hi-lo,.36,C.plaster);
+ }
+ for(const p of holes){
+  const {x:X,w,y,h,door}=p;
+  for(const s of[-1,1])wood.box(X+s*(w/2+.045),y,-.10,.11,h+.10,.36,C.wood);
+  for(const Y of[y,y+h])wood.box(X,Y-.05,-.10,w+.22,.10,.36,C.wood);
+  if(door){
+   dark.box(X,y,-1.10,w,h,.12,rgb('#252b26'));
+   for(const s of[-1,1])wood.box(X+s*(w/2-.18),y,-.40,.30,h,.52,C.woodDark);
+   wood.box(X,y,-.55,w,.12,1.10,C.timber);
+   for(const s of[-1,1]){wood.box(X+s*.95,y+.18,-.87,1.52,h-.3,.10,C.woodDark);for(let j=0;j<5;j++)wood.box(X+s*.95-.62+j*.31,y+.24,-.79,.055,h-.45,.11,C.timber);}
+  }else{
+   dark.box(X,y+.04,-.48,w-.07,h-.08,.06,rgb('#393d32'));
+   paper.box(X,y+.09,-.29,w-.14,h-.18,.035,rgb('#d1c3a2'));
+   const n=Math.max(5,Math.round(w/.39));for(let j=0;j<=n;j++)wood.box(X-w/2+.09+j*(w-.18)/n,y+.07,-.20,.045,h-.14,.08,C.timber);
+   for(let Y=y+.55;Y<y+h-.15;Y+=.56)wood.box(X,Y,-.20,w-.10,.048,.08,C.wood);
+  }
+ }
+ parts.forEach((g,i)=>g.place(...saved[i][0],saved[i][1]));
+}
 function buildHakurei(terrain){
  const bank=new G.BatchBank(),plants=[],newFootprints=[{id:'hakurei',x:1614,z:161,rx:101,rz:66},{id:'hakurei-stairs',x:1511,z:160,rx:60,rz:9}];
  const get=(lod='base',mat='matte')=>bank.get(S.x,S.z,mat,lod).place(S.x,S.y,S.z,S.yaw),g=get(),detail=get('near');
- // Raised gravel terrace. Wood is never fused into the surrounding ground.
- g.box(0,-.28,1,103,.47,112,rgb('#aaa995'));g.box(0,.19,1,99,.06,108,rgb('#b9b7a0'));
+ const gravel=get('base','hakureiGravel'),moss=get('base','hakureiMoss'),stone=get('base','hakureiStone'),wall=get('base','hakureiPlaster'),wood=get('wood-z','hakureiWood'),posts=get('wood-y','hakureiWood'),boards=get('wood-x','hakureiWood'),tiles=get('base','hakureiRoof'),tileDetail=get('near','hakureiRoof'),paper=get('base','hakureiPaper'),recess=get('base','hakureiRecess');
+ // The inherited terrace and axis stay in place. Gravel has broad tonal
+ // patches and a gently uneven surface; scale comes from paving and edges,
+ // while the material supplies close grain without thousands of loose cubes.
+ stone.box(0,-.28,1,103,.47,112,rgb('#777e6e'));
+ const groundY=(x,z)=>.236+.014*G.noise(x*.19,z*.21),groundCol=(x,z)=>blend(rgb('#939585'),rgb('#aaab95'),G.noise(x/19,z/23)*.64);
+ for(let z=-53;z<55;z+=3)for(let x=-49.5;x<49.5;x+=3){const v=(X,Z)=>[X,groundY(X,Z),Z],a=v(x,z),b=v(x,z+3),c=v(x+3,z+3),d=v(x+3,z);for(const p of[a,b,c,a,c,d])gravel.vertex(p,[0,1,0],groundCol(p[0],p[2]));}
  const R=G.rng(51697);
- for(const sx of[-1,1])for(let z=-51;z<56;z+=2.1){g.box(sx*50,-1.6,z,1.10,1.84,2.0,blend(C.base,C.stone,R()*.5));g.box(sx*50,.24,z,1.36,.20,2.12,C.stoneLight);}
- for(let x=-49;x<49;x+=2.1){if(Math.abs(x)<6)continue;g.box(x,-1.0,56,2.0,1.24,1.10,C.stone);g.box(x,.24,56,2.12,.20,1.35,C.stoneLight);}
+ for(const sx of[-1,1])for(let z=-51;z<56;z+=2.1){stone.box(sx*50,-1.6,z,1.10,1.84,2.0,blend(C.base,C.stone,R()*.5));stone.box(sx*50,.24,z,1.36,.20,2.12,blend(C.stoneLight,C.base,.35));}
+ for(let x=-49;x<49;x+=2.1){if(Math.abs(x)<6)continue;stone.box(x,-1.0,56,2.0,1.24,1.10,C.stone);stone.box(x,.24,56,2.12,.20,1.35,blend(C.stoneLight,C.base,.35));}
  // The lateral grounds are planted groves, not an oversized featureless paved square.
  for(const [cx,cz,rx,rz]of[[-34,31,12,20],[32,9,13,16],[30,-39,14,9],[-31,-41,13,9]]){
-  for(let i=0;i<48;i++){const a=i/48*Math.PI*2,b=(i+1)/48*Math.PI*2,pt=t=>[cx+Math.cos(t)*rx*(1+.08*Math.sin(t*3)),.258,cz+Math.sin(t)*rz];g.tri([cx,.258,cz],pt(b),pt(a),rgb('#718663'));}
-  for(let i=0;i<22;i++){const a=i/22*Math.PI*2;g.ellipsoid(cx+Math.cos(a)*rx*(1+.08*Math.sin(a*3)),.38,cz+Math.sin(a)*rz,.45+R()*.42,.22+R()*.16,.40+R()*.26,blend(C.stone,C.base,R()*.6),6,3);}
+  // Keep the full fan above the gravel, including its soft outer ring.
+  for(let i=0;i<48;i++){const a=i/48*Math.PI*2,b=(i+1)/48*Math.PI*2,pt=(t,s=1)=>{const X=cx+Math.cos(t)*rx*(1+.11*Math.sin(t*3)+.055*Math.cos(t*7))*s,Z=cz+Math.sin(t)*rz*s;return[X,.30+.015*(1-s/1.10),Z];};
+   moss.tri([cx,.315,cz],pt(b,.88),pt(a,.88),rgb('#5f7052'));
+   const A=pt(a,.88),B=pt(b,.88),D=pt(a,1.10),E=pt(b,1.10);for(const q of[[A,B,E],[A,E,D]])for(const p of q)moss.vertex(p,[0,1,0],p===D||p===E?groundCol(p[0],p[2]):rgb('#697858'));
+  }
+  for(let i=0;i<9;i++){const a=i*2.399+cx*.1,s=.72+R()*.33;stone.ellipsoid(cx+Math.cos(a)*rx*s,.27,cz+Math.sin(a)*rz*s,.40+R()*.54,.14+R()*.17,.30+R()*.39,blend(C.stone,C.base,R()*.6),7,4);}
  }
  // Large squared approach stones and finer edging, in a coherent axis.
- for(let z=6;z<54;z+=1.45)for(let x=-3.1;x<3.1;x+=1.58)g.box(x+.77,.25,z,1.52,.115,1.39,blend(C.stoneLight,C.stone,R()*.18));
- for(let z=5;z<54;z+=.96)for(let s of[-1,1])g.box(s*3.62,.23,z,.35,.16,.90,C.stone);
+ for(let z=6;z<54;z+=1.45)for(let x=-3.1;x<3.1;x+=1.58)G.bevelBox(stone,x+.77,.25,z,1.52,.115,1.39,.026,blend(C.stoneLight,C.stone,.22+R()*.16));
+ for(let z=5;z<54;z+=.96)for(let s of[-1,1])G.bevelBox(stone,s*3.62,.23,z,.35,.16,.90,.025,C.stone);
  // Floor structure, stone piers, veranda and a single integrated hall.
- for(let x=-11;x<=11;x+=2.75)for(let z=-18;z<=-2;z+=4){g.box(x,.19,z,.70,.40,.70,C.stone);g.box(x,.56,z,.31,1.00,.31,C.woodDark);}
- g.box(0,1.3,-10,26,.25,21,C.woodDark);for(let x=-12.8;x<12.9;x+=.38)detail.box(x,1.56,-10,.35,.075,20.7,C.timber);
+ for(let x=-11;x<=11;x+=2.75)for(let z=-18;z<=-2;z+=4){G.bevelBox(stone,x,.19,z,.76,.44,.76,.055,blend(C.stone,C.base,.24));posts.box(x,.56,z,.31,1.00,.31,C.woodDark);}
+ boards.box(0,1.3,-10,26,.25,21,C.woodDark);
+ for(let x=-12.8;x<12.9;x+=.38)boards.box(x,1.56,-10,.35,.075,20.7,blend(C.timber,C.wood,.12+R()*.16));
+ for(const z of[-18,-10,-2])wood.box(0,1.08,z,24,.30,.35,C.woodDark);
  // Hall walls set back from a wrap-around engawa.
- g.box(0,1.64,-10,22,4.6,16,C.plaster);g.box(0,1.67,-1.94,22,1.0,.1,C.woodDark);
- for(const side of[-1,1]){const z=-10+side*8.08;for(let x=-9.4;x<10;x+=3.1)G.windowPanel(g,x,2.45,z,2.63,2.70,side<0?Math.PI:0,C.paper);}
- for(const side of[-1,1])for(let z=-15.5;z<=-4;z+=3.0)G.windowPanel(g,side*11.08,2.48,z,2.4,2.6,side*Math.PI/2,C.paper);
- // Central doors are recessed and dark, with a visible wooden threshold.
- g.box(0,1.72,-1.83,3.6,3.75,.13,C.shadow);for(const x of[-1.82,1.82])g.box(x,1.61,-1.6,.18,4.58,.22,C.wood);
- for(let x=-11;x<=11.1;x+=2.75){g.box(x,1.52,-1.72,.27,4.97,.28,C.wood);g.box(x,1.52,-18.2,.27,4.97,.28,C.wood);}
- for(let z=-18;z<=-2;z+=2.7)for(const sx of[-1,1])g.box(sx*11.2,1.52,z,.27,4.97,.28,C.wood);
- for(const z of[-1.72,-18.20]){g.box(0,5.65,z,23,.25,.35,C.wood);g.box(0,6.27,z,24.0,.24,.40,C.timber);}
- roofHip(g,detail,29.0,24.0,6.8,5.1);curvedPortico(g,detail);
+ hakureiFacade(wall,wood,paper,recess,0,-2,22,0,true);
+ hakureiFacade(wall,wood,paper,recess,0,-18,22,Math.PI);
+ for(const side of[-1,1])hakureiFacade(wall,wood,paper,recess,side*11,-10,16,side*Math.PI/2);
+ for(const x of[-6.4,6.4])wood.box(x,1.67,-1.94,9.1,.70,.17,C.woodDark);
+ for(const x of[-1.82,1.82])posts.box(x,1.61,-1.6,.18,4.58,.22,C.wood);
+ for(let x=-11;x<=11.1;x+=2.75){posts.box(x,1.52,-1.72,.27,4.97,.28,C.wood);posts.box(x,1.52,-18.2,.27,4.97,.28,C.wood);}
+ for(let z=-18;z<=-2;z+=2.7)for(const sx of[-1,1])posts.box(sx*11.2,1.52,z,.27,4.97,.28,C.wood);
+ for(const z of[-1.72,-18.20]){wood.box(0,5.65,z,23,.25,.35,C.wood);wood.box(0,6.27,z,24.0,.24,.40,C.timber);}
+ roofHip(tiles,tileDetail,29.0,24.0,6.8,5.1,wood);curvedPortico(tiles,tileDetail,wood);
  // Back/veranda rail, corner joints and stepping stones.
- for(const sx of[-1,1]){for(let z=-20;z<1;z+=2.6){g.box(sx*12.75,1.61,z,.14,1.03,.14,C.wood);g.box(sx*12.75,2.52,z+1.22,.17,.15,2.66,C.timber);}}
- for(let i=0;i<7;i++)g.box(0,.25+i*.198,4.8-i*.58,5.8,.198,.65,C.stone);
+ for(const sx of[-1,1]){for(let z=-20;z<1;z+=2.6){posts.box(sx*12.75,1.61,z,.14,1.03,.14,C.wood);boards.box(sx*12.75,2.52,z+1.22,.17,.15,2.66,C.timber);}}
+ for(let i=0;i<7;i++)G.bevelBox(stone,0,.25+i*.198,4.8-i*.58,5.8,.198,.65,.035,blend(C.stone,C.stoneLight,.25));
  // Saisenbako, suzu cord, rice-straw rope and paper zigzags.
  g.box(0,1.64,-.15,2.5,1.00,1.12,C.wood);g.box(0,2.64,-.15,2.75,.12,1.34,C.timber);
  for(let x=-1.12;x<1.2;x+=.23)detail.box(x,2.77,-.15,.10,.06,1.05,C.woodDark);
@@ -840,7 +906,7 @@ function buildHakurei(terrain){
  g.box(tx,1.09,tz,3.36,.03,1.76,rgb('#6c9893'));g.tube([tx-2.25,1.66,tz],[tx+2.25,1.66,tz],.05,C.timber,6);
  for(let i=0;i<3;i++){g.tube([tx-.7+i*.6,1.73,tz-.55],[tx-.7+i*.6,1.75,tz+.56],.029,C.timber,5);g.cone(tx-.7+i*.6,1.71,tz+.63,.14,.16,.17,C.timber,8);}
  // Plain side warehouse, maintained as a different mass from the main hall.
- const wx=-32,wz=-20;g.box(wx,.20,wz,11.0,.48,8.5,C.stone);g.box(wx,.68,wz,10,4.20,7.5,C.plaster);
+ const wx=-32,wz=-20;stone.box(wx,.20,wz,11.0,.48,8.5,C.stone);wall.box(wx,.68,wz,10,4.20,7.5,C.plaster);
  for(const sx of[-1,1])g.box(wx+sx*4.8,.65,wz+3.8,.18,4.1,.18,C.wood);
  g.box(wx,.69,wz+3.83,2.2,2.88,.16,C.woodDark);for(let x=wx-.9;x<wx+1;x+=.24)detail.box(x,.78,wz+3.94,.10,2.68,.07,C.timber);
  G.roof(g,wx,4.89,wz,12.4,10.0,2.5,C.slate,detail,false);
@@ -865,7 +931,7 @@ function buildHakurei(terrain){
  if(i%3===0)for(const sz of[-1,1]){sg.box(x,y-.75,160+sz*4.5,dx*3-.04,.93,1.25,C.base);sg.box(x,y+.18,160+sz*4.5,dx*3,.20,1.42,C.stoneLight);}}
  for(let i=0;i<=12;i++){const t=i/12,x=mix(S.stairStart+2,S.stairEnd-2,t),y=mix(S.stairY+.7,S.top+.3,t);for(let sz of[-1,1]){sg.box(x,y,160+sz*5.05,.26,1.15,.27,C.wood);if(i<12){const u=(i+1)/12;sg.tube([x,y+1.0,160+sz*5.05],[mix(S.stairStart+2,S.stairEnd-2,u),mix(S.stairY+.7,S.top+.3,u)+1.0,160+sz*5.05],.080,C.timber,6);}}}
  for(const x of[1470,1505,1540])for(const sz of[-1,1]){const y=terrain.height(x,160+sz*8);stoneLantern(sg,x,y,160+sz*8,.90);plants.push({x:x+4,z:160+sz*17,type:'cedar',scale:1.7});}
- let meshes=bank.meshes();meshes.forEach((m,i)=>{m.id='hakurei:'+m.id;m.locationId='hakurei';m.evidence='P';});meshes.push(pg.mesh('hakurei-garden-pond','water',{material:'water'}));
+ let meshes=bank.meshes();meshes.forEach((m,i)=>{if(m.lod.startsWith('wood-')){m.woodAxis=m.lod.slice(-1);m.lod='base';}m.id='hakurei:'+m.id;m.locationId='hakurei';m.evidence='P';});meshes.push(pg.mesh('hakurei-garden-pond','water',{material:'water'}));
  return{meshes,plantSites:plants,footprints:newFootprints,meta:{basis:'P',reference:'博丽神社（萃绯非场景）/ 心绮楼场景；背面与庭院排布本作补完',stairSteps:N,mainHall:[22,16],facing:'west / P',refined:true}};
 }
 function buildTrail(terrain){const bank=new G.BatchBank(),plants=[],R=G.rng(53062),p=route.samples;
@@ -2538,9 +2604,9 @@ G.FOREST={pads,paths,weight,routeDistance,buildingPack};G.buildForest=buildFores
  * warm paper lamps, without swapping the shrine for an unrelated building. */
 (function(G){'use strict';const C=G.C;
 function nearColor(c,target){return Math.hypot(c[0]-target[0],c[1]-target[1],c[2]-target[2]);}
-function classify(c){let pairs=[['shrineRoof',C.slate],['shrineRoof',C.slate2],['shrinePaper',C.paper],['shrineWood',C.wood],['shrineWood',C.woodDark],['shrineWood',C.timber],['shrineGold',C.gold],['shrinePlaster',C.plaster]];let best=['shrineStone',.018];for(let[k,v]of pairs){let d=nearColor(c,v);if(d<best[1])best=[k,d];}if(c[0]>c[1]*2&&c[0]>c[2]*2&&c[0]>.1)return'shrineLacquer';return best[0];}
+function classify(c){let pairs=[['hakureiRoof',C.slate],['hakureiRoof',C.slate2],...([.14,.24,.40].map(t=>['hakureiRoof',G.blend(C.slate,C.slate2,t)])),['hakureiPaper',C.paper],['hakureiPaper',C.cream],['hakureiRecess',C.shadow],['hakureiWood',C.wood],['hakureiWood',C.woodDark],['hakureiWood',C.timber],['shrineGold',C.gold],['hakureiPlaster',C.plaster]];let best=['hakureiStone',.018];for(let[k,v]of pairs){let d=nearColor(c,v);if(d<best[1])best=[k,d];}if(c[0]>c[1]*2&&c[0]>c[2]*2&&c[0]>.1)return'hakureiLacquer';return best[0];}
 function bevelBox(g,x,y,z,w,h,d,e,col){const ring=(Y,inset)=>[[-w/2+e,-d/2], [w/2-e,-d/2],[w/2,-d/2+e],[w/2,d/2-e],[w/2-e,d/2],[-w/2+e,d/2],[-w/2,d/2-e],[-w/2,-d/2+e]].map(p=>[x+p[0]*(1-inset),Y,z+p[1]*(1-inset)]);const rings=[ring(y,.07),ring(y+e,0),ring(y+h-e,0),ring(y+h,.07)];for(let j=0;j<3;j++)for(let i=0;i<8;i++)g.quad(rings[j][i],rings[j][(i+1)%8],rings[j+1][(i+1)%8],rings[j+1][i],col);for(let i=1;i<7;i++)g.tri(rings[3][0],rings[3][i+1],rings[3][i],col);}
-function style(pack){const result=[];for(const m of pack.meshes){if(m.group==='water'){result.push(m);continue;}const groups=new Map(),a=m.vertices;for(let i=0;i<a.length;i+=27){let key=classify([a[i+6],a[i+7],a[i+8]]);if(!groups.has(key))groups.set(key,[]);const out=groups.get(key);for(let j=0;j<27;j++)out.push(a[i+j]);}for(const [material,ar]of groups){let g=new G.Geometry();g.a=ar;result.push(g.mesh(m.id+':style:'+material,m.group,{...m,vertices:undefined,id:m.id+':style:'+material,material,owner:'hakurei',region:'hakurei',sourceId:m.id,styleRevision:14}));result.at(-1).vertices=new Float32Array(ar);}}
+function style(pack){const result=[];for(const m of pack.meshes){if(m.group==='water'||m.material?.startsWith('hakurei')){result.push({...m,owner:'hakurei',region:'hakurei'});continue;}const groups=new Map(),a=m.vertices;for(let i=0;i<a.length;i+=27){let key=classify([a[i+6],a[i+7],a[i+8]]);if(!groups.has(key))groups.set(key,[]);const out=groups.get(key);for(let j=0;j<27;j++)out.push(a[i+j]);}for(const [material,ar]of groups){let g=new G.Geometry();g.a=ar;result.push(g.mesh(m.id+':style:'+material,m.group,{...m,vertices:undefined,id:m.id+':style:'+material,material,owner:'hakurei',region:'hakurei',sourceId:m.id,styleRevision:15}));result.at(-1).vertices=new Float32Array(ar);}}
  const stone=new G.Geometry(),wood=new G.Geometry(),paper=new G.Geometry(),soft=new G.Geometry();stone.place(1620,180,160,-Math.PI/2);wood.place(1620,180,160,-Math.PI/2);paper.place(1620,180,160,-Math.PI/2);soft.place(1620,180,160,-Math.PI/2);
  for(let x=-11;x<=11;x+=2.75)for(let z of[-18.3,-1.75]){bevelBox(stone,x,1.5,z,.40,.20,.44,.04,C.stoneLight);bevelBox(wood,x-.4,5.98,z,.85,.28,.58,.04,C.timber);wood.tube([x,5.22,z],[x+.65,6.2,z],.09,C.wood,6);wood.tube([x,5.22,z],[x-.65,6.2,z],.09,C.wood,6);}
  const lamps=[];
@@ -2549,8 +2615,8 @@ function style(pack){const result=[];for(const m of pack.meshes){if(m.group==='w
  for(const x of[-8.6,8.6]){const z=30;bevelBox(stone,x,.29,z,1.23,.23,1.23,.1,C.stone);paper.box(x,2.13,z+.37,.26,.37,.015,G.rgb('#efc78c'));}
  // Ornamented bronze foot and warm reflection-free dry paving. No rain/wetness.
  for(let i=0;i<4;i++){let z=8+i*3.2;for(let x of[-3.4,3.4])bevelBox(stone,x,.31,z,.22,.12,.94,.03,C.stoneLight);}
- result.push(stone.mesh('hakurei-style:beveled-stones','architecture',{material:'shrineStone',owner:'hakurei',region:'hakurei'}),wood.mesh('hakurei-style:joinery-and-lamp-ribs','architecture',{material:'shrineWood',owner:'hakurei',region:'hakurei'}),paper.mesh('hakurei-style:paper-lamps','architecture',{material:'shrineLight',owner:'hakurei',region:'hakurei'}));
- pack.meshes=result;pack.meta={...pack.meta,styleRevision:14,weather:'dry',materialSeparation:true,beveledDetails:true,lightPositions:lamps,notNewCanon:true};return pack;
+ result.push(stone.mesh('hakurei-style:beveled-stones','architecture',{material:'hakureiStone',owner:'hakurei',region:'hakurei'}),wood.mesh('hakurei-style:joinery-and-lamp-ribs','architecture',{material:'hakureiWood',owner:'hakurei',region:'hakurei'}),paper.mesh('hakurei-style:paper-lamps','architecture',{material:'shrineLight',owner:'hakurei',region:'hakurei'}));
+ pack.meshes=result;pack.meta={...pack.meta,styleRevision:15,weather:'dry',materialSeparation:true,explicitSurfaceMaterials:true,beveledDetails:true,lightPositions:lamps,notNewCanon:true};return pack;
 }
 G.styleHakurei=style;G.bevelBox=bevelBox;
 })(globalThis.GA);
