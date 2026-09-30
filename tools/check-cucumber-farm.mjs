@@ -6,12 +6,13 @@ import {fallsBlocked} from './check-waterfall-cave.mjs';
 const hash=b=>createHash('sha256').update(b).digest('hex');
 export function cucumberDigest(p){const h=createHash('sha256');for(const m of p.meshes){h.update(JSON.stringify([m.id,m.material,m.cucumberPart,m.overview,m.globalNear,m.globalFar]));for(const key of['vertices','farVertices','instances','instanceColors'])if(m[key])h.update(Buffer.from(m[key].buffer,m[key].byteOffset,m[key].byteLength));}return h.digest('hex');}
 export async function checkCucumberFarm(G,atlas,characters,read){
+ const coverage=JSON.parse(read('tools/current-coverage.json'));
  const f=JSON.parse(read('tools/cucumber-farm-baseline.json')),F=G.CUCUMBER;
  for(const[path,h]of Object.entries(f.protectedFiles))assert.equal(hash(read(path)),h,'Inherited file changed: '+path);
  for(const[id,view]of Object.entries(f.navigation))assert.equal(G.resolveLocation(id).view,view,'Previous navigation changed: '+id);
  assert.equal(hash(JSON.stringify(characters)),f.characters);assert.equal(characters.characters.length,85);
- const a=G.auditLandmarks(atlas);assert.equal(a.total,179);assert.equal(a.navigable,107);assert.equal(a.pending,72);
- assert.equal(G.resolveLocation(F.id).view,'cucumberOverview');for(const id of['tengu','geyser_mountain','geyser_center'])assert.equal(G.resolveLocation(id).view,null);
+ const a=G.auditLandmarks(atlas);assert.equal(a.total,179);assert.equal(a.navigable,coverage.navigable);assert.equal(a.pending,coverage.pending);
+ assert.equal(G.resolveLocation(F.id).view,'cucumberOverview');for(const id of['tengu','geyser_center'])assert.equal(G.resolveLocation(id).view,null);
  const loc=atlas.locations.find(l=>l.id===F.id);assert.equal(loc.existence_evidence,'T');assert(loc.source_ids.includes('CF-FS29-T'));assert(loc.coordinate_status.startsWith('P'));assert(loc.verified_fact.includes('未核到工厂'));
  const raw=gunzipSync(read('assets/packs/overview.pack.gz')),pack=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength)),t=new G.Terrain(atlas);G.LANDSCAPE.apply(pack,t);G.applyHighlandGround(pack,t);
  const terrainHash=()=>hash(Buffer.concat(pack.meshes.filter(m=>m.component==='island-terrain').map(m=>Buffer.from(m.vertices.buffer,m.vertices.byteOffset,m.vertices.byteLength))));const original=terrainHash();F.prepare(atlas,pack);
@@ -47,5 +48,5 @@ export async function checkCucumberFarm(G,atlas,characters,read){
  assert.equal(Object.keys(F.views).length,10);for(const[id,v]of Object.entries(F.views)){assert.equal(G.DIORAMA.regionOf(id),F.id);assert(v.eye[1]>sample(v.eye[0],v.eye[2],'near').p[1]+.9,id+' camera inside ground');}
  assert.equal(cucumberDigest(await G.buildRegion(atlas,F.id,'')),cucumberDigest(near),'Worker/main dispatcher');
  assert.equal(terrainHash(),original,'Existing terrain modified');const contact=atlas.surfaceContacts[F.id],contactBytes=contact.near.byteLength+contact.far.byteLength;assert(contactBytes<200000);
- return{...stats,plants:near.meta.plants.length,trees:near.meta.trees.length,views:10,passages,trunkClearance,contactBytes,protectedFiles:Object.keys(f.protectedFiles).length,navigable:107,pending:72,characters:85};
+ return{...stats,plants:near.meta.plants.length,trees:near.meta.trees.length,views:10,passages,trunkClearance,contactBytes,protectedFiles:Object.keys(f.protectedFiles).length,navigable:coverage.navigable,pending:coverage.pending,characters:85};
 }

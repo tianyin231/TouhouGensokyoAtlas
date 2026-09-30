@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';import {createHash} from 'node:crypto';i
 const hash=b=>createHash('sha256').update(b).digest('hex');
 export const hitenDigest=p=>hash(Buffer.concat(p.meshes.flatMap(m=>[Buffer.from(m.id),Buffer.from(m.vertices.buffer,m.vertices.byteOffset,m.vertices.byteLength)])));
 export async function checkHiten(G,atlas,characters,read){
+ const coverage=JSON.parse(read('tools/current-coverage.json'));
  const f=JSON.parse(read('tools/hiten-baseline.json')),t=new G.Terrain(atlas),raw=gunzipSync(read('assets/packs/overview.pack.gz')),pack=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength));G.LANDSCAPE.apply(pack,t);G.applyHighlandGround(pack,t);
  const terrainHash=()=>hash(Buffer.concat(pack.meshes.filter(m=>m.component==='island-terrain').map(m=>Buffer.from(m.vertices.buffer,m.vertices.byteOffset,m.vertices.byteLength))));const before=terrainHash();
  const contact=G.SurfaceContact.prepare(atlas,pack,'hiten',[-1580,-1720,-1240,-1355]);assert.equal(terrainHash(),before,'Contact extraction changed the continuous terrain');assert(contact.near.byteLength+contact.far.byteLength<200000,'Contact clone budget');
@@ -17,7 +18,7 @@ export async function checkHiten(G,atlas,characters,read){
  assert.equal(hitenDigest(await G.buildRegion(atlas,'hiten','')),hitenDigest(near),'Native worker entry mismatch');
  for(const[id,v]of Object.entries(G.HITEN.views)){assert.equal(G.DIORAMA.regionOf(id),'hiten');assert(v.eye[1]>t.height(v.eye[0],v.eye[2])+1,id+' camera below ground');}
  assert.equal(G.resolveLocation('hiten').view,'hitenOverview');assert.equal(G.resolveLocation('hiten').status,'selection');assert.equal(characters.characters.length,85);
- const a=G.auditLandmarks(atlas);assert.equal(a.total,179);assert.equal(a.navigable,107);assert.equal(a.pending,72);for(const id of ['tengu','geyser_mountain','geyser_center'])assert.equal(G.resolveLocation(id).view,null);
+ const a=G.auditLandmarks(atlas);assert.equal(a.total,179);assert.equal(a.navigable,coverage.navigable);assert.equal(a.pending,coverage.pending);for(const id of ['tengu','geyser_center'])assert.equal(G.resolveLocation(id).view,null);
  assert(atlas.locations.find(l=>l.id==='hiten').source_ids.includes('HT-TH18-T'));
- return{...stats,contactBytes:contact.near.byteLength+contact.far.byteLength,views:8,navigable:107,pending:72,characters:85};
+ return{...stats,contactBytes:contact.near.byteLength+contact.far.byteLength,views:8,navigable:coverage.navigable,pending:coverage.pending,characters:85};
 }

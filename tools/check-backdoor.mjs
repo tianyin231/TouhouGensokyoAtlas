@@ -12,7 +12,7 @@ export async function checkBackdoor(G,atlas,characters,read){
  assert(characters.characters.length>=78);assert.equal(new Set(characters.characters.map(c=>c.id)).size,characters.characters.length);
  for(const [id,view]of Object.entries(fixed.previousMappings))assert.equal(G.resolveLocation(id).view,view);
  const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert(audit.navigable>=87&&audit.pending<=92);
- for(const id of ['geyser_mountain','animal_hq'])assert.equal(G.resolveLocation(id).view,null);
+ for(const id of ['animal_hq'])assert.equal(G.resolveLocation(id).view,null);
  assert.equal(G.resolveLocation('backdoor').view,'backdoorOverview');assert.equal(G.resolveLocation('backdoor').status,'selection');
  assert(!atlas.placements.some(p=>p.id==='backdoor'));const b=G.DIORAMA.map.get('backdoor');assert(b.independent&&b.poly.length===0&&b.space==='backdoor');
  same(G.DIORAMA.transform('backdoor','atlas'),{scale:1,offset:[0,0,0]});for(const f of ['point','inverse'])same(G.DIORAMA[f]([45,7,-32],'backdoor','atlas'),[45,7,-32]);

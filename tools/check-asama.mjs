@@ -9,9 +9,10 @@ function blocked(G,meshes,a,b){const d=G.sub(b,a);for(const m of meshes){const v
  const s=G.sub(a,A),u=G.dot(s,h)/det;if(u<0||u>1)continue;const q=G.cross(s,E),w=G.dot(d,q)/det;if(w<0||u+w>1)continue;const t=G.dot(F,q)/det;if(t>1e-4&&t<.9999)return m.id;
  }}return null;}
 export async function checkAsama(G,atlas,characters,read){
+ const coverage=JSON.parse(read('tools/current-coverage.json'));
  const A=G.ASAMA,t=new G.Terrain(atlas),f=JSON.parse(read('tools/asama-baseline.json')),out={};
  for(const id of A.locations){const r=G.resolveLocation(id);assert(r.view&&A.views[r.view]);assert(atlas.locations.find(l=>l.id===id).source_ids.includes('ASAMA-SCENE'));}
- const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,107);assert.equal(audit.pending,72);assert.equal(characters.characters.length,85);
+ const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,coverage.navigable);assert.equal(audit.pending,coverage.pending);assert.equal(characters.characters.length,85);
  for(const id of ['tengu','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Next area must not be falsely bound');
  const packs={seikiNear:A.buildSurface(t,false),seikiFar:A.buildSurface(t,true),asamaNear:A.buildUnderground(false),asamaFar:A.buildUnderground(true)};
  for(const [id,p]of Object.entries(packs)){
@@ -52,6 +53,6 @@ export async function checkAsama(G,atlas,characters,read){
  }
  out.publicRoad={meshes:roads.length,bytes:roads.reduce((s,m)=>s+m.vertices.byteLength,0),triangles:roadVertices/3,clearance};
  for(const id of ['seiki','asama'])assert.equal(digest(await G.buildRegion(atlas,id)),digest(packs[id+'Near']),'Worker entry dispatch differs');
- return {...out,views:Object.keys(A.views).length,trees:115,clearGeometrySegments:clearSegments,navigable:107,pending:72,characters:85};
+ return {...out,views:Object.keys(A.views).length,trees:115,clearGeometrySegments:clearSegments,navigable:coverage.navigable,pending:coverage.pending,characters:85};
 }
 export {digest as asamaDigest};

@@ -1,3 +1,4 @@
+import {checkGeyser} from './check-geyser.mjs';
 import {checkWindCave} from './check-wind-cave.mjs';
 import {checkCucumberFarm} from './check-cucumber-farm.mjs';
 import {checkWaterfallCave} from './check-waterfall-cave.mjs';
@@ -137,3 +138,5 @@ console.log('瀑后洞穴检查通过：'+JSON.stringify(await checkWaterfallCav
 console.log('黄瓜田检查通过：'+JSON.stringify(await checkCucumberFarm(context.GA,atlas,JSON.parse(script('character-data')),read)));
 
 console.log('幻想风穴检查通过：'+JSON.stringify(await checkWindCave(context.GA,atlas,JSON.parse(script('character-data')),read)));
+
+console.log('山麓间歇泉检查通过：'+JSON.stringify(await checkGeyser(context.GA,atlas,JSON.parse(script('character-data')),read)));

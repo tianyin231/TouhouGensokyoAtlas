@@ -1,0 +1,65 @@
+{
+  "version": "0.29.0",
+  "locationUpdates": [
+    {
+      "id": "geyser_mountain",
+      "aliases": [
+        "地狱谷",
+        "地獄谷",
+        "山麓温泉地带",
+        "Mountain Geyser"
+      ],
+      "status": "已接入地表泉群局部选景；地下中心另列未建",
+      "coordinate_status": "P：沿原研究锚点的工程选景，尺寸、矿物形态和通路不是官方测绘",
+      "project_treatment": "P补完：山麓主泉、分层浅池、喷汽口、矿物沉积岸和外围检视支路；喷汽为可暂停的程序视觉效果，红光事件单列。与博丽神社附近泉眼分开；未建地下中心、电梯或核聚变炉副本。",
+      "source_ids": [
+        "GM-KANAKO-T",
+        "GM-NEWS-T",
+        "GM-SCENE-C"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "GM-KANAKO-T",
+      "title": "T：求闻口授·八坂神奈子，间歇泉中心之谜",
+      "url": "https://thbwiki.cc/东方求闻口授/八坂神奈子",
+      "source_type": "T",
+      "note": "原作中文转录明确山麓温泉地带、管理者与怨灵危险；不提供精确工程坐标。"
+    },
+    {
+      "id": "GM-NEWS-T",
+      "title": "T：求闻口授P173，洩矢诹访子·文文新闻",
+      "url": "https://thbwiki.cc/东方求闻口授/洩矢诹访子（文文新闻）",
+      "source_type": "T",
+      "note": "红雾、蒸气和炉光事件；红色不是熔岩，不把事件作永久地貌。未取得原始插图测绘。"
+    },
+    {
+      "id": "GM-SCENE-C",
+      "title": "C：间歇泉场景索引",
+      "url": "https://thbwiki.cc/间歇泉",
+      "source_type": "C",
+      "note": "神社旁泉眼与山麓地狱谷的区分。矿物类型、三池布局、护栏和小路均为P。"
+    }
+  ],
+  "characters": [],
+  "verifiedLocationCorrections": [
+    {
+      "id": "geyser_mountain",
+      "expected": {
+        "existence_evidence": "C",
+        "verified_fact": "山麓地热区域",
+        "source_locator": "相关设定／结构与造型"
+      },
+      "replace": {
+        "existence_evidence": "T",
+        "verified_fact": "《求闻口授》记妖怪之山山麓有通称地狱谷间歇泉中心的温泉地带；P173报道从泉中涌出的蒸气与炉光，明确红光不是熔岩。",
+        "source_locator": "求闻口授·八坂神奈子；P173洩矢诹访子文文新闻（社区原作文字转录）"
+      },
+      "source_ids": [
+        "GM-KANAKO-T",
+        "GM-NEWS-T"
+      ]
+    }
+  ]
+}

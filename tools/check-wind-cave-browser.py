@@ -9,6 +9,7 @@ from functools import partial
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
+COVERAGE=json.loads((ROOT/'tools/current-coverage.json').read_text())
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--content',action='store_true');p.add_argument('--headed',action='store_true');p.add_argument('--chromium')
 p.add_argument('--output',type=Path,default=ROOT/'dist/wind-cave-browser-check')
@@ -96,7 +97,7 @@ try:
   assert page.evaluate('ATLAS.renderer.info().stats.triangles')>0;assert not page.evaluate('ATLAS.renderer.info().stats.contactOcclusion');assert not page.evaluate("ATLAS.renderer.records.some(r=>r.wanted&&r.data.windPart==='dust')")
   page.locator('#scene').screenshot(path=str(a.output/'wind-low-no-post.png'));passed('Normal low-quality/no-post controls retain cave geometry and hide motes')
   page.set_viewport_size({'width':390,'height':844});page.wait_for_timeout(700);assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+2');page.screenshot(path=str(a.output/'wind-mobile.png'));passed('390px live layout')
-  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==107 and e['landmarks']['pending']==72;assert page.evaluate('JSON.parse(document.querySelector("#character-data").textContent).characters.length')==85;passed('107 navigable / 72 pending; all 85 character records retained')
+  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==COVERAGE['navigable'] and e['landmarks']['pending']==COVERAGE['pending'];assert page.evaluate('JSON.parse(document.querySelector("#character-data").textContent).characters.length')==85;passed(f'{COVERAGE["navigable"]} navigable / {COVERAGE["pending"]} pending; all 85 character records retained')
   r['contextEvents']=page.evaluate('windEvents');r['contextLost']=page.evaluate('ATLAS.renderer.engine.getContext().isContextLost()');r['recovery']=page.evaluate('ATLAS.renderer.info().contextRecovery')
   assert not r['contextEvents'],r['contextEvents'];assert not r['errors'],r['errors'];assert not r['contextLost'];assert r['recovery']['lost']==0
   passed('No observed JS/shader errors or context loss/restoration in this session');r['passed']=True;browser.close()

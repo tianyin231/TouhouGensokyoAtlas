@@ -7,6 +7,7 @@ from functools import partial
 from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
+COVERAGE=json.loads((ROOT/'tools/current-coverage.json').read_text())
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--content',action='store_true');p.add_argument('--headed',action='store_true');p.add_argument('--chromium');p.add_argument('--output',type=Path,default=ROOT/'dist/hiten-browser-check')
 a=p.parse_args();a.output.mkdir(parents=True,exist_ok=True)
@@ -79,8 +80,8 @@ try:
   visit('hitenFront','hiten');page.evaluate("Object.assign(ATLAS.state,{quality:'low',ao:false,bloom:false});ATLAS.renderer.setQuality('low');ATLAS.renderOnce()")
   page.locator('#scene').screenshot(path=str(a.output/'hiten-low-no-post.png'));assert not page.evaluate('ATLAS.renderer.info().stats.contactOcclusion');passed('Low quality without AO/Bloom')
   page.set_viewport_size({'width':390,'height':844});draw();page.screenshot(path=str(a.output/'hiten-mobile.png'));assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+2');passed('390px responsive controls')
-  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==107 and e['landmarks']['pending']==72;assert page.evaluate("JSON.parse(document.querySelector('#character-data').textContent).characters.length")==85
-  passed('Catalog 107/72 and original 85 character records')
+  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==COVERAGE['navigable'] and e['landmarks']['pending']==COVERAGE['pending'];assert page.evaluate("JSON.parse(document.querySelector('#character-data').textContent).characters.length")==85
+  passed(f'Catalog {COVERAGE["navigable"]}/{COVERAGE["pending"]} and original 85 character records')
   r['contextEvents']=page.evaluate('hitenContextEvents');assert not r['contextEvents'];r['contextLost']=page.evaluate('ATLAS.renderer.engine.getContext().isContextLost()');assert not r['contextLost'];assert not r['errors'],r['errors'];r['complete']=True;passed('No observed JS/shader errors or WebGL context loss');browser.close()
 except Exception as e:r['complete']=False;r['failure']=repr(e);traceback.print_exc()
 finally:

@@ -7,6 +7,7 @@ from functools import partial
 from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
+COVERAGE=json.loads((ROOT/'tools/current-coverage.json').read_text())
 p=argparse.ArgumentParser(description=__doc__);p.add_argument('--content',action='store_true');p.add_argument('--headed',action='store_true');p.add_argument('--chromium');p.add_argument('--output',type=Path,default=ROOT/'dist/highland-browser-check');a=p.parse_args();a.output.mkdir(parents=True,exist_ok=True)
 info=json.loads((ROOT/'dist/release.json').read_text());html=(ROOT/'dist'/info['artifact']).read_bytes();assert hashlib.sha256(html).hexdigest()==info['sha256']
 report={'artifact':info['artifact'],'sha256':info['sha256'],'loadMode':'about:blank content / native Blob Worker' if a.content else 'local HTTP','checks':[],'errors':[],'externalResourceErrors':[],'hardwarePerformanceMeasured':False,'viewport':[1280,900],'dpr':1};server=None
@@ -82,7 +83,7 @@ try:
    x=page.evaluate("()=>({cache:ATLAS.stream.cache.size,detail:ATLAS.renderer.records.filter(r=>r.data.owner==='highland'&&!r.data.overview).length,public:ATLAS.world.meshes.filter(m=>m.highlandPublic).length,...ATLAS.renderer.engine.info.memory})");assert x['cache']==0 and x['detail']==0 and x['public']>0;cycles.append(x)
   assert max(x['textures'] for x in cycles)-min(x['textures'] for x in cycles)<=2;passed('Three rebuild/eviction cycles keep public ground and bounded texture counts',cycles)
   visit('denFront','highland');page.locator('#btn-settings').click();page.locator('#quality').select_option('low');page.locator('#opt-ao').uncheck();page.locator('#opt-bloom').uncheck();page.locator('#close-settings').click();draw();page.set_viewport_size({'width':390,'height':844});draw();assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1');page.screenshot(path=str(a.output/'narrow-highland.png'));passed('390px controls and low quality without AO/bloom')
-  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==107 and e['landmarks']['pending']==72;assert page.evaluate("GA.resolveLocation('hiten').view==='hitenOverview'");passed('Directory export is 107/72, not a full-world completion claim')
+  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==COVERAGE['navigable'] and e['landmarks']['pending']==COVERAGE['pending'];assert page.evaluate("GA.resolveLocation('hiten').view==='hitenOverview'");passed(f'Directory export is {COVERAGE["navigable"]}/{COVERAGE["pending"]}, not a full-world completion claim')
   assert not report['errors'],'\n'.join(report['errors'])[:4000];report['passed']=True;browser.close()
 except Exception as e:
  report['passed']=False;report['failure']=str(e);raise

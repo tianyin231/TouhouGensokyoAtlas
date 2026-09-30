@@ -29,7 +29,8 @@
     "src/peony.js",
     "src/waterfall-cave.js",
     "src/cucumber-farm.js",
-    "src/wind-cave.js"
+    "src/wind-cave.js",
+    "src/geyser.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",
@@ -39,6 +40,7 @@
     "src/waterfall-cave-renderer.js",
     "src/cucumber-farm-renderer.js",
     "src/wind-cave-renderer.js",
+    "src/geyser-renderer.js",
     "src/render-recovery.js"
   ],
   "extensionData": [
@@ -48,6 +50,7 @@
     "data/peony.json",
     "data/waterfall-cave.json",
     "data/cucumber-farm.json",
-    "data/wind-cave.json"
+    "data/wind-cave.json",
+    "data/geyser.json"
   ]
 }

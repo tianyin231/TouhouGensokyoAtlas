@@ -7,13 +7,14 @@ const hash=b=>createHash('sha256').update(b).digest('hex');
 export function fallsDigest(p){const h=createHash('sha256');for(const m of p.meshes){h.update(JSON.stringify([m.id,m.material,m.fallsPart,m.space,m.overview,m.globalSurface]));h.update(Buffer.from(m.vertices.buffer,m.vertices.byteOffset,m.vertices.byteLength));}return h.digest('hex');}
 export function fallsBlocked(G,meshes,A,B){const d=G.sub(B,A),lo=A.map((v,i)=>Math.min(v,B[i])),hi=A.map((v,i)=>Math.max(v,B[i]));for(const m of meshes){if(m.instances)continue;const v=m.vertices;for(let i=0;i<v.length;i+=27){if([0,1,2].some(k=>Math.max(v[i+k],v[i+9+k],v[i+18+k])<lo[k]-1e-6||Math.min(v[i+k],v[i+9+k],v[i+18+k])>hi[k]+1e-6))continue;const a=[v[i],v[i+1],v[i+2]],e=[v[i+9]-a[0],v[i+10]-a[1],v[i+11]-a[2]],f=[v[i+18]-a[0],v[i+19]-a[1],v[i+20]-a[2]],p=G.cross(d,f),det=G.dot(e,p);if(Math.abs(det)<1e-8)continue;const s=G.sub(A,a),u=G.dot(s,p)/det;if(u<0||u>1)continue;const q=G.cross(s,e),w=G.dot(d,q)/det,t=G.dot(f,q)/det;if(w>=0&&u+w<=1&&t>1e-4&&t<.9999)return m.id;}}return null;}
 export async function checkWaterfallCave(G,atlas,characters,read){
+ const coverage=JSON.parse(read('tools/current-coverage.json'));
  const f=JSON.parse(read('tools/waterfall-cave-baseline.json')),W=G.FALLS_CAVE;
  for(const[file,sha]of Object.entries(f.protectedFiles))assert.equal(hash(read(file)),sha,'Inherited source changed: '+file);
  for(const[id,view]of Object.entries(f.navigation))assert.equal(G.resolveLocation(id).view,view,'Inherited navigation changed: '+id);
  assert.equal(hash(JSON.stringify(characters)),f.characters);assert.equal(characters.characters.length,85);
- const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,107);assert.equal(audit.pending,72);
+ const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,coverage.navigable);assert.equal(audit.pending,coverage.pending);
  assert.equal(G.resolveLocation('waterfall').view,'mountainFalls');assert.equal(G.resolveLocation('waterfall_cave').view,'fallsThreshold');
- for(const id of ['tengu','geyser_mountain','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Do not substitute this tunnel for an unbuilt neighbour');
+ for(const id of ['tengu','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Do not substitute this tunnel for an unbuilt neighbour');
  const loc=atlas.locations.find(l=>l.id===W.id);assert(loc.source_ids.includes('WF-FS28-T'));assert(loc.coordinate_status.startsWith('P'));assert(atlas.sources.find(s=>s.id==='WF-FS28-T').source_type==='T');
  const raw=gunzipSync(read('assets/packs/overview.pack.gz')),pack=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength)),terrain=new G.Terrain(atlas);G.LANDSCAPE.apply(pack,terrain);G.applyHighlandGround(pack,terrain);
  const original=()=>hash(Buffer.concat(pack.meshes.flatMap(m=>['vertices','farVertices','instances','index'].filter(k=>m[k]).map(k=>Buffer.from(m[k].buffer,m[k].byteOffset,m[k].byteLength)))));const before=original();W.prepare(atlas,pack);
@@ -44,5 +45,5 @@ export async function checkWaterfallCave(G,atlas,characters,read){
  for(const m of near.meshes.filter(m=>m.fallsScene==='surface'&&m.fallsPart==='portal')){assert(m.center[0]>-517,'Portal still intersects old tree cluster');}
  assert.equal(original(),before,'Original terrain mutated');const contact=atlas.surfaceContacts[W.id],contactBytes=contact.near.byteLength+contact.far.byteLength;assert(contactBytes<200000);
  assert.equal(Object.keys(W.views).length,12);for(const[id,p]of Object.entries(W.views)){assert.equal(G.DIORAMA.regionOf(id),W.id);assert(p.eye.every(Number.isFinite)&&p.target.every(Number.isFinite));if(p.space==='surface')assert(p.requiredRegions.includes('mountain'),'Original waterfall detail missing');}
- return {...stats,passages,views:12,contactBytes,navigable:107,pending:72,characters:85,protectedFiles:Object.keys(f.protectedFiles).length};
+ return {...stats,passages,views:12,contactBytes,navigable:coverage.navigable,pending:coverage.pending,characters:85,protectedFiles:Object.keys(f.protectedFiles).length};
 }

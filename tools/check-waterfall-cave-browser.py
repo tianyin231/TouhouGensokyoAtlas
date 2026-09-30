@@ -9,6 +9,7 @@ from functools import partial
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
+COVERAGE=json.loads((ROOT/'tools/current-coverage.json').read_text())
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--content',action='store_true');p.add_argument('--headed',action='store_true');p.add_argument('--chromium')
 p.add_argument('--output',type=Path,default=ROOT/'dist/waterfall-cave-browser-check')
@@ -98,7 +99,7 @@ try:
   visit('fallsTrack');page.evaluate('globalThis.ATLAS_TEST_PAUSE=false;ATLAS.wake()');page.locator('#btn-settings').click();page.locator('#quality').select_option('low');page.locator('#opt-ao').uncheck();page.locator('#opt-bloom').uncheck();page.locator('#close-settings').click()
   page.wait_for_timeout(1000);assert page.evaluate('ATLAS.renderer.info().stats.triangles')>0;assert not page.evaluate('ATLAS.renderer.info().stats.contactOcclusion');page.locator('#scene').screenshot(path=str(a.output/'falls-low-no-post.png'));passed('Production low-quality switch without AO or bloom')
   page.set_viewport_size({'width':390,'height':844});page.wait_for_timeout(700);assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+2');page.screenshot(path=str(a.output/'falls-mobile.png'));passed('390px layout and live resize')
-  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==107 and e['landmarks']['pending']==72;assert page.evaluate('JSON.parse(document.querySelector("#character-data").textContent).characters.length')==85;passed('107 navigable / 72 pending; 85 characters preserved')
+  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==COVERAGE['navigable'] and e['landmarks']['pending']==COVERAGE['pending'];assert page.evaluate('JSON.parse(document.querySelector("#character-data").textContent).characters.length')==85;passed(f'{COVERAGE["navigable"]} navigable / {COVERAGE["pending"]} pending; 85 characters preserved')
   r['contextEvents']=page.evaluate('fallsEvents');r['contextLost']=page.evaluate('ATLAS.renderer.engine.getContext().isContextLost()');r['recovery']=page.evaluate('ATLAS.renderer.info().contextRecovery')
   assert not r['errors'],r['errors'];assert not r['contextEvents'],r['contextEvents'];assert not r['contextLost'];passed('No post-boot context loss/restoration or JS/shader errors')
   r['passed']=True;browser.close()

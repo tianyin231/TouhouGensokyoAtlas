@@ -4,13 +4,14 @@ import {createHash} from 'node:crypto';
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const geometry=p=>hash(Buffer.concat(p.meshes.map(m=>Buffer.from(m.vertices.buffer,m.vertices.byteOffset,m.vertices.byteLength))));
 export async function checkHighland(G,atlas,characters,read){
+ const coverage=JSON.parse(read('tools/current-coverage.json'));
  const f=JSON.parse(read('tools/highland-baseline.json')),H=G.HIGHLAND,t=new G.Terrain(atlas);
  for(const[file,sha]of Object.entries(f.protectedFiles))assert.equal(hash(read(file)),sha,`Inherited file changed: ${file}`);
  assert.equal(hash(JSON.stringify(characters.characters.slice(0,84))),f.characters);
  for(const k of ['placements','relationships'])assert.equal(hash(JSON.stringify(atlas[k])),f[k]);assert.equal(hash(JSON.stringify(characters.additionalVisits)),f.visits);
  for(const[id,view]of Object.entries(f.navigation))assert.equal(G.resolveLocation(id).view,view);
- assert.equal(G.auditLandmarks(atlas).navigable,107);assert.equal(G.auditLandmarks(atlas).pending,72);assert.equal(characters.characters.length,85);
- for(const id of ['geyser_mountain'])assert.equal(G.resolveLocation(id).view,null);
+ assert.equal(G.auditLandmarks(atlas).navigable,coverage.navigable);assert.equal(G.auditLandmarks(atlas).pending,coverage.pending);assert.equal(characters.characters.length,85);
+ for(const id of ['geyser_center'])assert.equal(G.resolveLocation(id).view,null);
  assert.equal(G.resolveLocation('false_ceiling').view,'shelfOverview');assert.equal(G.resolveLocation('casino').view,'denFront');
  assert(!atlas.placements.some(p=>['false_ceiling','casino'].includes(p.id)),'Original research placements must not be silently rewritten');
  const detail=G.buildHighland(t),far=G.buildHighland(t,true),raw=gunzipSync(read('assets/packs/overview.pack.gz')),original=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength)),copy={...original,meshes:original.meshes.slice()},terrain=G.applyHighlandGround(copy,t),publicMeshes=G.highlandGround(t,terrain);
@@ -32,5 +33,5 @@ export async function checkHighland(G,atlas,characters,read){
  assert.equal(Object.keys(H.views).length,13);assert.equal(G.DIORAMA.owner(H.CX,H.CZ),'highland');
  const c=characters.characters.find(c=>c.id==='sannyo');assert(c.highlandSession&&c.positionBasis.startsWith('P'));assert.equal(c.locationId,'casino');
  for(const id of ['false_ceiling','casino']){const l=atlas.locations.find(l=>l.id===id);assert(l.source_ids.includes('SHELF-LE29'));}
- return {detailMeshes:detail.meshes.length,detailBytes:detail.bytes,overviewBytes:far.bytes,publicBytes:publicMeshes.reduce((s,m)=>s+m.vertices.byteLength,0),views:13,navigable:107,pending:72,characters:85,protectedFiles:Object.keys(f.protectedFiles).length};
+ return {detailMeshes:detail.meshes.length,detailBytes:detail.bytes,overviewBytes:far.bytes,publicBytes:publicMeshes.reduce((s,m)=>s+m.vertices.byteLength,0),views:13,navigable:coverage.navigable,pending:coverage.pending,characters:85,protectedFiles:Object.keys(f.protectedFiles).length};
 }

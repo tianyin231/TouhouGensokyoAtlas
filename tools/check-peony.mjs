@@ -8,12 +8,13 @@ export function peonyDigest(p){const h=createHash('sha256');for(const m of p.mes
 const same=(a,b,msg)=>assert.equal(JSON.stringify(a),JSON.stringify(b),msg);
 function clearSegment(G,meshes,A,B){const d=G.sub(B,A);for(const m of meshes){if(m.instances)continue;const v=m.vertices;for(let i=0;i<v.length;i+=27){const a=[v[i],v[i+1],v[i+2]],e=[v[i+9]-a[0],v[i+10]-a[1],v[i+11]-a[2]],f=[v[i+18]-a[0],v[i+19]-a[1],v[i+20]-a[2]],p=G.cross(d,f),det=G.dot(e,p);if(Math.abs(det)<1e-8)continue;const s=G.sub(A,a),u=G.dot(s,p)/det;if(u<0||u>1)continue;const q=G.cross(s,e),w=G.dot(d,q)/det,t=G.dot(f,q)/det;if(w>=0&&u+w<=1&&t>1e-4&&t<.9999)return m.id;}}return null;}
 export async function checkPeony(G,atlas,characters,read){
+ const coverage=JSON.parse(read('tools/current-coverage.json'));
  const f=JSON.parse(read('tools/peony-baseline.json')),P=G.PEONY;
  for(const[file,digest]of Object.entries(f.protectedFiles))assert.equal(hash(read(file)),digest,'Inherited file modified: '+file);
  for(const[id,view]of Object.entries(f.navigation))assert.equal(G.resolveLocation(id).view,view,'Old navigation changed: '+id);
  assert.equal(hash(JSON.stringify(characters)),f.characters);assert.equal(characters.characters.length,85);
- const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,107);assert.equal(audit.pending,72);
- for(const id of['tengu','geyser_mountain','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour falsely bound');
+ const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,coverage.navigable);assert.equal(audit.pending,coverage.pending);
+ for(const id of['tengu','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour falsely bound');
  assert.equal(G.resolveLocation(P.id).view,'peonyOverview');assert.equal(G.resolveLocation(P.id).status,'selection');
  const loc=atlas.locations.find(l=>l.id===P.id),correction=JSON.parse(read('data/peony.json')).verifiedLocationCorrections[0];assert.equal(correction.id,P.id);
  for(const[k,v]of Object.entries(correction.replace))assert.equal(loc[k],v,'Evidence correction not applied: '+k);
@@ -62,5 +63,5 @@ export async function checkPeony(G,atlas,characters,read){
  for(const road of roads.meshes){const ground=road.globalFar?farGround:nearGround;for(let i=0;i<road.vertices.length;i+=9){const v=road.vertices,y=ground.height(v[i],v[i+2]),gap=v[i+1]-y;assert(gap>.085&&gap<.335,'Road contact gap outside budget');}}
  const rendered=G.ASAMA.sampleRenderedTerrain(pack);assert.equal(Object.keys(P.views).length,10);for(const[id,v]of Object.entries(P.views)){assert.equal(G.DIORAMA.regionOf(id),P.id);assert(v.eye[1]>rendered(v.eye[0],v.eye[2],'near').p[1]+.9,id+': below terrain');}
  assert.equal(unchanged(),before,'Original source geometry changed');const c=atlas.surfaceContacts[P.id],contactBytes=c.near.byteLength+c.far.byteLength;assert(contactBytes<190000,'Excessive terrain transfer');
- return{...stats,clumps:321,trees:8,beds:5,views:10,clearShelterSegments:passageChecks,contactBytes,navigable:107,pending:72,characters:85,protectedFiles:Object.keys(f.protectedFiles).length};
+ return{...stats,clumps:321,trees:8,beds:5,views:10,clearShelterSegments:passageChecks,contactBytes,navigable:coverage.navigable,pending:coverage.pending,characters:85,protectedFiles:Object.keys(f.protectedFiles).length};
 }
