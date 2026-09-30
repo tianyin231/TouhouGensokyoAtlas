@@ -17,7 +17,7 @@ export async function checkHiten(G,atlas,characters,read){
  assert.equal(hitenDigest(await G.buildRegion(atlas,'hiten','')),hitenDigest(near),'Native worker entry mismatch');
  for(const[id,v]of Object.entries(G.HITEN.views)){assert.equal(G.DIORAMA.regionOf(id),'hiten');assert(v.eye[1]>t.height(v.eye[0],v.eye[2])+1,id+' camera below ground');}
  assert.equal(G.resolveLocation('hiten').view,'hitenOverview');assert.equal(G.resolveLocation('hiten').status,'selection');assert.equal(characters.characters.length,85);
- const a=G.auditLandmarks(atlas);assert.equal(a.total,179);assert.equal(a.navigable,105);assert.equal(a.pending,74);for(const id of ['tengu','wind_cave','geyser_mountain','geyser_center'])assert.equal(G.resolveLocation(id).view,null);
+ const a=G.auditLandmarks(atlas);assert.equal(a.total,179);assert.equal(a.navigable,106);assert.equal(a.pending,73);for(const id of ['tengu','wind_cave','geyser_mountain','geyser_center'])assert.equal(G.resolveLocation(id).view,null);
  assert(atlas.locations.find(l=>l.id==='hiten').source_ids.includes('HT-TH18-T'));
- return{...stats,contactBytes:contact.near.byteLength+contact.far.byteLength,views:8,navigable:105,pending:74,characters:85};
+ return{...stats,contactBytes:contact.near.byteLength+contact.far.byteLength,views:8,navigable:106,pending:73,characters:85};
 }

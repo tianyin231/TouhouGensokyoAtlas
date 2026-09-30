@@ -1,3 +1,4 @@
+import {checkCucumberFarm} from './check-cucumber-farm.mjs';
 import {checkWaterfallCave} from './check-waterfall-cave.mjs';
 import {checkPeony} from './check-peony.mjs';
 import {checkMayohiga} from './check-mayohiga.mjs';
@@ -131,3 +132,5 @@ console.log('迷途之家检查通过：'+JSON.stringify(await checkMayohiga(con
 console.log('芍药田检查通过：'+JSON.stringify(await checkPeony(context.GA,atlas,JSON.parse(script('character-data')),read)));
 
 console.log('瀑后洞穴检查通过：'+JSON.stringify(await checkWaterfallCave(context.GA,atlas,JSON.parse(script('character-data')),read)));
+
+console.log('黄瓜田检查通过：'+JSON.stringify(await checkCucumberFarm(context.GA,atlas,JSON.parse(script('character-data')),read)));

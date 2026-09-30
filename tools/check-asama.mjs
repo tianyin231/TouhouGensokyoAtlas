@@ -11,7 +11,7 @@ function blocked(G,meshes,a,b){const d=G.sub(b,a);for(const m of meshes){const v
 export async function checkAsama(G,atlas,characters,read){
  const A=G.ASAMA,t=new G.Terrain(atlas),f=JSON.parse(read('tools/asama-baseline.json')),out={};
  for(const id of A.locations){const r=G.resolveLocation(id);assert(r.view&&A.views[r.view]);assert(atlas.locations.find(l=>l.id===id).source_ids.includes('ASAMA-SCENE'));}
- const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,105);assert.equal(audit.pending,74);assert.equal(characters.characters.length,85);
+ const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,106);assert.equal(audit.pending,73);assert.equal(characters.characters.length,85);
  for(const id of ['tengu','wind_cave','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Next area must not be falsely bound');
  const packs={seikiNear:A.buildSurface(t,false),seikiFar:A.buildSurface(t,true),asamaNear:A.buildUnderground(false),asamaFar:A.buildUnderground(true)};
  for(const [id,p]of Object.entries(packs)){
@@ -52,6 +52,6 @@ export async function checkAsama(G,atlas,characters,read){
  }
  out.publicRoad={meshes:roads.length,bytes:roads.reduce((s,m)=>s+m.vertices.byteLength,0),triangles:roadVertices/3,clearance};
  for(const id of ['seiki','asama'])assert.equal(digest(await G.buildRegion(atlas,id)),digest(packs[id+'Near']),'Worker entry dispatch differs');
- return {...out,views:Object.keys(A.views).length,trees:115,clearGeometrySegments:clearSegments,navigable:105,pending:74,characters:85};
+ return {...out,views:Object.keys(A.views).length,trees:115,clearGeometrySegments:clearSegments,navigable:106,pending:73,characters:85};
 }
 export {digest as asamaDigest};

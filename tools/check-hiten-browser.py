@@ -79,8 +79,8 @@ try:
   visit('hitenFront','hiten');page.evaluate("Object.assign(ATLAS.state,{quality:'low',ao:false,bloom:false});ATLAS.renderer.setQuality('low');ATLAS.renderOnce()")
   page.locator('#scene').screenshot(path=str(a.output/'hiten-low-no-post.png'));assert not page.evaluate('ATLAS.renderer.info().stats.contactOcclusion');passed('Low quality without AO/Bloom')
   page.set_viewport_size({'width':390,'height':844});draw();page.screenshot(path=str(a.output/'hiten-mobile.png'));assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+2');passed('390px responsive controls')
-  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==105 and e['landmarks']['pending']==74;assert page.evaluate("JSON.parse(document.querySelector('#character-data').textContent).characters.length")==85
-  passed('Catalog 105/74 and original 85 character records')
+  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==106 and e['landmarks']['pending']==73;assert page.evaluate("JSON.parse(document.querySelector('#character-data').textContent).characters.length")==85
+  passed('Catalog 106/73 and original 85 character records')
   r['contextEvents']=page.evaluate('hitenContextEvents');assert not r['contextEvents'];r['contextLost']=page.evaluate('ATLAS.renderer.engine.getContext().isContextLost()');assert not r['contextLost'];assert not r['errors'],r['errors'];r['complete']=True;passed('No observed JS/shader errors or WebGL context loss');browser.close()
 except Exception as e:r['complete']=False;r['failure']=repr(e);traceback.print_exc()
 finally:

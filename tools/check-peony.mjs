@@ -12,8 +12,8 @@ export async function checkPeony(G,atlas,characters,read){
  for(const[file,digest]of Object.entries(f.protectedFiles))assert.equal(hash(read(file)),digest,'Inherited file modified: '+file);
  for(const[id,view]of Object.entries(f.navigation))assert.equal(G.resolveLocation(id).view,view,'Old navigation changed: '+id);
  assert.equal(hash(JSON.stringify(characters)),f.characters);assert.equal(characters.characters.length,85);
- const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,105);assert.equal(audit.pending,74);
- for(const id of['tengu','cucumber_farm','wind_cave','geyser_mountain','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour falsely bound');
+ const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,106);assert.equal(audit.pending,73);
+ for(const id of['tengu','wind_cave','geyser_mountain','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour falsely bound');
  assert.equal(G.resolveLocation(P.id).view,'peonyOverview');assert.equal(G.resolveLocation(P.id).status,'selection');
  const loc=atlas.locations.find(l=>l.id===P.id),correction=JSON.parse(read('data/peony.json')).verifiedLocationCorrections[0];assert.equal(correction.id,P.id);
  for(const[k,v]of Object.entries(correction.replace))assert.equal(loc[k],v,'Evidence correction not applied: '+k);
@@ -62,5 +62,5 @@ export async function checkPeony(G,atlas,characters,read){
  for(const road of roads.meshes){const ground=road.globalFar?farGround:nearGround;for(let i=0;i<road.vertices.length;i+=9){const v=road.vertices,y=ground.height(v[i],v[i+2]),gap=v[i+1]-y;assert(gap>.085&&gap<.335,'Road contact gap outside budget');}}
  const rendered=G.ASAMA.sampleRenderedTerrain(pack);assert.equal(Object.keys(P.views).length,10);for(const[id,v]of Object.entries(P.views)){assert.equal(G.DIORAMA.regionOf(id),P.id);assert(v.eye[1]>rendered(v.eye[0],v.eye[2],'near').p[1]+.9,id+': below terrain');}
  assert.equal(unchanged(),before,'Original source geometry changed');const c=atlas.surfaceContacts[P.id],contactBytes=c.near.byteLength+c.far.byteLength;assert(contactBytes<190000,'Excessive terrain transfer');
- return{...stats,clumps:321,trees:8,beds:5,views:10,clearShelterSegments:passageChecks,contactBytes,navigable:105,pending:74,characters:85,protectedFiles:Object.keys(f.protectedFiles).length};
+ return{...stats,clumps:321,trees:8,beds:5,views:10,clearShelterSegments:passageChecks,contactBytes,navigable:106,pending:73,characters:85,protectedFiles:Object.keys(f.protectedFiles).length};
 }

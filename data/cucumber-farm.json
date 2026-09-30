@@ -1,0 +1,55 @@
+{
+  "version": "0.29.0",
+  "locationUpdates": [
+    {
+      "id": "cucumber_farm",
+      "aliases": [
+        "河童的黄瓜田",
+        "胡瓜畑",
+        "Cucumber Farm"
+      ],
+      "status": "已接入三维局部选景；完整运输连接未建",
+      "project_treatment": "偏远缓坡上的藤架田、灌排水沟、蓄水槽和收获分拣棚。具体坐标、种植形式、棚架、器具和通向旧山径的支路全部为P。瀑后轨道洞穴只建立导览关联，未开通完整物理运输线，不是河童工厂或永久住所。",
+      "coordinate_status": "P工程选址／尺寸；未取得官方坐标或全景测绘",
+      "source_ids": [
+        "CF-FS29-T",
+        "CF-FALLS-C"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "CF-FS29-T",
+      "title": "T：东方铃奈庵第29话P12—17（社区原作文字转录）",
+      "url": "https://thbwiki.cc/东方铃奈庵/第二十九话",
+      "source_type": "T",
+      "note": "核到偏远陆上黄瓜田、收获及栽培实验；未逐图审阅原书插图，不能据文字认定藤架、工厂和机械外形。"
+    },
+    {
+      "id": "CF-FALLS-C",
+      "title": "C：九天瀑布与黄瓜田连接索引",
+      "url": "https://thbwiki.cc/九天瀑布",
+      "source_type": "C",
+      "note": "瀑后轨道通向田地的关系索引；不证明本作三维场景已物理贯通。"
+    }
+  ],
+  "characters": [],
+  "verifiedLocationCorrections": [
+    {
+      "id": "cucumber_farm",
+      "expected": {
+        "existence_evidence": "C",
+        "verified_fact": "偏远种植与工厂环境",
+        "source_locator": "相关设定／结构与造型"
+      },
+      "replace": {
+        "existence_evidence": "T",
+        "verified_fact": "《铃奈庵》第29话描写河童在妖怪罕至的边远陆地开垦黄瓜田、收获并开展栽培实验；本轮未核到工厂建筑外形。",
+        "source_locator": "东方铃奈庵第29话P12—17社区文字转录"
+      },
+      "source_ids": [
+        "CF-FS29-T"
+      ]
+    }
+  ]
+}

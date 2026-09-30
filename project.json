@@ -27,7 +27,8 @@
     "src/hiten.js",
     "src/mayohiga.js",
     "src/peony.js",
-    "src/waterfall-cave.js"
+    "src/waterfall-cave.js",
+    "src/cucumber-farm.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",
@@ -35,6 +36,7 @@
     "src/mayohiga-renderer.js",
     "src/peony-renderer.js",
     "src/waterfall-cave-renderer.js",
+    "src/cucumber-farm-renderer.js",
     "src/render-recovery.js"
   ],
   "extensionData": [
@@ -42,6 +44,7 @@
     "data/hiten.json",
     "data/mayohiga.json",
     "data/peony.json",
-    "data/waterfall-cave.json"
+    "data/waterfall-cave.json",
+    "data/cucumber-farm.json"
   ]
 }
