@@ -1,0 +1,18 @@
+{
+  "note": "Explicit initial baseline, reviewed 2026-09-30. No inherited baseline changed. Tests never regenerate this file.",
+  "geometry": {
+    "seikiNear": "a6a04eeb9870ec57ae64afaa53d8fbedf8d51c24ac019c36dd43dce4b1054bbd",
+    "seikiFar": "901ff6cb1b36b60eb3f09fe41aefe65af7ee8610217c01c6c1444597830dd56a",
+    "asamaNear": "39640481c203e7d24aa2a8f4a6ec486d575f256ebc3100b0f49247997d4a4c23",
+    "asamaFar": "691c8f1e07ed402b578fe1ae04459942c505b0a629392f181210849a7b164bc4",
+    "seikiPublicRoad": "f310d7efe2d78dad17b3e993063e8fc40e26b292c98b63bf625bb50f835f7019"
+  },
+  "reviews": [
+    {
+      "date": "2026-09-30",
+      "reason": "Remove analytic single-overlay road; new permanent near/far road samples rendered triangles and matches highland junction. Near trees and underground geometry unchanged.",
+      "previousSeikiFar": "a78420ae3a7210c5396ec548e0bfcfc946c91e93c180cafb5b05911018c6b579",
+      "newSeikiFar": "901ff6cb1b36b60eb3f09fe41aefe65af7ee8610217c01c6c1444597830dd56a"
+    }
+  ]
+}

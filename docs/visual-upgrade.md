@@ -4,7 +4,13 @@
 
 浏览器 Chat 接手时，先读根目录 [AGENTS.md](../AGENTS.md)、本页和[当前状态](current-status.md)，再定位实际源码。不要仅凭旧对话或预览图判断当前实现。基础要求继续遵守[美术规范](art-and-modeling.md)、[工程约定](engineering.md)和[开发流程](development-workflow.md)。
 
-## 本次实际改变
+## 2026-09-30增量：圣域／浅间净秽山（待精修）
+
+新增8项局部选景与27机位，源码和来源见 [本轮说明](asama-handoff.md)，最新实测与失败记录见 [当前状态](current-status.md)。以下神社标准继续有效；不能因为目录已可导航就降低美术验收要求。
+
+本轮神社夜景固定PNG逐字节一致，日间最大通道差1/255；调用和三角形计数保持。圣域连接路的尖边／陡坡路肩、树冠和地下岩壁仍需精修；前一会话轻量档的着色器链接失败尚未定位，最终同源码串行50项通过不代表根因已修复。本分支不得标为全域美术验收通过。总览追加轻量构建，不改神社源包或复制神社整套材质植被数值。
+
+## 神社试点实际改变（2026-09-29记录）
 
 - **建筑与材料**：保留拜殿尺度、神社中轴与 140 级登山石阶；改善真实门窗开口、入口暗腔、缘侧木构、屋瓦轮廓、石材边缘及庭院。木、瓦、石、砂砾、苔地、纸、漆分材质处理，木纹顺着构件方向，细粒度随距离减弱。
 - **植被与地面**：核心树使用枝干与裁切叶簇，增加随坡贴地的树根、林下草灌和零散石块。叶片透光来自漫射受光，避免靠自发光把树林提亮。
@@ -70,8 +76,7 @@
 |---|---|
 | [world-builder.js](../src/world-builder.js) | 神社建筑、屋瓦、立面、庭院及材质分类 |
 | [hakurei-plants.js](../src/hakurei-plants.js)、[hakurei-transition.js](../src/hakurei-transition.js) | 核心植栽、近远原型与外围原位过渡 |
-| [hakurei-renderer.js](../src/hakurei-renderer.js) | 材质尺度、叶卡、阴影裁切与神社周边地面 |
-| [night-renderer.js](../src/night-renderer.js) | 地表夜空、月光、神社暖灯与退出恢复 |
+| [hakurei-renderer.js](../src/hakurei-renderer.js)、[night-renderer.js](../src/night-renderer.js) | 神社材质与地表日夜；本轮保持原文件 |
 | [renderer.js](../src/renderer.js)、[app.js](../src/app.js) | 公共渲染成本、光照状态和界面切换 |
 | [project.json](../project.json)、[index.html](../src/index.html)、[build.py](../tools/build.py) | 建模同源列表、渲染器加载顺序与构建内嵌 |
 | [check-hakurei.mjs](../tools/check-hakurei.mjs)、[hakurei-baseline.json](../tools/hakurei-baseline.json) | 13 个旧主区域几何保护、神社源预算及外围树矩阵检查 |

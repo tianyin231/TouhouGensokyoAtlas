@@ -12,7 +12,7 @@ export async function checkHeaven(G,atlas,characters,read){
  assert.equal(hash(JSON.stringify(atlas.placements)),fixed.placements);assert.equal(hash(JSON.stringify(atlas.relationships)),fixed.relationships);
  const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert(audit.navigable>=80);assert(audit.pending<=99);
  for(const[id,view]of Object.entries(fixed.previousMappings))assert.equal(G.resolveLocation(id).view,view,`Lost old navigation: ${id}`);
- for(const id of ['wind_cave','geyser_mountain','sanctuary'])assert.equal(G.resolveLocation(id).view,null);
+ for(const id of ['wind_cave','geyser_mountain'])assert.equal(G.resolveLocation(id).view,null);
  assert.equal(Object.keys(G.HEAVEN.views).length,14);assert.equal(Object.keys(G.HEAVEN.locations).length,3);assert.equal(G.HEAVEN.fullRealm,false);
  const sources=new Set(atlas.sources.map(s=>s.id));assert.equal(sources.size,atlas.sources.length);
  for(const[id,view]of Object.entries(G.HEAVEN.locations)){
