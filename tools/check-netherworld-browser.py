@@ -128,13 +128,13 @@ try:
             page.locator('#close-detail').click();page.locator('#close-drawer').click()
             passed('Existing landmark binding '+entry['id'],{'view':entry['view'],'region':entry['region']})
         visit('hakugyokuCourt','netherworld')
-        for id in ['wind_cave','geyser_mountain','sanctuary']:
+        for id in ['geyser_mountain']:
             before=page.evaluate('JSON.stringify({view:ATLAS.state.view,eye:ATLAS.rig.eye,space:ATLAS.state.space})')
             page.evaluate('id=>ATLAS.selectLocation(id)',id);render()
             assert page.evaluate('JSON.stringify({view:ATLAS.state.view,eye:ATLAS.rig.eye,space:ATLAS.state.space})')==before
             assert page.evaluate('id=>GA.resolveLocation(id).view',id) is None
             page.locator('#close-detail').click()
-        passed('Three unbuilt anchors no longer move the camera to unrelated regions')
+        passed('Remaining unbuilt geyser anchor does not move the camera to an unrelated region')
         for id,view in [('youmu','netherGate'),('yuyuko','hakugyokuHall')]:
             page.evaluate('id=>ATLAS.characters.select(id,false)',id);render(True)
             assert page.evaluate('ATLAS.state.view')==view
@@ -186,10 +186,10 @@ try:
         assert page.evaluate('ATLAS.renderer.quality')=='low';screenshot('nether-low-no-post')
         passed('Low quality without AO or bloom still renders actual architecture')
         audit=page.evaluate('ATLAS.exportState().landmarks')
-        assert audit['total']==179 and audit['navigable']==77 and audit['pending']==102
+        assert audit['total']==179 and audit['navigable']==107 and audit['pending']==72
         assert '导航覆盖' in audit['meaning']
         assert page.evaluate('ATLAS.exportState().displayTransforms.netherworld')=={'scale':1,'offset':[0,0,0]}
-        passed('Shared resolver/export: 77 navigable, 102 pending, not a completion rate')
+        passed('Shared resolver/export: 107 navigable, 72 pending, not a completion rate')
         page.set_viewport_size({'width':390,'height':844});render()
         assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
         page.locator('#btn-nether').click();render();assert page.evaluate('ATLAS.state.space')=='netherworld'

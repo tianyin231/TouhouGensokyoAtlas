@@ -1,0 +1,63 @@
+{
+  "version": "0.29.0",
+  "locationUpdates": [
+    {
+      "id": "wind_cave",
+      "aliases": [
+        "幻想風穴",
+        "Fantastic Blowhole"
+      ],
+      "status": "已接入自然洞窟局部选景；未挖通原地形",
+      "project_treatment": "山麓天然岩隙短凹廊与独立下降洞段，钟乳石、流石侧壁、碎石坡及湿润低岸；入口与洞内通过选景切换，旧地狱深道保持原模型和导航。坐标、岩性形制、洞段尺寸、自然步道和风尘均为P，不宣称完整物理贯通或玩家碰撞。",
+      "coordinate_status": "P：沿已有山麓研究锚点的局部工程布局，不是原作测绘",
+      "source_ids": [
+        "WC-TH11-T",
+        "WC-SOPM-T",
+        "WC-SCENE-C"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "WC-TH11-T",
+      "title": "T：地灵殿灵梦／紫支援第一、二面对话（社区原作文字转录）",
+      "url": "https://thbwiki.cc/游戏对话:东方地灵殿/博丽灵梦（八云紫支援）/中日对照",
+      "source_type": "T",
+      "note": "核对风穴、阴暗潮湿及下一面的地狱深道；未提取原始游戏背景。"
+    },
+    {
+      "id": "WC-SOPM-T",
+      "title": "T：求闻口授·黑谷山女（社区原作文字转录）",
+      "url": "https://thbwiki.cc/东方求闻口授/黑谷山女",
+      "source_type": "T",
+      "note": "核对妖怪之山山脚风穴的地点关系；不推出精确坐标或与地下中心相同入口。"
+    },
+    {
+      "id": "WC-SCENE-C",
+      "title": "C：幻想风穴场景索引",
+      "url": "https://thbwiki.cc/幻想风穴",
+      "source_type": "C",
+      "note": "钟乳石、大风、落石等视觉参考的社区整理；本轮没有取得原始游戏背景图作逐帧复刻。"
+    }
+  ],
+  "characters": [],
+  "verifiedLocationCorrections": [
+    {
+      "id": "wind_cave",
+      "expected": {
+        "existence_evidence": "C",
+        "verified_fact": "山麓通往地下",
+        "source_locator": "相关设定／结构与造型"
+      },
+      "replace": {
+        "existence_evidence": "T",
+        "verified_fact": "《求闻口授》山女条记其栖息于妖怪之山山脚风穴；《地灵殿》第一、二面分别为幻想风穴和地狱的深道，第一面对话描述阴暗潮湿。",
+        "source_locator": "求闻口授·黑谷山女；地灵殿灵梦／紫支援Stage1—2社区转录"
+      },
+      "source_ids": [
+        "WC-TH11-T",
+        "WC-SOPM-T"
+      ]
+    }
+  ]
+}

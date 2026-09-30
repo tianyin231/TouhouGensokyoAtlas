@@ -124,9 +124,9 @@ try:
         page.locator('#scene').screenshot(path=str(a.output/'cucumber-low-no-post.png')); passed('Production low-quality/no-post switch removes small workbench props')
         page.set_viewport_size({'width':390,'height':844}); page.wait_for_timeout(700)
         assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+2'); page.screenshot(path=str(a.output/'cucumber-mobile.png')); passed('390px controls and live resize')
-        e=page.evaluate('ATLAS.exportState()'); assert e['landmarks']['navigable']==106 and e['landmarks']['pending']==73
+        e=page.evaluate('ATLAS.exportState()'); assert e['landmarks']['navigable']==107 and e['landmarks']['pending']==72
         assert page.evaluate('JSON.parse(document.querySelector("#character-data").textContent).characters.length')==85
-        passed('106 navigable / 73 pending / original 85 characters')
+        passed('107 navigable / 72 pending / original 85 characters')
         r['contextEvents']=page.evaluate('cucumberEvents'); r['contextLost']=page.evaluate('ATLAS.renderer.engine.getContext().isContextLost()'); r['recovery']=page.evaluate('ATLAS.renderer.info().contextRecovery')
         assert not r['errors'], r['errors']; assert not r['contextEvents'], r['contextEvents']; assert not r['contextLost']
         passed('No post-boot context loss/restoration or JS/shader errors in this session')

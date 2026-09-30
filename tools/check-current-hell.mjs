@@ -11,7 +11,7 @@ export async function checkCurrentHell(G,atlas,characters,read){
  for(const [id,view]of Object.entries(f.previousMappings))assert.equal(G.resolveLocation(id).view,view,`Old navigation changed: ${id}`);
  const a=G.auditLandmarks(atlas);assert(/^0\.\d+\.\d+$/.test(a.version));assert.equal(a.total,179);assert(a.navigable>=90);assert(a.pending<=89);
  assert(characters.characters.length>=82);assert.equal(new Set(characters.characters.map(c=>c.id)).size,characters.characters.length);
- for(const id of ['wind_cave','geyser_mountain','animal_hq'])assert.equal(G.resolveLocation(id).view,null);
+ for(const id of ['geyser_mountain','animal_hq'])assert.equal(G.resolveLocation(id).view,null);
  assert.equal(G.resolveLocation('hell').view,'jigokuOverview');assert.equal(G.resolveLocation('hell').status,'selection');
  assert(!atlas.placements.some(p=>p.id==='hell'),'Do not invent a surface entrance');
  const l=atlas.locations.find(l=>l.id==='hell');assert(l.coordinate_status.includes('P'));assert(l.source_ids.includes('JIG-19'));

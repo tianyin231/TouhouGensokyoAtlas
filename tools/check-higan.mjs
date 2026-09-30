@@ -12,7 +12,7 @@ export async function checkHigan(G,atlas,characters,read){
  assert(characters.characters.length>=73);assert.equal(new Set(characters.characters.map(c=>c.id)).size,characters.characters.length);
  const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert(audit.navigable>=84);assert(audit.pending<=95);
  for(const [id,view]of Object.entries(fixed.previousMappings))assert.equal(G.resolveLocation(id).view,view);
- for(const id of ['wind_cave','geyser_mountain'])assert.equal(G.resolveLocation(id).view,null);
+ for(const id of ['geyser_mountain'])assert.equal(G.resolveLocation(id).view,null);
  assert.equal(Object.keys(G.HIGAN.views).length,16);assert.equal(Object.keys(G.HIGAN.locations).length,4);
  const ids=new Set(atlas.sources.map(s=>s.id));assert.equal(ids.size,atlas.sources.length);
  for(const [id,view]of Object.entries(G.HIGAN.locations)){

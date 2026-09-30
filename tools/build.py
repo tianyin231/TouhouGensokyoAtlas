@@ -186,6 +186,8 @@ def build(output_dir):
     read_bytes('tools/check-asama.mjs')
     read_bytes('tools/asama-baseline.json')
     read_bytes('tools/check-evidence-corrections.py')
+    read_bytes('tools/check-wind-cave.mjs')
+    read_bytes('tools/wind-cave-baseline.json')
     read_bytes('tools/check-cucumber-farm.mjs')
     read_bytes('tools/cucumber-farm-baseline.json')
     read_bytes('tools/check-waterfall-cave.mjs')

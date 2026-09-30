@@ -85,8 +85,8 @@ try:
   visit('mayoHouse','mayohiga');page.evaluate("Object.assign(ATLAS.state,{quality:'low',ao:false,bloom:false});ATLAS.renderer.setQuality('low');ATLAS.renderOnce()")
   page.locator('#scene').screenshot(path=str(a.output/'mayo-low-no-post.png'));assert not page.evaluate('ATLAS.renderer.info().stats.contactOcclusion');passed('Low quality without AO and bloom')
   page.set_viewport_size({'width':390,'height':844});draw();page.screenshot(path=str(a.output/'mayo-mobile.png'));assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+2');passed('390px layout')
-  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==106 and e['landmarks']['pending']==73;assert page.evaluate('JSON.parse(document.querySelector("#character-data").textContent).characters.length')==85
-  passed('106 navigable / 73 pending; 85 original characters unchanged')
+  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==107 and e['landmarks']['pending']==72;assert page.evaluate('JSON.parse(document.querySelector("#character-data").textContent).characters.length')==85
+  passed('107 navigable / 72 pending; 85 original characters unchanged')
   r['contextEvents']=page.evaluate('mayoContextEvents');r['recovery']=page.evaluate('ATLAS.renderer.info().contextRecovery');r['contextLost']=page.evaluate('ATLAS.renderer.engine.getContext().isContextLost()')
   assert not r['errors'],r['errors'];assert not r['contextEvents'],r['contextEvents'];assert not r['contextLost'];passed('No JS/shader errors or lost/restored context in this serial session')
   r['passed']=True;browser.close()

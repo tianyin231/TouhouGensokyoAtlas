@@ -10,9 +10,9 @@ export async function checkNetherworld(G,atlas,characters,read){
  assert.equal(hash(JSON.stringify(characters.characters.slice(0,65))),fixed.original65,'Existing residents must not be moved');
  assert.equal(hash(JSON.stringify(characters.additionalVisits)),fixed.originalVisits,'Old visits must be preserved');
  const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert(audit.navigable>=77);assert(audit.pending<=102);assert.equal(audit.navigable+audit.pending,179);
- assert.equal(Object.keys(G.LANDMARKS.repaired).length,8);assert.equal(Object.keys(G.LANDMARKS.pending).length,2);
+ assert.equal(Object.keys(G.LANDMARKS.repaired).length,8);assert.equal(Object.keys(G.LANDMARKS.pending).length,1);
  for(const[id,view]of Object.entries(fixed.repaired)){assert.equal(G.resolveLocation(id).view,view);assert.equal(G.resolveLocation(id).status,'component');}
- for(const id of ['wind_cave','geyser_mountain']){
+ for(const id of ['geyser_mountain']){
   assert(atlas.placements.some(p=>p.id===id),'Keep the research anchor');assert.equal(G.resolveLocation(id).view,null,'Do not fall back to an unrelated scene');
  }
  assert.equal(G.resolveLocation('this-location-is-unknown').view,null);
