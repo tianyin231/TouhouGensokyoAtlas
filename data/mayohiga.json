@@ -1,0 +1,39 @@
+{
+  "version": "0.29.0",
+  "baseline": "d1efe95f396a4ddc57f81305ea3f40226feda764",
+  "locationUpdates": [
+    {
+      "id": "mayohiga",
+      "aliases": [
+        "マヨヒガ",
+        "迷ひ家",
+        "Mayoiga",
+        "猫村"
+      ],
+      "status": "已接入山村局部三维选景；非全村竣工",
+      "coordinate_status": "P工程山址、尺度、房舍及道路；无官方测量坐标",
+      "project_treatment": "沿既有山坡补建旧屋、残损仓舍、荒田与褪色鸟居；猫为普通环境几何，不是新NPC或原作立绘。形制、背面、猫数与路线为P。保留橙的既有同人访客展示，不将八云蓝与紫迁入此地；不等同八云宅。",
+      "source_ids": [
+        "MY-BAIJR-T",
+        "MY-SCENE-C"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "MY-BAIJR-T",
+      "title": "T：《东方文花帖》橙条目之猫咪部落（原作文字的社区转录）",
+      "url": "https://thbwiki.cc/迷途之家#东方文花帖（书籍）",
+      "source_type": "T",
+      "note": "已阅读该页面转录的猫村报道；不是亲阅整本原书或完整原始插图。无房舍平面、尺度和工程坐标依据。"
+    },
+    {
+      "id": "MY-SCENE-C",
+      "title": "C：迷途之家场景索引／TH07第二面",
+      "url": "https://thbwiki.cc/迷途之家",
+      "source_type": "C",
+      "note": "核对山中废弃村落、瓦屋、农田及入口鸟居的场景整理；未取得原始背景贴图。具体造型全部P，不把民俗原典直接当作游戏场景。"
+    }
+  ],
+  "characters": []
+}

@@ -1,3 +1,4 @@
+import {checkMayohiga} from './check-mayohiga.mjs';
 import {checkHiten} from './check-hiten.mjs';
 import {checkAsama} from './check-asama.mjs';
 import {checkHighland} from './check-highland.mjs';
@@ -122,3 +123,5 @@ console.log('伪天棚检查通过：'+JSON.stringify(await checkHighland(contex
 console.log('圣域／浅间净秽山检查通过：'+JSON.stringify(await checkAsama(context.GA,atlas,JSON.parse(script('character-data')),read)));
 
 console.log('秘天崖检查通过：'+JSON.stringify(await checkHiten(context.GA,atlas,JSON.parse(script('character-data')),read)));
+
+console.log('迷途之家检查通过：'+JSON.stringify(await checkMayohiga(context.GA,atlas,JSON.parse(script('character-data')),read)));

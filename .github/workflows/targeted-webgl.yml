@@ -1,5 +1,7 @@
 name: Targeted scene and recovery checks
 on:
+  push:
+    branches: [main]
   pull_request:
 permissions:
   contents: read
@@ -25,6 +27,8 @@ jobs:
           if [ -f tools/check-hiten-browser.py ]; then
             python3 tools/check-hiten-browser.py
           fi
+      - name: Mayohiga HTTP regression
+        run: python3 tools/check-mayohiga-browser.py
       - name: Deliberate WebGL restoration and MSAA reallocation
         run: python3 tools/check-render-recovery-browser.py
       - uses: actions/upload-artifact@v4
@@ -35,5 +39,6 @@ jobs:
             dist/release.json
             dist/asama-browser-check/
             dist/hiten-browser-check/
+            dist/mayohiga-browser-check/
             dist/render-recovery-check/
           retention-days: 7

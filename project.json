@@ -24,15 +24,18 @@
     "src/asama.js",
     "src/asama-roads.js",
     "src/surface-contact.js",
-    "src/hiten.js"
+    "src/hiten.js",
+    "src/mayohiga.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",
     "src/hiten-renderer.js",
+    "src/mayohiga-renderer.js",
     "src/render-recovery.js"
   ],
   "extensionData": [
     "data/asama.json",
-    "data/hiten.json"
+    "data/hiten.json",
+    "data/mayohiga.json"
   ]
 }
