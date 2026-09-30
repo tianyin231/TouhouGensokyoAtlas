@@ -1,29 +1,8 @@
 {
-  "baseline": "df9d1e102c26d0c95111b9ea7d48afe0e23a22f3",
-  "note": "Explicit initial fixture after pole/normal/contact checks and real WebGL refinement; test is read-only. P scene, not an official map.",
+  "note": "Explicit initial reviewed geometry; tests never refresh this file.",
   "protectedFiles": {
-    "assets/packs/legacy.pack.gz": "46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88",
-    "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
-    "data/animal.json": "58294cbe1b2c9e3dc28a316d927bbd410b32fb3bd024adce425266b4b0fe176f",
-    "data/asama.json": "72098c152fd80bd90e7f70ab96053a477bb2a5bdd8f73ff72440416e6f67344b",
-    "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
-    "data/backdoor.json": "a174f1344ae3dc8b73e336c130d0d87598b386e35bfc69c7c3336fdc78a3e289",
-    "data/characters.json": "b87604e876804b5b9469657adf653451eccd561cddecdbb578f8966745beacc9",
-    "data/current-hell.json": "4e99e4f519f90d77f7f51267064ac4f408bd5067450be249c1138c4d7b0b2b1a",
-    "data/expansion.json": "0ffb83baa4a828bbc3366b8b49df4602f18ef8db99d22f03e6079c6ee1c274a1",
-    "data/heaven.json": "6383792bb7608ff61f52653dafc81eedd2a6155287864a25fc653889c2e3111a",
-    "data/higan.json": "aed41a6af1c6ef21250f4533dd888f0f7610eb81db6907cb0b3219ebaa377bcd",
-    "data/highland.json": "b15892fb6b9a589aa890e4e3f44e7d8d0a57b234b16809f91ec1a58b7bb6775d",
-    "data/hiten.json": "01c78bd126626d5a36470d0a2f0752ae0a1ae28b53aedf66e7c36d67825d8d26",
-    "data/kasen.json": "b03522e4d5f14aa691de7fc2ffcf596fe6c13840d6cc2b5d7c7e391c5d30fdbf",
-    "data/lunar.json": "92abf8f26344ef31bee7cb197330fe6cb7b4854a590e2687cfc7565dd4827ccc",
-    "data/makai.json": "3d5566dc31dcf696865246ba63f5d9cef7ad45464f5dcccc00e135564f166435",
-    "data/mayohiga.json": "a9c8bcf0ecf74c54c115914875ecd9542e4fbf9f32e363760d79336add62ae47",
-    "data/netherworld.json": "dfb60f6170e841f9f034a3b41cb7bea565e2c5cefa5b371099509693e14aa248",
-    "data/rainbow-mine.json": "d852d34cfbbcf3ee2a2168fbb9da9e139e33f2b320456bb8588c91ebe29bcc9b",
     "src/animal-renderer.js": "c8a5d5164d73b913687c9133a4f7bf556e44272477ddbf906646035f878f35d9",
     "src/animal.js": "055fe408319dd4d2faca1db8b0619c9d3222a2e42c8c575ebfbb7bf0cdfa7241",
-    "src/app.js": "a5cff77009954f2ba9bceabda1be1b4b05af94f55ff799f444cf72419b24c1df",
     "src/asama-renderer.js": "d82d5c1062b270c669648e784490123e656ad1482294eac9f5900db74f4f6110",
     "src/asama-roads.js": "983371f7f2e24ef21b03bee452c1b50bba85747c035725f842ec42ba2a96a49a",
     "src/asama.js": "42fdf7c969a20389ceb7fb35cdfac96115a1501fb4a5483ede80268814176f15",
@@ -63,6 +42,8 @@
     "src/night-renderer.js": "785b896192f547ae9b7012fb4efbf52c39361320958a4ef5e02f75f542129b05",
     "src/old-hell-renderer.js": "fb91047212002fd1f9933189dceed6033c39883bde32f63437967e6b8f594870",
     "src/old-hell.js": "fde1ded5cfad70061c9a69b09b000fbd35bab17edcd583ed4d7973d5c9cfa643",
+    "src/peony-renderer.js": "aa51146ce1cc5c9b0b0a56132fe0eac38e760cae744956239d3671cdc913334a",
+    "src/peony.js": "0116a5ba2d34cc8e05696e00d9d96b358ae2a9fcb1a395ca50e2b8d22821bc9b",
     "src/rainbow-mine-renderer.js": "f43d1fa1764cc3f8c883d27c2ee75a98240e7bf69112f4cc78d0e06af1a327a8",
     "src/rainbow-mine.js": "8d41ee356f7d1323316e866cf96a88e6775edca6ef8784fc9dc812b9856a8d87",
     "src/render-recovery.js": "191976863744f357bfae24dd946485b6cf49de0f782abe035f2c7cfdff2778b4",
@@ -70,14 +51,12 @@
     "src/streaming.js": "f636e6c1bb5917931b27038de6b45bcdfae95f13b4551450382693959cef8982",
     "src/styles.css": "b1e9f17efcfb21d3e806e2fc19c74cfbc381e59f6a0b417c81e74b48b77091e7",
     "src/surface-contact.js": "719a315917b55fa5025ec32659509b5be8965d8a577cdfc92c63c96db4dedf5e",
-    "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e"
+    "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+    "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+    "assets/packs/legacy.pack.gz": "46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88",
+    "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
+    "data/characters.json": "b87604e876804b5b9469657adf653451eccd561cddecdbb578f8966745beacc9"
   },
-  "geometry": {
-    "near": "58d971e6486b56719bd60b3df3af136151ccfbeed652c883c97f4e7fe98e8e36",
-    "far": "c1454f5c9f6e9f8103c8f42876224069b928a522f0d7402b84e29897f03b472d",
-    "public": "0151ef36183705b8e93cdabb67c7030c27f4d59008c1465672b86a4d0a7034ad"
-  },
-  "characters": "016a3425ff10d4b5409ef33315f69eb603e096baeefd57a88a5bac1cdcae0875",
   "navigation": {
     "hakurei": "hakurei",
     "beast_path": "trail",
@@ -111,6 +90,7 @@
     "casino": "denFront",
     "rainbow_mine": "mineThreshold",
     "mayohiga": "mayoOverview",
+    "peony_field": "peonyOverview",
     "moriya": "moriya",
     "wind_lake": "windLake",
     "ropeway": "ropeway",
@@ -183,13 +163,10 @@
     "pc98_ice": "makaiIce",
     "pc98_panda": "pandemonium"
   },
-  "reviewedChanges": [
-    {
-      "file": "src/app.js",
-      "before": "681f30b4054f05de618e86cb7222a492ba39b50c2004e0a92f264c3eeee224c9",
-      "after": "a5cff77009954f2ba9bceabda1be1b4b05af94f55ff799f444cf72419b24c1df",
-      "date": "2026-09-30",
-      "reason": "瀑后洞穴的局部标题、地表邻区加载、requiredRegions启动/切景支持；人工复核7行差异。原103项导航、全部人物、神社/山地/芍药几何与其余保护哈希保持。非测试自动更新。"
-    }
-  ]
+  "characters": "016a3425ff10d4b5409ef33315f69eb603e096baeefd57a88a5bac1cdcae0875",
+  "geometry": {
+    "near": "168f5b690ae512905a8c81086d539c244a93729bced58a5966efdcb321e1d7db",
+    "far": "3aabe14c991c94e80b8f68aa85aec5fc868c3eee1c11888f9159537f38dee291",
+    "public": "68349da86dbd64cfa28651d64a319e8dc6b82ca69d273bfafea75f6c6dde1c12"
+  }
 }

@@ -1,0 +1,45 @@
+{
+  "version": "0.29.0",
+  "note": "瀑后短廊与独立轨道洞穴选景；不改原瀑布，不把远处黄瓜田放在瀑布旁。",
+  "locationUpdates": [
+    {
+      "id": "waterfall_cave",
+      "aliases": [
+        "瀑后轨道洞穴",
+        "轨道洞穴"
+      ],
+      "status": "已接入入口和独立洞内选景；非完整农场通路",
+      "project_treatment": "保留九天瀑布，补水幕后有限入口、侧向踏步和独立洞内轨道选景；洞形、支护、灯位、台车和精确尺度均为P。表里切换是导览，不是原地形挖通。远处黄瓜田和完整运输线路尚未建成。",
+      "coordinate_status": "P选景坐标与背面；未取得原作测绘坐标",
+      "source_ids": [
+        "WF-FS28-T",
+        "WF-FS29-T",
+        "WF-INDEX-C"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "WF-FS28-T",
+      "title": "T：铃奈庵第28话P16–17（社区文字转录）",
+      "url": "https://thbwiki.cc/东方铃奈庵/第二十八话",
+      "source_type": "T",
+      "note": "P16转录明确瀑布后洞穴内铺设轨道，P17河童集合；未直接逐图核验原始漫画图像。"
+    },
+    {
+      "id": "WF-FS29-T",
+      "title": "T：铃奈庵第29话（偏远黄瓜种植地）",
+      "url": "https://thbwiki.cc/东方铃奈庵/第二十九话",
+      "source_type": "T",
+      "note": "P12–15遥远种植地与农场语境，不能推为瀑布旁；本轮不建农场。"
+    },
+    {
+      "id": "WF-INDEX-C",
+      "title": "C：九天瀑布场景索引",
+      "url": "https://thbwiki.cc/九天瀑布",
+      "source_type": "C",
+      "note": "作为场景关联索引；精确章节以第28话文字转录为准。"
+    }
+  ],
+  "characters": []
+}

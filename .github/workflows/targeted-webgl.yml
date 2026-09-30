@@ -47,3 +47,27 @@ jobs:
             dist/peony-browser-check/
             dist/render-recovery-check/
           retention-days: 7
+  waterfall-cave-webgl:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build current source
+        run: python3 tools/build.py
+      - name: Install optional browser test dependencies
+        run: |
+          python3 -m pip install playwright==1.57.0
+          python3 -m playwright install --with-deps chromium
+      - name: Waterfall cave HTTP and Worker regression
+        run: python3 tools/check-waterfall-cave-browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: waterfall-cave-webgl-evidence
+          path: |
+            dist/release.json
+            dist/waterfall-cave-browser-check/
+          retention-days: 7

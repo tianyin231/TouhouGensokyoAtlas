@@ -102,8 +102,8 @@ try:
   visit('peonyWork','peony_field');page.evaluate("Object.assign(ATLAS.state,{quality:'low',ao:false,bloom:false});ATLAS.renderer.setQuality('low');ATLAS.renderOnce()")
   page.locator('#scene').screenshot(path=str(a.output/'peony-low-no-post.png'));assert not page.evaluate('ATLAS.renderer.info().stats.contactOcclusion');passed('Low quality without AO and bloom')
   page.set_viewport_size({'width':390,'height':844});draw();page.screenshot(path=str(a.output/'peony-mobile.png'));assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+2');passed('390px layout')
-  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==104 and e['landmarks']['pending']==75;assert page.evaluate('JSON.parse(document.querySelector("#character-data").textContent).characters.length')==85
-  passed('104 navigable / 75 pending; 85 original characters unchanged')
+  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==105 and e['landmarks']['pending']==74;assert page.evaluate('JSON.parse(document.querySelector("#character-data").textContent).characters.length')==85
+  passed('105 navigable / 74 pending; 85 original characters unchanged')
   r['contextEvents']=page.evaluate('peonyContextEvents');r['recovery']=page.evaluate('ATLAS.renderer.info().contextRecovery');r['contextLost']=page.evaluate('ATLAS.renderer.engine.getContext().isContextLost()')
   assert not r['errors'],r['errors'];assert not r['contextEvents'],r['contextEvents'];assert not r['contextLost'];passed('No JS/shader errors or lost/restored context in this serial session')
   r['passed']=True;browser.close()
