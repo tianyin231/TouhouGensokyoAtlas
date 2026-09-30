@@ -1,0 +1,7 @@
+{
+  "note": "Explicitly reviewed 2026-09-30. Correct outward rock/canopy normals; near/far rendered-terrain contact. Tests never regenerate this file.",
+  "geometry": {
+    "near": "cde315e9ab3fe2206cd5042f9af87db4edcfc8bcc6eb457750bbadbaa1b076fd",
+    "far": "f145410cfdb7a39c576bbce7621e78f3cf62aa2e2f081bc092d26864008936d2"
+  }
+}

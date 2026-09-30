@@ -159,6 +159,8 @@ def build(output_dir):
     read_bytes('tools/highland-baseline.json')
     read_bytes('tools/check-asama.mjs')
     read_bytes('tools/asama-baseline.json')
+    read_bytes('tools/check-hiten.mjs')
+    read_bytes('tools/hiten-baseline.json')
     read_bytes('tools/check-hakurei.mjs')
     read_bytes('tools/hakurei-baseline.json')
     output_dir.mkdir(parents=True, exist_ok=True)

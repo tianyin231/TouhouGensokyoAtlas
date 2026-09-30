@@ -22,13 +22,17 @@
     "src/hakurei-plants.js",
     "src/hakurei-transition.js",
     "src/asama.js",
-    "src/asama-roads.js"
+    "src/asama-roads.js",
+    "src/surface-contact.js",
+    "src/hiten.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",
+    "src/hiten-renderer.js",
     "src/render-recovery.js"
   ],
   "extensionData": [
-    "data/asama.json"
+    "data/asama.json",
+    "data/hiten.json"
   ]
 }
