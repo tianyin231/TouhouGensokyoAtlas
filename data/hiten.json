@@ -1,0 +1,41 @@
+{
+  "version": "0.29.0",
+  "note": "秘天崖局部选景；非官方测绘，非山童总部建筑。",
+  "locationUpdates": [
+    {
+      "id": "hiten",
+      "status": "已接入局部崖林选景；细节仍可精修",
+      "coordinate_status": "P：本作西侧山腹布局，无官方测量坐标",
+      "project_treatment": "五组有实际厚度的岩体、崖肩与崖脚植被；使用既有高地山路。尺寸、方位、分层和背面均为P；不把山童活动地解释成已确认总部建筑。不新增瀑布，不等同伪天棚或虹龙洞。",
+      "source_ids": [
+        "HT-TH18-T",
+        "HT-TH185-T",
+        "HT-SCENE-C"
+      ]
+    }
+  ],
+  "characters": [],
+  "sources": [
+    {
+      "id": "HT-TH18-T",
+      "title": "T：虹龙洞灵梦路线第二面原作对白（社区转录）",
+      "url": "https://thbwiki.cc/游戏对话:东方虹龙洞/博丽灵梦",
+      "source_type": "T",
+      "note": "第二面秘天崖、山中森林与高岭的山童活动关联；不含本项目三维布局。"
+    },
+    {
+      "id": "HT-TH185-T",
+      "title": "T：弹幕狂们的黑市第一市场场景说明（社区转录）",
+      "url": "https://thbwiki.cc/弹幕狂们的黑市/场景说明",
+      "source_type": "T",
+      "note": "人迹罕至的险峻断崖；未据此虚构交易建筑。"
+    },
+    {
+      "id": "HT-SCENE-C",
+      "title": "C：秘天崖场景与作品版本索引",
+      "url": "https://thbwiki.cc/秘天崖",
+      "source_type": "C",
+      "note": "用于交叉核对山腹林崖和作品关系；本轮未逐帧核验原始背景图。"
+    }
+  ]
+}
