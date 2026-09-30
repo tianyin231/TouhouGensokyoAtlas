@@ -34,6 +34,7 @@ try:
   else:page.goto(f'http://127.0.0.1:{server.server_port}/{info["artifact"]}',wait_until='load')
   page.wait_for_function('globalThis.ATLAS||globalThis.ATLAS_BOOT_ERROR');assert page.evaluate('globalThis.ATLAS_BOOT_ERROR||null') is None
   page.evaluate("""()=>{globalThis.asamaShaderErrors=[];ATLAS.renderer.engine.debug.onShaderError=(gl,p,v,f)=>{asamaShaderErrors.push({view:ATLAS.state.view,quality:ATLAS.state.quality,lost:gl.isContextLost(),valid:gl.isProgram(p),linked:gl.getProgramParameter(p,gl.LINK_STATUS),programLog:gl.getProgramInfoLog(p),vertexLog:gl.getShaderInfoLog(v),fragmentLog:gl.getShaderInfoLog(f),vertexCompiled:gl.getShaderParameter(v,gl.COMPILE_STATUS),fragmentCompiled:gl.getShaderParameter(f,gl.COMPILE_STATUS),glError:gl.getError()});console.error('Asama shader failure '+JSON.stringify(asamaShaderErrors.at(-1)));};}""")
+  page.evaluate("()=>{globalThis.asamaContextEvents=[];for(const type of ['webglcontextlost','webglcontextrestored'])document.getElementById('scene').addEventListener(type,()=>asamaContextEvents.push({type,at:performance.now(),view:ATLAS.state.view,quality:ATLAS.state.quality}));}")
   report['browser']=browser.version
   report['webgl']=page.evaluate("()=>{const g=ATLAS.renderer.engine.getContext(),e=g.getExtension('WEBGL_debug_renderer_info');return {version:g.getParameter(g.VERSION),renderer:e?g.getParameter(e.UNMASKED_RENDERER_WEBGL):g.getParameter(g.RENDERER)}}")
   page.evaluate("Object.assign(ATLAS.state,{motion:false,clock:0,labels:false,characters:false,quality:'balanced',weather:'clear',lighting:'neutral'})")
@@ -122,7 +123,8 @@ try:
   assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+2')
   passed('Low quality without AO/Bloom and 390px layout')
   report['shaderDiagnostics']=page.evaluate('asamaShaderErrors');report['contextLost']=page.evaluate('ATLAS.renderer.engine.getContext().isContextLost()');report['programCount']=page.evaluate('ATLAS.renderer.engine.info.programs.length')
-  assert not report['errors'],report['errors'];assert not report['contextLost']
+  report['contextEvents']=page.evaluate('asamaContextEvents');report['recovery']=page.evaluate('ATLAS.renderer.info().contextRecovery')
+  assert not report['errors'],report['errors'];assert not report['contextLost'];assert not report['contextEvents'],'Unexpected context loss/restoration occurred during this session'
   passed('No JavaScript/shader errors or context loss in this serial session')
   report['complete']=True;browser.close()
 except Exception as e:

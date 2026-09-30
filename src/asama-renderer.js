@@ -46,6 +46,12 @@ class AsamaRenderer extends Base{
   }
   if(m.owner==='asama')return false;
   if(m.owner==='seiki'){
+   if(m.globalSurface){
+    if(opts.space!=='surface')return false;
+    const close=opts.displayMode!=='atlas'&&d<1550&&G.length(G.sub(rig.eye,m.center))-m.terrainLodRadius<700;
+    if(m.globalNear&&!close||m.globalFar&&close)return false;
+    r.distance=G.length(G.sub(rig.eye,m.center));r.displayCenter=m.center;r.xf={scale:1,offset:[0,0,0]};return G.visibleSphere(rig.planes,m.center,m.radius+6);
+   }
    if(opts.space!=='surface'||(m.asamaPart!=='road'&&m.overview===this.packs.has('seiki')))return false;
    if(m.asamaPart==='trees'&&!opts.vegetation)return false;
    r.distance=G.length(G.sub(rig.eye,m.center));r.displayCenter=m.center;r.xf={scale:1,offset:[0,0,0]};return G.visibleSphere(rig.planes,m.center,m.radius+3);

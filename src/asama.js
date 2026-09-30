@@ -56,7 +56,7 @@ function tree(B,scene,x,y,z,s,seed,far,terrain=null,leafMat='Leaf'){
 const path2=G.spline([[-1430,-884],[-1377,-941],[-1335,-981],[-1274,-1020],[-1320,-1060],[-1415,-1120],[-1460,-1180],[-1455,-1260],[-1410,-1370]],2);
 function surface(t,far){const B=bank('seiki',far),r=G.rng(200916),pts=path2.map(([x,z])=>[x,t.height(x,z)+.27,z]);
  // Roads belong to the permanent low-detail context, never to the evicted detail pack.
- if(far){const g=B.get('surface','Soil','road');for(let i=0;i<pts.length-1;i++){let a=pts[i],b=pts[i+1],d=G.norm([b[0]-a[0],0,b[2]-a[2]]),side=[-d[2]*2.4,0,d[0]*2.4],p=(q,k)=>{let x=q[0]+side[0]*k,z=q[2]+side[2]*k;return[x,t.height(x,z)+.24,z];};g.quad(p(a,1),p(b,1),p(b,-1),p(a,-1),C.soil);}}
+
  const treeSites=[];let count=0;for(let i=0;i<800&&count<115;i++){const a=r()*TAU,rad=Math.sqrt(r()),x=-1275+Math.cos(a)*rad*185,z=-1010+Math.sin(a)*rad*128,y=t.height(x,z);if(t.normal(x,z)[1]<.58||Math.min(...path2.map(p=>Math.hypot(p[0]-x,p[1]-z)))<8)continue;const size=8+r()*6;tree(B,'surface',x,y,z,size,i+1729,far,t);treeSites.push([x,y,z,size]);count++;}
  if(!far){const g=B.get('surface','Stone','roots');for(let i=0;i<40;i++){const p=pts[Math.floor(r()*pts.length)],x=p[0]+(r()>.5?1:-1)*(3+r()*3),z=p[2]+(r()-.5)*3;stone(g,x,t.height(x,z)-.3,z,.4+r(),.5+r()*.7,.6+r(),i);}}
  return B.finish({treeCount:count,treeSites,route:pts,terrainMutation:false,physicalPortal:false});

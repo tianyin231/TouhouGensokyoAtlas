@@ -1,0 +1,39 @@
+name: Targeted scene and recovery checks
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  targeted-webgl:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build current source
+        run: python3 tools/build.py
+      - name: Install optional browser test dependencies
+        run: |
+          python3 -m pip install playwright==1.57.0
+          python3 -m playwright install --with-deps chromium
+      - name: Seiki and Asama HTTP lifecycle regression
+        run: python3 tools/check-asama-browser.py
+      - name: Hiten HTTP regression when present
+        run: |
+          if [ -f tools/check-hiten-browser.py ]; then
+            python3 tools/check-hiten-browser.py
+          fi
+      - name: Deliberate WebGL restoration and MSAA reallocation
+        run: python3 tools/check-render-recovery-browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: targeted-webgl-evidence
+          path: |
+            dist/release.json
+            dist/asama-browser-check/
+            dist/hiten-browser-check/
+            dist/render-recovery-check/
+          retention-days: 7

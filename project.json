@@ -21,10 +21,12 @@
     "src/highland.js",
     "src/hakurei-plants.js",
     "src/hakurei-transition.js",
-    "src/asama.js"
+    "src/asama.js",
+    "src/asama-roads.js"
   ],
   "extensionRenderers": [
-    "src/asama-renderer.js"
+    "src/asama-renderer.js",
+    "src/render-recovery.js"
   ],
   "extensionData": [
     "data/asama.json"
