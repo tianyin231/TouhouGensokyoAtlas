@@ -1,3 +1,4 @@
+import {checkPeony} from './check-peony.mjs';
 import {checkMayohiga} from './check-mayohiga.mjs';
 import {checkHiten} from './check-hiten.mjs';
 import {checkAsama} from './check-asama.mjs';
@@ -125,3 +126,5 @@ console.log('圣域／浅间净秽山检查通过：'+JSON.stringify(await check
 console.log('秘天崖检查通过：'+JSON.stringify(await checkHiten(context.GA,atlas,JSON.parse(script('character-data')),read)));
 
 console.log('迷途之家检查通过：'+JSON.stringify(await checkMayohiga(context.GA,atlas,JSON.parse(script('character-data')),read)));
+
+console.log('芍药田检查通过：'+JSON.stringify(await checkPeony(context.GA,atlas,JSON.parse(script('character-data')),read)));

@@ -25,17 +25,20 @@
     "src/asama-roads.js",
     "src/surface-contact.js",
     "src/hiten.js",
-    "src/mayohiga.js"
+    "src/mayohiga.js",
+    "src/peony.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",
     "src/hiten-renderer.js",
     "src/mayohiga-renderer.js",
+    "src/peony-renderer.js",
     "src/render-recovery.js"
   ],
   "extensionData": [
     "data/asama.json",
     "data/hiten.json",
-    "data/mayohiga.json"
+    "data/mayohiga.json",
+    "data/peony.json"
   ]
 }

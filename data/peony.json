@@ -1,0 +1,60 @@
+{
+  "version": "0.29.0",
+  "baseline": "df9d1e102c26d0c95111b9ea7d48afe0e23a22f3",
+  "locationUpdates": [
+    {
+      "id": "peony_field",
+      "aliases": [
+        "芍药药圃",
+        "Peony field",
+        "Shakuyaku"
+      ],
+      "status": "已接入三维局部选景；非原作精确平面",
+      "coordinate_status": "P山麓选址、花色、种植布局与棚架；无官方测量坐标",
+      "project_treatment": "OSP第14话转录明确山中芍药田及永远亭管理告示。本作补分带花畦、入口、田间小径与开放式小作业棚；不画成断崖上的京丸牡丹，不迁移永远亭或三妖精住所。所有布局与几何为P。",
+      "source_ids": [
+        "PF-OSP14-T",
+        "PF-EIENTEI-C"
+      ]
+    }
+  ],
+  "verifiedLocationCorrections": [
+    {
+      "id": "peony_field",
+      "source_ids": [
+        "PF-OSP14-T"
+      ],
+      "expected": {
+        "kind": "候选地点",
+        "existence_evidence": "U",
+        "verified_fact": "此前目录提到，当前未完成原文核验",
+        "source_locator": "本作设计／待进一步核对",
+        "build_stage": "HOLD"
+      },
+      "replace": {
+        "kind": "农业设施",
+        "existence_evidence": "T",
+        "verified_fact": "《东方三月精 ～ Oriental Sacred Place.》第14话描写三妖精在妖怪之山发现芍药花田，告示写明由永远亭管理、未经许可禁止入内。",
+        "source_locator": "OSP第14话P8山地语境、P14—16花田与告示；社区转录，未取得原书插图测绘",
+        "build_stage": "M3"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "PF-OSP14-T",
+      "title": "T：三月精OSP第14话P8、P14—16（社区转录）",
+      "url": "https://thbwiki.cc/东方三月精_～_Oriental_Sacred_Place./第十四话",
+      "source_type": "T",
+      "note": "本轮核对山中花田、芍药与永远亭管理告示；没有直接取得原书插图。花色、地形、布置和棚架均为P。"
+    },
+    {
+      "id": "PF-EIENTEI-C",
+      "title": "C：永远亭场景索引",
+      "url": "https://thbwiki.cc/永远亭",
+      "source_type": "C",
+      "note": "辅助核对妖怪之山的管理关系，不将药圃当作永远亭宅邸或永久角色住所。"
+    }
+  ],
+  "characters": []
+}

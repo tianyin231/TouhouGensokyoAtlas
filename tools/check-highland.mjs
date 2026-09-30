@@ -9,7 +9,7 @@ export async function checkHighland(G,atlas,characters,read){
  assert.equal(hash(JSON.stringify(characters.characters.slice(0,84))),f.characters);
  for(const k of ['placements','relationships'])assert.equal(hash(JSON.stringify(atlas[k])),f[k]);assert.equal(hash(JSON.stringify(characters.additionalVisits)),f.visits);
  for(const[id,view]of Object.entries(f.navigation))assert.equal(G.resolveLocation(id).view,view);
- assert.equal(G.auditLandmarks(atlas).navigable,103);assert.equal(G.auditLandmarks(atlas).pending,76);assert.equal(characters.characters.length,85);
+ assert.equal(G.auditLandmarks(atlas).navigable,104);assert.equal(G.auditLandmarks(atlas).pending,75);assert.equal(characters.characters.length,85);
  for(const id of ['wind_cave','geyser_mountain'])assert.equal(G.resolveLocation(id).view,null);
  assert.equal(G.resolveLocation('false_ceiling').view,'shelfOverview');assert.equal(G.resolveLocation('casino').view,'denFront');
  assert(!atlas.placements.some(p=>['false_ceiling','casino'].includes(p.id)),'Original research placements must not be silently rewritten');
@@ -32,5 +32,5 @@ export async function checkHighland(G,atlas,characters,read){
  assert.equal(Object.keys(H.views).length,13);assert.equal(G.DIORAMA.owner(H.CX,H.CZ),'highland');
  const c=characters.characters.find(c=>c.id==='sannyo');assert(c.highlandSession&&c.positionBasis.startsWith('P'));assert.equal(c.locationId,'casino');
  for(const id of ['false_ceiling','casino']){const l=atlas.locations.find(l=>l.id===id);assert(l.source_ids.includes('SHELF-LE29'));}
- return {detailMeshes:detail.meshes.length,detailBytes:detail.bytes,overviewBytes:far.bytes,publicBytes:publicMeshes.reduce((s,m)=>s+m.vertices.byteLength,0),views:13,navigable:103,pending:76,characters:85,protectedFiles:Object.keys(f.protectedFiles).length};
+ return {detailMeshes:detail.meshes.length,detailBytes:detail.bytes,overviewBytes:far.bytes,publicBytes:publicMeshes.reduce((s,m)=>s+m.vertices.byteLength,0),views:13,navigable:104,pending:75,characters:85,protectedFiles:Object.keys(f.protectedFiles).length};
 }

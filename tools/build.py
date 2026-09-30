@@ -12,6 +12,30 @@ ROOT = Path(__file__).resolve().parents[1]
 TOKEN = re.compile(r"\{\{([A-Z_]+)\}\}")
 
 
+def apply_verified_corrections(atlas, modules):
+    """Apply sourced evidence patches only when the recorded previous values match."""
+    locations = {v['id']: v for v in atlas['locations']}
+    # Evidence corrections are explicit, compare-and-set patches: never silently
+    # replace earlier research or broaden an ordinary locationUpdates patch.
+    for module in modules:
+        for correction in module.get('verifiedLocationCorrections', []):
+            target = locations.get(correction['id'])
+            if target is None:
+                raise ValueError('Unknown location in evidence correction: ' + correction['id'])
+            expected, replacement = correction['expected'], correction['replace']
+            allowed = {'kind', 'existence_evidence', 'verified_fact', 'source_locator', 'build_stage'}
+            sources_by_id = {s['id']: s for s in atlas['sources']}
+            if set(expected) != set(replacement) or not set(replacement) <= allowed:
+                raise ValueError('Invalid evidence correction fields')
+            cited = correction.get('source_ids', [])
+            if not cited or not all(s in target.get('source_ids', []) and
+                                   sources_by_id.get(s, {}).get('source_type') == 'T' for s in cited):
+                raise ValueError('Evidence correction requires an attached transcript source')
+            if any(target.get(k) != v for k, v in expected.items()):
+                raise ValueError('Research changed; review correction: ' + correction['id'])
+            target.update(replacement)
+
+
 def build(output_dir):
     inputs = {}
 
@@ -74,6 +98,8 @@ def build(output_dir):
                     raise ValueError('地区追加ID重复：' + record['id'])
                 ids.add(record['id'])
                 base[key].append(record)
+    apply_verified_corrections(atlas, additions)
+
     characters['additionalVisits'] = []
     ids = {c['id'] for c in characters['characters']}
     for module in additions:
@@ -159,6 +185,9 @@ def build(output_dir):
     read_bytes('tools/highland-baseline.json')
     read_bytes('tools/check-asama.mjs')
     read_bytes('tools/asama-baseline.json')
+    read_bytes('tools/check-evidence-corrections.py')
+    read_bytes('tools/check-peony.mjs')
+    read_bytes('tools/peony-baseline.json')
     read_bytes('tools/check-mayohiga.mjs')
     read_bytes('tools/mayohiga-baseline.json')
     read_bytes('tools/check-hiten.mjs')

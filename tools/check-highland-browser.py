@@ -82,7 +82,7 @@ try:
    x=page.evaluate("()=>({cache:ATLAS.stream.cache.size,detail:ATLAS.renderer.records.filter(r=>r.data.owner==='highland'&&!r.data.overview).length,public:ATLAS.world.meshes.filter(m=>m.highlandPublic).length,...ATLAS.renderer.engine.info.memory})");assert x['cache']==0 and x['detail']==0 and x['public']>0;cycles.append(x)
   assert max(x['textures'] for x in cycles)-min(x['textures'] for x in cycles)<=2;passed('Three rebuild/eviction cycles keep public ground and bounded texture counts',cycles)
   visit('denFront','highland');page.locator('#btn-settings').click();page.locator('#quality').select_option('low');page.locator('#opt-ao').uncheck();page.locator('#opt-bloom').uncheck();page.locator('#close-settings').click();draw();page.set_viewport_size({'width':390,'height':844});draw();assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1');page.screenshot(path=str(a.output/'narrow-highland.png'));passed('390px controls and low quality without AO/bloom')
-  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==103 and e['landmarks']['pending']==76;assert page.evaluate("GA.resolveLocation('hiten').view==='hitenOverview'");passed('Directory export is 103/76, not a full-world completion claim')
+  e=page.evaluate('ATLAS.exportState()');assert e['landmarks']['navigable']==104 and e['landmarks']['pending']==75;assert page.evaluate("GA.resolveLocation('hiten').view==='hitenOverview'");passed('Directory export is 104/75, not a full-world completion claim')
   assert not report['errors'],'\n'.join(report['errors'])[:4000];report['passed']=True;browser.close()
 except Exception as e:
  report['passed']=False;report['failure']=str(e);raise

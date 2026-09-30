@@ -6,10 +6,10 @@ function blocked(G,meshes,a,b){const d=G.sub(b,a);for(const m of meshes){const v
 export async function checkMayohiga(G,atlas,characters,read){
  const f=JSON.parse(read('tools/mayohiga-baseline.json')),M=G.MAYOHIGA;
  for(const[p,h]of Object.entries(f.protectedFiles))assert.equal(hash(read(p)),h,'Inherited source changed: '+p);
- const a=G.auditLandmarks(atlas);assert.equal(a.total,179);assert.equal(a.navigable,103);assert.equal(a.pending,76);assert.equal(characters.characters.length,85);assert.equal(hash(JSON.stringify(characters)),f.characters);
+ const a=G.auditLandmarks(atlas);assert.equal(a.total,179);assert.equal(a.navigable,104);assert.equal(a.pending,75);assert.equal(characters.characters.length,85);assert.equal(hash(JSON.stringify(characters)),f.characters);
  for(const[id,v]of Object.entries(f.navigation))assert.equal(G.resolveLocation(id).view,v,'Old navigation changed: '+id);
  assert.equal(G.resolveLocation('mayohiga').view,'mayoOverview');assert.equal(G.resolveLocation('mayohiga').status,'selection');assert.equal(G.resolveLocation('yukari_home').view,null);
- for(const id of ['tengu','waterfall_cave','cucumber_farm','wind_cave','geyser_center','peony_field'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour must remain unbound');
+ for(const id of ['tengu','waterfall_cave','cucumber_farm','wind_cave','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour must remain unbound');
  assert(atlas.locations.find(l=>l.id==='mayohiga').source_ids.includes('MY-BAIJR-T'));assert.equal(atlas.locations.find(l=>l.id==='mayohiga').coordinate_status[0],'P');
  const raw=gunzipSync(read('assets/packs/overview.pack.gz')),pack=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength)),terrain=new G.Terrain(atlas);G.LANDSCAPE.apply(pack,terrain);G.applyHighlandGround(pack,terrain);
  const allBytes=()=>hash(Buffer.concat(pack.meshes.flatMap(m=>['vertices','farVertices','index','instances'].filter(k=>m[k]).map(k=>Buffer.from(m[k].buffer,m[k].byteOffset,m[k].byteLength)))));const before=allBytes(),contact=G.SurfaceContact.prepare(atlas,pack,'mayohiga',M.bounds),nearGround=G.SurfaceContact.sampler(atlas,'mayohiga'),farGround=G.SurfaceContact.sampler(atlas,'mayohiga','far');
@@ -30,5 +30,5 @@ export async function checkMayohiga(G,atlas,characters,read){
  assert.equal(mayohigaDigest(await G.buildRegion(atlas,'mayohiga','')),mayohigaDigest(near),'Native Worker dispatch');
  const end=M.paths[0].at(-1);assert(G.ASAMA.surfacePath.some(p=>Math.hypot(p[0]-end[0],p[1]-end[1])<.01),'External road has no inherited endpoint');
  const rendered=G.ASAMA.sampleRenderedTerrain(pack);assert.equal(Object.keys(M.views).length,11);for(const[id,v]of Object.entries(M.views)){assert.equal(G.DIORAMA.regionOf(id),'mayohiga');assert.equal(v.space,'surface');assert(v.eye[1]>rendered(v.eye[0],v.eye[2],'near').p[1]+1,id+' camera inside ground');}
- return{...stats,contactBytes:contact.near.byteLength+contact.far.byteLength,views:11,houses:4,trees:54,ordinaryCats:6,clearDoors,navigable:103,pending:76,characters:85};
+ return{...stats,contactBytes:contact.near.byteLength+contact.far.byteLength,views:11,houses:4,trees:54,ordinaryCats:6,clearDoors,navigable:104,pending:75,characters:85};
 }
