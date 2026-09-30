@@ -10,9 +10,9 @@ export async function checkNetherworld(G,atlas,characters,read){
  assert.equal(hash(JSON.stringify(characters.characters.slice(0,65))),fixed.original65,'Existing residents must not be moved');
  assert.equal(hash(JSON.stringify(characters.additionalVisits)),fixed.originalVisits,'Old visits must be preserved');
  const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert(audit.navigable>=77);assert(audit.pending<=102);assert.equal(audit.navigable+audit.pending,179);
- assert.equal(Object.keys(G.LANDMARKS.repaired).length,8);assert.equal(Object.keys(G.LANDMARKS.pending).length,3);
+ assert.equal(Object.keys(G.LANDMARKS.repaired).length,8);assert.equal(Object.keys(G.LANDMARKS.pending).length,2);
  for(const[id,view]of Object.entries(fixed.repaired)){assert.equal(G.resolveLocation(id).view,view);assert.equal(G.resolveLocation(id).status,'component');}
- for(const id of ['wind_cave','geyser_mountain','sanctuary']){
+ for(const id of ['wind_cave','geyser_mountain']){
   assert(atlas.placements.some(p=>p.id===id),'Keep the research anchor');assert.equal(G.resolveLocation(id).view,null,'Do not fall back to an unrelated scene');
  }
  assert.equal(G.resolveLocation('this-location-is-unknown').view,null);
@@ -51,5 +51,5 @@ export async function checkNetherworld(G,atlas,characters,read){
  for(const[id,p]of Object.entries(G.NETHERWORLD.views)){assert.equal(p.space,'netherworld');assert.equal(p.region,'netherworld');assert.equal(G.DIORAMA.regionOf(id),'netherworld');assert(p.eye.every(Number.isFinite)&&p.target.every(Number.isFinite));assert(G.length(G.sub(p.eye,p.target))>5);assert(p.era);}
  assert(G.NETHERWORLD.views.saigyouBuds.netherBuds);assert(!G.NETHERWORLD.views.saigyouSealed.netherBuds);assert(G.NETHERWORLD.views.hakugyokuSnow.netherWinter);assert(G.NETHERWORLD.views.hakugyokuSection.netherSection);
  for(const c of characters.characters.slice(65,67)){assert(['youmu','yuyuko'].includes(c.id));assert.equal(c.locationId,'hakugyokurou');assert.equal(c.space,'netherworld');assert(c.position.every(Number.isFinite));assert.equal(G.PRESETS[c.view].space,c.space);assert(c.locationSources.length);assert.equal(c.art.urls.length,0,'Do not invent unverified portrait files');}
- return{detailMeshes:detail.meshes.length,triangles:detail.bytes/108,detailBytes:detail.bytes,overviewBytes:far.bytes,trees:detail.meta.treeCount,presets:13,newLocations:5,repairedBindings:8,removedFallbacks:3,navigable:audit.navigable,pending:audit.pending,protectedFiles:Object.keys(fixed.protectedFiles).length};
+ return{detailMeshes:detail.meshes.length,triangles:detail.bytes/108,detailBytes:detail.bytes,overviewBytes:far.bytes,trees:detail.meta.treeCount,presets:13,newLocations:5,repairedBindings:8,removedFallbacks:2,navigable:audit.navigable,pending:audit.pending,protectedFiles:Object.keys(fixed.protectedFiles).length};
 }

@@ -20,6 +20,13 @@
     "src/rainbow-mine.js",
     "src/highland.js",
     "src/hakurei-plants.js",
-    "src/hakurei-transition.js"
+    "src/hakurei-transition.js",
+    "src/asama.js"
+  ],
+  "extensionRenderers": [
+    "src/asama-renderer.js"
+  ],
+  "extensionData": [
+    "data/asama.json"
   ]
 }

@@ -51,7 +51,7 @@ def build(output_dir):
         json.loads(text)
         return text.rstrip('\n')
 
-    additions = [json.loads(data(name)) for name in ('data/lunar.json', 'data/makai.json', 'data/netherworld.json', 'data/heaven.json', 'data/higan.json', 'data/animal.json', 'data/backdoor.json', 'data/kasen.json', 'data/current-hell.json', 'data/rainbow-mine.json', 'data/highland.json')]
+    additions = [json.loads(data(name)) for name in ('data/lunar.json', 'data/makai.json', 'data/netherworld.json', 'data/heaven.json', 'data/higan.json', 'data/animal.json', 'data/backdoor.json', 'data/kasen.json', 'data/current-hell.json', 'data/rainbow-mine.json', 'data/highland.json', *project.get('extensionData', []))]
     atlas = json.loads(data('data/atlas.json'))
     characters = json.loads(data('data/characters.json'))
     locations = {v['id']: v for v in atlas['locations']}
@@ -117,7 +117,7 @@ def build(output_dir):
         'RAINBOW_MINE_RENDERER': source('src/rainbow-mine-renderer.js'),
         'HIGHLAND_RENDERER': source('src/highland-renderer.js'),
         'HAKUREI_RENDERER': source('src/hakurei-renderer.js'),
-        'NIGHT_RENDERER': source('src/night-renderer.js'),
+        'NIGHT_RENDERER': '\n'.join([source('src/night-renderer.js'), *[source(name) for name in project.get('extensionRenderers', [])]]),
         'CHARACTERS': source('src/characters.js'),
         'STREAMING': source('src/streaming.js'),
         'APP': source('src/app.js'),
@@ -157,6 +157,8 @@ def build(output_dir):
     read_bytes('tools/rainbow-mine-baseline.json')
     read_bytes('tools/check-highland.mjs')
     read_bytes('tools/highland-baseline.json')
+    read_bytes('tools/check-asama.mjs')
+    read_bytes('tools/asama-baseline.json')
     read_bytes('tools/check-hakurei.mjs')
     read_bytes('tools/hakurei-baseline.json')
     output_dir.mkdir(parents=True, exist_ok=True)

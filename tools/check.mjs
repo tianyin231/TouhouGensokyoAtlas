@@ -1,3 +1,4 @@
+import {checkAsama} from './check-asama.mjs';
 import {checkHighland} from './check-highland.mjs';
 import {checkCurrentHell} from './check-current-hell.mjs';
 import {checkKasen} from './check-kasen.mjs';
@@ -116,3 +117,5 @@ console.log('现行地狱检查通过：'+JSON.stringify(await checkCurrentHell(
 console.log('虹龙洞检查通过：'+JSON.stringify(await checkRainbowMine(context.GA,atlas,JSON.parse(script('character-data')),read)));
 
 console.log('伪天棚检查通过：'+JSON.stringify(await checkHighland(context.GA,atlas,JSON.parse(script('character-data')),read)));
+
+console.log('圣域／浅间净秽山检查通过：'+JSON.stringify(await checkAsama(context.GA,atlas,JSON.parse(script('character-data')),read)));

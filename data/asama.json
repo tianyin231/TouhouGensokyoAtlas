@@ -1,0 +1,132 @@
+{
+  "version": "0.29.0",
+  "baseline": "5a7aea6fa86102069036633f24e914da23307df3",
+  "note": "2026-09-30重新补建，不沿用上轮空交接包的完成/验收说法。八项为局部可导航选景，不是全域竣工。",
+  "locationUpdates": [
+    {
+      "id": "sanctuary",
+      "status": "已接入三维局部选景，非全域竣工",
+      "project_treatment": "圣域地表山麓森林、小径和根系。采用原连续地形；接回伪天棚既有登山路的位置为P；没有将独立地下图冒充逐米地理配准。",
+      "coordinate_status": "P工程布局、尺寸及背面；无官方测量坐标",
+      "source_ids": [
+        "S30",
+        "ASAMA-SCENE",
+        "SEIKI-SCENE"
+      ]
+    },
+    {
+      "id": "red_mountain",
+      "status": "已接入三维局部选景，非全域竣工",
+      "project_treatment": "TH16第二面红叶版本，与圣域共用同一地表布局；仅本区树叶换色。不是另建一座山，外围既有植被未全面重制。形制、尺度和背面均为P补完。",
+      "coordinate_status": "P工程布局、尺寸及背面；无官方测量坐标",
+      "source_ids": [
+        "S30",
+        "ASAMA-SCENE",
+        "SEIKI-SCENE"
+      ]
+    },
+    {
+      "id": "asama",
+      "status": "已接入三维局部选景，非全域竣工",
+      "project_treatment": "金字塔外壳、厚石基、石阶与凹入门洞。地下场景以四组预设分别浏览，非一座具有全部内部通道的完整建筑；不把整个设施搬到月之都。形制、尺度和背面均为P补完。",
+      "coordinate_status": "P工程布局、尺寸及背面；无官方测量坐标",
+      "source_ids": [
+        "S31",
+        "ASAMA-SCENE",
+        "ASAMA-TEXT",
+        "ASAMA-DIALOG"
+      ]
+    },
+    {
+      "id": "four_seasons_shaft",
+      "status": "已接入三维局部选景，非全域竣工",
+      "project_treatment": "竖穴壁、螺旋步道、四方季节景龛及通向上层迷宫的实几何开口；形制、尺度和可行走步道均为P。",
+      "coordinate_status": "P工程布局、尺寸及背面；无官方测量坐标",
+      "source_ids": [
+        "S31",
+        "ASAMA-SCENE",
+        "ASAMA-TEXT",
+        "ASAMA-DIALOG"
+      ]
+    },
+    {
+      "id": "labyrinth",
+      "status": "已接入三维局部选景，非全域竣工",
+      "project_treatment": "上层七乘七迷宫，红蓝绿黄四个互斥版本；入口与竖穴侧通道相接。49格拓扑及房顶为P，不是原作迷宫地图复刻。",
+      "coordinate_status": "P工程布局、尺寸及背面；无官方测量坐标",
+      "source_ids": [
+        "S31",
+        "ASAMA-SCENE",
+        "ASAMA-TEXT",
+        "ASAMA-DIALOG"
+      ]
+    },
+    {
+      "id": "asama_depth",
+      "status": "已接入三维局部选景，非全域竣工",
+      "project_treatment": "深处石化荆棘、石柱与池岸，以及通向最深处的P下行剖览。仅选金字塔深部；第五面月海段不在此替代静海原景。",
+      "coordinate_status": "P工程布局、尺寸及背面；无官方测量坐标",
+      "source_ids": [
+        "S31",
+        "ASAMA-SCENE",
+        "ASAMA-TEXT",
+        "ASAMA-DIALOG"
+      ]
+    },
+    {
+      "id": "asama_deepest",
+      "status": "已接入三维局部选景，非全域竣工",
+      "project_treatment": "地下最深处神社选景：门廊、柱脚、侧窗、后廊、台阶及石基。金字塔／神社关联有原作文字依据；建筑平面、鸟居形状及背面均为P，非官图复刻。",
+      "coordinate_status": "P工程布局、尺寸及背面；无官方测量坐标",
+      "source_ids": [
+        "S31",
+        "ASAMA-SCENE",
+        "ASAMA-TEXT",
+        "ASAMA-DIALOG"
+      ]
+    },
+    {
+      "id": "fossil_forest",
+      "status": "已接入三维局部选景，非全域竣工",
+      "project_treatment": "化石森林选景：分叉石化木、断木、地表螺旋化石意象。社区地点索引关联渡里贝子；硅化木形状及螺旋遗骸是P，未据其人物身份推导为官方地貌。",
+      "coordinate_status": "P工程布局、尺寸及背面；无官方测量坐标",
+      "source_ids": [
+        "S31",
+        "ASAMA-SCENE",
+        "ASAMA-TEXT",
+        "ASAMA-DIALOG"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ASAMA-SCENE",
+      "title": "C：浅间净秽山场景索引",
+      "url": "https://thbwiki.cc/浅间净秽山",
+      "source_type": "C",
+      "note": "核对地点身份与关卡目录；正文部分缺字未补猜。未取得原始游戏背景图。"
+    },
+    {
+      "id": "SEIKI-SCENE",
+      "title": "C：圣域／红叶尽染的山",
+      "url": "https://thbwiki.cc/圣域",
+      "source_type": "C",
+      "note": "核对山麓森林及作品版本关系，不提供官方地理坐标。"
+    },
+    {
+      "id": "ASAMA-TEXT",
+      "title": "T：锦上京附带设定（社区转录）",
+      "url": "https://thbwiki.cc/附带文档:东方锦上京/Omake",
+      "source_type": "T",
+      "note": "核对维缦故乡景观、阿梨夜与神社封印、贝子的化石背景；未据此宣称完整森林外观。"
+    },
+    {
+      "id": "ASAMA-DIALOG",
+      "title": "T：锦上京灵梦红线第四至六面（社区转录）",
+      "url": "https://thbwiki.cc/游戏对话:东方锦上京/博丽灵梦（红）",
+      "source_type": "T",
+      "note": "四季竖穴、第五面月海转换、第六面鸟居及神社身份；不能将剧情空间转换当作普通地理相邻。"
+    }
+  ],
+  "characters": []
+}

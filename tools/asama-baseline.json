@@ -1,0 +1,9 @@
+{
+  "note": "Explicit initial baseline, reviewed 2026-09-30. No inherited baseline changed. Tests never regenerate this file.",
+  "geometry": {
+    "seikiNear": "a6a04eeb9870ec57ae64afaa53d8fbedf8d51c24ac019c36dd43dce4b1054bbd",
+    "seikiFar": "a78420ae3a7210c5396ec548e0bfcfc946c91e93c180cafb5b05911018c6b579",
+    "asamaNear": "39640481c203e7d24aa2a8f4a6ec486d575f256ebc3100b0f49247997d4a4c23",
+    "asamaFar": "691c8f1e07ed402b578fe1ae04459942c505b0a629392f181210849a7b164bc4"
+  }
+}
