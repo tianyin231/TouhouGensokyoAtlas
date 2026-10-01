@@ -1,0 +1,22 @@
+{
+  "note": "Explicit reviewed fixture. Inherits the unchanged geyser fixture by SHA-256; only the three newly inherited files and one old mapping are added. Tests read and merge expectations, never regenerate them.",
+  "base": "0ddb67caa6cc628bf88461bf82f568556cdb6b7e",
+  "inherit": {
+    "path": "tools/geyser-baseline.json",
+    "sha256": "de30bf78c9c0653c214ad848533631bbe646c3c4858276502402b9a0eff73399"
+  },
+  "protectedFiles": {
+    "data/geyser.json": "c9384ca594800782eec387af75a22df7c241831bdb27dd6a10405501580671b7",
+    "src/geyser-renderer.js": "34cc5f6390d60ac2f0b27fc5779532a0ffb60111970e3a5dd2e09ee003d2c9ce",
+    "src/geyser.js": "e6dd521faf5903bd410390e04ab8477f6b7a2b82f7dedbe4bf54f35530de376c"
+  },
+  "navigation": {
+    "geyser_mountain": "geyserOverview"
+  },
+  "characters": "016a3425ff10d4b5409ef33315f69eb603e096baeefd57a88a5bac1cdcae0875",
+  "geometry": {
+    "near": "4cc7ea435b523a40deae1425b1da33db69608cd9faec85eedd443947862c9459",
+    "far": "e3b2704e85ca67dd6123a9b9080842bc780ed44442ca7c79a4b750ff3037ceec",
+    "public": "1fe6e5d1bf4a3398aaa9e7b84e965b15381b5c9e2a83621f832ac157819e386b"
+  }
+}

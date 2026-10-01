@@ -129,13 +129,13 @@ try:
             page.locator('#close-detail').click();page.locator('#close-drawer').click()
             passed('Existing landmark binding '+entry['id'],{'view':entry['view'],'region':entry['region']})
         visit('hakugyokuCourt','netherworld')
-        for id in ['geyser_center']:
+        for id in ['tengu']:
             before=page.evaluate('JSON.stringify({view:ATLAS.state.view,eye:ATLAS.rig.eye,space:ATLAS.state.space})')
             page.evaluate('id=>ATLAS.selectLocation(id)',id);render()
             assert page.evaluate('JSON.stringify({view:ATLAS.state.view,eye:ATLAS.rig.eye,space:ATLAS.state.space})')==before
             assert page.evaluate('id=>GA.resolveLocation(id).view',id) is None
             page.locator('#close-detail').click()
-        passed('Unbuilt underground centre does not move the camera to an unrelated region')
+        passed('Unbuilt tengu settlement does not move the camera to an unrelated region')
         for id,view in [('youmu','netherGate'),('yuyuko','hakugyokuHall')]:
             page.evaluate('id=>ATLAS.characters.select(id,false)',id);render(True)
             assert page.evaluate('ATLAS.state.view')==view

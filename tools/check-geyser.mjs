@@ -13,7 +13,7 @@ export async function checkGeyser(G,atlas,characters,read){
  assert.equal(hash(JSON.stringify(characters)),f.characters);assert.equal(characters.characters.length,85);
  const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,coverage.navigable);assert.equal(audit.pending,coverage.pending);
  assert.equal(G.resolveLocation(F.id).view,'geyserOverview');assert.equal(G.resolveLocation(F.id).status,'selection');
- for(const id of['geyser_center','geyser_shrine','tengu'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour falsely bound');
+ for(const id of['tengu','geyser_shrine'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour falsely bound');
  assert.equal(G.resolveLocation('reactor').view,'hellReactor');assert.equal(G.resolveLocation('wind_cave').view,'windFoothill');
  const loc=atlas.locations.find(l=>l.id===F.id);assert.equal(loc.existence_evidence,'T');assert(loc.source_ids.includes('GM-KANAKO-T')&&loc.source_ids.includes('GM-NEWS-T'));assert(loc.coordinate_status.startsWith('P'));assert(loc.verified_fact.includes('不是熔岩'));
  const source=JSON.parse(read('data/atlas.json'));assert.equal(JSON.stringify(atlas.placements),JSON.stringify(source.placements));assert.equal(JSON.stringify(atlas.relationships),JSON.stringify(source.relationships));

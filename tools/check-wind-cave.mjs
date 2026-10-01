@@ -14,7 +14,7 @@ export async function checkWindCave(G,atlas,characters,read){
  assert.equal(hash(JSON.stringify(characters)),f.characters);assert.equal(characters.characters.length,85);
  const a=G.auditLandmarks(atlas);assert.equal(a.total,179);assert.equal(a.navigable,coverage.navigable);assert.equal(a.pending,coverage.pending);
  assert.equal(G.resolveLocation('wind_cave').view,'windFoothill');assert.equal(G.resolveLocation('deep_road').view,'hellBridge');assert.equal(G.resolveLocation('old_hell').view,'hellOverview');
- for(const id of['tengu','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour falsely bound');
+ for(const id of['tengu'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour falsely bound');
  const loc=atlas.locations.find(l=>l.id===F.id);assert.equal(loc.existence_evidence,'T');assert(loc.source_ids.includes('WC-TH11-T')&&loc.source_ids.includes('WC-SOPM-T'));assert(loc.coordinate_status.startsWith('P'));
  const raw=gunzipSync(read('assets/packs/overview.pack.gz')),pack=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength)),t=new G.Terrain(atlas);G.LANDSCAPE.apply(pack,t);G.applyHighlandGround(pack,t);
  const terrainHash=()=>hash(Buffer.concat(pack.meshes.filter(m=>m.component==='island-terrain').map(m=>Buffer.from(m.vertices.buffer,m.vertices.byteOffset,m.vertices.byteLength))));const before=terrainHash();F.prepare(atlas,pack);

@@ -10,7 +10,7 @@ export async function checkMayohiga(G,atlas,characters,read){
  const a=G.auditLandmarks(atlas);assert.equal(a.total,179);assert.equal(a.navigable,coverage.navigable);assert.equal(a.pending,coverage.pending);assert.equal(characters.characters.length,85);assert.equal(hash(JSON.stringify(characters)),f.characters);
  for(const[id,v]of Object.entries(f.navigation))assert.equal(G.resolveLocation(id).view,v,'Old navigation changed: '+id);
  assert.equal(G.resolveLocation('mayohiga').view,'mayoOverview');assert.equal(G.resolveLocation('mayohiga').status,'selection');assert.equal(G.resolveLocation('yukari_home').view,null);
- for(const id of ['tengu','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour must remain unbound');
+ for(const id of ['tengu'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour must remain unbound');
  assert(atlas.locations.find(l=>l.id==='mayohiga').source_ids.includes('MY-BAIJR-T'));assert.equal(atlas.locations.find(l=>l.id==='mayohiga').coordinate_status[0],'P');
  const raw=gunzipSync(read('assets/packs/overview.pack.gz')),pack=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength)),terrain=new G.Terrain(atlas);G.LANDSCAPE.apply(pack,terrain);G.applyHighlandGround(pack,terrain);
  const allBytes=()=>hash(Buffer.concat(pack.meshes.flatMap(m=>['vertices','farVertices','index','instances'].filter(k=>m[k]).map(k=>Buffer.from(m[k].buffer,m[k].byteOffset,m[k].byteLength)))));const before=allBytes(),contact=G.SurfaceContact.prepare(atlas,pack,'mayohiga',M.bounds),nearGround=G.SurfaceContact.sampler(atlas,'mayohiga'),farGround=G.SurfaceContact.sampler(atlas,'mayohiga','far');

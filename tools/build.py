@@ -187,6 +187,8 @@ def build(output_dir):
     read_bytes('tools/asama-baseline.json')
     read_bytes('tools/check-evidence-corrections.py')
     read_bytes('tools/current-coverage.json')
+    read_bytes('tools/check-geyser-center.mjs')
+    read_bytes('tools/geyser-center-baseline.json')
     read_bytes('tools/check-geyser.mjs')
     read_bytes('tools/geyser-baseline.json')
     read_bytes('tools/check-wind-cave.mjs')

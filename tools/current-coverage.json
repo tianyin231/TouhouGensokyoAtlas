@@ -1,7 +1,7 @@
 {
   "note": "Explicit current catalogue expectation. Update only after reviewing authored bindings; no checker regenerates this file. Geometry fixtures remain separate.",
   "total": 179,
-  "navigable": 108,
-  "pending": 71,
+  "navigable": 109,
+  "pending": 70,
   "characters": 85
 }

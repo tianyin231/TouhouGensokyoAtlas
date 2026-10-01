@@ -14,7 +14,7 @@ export async function checkPeony(G,atlas,characters,read){
  for(const[id,view]of Object.entries(f.navigation))assert.equal(G.resolveLocation(id).view,view,'Old navigation changed: '+id);
  assert.equal(hash(JSON.stringify(characters)),f.characters);assert.equal(characters.characters.length,85);
  const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,coverage.navigable);assert.equal(audit.pending,coverage.pending);
- for(const id of['tengu','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour falsely bound');
+ for(const id of['tengu'])assert.equal(G.resolveLocation(id).view,null,'Unbuilt neighbour falsely bound');
  assert.equal(G.resolveLocation(P.id).view,'peonyOverview');assert.equal(G.resolveLocation(P.id).status,'selection');
  const loc=atlas.locations.find(l=>l.id===P.id),correction=JSON.parse(read('data/peony.json')).verifiedLocationCorrections[0];assert.equal(correction.id,P.id);
  for(const[k,v]of Object.entries(correction.replace))assert.equal(loc[k],v,'Evidence correction not applied: '+k);

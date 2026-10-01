@@ -88,8 +88,8 @@ try:
   page.locator('#btn-search').click();page.locator('#search').fill('地獄谷');entry=page.locator('#results [data-id="geyser_mountain"]');assert entry.count()==1;entry.click()
   assert 'P' in page.locator('#detail-design').inner_text() and page.locator('#detail-sources a').count()>=3
   assert '不是熔岩' in page.locator('#detail-fact').inner_text();page.locator('#close-detail').click();page.locator('#close-drawer').click()
-  assert page.evaluate("GA.resolveLocation('geyser_shrine').view===null&&GA.resolveLocation('geyser_center').view===null")
-  passed('Alias and sourced description distinguish the unbuilt shrine spring and underground centre')
+  assert page.evaluate("GA.resolveLocation('geyser_shrine').view===null&&GA.resolveLocation('geyser_center').view==='centerOverview'")
+  passed('Alias and sourced description distinguish the unbuilt shrine spring and separately authored underground centre')
   visit('geyserRim');before=page.evaluate('ATLAS.rig.eye.slice()');page.mouse.move(940,330);page.mouse.down();page.mouse.move(1010,370,steps=7);page.mouse.up();page.evaluate('ATLAS.rig.update(0)');draw();assert before!=page.evaluate('ATLAS.rig.eye.slice()');passed('Real pointer orbit')
   for view in ['forest','windEntry','fallsTrack','shrineFront']:
    visit(view);assert not page.evaluate('ATLAS.renderer.engine.getContext().isContextLost()');passed('Inherited region return '+view)

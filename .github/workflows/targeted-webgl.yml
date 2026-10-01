@@ -143,3 +143,27 @@ jobs:
             dist/release.json
             dist/geyser-browser-check/
           retention-days: 7
+  geyser-center-webgl:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build current source
+        run: python3 tools/build.py
+      - name: Install optional browser test dependencies
+        run: |
+          python3 -m pip install playwright==1.57.0
+          python3 -m playwright install --with-deps chromium
+      - name: Underground center HTTP and native Worker regression
+        run: python3 tools/check-geyser-center-browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: geyser-center-webgl-evidence
+          path: |
+            dist/release.json
+            dist/geyser-center-browser-check/
+          retention-days: 7

@@ -14,7 +14,7 @@ export async function checkWaterfallCave(G,atlas,characters,read){
  assert.equal(hash(JSON.stringify(characters)),f.characters);assert.equal(characters.characters.length,85);
  const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,coverage.navigable);assert.equal(audit.pending,coverage.pending);
  assert.equal(G.resolveLocation('waterfall').view,'mountainFalls');assert.equal(G.resolveLocation('waterfall_cave').view,'fallsThreshold');
- for(const id of ['tengu','geyser_center'])assert.equal(G.resolveLocation(id).view,null,'Do not substitute this tunnel for an unbuilt neighbour');
+ for(const id of ['tengu'])assert.equal(G.resolveLocation(id).view,null,'Do not substitute this tunnel for an unbuilt neighbour');
  const loc=atlas.locations.find(l=>l.id===W.id);assert(loc.source_ids.includes('WF-FS28-T'));assert(loc.coordinate_status.startsWith('P'));assert(atlas.sources.find(s=>s.id==='WF-FS28-T').source_type==='T');
  const raw=gunzipSync(read('assets/packs/overview.pack.gz')),pack=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength)),terrain=new G.Terrain(atlas);G.LANDSCAPE.apply(pack,terrain);G.applyHighlandGround(pack,terrain);
  const original=()=>hash(Buffer.concat(pack.meshes.flatMap(m=>['vertices','farVertices','instances','index'].filter(k=>m[k]).map(k=>Buffer.from(m[k].buffer,m[k].byteOffset,m[k].byteLength)))));const before=original();W.prepare(atlas,pack);

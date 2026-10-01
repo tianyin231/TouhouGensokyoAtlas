@@ -1,0 +1,63 @@
+{
+  "version": "0.29.0",
+  "locationUpdates": [
+    {
+      "id": "geyser_center",
+      "aliases": [
+        "間欠泉地下センター",
+        "Underground Geyser Center"
+      ],
+      "status": "已接入中心地面建筑与地下井道局部选景",
+      "coordinate_status": "P：泉区缓坡工程布置；表里分图，不是官方测量坐标",
+      "project_treatment": "P补完：圆筒塔、锚索、低入口屋与低围墙参考智灵奇传场景索引；绿灯石壁、电梯井段参考非想天则。地面建筑与地下通道分版本选景，尺寸、机构及仪表为P；保留原核聚变炉与旧井架，导览关联但未无缝贯通，未实现可乘坐电梯。",
+      "source_ids": [
+        "GC-TH123-T",
+        "GC-CIRNO-T",
+        "GC-SCENE-C"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "GC-TH123-T",
+      "title": "T：非想天则早苗Stage 3—4（社区原作文字转录）",
+      "url": "https://thbwiki.cc/游戏对话:东方非想天则/东风谷早苗",
+      "source_type": "T",
+      "note": "核对神奈子指示建造的研究中心、井口盖板及下层炉心；未取得原始游戏背景测绘。"
+    },
+    {
+      "id": "GC-CIRNO-T",
+      "title": "T：非想天则琪露诺Stage 3—4（社区原作文字转录）",
+      "url": "https://thbwiki.cc/游戏对话:东方非想天则/琪露诺",
+      "source_type": "T",
+      "note": "中心入口、通道与温泉关联；不等同完整建筑平面图。"
+    },
+    {
+      "id": "GC-SCENE-C",
+      "title": "C：间歇泉地下中心场景索引",
+      "url": "https://thbwiki.cc/间歇泉地下中心",
+      "source_type": "C",
+      "note": "圆筒塔、地面锚索、入口屋、低围墙和平移门为智灵奇传6-2场景的社区整理；绿灯石壁为非想天则版本。原图抓取失败，未宣称已审阅原图。"
+    }
+  ],
+  "characters": [],
+  "verifiedLocationCorrections": [
+    {
+      "id": "geyser_center",
+      "expected": {
+        "existence_evidence": "C",
+        "verified_fact": "地热研究设施，连通核聚变炉",
+        "source_locator": "相关设定／结构与造型"
+      },
+      "replace": {
+        "existence_evidence": "T",
+        "verified_fact": "《非想天则》早苗第三面记载神奈子指示建造的核聚变研究中心，并提及井口盖板；后续进入核聚变炉心。地面建筑与电梯外观另参考场景索引。",
+        "source_locator": "非想天则早苗Stage 3—4、琪露诺Stage 3—4社区原作转录"
+      },
+      "source_ids": [
+        "GC-TH123-T",
+        "GC-CIRNO-T"
+      ]
+    }
+  ]
+}

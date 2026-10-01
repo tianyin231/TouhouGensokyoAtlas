@@ -11,7 +11,7 @@ export async function checkHighland(G,atlas,characters,read){
  for(const k of ['placements','relationships'])assert.equal(hash(JSON.stringify(atlas[k])),f[k]);assert.equal(hash(JSON.stringify(characters.additionalVisits)),f.visits);
  for(const[id,view]of Object.entries(f.navigation))assert.equal(G.resolveLocation(id).view,view);
  assert.equal(G.auditLandmarks(atlas).navigable,coverage.navigable);assert.equal(G.auditLandmarks(atlas).pending,coverage.pending);assert.equal(characters.characters.length,85);
- for(const id of ['geyser_center'])assert.equal(G.resolveLocation(id).view,null);
+ for(const id of ['tengu'])assert.equal(G.resolveLocation(id).view,null);
  assert.equal(G.resolveLocation('false_ceiling').view,'shelfOverview');assert.equal(G.resolveLocation('casino').view,'denFront');
  assert(!atlas.placements.some(p=>['false_ceiling','casino'].includes(p.id)),'Original research placements must not be silently rewritten');
  const detail=G.buildHighland(t),far=G.buildHighland(t,true),raw=gunzipSync(read('assets/packs/overview.pack.gz')),original=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength)),copy={...original,meshes:original.meshes.slice()},terrain=G.applyHighlandGround(copy,t),publicMeshes=G.highlandGround(t,terrain);

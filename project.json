@@ -30,7 +30,8 @@
     "src/waterfall-cave.js",
     "src/cucumber-farm.js",
     "src/wind-cave.js",
-    "src/geyser.js"
+    "src/geyser.js",
+    "src/geyser-center.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",
@@ -41,6 +42,7 @@
     "src/cucumber-farm-renderer.js",
     "src/wind-cave-renderer.js",
     "src/geyser-renderer.js",
+    "src/geyser-center-renderer.js",
     "src/render-recovery.js"
   ],
   "extensionData": [
@@ -51,6 +53,7 @@
     "data/waterfall-cave.json",
     "data/cucumber-farm.json",
     "data/wind-cave.json",
-    "data/geyser.json"
+    "data/geyser.json",
+    "data/geyser-center.json"
   ]
 }
