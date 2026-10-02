@@ -31,7 +31,8 @@
     "src/cucumber-farm.js",
     "src/wind-cave.js",
     "src/geyser.js",
-    "src/geyser-center.js"
+    "src/geyser-center.js",
+    "src/kourindou-upgrade.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",
@@ -43,6 +44,7 @@
     "src/wind-cave-renderer.js",
     "src/geyser-renderer.js",
     "src/geyser-center-renderer.js",
+    "src/kourindou-renderer.js",
     "src/render-recovery.js"
   ],
   "extensionData": [
