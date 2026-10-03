@@ -209,7 +209,23 @@
   "geometry": {
     "near": "f7aebbdac3b7176b2e56137ad7ad2cba1a7f65d9243f7196886ed392006c8b0f",
     "far": "687b260ed9f38b8c0af25415d828558816d5c121ef2496a33006529cce37dde9",
-    "public": "83c9e090e5b885cedb4d2fb5d03ffcd0ea3bfc002a7403d6a3084d870d4b2c3c"
+    "public": "c57232c8f3b0f6a0a4b521cedbd7883149e1309aab71e4fc67443b6060fd2186"
+  },
+  "publicSites": [
+    [-590, 44.86309921264648, -21, 0.82],
+    [-572, 44.85770141601562, -32, 0.92],
+    [-548, 44.8621383857727, -33, 0.8],
+    [-603, 44.85938655853271, 5, 0.9]
+  ],
+  "publicReview": {
+    "date": "2026-10-03",
+    "baseCommit": "df0ff9e19c6694c603939397f62ee51e2099b14a",
+    "previousDigest": "83c9e090e5b885cedb4d2fb5d03ffcd0ea3bfc002a7403d6a3084d870d4b2c3c",
+    "reason": "Reviewed fixed-camera WebGL and actual terrain-contact checks for layered crowns, lower-detail branches, folded undergrowth and 15 sampled root sites. Original 28 tree matrices, 4 planting sites, 220 grass sites, terrain/road buffers and both architecture digests remain unchanged.",
+    "previousExpandedTriangles": {"near": 34564, "far": 20356},
+    "reviewedExpandedTriangles": {"near": 32842, "far": 19113},
+    "previousSourceBytes": 694016,
+    "reviewedSourceBytes": 915956
   },
   "reviewedForest": "ef4c03d17c3a071167f14cca9a6093b0d40cc75594abcb3d16208691f97de7a2"
 }

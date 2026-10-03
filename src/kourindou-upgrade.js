@@ -238,15 +238,16 @@ function tree(variant,far=false){
    const p=[center[0]+Math.cos(aa)*rr,center[1]+(R()-.5)*radius*1.3,center[2]+Math.sin(aa)*rr];
    const w=radius*(1.52+R()*.32),yaw=R()*TAU,tilt=.35+R()*1.15,shade=.85+R()*.17;
    if(far?j%4:j%2)continue;
-   card(leaf,p,w*(far?1.40:1.15),w*.95*(far?1.40:1.15),yaw,tilt,[shade,shade,shade]);
+   card(leaf,p,w*(far?1.20:.98),w*.95*(far?1.20:.98),yaw,tilt,[shade,shade,shade]);
   }
  };
  for(let i=0;i<8;i++){
-  const a=i*2.399+R()*.65,r=3.0+R()*1.8,y=8.3+R()*2.4,base=[lean,3.2+(i%3)*.5,0],elbow=[Math.cos(a)*r*.50,y-1.45,Math.sin(a)*r*.50];
-  wood.tube(base,elbow,.17,C.bark,far?4:6,.09);
+  // Broad lower boughs and a narrower upper crown; keep the same RNG/card count.
+  const a=i*2.399+R()*.65,r=4.2-i*.18+R()*.80,y=7.0+i*.43+R()*.80+.35*Math.sin(variant*.8+i*.9),base=[lean,3.65+i*.40,0],elbow=[Math.cos(a)*r*.50,y-1.20,Math.sin(a)*r*.50];
+  wood.tube(base,elbow,.17,C.bark,far?3:5,.09);
   for(let fork=0;fork<3;fork++){
    const aa=a+(fork-1)*.49,reach=r+.35+R()*.55,end=[Math.cos(aa)*reach,y+fork*.40+R()*.60,Math.sin(aa)*reach];
-   wood.tube(elbow,end,.075,C.bark,far?3:5,.013);spray(end,1.35+R()*.20,15);
+   wood.tube(elbow,end,.075,C.bark,far?3:4,.013);spray(end,1.35+R()*.20,15);
   }
  }
  spray([lean,H,0],1.65,24);
@@ -285,19 +286,58 @@ function publicEnvironment(data,pack){
  for(const [key,b]of groups){const N=tree(b.variant,false),F=tree(b.variant,true),ma=Float32Array.from(b.matrices),colors=Float32Array.from(b.colors),box=instanceBounds(ma,[N.wood,N.leaf,F.wood,F.leaf]);
   for(const part of ['wood','leaf'])out.push({id:'kourindou:landscape:'+key+':'+part,owner:'island',region:'island',space:'surface',globalSurface:true,overview:true,component:'transition-vegetation',group:'vegetation',kourindouPart:'trees',basis:'P',material:part==='wood'?'kourindouBark':'kourindouLeaf',leafCards:part==='leaf',vertices:N[part],farVertices:F[part],instances:ma,instanceColors:part==='leaf'?colors:new Float32Array(colors.length).fill(1),lodDistance:120,...box});
  }
+ // Short buttresses only at already sampled core sites. The outlying trees keep
+ // their original roots; no wider terrain transfer or horizontal slope overlay.
+ const roots=new G.Geometry(),rootsFar=new G.Geometry(),rootSites=[],rootContacts=[];
+ for(const b of groups.values())for(let i=0;i<b.matrices.length;i+=16){
+  const ma=b.matrices.slice(i,i+16),x=ma[12],z=ma[14],scale=Math.hypot(ma[0],ma[2]);
+  const points=[];for(let j=0;j<3;j++){
+   const a=j*2.1+b.variant*.37,reach=1.3+j*.15,p=G.transform(ma,[Math.cos(a)*reach,0,Math.sin(a)*reach]),q=G.transform(ma,[Math.cos(a)*reach*.54,0,Math.sin(a)*reach*.54]);
+   points.push({p,q});
+  }
+  if([...[x,z],...points.flatMap(({p,q})=>[p[0],p[2],q[0],q[2]])].some((v,k)=>v<(k%2?bounds[1]:bounds[0])||v>(k%2?bounds[3]:bounds[2])))continue;
+  if(points.some(({p})=>G.FOREST.routeDistance(p[0],p[2])<1.2))continue;
+  const start=[x,ma[13]+ma[5]*.44,z];rootSites.push([x,ma[13],z,scale]);
+  for(const {p,q}of points){
+   const radius=.045*scale,nearY=near.height(p[0],p[2])-radius-.02*scale,farY=far.height(p[0],p[2])-radius-.02*scale;
+   const elbow=[q[0],near.height(q[0],q[2])+.09*scale,q[2]],end=[p[0],nearY,p[2]];
+   roots.tube(start,elbow,.20*scale,C.bark,5,.105*scale);roots.tube(elbow,end,.105*scale,C.bark,5,radius);
+   rootsFar.tube(start,[p[0],farY,p[2]],.20*scale,C.bark,3,radius);
+   rootContacts.push({x:p[0],z:p[2],nearY,farY,radius});
+  }
+ }
+ if(rootSites.length){
+  const mesh=roots.mesh('kourindou:landscape:roots','vegetation',{owner:'island',region:'island',space:'surface',globalSurface:true,overview:true,nearDecoration:true,component:'kourindou-understorey',material:'kourindouBark',kourindouPart:'roots',basis:'P',maxDetailDistance:145,lodDistance:85});
+  mesh.farVertices=rootsFar.mesh('roots-far').vertices;
+  const lo=[Infinity,Infinity,Infinity],hi=[-Infinity,-Infinity,-Infinity];for(const a of [mesh.vertices,mesh.farVertices])for(let i=0;i<a.length;i+=9)for(let k=0;k<3;k++){lo[k]=Math.min(lo[k],a[i+k]);hi[k]=Math.max(hi[k],a[i+k]);}
+  mesh.center=lo.map((v,k)=>(v+hi[k])/2);mesh.radius=G.length(G.sub(hi,lo))/2+.02;out.push(mesh);
+ }
  // Grass and leaf litter stay off the main approach, door, roofs and paths.
- const herbs=new G.Geometry(),R=G.rng(271041);let grassSites=0;
+ const herbs=new G.Geometry(),herbsFar=new G.Geometry(),grassPoints=[],R=G.rng(271041);let grassSites=0;
  const clear=(x,z)=>!((x>-580&&x<-534&&z>-17&&z<16)||(x>-570&&x<-551&&z>=14&&z<27))&&G.FOREST.routeDistance(x,z)>2.4&&G.ISLAND.routeNear(x,z).d>8;
  for(let i=0;i<410;i++){
   const x=-604+R()*91,z=-39+R()*70;if(!clear(x,z))continue;
   const shrubEdge=(z< -20||x< -580||x> -529);if(!shrubEdge&&R()>.22)continue;
-  const y=ground(x,z)+.02;for(let j=0;j<7;j++){const a=R()*TAU,h=.18+R()*.43,w=.028+R()*.022,d=[Math.cos(a),Math.sin(a)],p=[x+(R()-.5)*.7,y,z+(R()-.5)*.7];herbs.tri([p[0]-d[1]*w,y,p[2]+d[0]*w],[p[0]+d[1]*w,y,p[2]-d[0]*w],[p[0]+d[0]*h*.25,y+h,p[2]+d[1]*h*.25],G.blend(C.leaf,C.soil,R()*.28));}grassSites++;
+  // Consume the old seven blade draws so every existing patch stays at its site.
+  // Three low folded leaves and one grass blade use the same seven triangles.
+  for(let j=0;j<7;j++){
+   const a=R()*TAU,h=(.18+R()*.43)*(shrubEdge?1.22:.85),w=(.028+R()*.022)*2.4,d=[Math.cos(a),Math.sin(a)],p=[x+(R()-.5)*.7,0,z+(R()-.5)*.7],col=G.blend(C.leaf,C.soil,R()*.28);
+   const y=near.height(p[0],p[2])-.012,fy=far.height(p[0],p[2])-.012;
+   if(j<3){
+    const tip=[p[0]+d[0]*h*.74,y+h*.85,p[2]+d[1]*h*.74],left=[p[0]+d[0]*h*.27-d[1]*w,y+h*.42,p[2]+d[1]*h*.27+d[0]*w],right=[p[0]+d[0]*h*.27+d[1]*w,y+h*.30,p[2]+d[1]*h*.27-d[0]*w],base=[p[0],y,p[2]];
+    herbs.tri(base,left,tip,col);herbs.tri(base,tip,right,col);
+    herbsFar.tri([p[0],fy,p[2]],[left[0],fy+h*.42,left[2]],[tip[0],fy+h*.85,tip[2]],col);
+   }else if(j===6)herbs.tri([p[0]-d[1]*w*.35,y,p[2]+d[0]*w*.35],[p[0]+d[1]*w*.35,y,p[2]-d[0]*w*.35],[p[0]+d[0]*h*.25,y+h,p[2]+d[1]*h*.25],col);
+  }grassSites++;grassPoints.push([x,z]);
  }
- out.push(herbs.mesh('kourindou:landscape:grasses','vegetation',{owner:'island',region:'island',space:'surface',globalSurface:true,overview:true,nearDecoration:true,component:'kourindou-understorey',material:'kourindouGrass',kourindouPart:'grasses',basis:'P',maxDetailDistance:150}));
- data.kourindouUpgrade={oldMatrices,newSites,grassSites,publicTreeBatches:groups.size*2};
+ const grassMesh=herbs.mesh('kourindou:landscape:grasses','vegetation',{owner:'island',region:'island',space:'surface',globalSurface:true,overview:true,nearDecoration:true,component:'kourindou-understorey',material:'kourindouGrass',kourindouPart:'grasses',basis:'P',maxDetailDistance:150,lodDistance:90});
+ grassMesh.farVertices=herbsFar.mesh('grasses-far').vertices;
+ const grassLo=[Infinity,Infinity,Infinity],grassHi=[-Infinity,-Infinity,-Infinity];for(const a of [grassMesh.vertices,grassMesh.farVertices])for(let i=0;i<a.length;i+=9)for(let k=0;k<3;k++){grassLo[k]=Math.min(grassLo[k],a[i+k]);grassHi[k]=Math.max(grassHi[k],a[i+k]);}
+ grassMesh.center=grassLo.map((v,k)=>(v+grassHi[k])/2);grassMesh.radius=G.length(G.sub(grassHi,grassLo))/2+.02;out.push(grassMesh);
+ data.kourindouUpgrade={oldMatrices,newSites,grassSites,publicTreeBatches:groups.size*2,grassPoints,rootSites,rootContacts};
  return out;
 }
-G.KOURINDOU_UPGRADE={id:ID,version:1,architecture,publicEnvironment,tree,bytes,bounds,localWeight};
+G.KOURINDOU_UPGRADE={id:ID,version:2,architecture,publicEnvironment,tree,bytes,bounds,localWeight};
 const previous=G.buildRegion;
 G.buildRegion=async function(data,id,legacy){
  if(id!=='forest')return previous(data,id,legacy);

@@ -38,8 +38,22 @@ function surface(){return `
  }else{kRough=.96;}
  diffuseColor.rgb*=kTint;
 `;}
+
+// RDP keeps the existing approach within 20 cm; only segments near this site
+// become uniforms. Construct once, before acquiring any renderer resources.
+function approachSegments(samples){
+ if(!samples?.length)throw new Error('Kourindou forest-entry route is missing');
+ const distance=(p,a,b)=>{const dx=b[0]-a[0],dz=b[1]-a[1],u=Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dz)/(dx*dx+dz*dz||1)));return Math.hypot(p[0]-a[0]-u*dx,p[1]-a[1]-u*dz);};
+ const simplify=points=>{let worst=.199,index=-1;for(let i=1;i<points.length-1;i++){const d=distance(points[i],points[0],points[points.length-1]);if(d>worst){worst=d;index=i;}}
+  return index<0?[points[0],points[points.length-1]]:[...simplify(points.slice(0,index+1)).slice(0,-1),...simplify(points.slice(index))];};
+ const points=simplify(samples),values=[];
+ for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i];if(distance([-560,-6],a,b)>=132)continue;if(Math.hypot(b[0]-a[0],b[1]-a[1])<1e-5)continue;values.push(a[0]+560,a[1],b[0]+560,b[1]);}
+ if(!values.length||values.length/4>24)throw new Error('Kourindou approach segment budget needs review');
+ return Float32Array.from(values);
+}
 class KourindouRenderer extends Base{
- constructor(T,canvas,world){super(T,canvas,world);this.kourindouMaterials=[];this.kourindouGroundVariants=new Map();
+ static approachSegments(samples=G.FOREST?.paths?.find(p=>p.id==='forest-entry')?.samples){return approachSegments(samples);}
+ constructor(T,canvas,world){const approach=KourindouRenderer.approachSegments();super(T,canvas,world);this.kourindouApproach=approach;this.kourindouMaterials=[];this.kourindouGroundVariants=new Map();
   // Keep the approved leaf shader/mask, but isolate per-region material state.
   // Dense canopy inspections failed on the software backend with alpha-to-coverage;
   // use a matching hard cutout in both color and depth passes, without changing
@@ -72,32 +86,57 @@ class KourindouRenderer extends Base{
  }
  kourindouGroundVariant(src,road=false){
   const key=src.uuid+':'+road;if(this.kourindouGroundVariants.has(key))return this.kourindouGroundVariants.get(key);
-  const mat=src.clone(),prior=src.onBeforeCompile,oldKey=src.customProgramCacheKey.bind(src);mat.name='kourindou-ground-'+this.kourindouGroundVariants.size;
-  mat.onBeforeCompile=(s,r)=>{prior.call(src,s,r);s.fragmentShader=noise+s.fragmentShader;
-   s.fragmentShader=s.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
+  const mat=src.clone(),prior=src.onBeforeCompile,oldKey=src.customProgramCacheKey.bind(src),count=this.kourindouApproach.length/4;mat.name='kourindou-ground-'+this.kourindouGroundVariants.size;
+  mat.onBeforeCompile=(s,r)=>{prior.call(src,s,r);if(road)s.uniforms.uKourApproach={value:this.kourindouApproach};s.fragmentShader=(road?`uniform vec4 uKourApproach[${count}];\n`:'')+noise+s.fragmentShader;
+   // After inherited color modifiers: road margins and terrain use one local albedo.
+   s.fragmentShader=s.fragmentShader.replace('#include <alphamap_fragment>',`
     vec2 kc=vAtlasPosition.xz-vec2(-560.,0.);
     float kArea=1.-smoothstep(.67,1.,length((kc-vec2(0.,-6.))/vec2(115.,97.)));
     float kGrainFade=(1.-smoothstep(.08,.38,length(fwidth(kc))))*(1.-smoothstep(75.,135.,length(vViewPosition)));
     float kMacro=kourNoise(kc*.095),kSmall=kourNoise(kc*7.5);
-    float kApron=(1.-smoothstep(19.,24.,abs(kc.x+3.)))*(1.-smoothstep(18.,23.,abs(kc.y-7.)));
-    float kApronEdge=kourNoise(kc*.65);kApron*=.83+.17*kApronEdge;
+    // Separate worn forecourt and kura entrance, with metre-scale soft edges.
+    float kApronEdge=kourNoise(kc*.24);
+    float kShopApron=1.-smoothstep(.70,1.08,length((kc-vec2(-5.,12.))/vec2(22.,14.))+(kApronEdge-.5)*.11);
+    float kKuraApron=1.-smoothstep(.70,1.08,length((kc-vec2(15.,1.))/vec2(8.,8.))+(kApronEdge-.5)*.10);
+    float kApron=max(kShopApron,kKuraApron);
     float kLeafBed=(1.-smoothstep(20.,43.,length((kc-vec2(-4.,-22.))*vec2(.7,1.))))*(1.-kApron);
+    kLeafBed*=.38+.62*smoothstep(.25,.8,kApronEdge);
     vec3 kForest=mix(vec3(.146,.182,.094),vec3(.203,.237,.132),kMacro);
-    vec3 kGravel=mix(vec3(.299,.286,.222),vec3(.365,.352,.278),kMacro);
-    vec3 kLocal=mix(kForest,vec3(.252,.240,.167),kLeafBed*.66);
+    vec3 kGravel=mix(vec3(.225,.215,.156),vec3(.280,.266,.201),kMacro);
+    vec3 kLocal=mix(kForest,vec3(.186,.155,.091),kLeafBed*.66);
     kLocal=mix(kLocal,kGravel,kApron);
-    ${road?'kLocal=mix(vec3(.335,.299,.211),kGravel,kApron);':''}
+    float kLocalMix=kArea;
+    ${road?`
+    vec3 kOtherRoad=diffuseColor.rgb*mix(vec3(.86,.82,.72),vec3(.93,.89,.80),kApron);
+    float kApproachZone=0.;
+    if(kArea>0.){
+     float kNearest=1e6;
+     for(int i=0;i<${count};i++){
+      vec4 kLine=uKourApproach[i];vec2 kDelta=kLine.zw-kLine.xy,kOffset=kc-kLine.xy;
+      float kAlong=clamp(dot(kOffset,kDelta)/max(dot(kDelta,kDelta),1e-6),0.,1.);
+      vec2 kFromLine=kOffset-kAlong*kDelta;kNearest=min(kNearest,dot(kFromLine,kFromLine));
+     }
+     float kRoadDistance=sqrt(kNearest);
+     kApproachZone=1.-smoothstep(4.8,6.,kRoadDistance);
+     float kWear=1.-smoothstep(1.2,2.,kRoadDistance+(kApronEdge-.5)*.20);
+     vec3 kEarth=mix(vec3(.214,.175,.115),vec3(.253,.213,.145),kMacro);
+     kLocal=mix(kLocal,kEarth,kWear);
+    }
+    kLocal=mix(kOtherRoad,kLocal,kApproachZone);
+    kLocalMix=kArea*mix(.72,1.,kApproachZone);`:''}
     kLocal*=1.+(kSmall-.5)*.10*kGrainFade;
-    diffuseColor.rgb=mix(diffuseColor.rgb,kLocal,kArea*${road?'.72':'.82'});
+    diffuseColor.rgb=mix(diffuseColor.rgb,kLocal,kLocalMix);
+    #include <alphamap_fragment>
    `);
   };
-  mat.customProgramCacheKey=()=>oldKey()+'-kourindou-ground-1-'+road;this.kourindouGroundVariants.set(key,mat);this.mats[mat.name]=mat;return mat;
+  mat.customProgramCacheKey=()=>oldKey()+'-kourindou-ground-3-'+road+'-'+(road?count:0);this.kourindouGroundVariants.set(key,mat);this.mats[mat.name]=mat;return mat;
  }
  material(m){
   if(m.material==='kourindouLeaf')return this.mats.kourindouLeaf;
   if(m.material?.startsWith('kourindou')&&this.mats[m.material])return this.mats[m.material];
   const mat=super.material(m),road=m.group==='roads'||m.component==='forest-path';
-  if((m.globalSurface&&m.component==='island-terrain'||road)&&Math.hypot(m.center[0]+560,m.center[2]+6)-m.radius<125)return this.kourindouGroundVariant(mat,road);
+  // Shared road shoulders are ground-colored strips, not the worn road centre.
+  if((m.globalSurface&&m.component==='island-terrain'||road)&&Math.hypot(m.center[0]+560,m.center[2]+6)-m.radius<125)return this.kourindouGroundVariant(mat,road&&!m.id.endsWith(':shoulder'));
   return mat;
  }
  wanted(record,rig,opts,distance){const m=record.data;if(m.component==='kourindou'&&m.kourindouPart==='props'&&this.quality==='low'&&!m.farVertices)return false;return super.wanted(record,rig,opts,distance);}

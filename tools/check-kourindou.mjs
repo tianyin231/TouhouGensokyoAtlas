@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
+import vm from 'node:vm';
 import {geometryDigest} from './check-hakurei.mjs';
 import {fallsBlocked} from './check-waterfall-cave.mjs';
 import {verticalHits} from './check-wind-cave.mjs';
@@ -12,6 +13,26 @@ export function kourindouDigest(pack){
 }
 export async function checkKourindou(G,atlas,characters,read){
  const K=G.KOURINDOU_UPGRADE,f=JSON.parse(read('tools/kourindou-baseline.json')),t=new G.Terrain(atlas);
+ // The local road shader follows the existing path within a bounded error and
+ // rejects a future over-budget route before constructing GPU resources.
+ const approach=G.FOREST.paths.find(p=>p.id==='forest-entry').samples,approachBefore=JSON.stringify(approach);
+ let baseConstructions=0;
+ const scope=vm.createContext({GA:{DioramaRenderer:class{constructor(){baseConstructions++;}},FOREST:{paths:[{id:'forest-entry',samples:approach}]}}});
+ vm.runInContext(read('src/kourindou-renderer.js').toString(),scope);
+ const Renderer=scope.GA.DioramaRenderer,segments=Renderer.approachSegments();
+ assert(segments.length>0&&segments.length%4===0&&segments.length<=24*4&&segments.every(Number.isFinite));
+ assert.equal(JSON.stringify(approach),approachBefore,'Road sampling modified the original route');
+ let maxApproachError=0,approachSamples=0;
+ for(const p of approach){
+  if(Math.hypot((p[0]+560)/115,(p[1]+6)/97)>1)continue;
+  let nearest=Infinity;
+  for(let i=0;i<segments.length;i+=4){const x=segments[i]-560,z=segments[i+1],dx=segments[i+2]-segments[i],dz=segments[i+3]-z,u=Math.max(0,Math.min(1,((p[0]-x)*dx+(p[1]-z)*dz)/(dx*dx+dz*dz)));
+   nearest=Math.min(nearest,Math.hypot(p[0]-x-u*dx,p[1]-z-u*dz));}
+  assert(nearest<=.2,'Shader centreline left the inherited approach');maxApproachError=Math.max(maxApproachError,nearest);approachSamples++;
+ }
+ assert(approachSamples>30);
+ scope.GA.FOREST.paths=[{id:'forest-entry',samples:Array.from({length:70},(_,i)=>[-620+i*1.2,i%2?12:-12])}];
+ assert.throws(()=>new Renderer(),/segment budget needs review/);assert.equal(baseConstructions,0,'Invalid road acquired renderer resources');
  for(const [name,digest]of Object.entries(f.protectedFiles))assert.equal(hash(read(name)),digest,'Inherited source changed: '+name);
  assert.equal(hash(JSON.stringify(characters)),f.characters);assert.equal(characters.characters.length,85);
  const audit=G.auditLandmarks(atlas);assert.equal(audit.total,179);assert.equal(audit.navigable,109);assert.equal(audit.pending,70);
@@ -52,6 +73,37 @@ export async function checkKourindou(G,atlas,characters,read){
  for(const [array,digest]of arrayHashes)assert.equal(hash(raw(array)),digest,'Original terrain or geometry buffer mutated');
  for(const m of before)if(!oldTrees.includes(m)&&m.component!=='kourindou')assert(pack.meshes.includes(m),'Unrelated world mesh replaced');
  const grounds=['near','far'].map(lod=>G.SurfaceContact.sampler(atlas,'kourindou',lod));
+ // The forest-edge refinement keeps every tree site and the original public
+ // terrain/road arrays; its contact geometry must follow both terrain LODs.
+ const env=atlas.kourindouUpgrade,roots=additions.find(m=>m.id==='kourindou:landscape:roots');
+ assert.equal(env.oldMatrices.length,28);assert.equal(env.newSites.length,4);
+ assert.deepEqual(Array.from(env.newSites,p=>Array.from(p)),f.publicSites,'New tree sites moved');
+ assert(roots?.farVertices&&roots.globalSurface&&roots.overview,'Missing permanent near/far roots');
+ assert.equal(env.rootSites.length,15);assert.equal(env.rootContacts.length,45);
+ let rootContactChecks=0,roadClearanceChecks=0;
+ for(const [lod,ground]of grounds.entries()){
+  const mesh={...roots,vertices:lod?roots.farVertices:roots.vertices};
+  for(const q of env.rootContacts){
+   const y=ground.height(q.x,q.z),rootY=lod?q.farY:q.nearY;
+   assert(rootY<=y+.001&&rootY>y-.25,'Root terminal is detached from its terrain');
+   const hits=verticalHits([mesh],q.x,q.z,y-.3,y+.3);
+   assert(hits.some(h=>h<=y+.025&&h>y-.25),'No actual buried root geometry at contact');
+   rootContactChecks++;
+  }
+ }
+ assert.equal(env.grassPoints.length,220);
+ for(const [x,z]of env.grassPoints){
+  assert(G.FOREST.routeDistance(x,z)>2.4,'Undergrowth entered a forest path');
+  const route=G.ISLAND.routeNear(x,z);assert(route.d>route.w/2+1,'Undergrowth entered a public road');
+  roadClearanceChecks++;
+ }
+ for(const a of [roots.vertices,roots.farVertices])for(let i=0;i<a.length;i+=9){
+  assert(G.FOREST.routeDistance(a[i],a[i+2])>0,'Root geometry entered a forest path');
+  const route=G.ISLAND.routeNear(a[i],a[i+2]);assert(route.d>route.w/2,'Root geometry entered a public road');
+ }
+ const expandedTriangles=far=>additions.reduce((n,m)=>n+(far&&m.farVertices?m.farVertices:m.vertices).length/27*(m.instances?.length/16||1),0);
+ const publicTriangles=expandedTriangles(false),publicFarTriangles=expandedTriangles(true);
+ assert(publicTriangles<=34564&&publicFarTriangles<=20356,'Forest-edge triangles exceed the reviewed original public environment');
  for(const p of [near,far])for(const [x,y,z]of p.meta.porchFeet)for(const ground of grounds){assert(y<ground.height(x,z),'Foundation not buried');assert(verticalHits(p.meshes.filter(m=>m.kourindouPart==='foundation'),x,z,y-.5,y+1.5).length>=2,'Foundation is not actual geometry');contactChecks++;}
  for(const [key,p]of [['near',near],['far',far],['public',publicPack]]){
   assert.equal(new Set(p.meshes.map(m=>m.id)).size,p.meshes.length);
@@ -73,5 +125,5 @@ export async function checkKourindou(G,atlas,characters,read){
  const contact=atlas.surfaceContacts.kourindou;assert(contact.near.byteLength+contact.far.byteLength<220000);
  assert(K.bytes(additions)<1.5*1048576,'Public source attribute budget');
  for(const id of ['kourindouRear','kourindouFoot','kourindouPath']){const v=G.PRESETS[id];assert.equal(G.DIORAMA.regionOf(id),'forest');assert(v.eye[1]>grounds[0].height(v.eye[0],v.eye[2])+.85,'Camera underground');}
- return {...stats,public:{meshes:additions.length,bytes:K.bytes(additions),replacedTrees:atlas.kourindouUpgrade.oldMatrices.length,newTrees:atlas.kourindouUpgrade.newSites.length,grassSites:atlas.kourindouUpgrade.grassSites},doorChecks,roofChecks,contactChecks,contactBytes:contact.near.byteLength+contact.far.byteLength,protectedFiles:Object.keys(f.protectedFiles).length,navigable:109,pending:70,characters:85};
+ return {...stats,public:{meshes:additions.length,bytes:K.bytes(additions),triangles:publicTriangles,farTriangles:publicFarTriangles,replacedTrees:env.oldMatrices.length,newTrees:env.newSites.length,grassSites:env.grassSites,rootSites:env.rootSites.length},approach:{segments:segments.length/4,bytes:segments.byteLength,samples:approachSamples,maxError:maxApproachError,rejectedBeforeResources:true},doorChecks,roofChecks,contactChecks,rootContactChecks,roadClearanceChecks,contactBytes:contact.near.byteLength+contact.far.byteLength,protectedFiles:Object.keys(f.protectedFiles).length,navigable:109,pending:70,characters:85};
 }
