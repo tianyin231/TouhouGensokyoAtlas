@@ -2,7 +2,7 @@
   "baseline": "a45816b6b76584aae4f54d58d772223e48ecee2b",
   "description": "神社改造前固定的其他主区域输出；不由测试改写。",
   "regions": {
-    "village": "2875880afaab25b7a49f7845ac6e7be50496a4485839399f5e1b7fe145a6993c",
+    "village": "554ea956479592654a49c475b5af087574b14678b84dce2326846ee74b42bdd9",
     "trail": "7db23fd0ef0d28b6540795370cdd7653dbaaf2dc82f3755f837f52fdeae1aef3",
     "scarlet": "2437235f0b9fac3413104f785eeaa91fda6853135da7d15da0f750ff41d6e0fb",
     "myouren": "0286d2f49c75e5f6c613c8ef68373cf1f090ee2799245c267427055b403672c6",
@@ -17,6 +17,19 @@
     "genbu": "f6a4a51132c512ff3087115e67c5ed1497f51ddde07995eceda55825826ca188"
   },
   "reviewedUpstreamChanges": {
+    "village": {
+      "base": "096849ad53725be1fdec67f1d85ddc18bcae3781",
+      "before": "2875880afaab25b7a49f7845ac6e7be50496a4485839399f5e1b7fe145a6993c",
+      "after": "554ea956479592654a49c475b5af087574b14678b84dce2326846ee74b42bdd9",
+      "reason": "用户授权逐区精修主空岛；保留原226栋普通住宅、140处院落、凹进铺面、市场、河桥、全部实例矩阵／颜色与布局路线。v2仅使用精确相邻quad索引并在Worker co-pack near/far Uint8 finish，原三角顺序、顶点／法线／颜色逐bit重放，100数组finish对照冻结v1函数一致。32条屋瓦／木构和3类小物件保留v1远档；6桥头按真实地形档与native/proxy桥表示两轴选择，共24永久独立记录、最多6可见；native cap几何逐bit保留，proxy厚梯形按实际全宽源边接合，凸quad裁切及实际mesh接地有独立CPU报告。8原overview对象、材质、全部数组及metadata完全保留，新增代理backing为0。另见village-baseline的几何与独立finish摘要及v1历史。Node隔离VM计时不能当浏览器Worker耗时；CPU通过不代表WebGL／中景瓦面／公共cap实际视图和冷代理／详情切换／实际帧性能通过，其他12区摘要与审阅记录逐项不变。",
+      "supersededV1": {
+        "base": "c0c8852ed39b2d386c5be4455f7778eec8770f51",
+        "before": "2875880afaab25b7a49f7845ac6e7be50496a4485839399f5e1b7fe145a6993c",
+        "after": "08cc714bd307be167c0e1dc74044042b69cba095816178f5fe8c54369cfe84cd",
+        "reason": "用户授权逐区精修主空岛；人里原住宅、街区、凹进铺面、桥、市场、院落及全部实例位置保持。仅对本区既有记录做Float32逐位无损索引与材质分类，32条屋瓦／木构细节及3类小物件新增独立远档；原三角顺序、顶点／法线／颜色由check-village精确展开核对。6处桥头采用永久公共近远地形记录，总览仅修改8条明确目标记录；三项固定摘要另见village-baseline。其他12区摘要不变。候选尚待真实WebGL／中景瓦面／卸载详情后的桥端接缝验收，不由CPU回归宣称画面或帧性能通过。"
+      },
+      "supersededV2Reason": "用户授权逐区精修主空岛；保留原226栋普通住宅、140处院落、凹进铺面、市场、河桥、全部实例矩阵／颜色与布局路线。v2仅使用精确相邻quad索引并在Worker co-pack near/far Uint8 finish，原三角顺序、顶点／法线／颜色逐bit重放，100数组finish对照冻结v1函数一致。32条屋瓦／木构和3类小物件保留v1远档；6桥头是随公共地形近远选择的永久独立记录。8原overview对象、材质、全部数组及metadata完全保留，新增代理backing为0。另见village-baseline的几何与独立finish摘要及v1历史。Node隔离VM计时不能当浏览器Worker耗时；CPU通过不代表WebGL／中景瓦面／卸载详情桥端接缝／实际帧性能通过，其他12区摘要与审阅记录逐项不变。"
+    },
     "mountain": {
       "commit": "ca737d6",
       "before": "11109364aac2227c2dfcdba8b96f400de09c9fee023ff13a28ee73cdd45c7e21",

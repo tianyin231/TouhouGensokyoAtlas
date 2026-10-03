@@ -6,6 +6,7 @@ import {checkRenderOwnership} from './check-render-ownership.mjs';
 import {checkStreamingLifecycle} from './check-streaming-lifecycle.mjs';
 import {checkKourindou} from './check-kourindou.mjs';
 import {checkForest} from './check-forest.mjs';
+import {checkVillage} from './check-village.mjs';
 import {checkGeyserCenter} from './check-geyser-center.mjs';
 import {checkGeyser} from './check-geyser.mjs';
 import {checkWindCave} from './check-wind-cave.mjs';
@@ -101,8 +102,8 @@ for (const [id, file] of [
 }
 const context = vm.createContext({ performance, TextDecoder, TextEncoder });
 vm.runInContext(builder, context);
-// Forest detail uses the same rendered ground contacts as the production boot.
-// Prepare them before any inherited checker requests the forest detail pack.
+// Prepare the same public ground contacts used by the production overview
+// before any inherited checker requests forest or village detail.
 {
   const raw = gunzipSync(read('assets/packs/overview.pack.gz'));
   const overview = context.GA.decodePack(raw.buffer.slice(raw.byteOffset, raw.byteOffset + raw.byteLength));
@@ -110,6 +111,8 @@ vm.runInContext(builder, context);
   context.GA.LANDSCAPE.apply(overview, terrain);
   context.GA.applyHighlandGround(overview, terrain);
   context.GA.FOREST_UPGRADE.prepare(atlas, overview);
+  const village = context.GA.VILLAGE_UPGRADE;
+  context.GA.SurfaceContact.prepare(atlas, overview, village.contactId, village.contactBounds);
 }
 console.log('博丽神社检查通过：'+JSON.stringify(await checkHakurei(context.GA,atlas,read)));
 const pack = context.GA.buildOldHell();
@@ -176,3 +179,4 @@ console.log('间歇泉地下中心检查通过：'+JSON.stringify(await checkGey
 
 console.log('香霖堂精修检查通过：'+JSON.stringify(await checkKourindou(context.GA,atlas,JSON.parse(script('character-data')),read)));
 console.log('森林住宅与木板径检查通过：'+JSON.stringify(await checkForest(context.GA,atlas,JSON.parse(script('character-data')),read)));
+console.log('人里精修检查通过：'+JSON.stringify(await checkVillage(context.GA,atlas,JSON.parse(script('character-data')),read)));

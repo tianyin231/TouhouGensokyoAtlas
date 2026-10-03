@@ -9,6 +9,10 @@ Housing comparisons use exact allowed record changes and protected source hashes
 the standalone housing smoke mode checks production integration without an A/B.
 Forest-path visibility comparisons retain every source hash and permit only the
 exact forest:paths record to leave the visible set; public roads stay protected.
+Village production comparisons protect all existing IDs, placements and source
+instances, replay indexed near triangles bit for bit, and use an exact field
+manifest for finishes/far geometry and bounded permanent bridge approaches.
+Worker timing observes native messages; no production function is replaced.
 """
 
 import argparse
@@ -34,6 +38,15 @@ OPTIONS = dict(quality='balanced', lighting='neutral', weather='clear', clock=12
 EXPERIMENT_FILES = ['assets/experiments/kourindou-foliage-atlas.js',
                     'src/experiments/kourindou-foliage-texture.js']
 TARGET_PATTERN = r'^kourindou:landscape:.*:leaf$'
+VILLAGE_OVERVIEW_IDS = {f'overview:village:hlod:architecture:world:{x}:{z}:{material}'
+                        for x in (-1, 0) for z in (-1, 0) for material in ('matte', 'paving')}
+VILLAGE_METADATA_FIELDS = {'material', 'villageOriginalMaterial', 'villageMicro', 'villageProp', 'lodDistance'}
+VILLAGE_ARRAY_FIELDS = {'vertices', 'index', 'farVertices', 'villageFinish', 'villageFarFinish'}
+VILLAGE_SPECS = {'riverside', 'street', 'bridge'}
+VILLAGE_RUNTIME_INPUTS = {'src/village-upgrade.js', 'src/village-renderer.js'}
+VILLAGE_REGISTRATION_INPUTS = {'project.json', 'tools/build.py', 'tools/check.mjs',
+                             'tools/check-foliage-texture-browser.py', 'tools/check-village.mjs',
+                             'tools/village-baseline.json', 'tools/hakurei-baseline.json'}
 SPECS = [
     dict(name='riverside', view='riverside'),
     dict(name='street', view='street'),
@@ -184,18 +197,111 @@ SOURCE_INTEGRITY_JS = r"""async () => {
    .then(h=>({type:a.constructor.name,length:a.length,bytes:a.byteLength,sha256:hex(h)})));
   return cache.get(a);
  }
+ const replayCache=new WeakMap();
+ async function replay(d){
+  if(!d.index)return array(d.vertices);
+  if(!replayCache.has(d.vertices))replayCache.set(d.vertices,new WeakMap());
+  const maps=replayCache.get(d.vertices);if(maps.has(d.index))return maps.get(d.index);
+  if(d.vertices.constructor.name!=='Float32Array'||d.vertices.length%9||d.index.length%3)
+   throw Error('Invalid village indexed source: '+d.id);
+  const src=new Uint32Array(d.vertices.buffer,d.vertices.byteOffset,d.vertices.length),out=new Uint32Array(d.index.length*9);
+  for(let i=0;i<d.index.length;i++){
+   const from=d.index[i]*9;if(from+9>src.length)throw Error('Village source index out of bounds: '+d.id);
+   for(let k=0;k<9;k++)out[i*9+k]=src[from+k];
+  }
+  const result={type:'Float32Array',length:out.length,bytes:out.byteLength,
+   sha256:hex(await crypto.subtle.digest('SHA-256',out))};maps.set(d.index,result);return result;
+ }
  const fields=['id','group','material','owner','region','space','component','locationId','overview',
   'globalSurface','center','radius','lod','lodDistance','maxDetailDistance','forestPart','basis'];
  const records=[];
  for(const r of R.records){
   const d=r.data,row={};for(const k of fields)row[k]=d[k]??null;
   row.arrays={};for(const k of Object.keys(d).sort())if(ArrayBuffer.isView(d[k]))row.arrays[k]=await array(d[k]);
+  if(globalThis.__villageEvidence){
+   row.metadata={};for(const k of Object.keys(d).sort())if(!ArrayBuffer.isView(d[k])&&d[k]!==undefined&&typeof d[k]!=='function')
+    row.metadata[k]=JSON.parse(JSON.stringify(d[k]));
+   if(r.pack==='village')row.nearReplay=await replay(d);
+  }
   records.push(row);
  }
  records.sort((a,b)=>a.id.localeCompare(b.id));
  if(new Set(records.map(r=>r.id)).size!==records.length)throw Error('Duplicate source record ID');
- return {records,streaming:R.diagnosticSnapshot('source-integrity').streaming,
+ const result={records,streaming:R.diagnosticSnapshot('source-integrity').streaming,
   completeSourceGeometry:true,hashAlgorithm:'SHA-256 of exact typed-array view bytes'};
+ if(globalThis.__villageEvidence)result.villageCompleteMetadata=true;
+ return result;
+}"""
+
+# Passive capture listener on the already-created native Worker. startedAt is
+# RegionStreaming's own task boundary; messageAt is main-thread receipt before
+# its existing onmessage handler. Their difference includes Worker startup,
+# model construction and transfer, not rendering or subsequent source hashing.
+VILLAGE_VISIT_JS = r"""v => {
+ const A=ATLAS,S=A.stream,t={view:v,setViewAtMs:performance.now(),
+  cacheHadVillage:S.cache.has('village'),workerStartedAtMs:null,workerMessageAtMs:null,
+  workerElapsedMs:null,workerRegion:null,workerEpoch:null,messageObserved:false,
+  workerQueueMs:null,workerThreadOnlyMs:null,
+  observerAttached:false,workerError:null,workerBuildMs:null,workerUpgrade:null,
+  boundary:'native RegionStreaming.pending.startedAt -> existing Worker message receipt; includes startup/build/transfer'};
+ globalThis.__villageTiming=t;A.setView(v,false);
+ const task=S.pending;
+ if(task?.id==='village'&&task.worker){
+  t.workerRegion=task.id;t.workerEpoch=task.token;t.workerStartedAtMs=Number.isFinite(task.startedAt)?task.startedAt:null;
+  task.worker.addEventListener('message',event=>{
+   if(t.messageObserved)return;
+   t.messageObserved=true;t.workerMessageAtMs=performance.now();
+   t.workerElapsedMs=t.workerStartedAtMs===null?null:t.workerMessageAtMs-t.workerStartedAtMs;
+   t.workerError=event.data.error||null;const p=event.data.pack;
+   t.workerBuildMs=Number.isFinite(p?.builtMs)?p.builtMs:null;
+   const u=p?.meta?.villageUpgrade;
+   t.workerUpgrade=u?{revision:u.revision??null,workerFinishMs:u.workerFinishMs??null,
+    timings:u.timings?{...u.timings}:null}:null;
+  },{capture:true,once:true});t.observerAttached=true;
+ }
+ return t;
+}"""
+
+VILLAGE_SNAPSHOT_JS = r"""() => {
+ const A=ATLAS,R=A.renderer,row=r=>({id:r.data.id,level:r.level,wanted:!!r.wanted,
+  visible:!!r.item?.mesh.visible,sourceMaterial:r.data.material,
+  actualMaterial:r.item?.mesh.material?.name||'',castShadow:!!r.item?.mesh.castShadow});
+ const approaches=R.records.filter(r=>r.data.component==='village-bridge-approach').map(r=>{
+  const d=r.data,s=R.recordMap.get(d.terrainSource),visible=!!(r.wanted&&r.item?.mesh.visible);
+  return {...row(r),terrainSource:d.terrainSource,globalNear:!!d.globalNear,globalFar:!!d.globalFar,
+   terrain:s?{...row(s),globalNear:!!s.data.globalNear,globalFar:!!s.data.globalFar}:null,
+   bindingValid:!!s&&s.data.component==='island-terrain'&&d.globalSurface===true&&
+    !!d.globalNear===!!s.data.globalNear&&!!d.globalFar===!!s.data.globalFar&&
+    d.terrainLodRadius===s.data.radius&&JSON.stringify(d.terrainLodCenter)===JSON.stringify(s.data.center),
+   precisionMatches:!visible||!!(s?.wanted&&s.item?.mesh.visible&&
+    !!d.globalNear===!!s.data.globalNear&&!!d.globalFar===!!s.data.globalFar)};
+ }).sort((a,b)=>a.id.localeCompare(b.id));
+ const detail=R.records.filter(r=>r.pack==='village').map(r=>{
+  const m=r.item?.mesh,g=m?.geometry,d=r.data,a=r.level===1&&d.farVertices?d.farVertices:d.vertices,
+   source=r.level===1&&d.farVertices?d.villageFarFinish:d.villageFinish,finish=g?.getAttribute('villageFinish'),
+   visible=!!(r.wanted&&m?.visible),surface=d.material==='villageSurface';
+  return {...row(r),villageMicro:d.villageMicro??null,villageProp:d.villageProp??null,
+   finishPresent:!!finish,finishCount:finish?.count||0,
+   finishCorrect:!visible||!surface||!!finish&&finish.itemSize===2&&finish.normalized===false&&
+    finish.array===source&&source?.constructor.name==='Uint8Array'&&source.length===a.length/9*2,
+   triangles:g?(g.index?g.index.count:g.attributes.position.count)/3*(m.isInstancedMesh?m.count:1):0};
+ }).sort((a,b)=>a.id.localeCompare(b.id));
+ const s=A.stream.info(),pack=A.stream.cache.get('village')?.pack;
+ return {version:GA.VILLAGE_UPGRADE?.version??null,approaches,detail,
+  materials:R.records.filter(r=>r.wanted&&r.item?.mesh.visible).map(row).sort((a,b)=>a.id.localeCompare(b.id)),
+  layout:{presets:GA.PRESETS,placements:A.data.placements,routes:GA.ISLAND.allRoutes},
+  nativeTiming:{...(globalThis.__villageTiming||{}),readyObservedAtMs:globalThis.__villageReadyAtMs??null,
+   waitObservationUpperBoundMs:globalThis.__villageReadyAtMs&&__villageTiming?
+    __villageReadyAtMs-__villageTiming.setViewAtMs:null,
+   streamLog:s.log,streamMetrics:{requests:s.requests,builds:s.builds,cacheHits:s.cacheHits},
+   cachePackBuildMs:Number.isFinite(pack?.builtMs)?pack.builtMs:null,
+   cachePackUpgrade:pack?.meta?.villageUpgrade?{revision:pack.meta.villageUpgrade.revision,
+    workerFinishMs:pack.meta.villageUpgrade.workerFinishMs,timings:pack.meta.villageUpgrade.timings}:null,
+   staticWarmStartAtMs:globalThis.__villageWarmStartAtMs??null,
+   staticWarmEndAtMs:globalThis.__villageWarmEndAtMs??null,
+   sourceAuditStartAtMs:globalThis.__villageAuditStartAtMs??null,
+   sourceAuditEndAtMs:globalThis.__villageAuditEndAtMs??null,
+   sourceAuditExcluded:true,staticWarmFramesExcluded:true,nodeVMCostUsed:false}};
 }"""
 
 HOUSING_SMOKE_JS = r"""() => {
@@ -369,6 +475,8 @@ def launch_page(pw, args, url, session):
     session['extensions'] = page.evaluate('ATLAS.renderer.engine.getContext().getSupportedExtensions()')
     session['gpuTimerSupported'] = 'EXT_disjoint_timer_query_webgl2' in session['extensions']
     page.evaluate('x=>{const o=x.options;globalThis.__foliageFamily=x.family;globalThis.__foliageOptions=o;Object.assign(ATLAS.state,o);ATLAS.renderer.setQuality(o.quality);document.body.classList.add("ui-hidden");ATLAS.state.uiHidden=true;}',dict(options=OPTIONS,family=args.family))
+    if args.comparison_scope=='village-production':
+        page.evaluate('globalThis.__villageEvidence=true')
     if args.experiment_root:
         for filename in args.experiment_files:
             page.evaluate((args.experiment_root/filename).read_text())
@@ -381,9 +489,11 @@ def set_options(page, options):
     page.evaluate('o=>{Object.assign(ATLAS.state,o);ATLAS.renderer.setQuality(o.quality);ATLAS.state.labels=false;ATLAS.state.characters=false;}', options)
 
 
-def visit(page, spec, options):
-    page.evaluate('v=>ATLAS.setView(v,false)', spec['view'])
+def visit(page, spec, options, village=False):
+    page.evaluate(VILLAGE_VISIT_JS if village else 'v=>ATLAS.setView(v,false)', spec['view'])
     page.wait_for_function('!ATLAS.stream.pending&&[...ATLAS.stream.required].every(id=>ATLAS.stream.cache.has(id))', polling=200)
+    if village:
+        page.evaluate('globalThis.__villageReadyAtMs=performance.now()')
     set_options(page, options)
     if 'camera' in spec:
         page.evaluate('p=>{ATLAS.rig.fov=p.fov;ATLAS.rig.setView({...p,space:ATLAS.state.space},false);ATLAS.rig.updateMatrices();}', spec['camera'])
@@ -395,8 +505,203 @@ def visit(page, spec, options):
          ATLAS.rig.fov=60;ATLAS.rig.setView({space:'surface',eye:[a[0],y+7,a[1]],
           target:[b[0],by+2,b[1]]},false);ATLAS.rig.updateMatrices();
         }''', spec)
+    if village:
+        page.evaluate('globalThis.__villageWarmStartAtMs=performance.now()')
     for _ in range(3):
         page.evaluate(FIXED_FRAME_JS)
+    if village:
+        page.evaluate('globalThis.__villageWarmEndAtMs=performance.now()')
+
+
+def compare_village_inputs(reference, current, before_project, after_project, before_fixture, after_fixture):
+    before=reference['buildInputs'];after=current['buildInputs']
+    changed={k for k in set(before)|set(after) if before.get(k)!=after.get(k)}
+    allowed=VILLAGE_RUNTIME_INPUTS|VILLAGE_REGISTRATION_INPUTS
+    protected_source={k for k in set(before)|set(after)
+                      if k.startswith(('src/','data/','assets/','vendor/')) and k not in VILLAGE_RUNTIME_INPUTS}
+    expected=json.loads(json.dumps(before_project))
+    builder='src/village-upgrade.js';renderer='src/village-renderer.js'
+    if builder not in expected['worldBuilders']:expected['worldBuilders'].append(builder)
+    if renderer not in expected['extensionRenderers']:
+        expected['extensionRenderers'].insert(expected['extensionRenderers'].index('src/forest-renderer.js')+1,renderer)
+    def fixture_other_regions(fixture):
+        result=json.loads(json.dumps(fixture))
+        result['regions'].pop('village',None)
+        result.get('reviewedUpstreamChanges',{}).pop('village',None)
+        return result
+    checks=dict(onlyApprovedInputsChanged=changed<=allowed,
+                originalInputNamesRetained=set(before)<=set(after),
+                allOtherProductionSourceSHAEqual=bool(protected_source) and not changed&protected_source,
+                twoVillageRuntimeInputsPresent=VILLAGE_RUNTIME_INPUTS<=set(after),
+                exactProjectRegistration=expected==after_project and
+                    after_project['worldBuilders'].count(builder)==1 and after_project['worldBuilders'][-1]==builder and
+                    after_project['extensionRenderers'].count(renderer)==1,
+                otherHakureiFixtureRegionsEqual=bool(before_fixture.get('regions')) and
+                    set(before_fixture['regions'])==set(after_fixture.get('regions',{})) and
+                    fixture_other_regions(before_fixture)==fixture_other_regions(after_fixture))
+    return dict(checks=checks,actualChangedInputs=sorted(changed),unexpectedChangedInputs=sorted(changed-allowed),
+                protectedProductionInputCount=len(protected_source),allowedRuntimeInputs=sorted(VILLAGE_RUNTIME_INPUTS),
+                allowedRegistrationInputs=sorted(VILLAGE_REGISTRATION_INPUTS),
+                changeManifestIncludedInBuildInputs=False)
+
+
+def compare_village_reference_inputs(manifest, current_report):
+    runtime=manifest.get('referenceRuntimeInputs')
+    runtime=runtime if isinstance(runtime,dict) else {}
+    sha=current_report.get('sha256');inputs=current_report.get('buildInputs')
+    checks=dict(independentChromiumReferenceVerified=manifest.get('independentChromiumReferenceVerified') is True,
+                browserUseUnblocked=manifest.get('browserUseBlocked') is False,
+                candidateArtifactSHAEqual=isinstance(sha,str) and len(sha)==64 and
+                    manifest.get('candidateArtifactSHA256')==sha,
+                candidateBuildInputsEqual=isinstance(inputs,dict) and bool(inputs) and
+                    runtime.get('candidateBuildInputs')==inputs)
+    return dict(checks=checks,referenceChromiumVersion=manifest.get('referenceChromiumVersion'),
+                candidateArtifactSHA256=manifest.get('candidateArtifactSHA256'),
+                referenceBuildInputCount=len(runtime['candidateBuildInputs'])
+                    if isinstance(runtime.get('candidateBuildInputs'),dict) else None)
+
+
+def compare_village_reference_binding(manifest, current_report, baseline_capture, current_capture):
+    result=compare_village_reference_inputs(manifest,current_report)
+    version=manifest.get('referenceChromiumVersion')
+    result['checks'].update(referenceChromiumMatchesCandidate=isinstance(version,str) and bool(version) and
+                              version==current_capture.get('browser'),
+                           referenceChromiumMatchesBaseline=isinstance(version,str) and bool(version) and
+                              version==baseline_capture.get('browser'))
+    result.update(candidateChromiumVersion=current_capture.get('browser'),
+                  baselineChromiumVersion=baseline_capture.get('browser'))
+    return result
+
+
+def compare_village_sources(reference, current, manifest, base, now):
+    require(manifest.get('schema')=='village-production-v1', 'Unknown village manifest schema')
+    require(reference.get('villageCompleteMetadata') and current.get('villageCompleteMetadata'),
+            'Village baseline/candidate need complete metadata and near replay hashes')
+    before={r['id']:r for r in reference['records']}
+    after={r['id']:r for r in current['records']}
+    require(len(before)==len(reference['records']) and len(after)==len(current['records']), 'Duplicate village source ID')
+    changed={r['id']:r for r in manifest['changedRecords']}
+    added={r['id']:r for r in manifest['addedRecords']}
+    require(len(changed)==len(manifest['changedRecords']) and len(added)==len(manifest['addedRecords']),
+            'Duplicate village manifest ID')
+    require(not set(changed)&set(added), 'Village manifest ID sets overlap')
+    require(set(manifest['preservedOverviewIds'])==VILLAGE_OVERVIEW_IDS,
+            'Village manifest must preserve the exact eight overview records')
+    require(0<len(added)<=24 and all(k.startswith('village:public:bridge-approach:') for k in added),
+            'Village additions exceed the bounded bridge approach scope')
+    require(all(r['metadata'].get('component')=='village-bridge-approach' and
+                r['metadata'].get('owner')=='island' and r['metadata'].get('region')=='island' and
+                r['metadata'].get('space')=='surface' and r['metadata'].get('globalSurface') is True and
+                r['metadata'].get('group')=='architecture' and r['metadata'].get('material')=='villageStone'
+                for r in added.values()), 'Manifest adds an unrelated region/component')
+    require(all(k in before and before[k]['owner']=='village' and not before[k]['overview'] and
+                not before[k]['metadata'].get('legacyInstanceIdentity') and before[k]['group']!='water'
+                for k in changed), 'Village manifest exempts a protected record')
+    protected=(set(before)|set(after))-(set(changed)|set(added))
+    differences=[k for k in sorted(protected) if before.get(k)!=after.get(k)]
+    violations=[]
+    missing=object()
+    for key,rule in changed.items():
+        if key not in after:
+            violations.append(key+': missing candidate');continue
+        a,b=before[key],after[key]
+        meta=set(rule['allowedMetadataFields']);arrays=set(rule['allowedArrayFields'])
+        require(meta<=VILLAGE_METADATA_FIELDS and arrays<=VILLAGE_ARRAY_FIELDS,
+                'Village rule exempts protected layout/instance fields: '+key)
+        expected=rule['candidateMetadata']
+        require(set(expected)==meta, 'Village changed metadata needs exact values: '+key)
+        for field in set(a['metadata'])|set(b['metadata']):
+            if field in meta:
+                if b['metadata'].get(field,missing)!=expected[field]:violations.append(key+': metadata '+field)
+            elif a['metadata'].get(field,missing)!=b['metadata'].get(field,missing):
+                violations.append(key+': protected metadata '+field)
+        expected_arrays=rule['candidateArrays']
+        require(set(expected_arrays)==arrays, 'Village changed arrays need exact SHA descriptors: '+key)
+        for field in set(a['arrays'])|set(b['arrays']):
+            if field in arrays:
+                if b['arrays'].get(field,missing)!=expected_arrays[field]:violations.append(key+': array '+field)
+            elif a['arrays'].get(field,missing)!=b['arrays'].get(field,missing):
+                violations.append(key+': protected array '+field)
+        if not a.get('nearReplay') or a['nearReplay']!=b.get('nearReplay'):
+            violations.append(key+': near triangle replay differs')
+    added_violations=[k for k,r in added.items() if k not in after or
+                      after[k]['metadata']!=r['metadata'] or after[k]['arrays']!=r['arrays']]
+    public_triangles=sum((r['arrays']['index']['length']/3 if r['arrays'].get('index') else
+                          r['arrays']['vertices']['length']/27) for r in added.values())
+    public_array_bytes=sum(a['bytes'] for r in added.values() for a in r['arrays'].values())
+    lod_allowed={k for k,r in changed.items() if r.get('allowedVisibleLODChange') is True}
+    require(all(before[k]['lod'] in ('near','props') for k in lod_allowed),
+            'Village LOD exemption extends beyond micro/prop records')
+    visible=lambda frame:[(r['id'],None if r['id'] in lod_allowed else r['level'])
+                          for r in frame['wanted'] if r['id'] not in added]
+    old_ids=set(before)
+    instances=all(before[k]['arrays'].get(field)==after.get(k,{}).get('arrays',{}).get(field)
+                  for k in old_ids for field in ('instances','instanceColors'))
+    state=now['villageProduction']
+    approach_ids={r['id'] for r in state['approaches']}
+    visible_approaches=[r for r in state['approaches'] if r['wanted'] and r['visible']]
+    # The exact representation/terrain combinations live in the reviewed
+    # manifest. Only six physical bridge ends may be visible simultaneously.
+    endpoints=[]
+    for row in visible_approaches:
+        definition=added.get(row['id'],{})
+        endpoints.append((definition.get('bridgeZ'),definition.get('bridgeSide')))
+    require(all(r.get('bridgeZ') in (-158,32,164) and r.get('bridgeSide') in (-1,1)
+                for r in added.values()), 'Village approach endpoint metadata missing')
+    materials_before={r['id']:r for r in base['villageProduction']['materials']}
+    materials_after={r['id']:r for r in state['materials']}
+    # Road mouth shaders may change only the native village public route rows;
+    # source fields and arrays still remain in the fully protected set.
+    require(all(k in before and before[k]['metadata'].get('globalSurface') is True and
+                before[k]['metadata'].get('component')=='connection-road' and
+                before[k]['metadata'].get('pathOwner')=='village'
+                for k in manifest.get('renderMaterialChanges',[])), 'Village shader exemption is not a native village road')
+    render_materials=manifest.get('candidateRenderMaterials',{})
+    require(set(render_materials)==set(manifest.get('renderMaterialChanges',[])) and
+            all(v==('villageShoulder' if k.endswith(':shoulder') else 'villageRoad')
+                for k,v in render_materials.items()), 'Village road shader manifest needs exact materials')
+    material_violations=[]
+    for key in (set(materials_before)|set(materials_after))-set(added):
+        a,b=materials_before.get(key),materials_after.get(key)
+        if not a or not b:
+            material_violations.append(key+': visible material row missing');continue
+        for field in set(a)|set(b):
+            if field=='level' and key in lod_allowed:continue
+            if field=='sourceMaterial' and key in changed:continue
+            if field=='actualMaterial':
+                if key in render_materials:
+                    if b[field]!=render_materials[key]:material_violations.append(key+': actual road material differs')
+                    continue
+                if key in changed and after[key]['metadata'].get('material') in ('villageSurface','villagePaving'):
+                    if b[field]!=after[key]['metadata']['material']:
+                        material_violations.append(key+': actual village finish material differs')
+                    continue
+            if a.get(field,missing)!=b.get(field,missing):material_violations.append(key+': '+field)
+    checks=dict(originalSourceIdsRetained=old_ids<=set(after),
+                addedIdsEqual=set(after)-old_ids==set(added),
+                protectedSourceEqual=bool(protected) and not differences,
+                changedFieldsConstrained=not violations,
+                addedSourcesMatchManifest=not added_violations,
+                allOriginalInstancesEqual=instances,
+                preservedOverviewEqual=VILLAGE_OVERVIEW_IDS<=old_ids and
+                    all(before[k]==after.get(k) for k in VILLAGE_OVERVIEW_IDS),
+                layoutEqual=base['villageProduction']['layout']==state['layout'],
+                protectedWantedEqual=visible(base)==visible(now),
+                protectedMaterialsEqual=not material_violations,
+                approachIdsEqual=approach_ids==set(added),
+                approachesTerrainBound=all(r['bindingValid'] and r['precisionMatches'] for r in state['approaches']),
+                visibleApproachMaterial=all(r['actualMaterial']=='villageStone' for r in visible_approaches),
+                sixPhysicalBridgeEndsMaximum=len(visible_approaches)<=6 and len(set(endpoints))==len(endpoints),
+                publicSourceBudget=public_triangles<=1000 and public_array_bytes<=100*1024,
+                visibleWorkerFinishAttributes=all(r['finishCorrect'] for r in state['detail']),
+                requiredPacksEqual=reference['streaming']['required']==current['streaming']['required'])
+    return dict(checks=checks,protectedRecordCount=len(protected),changedRecordCount=len(changed),
+                addedRecordCount=len(added),unexpectedSourceDifferences=differences,
+                changedFieldViolations=violations,addedSourceViolations=added_violations,
+                visibleMaterialViolations=material_violations,
+                allowedVisibleLODChangeIds=sorted(lod_allowed),visibleApproachCount=len(visible_approaches),
+                publicSourceTriangles=public_triangles,publicArrayViewBytes=public_array_bytes,
+                allNearReplayHashesEqual=not any('near triangle replay differs' in s for s in violations))
 
 
 def compare_housing_sources(reference, current, manifest):
@@ -524,6 +829,27 @@ def capture_visuals(pw, args, url, report, save):
                 'Forest-path visibility hashes every source against its matching screenshot baseline')
         require(set(selected)<={'forestAliceConnection','forestMarisaConnection','forestEntryConnection','forestMarisaConnectionLow'},
                 'Forest-path visibility scope is limited to the four established connection views')
+    if args.comparison_scope=='village-production':
+        require(args.modes=='original' and not args.experiment_root and not args.source_reference,
+                'Village validation uses native production sources without foliage injection')
+        require(set(selected)<=VILLAGE_SPECS, 'Village scope is limited to the approved village views')
+        require(not args.source_only, 'Village strict baseline includes matching fixed screenshots')
+        require(bool(compare)==bool(manifest), 'Village candidate needs a screenshot baseline and exact field manifest')
+        if compare:
+            report['villageReferenceInputs']=compare_village_reference_inputs(manifest,report);save()
+            require(all(report['villageReferenceInputs']['checks'].values()),
+                    'Village independent Chromium reference is blocked or bound to another candidate build')
+            baseline_dist=Path(compare['artifact']).resolve().parent
+            baseline_release,_,baseline_release_sha=validate_build(baseline_dist)
+            require(baseline_release_sha==compare['releaseSha256'] and baseline_release['sha256']==compare['sha256'],
+                    'Village baseline frozen build differs from its saved report')
+            baseline_root=baseline_dist.parent;candidate_root=args.dist.parent
+            read_json=lambda root,name:json.loads((root/name).read_text())
+            report['villageBuildInputs']=compare_village_inputs(compare,report,
+                read_json(baseline_root,'project.json'),read_json(candidate_root,'project.json'),
+                read_json(baseline_root,'tools/hakurei-baseline.json'),read_json(candidate_root,'tools/hakurei-baseline.json'))
+            save()
+            require(all(report['villageBuildInputs']['checks'].values()), 'Village candidate changes protected build inputs/project/other regions')
     if source_reference:
         reference_source=next(c['sourceIntegrity'] for c in source_reference['captures'] if c.get('sourceIntegrity'))
     if args.housing_smoke:
@@ -540,16 +866,26 @@ def capture_visuals(pw, args, url, report, save):
             browser=None;page=None
             try:
                 browser, page=launch_page(pw,args,url,item)
+                if compare and args.comparison_scope=='village-production':
+                    previous=next(c for c in compare['captures'] if c['name']==name and c['mode']=='original')
+                    item['villageReferenceBinding']=compare_village_reference_binding(manifest,report,previous,item);save()
+                    require(all(item['villageReferenceBinding']['checks'].values()),
+                            'Village reference Chromium differs from the current browser or matching baseline capture')
                 if args.experiment_root and args.family=='kourindou':
                     page.evaluate('mode=>FOLIAGE_AB.setMode(mode)',mode)
                 options={**OPTIONS,**spec.get('options',{})}
-                visit(page,spec,options)
+                visit(page,spec,options,village=args.comparison_scope=='village-production')
                 if args.experiment_root and args.family=='forest':
                     page.evaluate('globalThis.FOLIAGE_AB=GA.FOREST_FOLIAGE_TEXTURE.install(ATLAS.renderer)')
                     page.evaluate('mode=>FOLIAGE_AB.setMode(mode)',mode)
                     for _ in range(3):page.evaluate(FIXED_FRAME_JS)
-                if args.source_only or args.source_reference or args.comparison_scope=='forest-path-visibility':
+                if args.source_only or args.source_reference or args.comparison_scope in ('forest-path-visibility','village-production'):
+                    if args.comparison_scope=='village-production':
+                        page.evaluate('globalThis.__villageAuditStartAtMs=performance.now()')
                     item['sourceIntegrity']=page.evaluate(SOURCE_INTEGRITY_JS);save()
+                    if args.comparison_scope=='village-production':
+                        page.evaluate('globalThis.__villageAuditEndAtMs=performance.now()')
+                        item['villageProduction']=page.evaluate(VILLAGE_SNAPSHOT_JS);save()
                 if args.source_only:
                     item['state']=page.evaluate(SNAPSHOT_JS)
                     require(not item['errors'] and not item['state']['contextLost'], 'Source reference WebGL failed')
@@ -568,6 +904,10 @@ def capture_visuals(pw, args, url, report, save):
                 for frame in range(3):
                     page.evaluate(FIXED_FRAME_JS)
                     state=page.evaluate(SNAPSHOT_JS)
+                    if args.comparison_scope=='village-production':
+                        state['villageProduction']=page.evaluate(VILLAGE_SNAPSHOT_JS)
+                        require(all(r['precisionMatches'] for r in state['villageProduction']['approaches']),
+                                'Visible village bridge approach and terrain precision differ')
                     require(state['renderedView']==spec['view'] and state['options']==options,'Rendered frame differs from fixed configuration')
                     require(state['wanted'] and state['stats']['totalTriangles']>0,'No scene geometry')
                     require(not state['contextLost'] and not state['contextEvents'],'WebGL context event')
@@ -619,6 +959,20 @@ def capture_visuals(pw, args, url, report, save):
                         controlled={k:v for k,v in item['comparison'].items() if k.endswith('Equal') and k!='nonTargetWantedEqual'}
                         controlled.update(item['comparison']['pathVisibility']['checks'])
                         require(all(controlled.values()), 'Uncontrolled forest-path visibility/source difference')
+                    elif args.comparison_scope=='village-production':
+                        require(prev.get('sourceIntegrity') and base.get('villageProduction'),
+                                'Village screenshot baseline lacks strict source/layout evidence')
+                        if manifest.get('baselineArtifactSHA256'):
+                            require(manifest['baselineArtifactSHA256']==compare['sha256'], 'Village manifest baseline SHA differs')
+                        item['comparison']['villageProduction']=compare_village_sources(
+                            prev['sourceIntegrity'],item['sourceIntegrity'],manifest,base,now)
+                        save()
+                        controlled={k:v for k,v in item['comparison'].items() if k.endswith('Equal') and
+                                    k not in ('nonTargetWantedEqual','targetLODEqual')}
+                        controlled.update(item['comparison']['villageProduction']['checks'])
+                        require(manifest.get('candidateVersion',0)>=2 and
+                                now['villageProduction']['version']==manifest['candidateVersion'] and all(controlled.values()),
+                                'Uncontrolled village production scene/source difference')
                     else:
                         require(all(value for key,value in item['comparison'].items() if key.endswith('Equal')), 'Uncontrolled A/B scene difference')
                     if args.comparison_scope=='foliage' and (mode=='original' or name.startswith('shrine')):
@@ -651,10 +1005,11 @@ def contact_sheet(report, output):
     rows=[]
     for item in report['captures']:
         if item.get('passed') and item.get('frames'):
-            if item.get('comparison',{}).get('baselineFile') and (item['mode']=='texture' or item['comparison'].get('scope') in ('housing','forest-path-visibility')):
+            if item.get('comparison',{}).get('baselineFile') and (item['mode']=='texture' or item['comparison'].get('scope') in ('housing','forest-path-visibility','village-production')):
                 rows.append((item['name']+' / baseline original',Path(item['comparison']['baselineFile'])))
             label='housing candidate' if item.get('comparison',{}).get('scope')=='housing' else item['mode']
             if item.get('comparison',{}).get('scope')=='forest-path-visibility':label='legacy path hidden'
+            if item.get('comparison',{}).get('scope')=='village-production':label='village candidate'
             rows.append((item['name']+' / '+label,output/item['frames'][0]['file']))
     if not rows:return
     cols=2;w,h=480,270
@@ -810,10 +1165,10 @@ def main():
     parser.add_argument('--modes',default='original')
     parser.add_argument('--specs',help='Comma separated named fixed camera specs')
     parser.add_argument('--compare-to',type=Path)
-    parser.add_argument('--comparison-scope',choices=['foliage','housing','forest-path-visibility'],default='foliage')
+    parser.add_argument('--comparison-scope',choices=['foliage','housing','forest-path-visibility','village-production'],default='foliage')
     parser.add_argument('--source-only',action='store_true',help='Collect source SHA reference without repeating screenshots')
     parser.add_argument('--source-reference',type=Path,help='Original source-only report.json')
-    parser.add_argument('--change-manifest',type=Path,help='Exact removedOriginalIds, addedCandidateIds, changedSourceIds')
+    parser.add_argument('--change-manifest',type=Path,help='Exact housing IDs or village-production-v1 field/SHA manifest')
     parser.add_argument('--housing-smoke',action='store_true',help='Check production homes/terrain-bound boardwalk without an A/B baseline')
     parser.add_argument('--forest-path-reentry',action='store_true',help='One native clear-cache/drop/reentry check for the exact legacy-path visibility change')
     parser.add_argument('--performance',action='store_true')
@@ -827,8 +1182,8 @@ def main():
     require(0<args.gpu_query_wait_seconds<=60,'GPU query wait must be in (0,60] seconds')
     require(not args.forest_path_reentry or args.comparison_scope=='forest-path-visibility' and not args.performance,
             'Forest-path reentry is limited to the static forest-path visibility comparison')
-    require(args.comparison_scope!='forest-path-visibility' or not args.performance,
-            'Forest-path visibility scope does not run foliage performance experiments')
+    require(args.comparison_scope not in ('forest-path-visibility','village-production') or not args.performance,
+            'Production region scopes do not run foliage performance experiments')
     args.experiment_files=[EXPERIMENT_FILES[0], 'src/experiments/forest-foliage-texture.js' if args.family=='forest' else EXPERIMENT_FILES[1]]
     args.output.mkdir(parents=True,exist_ok=True);args.dist=args.dist.resolve()
     release,artifact,release_sha=validate_build(args.dist)

@@ -33,7 +33,8 @@
     "src/geyser.js",
     "src/geyser-center.js",
     "src/kourindou-upgrade.js",
-    "src/forest-upgrade.js"
+    "src/forest-upgrade.js",
+    "src/village-upgrade.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",
@@ -47,6 +48,7 @@
     "src/geyser-center-renderer.js",
     "src/kourindou-renderer.js",
     "src/forest-renderer.js",
+    "src/village-renderer.js",
     "src/forest-path-colors.js",
     "src/forest-path-renderer.js",
     "src/render-recovery.js",

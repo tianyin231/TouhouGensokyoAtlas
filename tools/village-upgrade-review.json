@@ -1,0 +1,876 @@
+{
+  "revision": 3,
+  "dateUTC": "2026-10-03",
+  "baseCommit": "e01be66a26716f38535dde18cceb688f47131815",
+  "scope": "Existing Human Village surface finish, bounded far geometry and six permanent bridge approaches. Original buildings, layouts, routes and foliage retained.",
+  "localAccepted": true,
+  "artifactSHA256": "8fd6a6489b1c5260b7942d8e50f56eff646cb830d9ab29d785c01fb1de6750e6",
+  "artifactBytes": 36019480,
+  "inputCount": 171,
+  "sourceSHA256": {
+    "src/village-upgrade.js": "4f56749811034552227f3280c9b34c534484fc1d1e7b631b52d6d2c17242c44f",
+    "src/village-renderer.js": "7d48c5f32c0ad59ac0620e9b1b6bce5b88b1905b75ad10248870713afe49ddd4",
+    "tools/check-village.mjs": "7ee33fe598f9f447726df991d12b6a02c12de86605d0c150643ce73d148ecda2",
+    "tools/village-baseline.json": "040073c347617b50a3cd10556ef41f0bfede73eff0b24d4e95acbf9cea6553b9",
+    "tools/check-foliage-texture-browser.py": "505bcfd6401c95c9ed44538f4145e958ec8275c07a74c1586cdf1b980af1fb58"
+  },
+  "staticValidation": {
+    "command": [
+      "/home/agent/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node",
+      "tools/check.mjs"
+    ],
+    "sourceRoot": "/workspace/scratch/village-runtime-v3-fill/clean-source",
+    "artifactSHA256": "8fd6a6489b1c5260b7942d8e50f56eff646cb830d9ab29d785c01fb1de6750e6",
+    "inputCount": 171,
+    "startedUTC": "2026-10-03T23:02:54.297039+00:00",
+    "status": "completed",
+    "node": "v22.23.3",
+    "exitCode": 0,
+    "wallSeconds": 801.0327022060083,
+    "completedUTC": "2026-10-03T23:16:15.334760+00:00",
+    "logSHA256": "6d25cb01eeeef64ec2529fb6d27fc7827f02aaceb301740efa6c2d05a9ce9972"
+  },
+  "cpu": {
+    "fixtureFrozen": true,
+    "detail": {
+      "meshes": 234,
+      "indexedMeshes": 178,
+      "sourceBytes": 161850284,
+      "sourceViewBytes": 161850272,
+      "sourceFields": {
+        "vertices": 130847652,
+        "index": 18910680,
+        "farVertices": 4541400,
+        "instances": 304448,
+        "instanceColors": 57084,
+        "villageFinish": 6937728,
+        "villageFarFinish": 251280
+      },
+      "expandedTriangles": 2623234,
+      "farExpandedTriangles": 1404612,
+      "allFinishAttributeBytes": 7189008,
+      "nearUploadAttributeBytes": 157057592,
+      "farUploadAttributeBytes": 80120364,
+      "lod": {
+        "decisionChecks": 6,
+        "distanceUsesClosestBatchBound": true,
+        "closeLowGeometryRetained": true,
+        "thresholdMetres": 125,
+        "visualThresholdAccepted": false
+      }
+    },
+    "replayedTriangles": 1607023,
+    "attributeTriangles": 1544874,
+    "contactChecks": 216,
+    "routeSamples": 119,
+    "maxRouteError": 0.12376902130017674,
+    "resources": {
+      "sharedFinishBytes": 52,
+      "allocationFailureRollback": 3,
+      "farIndexIsolated": true,
+      "transferBuffers": 3,
+      "senderDetached": true,
+      "finishTransferredWithVertices": true,
+      "sharedViewsPreserved": true,
+      "oddVertexBufferBytes": 116,
+      "reentryCycles": 3,
+      "freshWorkerReentry": true,
+      "mainThreadChannelsRequired": false,
+      "finalResidentBytes": 0
+    },
+    "shader": {
+      "newProgramKeys": 3,
+      "roadProgramShared": true,
+      "kourindouSourceUnchanged": true,
+      "ordinarySurfaceSceneEnvironmentInherited": true,
+      "environmentRecoverySynced": true,
+      "productionRecoveryMethodChecked": true,
+      "lightingChecks": 16,
+      "phases": [
+        {
+          "night": false,
+          "sceneIntensity": 1,
+          "recessTarget": 0.03,
+          "recessRatio": 0.03
+        },
+        {
+          "night": true,
+          "sceneIntensity": 0.045,
+          "recessTarget": 0.006,
+          "recessRatio": 0.13333333333333333
+        },
+        {
+          "night": false,
+          "sceneIntensity": 1,
+          "recessTarget": 0.03,
+          "recessRatio": 0.03
+        }
+      ],
+      "recessZeroGuardAndClamp": true,
+      "recessDayIntensity": 0.03,
+      "recessNightIntensity": 0.006,
+      "webGLCompiled": false
+    },
+    "digests": {
+      "near": "554ea956479592654a49c475b5af087574b14678b84dce2326846ee74b42bdd9",
+      "public": "9a27b5ac9f6cdfaeae7fd82b6afc7baf9868d63bfd5f933b48d63b727a0edbee",
+      "overviewTargets": "c8ddc2345906b581f8ef34cee536be34590b0d61df29818e6e868c0ea3e859ff"
+    },
+    "finishDigests": {
+      "near": "cbd178882ac3403be1927c7c01a1e8cb8d155e6efa656ad0d6bcba3ee26f5c75",
+      "far": "6ef823be6c60bd99f92bb8ebb646c39935cb16d4567c623420835c9ed77005de"
+    }
+  },
+  "originalOverview": {
+    "records": 8,
+    "recordsAndArrayViewsPreserved": true,
+    "additionalProxyBackingBytes": 0
+  },
+  "publicApproaches": {
+    "records": 24,
+    "sourceTriangles": 288,
+    "sourceBytes": 31104,
+    "maximumVisibleRecords": 6,
+    "maximumVisibleTriangles": 72,
+    "contactAttributeBytes": 41004,
+    "renderedGroundContactChecks": 216,
+    "innerCornerChecks": 48,
+    "cpuSelection": {
+      "selectionChecks": 16224,
+      "stateChoices": 672,
+      "visibleRecordsPerChoice": 6,
+      "qualityIndependent": true,
+      "unreachableMixedTerrainLods": 2,
+      "bridgeTerrainPairs": [
+        "native:far",
+        "native:near",
+        "proxy:far",
+        "proxy:near"
+      ],
+      "cachedProbeChecks": 16080,
+      "readyValueCached": false,
+      "missingTerrainHidden": true,
+      "selectedRecords": 4032
+    },
+    "nativeRecordsExactReplayAgainstFrozenV2": 12
+  },
+  "dayBrowser": {
+    "cliExitCode": 0,
+    "elapsedCLISeconds": 220.03285297800903,
+    "cleanup": {
+      "evidence": "CLI exits0 after frozen browser.close finally, Playwright context exit and server.shutdown/server_close finally; process audit afterward found no active Chromium.",
+      "noActiveChromiumProcesses": true
+    },
+    "referenceChromiumVersion": "151.0.7922.173",
+    "viewport": [
+      1280,
+      720
+    ],
+    "dpr": 1,
+    "options": {
+      "quality": "balanced",
+      "lighting": "neutral",
+      "weather": "clear",
+      "clock": 12.5,
+      "motion": false,
+      "ao": true,
+      "bloom": false,
+      "reflections": false,
+      "vegetation": true,
+      "labels": false,
+      "characters": false
+    },
+    "namedAssertions": 91,
+    "stablePairComparisons": 6,
+    "stablePNGs": 9,
+    "sourceIntegrity": {
+      "originalRecords": 2423,
+      "candidateRecords": 2447,
+      "protectedRecords": 2190,
+      "changedRecords": 233,
+      "addedRecords": 24,
+      "allNearReplayExact": true,
+      "allInstancesAndColorsExact": true,
+      "original82LegacyAnd8OverviewUnchanged": true,
+      "allPublic24SourcesExactNodeProof": true,
+      "otherProductionBuildInputsUnchanged": true
+    },
+    "visualLimitations": [
+      "Distant embankment loses brick seams under the reviewed far geometry. Near source triangles remain bit-exact.",
+      "Layouts, shop templates, tree geometry and the original architectural bodies are preserved; this phase is not a complete redesign."
+    ]
+  },
+  "views": [
+    {
+      "name": "riverside",
+      "before": {
+        "calls": 820,
+        "triangles": 3476270,
+        "attributeBytes": 150182822,
+        "geometries": 497,
+        "textures": 11,
+        "postPasses": 2,
+        "programs": 165,
+        "geometryEntries": 495
+      },
+      "candidate": {
+        "calls": 829,
+        "triangles": 3264856,
+        "attributeBytes": 121917238,
+        "geometries": 504,
+        "textures": 11,
+        "postPasses": 2,
+        "programs": 167,
+        "geometryEntries": 502
+      },
+      "delta": {
+        "calls": 9,
+        "triangles": -211414,
+        "trianglesPercent": -6.081633474960235,
+        "attributeBytes": -28265584
+      },
+      "nativeWorker": {
+        "originalBuildMs": 1966.7999999970198,
+        "upgradeMs": 406.5,
+        "workerFinishMsNestedInUpgrade": 209.30000001192093,
+        "workerBuildMs": 2373.2999999970198,
+        "streamLogBuildMs": 2373.2999999970198,
+        "taskStartedAtMs": 16364.09999999404,
+        "messageObservedAtMs": 18850.29999999702,
+        "taskToMessageMs": 2486.2000000029802,
+        "readyObservedUpperBoundMs": 2624.699999988079,
+        "sourceBytes": 163789316,
+        "cacheHit": false,
+        "messageObserved": true,
+        "queueMs": null,
+        "workerThreadOnlyMs": null,
+        "staticWarmMsExcluded": 15673.5,
+        "sourceAuditMsExcluded": 2911.5,
+        "baselineObservation": {
+          "workerBuildMs": 1894.5,
+          "taskToMessageMs": 1998.2000000029802,
+          "readyObservedUpperBoundMs": 2028.3999999910593,
+          "sourceBytes": 172676568
+        }
+      },
+      "stableChangedPixels": [
+        0,
+        0
+      ],
+      "errors": [],
+      "contextEvents": [],
+      "resourceErrors": [
+        "Failed to load resource: the server responded with a status of 404 (File not found)"
+      ]
+    },
+    {
+      "name": "street",
+      "before": {
+        "calls": 374,
+        "triangles": 2453590,
+        "attributeBytes": 136809964,
+        "geometries": 258,
+        "textures": 11,
+        "postPasses": 2,
+        "programs": 134,
+        "geometryEntries": 256
+      },
+      "candidate": {
+        "calls": 377,
+        "triangles": 2148730,
+        "attributeBytes": 102884292,
+        "geometries": 263,
+        "textures": 11,
+        "postPasses": 2,
+        "programs": 139,
+        "geometryEntries": 261
+      },
+      "delta": {
+        "calls": 3,
+        "triangles": -304860,
+        "trianglesPercent": -12.42505879140362,
+        "attributeBytes": -33925672
+      },
+      "nativeWorker": {
+        "originalBuildMs": 1830.8999999910593,
+        "upgradeMs": 368.6000000089407,
+        "workerFinishMsNestedInUpgrade": 193.50000002980232,
+        "workerBuildMs": 2199.5,
+        "streamLogBuildMs": 2199.5,
+        "taskStartedAtMs": 16827.19999998808,
+        "messageObservedAtMs": 19130.59999999404,
+        "taskToMessageMs": 2303.4000000059605,
+        "readyObservedUpperBoundMs": 2418.7999999970198,
+        "sourceBytes": 163789316,
+        "cacheHit": false,
+        "messageObserved": true,
+        "queueMs": null,
+        "workerThreadOnlyMs": null,
+        "staticWarmMsExcluded": 11392.29999999702,
+        "sourceAuditMsExcluded": 3049.1000000089407,
+        "baselineObservation": {
+          "workerBuildMs": 1936.300000011921,
+          "taskToMessageMs": 2025.2000000029802,
+          "readyObservedUpperBoundMs": 2048.7999999970198,
+          "sourceBytes": 172676568
+        }
+      },
+      "stableChangedPixels": [
+        0,
+        0
+      ],
+      "errors": [],
+      "contextEvents": [],
+      "resourceErrors": [
+        "Failed to load resource: the server responded with a status of 404 (File not found)"
+      ]
+    },
+    {
+      "name": "bridge",
+      "before": {
+        "calls": 688,
+        "triangles": 3011535,
+        "attributeBytes": 149851188,
+        "geometries": 455,
+        "textures": 11,
+        "postPasses": 2,
+        "programs": 147,
+        "geometryEntries": 453
+      },
+      "candidate": {
+        "calls": 694,
+        "triangles": 2813385,
+        "attributeBytes": 122655710,
+        "geometries": 461,
+        "textures": 11,
+        "postPasses": 2,
+        "programs": 150,
+        "geometryEntries": 460
+      },
+      "delta": {
+        "calls": 6,
+        "triangles": -198150,
+        "trianglesPercent": -6.579701049464804,
+        "attributeBytes": -27195478
+      },
+      "nativeWorker": {
+        "originalBuildMs": 1817.5,
+        "upgradeMs": 379.20000000298023,
+        "workerFinishMsNestedInUpgrade": 195.69999998807907,
+        "workerBuildMs": 2196.7000000029802,
+        "streamLogBuildMs": 2196.7000000029802,
+        "taskStartedAtMs": 15691.79999999702,
+        "messageObservedAtMs": 17999.59999999404,
+        "taskToMessageMs": 2307.7999999970198,
+        "readyObservedUpperBoundMs": 2421.7999999970198,
+        "sourceBytes": 163789316,
+        "cacheHit": false,
+        "messageObserved": true,
+        "queueMs": null,
+        "workerThreadOnlyMs": null,
+        "staticWarmMsExcluded": 11489,
+        "sourceAuditMsExcluded": 3436.7999999970198,
+        "baselineObservation": {
+          "workerBuildMs": 1853.7000000029802,
+          "taskToMessageMs": 1976.5999999940395,
+          "readyObservedUpperBoundMs": 2032.2999999970198,
+          "sourceBytes": 172676568
+        }
+      },
+      "stableChangedPixels": [
+        0,
+        0
+      ],
+      "errors": [],
+      "contextEvents": [],
+      "resourceErrors": [
+        "Failed to load resource: the server responded with a status of 404 (File not found)"
+      ]
+    }
+  ],
+  "bridgeBrowser": {
+    "technicalPassed": true,
+    "artifactSHA256": "8fd6a6489b1c5260b7942d8e50f56eff646cb830d9ab29d785c01fb1de6750e6",
+    "toolSHA256": "01953ef838a1d4786123cf3bd423fd29f184804cd372f2070274693e98440723",
+    "browser": "151.0.7922.173",
+    "options": {
+      "quality": "balanced",
+      "lighting": "neutral",
+      "weather": "clear",
+      "clock": 12.5,
+      "motion": false,
+      "ao": false,
+      "bloom": false,
+      "reflections": false,
+      "vegetation": true,
+      "labels": false,
+      "characters": false
+    },
+    "viewport": [
+      1280,
+      720
+    ],
+    "dpr": 1,
+    "stableViews": 3,
+    "stablePNGs": 9,
+    "coldProxyPNGs": 1,
+    "stabilityComparisons": 6,
+    "sourceBindingsRevalidated": true,
+    "sessionErrors": [],
+    "resourceErrors": [
+      "Failed to load resource: the server responded with a status of 404 (File not found)"
+    ],
+    "cleanupErrors": [],
+    "rootVisualReview": {
+      "reviewer": "root",
+      "accepted": true,
+      "scope": "Three native-near low bridge views and one synchronous cold-proxy-near connection; not all bridge/terrain combinations or transition timing",
+      "reviewedUTC": "2026-10-03T23:33:00.032753+00:00",
+      "actualImagesViewed": [
+        {
+          "file": "reviewStoneWest-native-near-1.png",
+          "sha256": "adc4398e080766711f913e074b38bc7a85ebf7359834aab21dddfc3469b47285"
+        },
+        {
+          "file": "reviewStoneEast-native-near-1.png",
+          "sha256": "7bd0986505be20afe33734f89d5d3e00ceb3387c153cd198f3111ae6593bed12"
+        },
+        {
+          "file": "reviewSouthWoodWest-native-near-1.png",
+          "sha256": "b234e4e1f6b41df970938f2c2359b56b506dbe73fdf489795d0ef6da56eeabfc"
+        },
+        {
+          "file": "reviewSouthWoodWest-cold-proxy-near.png",
+          "sha256": "640df70cdde6f01200b6f178b08bbc043acdac929dca227a87df58e13e275de6"
+        }
+      ],
+      "originalStoneEastViewed": {
+        "file": "/workspace/scratch/village-stone-east-baseline-e01/reviewStoneEast-original-near-1.png",
+        "sha256": "34d7c309630cfe164e0d632b761eafb52e7af91699e0702413a65752687a87dd"
+      },
+      "findings": [
+        "Stone west, south wood and cold proxy preserve continuous approach connections; no new obvious gap or floating support in inspected frames.",
+        "Stone east dark triangular road-edge outline already exists in the actual original same-pose image; it is not a new missing-surface outline.",
+        "Local triangle RGB differs and is darker/greener at several sampled candidate points; pixel identity or a proven shadow/material/depth cause is not claimed.",
+        "Retain the existing paving/terrain edge triangle as an unfinished general surface refinement; acceptance is limited to this materials/far-geometry/public-approach milestone."
+      ],
+      "eastDarkOutlinePreexists": true,
+      "eastDarkPixelsIdentical": false,
+      "eastCauseProven": false,
+      "eastProjectionFullVertexReplayExact": false,
+      "baselineSummarySHA256": "89c72246c772613d6e77d49acedec344ced42e0460f546bb8e0c4001d9e33b43",
+      "eastPixelReviewSHA256": "e52e3a9b32c488274473c9e3ab31273ba92c698eae1490d5503a9a2fa242d148",
+      "hardwareFPSMeasured": false,
+      "physicalVRAMMeasured": false
+    },
+    "execution": {
+      "argv": [
+        "python",
+        "/workspace/scratch/village-bridge-runtime-runner-fill/runner.py",
+        "--output",
+        "/workspace/scratch/village-bridge-runtime-webgl-v3-fill",
+        "--chromium",
+        "/usr/bin/chromium"
+      ],
+      "startedAtUTC": "2026-10-03T23:11:14.011428+00:00",
+      "measurement": "CLI wall time for execution record only; static/function run concurrent with Node22, no performance comparison.",
+      "cliExitCode": 0,
+      "elapsedSeconds": 173.6581662969984,
+      "finishedAtUTC": "2026-10-03T23:14:07.669607+00:00"
+    }
+  },
+  "nativeReentry": {
+    "passed": true,
+    "productionRAF": true,
+    "manualDrawsForNativeCompletion": false,
+    "coldStaticRenderOnce": true,
+    "removedDetailSourceRecords": 316,
+    "dropCleanup": {
+      "witnessArrays": 796,
+      "retainedGeometries": 0,
+      "retainedIndices": 0,
+      "retainedRecords": 0,
+      "retainedObjects": 0,
+      "retainedTypedArrayViews": 0,
+      "retainedSigns": 0
+    },
+    "nativeWorkerPendingDuringColdCapture": true,
+    "restoredDetailRecords": 316,
+    "allSourceMetadataAndTypedArrayHashesRestored": true,
+    "permanentRecordAndArrayIdentitiesRetained": true,
+    "heapOrGCMeasured": false
+  },
+  "independentReference": {
+    "method": "Two independent blank-page CPU Blob Workers under Chromium151; original234 matched captured baseline before candidate reference. No app-derived expectations.",
+    "currentManifestSHA256": "688419d2435aa9496ab35bcf7ebb84d6ab3335d8a3462dea8b49dd20967fd2f2",
+    "exactSizeExceptions": [
+      {
+        "record": "matte:base:0:-1",
+        "field": "vertices",
+        "nodeLength": 875448,
+        "chromiumLength": 875484,
+        "byteDelta": 144
+      },
+      {
+        "record": "matte:base:0:-1",
+        "field": "villageFinish",
+        "nodeLength": 194544,
+        "chromiumLength": 194552,
+        "byteDelta": 8
+      }
+    ],
+    "numericTolerance": false,
+    "underlyingFloatingPointCauseProven": false,
+    "materialCorrectionRecomputedWorkers": false,
+    "bridgeSelectionReuseProofSHA256": "2195291cd7159121132fe865bf5d3c62a4db4bec484ee104133ba5b6d5e1b55d"
+  },
+  "materialCorrection": {
+    "ordinarySurfaceInheritsSceneEnvironment": true,
+    "newApproachesKeepKourStonePolicy": true,
+    "recessIntensityRatioClampedAgainstActualScene": true,
+    "focusedCPUEnvironmentCases": 16,
+    "geometryAndFinishDigestsChanged": false,
+    "affectedDayViewsRecaptured": 3,
+    "rejectedDarkArtifactSHA256": "1f8b00f0044a2ce46897b8c6005f872847bdaafd0609d5f640ee832ae155998c"
+  },
+  "preview": {
+    "file": "preview/village-upgrade.jpg",
+    "sha256": "1728b277ecaf8ada4395185e4e868a15a5f03524b058494573b64aff7b23805a",
+    "notes": "Three fixed camera comparisons, original left and corrected candidate right; real screenshots resized only."
+  },
+  "evidenceSHA256": {
+    "daySummary": "21ad2f13c5966e2a1a2cedb204fd541b59f6ab5e39a356c4ed586965f5b8e156",
+    "dayRawReport": "b1a754bd86489a6e81ba138598b43dc11e39943937413dc9e98b13948201df70",
+    "bridgeRawReport": "3d12137c7a4727cbf7ff43151267752921cf74a1ea9ba508e72a697a3e8e58a3",
+    "bridgeVisualReview": "72865d745730fb6a884b6964b1def9f82ff047060e895cbd7258325e7eed2c31",
+    "bridgeCPUHistorical": "024d7d9e3ccedb0eb69e893bdceb55ae175614806fa1a771381adce4e91f874b",
+    "environmentFocused": "029dfd1b7dbbe697c1ac2c9e793dbf9f655fb5d5d9caa6cc2c166428bf1ac172",
+    "originalStoneEastSummary": "89c72246c772613d6e77d49acedec344ced42e0460f546bb8e0c4001d9e33b43"
+  },
+  "limitations": [
+    "Software Chromium observations are not device FPS or physical VRAM.",
+    "Three cold Worker observations per version are not a controlled ABBA performance test; upgrade adds first-load work.",
+    "Far embankment brick seams are simplified; original near geometry is bit-exact.",
+    "Cold proxy screenshot observes one synchronous native loading state, not transition duration or near-detail quality.",
+    "Historical CPU bridge proof is reused through exact source identity; final complete Node22 independently rechecks selection on the final artifact.",
+    "One unattributed console404 per day session and one in the bridge session remain retained separately.",
+    "No new night, whole-map stress or active WebGL recovery session in local village acceptance; remote Actions belong to the resulting commit.",
+    "Original v1/v2 cost failures, v3 dark appearance, cross-VM export failure and first exact-length reference failure remain preserved.",
+    "An additional original-only stone-east session retained one unattributed404; it is not counted among the candidate session messages."
+  ],
+  "supplementalOriginalStoneEast": {
+    "technicalPassed": true,
+    "execution": {
+      "argv": [
+        "python",
+        "/workspace/scratch/village-stone-east-baseline-e01-runner.py",
+        "--output",
+        "/workspace/scratch/village-stone-east-baseline-e01",
+        "--chromium",
+        "/usr/bin/chromium"
+      ],
+      "startedAtUTC": "2026-10-03T23:29:26.886563+00:00",
+      "measurement": "CLI wall time only; one static original view, no performance comparison",
+      "cliExitCode": 0,
+      "elapsedSeconds": 48.988814908996574,
+      "finishedAtUTC": "2026-10-03T23:30:15.875659+00:00"
+    },
+    "scope": "one fresh original low stone-east view, three stable PNGs",
+    "bindings": {
+      "artifactSHA256": "1f63dbd88f3405f10d6b5779278822357d5729ff3709c7a03c4d4077ab5cb695",
+      "releaseSHA256": "bd455510ae8bf775184658478ed57fb3ffbd987fe16f9b0f21f03b1ee2965093",
+      "helperSHA256": "505bcfd6401c95c9ed44538f4145e958ec8275c07a74c1586cdf1b980af1fb58",
+      "toolSHA256": "436d25c72bb12e36a0e764b3a5cf72d0065d6637a7e3e1cbe8b650229d6f5821",
+      "baselineReportSHA256": "c72acdbd2b1e3b5f4f31798a085958a2b2504955dcc2a837c3cac98da8d43b81",
+      "candidateReportSHA256": "3d12137c7a4727cbf7ff43151267752921cf74a1ea9ba508e72a697a3e8e58a3",
+      "inputCount": 167,
+      "viewport": [
+        1280,
+        720
+      ],
+      "dpr": 1,
+      "options": {
+        "quality": "balanced",
+        "lighting": "neutral",
+        "weather": "clear",
+        "clock": 12.5,
+        "motion": false,
+        "ao": false,
+        "bloom": false,
+        "reflections": false,
+        "vegetation": true,
+        "labels": false,
+        "characters": false
+      },
+      "spec": {
+        "name": "reviewStoneEast",
+        "view": "bridge",
+        "camera": {
+          "eye": [
+            65,
+            32.2,
+            21
+          ],
+          "target": [
+            55.8,
+            30.15,
+            32
+          ],
+          "fov": 49
+        }
+      },
+      "sourceBindingsRevalidated": true,
+      "exact2423SourceRecordsMatched": true,
+      "cameraOptionsLightsBoundToCandidate": true
+    },
+    "browser": "151.0.7922.173",
+    "stablePairs": [
+      {
+        "changedPixels": 0,
+        "maxChannelDifference": 0,
+        "meanAbsoluteDifference": 0.0
+      },
+      {
+        "changedPixels": 0,
+        "maxChannelDifference": 0,
+        "meanAbsoluteDifference": 0.0
+      }
+    ],
+    "errors": [],
+    "resourceErrors": [
+      "Failed to load resource: the server responded with a status of 404 (File not found)"
+    ],
+    "cleanupErrors": [],
+    "performanceMeasured": false,
+    "reportSHA256": "c245287c83d5f3ffea766b3dbba900c9f870daa8310a54d461dfd85067ca7ab1",
+    "sourceIntegritySHA256": "952c7d7e3126f1286d3e827ca4ae11b2ac28336cc663ad3751ad7a304929197a",
+    "rootImageDecision": "Original dark triangle outline preexists; some candidate pixels are darker/greener. No new gap outline seen. Existing road-edge facet remains an unfinished refinement.",
+    "pixelComparison": {
+      "scope": "Offline comparison of original and final candidate fixed stone-east screenshots; no new rendering",
+      "baselineSHA256": "34d7c309630cfe164e0d632b761eafb52e7af91699e0702413a65752687a87dd",
+      "candidateSHA256": "7bd0986505be20afe33734f89d5d3e00ceb3387c153cd198f3111ae6593bed12",
+      "regions": [
+        {
+          "pixelBounds": [
+            540,
+            398,
+            835,
+            457
+          ],
+          "pixels": 17405,
+          "changedPixels": 14840,
+          "maxChannelDelta": 68,
+          "meanAbsoluteChannelDelta": 4.385942736761467
+        },
+        {
+          "pixelBounds": [
+            575,
+            430,
+            795,
+            452
+          ],
+          "pixels": 4840,
+          "changedPixels": 4213,
+          "maxChannelDelta": 32,
+          "meanAbsoluteChannelDelta": 12.35702479338843
+        },
+        {
+          "pixelBounds": [
+            600,
+            436,
+            740,
+            447
+          ],
+          "pixels": 1540,
+          "changedPixels": 1540,
+          "maxChannelDelta": 32,
+          "meanAbsoluteChannelDelta": 20.073376623376625
+        }
+      ],
+      "points": [
+        {
+          "x": 540,
+          "y": 420,
+          "before": [
+            226,
+            222,
+            210
+          ],
+          "after": [
+            226,
+            223,
+            211
+          ]
+        },
+        {
+          "x": 575,
+          "y": 425,
+          "before": [
+            206,
+            208,
+            197
+          ],
+          "after": [
+            207,
+            209,
+            198
+          ]
+        },
+        {
+          "x": 600,
+          "y": 430,
+          "before": [
+            105,
+            124,
+            120
+          ],
+          "after": [
+            107,
+            125,
+            122
+          ]
+        },
+        {
+          "x": 620,
+          "y": 432,
+          "before": [
+            104,
+            123,
+            119
+          ],
+          "after": [
+            106,
+            124,
+            120
+          ]
+        },
+        {
+          "x": 660,
+          "y": 438,
+          "before": [
+            71,
+            94,
+            93
+          ],
+          "after": [
+            60,
+            74,
+            66
+          ]
+        },
+        {
+          "x": 700,
+          "y": 442,
+          "before": [
+            71,
+            94,
+            93
+          ],
+          "after": [
+            60,
+            74,
+            66
+          ]
+        },
+        {
+          "x": 745,
+          "y": 446,
+          "before": [
+            71,
+            94,
+            93
+          ],
+          "after": [
+            60,
+            74,
+            65
+          ]
+        },
+        {
+          "x": 785,
+          "y": 449,
+          "before": [
+            71,
+            94,
+            93
+          ],
+          "after": [
+            58,
+            71,
+            63
+          ]
+        },
+        {
+          "x": 825,
+          "y": 451,
+          "before": [
+            75,
+            97,
+            95
+          ],
+          "after": [
+            73,
+            94,
+            92
+          ]
+        },
+        {
+          "x": 790,
+          "y": 434,
+          "before": [
+            214,
+            213,
+            200
+          ],
+          "after": [
+            215,
+            214,
+            202
+          ]
+        },
+        {
+          "x": 810,
+          "y": 442,
+          "before": [
+            224,
+            223,
+            213
+          ],
+          "after": [
+            224,
+            224,
+            214
+          ]
+        },
+        {
+          "x": 710,
+          "y": 420,
+          "before": [
+            225,
+            224,
+            214
+          ],
+          "after": [
+            225,
+            225,
+            215
+          ]
+        },
+        {
+          "x": 650,
+          "y": 418,
+          "before": [
+            105,
+            123,
+            119
+          ],
+          "after": [
+            106,
+            125,
+            121
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "baseline": "096849ad53725be1fdec67f1d85ddc18bcae3781",
+  "description": "人里第三版候选的显式几何及Worker材质属性期望；来源为已审阅冻结CPU及桥头报告，不由检查生成或改写。CPU通过不等于画面或性能通过；8原总览记录、材质与数组全保留。",
+  "originalNear": "2875880afaab25b7a49f7845ac6e7be50496a4485839399f5e1b7fe145a6993c",
+  "geometry": {
+    "near": "554ea956479592654a49c475b5af087574b14678b84dce2326846ee74b42bdd9",
+    "public": "9a27b5ac9f6cdfaeae7fd82b6afc7baf9868d63bfd5f933b48d63b727a0edbee",
+    "overviewTargets": "c8ddc2345906b581f8ef34cee536be34590b0d61df29818e6e868c0ea3e859ff"
+  },
+  "protectedFiles": {
+    "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+    "src/renderer.js": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+    "src/surface-contact.js": "719a315917b55fa5025ec32659509b5be8965d8a577cdfc92c63c96db4dedf5e",
+    "src/landmarks.js": "04b8e640ca0fc597f889625b8a8173a767eced751355e5dbe034f44fadfd7ff9",
+    "src/landscape.js": "4ef7b6f8076842506e8cac09086db4aa8277f92468e08aa0069c326f77ef35dc",
+    "src/highland.js": "8816c040dd6f3c24d42beef3edb7a2c2604131bb41507c8964886ab659cda9d3",
+    "src/kourindou-upgrade.js": "e4c7371c745a6a4b69ed618f7fdcb7f44208b092b65f0379cbb752ba9db52599",
+    "src/kourindou-renderer.js": "c84bebcc837d7b4ccc9bef90551695cecac67616eed68eb1f24141cfaa26354f",
+    "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+    "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
+    "data/characters.json": "b87604e876804b5b9469657adf653451eccd561cddecdbb578f8966745beacc9"
+  },
+  "candidateSources": {
+    "src/village-upgrade.js": "4f56749811034552227f3280c9b34c534484fc1d1e7b631b52d6d2c17242c44f",
+    "src/village-renderer.js": "7d48c5f32c0ad59ac0620e9b1b6bce5b88b1905b75ad10248870713afe49ddd4",
+    "tools/check-village.mjs": "7ee33fe598f9f447726df991d12b6a02c12de86605d0c150643ce73d148ecda2"
+  },
+  "review": {
+    "date": "2026-10-03",
+    "sourceBaseline": "1f09b002b29ef56e5262633152fe527e086eb0c2",
+    "cpuCheckpoint": "/workspace/scratch/village-integration-v2-freeze/cpu-report.json",
+    "nearTriangleAttributes": "原三角顺序及9项Float32属性按uint32逐位重放，不使用四舍五入坐标键。原226栋普通住宅、140处院落和全部实例矩阵／颜色保留。",
+    "scope": "原详情记录材质与细节远档、6处公共桥头及原路范围内的村口材质渐退；8原总览对象、材质、全部数组与metadata全保留，无新增代理backing。六端分别绑定terrain near/far与bridge native/proxy两轴，共24永久记录、任意时刻最多6可见；不新增原作身份、地点、角色、路线或光源。",
+    "timingCorrection": "冻结后仅修正村落wrapper的builtMs及分段计时，使其包含原生成与upgradeDetail耗时；属性审计复用一次真实CPU acquire并累计整区首轮成本，不额外生成整包。生产字符串不被profile改写，几何期望保持。",
+    "pending": [
+      "真实WebGL编译及固定日间机位对照",
+      "中景瓦面可读性与细节LOD切换",
+      "公共cap实际低角度视图、侧栏／街面接触，以及cold代理→详情／卸载→重入的视觉切换；CPU完整平边及四组合通过不能替代此项",
+      "原生Worker与stream.log buildMs、真实帧成本和交互响应；不能从Node隔离VM或源数组下降推算FPS"
+    ],
+    "visualAccepted": false,
+    "performanceAccepted": false,
+    "indexing": "仅两遍相邻[a,b,c,a,c,d]精确9项Uint32及2项finish字节去重；保留展开后的全部原三角属性／顺序，near与far分别拥有明确几何view及同buffer尾部Uint8 finish；实例矩阵／颜色均保留。",
+    "finishReference": {
+      "arrays": 100,
+      "referenceSourceSHA": "3c12ac9579042eb8be1e4dca5d17f6a6adcaa83eb609b2f8e57f71ea8254f8b0",
+      "evidence": "全部当前near/far finish视图与冻结v1 channels函数逐字节相同；finishDigests另锁定完整drawn属性流，因geometryDigest不包含这两个尾部属性。"
+    },
+    "cpuTimingScope": "Node22隔离VM定向检查：原build10.604秒、upgrade12.159秒（finish10.277秒）、100数组首次CPU acquire80.36毫秒、公共桥头准备160.06毫秒。非真实浏览器Worker／GPU／受控前后性能基准；普通realm四屋小样本证明VM全局读取明显放大成本。仍待原生Worker stream.log／buildMs、实际帧及交互验收。",
+    "cpuResources": "finish在Worker生成并共享vertices.buffer尾部，现有transfer一次携带；CPU acquire直接使用该Uint8 view，不克隆／不重算。真实transfer、detach、共享计账、坏属性／分配失败回滚、卸载及fresh重入通过。sourceBytes按唯一真实backing计，geometryRefs按属性view计。",
+    "revision": 3,
+    "bridgeCheckpoint": "/workspace/scratch/village-bridge-only-v3/report.json",
+    "bridgeContacts": "12条native公共cap顶点与冻结v2逐bit相同；proxy实际matte源的完整平边coverage与独立三角读取相同，内边取原宽与真实coverage交集、外边原宽，凸quad裁切只用于proxy。24条实际rendered顶／底mesh核对216地形接地点、48内角3mm gap/0step；继承真实terrainSource和小bounds probe的wanted覆盖672状态，每端最多1条／总6，仅缓存对象、不缓存ready。31,104B/288源tri，无桥体或总览数组修改。"
+  },
+  "supersededV1": {
+    "baseline": "c0c8852ed39b2d386c5be4455f7778eec8770f51",
+    "geometry": {
+      "near": "08cc714bd307be167c0e1dc74044042b69cba095816178f5fe8c54369cfe84cd",
+      "public": "a6afcffc9399652aa06ea50b9283023ec5fc06fdd25ad6789e5f0d748778afc9",
+      "overviewTargets": "78a903867d0b72b84002de8837574b35795fc1750949c1c82a6a8d52dfb59667"
+    },
+    "candidateSources": {
+      "src/village-upgrade.js": "3c12ac9579042eb8be1e4dca5d17f6a6adcaa83eb609b2f8e57f71ea8254f8b0",
+      "src/village-renderer.js": "c25eac58ee42933869b21718205e4904fc0d11ed7d4bff58f7e2385a7fc1407a",
+      "tools/check-village.mjs": "c8d7bc23f8c2408be3084aebce907e939a30f24f99c44de7620e3fa17ae28845"
+    },
+    "review": {
+      "date": "2026-10-03",
+      "sourceBaseline": "1f09b002b29ef56e5262633152fe527e086eb0c2",
+      "cpuCheckpoint": "/workspace/scratch/village-upgrade-freeze/cpu-report.json",
+      "nearTriangleAttributes": "原三角顺序及9项Float32属性按uint32逐位重放，不使用四舍五入坐标键。原226栋普通住宅、140处院落和全部实例矩阵／颜色保留。",
+      "scope": "8条明确村落总览目标、原详情材质与细节远档、6处公共桥头，以及原路范围内的村口材质渐退；不新增原作身份、地点、角色、路线或光源。",
+      "timingCorrection": "冻结后仅修正村落wrapper的builtMs及分段计时，使其包含原生成与upgradeDetail耗时；属性审计复用一次真实CPU acquire并累计整区首轮成本，不额外生成整包。生产字符串不被profile改写，几何期望保持。",
+      "pending": [
+        "真实WebGL编译及固定日间机位对照",
+        "中景瓦面可读性与细节LOD切换",
+        "详情卸载／atlas时远代理桥端gap与step；木桥代理存在约0.19米台阶，南西端约0.18米间隙",
+        "真实帧成本与交互响应，不能从源数组下降推算FPS"
+      ],
+      "visualAccepted": false,
+      "performanceAccepted": false
+    },
+    "decision": "CPU完整回归通过但性能拒收；原总览shared backing不能释放，新4代理额外增加15.9MB，首次CPU acquire仍重算channels。此历史记录不代表GPU验收。"
+  },
+  "finishDigests": {
+    "near": "cbd178882ac3403be1927c7c01a1e8cb8d155e6efa656ad0d6bcba3ee26f5c75",
+    "far": "6ef823be6c60bd99f92bb8ebb646c39935cb16d4567c623420835c9ed77005de"
+  },
+  "supersededV2": {
+    "baseline": "096849ad53725be1fdec67f1d85ddc18bcae3781",
+    "geometry": {
+      "near": "554ea956479592654a49c475b5af087574b14678b84dce2326846ee74b42bdd9",
+      "public": "a6afcffc9399652aa06ea50b9283023ec5fc06fdd25ad6789e5f0d748778afc9",
+      "overviewTargets": "c8ddc2345906b581f8ef34cee536be34590b0d61df29818e6e868c0ea3e859ff"
+    },
+    "finishDigests": {
+      "near": "cbd178882ac3403be1927c7c01a1e8cb8d155e6efa656ad0d6bcba3ee26f5c75",
+      "far": "6ef823be6c60bd99f92bb8ebb646c39935cb16d4567c623420835c9ed77005de"
+    },
+    "candidateSources": {
+      "src/village-upgrade.js": "9f1d7da847eb2532028b4bce4d2e1551c3106331a7426beafe08babd3523b894",
+      "src/village-renderer.js": "16a1b5d2286ca48a8ddf07f96c61fb8a2a5640481dbbbd74fa6775e67c2ac8b9",
+      "tools/check-village.mjs": "182bd0a15e2ccf9625177dbed7709c6af574adb79c46c6281d34f4572a196b72"
+    },
+    "review": {
+      "date": "2026-10-03",
+      "sourceBaseline": "1f09b002b29ef56e5262633152fe527e086eb0c2",
+      "cpuCheckpoint": "/workspace/scratch/village-integration-v2-freeze/cpu-report.json",
+      "nearTriangleAttributes": "原三角顺序及9项Float32属性按uint32逐位重放，不使用四舍五入坐标键。原226栋普通住宅、140处院落和全部实例矩阵／颜色保留。",
+      "scope": "仅原详情记录材质与细节远档、6处公共桥头及原路范围内的村口材质渐退；8原总览记录的对象、材质、全部数组与metadata全保留，无新增代理backing；不新增原作身份、地点、角色、路线或光源。",
+      "timingCorrection": "冻结后仅修正村落wrapper的builtMs及分段计时，使其包含原生成与upgradeDetail耗时；属性审计复用一次真实CPU acquire并累计整区首轮成本，不额外生成整包。生产字符串不被profile改写，几何期望保持。",
+      "pending": [
+        "真实WebGL编译及固定日间机位对照",
+        "中景瓦面可读性与细节LOD切换",
+        "详情卸载／atlas时远代理桥端gap与step；木桥代理存在约0.19米台阶，南西端约0.18米间隙",
+        "真实帧成本与交互响应，不能从源数组下降推算FPS"
+      ],
+      "visualAccepted": false,
+      "performanceAccepted": false,
+      "indexing": "仅两遍相邻[a,b,c,a,c,d]精确9项Uint32及2项finish字节去重；保留展开后的全部原三角属性／顺序，near与far分别拥有明确几何view及同buffer尾部Uint8 finish；实例矩阵／颜色均保留。",
+      "finishReference": {
+        "arrays": 100,
+        "referenceSourceSHA": "3c12ac9579042eb8be1e4dca5d17f6a6adcaa83eb609b2f8e57f71ea8254f8b0",
+        "evidence": "全部当前near/far finish视图与冻结v1 channels函数逐字节相同；finishDigests另锁定完整drawn属性流，因geometryDigest不包含这两个尾部属性。"
+      },
+      "cpuTimingScope": "Node22隔离VM定向检查：原build10.604秒、upgrade12.159秒（finish10.277秒）、100数组首次CPU acquire80.36毫秒、公共桥头准备160.06毫秒。非真实浏览器Worker／GPU／受控前后性能基准；普通realm四屋小样本证明VM全局读取明显放大成本。仍待原生Worker stream.log／buildMs、实际帧及交互验收。",
+      "cpuResources": "finish在Worker生成并共享vertices.buffer尾部，现有transfer一次携带；CPU acquire直接使用该Uint8 view，不克隆／不重算。真实transfer、detach、共享计账、坏属性／分配失败回滚、卸载及fresh重入通过。sourceBytes按唯一真实backing计，geometryRefs按属性view计。"
+    },
+    "decision": "详情索引／finish优化保留；公共桥头仅绑定terrain LOD会与native／proxy桥表示错配，v3仅修复六端四组合与完整代理内边覆盖。旧gap／step作为历史证据保留，不作为v3现状。"
+  }
+}
