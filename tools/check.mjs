@@ -1,3 +1,4 @@
+import {checkKourindou} from './check-kourindou.mjs';
 import {checkGeyserCenter} from './check-geyser-center.mjs';
 import {checkGeyser} from './check-geyser.mjs';
 import {checkWindCave} from './check-wind-cave.mjs';
@@ -143,3 +144,5 @@ console.log('幻想风穴检查通过：'+JSON.stringify(await checkWindCave(con
 console.log('山麓间歇泉检查通过：'+JSON.stringify(await checkGeyser(context.GA,atlas,JSON.parse(script('character-data')),read)));
 
 console.log('间歇泉地下中心检查通过：'+JSON.stringify(await checkGeyserCenter(context.GA,atlas,JSON.parse(script('character-data')),read)));
+
+console.log('香霖堂精修检查通过：'+JSON.stringify(await checkKourindou(context.GA,atlas,JSON.parse(script('character-data')),read)));
