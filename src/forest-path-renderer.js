@@ -1,11 +1,33 @@
-/* Opt-in albedo softening for the retained forest roads, loaded after the
- * source color asset, Kourindou and forest-home renderer modules. Geometry,
- * height and shadows stay on the original paths. Source colors are not contact.
+/* Forest-road albedo softening, loaded after the source color asset,
+ * Kourindou and forest-home renderer modules. The audited public roads replace
+ * the duplicate detail ribbon only while all eight public records are present.
+ * Source geometry and heights remain intact; source colors are not contact.
  */
 (function(G){'use strict';
 const Base=G.DioramaRenderer,MAX_BYTES=256*1024;
 const target=m=>m.id==='forest:paths'||/^island:routes:forest:-?\d+:-?\d+(?::shoulder)?$/.test(m.id);
 const shoulder=m=>m.id.endsWith(':shoulder');
+const coverageIds=Object.freeze(['-2:-1','-3:-1','-2:0','-3:0'].flatMap(key=>['island:routes:forest:'+key,'island:routes:forest:'+key+':shoulder']));
+const coverageSources=coverageIds.map(id=>G.FOREST_PATH_COLORS?.metadata.records.find(m=>m.id===id));
+const legacySource=G.FOREST_PATH_COLORS?.metadata.records.find(m=>m.id==='forest:paths');
+// Offline-audited Float32 corners of just the Marisa/boardwalk junction.
+// The independent checker compares these three quads to the retained indices.
+const junctionOrigin=Object.freeze([-887,87]),junctionPadding=.0002;
+const junctionQuads=Object.freeze([
+ {segment:41,indexOffset:144,points:[[-881.0436401367188,82.0262680053711],[-883.2032470703125,80.24411010742188],[-885.64208984375,83.18643188476562],[-883.4891357421875,84.97661590576172]]},
+ {segment:42,indexOffset:150,points:[[-883.4891357421875,84.97661590576172],[-885.64208984375,83.18643188476562],[-888.0697631835938,86.09687805175781],[-885.9302368164062,87.90312194824219]]},
+ {segment:43,indexOffset:156,points:[[-885.9302368164062,87.90312194824219],[-888.0697631835938,86.09687805175781],[-890.6695556640625,89.14165496826172],[-888.557861328125,90.9803466796875]]}
+].map(q=>Object.freeze({...q,points:Object.freeze(q.points.map(p=>Object.freeze(p)))})));
+const junctionPlanes=junctionQuads.map(q=>{const points=q.points.map(p=>p.map((v,i)=>v-junctionOrigin[i])),sign=Math.sign(points.reduce((s,a,i)=>{const b=points[(i+1)%4];return s+a[0]*b[1]-b[0]*a[1];},0));return points.map((a,i)=>{const b=points[(i+1)%4],dx=b[0]-a[0],dz=b[1]-a[1],length=Math.hypot(dx,dz),nx=-dz/length*sign,nz=dx/length*sign;return[nx,nz,-nx*a[0]-nz*a[1]].map(Math.fround);});});
+const junctionBounds=Object.freeze([Math.min(...junctionQuads.flatMap(q=>q.points.map(p=>p[0])))-junctionOrigin[0]-junctionPadding,Math.min(...junctionQuads.flatMap(q=>q.points.map(p=>p[1])))-junctionOrigin[1]-junctionPadding,Math.max(...junctionQuads.flatMap(q=>q.points.map(p=>p[0])))-junctionOrigin[0]+junctionPadding,Math.max(...junctionQuads.flatMap(q=>q.points.map(p=>p[1])))-junctionOrigin[1]+junctionPadding]);
+function junctionContains(x,z){const p=[x-junctionOrigin[0],z-junctionOrigin[1]];return p[0]>=junctionBounds[0]&&p[1]>=junctionBounds[1]&&p[0]<=junctionBounds[2]&&p[1]<=junctionBounds[3]&&junctionPlanes.some(quad=>quad.every(n=>n[0]*p[0]+n[1]*p[1]+n[2]>=-junctionPadding));}
+const glsl=v=>Number.isInteger(v)?v+'.0':String(v);
+const junctionClip=`
+ if(uForestPathJunction>.5){vec2 forestPathJunction=vAtlasPosition.xz-vec2(${junctionOrigin.map(glsl).join(',')});
+  if(all(greaterThanEqual(forestPathJunction,vec2(${junctionBounds.slice(0,2).map(glsl).join(',')})))&&all(lessThanEqual(forestPathJunction,vec2(${junctionBounds.slice(2).map(glsl).join(',')})))&&(${junctionPlanes.map(q=>'('+q.map(n=>`dot(vec3(forestPathJunction,1.),vec3(${n.map(glsl).join(',')}))>=-${glsl(junctionPadding)}`).join('&&')+')').join('||')}))discard;
+ }
+`;
+const junction=Object.freeze({revision:1,record:'island:routes:forest:-2:0',route:'route-marisa',origin:junctionOrigin,bounds:junctionBounds,padding:junctionPadding,quads:junctionQuads,contains:junctionContains});
 
 function channels(m,a,index){
  const count=a.length/9,size=index?.length??count;
@@ -28,9 +50,32 @@ function channels(m,a,index){
 }
 
 class ForestPathRenderer extends Base{
+ forestPublicPathsPresent(){
+  for(let i=0;i<coverageIds.length;i++){
+   const data=this.recordMap.get(coverageIds[i])?.data,source=coverageSources[i];
+   if(!source||data?.group!=='roads'||data.globalSurface!==true||data.overview!==true||data.component!=='connection-road'||data.pathOwner!=='forest'||data.material!=='ground'||data.vertices?.length!==source.vertexCount*9||data.index?.length!==source.indexCount)return false;
+  }
+  return true;
+ }
+ forestPathCovered(m,publicReady){
+  if(m.id!=='forest:paths'||m.group!=='roads'||m.owner!=='forest'||m.material!=='ground'||!legacySource||m.vertices?.length!==legacySource.vertexCount*9||m.index||m.farVertices)return false;
+  // The independent coverage checker binds these source counts and bytes to
+  // all 610 retained centerline segments. No runtime hashing or pack caching.
+  return publicReady??this.forestPublicPathsPresent();
+ }
+ updateForestPathJunction(){if(this.forestPathJunctionUniform)this.forestPathJunctionUniform.value=this.forestPublicPathsPresent()?1:0;}
+ wanted(record,rig,opts,distance){
+  if(record.data.id==='forest:paths'){
+   const ready=this.forestPublicPathsPresent();
+   if(this.forestPathJunctionUniform&&this.forestPathJunctionUniform.value!==Number(ready))this.forestPathJunctionUniform.value=Number(ready);
+   if(this.forestPathCovered(record.data,ready))return false;
+  }
+  return super.wanted(record,rig,opts,distance);
+ }
  addRecords(meshes,pack){
   super.addRecords(meshes,pack);this.forestPathArrays??=new WeakMap();
   for(const m of meshes)if(target(m))for(const a of [m.vertices,m.farVertices].filter(Boolean))this.forestPathArrays.set(a,m);
+  this.updateForestPathJunction();
  }
  acquire(a){
   const geo=super.acquire(a),m=this.forestPathArrays?.get(a);
@@ -67,22 +112,25 @@ class ForestPathRenderer extends Base{
   if(this.kourindouGroundVariant)src=this.kourindouGroundVariant(src,!isShoulder);
   if(this.forestGround)src=this.forestGround(src,!isShoulder);
   const mat=src.clone(),prior=src.onBeforeCompile,oldKey=src.customProgramCacheKey.bind(src);
+  if(isShoulder)this.forestPathJunctionUniform??={value:this.forestPublicPathsPresent()?1:0};
   mat.name='forest-path-soft-'+(isShoulder?'shoulder':'center');
   mat.onBeforeCompile=(s,r)=>{
    prior.call(src,s,r);
+   if(isShoulder)s.uniforms.uForestPathJunction=this.forestPathJunctionUniform;
    s.vertexShader='attribute float forestPathSide; attribute vec3 forestPathGround;\nvarying float vForestPathSide; varying vec3 vForestPathGround;\n'+s.vertexShader;
    s.vertexShader=s.vertexShader.replace('#include <begin_vertex>',`#include <begin_vertex>
     vForestPathSide=forestPathSide;vForestPathGround=forestPathGround;
    `);
-   s.fragmentShader='varying float vForestPathSide; varying vec3 vForestPathGround;\n'+s.fragmentShader;
+   s.fragmentShader=(isShoulder?'uniform float uForestPathJunction;\n':'')+'varying float vForestPathSide; varying vec3 vForestPathGround;\n'+s.fragmentShader;
    // Keep this before alphamap_fragment: the inherited Kourindou and home
    // shaders still paint their forecourts/yards after this general road layer.
    s.fragmentShader=s.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
     ${isShoulder?'diffuseColor.rgb=vForestPathGround;':`float forestPathEdge=smoothstep(.64,1.,abs(vForestPathSide));
     diffuseColor.rgb=mix(diffuseColor.rgb,vForestPathGround,forestPathEdge);`}
+    ${isShoulder?junctionClip:''}
    `);
   };
-  mat.customProgramCacheKey=()=>oldKey()+'-forest-path-soft-1-'+isShoulder;
+  mat.customProgramCacheKey=()=>oldKey()+'-forest-path-soft-'+(isShoulder?2:1)+'-'+isShoulder;
   this.forestPathMaterials.set(isShoulder,mat);this.mats[mat.name]=mat;return mat;
  }
  material(m){return target(m)?this.forestPathMaterial(shoulder(m)):super.material(m);}
@@ -91,14 +139,15 @@ class ForestPathRenderer extends Base{
   const removed=this.records.filter(r=>r.pack===id&&target(r.data)).map(r=>r.data);
   super.dropPack(id);
   for(const m of removed)for(const a of [m.vertices,m.farVertices].filter(Boolean))this.forestPathArrays?.delete(a);
+  this.updateForestPathJunction();
  }
  info(){
   const result=super.info(),arrays=new Set();for(const r of this.records)if(target(r.data))for(const a of [r.data.vertices,r.data.farVertices].filter(Boolean))arrays.add(a);
-  result.forestPath={revision:1,targets:this.records.filter(r=>target(r.data)).map(r=>r.data.id),expectedAttributeBytes:[...arrays].reduce((n,a)=>n+a.length/9*7,0),residentAttributeBytes:this.forestPathResidentAttributeBytes||0,peakAttributeBytes:this.forestPathPeakAttributeBytes||0,attributeBuilds:this.forestPathAttributeBuilds||0,attributeBudget:MAX_BYTES,colorSourceBytes:G.FOREST_PATH_COLORS.decodedBytes(),colorsBaseline:G.FOREST_PATH_COLORS.metadata.sourceBaseline,colorsSHA:G.FOREST_PATH_COLORS.metadata.payloadSHA,programKeys:[...(this.forestPathMaterials?.values()||[])].map(m=>m.customProgramCacheKey()),newTextures:0,newLights:0,newTargets:0,groundBasis:'Offline near public-terrain triangle albedo only; original road/terrain positions, normals and indices retained'};
+  result.forestPath={revision:3,targets:this.records.filter(r=>target(r.data)).map(r=>r.data.id),legacyPathCovered:!!this.recordMap.get('forest:paths')&&this.forestPathCovered(this.recordMap.get('forest:paths').data),junctionRevision:1,junctionEnabled:this.forestPathJunctionUniform?.value===1,expectedAttributeBytes:[...arrays].reduce((n,a)=>n+a.length/9*7,0),residentAttributeBytes:this.forestPathResidentAttributeBytes||0,peakAttributeBytes:this.forestPathPeakAttributeBytes||0,attributeBuilds:this.forestPathAttributeBuilds||0,attributeBudget:MAX_BYTES,colorSourceBytes:G.FOREST_PATH_COLORS.decodedBytes(),colorsBaseline:G.FOREST_PATH_COLORS.metadata.sourceBaseline,colorsSHA:G.FOREST_PATH_COLORS.metadata.payloadSHA,programKeys:[...(this.forestPathMaterials?.values()||[])].map(m=>m.customProgramCacheKey()),newTextures:0,newLights:0,newTargets:0,groundBasis:'Offline near public-terrain triangle albedo only; original road/terrain positions, normals and indices retained'};
   return result;
  }
  dispose(){try{super.dispose();}finally{this.forestPathArrays=new WeakMap();this.forestPathMaterials?.clear();}}
 }
-G.FOREST_PATH_RENDERER={revision:1,target,channels,attributeBudget:MAX_BYTES,bytesPerVertex:7};
+G.FOREST_PATH_RENDERER={revision:3,target,channels,coverageIds,junction,attributeBudget:MAX_BYTES,bytesPerVertex:7};
 G.DioramaRenderer=ForestPathRenderer;
 })(globalThis.GA);

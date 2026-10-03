@@ -1,0 +1,492 @@
+{
+  "revision": 1,
+  "date": "2026-10-03",
+  "status": "accepted-local-source-and-visual-validation",
+  "parentCommit": "c0c8852ed39b2d386c5be4455f7778eec8770f51",
+  "scope": "Existing main-island forest public roads and Marisa boardwalk junction only; no source geometry mutation, new region, or foliage replacement.",
+  "artifact": {
+    "sha256": "1f63dbd88f3405f10d6b5779278822357d5729ff3709c7a03c4d4077ab5cb695",
+    "bytes": 35962624,
+    "buildInputCount": 167
+  },
+  "sourceSHA256": {
+    "src/forest-path-renderer.js": "683f7e95f2a4badceffcf3006522ce2ad2060d7827b5d504adf606154a622008",
+    "tools/check-forest-path-coverage.mjs": "50285847cfffefe171b53fb6c5365dbb413d5766b4233412ebacf7f4e2b72a3e",
+    "tools/check-forest-path-renderer.mjs": "c98a7e20bc30bad262e3f512abaaf7d8d246ce84c67a93ae63192f178548a05d",
+    "tools/check-foliage-texture-browser.py": "8b92e580f18c6c4ce04224c52937c32170e43353b6cf0938caef625b84b932fb",
+    "tools/check.mjs": "5915fa1d0c4e05c455a33ec24ecb4678cdd8e7815077729d6d1f244934c60c6e",
+    "tools/build.py": "b97bef7124fb283444302707563490cc0a6bbdd5b63ad1e474367c5c2d91082b"
+  },
+  "implementation": {
+    "visibilityRevision": 3,
+    "junctionRevision": 1,
+    "hideOnly": "forest:paths",
+    "publicCoverageRequiredRecords": 8,
+    "legacySegmentsCovered": 610,
+    "retainedAdditionalMuenzukaSegments": 47,
+    "publicBoardwalkRecords": 11,
+    "junctionSourceRecord": "island:routes:forest:-2:0",
+    "junctionSegments": [
+      41,
+      42,
+      43
+    ],
+    "junctionSourceIndexOffsets": [
+      144,
+      150,
+      156
+    ],
+    "junctionQuads": 3,
+    "junctionPlanes": 12,
+    "paddingMeters": 0.0002,
+    "uniformLogicalBytesAdded": 4,
+    "materialAndProgramKeyCount": 2,
+    "centerProgramKeyUnchanged": true,
+    "sourceArraysUnchanged": true,
+    "missingOrMalformedCoverageFallback": true,
+    "publicDetailUnloadKeepsMask": true,
+    "newTextures": 0,
+    "newLights": 0,
+    "newRenderTargets": 0,
+    "runtimeTerrainCalls": 0
+  },
+  "staticValidation": {
+    "node": "v22.23.3",
+    "command": "node tools/check.mjs",
+    "exitCode": 0,
+    "artifactSHA": "1f63dbd88f3405f10d6b5779278822357d5729ff3709c7a03c4d4077ab5cb695",
+    "inputCount": 167,
+    "logSHA256": "4cb3e377382b4e67f490314147fd9c4350cb93b3ca002e9835d6a37ac82be5f8"
+  },
+  "coverageValidation": {
+    "legacySegments": 610,
+    "coveredLegacySegments": 610,
+    "legacyOnlySegments": 0,
+    "publicForestSegments": 657,
+    "retainedMuenzukaSegments": 47,
+    "visibilityCases": 60,
+    "otherRecordCases": 1500,
+    "missingRecordFallbacks": 8,
+    "malformedPublicFallbacks": 8,
+    "malformedLegacyFallbacks": 6,
+    "productionDispatchFrames": 7,
+    "hiddenExistingMesh": true,
+    "detailReentries": 3,
+    "afterHiddenResidentAttributeBytes": 80570,
+    "runtimeTerrainCalls": 0,
+    "finalResidentBytes": 0,
+    "finalResidentAttributeBytes": 0,
+    "sourceArraysUnchanged": true,
+    "verification": "CPU coverage, junction source boundaries/rays and production visibility/resource dispatch with WebGL submission stubbed; no visual/GPU/performance acceptance"
+  },
+  "junctionValidation": {
+    "revision": 1,
+    "record": "island:routes:forest:-2:0",
+    "segments": [
+      41,
+      42,
+      43
+    ],
+    "sourceIndexOffsets": [
+      144,
+      150,
+      156
+    ],
+    "quads": 3,
+    "planes": 12,
+    "paddingMeters": 0.0002,
+    "boundaryPoints": 44,
+    "blockedPixels": [
+      {
+        "pixel": [
+          600,
+          560
+        ],
+        "before": "island:routes:forest:-2:0:shoulder",
+        "shoulderFace": 486,
+        "after": "island:routes:forest:-2:0",
+        "roadFace": 51,
+        "point": [
+          -884.8074285423374,
+          52.456939220666975,
+          85.33564862024784
+        ]
+      },
+      {
+        "pixel": [
+          650,
+          590
+        ],
+        "before": "island:routes:forest:-2:0:shoulder",
+        "shoulderFace": 486,
+        "after": "island:routes:forest:-2:0",
+        "roadFace": 50,
+        "point": [
+          -884.8521200967544,
+          52.49687421786422,
+          84.18195488310567
+        ]
+      },
+      {
+        "pixel": [
+          720,
+          620
+        ],
+        "before": "island:routes:forest:-2:0:shoulder",
+        "shoulderFace": 490,
+        "after": "island:routes:forest:-2:0",
+        "roadFace": 48,
+        "point": [
+          -885.0347392702729,
+          52.58630244334519,
+          82.99171317326159
+        ]
+      }
+    ],
+    "coverageLossDisablesMask": true,
+    "partialPackDisablesMask": true,
+    "forestDropKeepsMask": true,
+    "additionalUniformBytes": 4
+  },
+  "rendererValidation": {
+    "rendererRevision": 3,
+    "junctionRevision": 1,
+    "junctionUniformBytes": 4,
+    "centerProgramKeyUnchanged": true,
+    "publicAttributeBytes": 80570,
+    "detailAttributeBytes": 25620,
+    "totalAttributeBytes": 106190,
+    "colorSourceBytes": 45510,
+    "programKeys": [
+      "ground-contact-v014-kourindou-ground-3-true-18-forest-home-ground-1-true-14-forest-path-soft-1-false",
+      "ground-contact-v014-kourindou-ground-3-false-0-forest-home-ground-1-false-0-forest-path-soft-2-true"
+    ],
+    "runtimeTerrainSamplerCalls": 0,
+    "finalResidentBytes": 0,
+    "finalResidentAttributeBytes": 0
+  },
+  "independentReadOnlyReview": {
+    "reviewer": "renderer_review",
+    "accepted": true,
+    "sourceDigestsMatched": true,
+    "blockingFindings": []
+  },
+  "browser": {
+    "browserTechnicalValidationPassed": true,
+    "captureProcessExitCodes": [
+      0,
+      0,
+      0
+    ],
+    "localActualVisualReviewPassed": true,
+    "parentActualVisualReviewAccepted": true,
+    "driver": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "browser": "151.0.7922.173",
+    "viewport": [
+      1280,
+      720
+    ],
+    "dpr": 1,
+    "viewCount": 4,
+    "PNGCount": 12,
+    "allSourceRecordCount": 2466,
+    "allowedHiddenIds": [
+      "forest:paths"
+    ],
+    "sourceDataMutated": false,
+    "productionFoliageInjected": false,
+    "buildInputsUnchangedAtAllThreeBrowserRunsEnd": true,
+    "hardwareFPSMeasured": false,
+    "physicalVRAMMeasured": false,
+    "GPUFrameTimeMeasured": false,
+    "liveBrowserAndServerClosed": true
+  },
+  "views": [
+    {
+      "name": "forestMarisaConnection",
+      "quality": "balanced",
+      "drawCalls": {
+        "before": 264,
+        "after": 262
+      },
+      "submittedTriangles": {
+        "before": 687180,
+        "after": 684740
+      },
+      "residentAttributeByteChange": -157380,
+      "sourceAndVisibilityChecks": {
+        "sourceRecordsEqual": true,
+        "sourceRecordIdsEqual": true,
+        "legacySourceRetained": true,
+        "legacyWasVisible": true,
+        "legacyHidden": true,
+        "legacyCoverageGuardActive": true,
+        "junctionMaskReady": true,
+        "protectedWantedEqual": true,
+        "publicRoadIdsEqual": true,
+        "publicRoadLODEqual": true,
+        "publicBoardwalkIdsEqual": true,
+        "publicBoardwalkLODEqual": true,
+        "sevenPublicBranchesPresent": true,
+        "requiredPacksEqual": true
+      },
+      "cameraAndOptionsAndLightsEqual": true,
+      "junctionState": {
+        "revision": 3,
+        "junctionRevision": 1,
+        "junctionEnabled": true
+      },
+      "housingSmokePassed": true,
+      "threeFramesPixelStable": true,
+      "actualVisualReviewPassed": true,
+      "baselineFrameSHA256": "4fa35c839766498a3bdce30ff25218d426c38a28c8a259db2af3a6a2f2918c29",
+      "candidateFrameSHA256": "d9f69e809e8d8a266fb61754849cf98101c7987588071643f4b8f7f5bfc8fc96",
+      "applicationErrors": [],
+      "spontaneousContextEvents": [],
+      "pixelChangesRelativeToRejectedV2": 15781
+    },
+    {
+      "name": "forestAliceConnection",
+      "quality": "balanced",
+      "drawCalls": {
+        "before": 489,
+        "after": 487
+      },
+      "submittedTriangles": {
+        "before": 887325,
+        "after": 884885
+      },
+      "residentAttributeByteChange": -157380,
+      "sourceAndVisibilityChecks": {
+        "sourceRecordsEqual": true,
+        "sourceRecordIdsEqual": true,
+        "legacySourceRetained": true,
+        "legacyWasVisible": true,
+        "legacyHidden": true,
+        "legacyCoverageGuardActive": true,
+        "junctionMaskReady": true,
+        "protectedWantedEqual": true,
+        "publicRoadIdsEqual": true,
+        "publicRoadLODEqual": true,
+        "publicBoardwalkIdsEqual": true,
+        "publicBoardwalkLODEqual": true,
+        "sevenPublicBranchesPresent": true,
+        "requiredPacksEqual": true
+      },
+      "cameraAndOptionsAndLightsEqual": true,
+      "junctionState": {
+        "revision": 3,
+        "junctionRevision": 1,
+        "junctionEnabled": true
+      },
+      "housingSmokePassed": true,
+      "threeFramesPixelStable": true,
+      "actualVisualReviewPassed": true,
+      "baselineFrameSHA256": "429862c0d8ab1835c6e855cfd18fd0d644fea76b05d5fc90762a2ec47112e8a8",
+      "candidateFrameSHA256": "d63e1a50846eb67b16be14483c3806dd0a88f938cb7c58676bca6a91b65462e8",
+      "applicationErrors": [],
+      "spontaneousContextEvents": [],
+      "pixelChangesRelativeToRejectedV2": 0
+    },
+    {
+      "name": "forestEntryConnection",
+      "quality": "balanced",
+      "drawCalls": {
+        "before": 625,
+        "after": 623
+      },
+      "submittedTriangles": {
+        "before": 1156583,
+        "after": 1154143
+      },
+      "residentAttributeByteChange": -157380,
+      "sourceAndVisibilityChecks": {
+        "sourceRecordsEqual": true,
+        "sourceRecordIdsEqual": true,
+        "legacySourceRetained": true,
+        "legacyWasVisible": true,
+        "legacyHidden": true,
+        "legacyCoverageGuardActive": true,
+        "junctionMaskReady": true,
+        "protectedWantedEqual": true,
+        "publicRoadIdsEqual": true,
+        "publicRoadLODEqual": true,
+        "publicBoardwalkIdsEqual": true,
+        "publicBoardwalkLODEqual": true,
+        "sevenPublicBranchesPresent": true,
+        "requiredPacksEqual": true
+      },
+      "cameraAndOptionsAndLightsEqual": true,
+      "junctionState": {
+        "revision": 3,
+        "junctionRevision": 1,
+        "junctionEnabled": true
+      },
+      "housingSmokePassed": true,
+      "threeFramesPixelStable": true,
+      "actualVisualReviewPassed": true,
+      "baselineFrameSHA256": "4eacf440bdde7c6e4aafdf265c62d4e0d93b9da5e1ad707a12eeab1a42f025ca",
+      "candidateFrameSHA256": "93316ae3f85e68791fb1cf230053ee69641af84e5baa7f394b38c33bb54f1898",
+      "applicationErrors": [],
+      "spontaneousContextEvents": [],
+      "pixelChangesRelativeToRejectedV2": 0
+    },
+    {
+      "name": "forestMarisaConnectionLow",
+      "quality": "low",
+      "drawCalls": {
+        "before": 233,
+        "after": 232
+      },
+      "submittedTriangles": {
+        "before": 313321,
+        "after": 312101
+      },
+      "residentAttributeByteChange": -157380,
+      "sourceAndVisibilityChecks": {
+        "sourceRecordsEqual": true,
+        "sourceRecordIdsEqual": true,
+        "legacySourceRetained": true,
+        "legacyWasVisible": true,
+        "legacyHidden": true,
+        "legacyCoverageGuardActive": true,
+        "junctionMaskReady": true,
+        "protectedWantedEqual": true,
+        "publicRoadIdsEqual": true,
+        "publicRoadLODEqual": true,
+        "publicBoardwalkIdsEqual": true,
+        "publicBoardwalkLODEqual": true,
+        "sevenPublicBranchesPresent": true,
+        "requiredPacksEqual": true
+      },
+      "cameraAndOptionsAndLightsEqual": true,
+      "junctionState": {
+        "revision": 3,
+        "junctionRevision": 1,
+        "junctionEnabled": true
+      },
+      "housingSmokePassed": true,
+      "threeFramesPixelStable": true,
+      "actualVisualReviewPassed": true,
+      "baselineFrameSHA256": "e9c213c47076f7d421aed37149069770353cb4d531379e20aa06abca801bd146",
+      "candidateFrameSHA256": "a2d5ab4412aa0462f9a76ef78763cc8dbd7ed4172a5dc1d2fedbe2e05247e4a3",
+      "applicationErrors": [],
+      "spontaneousContextEvents": [],
+      "pixelChangesRelativeToRejectedV2": 15135
+    }
+  ],
+  "reentry": {
+    "passed": true,
+    "productionRAF": true,
+    "assertionCount": 9,
+    "checks": [
+      {
+        "name": "native forest before cache drop keeps eight public roads and the junction mask enabled",
+        "passed": true,
+        "data": {
+          "revision": 3,
+          "junctionRevision": 1,
+          "junctionEnabled": true
+        }
+      },
+      {
+        "name": "Native forest retains every selected-view source hash",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Legacy path hidden before drop",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "native clear-cache dropped forest detail keeps eight public roads and the junction mask enabled",
+        "passed": true,
+        "data": {
+          "revision": 3,
+          "junctionRevision": 1,
+          "junctionEnabled": true
+        }
+      },
+      {
+        "name": "Drop removes only detail ownership, public roads and boardwalk retained",
+        "passed": true,
+        "data": {
+          "sourceRemoved": true,
+          "weakMapCleared": true
+        }
+      },
+      {
+        "name": "native forest reentry keeps eight public roads and the junction mask enabled",
+        "passed": true,
+        "data": {
+          "revision": 3,
+          "junctionRevision": 1,
+          "junctionEnabled": true
+        }
+      },
+      {
+        "name": "Reentry preserves all source records and typed-array hashes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Legacy path remains hidden after reentry",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Public-road and boardwalk visibility/LOD restored",
+        "passed": true,
+        "data": null
+      }
+    ]
+  },
+  "visualFindings": [
+    "Alice duplicate center wedge removed; source-defined public route width/endpoints remain continuous in selected view.",
+    "Previously rejected Marisa green center-road triangles removed in balanced and low; original green stone boardwalk foot preserved.",
+    "Alice and entrance frames exactly match rejected v2 candidate outside the local repair, with pixelDifference0 in both selected views.",
+    "Public shoulder and terrain lighting facets remain; this local step does not complete every forest path."
+  ],
+  "preview": {
+    "file": "preview/forest-path-junction.jpg",
+    "sha256": "b8af26b0e9d2e011cf9e9ad11c426cf75088bc32bbb9ef93383aa036a4066b0c",
+    "sourceFrames": [
+      {
+        "label": "Before / Alice road, two layers",
+        "sha256": "429862c0d8ab1835c6e855cfd18fd0d644fea76b05d5fc90762a2ec47112e8a8"
+      },
+      {
+        "label": "After / Alice public road",
+        "sha256": "d63e1a50846eb67b16be14483c3806dd0a88f938cb7c58676bca6a91b65462e8"
+      },
+      {
+        "label": "Before / Marisa junction, two layers",
+        "sha256": "4fa35c839766498a3bdce30ff25218d426c38a28c8a259db2af3a6a2f2918c29"
+      },
+      {
+        "label": "After / Marisa junction, masked shoulder",
+        "sha256": "d9f69e809e8d8a266fb61754849cf98101c7987588071643f4b8f7f5bfc8fc96"
+      }
+    ],
+    "notes": "Two fixed camera views, before and after. Real full frames resized only; no semantic edits. Before is accepted main forest houses v3/path artifact. Public lighting facets and original green stone boardwalk foot remain."
+  },
+  "evidenceSHA256": {
+    "fullBrowserSummary": "5098aadc780e6d3e8d11991d48cd25445fc0c802f6faa584a5466186297280c0",
+    "coverageCPUReport": "9d724a5a2aad7b6ab8be7f965a7c09e67560dec6cfc0738fbe4687e7f1351a0f",
+    "rendererCPUReport": "f64e02bc845dcd467a4cdfe6fe8191ce9f6adf4a695ffc34fa8e310b2305e35f"
+  },
+  "limitations": [
+    "This is a local junction milestone; public lighting facets and other forest connections remain.",
+    "Draw/triangle and resident attribute changes are measured submissions, not hardware FPS or physical VRAM. Original source arrays remain retained.",
+    "The additional fragment mask has its own cost; no new ABBA or GPU timing was accepted.",
+    "No new night or active context-recovery suite was run for this step.",
+    "Each fresh capture session retained one unattributed HTTP404 resource message; application and shader errors were empty.",
+    "Remote CI and Pages delivery must be read from the resulting commit; they are not asserted here.",
+    "The inherited generic nonTargetWantedEqual comparator is false because the legacy road is intentionally hidden; all scope-specific protectedWantedEqual and source checks passed."
+  ],
+  "rejectedIntermediate": {
+    "artifactSHA256": "88e9fb92c2f50746f85d48f09a1cda56571b859f104ac435b93696a0b0357ebe",
+    "reason": "Deduplication alone exposed two green shoulder triangles across the Marisa soil road in balanced and low views. Not published to main."
+  }
+}

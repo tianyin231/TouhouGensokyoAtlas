@@ -1,4 +1,4 @@
-"""Serial WebGL evidence for foliage A/B and bounded forest-home changes.
+"""Serial WebGL evidence for foliage A/B and bounded forest changes.
 
 Fixed visual frames use renderOnce and explicitly refresh shadows. Performance
 work uses the normal production RAF scheduler and does not call renderOnce,
@@ -7,6 +7,8 @@ these observations do not establish hardware FPS or physical VRAM.
 Experimental scripts are opt-in browser evaluations, never production HTML edits.
 Housing comparisons use exact allowed record changes and protected source hashes;
 the standalone housing smoke mode checks production integration without an A/B.
+Forest-path visibility comparisons retain every source hash and permit only the
+exact forest:paths record to leave the visible set; public roads stay protected.
 """
 
 import argparse
@@ -146,6 +148,20 @@ SNAPSHOT_JS = r"""() => {
   renderedView:R.currentOptions.view,frames:A.state.drawnFrames,stats:I.stats,wanted,targets,
   targetVisibleTriangles:targets.filter(r=>r.wanted&&r.visible).reduce((n,r)=>n+r.triangles,0),forestSourceSummary,
   housingRecords,boardwalkTerrainSelections,
+  forestPathVisibility:{legacy:R.recordMap.has('forest:paths')?row(R.recordMap.get('forest:paths')):null,
+   revision:I.forestPath?.revision??null,junctionRevision:I.forestPath?.junctionRevision??null,
+   junctionEnabled:I.forestPath?.junctionEnabled??false,
+   legacyPathCovered:I.forestPath?.legacyPathCovered??false,
+   coverageIds:GA.FOREST_PATH_RENDERER?.coverageIds?.slice()||[],
+   publicRoads:R.records.filter(r=>/^island:routes:forest:-?\d+:-?\d+(?::shoulder)?$/.test(r.data.id)).map(row).sort((a,b)=>a.id.localeCompare(b.id)),
+   branches:(GA.FOREST?.paths||[]).map(p=>{
+    const id=p.id==='forest-alice'?'route-alice':p.id==='forest-marisa'?'route-marisa':'island-'+p.id,
+      route=GA.ISLAND?.allRoutes.find(r=>r.id===id);
+    return {id:p.id,publicId:id,points:p.points.length,samples:p.samples.length,
+      publicPoints:route?.points.length||0,publicSamples:route?.samples.length||0,
+      pointsMatch:JSON.stringify(p.points)===JSON.stringify(route?.points),
+      samplesMatch:JSON.stringify(p.samples)===JSON.stringify(route?.samples)};
+   })},
   gpu:{...R.engine.info.memory,programs:R.engine.info.programs?.length||0,
     attributeBytes:R.residentBytes,geometryEntries:R.geometryRefs.size},
   textures:[...textures.values()].sort((a,b)=>a.name.localeCompare(b.name)||a.width-b.width||a.height-b.height),
@@ -198,11 +214,16 @@ HOUSING_SMOKE_JS = r"""() => {
    JSON.stringify(d.terrainCenter)===JSON.stringify(s.center)&&JSON.stringify(d.terrainTile)===JSON.stringify(s.tile)};
  });
  const leaf=records.filter(r=>r.data.component==='forest-canopy'&&r.data.id.endsWith(':leaf'));
+ const path=R.info().forestPath||{},visibleShoulders=records.filter(r=>/^island:routes:forest:-?\d+:-?\d+:shoulder$/.test(r.data.id)&&r.wanted&&r.item?.mesh.visible).map(r=>r.data.id),
+   junctionRequired=path.revision>=3&&visibleShoulders.length>0;
  const checks={newHomeGeometryPresent:['alice','marisa'].every(id=>['near','far'].every(level=>homes[id][level].records>0&&homes[id][level].sourceTriangles>0)),
   legacyHomeRecordsRemoved:legacy.length===0,publicBoardwalkConfigured:boardwalk.length===11&&bindings.every(b=>b.valid),
   originalForestTreesPresent:leaf.length===155&&leaf.reduce((n,r)=>n+(r.data.instances?.length/16||1),0)===755,
+  forestJunctionMaskReady:!junctionRequired||path.junctionRevision===1&&path.junctionEnabled===true,
   noFoliageInjection:!globalThis.FOLIAGE_AB&&!R.__foliageTextureExperimentOwner&&records.every(r=>!r.item?.mesh.material?.name?.startsWith('experiment'))};
- return {passed:Object.values(checks).every(Boolean),checks,homes,bindings,legacyIds:legacy.map(r=>r.data.id)};
+ return {passed:Object.values(checks).every(Boolean),checks,homes,bindings,legacyIds:legacy.map(r=>r.data.id),
+  forestPathJunction:{revision:path.revision??null,junctionRevision:path.junctionRevision??null,
+   junctionEnabled:path.junctionEnabled??false,visibleShoulders,assertionRequired:junctionRequired}};
 }"""
 
 FIXED_FRAME_JS = r"""() => {
@@ -401,6 +422,91 @@ def compare_housing_sources(reference, current, manifest):
                 actualAddedIds=sorted(set(after)-set(before)))
 
 
+def forest_path_junction_ready(state):
+    return (state.get('revision')==3 and state.get('junctionRevision')==1 and
+            state.get('junctionEnabled') is True and len(state.get('publicRoads',[]))==8)
+
+
+def compare_forest_path_visibility(reference, current, base, now):
+    before={r['id']:r for r in reference['records']}
+    after={r['id']:r for r in current['records']}
+    legacy='forest:paths'
+    public=lambda k:k.startswith('island:routes:forest:')
+    roads={k for k in before if public(k)}
+    boardwalk={k for k,r in before.items() if r['component']=='forest-boardwalk'}
+    state=now['forestPathVisibility'];record=state['legacy']
+    visible=lambda frame,ids:[r for r in frame['wanted'] if r['id'] in ids]
+    differences=[k for k in sorted(set(before)|set(after)) if before.get(k)!=after.get(k)]
+    branch_ids={'forest-entry','forest-alice','forest-marisa','forest-loop',
+                'forest-mushroom','forest-oak','forest-boardwalk'}
+    checks=dict(sourceRecordsEqual=bool(before) and not differences,
+                sourceRecordIdsEqual=set(before)==set(after),
+                legacySourceRetained=legacy in before and before[legacy]==after.get(legacy),
+                legacyWasVisible=any(r['id']==legacy for r in base['wanted']),
+                legacyHidden=bool(record) and not record['wanted'] and not record['visible'],
+                legacyCoverageGuardActive=state['legacyPathCovered'] is True and set(state['coverageIds'])==roads,
+                junctionMaskReady=forest_path_junction_ready(state),
+                protectedWantedEqual=[r for r in base['wanted'] if r['id']!=legacy]==now['wanted'],
+                publicRoadIdsEqual=len(roads)==8 and roads=={k for k in after if public(k)},
+                publicRoadLODEqual=visible(base,roads)==visible(now,roads),
+                publicBoardwalkIdsEqual=len(boardwalk)==11 and boardwalk=={k for k,r in after.items() if r['component']=='forest-boardwalk'},
+                publicBoardwalkLODEqual=visible(base,boardwalk)==visible(now,boardwalk),
+                sevenPublicBranchesPresent=len(state['branches'])==7 and {p['id'] for p in state['branches']}==branch_ids and
+                    all(p['pointsMatch'] and p['samplesMatch'] and p['samples']>=2 for p in state['branches']),
+                requiredPacksEqual=reference['streaming']['required']==current['streaming']['required'])
+    return dict(checks=checks,protectedRecordCount=len(before),
+                unexpectedSourceDifferences=differences,allowedHiddenIds=[legacy],
+                publicRoadIds=sorted(roads),publicBoardwalkIds=sorted(boardwalk))
+
+
+def capture_forest_path_reentry(page, item, save, reference):
+    result=dict(passed=False,productionRAF=True,manualDraws=False,nightTest=False,
+                contextRecoveryTest=False,states=[],checks=[])
+    item['forestPathReentry']=result;save()
+    def check(name,value,data=None):
+        result['checks'].append(dict(name=name,passed=bool(value),data=data));save()
+        require(value,name)
+    def view(name):
+        before=page.evaluate('v=>{const n=ATLAS.state.drawnFrames;ATLAS.setView(v,false);ATLAS.state.labels=false;ATLAS.state.characters=false;return n;}',name)
+        page.wait_for_function('p=>ATLAS.state.drawnFrames>p.before&&ATLAS.renderer.currentOptions.view===p.view&&!ATLAS.rig.transition&&!ATLAS.stream.pending&&[...ATLAS.stream.required].every(id=>ATLAS.stream.cache.has(id))',arg=dict(before=before,view=name))
+    def state(name):
+        s=page.evaluate(SNAPSHOT_JS);result['states'].append(dict(phase=name,**s));save()
+        require(not s['contextLost'] and not s['contextEvents'] and not item['errors'],'Reentry WebGL/JavaScript failure')
+        require(all(p['precisionMatches'] for p in s['boardwalkTerrainSelections']),'Reentry boardwalk and terrain precision differ')
+        check(name+' keeps eight public roads and the junction mask enabled',forest_path_junction_ready(s['forestPathVisibility']),
+              {k:s['forestPathVisibility'][k] for k in ['revision','junctionRevision','junctionEnabled']})
+        return s
+    def ui(visible):
+        page.evaluate('v=>{ATLAS.state.uiHidden=!v;document.body.classList.toggle("ui-hidden",!v)}',visible)
+    page.evaluate('globalThis.ATLAS_TEST_PAUSE=false;ATLAS.wake()')
+    view('forest');before=state('native forest before cache drop')
+    initial=page.evaluate(SOURCE_INTEGRITY_JS)
+    check('Native forest retains every selected-view source hash',initial['records']==reference['records'])
+    legacy=before['forestPathVisibility']['legacy']
+    check('Legacy path hidden before drop',legacy and not legacy['wanted'] and not legacy['visible'])
+    page.evaluate('globalThis.__forestPathReentryArray=ATLAS.renderer.recordMap.get("forest:paths").data.vertices')
+    view('diorama');ui(True);page.locator('#btn-settings').click()
+    n=page.evaluate('ATLAS.state.drawnFrames');page.locator('#btn-clear-cache').click();page.locator('#close-settings').click();ui(False)
+    page.wait_for_function('n=>ATLAS.state.drawnFrames>n&&!ATLAS.stream.cache.has("forest")&&!ATLAS.renderer.packs.has("forest")',arg=n)
+    dropped=state('native clear-cache dropped forest detail')
+    cleaned=page.evaluate('()=>({sourceRemoved:!ATLAS.renderer.recordMap.has("forest:paths"),weakMapCleared:!ATLAS.renderer.forestPathArrays.has(__forestPathReentryArray)})')
+    road_ids={r['id'] for r in before['forestPathVisibility']['publicRoads']}
+    boardwalk_ids={r['boardwalk']['id'] for r in before['boardwalkTerrainSelections']}
+    check('Drop removes only detail ownership, public roads and boardwalk retained',cleaned['sourceRemoved'] and cleaned['weakMapCleared'] and
+          {r['id'] for r in dropped['forestPathVisibility']['publicRoads']}==road_ids and
+          {r['boardwalk']['id'] for r in dropped['boardwalkTerrainSelections']}==boardwalk_ids,cleaned)
+    view('forest');after=state('native forest reentry')
+    restored=page.evaluate(SOURCE_INTEGRITY_JS)
+    check('Reentry preserves all source records and typed-array hashes',initial['records']==restored['records'])
+    legacy=after['forestPathVisibility']['legacy']
+    check('Legacy path remains hidden after reentry',legacy and not legacy['wanted'] and not legacy['visible'] and after['forestPathVisibility']['legacyPathCovered'])
+    public_ids=road_ids|boardwalk_ids
+    check('Public-road and boardwalk visibility/LOD restored',
+          [r for r in before['wanted'] if r['id'] in public_ids]==[r for r in after['wanted'] if r['id'] in public_ids])
+    page.evaluate('delete globalThis.__forestPathReentryArray')
+    result['passed']=True;save()
+
+
 def capture_visuals(pw, args, url, report, save):
     lookup = {s['name']: s for s in SPECS}
     selected = args.specs.split(',') if args.specs else [s['name'] for s in SPECS]
@@ -411,10 +517,18 @@ def capture_visuals(pw, args, url, report, save):
     if args.comparison_scope=='housing':
         require(compare and source_reference and manifest, 'Housing comparison needs screenshots, source reference, and exact change manifest')
         require(not args.experiment_root, 'Housing validation uses production trees without foliage injection')
+    if args.comparison_scope=='forest-path-visibility':
+        require(compare and args.family=='forest' and args.modes=='original' and not args.experiment_root,
+                'Forest-path visibility comparison requires an original forest baseline and production scene')
+        require(not args.source_only and not args.source_reference and not args.change_manifest,
+                'Forest-path visibility hashes every source against its matching screenshot baseline')
+        require(set(selected)<={'forestAliceConnection','forestMarisaConnection','forestEntryConnection','forestMarisaConnectionLow'},
+                'Forest-path visibility scope is limited to the four established connection views')
     if source_reference:
         reference_source=next(c['sourceIntegrity'] for c in source_reference['captures'] if c.get('sourceIntegrity'))
     if args.housing_smoke:
         require(args.family=='forest' and not args.experiment_root, 'Housing smoke requires original production forest')
+    reentry_done=False
     for name in selected:
         spec=lookup[name]
         for mode in args.modes.split(','):
@@ -434,7 +548,7 @@ def capture_visuals(pw, args, url, report, save):
                     page.evaluate('globalThis.FOLIAGE_AB=GA.FOREST_FOLIAGE_TEXTURE.install(ATLAS.renderer)')
                     page.evaluate('mode=>FOLIAGE_AB.setMode(mode)',mode)
                     for _ in range(3):page.evaluate(FIXED_FRAME_JS)
-                if args.source_only or args.source_reference:
+                if args.source_only or args.source_reference or args.comparison_scope=='forest-path-visibility':
                     item['sourceIntegrity']=page.evaluate(SOURCE_INTEGRITY_JS);save()
                 if args.source_only:
                     item['state']=page.evaluate(SNAPSHOT_JS)
@@ -498,11 +612,20 @@ def capture_visuals(pw, args, url, report, save):
                         controlled={k:v for k,v in item['comparison'].items() if k.endswith('Equal') and k!='nonTargetWantedEqual'}
                         controlled.update({k:v for k,v in item['comparison']['sourceIntegrity'].items() if k.endswith('Equal')})
                         require(all(controlled.values()), 'Uncontrolled housing scene/source difference')
+                    elif args.comparison_scope=='forest-path-visibility':
+                        require(prev.get('sourceIntegrity'), 'Forest-path baseline lacks complete source hashes')
+                        item['comparison']['pathVisibility']=compare_forest_path_visibility(prev['sourceIntegrity'],item['sourceIntegrity'],base,now)
+                        save()
+                        controlled={k:v for k,v in item['comparison'].items() if k.endswith('Equal') and k!='nonTargetWantedEqual'}
+                        controlled.update(item['comparison']['pathVisibility']['checks'])
+                        require(all(controlled.values()), 'Uncontrolled forest-path visibility/source difference')
                     else:
                         require(all(value for key,value in item['comparison'].items() if key.endswith('Equal')), 'Uncontrolled A/B scene difference')
                     if args.comparison_scope=='foliage' and (mode=='original' or name.startswith('shrine')):
                         require(item['comparison']['pixels']['changedPixels']==0, 'Protected/original pixel output changed')
                 require(not item['errors'], 'JavaScript/shader error: '+repr(item['errors']))
+                if args.forest_path_reentry and not reentry_done:
+                    capture_forest_path_reentry(page,item,save,item['sourceIntegrity']);reentry_done=True
                 item['passed']=True;save()
                 print('PASS',name,mode,item['frames'][0]['stats']['totalCalls'],item['frames'][0]['stats']['totalTriangles'],flush=True)
             except BaseException as exc:
@@ -528,9 +651,10 @@ def contact_sheet(report, output):
     rows=[]
     for item in report['captures']:
         if item.get('passed') and item.get('frames'):
-            if item.get('comparison',{}).get('baselineFile') and (item['mode']=='texture' or item['comparison'].get('scope')=='housing'):
+            if item.get('comparison',{}).get('baselineFile') and (item['mode']=='texture' or item['comparison'].get('scope') in ('housing','forest-path-visibility')):
                 rows.append((item['name']+' / baseline original',Path(item['comparison']['baselineFile'])))
             label='housing candidate' if item.get('comparison',{}).get('scope')=='housing' else item['mode']
+            if item.get('comparison',{}).get('scope')=='forest-path-visibility':label='legacy path hidden'
             rows.append((item['name']+' / '+label,output/item['frames'][0]['file']))
     if not rows:return
     cols=2;w,h=480,270
@@ -686,11 +810,12 @@ def main():
     parser.add_argument('--modes',default='original')
     parser.add_argument('--specs',help='Comma separated named fixed camera specs')
     parser.add_argument('--compare-to',type=Path)
-    parser.add_argument('--comparison-scope',choices=['foliage','housing'],default='foliage')
+    parser.add_argument('--comparison-scope',choices=['foliage','housing','forest-path-visibility'],default='foliage')
     parser.add_argument('--source-only',action='store_true',help='Collect source SHA reference without repeating screenshots')
     parser.add_argument('--source-reference',type=Path,help='Original source-only report.json')
     parser.add_argument('--change-manifest',type=Path,help='Exact removedOriginalIds, addedCandidateIds, changedSourceIds')
     parser.add_argument('--housing-smoke',action='store_true',help='Check production homes/terrain-bound boardwalk without an A/B baseline')
+    parser.add_argument('--forest-path-reentry',action='store_true',help='One native clear-cache/drop/reentry check for the exact legacy-path visibility change')
     parser.add_argument('--performance',action='store_true')
     parser.add_argument('--family',choices=['kourindou','forest'],default='kourindou')
     parser.add_argument('--scenarios',default='kourindou-path,kourindou-orbit')
@@ -700,6 +825,10 @@ def main():
                         help='Async query-tail deadline; incomplete results are saved and fail timing validation')
     args=parser.parse_args()
     require(0<args.gpu_query_wait_seconds<=60,'GPU query wait must be in (0,60] seconds')
+    require(not args.forest_path_reentry or args.comparison_scope=='forest-path-visibility' and not args.performance,
+            'Forest-path reentry is limited to the static forest-path visibility comparison')
+    require(args.comparison_scope!='forest-path-visibility' or not args.performance,
+            'Forest-path visibility scope does not run foliage performance experiments')
     args.experiment_files=[EXPERIMENT_FILES[0], 'src/experiments/forest-foliage-texture.js' if args.family=='forest' else EXPERIMENT_FILES[1]]
     args.output.mkdir(parents=True,exist_ok=True);args.dist=args.dist.resolve()
     release,artifact,release_sha=validate_build(args.dist)
@@ -707,6 +836,7 @@ def main():
     report=dict(passed=False,artifact=str(artifact),sha256=release['sha256'],releaseSha256=release_sha,
        buildInputs=release['inputs'],experimentalScripts=experiment_sha,targetFamily=args.family,viewport=[1280,720],dpr=1,
        comparisonScope=args.comparison_scope,sourceOnly=args.source_only,housingSmoke=args.housing_smoke,
+       forestPathReentry=args.forest_path_reentry,
        sourceReferenceSHA256=digest(args.source_reference) if args.source_reference else None,
        changeManifestSHA256=digest(args.change_manifest) if args.change_manifest else None,
        options=OPTIONS,hardwareFPSMeasured=False,physicalVRAMMeasured=False,

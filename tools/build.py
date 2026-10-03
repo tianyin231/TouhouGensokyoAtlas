@@ -209,6 +209,7 @@ def build(output_dir):
     read_bytes('tools/check-forest.mjs')
     read_bytes('tools/forest-baseline.json')
     read_bytes('tools/check-forest-path-renderer.mjs')
+    read_bytes('tools/check-forest-path-coverage.mjs')
     read_bytes('tools/generate-forest-path-colors.mjs')
     read_bytes('tools/check-foliage-texture-browser.py')
     read_bytes('tools/check-ui-work.mjs')

@@ -58,6 +58,9 @@ console.log('Worker生命周期检查通过：'+JSON.stringify(await checkStream
 const forestPathCheck = spawnSync(process.execPath, [path.join(root, 'tools/check-forest-path-renderer.mjs')], {cwd: root, encoding: 'utf8', maxBuffer: 1024 * 1024});
 assert.equal(forestPathCheck.status, 0, `森林路边属性检查失败：${forestPathCheck.error || forestPathCheck.stderr}`);
 console.log('森林路边属性检查通过：'+JSON.stringify(JSON.parse(forestPathCheck.stdout)));
+const forestCoverageCheck = spawnSync(process.execPath, [path.join(root, 'tools/check-forest-path-coverage.mjs')], {cwd: root, encoding: 'utf8', maxBuffer: 1024 * 1024});
+assert.equal(forestCoverageCheck.status, 0, `森林公共路覆盖检查失败：${forestCoverageCheck.error || forestCoverageCheck.stderr}`);
+console.log('森林公共路覆盖检查通过：'+JSON.stringify(JSON.parse(forestCoverageCheck.stdout)));
 const html = htmlBytes.toString('utf8');
 assert(!/\{\{[A-Z_]+\}\}/.test(html), '成品仍有未替换的模板占位符');
 const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)];
