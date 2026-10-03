@@ -1,3 +1,5 @@
+import {checkUIWork} from './check-ui-work.mjs';
+import {checkFrameWork} from './check-frame-work.mjs';
 import {checkRenderDiagnostics} from './check-render-diagnostics.mjs';
 import {checkRenderResources} from './check-render-resources.mjs';
 import {checkRenderOwnership} from './check-render-ownership.mjs';
@@ -46,6 +48,8 @@ assert.equal(hash(htmlBytes), info.sha256, '成品被修改，请重新构建');
 for (const [name, digest] of Object.entries(info.inputs)) {
   assert.equal(hash(read(name)), digest, `${name} 已改变，请先运行 python tools/build.py`);
 }
+console.log('隐藏界面工作量检查通过：'+JSON.stringify(await checkUIWork(read)));
+console.log('渲染循环工作量检查通过：'+JSON.stringify(await checkFrameWork(read)));
 console.log('渲染诊断检查通过：'+JSON.stringify(checkRenderDiagnostics(read)));
 console.log('渲染资源检查通过：'+JSON.stringify(checkRenderResources(read)));
 console.log('渲染引用检查通过：'+JSON.stringify(await checkRenderOwnership(read)));

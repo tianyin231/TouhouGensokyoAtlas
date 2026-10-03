@@ -187,7 +187,7 @@ class AdaptiveRenderer extends Base{
   this.patchMaterials();
   this.engine.shadowMap.type=T.PCFSoftShadowMap;this.sun.shadow.camera.layers.enable(2);this.sun.shadow.normalBias=.13;this.sun.shadow.bias=-.00009;
   this.engine.info.autoReset=false;
-  this.onAdaptiveContextLost=()=>{this.contextLost=true;};this.onAdaptiveContextRestored=()=>{this.contextLost=false;this.mirrorLast=null;this.engine.shadowMap.needsUpdate=true;};
+  this.onAdaptiveContextLost=()=>{this.contextLost=true;};this.onAdaptiveContextRestored=()=>{this.contextLost=false;this.projectionDirty=true;this.mirrorLast=null;this.engine.shadowMap.needsUpdate=true;};
   canvas.addEventListener('webglcontextlost',this.onAdaptiveContextLost);canvas.addEventListener('webglcontextrestored',this.onAdaptiveContextRestored);
  }
  patchMaterials(){const T=this.T;
@@ -246,7 +246,12 @@ float atlasHill(vec3 p){return (1.-smoothstep(.65,1.14,length((p.xz-vec2(-1330.,
   return r.item.mesh;
  }
  evict(r){if(!r.item)return;const m=r.data;this.scene.remove(r.item.mesh);if(r.item.mesh.isInstancedMesh){r.item.mesh.dispose();this.residentBytes-=m.instances.byteLength+m.instanceColors.byteLength;}this.release(r.array);const i=this.objects.indexOf(r.item);if(i>=0)this.objects.splice(i,1);r.item=null;r.array=null;r.level=-1;this.evictions++;}
- trim(force=false){let n=0;const now=performance.now()/1000;const unused=this.records.filter(r=>r.item&&!r.wanted).sort((a,b)=>a.lastUsed-b.lastUsed);for(const r of unused){if(force||now-r.lastUsed>this.graceSeconds||this.residentBytes>this.attributeBudget){this.evict(r);n++;}}return n;}
+ trim(force=false){let n=0;const now=performance.now()/1000;
+  // Only budget pressure needs LRU selection. Keep explicit force's old order;
+  // ordinary expiry can scan in place without allocating or sorting a list.
+  const unused=force||this.residentBytes>this.attributeBudget?this.records.filter(r=>r.item&&!r.wanted).sort((a,b)=>a.lastUsed-b.lastUsed):this.records;
+  for(const r of unused){if(r.item&&!r.wanted&&(force||now-r.lastUsed>this.graceSeconds||this.residentBytes>this.attributeBudget)){this.evict(r);n++;}}return n;
+ }
  active(m,space,opts){
   if(m.event==='summer-concert'&&opts.flowerEvent!==true)return false;const s=m.space||'surface';
   if(space==='atlas')return s==='surface'||s==='atlas'||s==='mausoleum'&&!m.ceiling&&!m.hideInSection;
@@ -383,12 +388,17 @@ void main(){float d=texture2D(depth,uvP).r;if(d>.999995){gl_FragColor=vec4(1.);r
  return G.visibleSphere(rig.planes,center,rad+6);
  }
  render(rig,opts={}){if(this.contextLost)return;const start=performance.now(),T=this.T,now=start/1000,atlas=opts.displayMode==='atlas',distance=G.length(G.sub(rig.eye,rig.target));this.currentOptions=opts;this.lastMode=opts.displayMode;this.timeUniform.value=opts.time||0;
- this.camera.fov=rig.fov||49;this.camera.aspect=rig.aspect;this.camera.updateProjectionMatrix();this.camera.position.fromArray(rig.eye);this.camera.lookAt(...rig.target);this.camera.updateMatrixWorld();this.sky.position.copy(this.camera.position);this.lighting(rig,opts,distance);
+ const fov=rig.fov||49;if(this.projectionDirty||this.camera.fov!==fov||this.camera.aspect!==rig.aspect){this.camera.fov=fov;this.camera.aspect=rig.aspect;this.camera.updateProjectionMatrix();this.projectionDirty=false;}this.camera.position.fromArray(rig.eye);this.camera.lookAt(...rig.target);this.camera.updateMatrixWorld();this.sky.position.copy(this.camera.position);this.lighting(rig,opts,distance);
  const stamp=[opts.lighting,opts.vegetation,opts.ceiling,opts.space,opts.displayMode,opts.focus,opts.aligned,opts.flowerEvent,opts.weather,opts.cutaway].join('|');if(stamp!==this.lastStamp){this.engine.shadowMap.needsUpdate=true;this.mirrorLast=null;this.lastStamp=stamp;}
  const shadows=!atlas&&this.quality!=='low'&&opts.space!=='mausoleum'&&opts.weather!=='rain'&&distance<1800;this.engine.shadowMap.enabled=shadows;this.sun.castShadow=shadows;
  if(shadows&&(G.length(G.sub(rig.target,this.sunAnchor))>8||Math.abs(distance-(this.shadowDistance||0))>12||this.engine.shadowMap.needsUpdate)){this.sunAnchor=rig.target.slice();this.shadowDistance=distance;const span=G.clamp(distance*.73,38,420),c=this.sun.shadow.camera;c.left=-span;c.right=span;c.top=span;c.bottom=-span;c.far=2200;c.updateProjectionMatrix();this.sun.position.set(rig.target[0]+(this.weatherSunOffset?.[0]??-430),rig.target[1]+(this.weatherSunOffset?.[1]??760),rig.target[2]+(this.weatherSunOffset?.[2]??320));this.sun.target.position.fromArray(rig.target);this.engine.shadowMap.needsUpdate=true;}
  else if(!shadows){this.sun.position.set(rig.target[0]+(this.weatherSunOffset?.[0]??-430),rig.target[1]+(this.weatherSunOffset?.[1]??760),rig.target[2]+(this.weatherSunOffset?.[2]??320));this.sun.target.position.fromArray(rig.target);}
- let proxy=0,detail=0;this.hasVisibleAnimation=false;for(const r of this.records){const m=r.data,yes=this.wanted(r,rig,opts,distance);r.wanted=yes;if(!yes){if(r.item)r.item.mesh.visible=false;continue;}let lod=this.quality==='low'?1:this.levelFor(r,r.distance);if(!m.farVertices)lod=0;const mesh=this.ensure(r,lod);mesh.visible=true;mesh.layers.set(0);mesh.scale.setScalar(r.xf?.scale||1);mesh.position.fromArray(r.xf?.offset||[0,0,0]);mesh.castShadow=shadows&&!m.overview&&m.group!=='water'&&m.group!=='effects'&&m.lod!=='props'&&m.lod!=='near';if(m.group==='terrain')mesh.castShadow=shadows&&m.owner!=='mountain';if(m.flowerKind)mesh.castShadow=false;if(m.globalSurface)mesh.castShadow=shadows&&!m.nearDecoration&&((m.component==='transition-vegetation'||m.component==='transition-fields')&&r.distance-m.radius<480||m.globalNear&&r.distance-m.radius<360);r.lastUsed=now;
+ let proxy=0,detail=0;this.hasVisibleAnimation=false;for(const r of this.records){const m=r.data,yes=this.wanted(r,rig,opts,distance);r.wanted=yes;if(!yes){if(r.item)r.item.mesh.visible=false;continue;}let lod=this.quality==='low'?1:this.levelFor(r,r.distance);if(!m.farVertices)lod=0;const mesh=this.ensure(r,lod);mesh.visible=true;
+ // Compare the actual mesh state: later renderer layers may replace r.xf or
+ // change the mesh in ensure(). Ropeway position is still assigned each frame.
+ if(mesh.layers.mask!==1)mesh.layers.set(0);const scale=r.xf?.scale||1;if(mesh.scale.x!==scale||mesh.scale.y!==scale||mesh.scale.z!==scale)mesh.scale.setScalar(scale);
+ if(m.motion?.kind!=='ropeway'){const offset=r.xf?.offset,x=offset?offset[0]:0,y=offset?offset[1]:0,z=offset?offset[2]:0;if(mesh.position.x!==x||mesh.position.y!==y||mesh.position.z!==z)mesh.position.fromArray(offset||[0,0,0]);}
+ let castShadow=shadows&&!m.overview&&m.group!=='water'&&m.group!=='effects'&&m.lod!=='props'&&m.lod!=='near';if(m.group==='terrain')castShadow=shadows&&m.owner!=='mountain';if(m.flowerKind)castShadow=false;if(m.globalSurface)castShadow=shadows&&!m.nearDecoration&&((m.component==='transition-vegetation'||m.component==='transition-fields')&&r.distance-m.radius<480||m.globalNear&&r.distance-m.radius<360);if(mesh.castShadow!==castShadow)mesh.castShadow=castShadow;r.lastUsed=now;
  if(m.motion?.kind==='ropeway'){const q=m.motion;mesh.position.fromArray(G.MOUNTAIN.cablePoint(q.track,.5-.5*Math.cos(Math.PI*2*(this.timeUniform.value/240+q.phase)),q.lane));}
  if(m.overview)proxy++;else detail++;
  if(!atlas&&(m.motion||m.group==='water'||m.group==='effects'||['forestLeaf','bambooLeaf','sunflowerPetal','lilyFlower','meadowLeaf'].includes(m.material)))this.hasVisibleAnimation=true;
@@ -461,7 +471,7 @@ if(uInspect>.5 && vInspectWorld.y>-24. && vInspectWorld.x>208.02 && vInspectWorl
  }else if(section){if(!['myouren','mausoleum'].includes(m.owner)||m.ceiling||m.hideInSection||m.globalSurface)return false;if(m.overview===this.packs.has(m.owner)&&!m.displayOnly)return false;}
  else{const own=under?'mausoleum':'senkai';if(m.owner!==own||m.ceiling&&opts.ceiling===false)return false;if(!m.displayOnly&&m.overview===this.packs.has(own))return false;}
  if(m.event==='summer-concert'&&!opts.flowerEvent||opts.vegetation===false&&m.group==='vegetation')return false;
- r.displayCenter=m.center;r.xf={scale:1,offset:[0,0,0]};let center=m.center;
+ r.displayCenter=m.center;r.xf=r.identityTransform||(r.identityTransform=Object.freeze({scale:1,offset:Object.freeze([0,0,0])}));let center=m.center;
  if(m.motion?.kind==='ropeway')center=G.MOUNTAIN.cablePoint(m.motion.track,.5-.5*Math.cos(Math.PI*2*(this.timeUniform.value/240+m.motion.phase)),m.motion.lane);
  const dist=G.length(G.sub(rig.eye,center));r.distance=dist;
  if(m.nearDecoration&&(atlas||dist-m.radius>360))return false;

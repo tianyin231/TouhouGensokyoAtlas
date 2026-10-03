@@ -34,7 +34,7 @@
     "src/netherworld.js": "e74f73aa97eb1fcca45e44abc894465b5279467e274089e0eeec83f6d871485a",
     "src/old-hell-renderer.js": "fb91047212002fd1f9933189dceed6033c39883bde32f63437967e6b8f594870",
     "src/old-hell.js": "fde1ded5cfad70061c9a69b09b000fbd35bab17edcd583ed4d7973d5c9cfa643",
-    "src/renderer.js": "aa9fa9068c58fe61fd990e22767ccd127f36256ad9eaa225120a7c60aaf06159",
+    "src/renderer.js": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
     "src/streaming.js": "3ae540dd6a1ca4878ca73ef18a628903dcef7b6866c3753a54ac0f11d435a5dd",
     "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
     "tools/check-landscape.mjs": "a72e138bdaebaf059b88f203159f989b523b4f674462878d00273bf37961ecf8"

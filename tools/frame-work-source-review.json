@@ -1,0 +1,65 @@
+{
+  "base": "ee1ee8e87c6864f5bc1c494e5082e106b38b4ccc",
+  "date": "2026-10-03",
+  "note": "Explicit source-only review for frame-work reduction. All geometry, navigation, character-data and unrelated source expectations remain unchanged. Ordinary tests do not regenerate expectations.",
+  "changes": {
+    "src/app.js": {
+      "before": "a5cff77009954f2ba9bceabda1be1b4b05af94f55ff799f444cf72419b24c1df",
+      "after": "a5810a049c3ff33d4e9a3987acc1827f390e1a0d4ef1f97079dd9f1d7c68b0c3",
+      "reason": "Skip disabled or hidden location-label projection and repeated DOM writes while retaining independent character updates and visible-label behavior.",
+      "protectedBy": [
+        "tools/cucumber-farm-baseline.json",
+        "tools/geyser-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    },
+    "src/characters.js": {
+      "before": "ce7f7107c7bf9ada73c1df6240ee2f9742517cd86eef0ef05b708c25aaec310b",
+      "after": "2efbdff0ffdc569d544331ad15a5456c0d8e8bbf5f7dc7e5ff016cee33320643",
+      "reason": "Skip disabled or hidden character-pin work and cache immutable grouping relations; preserve character data, image loading, selection and visible layout.",
+      "protectedBy": [
+        "tools/cucumber-farm-baseline.json",
+        "tools/geyser-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/mayohiga-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/waterfall-cave-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    },
+    "src/renderer.js": {
+      "before": "aa9fa9068c58fe61fd990e22767ccd127f36256ad9eaa225120a7c60aaf06159",
+      "after": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+      "reason": "Avoid unchanged projection/mesh-state writes, repeated identity-transform allocation and unnecessary resource sorting. Keep geometry, visibility, LOD, shading, shadow invalidation, grace periods and budgets.",
+      "protectedBy": [
+        "tools/animal-baseline.json",
+        "tools/backdoor-baseline.json",
+        "tools/cucumber-farm-baseline.json",
+        "tools/current-hell-baseline.json",
+        "tools/geyser-baseline.json",
+        "tools/heaven-baseline.json",
+        "tools/higan-baseline.json",
+        "tools/highland-baseline.json",
+        "tools/kasen-baseline.json",
+        "tools/kishinjou-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/makai-baseline.json",
+        "tools/mayohiga-baseline.json",
+        "tools/netherworld-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/rainbow-mine-baseline.json",
+        "tools/waterfall-cave-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    }
+  },
+  "fixtureInheritance": {
+    "path": "tools/geyser-center-baseline.json",
+    "inherits": "tools/geyser-baseline.json",
+    "before": "b16c5a2dd3239d2505ea7dc0e8b79052f259a08585618692a123a7e8299fc011",
+    "after": "cd8106c9c4a6c5ab6b970ac587b0d3f59951b0d2564b3caab5e8451873457df0",
+    "reason": "Only the three reviewed runtime-source guards changed in the inherited fixture."
+  }
+}

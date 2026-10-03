@@ -37,6 +37,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - suite: frame-work
+            script: check-frame-work-browser.py
+            evidence: frame-work-browser-check
           - suite: asama
             script: check-asama-browser.py
             evidence: asama-browser-check
