@@ -5,6 +5,7 @@ import {checkRenderResources} from './check-render-resources.mjs';
 import {checkRenderOwnership} from './check-render-ownership.mjs';
 import {checkStreamingLifecycle} from './check-streaming-lifecycle.mjs';
 import {checkKourindou} from './check-kourindou.mjs';
+import {checkForest} from './check-forest.mjs';
 import {checkGeyserCenter} from './check-geyser-center.mjs';
 import {checkGeyser} from './check-geyser.mjs';
 import {checkWindCave} from './check-wind-cave.mjs';
@@ -54,6 +55,9 @@ console.log('渲染诊断检查通过：'+JSON.stringify(checkRenderDiagnostics(
 console.log('渲染资源检查通过：'+JSON.stringify(checkRenderResources(read)));
 console.log('渲染引用检查通过：'+JSON.stringify(await checkRenderOwnership(read)));
 console.log('Worker生命周期检查通过：'+JSON.stringify(await checkStreamingLifecycle(read)));
+const forestPathCheck = spawnSync(process.execPath, [path.join(root, 'tools/check-forest-path-renderer.mjs')], {cwd: root, encoding: 'utf8', maxBuffer: 1024 * 1024});
+assert.equal(forestPathCheck.status, 0, `森林路边属性检查失败：${forestPathCheck.error || forestPathCheck.stderr}`);
+console.log('森林路边属性检查通过：'+JSON.stringify(JSON.parse(forestPathCheck.stdout)));
 const html = htmlBytes.toString('utf8');
 assert(!/\{\{[A-Z_]+\}\}/.test(html), '成品仍有未替换的模板占位符');
 const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)];
@@ -94,6 +98,16 @@ for (const [id, file] of [
 }
 const context = vm.createContext({ performance, TextDecoder, TextEncoder });
 vm.runInContext(builder, context);
+// Forest detail uses the same rendered ground contacts as the production boot.
+// Prepare them before any inherited checker requests the forest detail pack.
+{
+  const raw = gunzipSync(read('assets/packs/overview.pack.gz'));
+  const overview = context.GA.decodePack(raw.buffer.slice(raw.byteOffset, raw.byteOffset + raw.byteLength));
+  const terrain = new context.GA.Terrain(atlas);
+  context.GA.LANDSCAPE.apply(overview, terrain);
+  context.GA.applyHighlandGround(overview, terrain);
+  context.GA.FOREST_UPGRADE.prepare(atlas, overview);
+}
 console.log('博丽神社检查通过：'+JSON.stringify(await checkHakurei(context.GA,atlas,read)));
 const pack = context.GA.buildOldHell();
 assert.equal(new Set(pack.meshes.map(mesh => mesh.id)).size, pack.meshes.length, '地下模型 ID 重复');
@@ -158,3 +172,4 @@ console.log('山麓间歇泉检查通过：'+JSON.stringify(await checkGeyser(co
 console.log('间歇泉地下中心检查通过：'+JSON.stringify(await checkGeyserCenter(context.GA,atlas,JSON.parse(script('character-data')),read)));
 
 console.log('香霖堂精修检查通过：'+JSON.stringify(await checkKourindou(context.GA,atlas,JSON.parse(script('character-data')),read)));
+console.log('森林住宅与木板径检查通过：'+JSON.stringify(await checkForest(context.GA,atlas,JSON.parse(script('character-data')),read)));

@@ -1,0 +1,1037 @@
+{
+  "revision": 1,
+  "baseline": "1f09b002b29ef56e5262633152fe527e086eb0c2",
+  "implementationSHA": {
+    "src/forest-upgrade.js": "6468c87138443f3599c7cffbfbd0191e0733ad2259f46f87e3a5d302c1845270",
+    "src/forest-renderer.js": "23dfb91f835803e00bb9208ed5aeb945996ef2460833f076121d88fc91bfe35b",
+    "tools/check-forest.mjs": "7c9025dbcc4fa9c3ad8dd5286422270227b9a5b28a0d9989f9bcb5a178a63910"
+  },
+  "sourceChecks": {
+    "public": {
+      "meshes": 11,
+      "triangles": 1248,
+      "farTriangles": 0,
+      "bytes": 134784
+    },
+    "publicNear": {
+      "meshes": 6,
+      "triangles": 928,
+      "farTriangles": 0,
+      "bytes": 100224
+    },
+    "publicFar": {
+      "meshes": 5,
+      "triangles": 320,
+      "farTriangles": 0,
+      "bytes": 34560
+    },
+    "contacts": 38,
+    "openings": 28,
+    "roofChecks": 20,
+    "boardwalkSurfaceChecks": 774,
+    "homeLods": {
+      "cases": 72,
+      "propSelections": 252,
+      "nearRecords": 24,
+      "structuralRecords": 17,
+      "propRecords": 7
+    },
+    "boardwalkLods": {
+      "selections": 1386,
+      "surfaceChecks": 47760,
+      "mixedCases": 39,
+      "seamChecks": 18,
+      "minGap": 0.16469583178898972,
+      "maxGap": 0.4082725813297543
+    },
+    "totalHomeNearTriangles": 22039,
+    "totalHomeFarTriangles": 5004,
+    "contactBytes": 39204,
+    "terrainMetadataBytes": 1091,
+    "laneSegments": 14,
+    "laneBytes": 224,
+    "sourceBytes": 2920644,
+    "treeCount": 755,
+    "overviewTreeCount": 304,
+    "geometry": {
+      "public": "8a99d8422897265541db7763c00c18efdccc102ed9ac89f3072c0be36d6bc162",
+      "aliceNear": "95320fb50c8ab03e5fedd1d35b4413ce7a94ffd3cc53c301bd57632e27f42d0d",
+      "aliceFar": "a8ca1a34c199de21cecaecb6ff8be8f12958bb98c0a71f23701d5c1fc6856b41",
+      "marisaNear": "f5b805995868f003a37f9f963e7ca1ef054f7367b857ba505d8c11350575e18f",
+      "marisaFar": "ed1d9e9915d928f410b65ebf4a39c33f895a0913794d13c5576723d5455482b0"
+    },
+    "currentForest": "aa45a395af60151ef6bb9608d0097e77f95ff2a35d169ab650a88838524eff1d"
+  },
+  "batchEquivalence": {
+    "referenceSha": "caae4308cf9341c62d79053ed8b36894f29ea6e5ec5ec1ff44cc52890cfacd90",
+    "arrayChecks": 129,
+    "floatChecks": 865269,
+    "propMetadataChecks": 154,
+    "nearRecordsBefore": 43,
+    "nearRecordsAfter": 24,
+    "hysteresis": {
+      "lodDistance": 165,
+      "balanced": {
+        "nearToFar": 184.8,
+        "farToNear": 145.2
+      },
+      "high": {
+        "nearToFar": 240.24,
+        "farToNear": 188.76
+      },
+      "low": "All structural batches use far, with unchanged per-prop visibility."
+    },
+    "frustumPolicy": "Non-prop material batches now share one conservative sphere per home; off-screen original parts may be submitted with the visible home. Props retain their original spheres/cutoffs.",
+    "status": "exact-expanded-arrays-and-props-passed"
+  },
+  "pathSourceChecks": {
+    "revision": 1,
+    "records": 9,
+    "vertices": 15170,
+    "triangles": 5162,
+    "publicAttributeBytes": 80570,
+    "detailAttributeBytes": 25620,
+    "totalAttributeBytes": 106190,
+    "attributeBudget": 262144,
+    "colorSourceBytes": 45510,
+    "rgbBackingBuffers": 1,
+    "colorPayloadSHA": "add57e56ed16e8bab0936d42b265f172ab12cdd5d15952a91324b9f9ee130f06",
+    "colorAssetScriptBytes": 67769,
+    "colorBaseline": "1f09b002b29ef56e5262633152fe527e086eb0c2",
+    "sharedIndexedAssignments": 316,
+    "sharedPositionAssignments": 7782,
+    "sideConflicts": 0,
+    "programKeys": [
+      "ground-contact-v014-kourindou-ground-3-true-18-forest-home-ground-1-true-14-forest-path-soft-1-false",
+      "ground-contact-v014-kourindou-ground-3-false-0-forest-home-ground-1-false-0-forest-path-soft-1-true"
+    ],
+    "coldAcquireMs": 24.31258600000001,
+    "publicColdAcquireMs": 19.53040300000066,
+    "detailColdAcquireMs": 4.78218299999935,
+    "detailReentryMs": [
+      3.533519000000524,
+      2.9831559999984165,
+      3.2037410000011732
+    ],
+    "realTerrainSolverCallsDuringAcquire": 0,
+    "runtimeTerrainSamplerCalls": 0,
+    "runtimeTemporaryTerrainIndexBytes": 0,
+    "sampledTerrainLinearErrorMean": 0.000843950564175635,
+    "sampledTerrainLinearErrorMax": 0.0019605609953282366,
+    "analyticTerrainLinearErrorMean": 0.0008621174005693194,
+    "analyticTerrainLinearErrorMax": 0.01171286181649403,
+    "groundColorBasis": "Offline near public-terrain triangle albedo only; original road/terrain positions, normals and indices retained",
+    "finalResidentBytes": 0,
+    "finalResidentAttributeBytes": 0,
+    "sharedColorSourceRetainedBytes": 45510,
+    "source": [
+      {
+        "id": "island:routes:forest:-2:-1",
+        "vertexSHA": "49e184d2088d03ef29d9c622401c945b4e97381e678d145d1945fc47cb8caa2a",
+        "indexSHA": "72c92719d57257d047af1ac353b1543efe955fc86000a879ad54c2b1d0448211"
+      },
+      {
+        "id": "island:routes:forest:-2:-1:shoulder",
+        "vertexSHA": "551c68b685d01ce246c3ca18f40f6c9c6b47651a7f2a24ff0141f5e4ba894f4a",
+        "indexSHA": "036f61c7c88785554be91d935343fea5015eacd68460927517cdae1c7e077e13"
+      },
+      {
+        "id": "island:routes:forest:-3:-1",
+        "vertexSHA": "84e9d84b228049daf21798d2cb7594f237026d6f047bb2fa0c8b7a69b36d04ff",
+        "indexSHA": "a468d1ca6d5e7a5f6c6abf3e99de3dc08f3891bcfc71ff70a3ddbfbd01a20cc2"
+      },
+      {
+        "id": "island:routes:forest:-3:-1:shoulder",
+        "vertexSHA": "18aff3a32a695996d165a92a19923b45e9ad344b6735e4c53dae25cf1ee1375c",
+        "indexSHA": "a5b0ae9cc29c02f11da50decc79e5994db46e410e7c2eac6262586fff19f9201"
+      },
+      {
+        "id": "island:routes:forest:-2:0",
+        "vertexSHA": "14fca81a4e2e24c3cdb8667ccd6e17dab52ec90da60fd000f441bbd47325adfa",
+        "indexSHA": "eb96de890b018207f9c3e6aa67a2d3c4206ab05fd679d006a075bf0caec15695"
+      },
+      {
+        "id": "island:routes:forest:-2:0:shoulder",
+        "vertexSHA": "29369a0f81ce7c5fcf60e34022e6912e32d317a63f4540338b20f99d7f8d2f2e",
+        "indexSHA": "1c81eab4680628fb97dc00b50f99adb4ef12bb17d91bd6e15ed2a1c7b61bedb9"
+      },
+      {
+        "id": "island:routes:forest:-3:0",
+        "vertexSHA": "f6725a7bf2a2443fa4057bd739c7e53b7059ba196482878b059e62b8dc2d4620",
+        "indexSHA": "7f34be0d4f5a39ef85db30b11ce92dff018d0ae42fe7a7307b35df740ae9dbf9"
+      },
+      {
+        "id": "island:routes:forest:-3:0:shoulder",
+        "vertexSHA": "d332b865054379e57e29fd036f83e522875452efa53b4c58ea5070f6b8740634",
+        "indexSHA": "d8202ce5a751f99333003cecae59ad38d9699e6483ee5783ce4c515dd04c0fee"
+      },
+      {
+        "id": "forest:paths",
+        "vertexSHA": "60b13e5e430b9e2bae628a4a03e1d432b3606e40abc288abe4d688b5b77e77b5",
+        "indexSHA": null
+      }
+    ],
+    "verification": "CPU source/resources only; no GPU/visual/performance acceptance; decoded color bytes exclude script/JS heap overhead"
+  },
+  "validation": {
+    "artifactSHA": "bdcd799609744e76500e2ad43c71d6e8efaa02bb69534d9f774620ec7742b11a",
+    "inputs": 166,
+    "fullStatic": "passed; Node 22.23.3 exit 0",
+    "browser": "9 fixed views/27 stable frames passed; 13 runtime application assertions passed; external runtime process exited 1 during cleanup, recorded separately",
+    "hardwareFPS": "not measured",
+    "fullStaticLogSHA": "a4eb24937176cc4527beb36cd0ac473ab7db6fdbb37421dde3c7d1905c8e9f99",
+    "evidenceCorrections": "11 passed",
+    "navigation": {
+      "total": 179,
+      "navigable": 109,
+      "pending": 70,
+      "characters": 85
+    },
+    "codeReview": "Read-only renderer review passed for house batching, shared LOD, boardwalk tile selection, offline path asset and resource lifecycle.",
+    "knownExistingRoadIssue": "Alice old public/detail roads overlap. Exact source-pack reconstruction verifies all 610 legacy segments covered by 8 public road records; 47 extra Muenzuka segments are retained. Removing the duplicate layer is a separate pending step."
+  },
+  "browser": {
+    "captureValidationPassed": true,
+    "staticViewCount": 9,
+    "staticPNGCount": 27,
+    "visualReviewerStatus": "Reviewed actual full views and contact sheets; houses foundations/windows/eaves/workshop and terrain-bound boardwalk improved, shoulder blends closer to ground. Existing dual-layer Alice-road intersection remains a separate repair.",
+    "baselineGit": "1f09b002b29ef56e5262633152fe527e086eb0c2",
+    "baselineHTMLSha256": "a9fe28d7899f14d7b59fbf54140661de7e8437466be5446a133576f35eddd4a1",
+    "v2HTMLSha256": "862dbeb8da25fa4aa10dfd389d9254ef24a393e7ffc7c23bed2d5db804a3d913",
+    "candidateHTMLSha256": "bdcd799609744e76500e2ad43c71d6e8efaa02bb69534d9f774620ec7742b11a",
+    "candidateArtifactBytes": 35957435,
+    "buildInputCount": 166,
+    "buildInputsUnchangedAtRuntimeEnd": true,
+    "frozenBrowserToolSHA256": "5bcc9f19e0a8b4dbb723ed7a5561f749c850588493c55192ccd25953b493b08e",
+    "originalSourceReferenceSHA256": "22fae0724b17df126cdbb87bd4cf3143dddc8400d75702cdb645df56096edc91",
+    "exactChangeManifestSHA256": "871ab05a0ff739e4e2a8892e5c5cbbc7a685b824b448a71503b4e8da31da7a19",
+    "legitimateChangeCounts": {
+      "removed": 18,
+      "added": 59,
+      "changed": 1,
+      "changedId": "forest:understorey",
+      "addedBoardwalkRecords": 11
+    },
+    "protectedRecords": 2406,
+    "forestWoodLeafSourceRecords": 310,
+    "originalForestTreeInstances": 755,
+    "driver": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "browser": "151.0.7922.173",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "dpr": 1,
+    "productionFoliageInjected": false,
+    "forcedShadowRefreshStaticOnly": true,
+    "hardwareFPSMeasured": false,
+    "physicalVRAMMeasured": false,
+    "productionABBA": false,
+    "limitations": [
+      "Existing dual-layer public road / forest:paths crossing and distant hard folds remain near Alice connection; root engineering confirmed near terrain stays beneath both roads.",
+      "Only one native drop/reentry and one intentional context recovery pair; no repeated stress or leak claim for unrelated renderer caches.",
+      "Static draw/triangle counts include shadow and post passes; counts are not GPU frame time, hardware FPS, or physical VRAM.",
+      "External runtime process exited1 during cleanup after 13 application assertions passed; corrected cleanup script AST passed, GPU segment was not rerun."
+    ],
+    "notMeasured": [
+      "GPU/full-frame performance speedup",
+      "Hardware FPS",
+      "Physical VRAM",
+      "Long lifecycle stress",
+      "Remote CI"
+    ],
+    "views": [
+      {
+        "name": "aliceTowerFoot",
+        "camera": {
+          "eye": [
+            -1113,
+            88,
+            -247
+          ],
+          "target": [
+            -1128,
+            88,
+            -261
+          ],
+          "fov": 58,
+          "aspect": 1.7777777777777777,
+          "space": "surface",
+          "displayMode": "focus",
+          "mode": "orbit"
+        },
+        "options": {
+          "quality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "clock": 12.5,
+          "motion": false,
+          "ao": true,
+          "bloom": false,
+          "reflections": false,
+          "vegetation": true,
+          "labels": false,
+          "characters": false
+        },
+        "originalAllPassDraws": 463,
+        "v2AllPassDraws": 494,
+        "candidateAllPassDraws": 474,
+        "drawChangeFromV2": -20,
+        "originalAllPassTriangles": 846382,
+        "v2AllPassTriangles": 848941,
+        "candidateAllPassTriangles": 848941,
+        "trianglesEqualV2": true,
+        "candidateRendererMemory": {
+          "geometries": 291,
+          "textures": 11,
+          "programs": 142,
+          "attributeBytes": 24351188,
+          "geometryEntries": 289
+        },
+        "controls": {
+          "cameraEqual": true,
+          "optionsEqual": true,
+          "lightsEqual": true,
+          "sceneEqual": true,
+          "nonTargetWantedEqual": false,
+          "targetLODEqual": true,
+          "protectedWantedEqual": true
+        },
+        "protectedSourceChecks": {
+          "removedIdsEqual": true,
+          "addedIdsEqual": true,
+          "changedIdsPresentEqual": true,
+          "protectedSourceEqual": true,
+          "originalTreeSourceEqual": true,
+          "requiredPacksEqual": true,
+          "protectedRecordCount": 2406,
+          "originalTreeRecordCount": 310
+        },
+        "unexpectedSourceDifferences": [],
+        "stableThreeFrames": true,
+        "errors": [],
+        "contextEvents": []
+      },
+      {
+        "name": "marisaWorkshopFoot",
+        "camera": {
+          "eye": [
+            -969,
+            72,
+            153
+          ],
+          "target": [
+            -983,
+            72.5,
+            140
+          ],
+          "fov": 58,
+          "aspect": 1.7777777777777777,
+          "space": "surface",
+          "displayMode": "focus",
+          "mode": "orbit"
+        },
+        "options": {
+          "quality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "clock": 12.5,
+          "motion": false,
+          "ao": true,
+          "bloom": false,
+          "reflections": false,
+          "vegetation": true,
+          "labels": false,
+          "characters": false
+        },
+        "originalAllPassDraws": 672,
+        "v2AllPassDraws": 725,
+        "candidateAllPassDraws": 697,
+        "drawChangeFromV2": -28,
+        "originalAllPassTriangles": 1063748,
+        "v2AllPassTriangles": 1058443,
+        "candidateAllPassTriangles": 1058443,
+        "trianglesEqualV2": true,
+        "candidateRendererMemory": {
+          "geometries": 362,
+          "textures": 12,
+          "programs": 148,
+          "attributeBytes": 29100418,
+          "geometryEntries": 360
+        },
+        "controls": {
+          "cameraEqual": true,
+          "optionsEqual": true,
+          "lightsEqual": true,
+          "sceneEqual": true,
+          "nonTargetWantedEqual": false,
+          "targetLODEqual": true,
+          "protectedWantedEqual": true
+        },
+        "protectedSourceChecks": {
+          "removedIdsEqual": true,
+          "addedIdsEqual": true,
+          "changedIdsPresentEqual": true,
+          "protectedSourceEqual": true,
+          "originalTreeSourceEqual": true,
+          "requiredPacksEqual": true,
+          "protectedRecordCount": 2406,
+          "originalTreeRecordCount": 310
+        },
+        "unexpectedSourceDifferences": [],
+        "stableThreeFrames": true,
+        "errors": [],
+        "contextEvents": []
+      },
+      {
+        "name": "forestAliceConnection",
+        "camera": {
+          "eye": [
+            -998.22432,
+            52.390021488063134,
+            -122.464768
+          ],
+          "target": [
+            -1009.28256,
+            52.21051270050456,
+            -126.15846399999998
+          ],
+          "fov": 60,
+          "aspect": 1.7777777777777777,
+          "space": "surface",
+          "displayMode": "focus",
+          "mode": "orbit"
+        },
+        "options": {
+          "quality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "clock": 12.5,
+          "motion": false,
+          "ao": true,
+          "bloom": false,
+          "reflections": false,
+          "vegetation": true,
+          "labels": false,
+          "characters": false
+        },
+        "originalAllPassDraws": 485,
+        "v2AllPassDraws": 499,
+        "candidateAllPassDraws": 489,
+        "drawChangeFromV2": -10,
+        "originalAllPassTriangles": 900001,
+        "v2AllPassTriangles": 887325,
+        "candidateAllPassTriangles": 887325,
+        "trianglesEqualV2": true,
+        "candidateRendererMemory": {
+          "geometries": 233,
+          "textures": 11,
+          "programs": 141,
+          "attributeBytes": 17880970,
+          "geometryEntries": 233
+        },
+        "controls": {
+          "cameraEqual": true,
+          "optionsEqual": true,
+          "lightsEqual": true,
+          "sceneEqual": true,
+          "nonTargetWantedEqual": false,
+          "targetLODEqual": true,
+          "protectedWantedEqual": true
+        },
+        "protectedSourceChecks": {
+          "removedIdsEqual": true,
+          "addedIdsEqual": true,
+          "changedIdsPresentEqual": true,
+          "protectedSourceEqual": true,
+          "originalTreeSourceEqual": true,
+          "requiredPacksEqual": true,
+          "protectedRecordCount": 2406,
+          "originalTreeRecordCount": 310
+        },
+        "unexpectedSourceDifferences": [],
+        "stableThreeFrames": true,
+        "errors": [],
+        "contextEvents": []
+      },
+      {
+        "name": "forestMarisaConnection",
+        "camera": {
+          "eye": [
+            -879.6793002915451,
+            57.748246482235416,
+            78.1603498542274
+          ],
+          "target": [
+            -887,
+            55.047253325528196,
+            87
+          ],
+          "fov": 60,
+          "aspect": 1.7777777777777777,
+          "space": "surface",
+          "displayMode": "focus",
+          "mode": "orbit"
+        },
+        "options": {
+          "quality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "clock": 12.5,
+          "motion": false,
+          "ao": true,
+          "bloom": false,
+          "reflections": false,
+          "vegetation": true,
+          "labels": false,
+          "characters": false
+        },
+        "originalAllPassDraws": 256,
+        "v2AllPassDraws": 273,
+        "candidateAllPassDraws": 264,
+        "drawChangeFromV2": -9,
+        "originalAllPassTriangles": 691961,
+        "v2AllPassTriangles": 687180,
+        "candidateAllPassTriangles": 687180,
+        "trianglesEqualV2": true,
+        "candidateRendererMemory": {
+          "geometries": 123,
+          "textures": 12,
+          "programs": 123,
+          "attributeBytes": 9919186,
+          "geometryEntries": 121
+        },
+        "controls": {
+          "cameraEqual": true,
+          "optionsEqual": true,
+          "lightsEqual": true,
+          "sceneEqual": true,
+          "nonTargetWantedEqual": false,
+          "targetLODEqual": true,
+          "protectedWantedEqual": true
+        },
+        "protectedSourceChecks": {
+          "removedIdsEqual": true,
+          "addedIdsEqual": true,
+          "changedIdsPresentEqual": true,
+          "protectedSourceEqual": true,
+          "originalTreeSourceEqual": true,
+          "requiredPacksEqual": true,
+          "protectedRecordCount": 2406,
+          "originalTreeRecordCount": 310
+        },
+        "unexpectedSourceDifferences": [],
+        "stableThreeFrames": true,
+        "errors": [],
+        "contextEvents": []
+      },
+      {
+        "name": "forestEntryConnection",
+        "camera": {
+          "eye": [
+            -739.3513598088302,
+            44.53419631955606,
+            -24.60969503868912
+          ],
+          "target": [
+            -750.2503413746018,
+            39.35780003361869,
+            -29.77196176604461
+          ],
+          "fov": 60,
+          "aspect": 1.7777777777777777,
+          "space": "surface",
+          "displayMode": "focus",
+          "mode": "orbit"
+        },
+        "options": {
+          "quality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "clock": 12.5,
+          "motion": false,
+          "ao": true,
+          "bloom": false,
+          "reflections": false,
+          "vegetation": true,
+          "labels": false,
+          "characters": false
+        },
+        "originalAllPassDraws": 614,
+        "v2AllPassDraws": 635,
+        "candidateAllPassDraws": 625,
+        "drawChangeFromV2": -10,
+        "originalAllPassTriangles": 1163327,
+        "v2AllPassTriangles": 1156583,
+        "candidateAllPassTriangles": 1156583,
+        "trianglesEqualV2": true,
+        "candidateRendererMemory": {
+          "geometries": 285,
+          "textures": 11,
+          "programs": 150,
+          "attributeBytes": 23872914,
+          "geometryEntries": 284
+        },
+        "controls": {
+          "cameraEqual": true,
+          "optionsEqual": true,
+          "lightsEqual": true,
+          "sceneEqual": true,
+          "nonTargetWantedEqual": false,
+          "targetLODEqual": true,
+          "protectedWantedEqual": true
+        },
+        "protectedSourceChecks": {
+          "removedIdsEqual": true,
+          "addedIdsEqual": true,
+          "changedIdsPresentEqual": true,
+          "protectedSourceEqual": true,
+          "originalTreeSourceEqual": true,
+          "requiredPacksEqual": true,
+          "protectedRecordCount": 2406,
+          "originalTreeRecordCount": 310
+        },
+        "unexpectedSourceDifferences": [],
+        "stableThreeFrames": true,
+        "errors": [],
+        "contextEvents": []
+      },
+      {
+        "name": "forestBoardwalk250",
+        "camera": {
+          "eye": [
+            -773,
+            191,
+            90
+          ],
+          "target": [
+            -967,
+            51,
+            12
+          ],
+          "fov": 49,
+          "aspect": 1.7777777777777777,
+          "space": "surface",
+          "displayMode": "focus",
+          "mode": "orbit"
+        },
+        "options": {
+          "quality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "clock": 12.5,
+          "motion": false,
+          "ao": true,
+          "bloom": false,
+          "reflections": false,
+          "vegetation": true,
+          "labels": false,
+          "characters": false
+        },
+        "originalAllPassDraws": 521,
+        "v2AllPassDraws": 574,
+        "candidateAllPassDraws": 546,
+        "drawChangeFromV2": -28,
+        "originalAllPassTriangles": 1098450,
+        "v2AllPassTriangles": 1089912,
+        "candidateAllPassTriangles": 1089912,
+        "trianglesEqualV2": true,
+        "candidateRendererMemory": {
+          "geometries": 144,
+          "textures": 12,
+          "programs": 130,
+          "attributeBytes": 13753094,
+          "geometryEntries": 143
+        },
+        "controls": {
+          "cameraEqual": true,
+          "optionsEqual": true,
+          "lightsEqual": true,
+          "sceneEqual": true,
+          "nonTargetWantedEqual": false,
+          "targetLODEqual": true,
+          "protectedWantedEqual": true
+        },
+        "protectedSourceChecks": {
+          "removedIdsEqual": true,
+          "addedIdsEqual": true,
+          "changedIdsPresentEqual": true,
+          "protectedSourceEqual": true,
+          "originalTreeSourceEqual": true,
+          "requiredPacksEqual": true,
+          "protectedRecordCount": 2406,
+          "originalTreeRecordCount": 310
+        },
+        "unexpectedSourceDifferences": [],
+        "stableThreeFrames": true,
+        "errors": [],
+        "contextEvents": []
+      },
+      {
+        "name": "forestBoardwalk250Low",
+        "camera": {
+          "eye": [
+            -773,
+            191,
+            90
+          ],
+          "target": [
+            -967,
+            51,
+            12
+          ],
+          "fov": 49,
+          "aspect": 1.7777777777777777,
+          "space": "surface",
+          "displayMode": "focus",
+          "mode": "orbit"
+        },
+        "options": {
+          "quality": "low",
+          "lighting": "neutral",
+          "weather": "clear",
+          "clock": 12.5,
+          "motion": false,
+          "ao": true,
+          "bloom": false,
+          "reflections": false,
+          "vegetation": true,
+          "labels": false,
+          "characters": false
+        },
+        "originalAllPassDraws": 368,
+        "v2AllPassDraws": 402,
+        "candidateAllPassDraws": 383,
+        "drawChangeFromV2": -19,
+        "originalAllPassTriangles": 510410,
+        "v2AllPassTriangles": 503385,
+        "candidateAllPassTriangles": 503385,
+        "trianglesEqualV2": true,
+        "candidateRendererMemory": {
+          "geometries": 138,
+          "textures": 9,
+          "programs": 99,
+          "attributeBytes": 12870518,
+          "geometryEntries": 137
+        },
+        "controls": {
+          "cameraEqual": true,
+          "optionsEqual": true,
+          "lightsEqual": true,
+          "sceneEqual": true,
+          "nonTargetWantedEqual": false,
+          "targetLODEqual": true,
+          "protectedWantedEqual": true
+        },
+        "protectedSourceChecks": {
+          "removedIdsEqual": true,
+          "addedIdsEqual": true,
+          "changedIdsPresentEqual": true,
+          "protectedSourceEqual": true,
+          "originalTreeSourceEqual": true,
+          "requiredPacksEqual": true,
+          "protectedRecordCount": 2406,
+          "originalTreeRecordCount": 310
+        },
+        "unexpectedSourceDifferences": [],
+        "stableThreeFrames": true,
+        "errors": [],
+        "contextEvents": []
+      },
+      {
+        "name": "forestMarisaConnectionLow",
+        "camera": {
+          "eye": [
+            -879.6793002915451,
+            57.748246482235416,
+            78.1603498542274
+          ],
+          "target": [
+            -887,
+            55.047253325528196,
+            87
+          ],
+          "fov": 60,
+          "aspect": 1.7777777777777777,
+          "space": "surface",
+          "displayMode": "focus",
+          "mode": "orbit"
+        },
+        "options": {
+          "quality": "low",
+          "lighting": "neutral",
+          "weather": "clear",
+          "clock": 12.5,
+          "motion": false,
+          "ao": true,
+          "bloom": false,
+          "reflections": false,
+          "vegetation": true,
+          "labels": false,
+          "characters": false
+        },
+        "originalAllPassDraws": 227,
+        "v2AllPassDraws": 242,
+        "candidateAllPassDraws": 233,
+        "drawChangeFromV2": -9,
+        "originalAllPassTriangles": 315166,
+        "v2AllPassTriangles": 313321,
+        "candidateAllPassTriangles": 313321,
+        "trianglesEqualV2": true,
+        "candidateRendererMemory": {
+          "geometries": 116,
+          "textures": 9,
+          "programs": 98,
+          "attributeBytes": 8292166,
+          "geometryEntries": 114
+        },
+        "controls": {
+          "cameraEqual": true,
+          "optionsEqual": true,
+          "lightsEqual": true,
+          "sceneEqual": true,
+          "nonTargetWantedEqual": false,
+          "targetLODEqual": true,
+          "protectedWantedEqual": true
+        },
+        "protectedSourceChecks": {
+          "removedIdsEqual": true,
+          "addedIdsEqual": true,
+          "changedIdsPresentEqual": true,
+          "protectedSourceEqual": true,
+          "originalTreeSourceEqual": true,
+          "requiredPacksEqual": true,
+          "protectedRecordCount": 2406,
+          "originalTreeRecordCount": 310
+        },
+        "unexpectedSourceDifferences": [],
+        "stableThreeFrames": true,
+        "errors": [],
+        "contextEvents": []
+      },
+      {
+        "name": "forestOverview",
+        "camera": {
+          "eye": [
+            -604,
+            580,
+            714
+          ],
+          "target": [
+            -1080,
+            74,
+            -56
+          ],
+          "fov": 49,
+          "aspect": 1.7777777777777777,
+          "space": "surface",
+          "displayMode": "focus",
+          "mode": "orbit"
+        },
+        "options": {
+          "quality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "clock": 12.5,
+          "motion": false,
+          "ao": true,
+          "bloom": false,
+          "reflections": false,
+          "vegetation": true,
+          "labels": false,
+          "characters": false
+        },
+        "originalAllPassDraws": 1242,
+        "v2AllPassDraws": 1303,
+        "candidateAllPassDraws": 1265,
+        "drawChangeFromV2": -38,
+        "originalAllPassTriangles": 1302448,
+        "v2AllPassTriangles": 1287270,
+        "candidateAllPassTriangles": 1287270,
+        "trianglesEqualV2": true,
+        "candidateRendererMemory": {
+          "geometries": 426,
+          "textures": 13,
+          "programs": 164,
+          "attributeBytes": 32395522,
+          "geometryEntries": 422
+        },
+        "controls": {
+          "cameraEqual": true,
+          "optionsEqual": true,
+          "lightsEqual": true,
+          "sceneEqual": true,
+          "nonTargetWantedEqual": false,
+          "targetLODEqual": true,
+          "protectedWantedEqual": true
+        },
+        "protectedSourceChecks": {
+          "removedIdsEqual": true,
+          "addedIdsEqual": true,
+          "changedIdsPresentEqual": true,
+          "protectedSourceEqual": true,
+          "originalTreeSourceEqual": true,
+          "requiredPacksEqual": true,
+          "protectedRecordCount": 2406,
+          "originalTreeRecordCount": 310
+        },
+        "unexpectedSourceDifferences": [],
+        "stableThreeFrames": true,
+        "errors": [],
+        "contextEvents": []
+      }
+    ],
+    "runtime": {
+      "passed": true,
+      "sha256": "bdcd799609744e76500e2ad43c71d6e8efaa02bb69534d9f774620ec7742b11a",
+      "releaseSha256": "425f8b38ef7317a669838b54feb0dc1524e1b8ae447f4f377240514d2304f897",
+      "baseToolSHA256": "5bcc9f19e0a8b4dbb723ed7a5561f749c850588493c55192ccd25953b493b08e",
+      "runtimeToolSHA256": "260fd1b44184cdd8c87d8756176ef073f9a6e98483399c33e669211f1bb71726",
+      "productionRAF": true,
+      "manualDraws": false,
+      "glFinish": false,
+      "errors": [],
+      "resourceErrors": [
+        "Failed to load resource: the server responded with a status of 404 (File not found)"
+      ],
+      "checks": [
+        {
+          "name": "Forest path attributes actually drawn",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Native night control changes lighting with paused clock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Night/day restores fixed daylight pixels",
+          "passed": true,
+          "data": {
+            "changedPixels": 0,
+            "maxChannelDifference": 0,
+            "meanAbsoluteDifference": 0.0
+          }
+        },
+        {
+          "name": "Drop removes detail path ownership and retains public boardwalk",
+          "passed": true,
+          "data": {
+            "sourceRemoved": true,
+            "weakMapCleared": true,
+            "publicBoardwalk": 11
+          }
+        },
+        {
+          "name": "Reentry preserves every source record/hash",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Reentry restores fixed daylight pixels",
+          "passed": true,
+          "data": {
+            "changedPixels": 0,
+            "maxChannelDifference": 0,
+            "meanAbsoluteDifference": 0.0
+          }
+        },
+        {
+          "name": "Reentry preserves bounded path program variants",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Intentional context extension available",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Only one intentional context pair with no stale environment maps",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Context recovery restores fixed path pixels",
+          "passed": true,
+          "data": {
+            "changedPixels": 0,
+            "maxChannelDifference": 0,
+            "meanAbsoluteDifference": 0.0
+          }
+        },
+        {
+          "name": "House and road materials share rebuilt environment",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Actual GL compilation and linking succeeded",
+          "passed": true,
+          "data": {
+            "compileCalls": 408,
+            "linkCalls": 204,
+            "compileFailures": [],
+            "linkFailures": []
+          }
+        },
+        {
+          "name": "Frozen artifact and all build inputs unchanged",
+          "passed": true,
+          "data": null
+        }
+      ],
+      "executionStatus": {
+        "applicationAssertionsPassed": true,
+        "applicationAssertionCount": 13,
+        "processExitCode": 1,
+        "cleanupException": "playwright._impl._errors.Error: Event loop is closed! Is Playwright already stopped?",
+        "cleanupCause": "browser.close() was called after exiting sync_playwright context",
+        "cleanupFix": "Close browser first, stop Playwright second, then close static server in finally",
+        "executedToolSHA256": "260fd1b44184cdd8c87d8756176ef073f9a6e98483399c33e669211f1bb71726",
+        "correctedToolSHA256": "2cff170eabfcedcb10de9701b29774b7ac5de0d3469bf4acf936357139fc0534",
+        "correctedASTParsePassed": true,
+        "correctedToolGPURerun": false,
+        "liveBrowserOrServerProcessesAfterExecution": false,
+        "note": "Report passed:true refers to application assertions, not shell exit0. Completed runtime GPU evidence was retained; no repeated GPU checks."
+      }
+    },
+    "rawEvidenceSHA": {
+      "forest-homes-v3-path-key/report.json": "2e0c87fe416bfd6775ccc63c77601ec997b93c800258b6f6f14080b4a74449be",
+      "forest-homes-v3-path-lod/report.json": "2277ebd246d512c438e653064ed2ab7757205009413b413382a667fcaa0319b3",
+      "forest-homes-v3-path-overview/report.json": "7e88ae0ff95d7cefee3a00632239999d86c5b6b38ecf37c4179efc3edec0b1e3",
+      "forest-homes-v3-path-runtime/report.json": "3a97c35d80c029f0e843e948cfb9e3732f539b0d348174d2ee4068ae63b7079b",
+      "forest-homes-v3-path-runtime/runtime-tool-executed.py": "260fd1b44184cdd8c87d8756176ef073f9a6e98483399c33e669211f1bb71726",
+      "forest-homes-v3-path-result-summary.json": "c89cc716c4e66bdaddb6ca776c267a65e5644544016e419db9e61f040f2d9699"
+    },
+    "preview": {
+      "file": "preview/forest-homes-boardwalk.jpg",
+      "sha256": "fa4ce9cef48f58960b7a110758fc841d746f885c5e44a7bb7aadf41666d4a52f",
+      "panels": 4,
+      "sourceFrames": [
+        {
+          "label": "Original / Alice foundation",
+          "file": "/workspace/scratch/texture-experiment/forest-baseline-supplement/aliceTowerFoot-original-frame-1.png",
+          "sha256": "1831ca6de9f3f6ba3e1e21aebde2493dd311b01a822e22fe0f838e9f66a7e145"
+        },
+        {
+          "label": "Candidate / Alice foundation",
+          "file": "/workspace/scratch/texture-experiment/forest-homes-v3-path-key/aliceTowerFoot-original-frame-1.png",
+          "sha256": "ea1e7b0355e97e50213b41c92e53c621ad75c8510ab2429099f25b68c53b94d7"
+        },
+        {
+          "label": "Original / Marisa path, low",
+          "file": "/workspace/scratch/texture-experiment/forest-boardwalk-lod-baseline/forestMarisaConnectionLow-original-frame-1.png",
+          "sha256": "8ce104aa8461c4a265094bbc8ffef4a13e75698ab199f7ef01e167ad60e05007"
+        },
+        {
+          "label": "Candidate / Marisa path, low",
+          "file": "/workspace/scratch/texture-experiment/forest-homes-v3-path-lod/forestMarisaConnectionLow-original-frame-1.png",
+          "sha256": "e9c213c47076f7d421aed37149069770353cb4d531379e20aa06abca801bd146"
+        }
+      ],
+      "notes": "Contact sheet resized for review; original 1280x720 frames retained. No semantic edits."
+    }
+  }
+}

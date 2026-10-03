@@ -6,6 +6,37 @@ on:
 permissions:
   contents: read
 jobs:
+  forest-webgl:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build current source
+        run: |
+          python3 tools/build.py
+          git rev-parse HEAD > dist/source-commit.txt
+      - name: Install browser test dependencies
+        run: |
+          python3 -m pip install playwright==1.57.0 pillow==11.3.0
+          python3 -m playwright install --with-deps chromium
+      - name: Forest homes, public boardwalk and terrain LOD
+        run: >-
+          python3 tools/check-foliage-texture-browser.py
+          --output dist/forest-browser-check
+          --family forest --modes original --housing-smoke
+          --specs aliceTowerFoot,marisaWorkshopFoot,forestAliceConnection,forestMarisaConnection,forestBoardwalk250,forestBoardwalk250Low,forestOverview
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: forest-webgl-evidence
+          path: |
+            dist/release.json
+            dist/source-commit.txt
+            dist/forest-browser-check/
+          retention-days: 7
   render-lifecycle:
     runs-on: ubuntu-24.04
     timeout-minutes: 40

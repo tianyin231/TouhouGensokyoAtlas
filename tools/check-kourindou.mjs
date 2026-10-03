@@ -40,7 +40,10 @@ export async function checkKourindou(G,atlas,characters,read){
  assert.equal(G.resolveLocation('kourindou').view,'kourindou');assert.equal(G.resolveLocation('tengu').view,null);
  const original=G.buildForest(t),current=await G.buildRegion(atlas,'forest','');
  assert.equal(geometryDigest(original),f.originalForest,'The preserved v0.14 forest builder changed');
- assert.equal(geometryDigest({meshes:original.meshes.filter(m=>m.component!=='kourindou')}),geometryDigest({meshes:current.meshes.filter(m=>m.component!=='kourindou')}),'Alice, Marisa, forest roads or old vegetation changed');
+ // The two homes and the boardwalk prefix now have their own explicit fixture
+ // and contact/opening checks in check-forest. Keep all other forest protection.
+ const retained=m=>!['kourindou','alice','marisa'].includes(m.component)&&m.id!=='forest:understorey';
+ assert.equal(geometryDigest({meshes:original.meshes.filter(retained)}),geometryDigest({meshes:current.meshes.filter(retained)}),'Forest roads or retained old vegetation changed');
  assert.equal(JSON.stringify(current.signs),JSON.stringify(original.signs),'Sign content or placement changed');
  assert.equal(K.bytes(current.meshes),current.bytes);assert(!current.meshes.some(m=>m.id.startsWith('forest:kourindou:')),'Old shop is still overlaid');
  const near=K.architecture(),far=K.architecture(true),stats={};let doorChecks=0,roofChecks=0,contactChecks=0;

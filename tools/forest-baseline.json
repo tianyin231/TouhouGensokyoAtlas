@@ -1,0 +1,330 @@
+{
+  "baseline": "1f09b002b29ef56e5262633152fe527e086eb0c2",
+  "description": "主空岛森林住宅与木板径候选的显式几何期望；不由测试改写，画面验收状态见本轮交接。",
+  "originalForest": "b0e046c49b52281597ba4c76cdd2bec8f080c84c838c9a0f87497f712a7ccb2b",
+  "overviewTreeMatrices": "b58c1fc651737ee7749eb405cad581001050801e3c9f6843db530795db52b630",
+  "geometry": {
+    "public": "8a99d8422897265541db7763c00c18efdccc102ed9ac89f3072c0be36d6bc162",
+    "aliceNear": "95320fb50c8ab03e5fedd1d35b4413ce7a94ffd3cc53c301bd57632e27f42d0d",
+    "aliceFar": "a8ca1a34c199de21cecaecb6ff8be8f12958bb98c0a71f23701d5c1fc6856b41",
+    "marisaNear": "f5b805995868f003a37f9f963e7ca1ef054f7367b857ba505d8c11350575e18f",
+    "marisaFar": "ed1d9e9915d928f410b65ebf4a39c33f895a0913794d13c5576723d5455482b0"
+  },
+  "protectedFiles": {
+    "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+    "src/kourindou-upgrade.js": "e4c7371c745a6a4b69ed618f7fdcb7f44208b092b65f0379cbb752ba9db52599",
+    "src/kourindou-renderer.js": "c84bebcc837d7b4ccc9bef90551695cecac67616eed68eb1f24141cfaa26354f",
+    "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742"
+  },
+  "partGeometry": {
+    "aliceNear": {
+      "forestWoodY:structure": {
+        "vertices": "6e7b0c1504641726f92762a22f2e004d46913d10c03899246062744c5a26f498",
+        "farVertices": "d287ac0378447e8962bb9a489bb999d6c5ef59935b0e80c9561c9e394ab9e39d"
+      },
+      "forestWoodY:windows": {
+        "vertices": "eccd2c2ecbd08f5d4906290d3df3483a83bdda894f75853eacf8d45613da42b5",
+        "farVertices": "8a8f004fdbc938f70aeb479a6ed86baf5bddecd5d2fb57d6f76e528408fa35f3"
+      },
+      "forestWoodY:shutters": {
+        "vertices": "75ed10871e053c095ce57f694ea0fdbb0ef4d86f7ecb77b7e72fcb7d0d816e1f",
+        "farVertices": "014ba717e486a0dd79211a2a56479dac25ff1fa69dcf359e33cb131e13d1284c"
+      },
+      "forestWoodY:entry": {
+        "vertices": "7da279bf3a878812a2f1a440d7a987642acdefaa01401a97df707da4d1502a9b",
+        "farVertices": "bd1be1e51c6bed52101ad195020f0821878572bf78584d15539e676cd914fc21"
+      },
+      "forestWoodY:gable": {
+        "vertices": "8a3d2eb219f47cb4238b4427906c62f6f9f430611149e4ee75eab85e27357639",
+        "farVertices": "8a3d2eb219f47cb4238b4427906c62f6f9f430611149e4ee75eab85e27357639"
+      },
+      "forestWoodX:structure": {
+        "vertices": "d3544067fd61c32d2938ed7de9100de40e45297a64f44a3232a50ddec146498e",
+        "farVertices": "924b2e4b1d66406933671f2c2d29f33628efd04f6357243fc9dfa600b7295c14"
+      },
+      "forestWoodX:windows": {
+        "vertices": "c7f9d8807d40debc0f73aa6e429579b3fb8bc94bd04881edc3b1de75ad69f59b",
+        "farVertices": "5ada73854323558ec3f74fac38b1a48f4fa305ea843dfa0ce1d1d34417ec54ef"
+      },
+      "forestWoodX:eaves": {
+        "vertices": "a0a2fc33781e5769259d22f0fc90c77b754d4b4abc04bdf23a10dd29e6925b54",
+        "farVertices": "f2975ab2b3229973279fe45250bb6025af089fdb046798f0236be53ebdfdb7fe"
+      },
+      "forestStone:foundation": {
+        "vertices": "1ad501d55bef10cecd209748c002e51ea019c1f2cc4647bdfd9f769161f11a6b",
+        "farVertices": "c3a4da15708aa75315dd2dadea742bbadfd53b3b42bb7493d631a25c8692a474"
+      },
+      "forestStone:garden": {
+        "vertices": "6a5c5e72f2d685ef0e8e1429a51d54288c0ce33745ec0b7b35ea1bece5da55e9",
+        "farVertices": "41152204c123c0dc0907108f26639d49b6e877dd3a79316676e697d20da9b661"
+      },
+      "forestWoodZ:floor": {
+        "vertices": "e5fe4545cf0412406a5642a495c35ea4e471113505fc683a49b06ce4eaae2d96",
+        "farVertices": "e5fe4545cf0412406a5642a495c35ea4e471113505fc683a49b06ce4eaae2d96"
+      },
+      "forestWoodZ:roofUnder": {
+        "vertices": "c39dd1fdf9792a7aefbccf31213127562477ca70eef42163d3b89bde11d42d7a",
+        "farVertices": "0b329d1cc1328455e604169d120b08d1b7c07ddc25500ed959621f6530645e35"
+      },
+      "forestWoodZ:porch": {
+        "vertices": "b678055096a22b47f8bd066335eecfdf32570a67c72b80aff8e6bb6d43d9ccd3",
+        "farVertices": "b678055096a22b47f8bd066335eecfdf32570a67c72b80aff8e6bb6d43d9ccd3"
+      },
+      "forestPlaster:structure": {
+        "vertices": "1d7f6ba94f0cfdce3ec3168240ccb2a6ae0f4808731cf6f6c361265f7256bd01",
+        "farVertices": "0c463732f6667185cc481a742c04c111430985251f3f428a31af214a379b9669"
+      },
+      "forestPaper:windows": {
+        "vertices": "17515bab3d8118777c403c76e36e51ce8d1b177b201e97b2c82808dffc1909d4",
+        "farVertices": "51c0695ab267a30347df2bafdec9b102537db4386a897489aaee47f21a4f91ad"
+      },
+      "forestRecess:entry": {
+        "vertices": "57b7ea5e079796d7ad32803b070aa33cfbe6adea4a76087f01c736ecc9d07dd5",
+        "farVertices": "57b7ea5e079796d7ad32803b070aa33cfbe6adea4a76087f01c736ecc9d07dd5"
+      },
+      "forestRoof:roof": {
+        "vertices": "510bf175d326dcb6058be63cefb40ddb8d55db67bf1289da7424c88535371773",
+        "farVertices": "147148c7b8edf7c3600037bbeb00d9ea868e0db77015935b76d265f727aa4df0"
+      },
+      "forestRoof:tower": {
+        "vertices": "bd682943d874577dcee59ff13c20841b2ccc86147ab13ab339d6bff34b62644b",
+        "farVertices": "63e79f918234249a1fc5e30e8050507a721de31c58af903afb370fb188c555ed"
+      },
+      "forestGrass:garden": {
+        "vertices": "17a5af07946941b77a19e4a16be7d7efc3191a51c97e5759b808cb80d67f21b2",
+        "farVertices": "46ff98f54270658ecf7296a80bf4a5a11beaf360d374574aaf5f7250acd3280d"
+      },
+      "forestWoodX:props": {
+        "vertices": "d430612f749f7b42e3f2f74d8a90fd549ce44771b75530c55039495dbb200dba",
+        "farVertices": "d430612f749f7b42e3f2f74d8a90fd549ce44771b75530c55039495dbb200dba"
+      },
+      "forestClay:props": {
+        "vertices": "afdfe4d69396682d34a2b41f5545540e8db4e9511442197217c861ea2d690715",
+        "farVertices": "7db3670a1c638a4f7980d96a76cc33429cb5a794c779399a61d52fa260450811"
+      }
+    },
+    "aliceFar": {
+      "forestWoodY:structure": {
+        "vertices": "d287ac0378447e8962bb9a489bb999d6c5ef59935b0e80c9561c9e394ab9e39d"
+      },
+      "forestWoodY:windows": {
+        "vertices": "8a8f004fdbc938f70aeb479a6ed86baf5bddecd5d2fb57d6f76e528408fa35f3"
+      },
+      "forestWoodY:shutters": {
+        "vertices": "014ba717e486a0dd79211a2a56479dac25ff1fa69dcf359e33cb131e13d1284c"
+      },
+      "forestWoodY:entry": {
+        "vertices": "bd1be1e51c6bed52101ad195020f0821878572bf78584d15539e676cd914fc21"
+      },
+      "forestWoodY:gable": {
+        "vertices": "8a3d2eb219f47cb4238b4427906c62f6f9f430611149e4ee75eab85e27357639"
+      },
+      "forestWoodX:structure": {
+        "vertices": "924b2e4b1d66406933671f2c2d29f33628efd04f6357243fc9dfa600b7295c14"
+      },
+      "forestWoodX:windows": {
+        "vertices": "5ada73854323558ec3f74fac38b1a48f4fa305ea843dfa0ce1d1d34417ec54ef"
+      },
+      "forestWoodX:eaves": {
+        "vertices": "f2975ab2b3229973279fe45250bb6025af089fdb046798f0236be53ebdfdb7fe"
+      },
+      "forestStone:foundation": {
+        "vertices": "c3a4da15708aa75315dd2dadea742bbadfd53b3b42bb7493d631a25c8692a474"
+      },
+      "forestStone:garden": {
+        "vertices": "41152204c123c0dc0907108f26639d49b6e877dd3a79316676e697d20da9b661"
+      },
+      "forestWoodZ:floor": {
+        "vertices": "e5fe4545cf0412406a5642a495c35ea4e471113505fc683a49b06ce4eaae2d96"
+      },
+      "forestWoodZ:roofUnder": {
+        "vertices": "0b329d1cc1328455e604169d120b08d1b7c07ddc25500ed959621f6530645e35"
+      },
+      "forestWoodZ:porch": {
+        "vertices": "b678055096a22b47f8bd066335eecfdf32570a67c72b80aff8e6bb6d43d9ccd3"
+      },
+      "forestPlaster:structure": {
+        "vertices": "0c463732f6667185cc481a742c04c111430985251f3f428a31af214a379b9669"
+      },
+      "forestPaper:windows": {
+        "vertices": "51c0695ab267a30347df2bafdec9b102537db4386a897489aaee47f21a4f91ad"
+      },
+      "forestRecess:entry": {
+        "vertices": "57b7ea5e079796d7ad32803b070aa33cfbe6adea4a76087f01c736ecc9d07dd5"
+      },
+      "forestRoof:roof": {
+        "vertices": "147148c7b8edf7c3600037bbeb00d9ea868e0db77015935b76d265f727aa4df0"
+      },
+      "forestRoof:tower": {
+        "vertices": "63e79f918234249a1fc5e30e8050507a721de31c58af903afb370fb188c555ed"
+      },
+      "forestGrass:garden": {
+        "vertices": "46ff98f54270658ecf7296a80bf4a5a11beaf360d374574aaf5f7250acd3280d"
+      },
+      "forestWoodX:props": {
+        "vertices": "d430612f749f7b42e3f2f74d8a90fd549ce44771b75530c55039495dbb200dba"
+      },
+      "forestClay:props": {
+        "vertices": "7db3670a1c638a4f7980d96a76cc33429cb5a794c779399a61d52fa260450811"
+      }
+    },
+    "marisaNear": {
+      "forestWoodY:structure": {
+        "vertices": "cb7970deebe03ea8baed7ec5b833cd4ab92eeaa31dd27711a905d380d8d795fc",
+        "farVertices": "f39b87358003e35f2e72068b36a4dbf26b4990433ab77c6b073968a07d94c127"
+      },
+      "forestWoodY:windows": {
+        "vertices": "79358ca59872329ec1d5c5746d542a49c386e0d108b8c818427972d44d97c159",
+        "farVertices": "deb23d09c53744f37f728353c85b96fccbec808ba96e22d17596bf9de4bcb352"
+      },
+      "forestWoodY:entry": {
+        "vertices": "58a14a51a90aad8ea2e7fe203c16baeee942bf3b3e903074aa7c24b9c96c1c78",
+        "farVertices": "2a45df6aec144b4546289f4e0b478bc41694bf311028f99110981dcd5768735e"
+      },
+      "forestWoodY:gable": {
+        "vertices": "346fc818361620a42b5ad3c10f7ac3cf8738e2d0267cf81d29a686052b52e694",
+        "farVertices": "346fc818361620a42b5ad3c10f7ac3cf8738e2d0267cf81d29a686052b52e694"
+      },
+      "forestWoodX:structure": {
+        "vertices": "177f7d65da721bf4d088573d9b5446631d4a3ba676abea4748a60a42f02dde9d",
+        "farVertices": "b6ea346c9544192a50f45b01110be047ce4376bef44640c1b99c63d1ba058806"
+      },
+      "forestWoodX:windows": {
+        "vertices": "33577ec14d39f444c176568d54cfd099d0d0736acf5e4efae787d0c60ab41c6f",
+        "farVertices": "51b4a1e4f21068215f6dfe669568b39c9cfb34fc7e0390390b71891d132edea4"
+      },
+      "forestWoodX:eaves": {
+        "vertices": "dec06f3ad79fbdda30e510498e66eb382b9ed4cabaa859f25995fe71eb68928f",
+        "farVertices": "8a19416256aabf26873075230737178907856f5e407b58b6959626f14e5487e3"
+      },
+      "forestStone:foundation": {
+        "vertices": "4f70e95951713d8ec3cdd0d7a35b7923bf2469ea84fba7ec607482d62cdb0794",
+        "farVertices": "1dab9eefb23395dd0fe30013b5fa505acfce4e44128614d0dc3350f5bd902a8e"
+      },
+      "forestStone:chimney": {
+        "vertices": "db7fc8e92f9ede16d98c34e320aadd36f6c818d3ea4c1ea6c2e0a610a186f1db",
+        "farVertices": "db7fc8e92f9ede16d98c34e320aadd36f6c818d3ea4c1ea6c2e0a610a186f1db"
+      },
+      "forestWoodZ:floor": {
+        "vertices": "18f0d8e1b60152b6b8585873b861bbcbc28a0299f2b4a7f769f5887acbe23aec",
+        "farVertices": "18f0d8e1b60152b6b8585873b861bbcbc28a0299f2b4a7f769f5887acbe23aec"
+      },
+      "forestWoodZ:roofUnder": {
+        "vertices": "fd43dedbb540c797e1aaf4aad57bf6bd1f37e6856194ed60819f7e3a569d938e",
+        "farVertices": "81c7b4c55754f36dee435a7dc9329414772c14b65273e111812d6831d225fcef"
+      },
+      "forestWoodZ:porch": {
+        "vertices": "ef1094b378effa44d4a3409fc0c120e36d779261f997b4ad654cfbc0f6c4cc75",
+        "farVertices": "ef1094b378effa44d4a3409fc0c120e36d779261f997b4ad654cfbc0f6c4cc75"
+      },
+      "forestPlaster:structure": {
+        "vertices": "08ea6d5c5244f086047f4adcd40af8204324a3bf5e70861f577f99a07979d89a",
+        "farVertices": "580913f7a40758884a55b4bc0d5dd9fb525df7882db215f2726cff601e83c92a"
+      },
+      "forestPaper:windows": {
+        "vertices": "338b771bfd0ec7a83c16773a6c059b6677d9ef24699244c89063fd38200b9345",
+        "farVertices": "22360e7206568f4b60613eec480c72dc538ba93b20e61e98d6e7625f85546d98"
+      },
+      "forestRecess:entry": {
+        "vertices": "60ba1622e6b2483e379c396122bef4a384a905e222003a1ee2e2a0f74fecebeb",
+        "farVertices": "60ba1622e6b2483e379c396122bef4a384a905e222003a1ee2e2a0f74fecebeb"
+      },
+      "forestRecess:chimney": {
+        "vertices": "57add80a0bc829124a264cf8076e2d428900fdee3de720f3669ac65efb6260aa",
+        "farVertices": "57add80a0bc829124a264cf8076e2d428900fdee3de720f3669ac65efb6260aa"
+      },
+      "forestRoof:roof": {
+        "vertices": "2d8657c4fcba516db14891d59b7a2ceab9e7479b6fc488613c51412cb5fc3469",
+        "farVertices": "2c9fc9660dae739bee792dd9458694530149baf11f3e23e2f039b0b46060fe7f"
+      },
+      "forestClay:props": {
+        "vertices": "8ef25c437fee979126eae43c29e5331d73a0fc36cb8b0983c5e886f289f5597a",
+        "farVertices": "3774435ea2b2a78337d2d0c273e7acb8f8a320e9ab1c00841b18a1ff1e1e8f7b"
+      },
+      "forestIron:props": {
+        "vertices": "4e063f4a2ee5f8bb02a66c6e1e2bbd32d0279024f33236fb5e842a14e26f72aa",
+        "farVertices": "c38d8603d992c5d44398c8c130409af892e953ba446df8bee36f4d28ac20320a"
+      },
+      "forestWoodY:props": {
+        "vertices": "009ebffabc9287d72575edcd0d2cfad5990102d63370fdfab69e7aa976ab3cff",
+        "farVertices": "009ebffabc9287d72575edcd0d2cfad5990102d63370fdfab69e7aa976ab3cff"
+      },
+      "forestGrass:props": {
+        "vertices": "c3f140729e53586276f805fb3a5ade08ad968229ff6c3ef9f8400c653babdafa",
+        "farVertices": "c3f140729e53586276f805fb3a5ade08ad968229ff6c3ef9f8400c653babdafa"
+      },
+      "forestWoodX:props": {
+        "vertices": "7b4b66e594e7a1284f7cf9cf6707f01279d136699e3d1609c0feb0c2348aa1aa",
+        "farVertices": "7b4b66e594e7a1284f7cf9cf6707f01279d136699e3d1609c0feb0c2348aa1aa"
+      }
+    },
+    "marisaFar": {
+      "forestWoodY:structure": {
+        "vertices": "f39b87358003e35f2e72068b36a4dbf26b4990433ab77c6b073968a07d94c127"
+      },
+      "forestWoodY:windows": {
+        "vertices": "deb23d09c53744f37f728353c85b96fccbec808ba96e22d17596bf9de4bcb352"
+      },
+      "forestWoodY:entry": {
+        "vertices": "2a45df6aec144b4546289f4e0b478bc41694bf311028f99110981dcd5768735e"
+      },
+      "forestWoodY:gable": {
+        "vertices": "346fc818361620a42b5ad3c10f7ac3cf8738e2d0267cf81d29a686052b52e694"
+      },
+      "forestWoodX:structure": {
+        "vertices": "b6ea346c9544192a50f45b01110be047ce4376bef44640c1b99c63d1ba058806"
+      },
+      "forestWoodX:windows": {
+        "vertices": "51b4a1e4f21068215f6dfe669568b39c9cfb34fc7e0390390b71891d132edea4"
+      },
+      "forestWoodX:eaves": {
+        "vertices": "8a19416256aabf26873075230737178907856f5e407b58b6959626f14e5487e3"
+      },
+      "forestStone:foundation": {
+        "vertices": "1dab9eefb23395dd0fe30013b5fa505acfce4e44128614d0dc3350f5bd902a8e"
+      },
+      "forestStone:chimney": {
+        "vertices": "db7fc8e92f9ede16d98c34e320aadd36f6c818d3ea4c1ea6c2e0a610a186f1db"
+      },
+      "forestWoodZ:floor": {
+        "vertices": "18f0d8e1b60152b6b8585873b861bbcbc28a0299f2b4a7f769f5887acbe23aec"
+      },
+      "forestWoodZ:roofUnder": {
+        "vertices": "81c7b4c55754f36dee435a7dc9329414772c14b65273e111812d6831d225fcef"
+      },
+      "forestWoodZ:porch": {
+        "vertices": "ef1094b378effa44d4a3409fc0c120e36d779261f997b4ad654cfbc0f6c4cc75"
+      },
+      "forestPlaster:structure": {
+        "vertices": "580913f7a40758884a55b4bc0d5dd9fb525df7882db215f2726cff601e83c92a"
+      },
+      "forestPaper:windows": {
+        "vertices": "22360e7206568f4b60613eec480c72dc538ba93b20e61e98d6e7625f85546d98"
+      },
+      "forestRecess:entry": {
+        "vertices": "60ba1622e6b2483e379c396122bef4a384a905e222003a1ee2e2a0f74fecebeb"
+      },
+      "forestRecess:chimney": {
+        "vertices": "57add80a0bc829124a264cf8076e2d428900fdee3de720f3669ac65efb6260aa"
+      },
+      "forestRoof:roof": {
+        "vertices": "2c9fc9660dae739bee792dd9458694530149baf11f3e23e2f039b0b46060fe7f"
+      },
+      "forestClay:props": {
+        "vertices": "3774435ea2b2a78337d2d0c273e7acb8f8a320e9ab1c00841b18a1ff1e1e8f7b"
+      },
+      "forestIron:props": {
+        "vertices": "c38d8603d992c5d44398c8c130409af892e953ba446df8bee36f4d28ac20320a"
+      },
+      "forestWoodY:props": {
+        "vertices": "009ebffabc9287d72575edcd0d2cfad5990102d63370fdfab69e7aa976ab3cff"
+      },
+      "forestGrass:props": {
+        "vertices": "c3f140729e53586276f805fb3a5ade08ad968229ff6c3ef9f8400c653babdafa"
+      },
+      "forestWoodX:props": {
+        "vertices": "7b4b66e594e7a1284f7cf9cf6707f01279d136699e3d1609c0feb0c2348aa1aa"
+      }
+    }
+  }
+}

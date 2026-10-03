@@ -1,0 +1,229 @@
+{
+  "decision": "retain-original",
+  "scope": "Kourindou foliage candidate v1.2 only",
+  "reasons": [
+    "Denser, darker crowns change the approved forest-edge appearance.",
+    "Full-frame submitted triangles fall by less than 0.4%; near view is unchanged.",
+    "Two new atlas textures add 2796200 CPU mip bytes; GPU timing could not be validated."
+  ],
+  "baselineCommit": "1f09b002b29ef56e5262633152fe527e086eb0c2",
+  "artifactSha256": "a9fe28d7899f14d7b59fbf54140661de7e8437466be5446a133576f35eddd4a1",
+  "experimentalScripts": {
+    "assets/experiments/kourindou-foliage-atlas.js": "2e32b776806ad881599b3f12ecc89a412a75fed7689db94667deeaf31b0209af",
+    "src/experiments/kourindou-foliage-texture.js": "acb6a25a959fdf9ca19b7c907cc31d16b5429cf67cb6d045a95f48d49a39893a"
+  },
+  "toolSha256": "c8fa5cc774ef7d99147a6d3755f1d5247026da5fee9c95ecfcd401f2d9b8ba0e",
+  "browser": "151.0.7922.173",
+  "driver": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "viewport": [
+    1280,
+    720
+  ],
+  "dpr": 1,
+  "options": {
+    "quality": "balanced",
+    "lighting": "neutral",
+    "weather": "clear",
+    "clock": 12.5,
+    "motion": false,
+    "ao": true,
+    "bloom": false,
+    "reflections": false,
+    "vegetation": true,
+    "labels": false,
+    "characters": false
+  },
+  "staticRenderOnce": true,
+  "forcedShadowRefresh": true,
+  "hardwareFPSMeasured": false,
+  "physicalVRAMMeasured": false,
+  "gpuTiming": "No accepted results: first run and nonblocking retry failed query availability/disjoint assertions.",
+  "views": [
+    {
+      "name": "sunny",
+      "view": "kourindou",
+      "camera": {
+        "eye": [
+          -594,
+          67,
+          49
+        ],
+        "target": [
+          -555,
+          49,
+          1
+        ],
+        "fov": 49,
+        "aspect": 1.7777777777777777,
+        "space": "surface",
+        "displayMode": "focus",
+        "mode": "orbit"
+      },
+      "comparison": {
+        "baselineSHA": "a9fe28d7899f14d7b59fbf54140661de7e8437466be5446a133576f35eddd4a1",
+        "cameraEqual": true,
+        "optionsEqual": true,
+        "lightsEqual": true,
+        "sceneEqual": true,
+        "nonTargetWantedEqual": true,
+        "targetLODEqual": true
+      },
+      "pixels": {
+        "changedPixels": 130436,
+        "maxChannelDifference": 201,
+        "meanAbsoluteDifference": 4.186029730902778
+      },
+      "stableFrames": 3,
+      "before": {
+        "totalCalls": 333,
+        "totalTriangles": 1180714
+      },
+      "after": {
+        "totalCalls": 332,
+        "totalTriangles": 1176634
+      },
+      "gpuBefore": {
+        "geometries": 213,
+        "textures": 12,
+        "programs": 122,
+        "attributeBytes": 33867504,
+        "geometryEntries": 210
+      },
+      "gpuAfter": {
+        "geometries": 213,
+        "textures": 14,
+        "programs": 122,
+        "attributeBytes": 33827112,
+        "geometryEntries": 210
+      },
+      "errors": [],
+      "contextEvents": []
+    },
+    {
+      "name": "near",
+      "view": "kourindouFront",
+      "camera": {
+        "eye": [
+          -570,
+          48.1,
+          25
+        ],
+        "target": [
+          -561,
+          48.3,
+          7
+        ],
+        "fov": 49,
+        "aspect": 1.7777777777777777,
+        "space": "surface",
+        "displayMode": "focus",
+        "mode": "orbit"
+      },
+      "comparison": {
+        "baselineSHA": "a9fe28d7899f14d7b59fbf54140661de7e8437466be5446a133576f35eddd4a1",
+        "cameraEqual": true,
+        "optionsEqual": true,
+        "lightsEqual": true,
+        "sceneEqual": true,
+        "nonTargetWantedEqual": true,
+        "targetLODEqual": true
+      },
+      "pixels": {
+        "changedPixels": 51240,
+        "maxChannelDifference": 221,
+        "meanAbsoluteDifference": 1.9305128761574073
+      },
+      "stableFrames": 3,
+      "before": {
+        "totalCalls": 358,
+        "totalTriangles": 1034185
+      },
+      "after": {
+        "totalCalls": 358,
+        "totalTriangles": 1034185
+      },
+      "gpuBefore": {
+        "geometries": 257,
+        "textures": 12,
+        "programs": 126,
+        "attributeBytes": 36186656,
+        "geometryEntries": 256
+      },
+      "gpuAfter": {
+        "geometries": 257,
+        "textures": 14,
+        "programs": 126,
+        "attributeBytes": 36186656,
+        "geometryEntries": 256
+      },
+      "errors": [],
+      "contextEvents": []
+    },
+    {
+      "name": "farCanopy",
+      "view": "kourindou",
+      "camera": {
+        "eye": [
+          -706,
+          91,
+          125
+        ],
+        "target": [
+          -557,
+          57,
+          -2
+        ],
+        "fov": 49,
+        "aspect": 1.7777777777777777,
+        "space": "surface",
+        "displayMode": "focus",
+        "mode": "orbit"
+      },
+      "comparison": {
+        "baselineSHA": "a9fe28d7899f14d7b59fbf54140661de7e8437466be5446a133576f35eddd4a1",
+        "cameraEqual": true,
+        "optionsEqual": true,
+        "lightsEqual": true,
+        "sceneEqual": true,
+        "nonTargetWantedEqual": true,
+        "targetLODEqual": true
+      },
+      "pixels": {
+        "changedPixels": 30368,
+        "maxChannelDifference": 190,
+        "meanAbsoluteDifference": 1.0404116030092592
+      },
+      "stableFrames": 3,
+      "before": {
+        "totalCalls": 504,
+        "totalTriangles": 1758343
+      },
+      "after": {
+        "totalCalls": 504,
+        "totalTriangles": 1751815
+      },
+      "gpuBefore": {
+        "geometries": 284,
+        "textures": 12,
+        "programs": 129,
+        "attributeBytes": 40649084,
+        "geometryEntries": 287
+      },
+      "gpuAfter": {
+        "geometries": 284,
+        "textures": 14,
+        "programs": 129,
+        "attributeBytes": 40608692,
+        "geometryEntries": 287
+      },
+      "errors": [],
+      "contextEvents": []
+    }
+  ],
+  "rawEvidenceSHA256": {
+    "baseline/report.json": "9e4780cb044b6698d922ba71da60dd3e86eac5c3aefc26b57739fa90787abe55",
+    "kour-v1.2-visual/report.json": "21e2fb32bc5dc11c2aad2f717b6d923fef401ffafa5c9ec024c51e79e77b2d05",
+    "kour-v1.2-perf/report.json": "78479484bf783d529a8decfebf8b3a875085181985ac5c95da82949badac2d24",
+    "kour-v1.2-perf-retry/report.json": "10874ac2e5f4e71f4171419e6de3fb80d02eb95aa777a9adf1ba1a644964242b"
+  }
+}
