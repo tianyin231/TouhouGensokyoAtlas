@@ -1,0 +1,227 @@
+{
+  "decision": "retain-original",
+  "scope": "Forest foliage candidate v1 only",
+  "reasons": [
+    "Crowns are sparse and fragmented in overview.",
+    "Near views show alternating dark and light leaf planes with less crown volume.",
+    "Reduced submitted geometry does not meet the required visual quality; long performance tests were therefore not continued."
+  ],
+  "baselineCommit": "1f09b002b29ef56e5262633152fe527e086eb0c2",
+  "artifactSha256": "a9fe28d7899f14d7b59fbf54140661de7e8437466be5446a133576f35eddd4a1",
+  "experimentalScripts": {
+    "assets/experiments/kourindou-foliage-atlas.js": "88c316bdc3cb86a2d4433c39553233906510ca48729c8dedc7ff12b6140e9d6b",
+    "src/experiments/forest-foliage-texture.js": "9bb89af9c67995c993793381ff3eda4aba5fc04adc2df50dac9ed782e6941871"
+  },
+  "toolSha256": "055a874f54ec3dce9293ea5b6f2374be2c4743fe72e1ee53a751ce9a3b443f34",
+  "browser": "151.0.7922.173",
+  "driver": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "viewport": [
+    1280,
+    720
+  ],
+  "dpr": 1,
+  "options": {
+    "quality": "balanced",
+    "lighting": "neutral",
+    "weather": "clear",
+    "clock": 12.5,
+    "motion": false,
+    "ao": true,
+    "bloom": false,
+    "reflections": false,
+    "vegetation": true,
+    "labels": false,
+    "characters": false
+  },
+  "staticRenderOnce": true,
+  "forcedShadowRefresh": true,
+  "hardwareFPSMeasured": false,
+  "physicalVRAMMeasured": false,
+  "gpuTiming": "Not accepted or claimed; candidate rejected on visual quality before long timing trials.",
+  "views": [
+    {
+      "name": "forestOverview",
+      "view": "forestOverview",
+      "camera": {
+        "eye": [
+          -604,
+          580,
+          714
+        ],
+        "target": [
+          -1080,
+          74,
+          -56
+        ],
+        "fov": 49,
+        "aspect": 1.7777777777777777,
+        "space": "surface",
+        "displayMode": "focus",
+        "mode": "orbit"
+      },
+      "comparison": {
+        "baselineSHA": "a9fe28d7899f14d7b59fbf54140661de7e8437466be5446a133576f35eddd4a1",
+        "cameraEqual": true,
+        "optionsEqual": true,
+        "lightsEqual": true,
+        "sceneEqual": true,
+        "nonTargetWantedEqual": true,
+        "targetLODEqual": true
+      },
+      "pixels": {
+        "changedPixels": 135619,
+        "maxChannelDifference": 185,
+        "meanAbsoluteDifference": 3.6019871238425925
+      },
+      "stableFrames": 3,
+      "before": {
+        "totalCalls": 1242,
+        "totalTriangles": 1302448
+      },
+      "after": {
+        "totalCalls": 1242,
+        "totalTriangles": 1121248
+      },
+      "gpuBefore": {
+        "geometries": 412,
+        "textures": 13,
+        "programs": 155,
+        "attributeBytes": 33069632,
+        "geometryEntries": 408
+      },
+      "gpuAfter": {
+        "geometries": 412,
+        "textures": 15,
+        "programs": 157,
+        "attributeBytes": 33042272,
+        "geometryEntries": 408
+      },
+      "errors": [],
+      "contextEvents": []
+    },
+    {
+      "name": "alice",
+      "view": "alice",
+      "camera": {
+        "eye": [
+          -1180,
+          107,
+          -207
+        ],
+        "target": [
+          -1138,
+          91,
+          -260
+        ],
+        "fov": 49,
+        "aspect": 1.7777777777777777,
+        "space": "surface",
+        "displayMode": "focus",
+        "mode": "orbit"
+      },
+      "comparison": {
+        "baselineSHA": "a9fe28d7899f14d7b59fbf54140661de7e8437466be5446a133576f35eddd4a1",
+        "cameraEqual": true,
+        "optionsEqual": true,
+        "lightsEqual": true,
+        "sceneEqual": true,
+        "nonTargetWantedEqual": true,
+        "targetLODEqual": true
+      },
+      "pixels": {
+        "changedPixels": 142373,
+        "maxChannelDifference": 180,
+        "meanAbsoluteDifference": 8.579386212384259
+      },
+      "stableFrames": 3,
+      "before": {
+        "totalCalls": 347,
+        "totalTriangles": 834217
+      },
+      "after": {
+        "totalCalls": 347,
+        "totalTriangles": 594697
+      },
+      "gpuBefore": {
+        "geometries": 215,
+        "textures": 11,
+        "programs": 133,
+        "attributeBytes": 25168864,
+        "geometryEntries": 221
+      },
+      "gpuAfter": {
+        "geometries": 215,
+        "textures": 13,
+        "programs": 135,
+        "attributeBytes": 24649024,
+        "geometryEntries": 221
+      },
+      "errors": [],
+      "contextEvents": []
+    },
+    {
+      "name": "marisa",
+      "view": "marisa",
+      "camera": {
+        "eye": [
+          -1035,
+          91,
+          183
+        ],
+        "target": [
+          -997,
+          76,
+          140
+        ],
+        "fov": 49,
+        "aspect": 1.7777777777777777,
+        "space": "surface",
+        "displayMode": "focus",
+        "mode": "orbit"
+      },
+      "comparison": {
+        "baselineSHA": "a9fe28d7899f14d7b59fbf54140661de7e8437466be5446a133576f35eddd4a1",
+        "cameraEqual": true,
+        "optionsEqual": true,
+        "lightsEqual": true,
+        "sceneEqual": true,
+        "nonTargetWantedEqual": true,
+        "targetLODEqual": true
+      },
+      "pixels": {
+        "changedPixels": 144682,
+        "maxChannelDifference": 187,
+        "meanAbsoluteDifference": 8.518977864583333
+      },
+      "stableFrames": 3,
+      "before": {
+        "totalCalls": 540,
+        "totalTriangles": 1305024
+      },
+      "after": {
+        "totalCalls": 542,
+        "totalTriangles": 1046544
+      },
+      "gpuBefore": {
+        "geometries": 284,
+        "textures": 13,
+        "programs": 138,
+        "attributeBytes": 43287760,
+        "geometryEntries": 283
+      },
+      "gpuAfter": {
+        "geometries": 284,
+        "textures": 15,
+        "programs": 140,
+        "attributeBytes": 42767920,
+        "geometryEntries": 283
+      },
+      "errors": [],
+      "contextEvents": []
+    }
+  ],
+  "rawEvidenceSHA256": {
+    "forest-baseline-priority/report.json": "6c717ed4ed77827a6a5887feb9a5a390b295a328f287f3788a607362b37999e9",
+    "forest-v1-visual-priority/report.json": "9bd4a08a99c0496c647c2a6378942fab2f3ce6e5919b9e2ce7c0951630f07152"
+  }
+}
