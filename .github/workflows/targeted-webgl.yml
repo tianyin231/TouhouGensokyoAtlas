@@ -6,6 +6,30 @@ on:
 permissions:
   contents: read
 jobs:
+  render-lifecycle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build current source
+        run: python3 tools/build.py
+      - name: Install optional browser test dependencies
+        run: |
+          python3 -m pip install playwright==1.57.0
+          python3 -m playwright install --with-deps chromium
+      - name: Cross-region HTTP resource lifecycle and explicit recovery
+        run: python3 tools/check-render-lifecycle-browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: render-lifecycle-evidence
+          path: |
+            dist/release.json
+            dist/render-lifecycle-check/
+          retention-days: 7
   targeted-webgl:
     runs-on: ubuntu-24.04
     timeout-minutes: 20

@@ -1,0 +1,79 @@
+{
+  "base": "4d6e279db86717a5bb059bc6fddd26cd01d53d7e",
+  "note": "Explicit source-only review. Existing geometry, navigation and character expectations are retained byte-for-byte in value; tests never regenerate them. All affected source guards stay enabled.",
+  "changes": {
+    "src/renderer.js": {
+      "before": "970f026894bc7729a810224b2ddb1ef597a665eced3ba625f7d8d70061110b70",
+      "after": "aa9fa9068c58fe61fd990e22767ccd127f36256ad9eaa225120a7c60aaf06159",
+      "reason": "Release owned context listeners and shadow targets; roll back failed geometry/mesh acquisition; validate complete pack IDs before replacing an existing pack. No geometry builders, shading parameters or budgets changed.",
+      "protectedBy": [
+        "tools/animal-baseline.json",
+        "tools/backdoor-baseline.json",
+        "tools/cucumber-farm-baseline.json",
+        "tools/current-hell-baseline.json",
+        "tools/geyser-baseline.json",
+        "tools/heaven-baseline.json",
+        "tools/higan-baseline.json",
+        "tools/highland-baseline.json",
+        "tools/kasen-baseline.json",
+        "tools/kishinjou-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/makai-baseline.json",
+        "tools/mayohiga-baseline.json",
+        "tools/netherworld-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/rainbow-mine-baseline.json",
+        "tools/waterfall-cave-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    },
+    "src/streaming.js": {
+      "before": "f636e6c1bb5917931b27038de6b45bcdfae95f13b4551450382693959cef8982",
+      "after": "3ae540dd6a1ca4878ca73ef18a628903dcef7b6866c3753a54ac0f11d435a5dd",
+      "reason": "Use one idempotent completion path for Worker success, cancellation and failures; compare task identity; release Blob URLs and listeners; keep dispose final.",
+      "protectedBy": [
+        "tools/animal-baseline.json",
+        "tools/backdoor-baseline.json",
+        "tools/cucumber-farm-baseline.json",
+        "tools/current-hell-baseline.json",
+        "tools/geyser-baseline.json",
+        "tools/heaven-baseline.json",
+        "tools/higan-baseline.json",
+        "tools/highland-baseline.json",
+        "tools/kasen-baseline.json",
+        "tools/kishinjou-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/makai-baseline.json",
+        "tools/netherworld-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/rainbow-mine-baseline.json",
+        "tools/waterfall-cave-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    },
+    "src/backdoor-renderer.js": {
+      "before": "7795a31bafffc92357bd5d5c898ac79fef770b40f0b5aae6e0b0b677714f3e02",
+      "after": "ff9868540c78daeb981a6c8ad977882158881c9d2f2ec329eb268eba3f053e25",
+      "reason": "Count new shared window UV attributes once and release their bytes with the owning geometry.",
+      "protectedBy": [
+        "tools/cucumber-farm-baseline.json",
+        "tools/current-hell-baseline.json",
+        "tools/geyser-baseline.json",
+        "tools/highland-baseline.json",
+        "tools/kasen-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/rainbow-mine-baseline.json",
+        "tools/waterfall-cave-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    }
+  },
+  "fixtureInheritance": {
+    "path": "tools/geyser-center-baseline.json",
+    "inherits": "tools/geyser-baseline.json",
+    "before": "de30bf78c9c0653c214ad848533631bbe646c3c4858276502402b9a0eff73399",
+    "after": "b16c5a2dd3239d2505ea7dc0e8b79052f259a08585618692a123a7e8299fc011",
+    "reason": "The inherited fixture changed only the reviewed source hashes above; geometry and navigation expectations are unchanged."
+  }
+}

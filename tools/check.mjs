@@ -1,3 +1,7 @@
+import {checkRenderDiagnostics} from './check-render-diagnostics.mjs';
+import {checkRenderResources} from './check-render-resources.mjs';
+import {checkRenderOwnership} from './check-render-ownership.mjs';
+import {checkStreamingLifecycle} from './check-streaming-lifecycle.mjs';
 import {checkKourindou} from './check-kourindou.mjs';
 import {checkGeyserCenter} from './check-geyser-center.mjs';
 import {checkGeyser} from './check-geyser.mjs';
@@ -42,6 +46,10 @@ assert.equal(hash(htmlBytes), info.sha256, '成品被修改，请重新构建');
 for (const [name, digest] of Object.entries(info.inputs)) {
   assert.equal(hash(read(name)), digest, `${name} 已改变，请先运行 python tools/build.py`);
 }
+console.log('渲染诊断检查通过：'+JSON.stringify(checkRenderDiagnostics(read)));
+console.log('渲染资源检查通过：'+JSON.stringify(checkRenderResources(read)));
+console.log('渲染引用检查通过：'+JSON.stringify(await checkRenderOwnership(read)));
+console.log('Worker生命周期检查通过：'+JSON.stringify(await checkStreamingLifecycle(read)));
 const html = htmlBytes.toString('utf8');
 assert(!/\{\{[A-Z_]+\}\}/.test(html), '成品仍有未替换的模板占位符');
 const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)];

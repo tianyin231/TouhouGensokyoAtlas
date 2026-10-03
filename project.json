@@ -45,7 +45,8 @@
     "src/geyser-renderer.js",
     "src/geyser-center-renderer.js",
     "src/kourindou-renderer.js",
-    "src/render-recovery.js"
+    "src/render-recovery.js",
+    "src/render-diagnostics.js"
   ],
   "extensionData": [
     "data/asama.json",

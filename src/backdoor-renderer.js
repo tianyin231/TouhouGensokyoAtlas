@@ -28,6 +28,7 @@ class BackdoorRenderer extends Base{
    const d=G.BACKDOOR.windows.find(d=>d.id===m.backdoorZone),p=mesh.geometry.getAttribute('position'),uv=new Float32Array(p.count*2),c=Math.cos(d.yaw),s=Math.sin(d.yaw);
    for(let i=0;i<p.count;i++){const x=p.getX(i)-d.x,z=p.getZ(i)-d.z;uv[i*2]=(c*x-s*z+9.96)/19.92;uv[i*2+1]=(p.getY(i)-d.y)/34.98;}
    mesh.geometry.setAttribute('uv',new this.T.BufferAttribute(uv,2));
+   const allocation=this.geometryRefs.get(r.array);if(allocation){allocation.bytes+=uv.byteLength;this.residentBytes+=uv.byteLength;}
   }
  }return mesh;}
  wanted(r,rig,opts,distance){const m=r.data,ours=m.owner==='backdoor';if(!active(opts.space))return ours?false:super.wanted(r,rig,opts,distance);

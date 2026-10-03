@@ -3,7 +3,7 @@
   "base": "0ddb67caa6cc628bf88461bf82f568556cdb6b7e",
   "inherit": {
     "path": "tools/geyser-baseline.json",
-    "sha256": "de30bf78c9c0653c214ad848533631bbe646c3c4858276502402b9a0eff73399"
+    "sha256": "b16c5a2dd3239d2505ea7dc0e8b79052f259a08585618692a123a7e8299fc011"
   },
   "protectedFiles": {
     "data/geyser.json": "c9384ca594800782eec387af75a22df7c241831bdb27dd6a10405501580671b7",
