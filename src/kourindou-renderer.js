@@ -111,7 +111,13 @@ class KourindouRenderer extends Base{
    mesh.customDepthMaterial=this.kourindouLeafDepth;
   }return mesh;
  }
- lighting(rig,opts,distance){super.lighting(rig,opts,distance);for(const mat of this.kourindouMaterials)mat.envMapIntensity=mat===this.mats.kourindouRecess?.03:.12;this.mats.kourindouLeaf.envMapIntensity=this.hakureiCardMaterials.hakureiLeaf.envMapIntensity;}
+ lighting(rig,opts,distance){
+  super.lighting(rig,opts,distance);
+  // Explicit envMap materials use their own intensity, not scene.environmentIntensity.
+  const lit=this.nightActive?this.mats.matte.envMapIntensity:.12,recess=this.nightActive?this.mats.hakureiRecess.envMapIntensity:.03;
+  for(const mat of this.kourindouMaterials)mat.envMapIntensity=mat===this.mats.kourindouRecess?recess:lit;
+  this.mats.kourindouLeaf.envMapIntensity=this.hakureiCardMaterials.hakureiLeaf.envMapIntensity;
+ }
  dispose(){this.kourindouLeafDepth?.dispose();super.dispose();}
 }
 G.DioramaRenderer=KourindouRenderer;

@@ -93,10 +93,24 @@ try:
             visit(v); assert not page.evaluate('ATLAS.renderer.engine.getContext().isContextLost()')
             if v=='geyserOverview': assert page.evaluate("ATLAS.renderer.geyserGround.size>0&&ATLAS.renderer.groundVariant.toString().includes('geyser-ash-v1')")
             passed('Inherited region return '+v)
-        visit('kourindouFront'); page.locator('#light-night').click(); page.locator('[data-weather="rain"]').click(); inspect()
+        visit('kourindouFront'); page.locator('#light-night').click(); inspect()
+        night = page.evaluate("""()=>{const R=ATLAS.renderer;return {active:R.nightActive,opaque:R.mats.matte.envMapIntensity,recess:R.mats.hakureiRecess.envMapIntensity,materials:R.kourindouMaterials.map(m=>({name:m.name,intensity:m.envMapIntensity}))};}""")
+        assert night['active'] and night['opaque'] < .12 and night['recess'] < .03
+        for material in night['materials']:
+            assert material['intensity'] == night['recess' if material['name']=='kourindouRecess' else 'opaque'], material
+        page.locator('#scene').screenshot(path=str(a.output/'kourindou-night.png'))
+        passed('Explicit Kourindou environment maps inherit the surface night intensities', night)
+        page.locator('[data-weather="rain"]').click(); inspect()
+        assert page.evaluate("ATLAS.renderer.nightActive&&ATLAS.renderer.mats.kourindouWoodX.envMapIntensity===ATLAS.renderer.mats.matte.envMapIntensity")
         visit('windEntry'); assert not page.evaluate('ATLAS.renderer.rain.visible')
         visit('kourindouFront'); assert page.evaluate("ATLAS.state.weather==='rain'&&ATLAS.state.lighting==='night'")
+        assert page.evaluate("ATLAS.renderer.mats.kourindouWoodX.envMapIntensity===ATLAS.renderer.mats.matte.envMapIntensity&&ATLAS.renderer.mats.kourindouRecess.envMapIntensity===ATLAS.renderer.mats.hakureiRecess.envMapIntensity")
         page.locator('#light-neutral').click(); page.locator('[data-weather="clear"]').click(); inspect()
+        day = page.evaluate("""()=>{const R=ATLAS.renderer;return {active:R.nightActive,materials:R.kourindouMaterials.map(m=>({name:m.name,intensity:m.envMapIntensity}))};}""")
+        assert not day['active']
+        for material in day['materials']:
+            assert material['intensity'] == (.03 if material['name']=='kourindouRecess' else .12), material
+        passed('Returning to daylight restores Kourindou material finishes', day)
         passed('Day/night/rain restore through the independent cave; no new local lighting state')
         # Genuine production frame scheduling. Test stepping is NOT a hardware FPS benchmark.
         page.evaluate('globalThis.ATLAS_TEST_PAUSE=false;ATLAS.state.motion=false;ATLAS.wake()')
@@ -105,6 +119,7 @@ try:
             page.wait_for_function('n=>ATLAS.state.drawnFrames>n',arg=n); page.wait_for_function('!ATLAS.rig.transition')
         passed('Real view dock uses the production camera transitions')
         route=page.evaluate("GA.FOREST.paths[0].samples.filter(p=>p[0]>-642&&p[0]<-541).filter((p,i)=>i%2===0)")
+        assert len(route)==14, 'The inherited approach must exercise all 14 road samples'
         n=page.evaluate('ATLAS.state.drawnFrames')
         for q in route:
             before=page.evaluate('ATLAS.state.drawnFrames')
@@ -123,6 +138,7 @@ try:
             counts=page.evaluate("""()=>({cache:ATLAS.stream.cache.size,shopDetail:ATLAS.renderer.records.filter(r=>r.data.component==='kourindou'&&!r.data.overview).length,public:ATLAS.world.meshes.filter(m=>m.id.startsWith('kourindou:landscape:')).length,contactBytes:ATLAS.data.surfaceContacts.kourindou.near.byteLength+ATLAS.data.surfaceContacts.kourindou.far.byteLength,...ATLAS.renderer.engine.info.memory})""")
             assert counts['cache']==0 and counts['shopDetail']==0 and counts['public']>0; cycles.append(counts)
         assert len({x['public'] for x in cycles})==1 and len({x['contactBytes'] for x in cycles})==1
+        assert len({x['geometries'] for x in cycles})==1, cycles
         assert max(x['textures'] for x in cycles)-min(x['textures'] for x in cycles)<=2
         passed('Three rebuild/eviction cycles preserve the public trees and bounded counts', cycles)
         visit('kourindouFront'); page.evaluate('globalThis.ATLAS_TEST_PAUSE=false;ATLAS.wake()')

@@ -28,7 +28,7 @@
 
 ## 4. 当前可执行流程
 
-根目录README要求Python3.10+、Node.js22+。无需npm／pip依赖。当前命令：
+根目录README要求Python3.10+、Node.js22.x，与CI和`.nvmrc`一致。Node.js24会产生不同的逐字节几何摘要，不应因此刷新基线。无需npm／pip依赖。当前命令：
 
 ```sh
 python tools/build.py

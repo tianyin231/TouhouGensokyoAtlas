@@ -17,27 +17,9 @@ jobs:
       - name: Build and verify independent source
         run: |
           python3 tools/build.py
+          git rev-parse HEAD > dist/source-commit.txt
           node tools/check.mjs
           node tools/audit-landmarks.mjs
-      - name: Rebuild from a clean tracked-source snapshot
-        run: |
-          git archive --format=tar.gz --output=/tmp/atlas-source.tar.gz HEAD
-          mkdir /tmp/clean-atlas
-          tar -xzf /tmp/atlas-source.tar.gz -C /tmp/clean-atlas
-          python3 /tmp/clean-atlas/tools/build.py
-          node /tmp/clean-atlas/tools/check.mjs /tmp/clean-atlas/dist
-          cmp dist/SHA256SUMS.txt /tmp/clean-atlas/dist/SHA256SUMS.txt
-          cmp dist/release.json /tmp/clean-atlas/dist/release.json
-          cp /tmp/atlas-source.tar.gz dist/atlas-source.tar.gz
-          git rev-parse HEAD > dist/source-commit.txt
-      - name: Install optional browser regression dependencies
-        run: |
-          python3 -m pip install playwright==1.57.0
-          python3 -m playwright install --with-deps chromium
-      - name: Verify real HTTP WebGL and native Worker integration
-        run: |
-          python3 tools/check-highland-browser.py
-          python3 tools/check-browser.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -48,8 +30,92 @@ jobs:
             dist/SHA256SUMS.txt
             dist/landmarks-*.json
             dist/landmarks-*.md
-            dist/atlas-source.tar.gz
             dist/source-commit.txt
-            dist/highland-browser-check/
-            dist/browser-check/
+          retention-days: 7
+  clean-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build and verify a clean tracked-source snapshot
+        run: |
+          git archive --format=tar.gz --output=/tmp/atlas-source.tar.gz HEAD
+          mkdir /tmp/clean-atlas
+          tar -xzf /tmp/atlas-source.tar.gz -C /tmp/clean-atlas
+          python3 /tmp/clean-atlas/tools/build.py
+          git rev-parse HEAD > /tmp/clean-atlas/dist/source-commit.txt
+          cp /tmp/atlas-source.tar.gz /tmp/clean-atlas/dist/atlas-source.tar.gz
+          node /tmp/clean-atlas/tools/check.mjs /tmp/clean-atlas/dist
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: clean-atlas
+          path: |
+            /tmp/clean-atlas/dist/*.html
+            /tmp/clean-atlas/dist/release.json
+            /tmp/clean-atlas/dist/SHA256SUMS.txt
+            /tmp/clean-atlas/dist/atlas-source.tar.gz
+            /tmp/clean-atlas/dist/source-commit.txt
+          retention-days: 7
+  compare-builds:
+    needs: [check, clean-source]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: checked-atlas
+          path: checked
+      - uses: actions/download-artifact@v4
+        with:
+          name: clean-atlas
+          path: clean
+      - name: Compare commit, HTML, checksums and release metadata byte for byte
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          checked, clean = Path('checked'), Path('clean')
+          release = json.loads((checked / 'release.json').read_text(encoding='utf-8'))
+          for name in ('source-commit.txt', 'SHA256SUMS.txt', 'release.json', release['artifact']):
+              if (checked / name).read_bytes() != (clean / name).read_bytes():
+                  raise SystemExit(f'Clean-source rebuild differs: {name}')
+          PY
+  public-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - suite: highland
+            script: check-highland-browser.py
+            evidence: highland-browser-check
+          - suite: common
+            script: check-browser.py
+            evidence: browser-check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build current source
+        run: python3 tools/build.py
+      - name: Install optional browser regression dependencies
+        run: |
+          python3 -m pip install playwright==1.57.0
+          python3 -m playwright install --with-deps chromium
+      - name: Verify real HTTP WebGL and native Worker integration
+        run: python3 tools/${{ matrix.script }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scene-webgl-${{ matrix.suite }}
+          path: |
+            dist/release.json
+            dist/${{ matrix.evidence }}/
           retention-days: 7

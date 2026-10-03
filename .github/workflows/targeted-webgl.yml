@@ -9,6 +9,25 @@ jobs:
   targeted-webgl:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - suite: asama
+            script: check-asama-browser.py
+            evidence: asama-browser-check
+          - suite: hiten
+            script: check-hiten-browser.py
+            evidence: hiten-browser-check
+          - suite: mayohiga
+            script: check-mayohiga-browser.py
+            evidence: mayohiga-browser-check
+          - suite: peony
+            script: check-peony-browser.py
+            evidence: peony-browser-check
+          - suite: render-recovery
+            script: check-render-recovery-browser.py
+            evidence: render-recovery-check
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -22,30 +41,15 @@ jobs:
         run: |
           python3 -m pip install playwright==1.57.0
           python3 -m playwright install --with-deps chromium
-      - name: Seiki and Asama HTTP lifecycle regression
-        run: python3 tools/check-asama-browser.py
-      - name: Hiten HTTP regression when present
-        run: |
-          if [ -f tools/check-hiten-browser.py ]; then
-            python3 tools/check-hiten-browser.py
-          fi
-      - name: Mayohiga HTTP regression
-        run: python3 tools/check-mayohiga-browser.py
-      - name: Peony field HTTP regression
-        run: python3 tools/check-peony-browser.py
-      - name: Deliberate WebGL restoration and MSAA reallocation
-        run: python3 tools/check-render-recovery-browser.py
+      - name: HTTP lifecycle and WebGL regression
+        run: python3 tools/${{ matrix.script }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: targeted-webgl-evidence
+          name: targeted-webgl-${{ matrix.suite }}-evidence
           path: |
             dist/release.json
-            dist/asama-browser-check/
-            dist/hiten-browser-check/
-            dist/mayohiga-browser-check/
-            dist/peony-browser-check/
-            dist/render-recovery-check/
+            dist/${{ matrix.evidence }}/
           retention-days: 7
   waterfall-cave-webgl:
     runs-on: ubuntu-24.04
