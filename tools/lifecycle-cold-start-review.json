@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-03",
+  "baselineCommit": "096849ad53725be1fdec67f1d85ddc18bcae3781",
+  "artifactSHA256": "1f63dbd88f3405f10d6b5779278822357d5729ff3709c7a03c4d4077ab5cb695",
+  "runtimeChanged": false,
+  "historicalRemoteFailure": {
+    "run": 37151994275,
+    "job": 111287595672,
+    "programs": [
+      271,
+      272
+    ],
+    "otherComparedResourcesEqual": true,
+    "programKeyRecorded": false,
+    "exactCauseIdentified": false
+  },
+  "boundedBrowserEvidence": {
+    "browser": "151.0.7922.173",
+    "backendConfiguration": "ANGLE SwiftShader, software; no performance measurement",
+    "viewport": [
+      1280,
+      720
+    ],
+    "dpr": 1,
+    "scriptSHA256": "a573c44a70fda37dc23b7127d4da97c4d48437fc471e9a19255aaf4887f83030",
+    "hashRunnerSHA256": "62c7991e7e997d8856bc95540acdcf190b955fdd9115068a0fad2610c2fb990b",
+    "reports": [
+      {
+        "path": "/workspace/scratch/texture-experiment/backdoor-program-096849a/report.json",
+        "sha256": "857148e4b7d34a66eb4a709dba2e53a4b38d1933928e78cce4c5ec2d8fd5741e",
+        "shellExitCode": 0
+      },
+      {
+        "path": "/workspace/scratch/texture-experiment/backdoor-hash-entry-096849a/report.json",
+        "sha256": "807b0dc7e90fcf7fd961726f47c8773bd1d9efe69948cca5b8be869f13328f29",
+        "shellExitCode": 0
+      }
+    ],
+    "cycles": [
+      {
+        "number": 1,
+        "frames": 29,
+        "programs": 108,
+        "fullProgramDescriptorMapSHA256": "22bc086076e2f5c853ce7ca9a7e6a0e30adadcb4305a26d4c96406dd8a73f003",
+        "resources": {
+          "geometries": 867,
+          "textures": 11,
+          "attributes": 75504162
+        },
+        "cached": [],
+        "packs": [],
+        "targets": 0,
+        "cumulativeTableauBuildPasses": 4
+      },
+      {
+        "number": 2,
+        "frames": 45,
+        "programs": 108,
+        "fullProgramDescriptorMapSHA256": "22bc086076e2f5c853ce7ca9a7e6a0e30adadcb4305a26d4c96406dd8a73f003",
+        "resources": {
+          "geometries": 867,
+          "textures": 11,
+          "attributes": 75504162
+        },
+        "cached": [],
+        "packs": [],
+        "targets": 0,
+        "cumulativeTableauBuildPasses": 8
+      },
+      {
+        "number": 3,
+        "frames": 62,
+        "programs": 108,
+        "fullProgramDescriptorMapSHA256": "22bc086076e2f5c853ce7ca9a7e6a0e30adadcb4305a26d4c96406dd8a73f003",
+        "resources": {
+          "geometries": 867,
+          "textures": 11,
+          "attributes": 75504162
+        },
+        "cached": [],
+        "packs": [],
+        "targets": 0,
+        "cumulativeTableauBuildPasses": 12
+      }
+    ],
+    "nullMapProgram": {
+      "id": 105,
+      "cacheKeySHA256": "aed219ed6457e8ac4a6cd58150a3fd4e15ba720c87c3ef7c56d04f3edd78802b",
+      "cacheKey": "basic,highp,srgb-linear,false,,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,0,,false,0,,2,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,8388608,8520707,srgb,onBeforeCompile( /* shaderobject, renderer */ ) {}",
+      "actualUSE_MAP": false,
+      "usedTimes": 2,
+      "firstDrawFrame": 15,
+      "recordId": "backdoor:far:spring:Windowspring:window:hall:open",
+      "detailResident": false,
+      "targets": 0
+    },
+    "mappedProgram": {
+      "id": 112,
+      "cacheKeySHA256": "406be0a04beb0720ca47417c5c203759ed508a0f483e852f347de6bcdf55c191",
+      "cacheKey": "basic,highp,srgb-linear,false,,uv,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,0,,false,0,,2,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,8388608,8520707,srgb,onBeforeCompile( /* shaderobject, renderer */ ) {}",
+      "actualUSE_MAP": true,
+      "usedTimes": 2,
+      "firstDrawFrame": 16,
+      "recordId": "backdoor:detail:spring:Windowspring:window:hall:open"
+    },
+    "hashEntry": {
+      "nativeHash": "#view=backdoorSpring",
+      "matchedMaterials": [
+        "backdoorWindowspring",
+        "backdoorWindowsummer"
+      ],
+      "programId": 6,
+      "cacheKeySHA256": "aed219ed6457e8ac4a6cd58150a3fd4e15ba720c87c3ef7c56d04f3edd78802b",
+      "actualUSE_MAP": false,
+      "bootDrawnFrames": 2,
+      "heldProgramEvidence": true,
+      "firstFrameBeforeObserver": true,
+      "diagnosticFrames": 0,
+      "diagnosticEvents": 0,
+      "resourceErrors": [
+        "Failed to load resource: the server responded with a status of 404 (File not found)"
+      ]
+    },
+    "errors": [],
+    "observerErrors": [],
+    "contextEvents": [],
+    "resourceErrors": [
+      "Failed to load resource: the server responded with a status of 404 (File not found)"
+    ],
+    "resourceErrorAttribution": "One console404; URL not captured, remains unassigned.",
+    "cleanup": {
+      "shortChain": {
+        "browser": true,
+        "playwright": true,
+        "server": true
+      },
+      "hashEntry": {
+        "browser": true,
+        "playwright": true,
+        "server": true
+      }
+    },
+    "limits": [
+      "Short anchor went directly to balanced/night/rain diorama and native clear-cache; it did not follow the original shrine/neutral/clear anchor.",
+      "No full lifecycle, soak, context recovery or performance run was performed; no strict program assertion changed.",
+      "The wrapper ran the original draw first and isolated observer errors. No worker/material/production-source mutation or manual draw/wake was used.",
+      "Hash-entry first-frame evidence is held material program + actual compiled shader source, not a wrapper event."
+    ]
+  },
+  "summarySHA256": "3ca10bc46a6fb8ae2691df442130ffd990b0b1c20929b9909725a7933c3c454e",
+  "testChange": {
+    "file": "tools/check-render-lifecycle-browser.py",
+    "beforeSHA256": "69298c4fcc4b194e1d8da8b359f8492b4db89f19910f258597f618b0939441db",
+    "afterSHA256": "5b4c6a2180d329dda3addf1034a1f030f28778b1a14195e534eea1dad81b4999",
+    "scope": "Native cold-window entry and cleanup for full lifecycle only; original strict comparisons, routes, shadow and intentional-recovery checks preserved. Anchor-only informational inventory limited to 1024 entries with explicit overflow.",
+    "recoveryOnlyEntryChanged": false
+  },
+  "localValidation": {
+    "pythonSyntax": true,
+    "node": "v22.23.3",
+    "javascript": {
+      "passed": true,
+      "node": "v22.23.3",
+      "parsedJSConstants": [
+        "INIT_JS",
+        "SNAPSHOT_JS",
+        "BACKDOOR_STARTUP_PROGRAMS_JS",
+        "ANCHOR_PROGRAM_INVENTORY_JS"
+      ],
+      "mockChecks": 6,
+      "webglPropertiesAllocated": 0,
+      "gpuRun": false,
+      "boundary": "Actual extracted diagnostic JavaScript; bounded fake engine, no renderer or Worker construction"
+    },
+    "unchangedChecks": {
+      "qualityUnchanged": true,
+      "windowsUnchanged": true,
+      "run_routeUnchanged": true,
+      "compareUnchanged": true,
+      "cancel_workerUnchanged": true,
+      "recover_onceUnchanged": true,
+      "shadow_round_tripUnchanged": true,
+      "idleUnchanged": true,
+      "INIT_JSUnchanged": true,
+      "SNAPSHOT_JSUnchanged": true,
+      "ROUTEUnchanged": true
+    },
+    "fullLifecycleRerunLocally": false,
+    "remoteFullLifecycle": "Required on this revision; consult matching Actions run, no success asserted here."
+  }
+}

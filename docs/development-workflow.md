@@ -48,7 +48,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory dist
 
 用真实鼠标／键盘／控件检查旋转、缩放、平移、自由镜头、搜索／别名、人物详情、天气、暂停、画质、PNG和JSON导出。快速换区测试旧Worker不回插、镜头不被重定位；多轮往返清理后详情CPU与GPU记录应有界，记录趋势，不宣称永久零泄漏。
 
-跨区资源回归使用 `python tools/check-render-lifecycle-browser.py`，默认真实HTTP、原生Worker、生产帧调度，一轮完整暖场后做3轮相同路线。独立CI作业保留报告与失败证据。较长复现可运行 `python tools/check-render-lifecycle-browser.py --cycles 3 --soak-seconds 1200`，持续时长从暖场后计，完成当前轮才停止。每轮在相同画质／机位／天气清理后比较资源，期间任何非主动上下文丢失都失败；最后单独注入一次丢失／恢复，验证环境贴图和后户窗口重建。注入成功不证明历史丢失已根治。
+跨区资源回归使用 `python tools/check-render-lifecycle-browser.py`，默认真实HTTP、原生Worker、生产帧调度。先以原生 `#view=backdoorSpring` 启动覆盖Worker加载前的无贴图窗面，保存持有程序的只读证据；返回总览清空详情后，执行阴影回程、一轮完整暖场及3轮相同路线。独立CI作业保留报告与失败证据。较长复现可运行 `python tools/check-render-lifecycle-browser.py --cycles 3 --soak-seconds 1200`，持续时长从完整暖场后计，完成当前轮才停止。每轮在相同画质／机位／天气清理后严格比较资源，终点另附有界程序清单；期间任何非主动上下文丢失都失败。最后单独注入一次丢失／恢复，验证环境贴图和后户窗口重建；`--recovery-only` 不执行冷入口预热。注入成功不证明历史丢失已根治。
 
 定位恢复阶段的断言可使用 `--recovery-only`，报告明确标记为仅恢复验证，不代表已完成跨区压力段；不能与 `--soak-seconds` 混用。地面材质可能通过 `scene.environment` 继承贴图，检查时区分隐式继承和显式envMap，不能把合法的null绑定当成旧纹理残留。
 

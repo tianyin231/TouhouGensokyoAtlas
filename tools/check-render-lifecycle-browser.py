@@ -1,6 +1,8 @@
 """Cross-region WebGL lifecycle regression using the production frame scheduler.
 
 Build first. HTTP is the default; --content is an explicitly reported fallback.
+Full lifecycle starts at native #view=backdoorSpring to deterministically warm
+the overview window's untextured shader, then clears detail at the overview.
 One complete warm-up route precedes three measured routes by default. For a
 longer reproduction, use --cycles 3 --soak-seconds 1200 (or 1800). The soak starts
 after warm-up and finishes the current route before stopping; it is a minimum
@@ -10,6 +12,8 @@ Every ordinary context loss/restoration fails the check. Only the final, labelle
 WEBGL_lose_context pair is intentional. Its success proves recovery of this
 session and does not establish the cause or prevention of historical resets.
 No renderOnce, direct renderer.render, gl.finish or readPixels advances a route.
+Program inventories are bounded, informational captures at comparable anchors;
+the resource comparisons remain strict. --recovery-only retains the default entry.
 """
 
 import argparse
@@ -100,6 +104,46 @@ SNAPSHOT_JS = r"""label => {
       surfaceIntensity: R.mats.matte.envMapIntensity,
       recessIntensity: R.mats.hakureiRecess.envMapIntensity}
   };
+}"""
+
+BACKDOOR_STARTUP_PROGRAMS_JS = r"""() => {
+  const A=ATLAS, R=A.renderer, E=R.engine, gl=E.getContext();
+  return {view:A.state.view, hash:location.hash, frames:A.state.drawnFrames,
+    evidence:'held programs after native first frame; no draw observer',
+    windows:['spring','summer'].map(season=>{
+      const key='backdoorWindow'+season, material=R.mats[key];
+      const programs=[];
+      if(material && E.properties.has(material)) {
+        const properties=E.properties.get(material);
+        for(const program of properties.programs?.values()||[]) {
+          const source=program.fragmentShader ? gl.getShaderSource(program.fragmentShader) : null;
+          programs.push({cacheKey:program.cacheKey, id:program.id, name:program.name,
+            type:program.type, usedTimes:program.usedTimes,
+            sourceAvailable:typeof source==='string',
+            actualUSE_MAP:typeof source==='string' ? /^\s*#define\s+USE_MAP\b/m.test(source) : null});
+        }
+      }
+      return {key, hasMap:!!material?.map, programs};
+    })};
+}"""
+
+ANCHOR_PROGRAM_INVENTORY_JS = r"""() => {
+  const R=ATLAS.renderer, E=R.engine, programs=E.info.programs, limit=1024;
+  const entries=[], byKey=new Map();
+  for(let i=0;i<Math.min(programs.length,limit);i++) {
+    const p=programs[i], entry={cacheKey:p.cacheKey, id:p.id, type:p.type,
+      name:p.name, usedTimes:p.usedTimes, materialKeys:[]};
+    entries.push(entry); byKey.set(p.cacheKey,entry);
+  }
+  for(const [key,material] of Object.entries(R.mats)) {
+    if(!material?.isMaterial || !E.properties.has(material)) continue;
+    for(const cacheKey of E.properties.get(material).programs?.keys()||[]) {
+      const entry=byKey.get(cacheKey);
+      if(entry) entry.materialKeys.push(key);
+    }
+  }
+  return {scope:'comparable anchors only; informational', count:programs.length,
+    limit, complete:programs.length<=limit, overflow:Math.max(0,programs.length-limit), entries};
 }"""
 
 # Identical route/order/options make the terminal trimmed samples comparable.
@@ -193,6 +237,9 @@ def main():
               'loadMode': 'complete memory document / native Blob Worker' if args.content else 'local HTTP',
               'productionScheduling': True, 'manualDraws': False, 'gpuFinishUsed': False,
               'hardwareFPSMeasured': False, 'physicalVRAMMeasured': False,
+              'startupView': 'diorama' if args.recovery_only else 'backdoorSpring',
+              'variantWarmup': {'enabled': not args.recovery_only,
+                                'scope': 'native cold overview window shader; not remote failure attribution'},
               'rootCauseFixed': False, 'checks': [], 'samples': [], 'contextEvents': [],
               'errors': [], 'resourceErrors': [], 'comparisons': [], 'screenshots': [],
               'intentionalRecovery': {'plannedPairs': 1, 'completed': False}}
@@ -281,13 +328,24 @@ def main():
             page.on('requestfailed', lambda req: error(req.url + ': ' + str(req.failure), 'resourceErrors'))
             page.expose_function('__atlasLifecycleEvent', event)
             page.add_init_script(INIT_JS)
+            entry_hash = '' if args.recovery_only else '#view=backdoorSpring'
             if args.content:
+                if entry_hash:
+                    page.goto('about:blank' + entry_hash, wait_until='load')
                 page.evaluate(INIT_JS)
                 page.set_content(html.decode('utf-8'), wait_until='load')
             else:
-                page.goto(f'http://127.0.0.1:{server.server_port}/{release["artifact"]}', wait_until='load')
+                page.goto(f'http://127.0.0.1:{server.server_port}/{release["artifact"]}{entry_hash}', wait_until='load')
             page.wait_for_function('globalThis.ATLAS || globalThis.ATLAS_BOOT_ERROR')
             require(not page.evaluate('globalThis.ATLAS_BOOT_ERROR || null'), 'Atlas startup failed')
+            if not args.recovery_only:
+                evidence = page.evaluate(BACKDOOR_STARTUP_PROGRAMS_JS)
+                report['variantWarmup']['evidence'] = evidence
+                save()
+                require(evidence['view'] == 'backdoorSpring' and evidence['hash'] == entry_hash and
+                        all(any(p['type'] == 'MeshBasicMaterial' and p['actualUSE_MAP'] is False
+                                for p in window['programs']) for window in evidence['windows']),
+                        'Native cold entry did not retain both untextured window shader programs')
             report['browser'] = browser.version
             report['backend'] = page.evaluate('ATLAS.renderer.info().driver')
             report['webgl'] = page.evaluate('ATLAS.renderer.info().webgl')
@@ -526,6 +584,8 @@ def main():
                         not value['extra']['cacheIds'] and not value['extra']['packIds'] and
                         value['extra']['detailRecords'] == 0 and value['extra']['backdoor']['targets'] == 0,
                         'Trim retained detail source/records/targets at the comparable overview anchor')
+                value['programInventory'] = page.evaluate(ANCHOR_PROGRAM_INVENTORY_JS)
+                save()
                 return value
 
             def compare(reference, current):
@@ -645,6 +705,25 @@ def main():
                 report['intentionalRecovery']['completed'] = True
                 passed('One explicitly labelled context restoration rebuilt targets and rebound new materials', rebound)
 
+            if not args.recovery_only:
+                phase('startup-variant-warmup', 'return native cold entry to the original empty overview')
+                visit('diorama')
+                frames = page.evaluate('ATLAS.state.drawnFrames')
+                page.evaluate('ATLAS.stream.trim(true);ATLAS.state.clock=12.5;ATLAS.wake()')
+                wait('n => ATLAS.state.drawnFrames>n && !ATLAS.stream.pending', frames)
+                page.evaluate('ATLAS.renderer.trim(true)')
+                cleared = sample('native cold-variant startup cleared to overview')
+                require(cleared['snapshot']['streaming']['sourceBytes'] == 0 and
+                        not cleared['extra']['cacheIds'] and not cleared['extra']['packIds'] and
+                        cleared['extra']['detailRecords'] == 0 and cleared['extra']['backdoor']['targets'] == 0 and
+                        cleared['extra']['quality'] == 'balanced' and cleared['extra']['rendererQuality'] == 'balanced' and
+                        cleared['extra']['space'] == 'surface' and cleared['extra']['lighting'] == 'neutral' and
+                        cleared['extra']['weather'] == 'clear' and not cleared['extra']['motion'] and
+                        cleared['extra']['clock'] == 12.5,
+                        'Cold shader warm-up did not restore the original empty startup overview profile')
+                report['variantWarmup']['cleanup'] = cleared['snapshot']
+                passed('Native cold window shader retained; startup detail and targets cleared',
+                       report['variantWarmup'])
             sample('startup diagnostics available')
             if not args.recovery_only:
                 shadow_round_trip('shrineFront', 'sun')
