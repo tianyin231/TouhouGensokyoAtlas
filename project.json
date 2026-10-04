@@ -40,7 +40,11 @@
     "src/trail-landscape.js",
     "src/forest-entrance-plants.js",
     "src/forest-entrance-ground.js",
-    "src/forest-entrance.js"
+    "src/forest-entrance.js",
+    "src/forest-canopy-plants.js",
+    "src/forest-canopy-ground.js",
+    "src/forest-canopy-road.js",
+    "src/forest-canopy.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",
@@ -59,6 +63,7 @@
     "src/trail-landscape-renderer.js",
     "src/forest-path-colors.js",
     "src/forest-path-renderer.js",
+    "src/forest-canopy-renderer.js",
     "src/render-recovery.js",
     "src/render-diagnostics.js"
   ],

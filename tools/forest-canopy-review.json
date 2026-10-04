@@ -1,0 +1,359 @@
+{
+  "status": "accepted",
+  "baseCommit": "ec9fdada167f955f1f2b16a6bb8a230e9577b786",
+  "scope": {
+    "description": "Existing Marisa forest-edge whole-scene sample, not full forest/main-island completion",
+    "x": [
+      -1120,
+      -896
+    ],
+    "z": [
+      0,
+      224
+    ],
+    "nativeTrees": 47,
+    "unchangedNativeTrees": 708,
+    "unchangedColdProxyInstances": 304,
+    "newUnderstoreySites": 114,
+    "wholeIslandComplete": false
+  },
+  "candidate": {
+    "artifactSHA256": "cf78491451d35ce279ce9f0bd5d752e83f57451a5d2bc120ab076fabafea033d",
+    "releaseSHA256": "55b429025128c282a39673e63f0a93dba07b60a52c20504834593081aba97dbc",
+    "inputCount": 192,
+    "artifactBytes": 36301099,
+    "acceptedFrozenRuntimeHTMLIdentical": true,
+    "reviewedSources": {
+      "project.json": "670825dfa38022aae4d88afbfd9d1f2c0e3cad308b3f8b85c9150df0442b576b",
+      "src/forest-canopy-plants.js": "043a18fa90e756686cc5f28ebe82295271fe6e99386d22e5c8661ac578156b66",
+      "src/forest-canopy-ground.js": "fa889105ad3689bddd44538fe5d72e73334c02cca755ec466eb83f9f87995d99",
+      "src/forest-canopy-road.js": "ac7211359b2a4079713788c97329d6a79383da50f1e601d03eac860f10f2c2a8",
+      "src/forest-canopy.js": "fec851f87c3ee2b1e7923c2c2868d34937903c38ded2d658cfc5dbca9d9fa29d",
+      "src/forest-canopy-renderer.js": "e0d70e6acac3c2cd89e3859dd4a67ef93bb1e3c08f18b54764a9a4b32942e6cc",
+      "src/forest-path-renderer.js": "372f3bba7340b01b5649b8525593ada9592786bb4abb577315e17cfb45fe5073",
+      "tools/check-forest-canopy.mjs": "12bb71e90ccda19cbd283a44cb3ea30926cbffed64110cbdf560b4d3f3476bfd",
+      "tools/check-forest-canopy-road.mjs": "2952dbe47687c21b2d0193eb60f74e20f6e95960839363ba5de2758b567013e3"
+    }
+  },
+  "treeBudget": {
+    "selectedOriginalNear": 128028,
+    "selectedOriginalFar": 19082,
+    "selectedCandidateNear": 128028,
+    "selectedCandidateFar": 18894,
+    "perTreeNearMaximum": 2724,
+    "perTreeFarMaximum": 406,
+    "meaning": "Expanded source budget, not full frame or GPU performance"
+  },
+  "understoreyBudget": {
+    "sites": 114,
+    "records": 4,
+    "nearTriangles": 9622,
+    "farTriangles": 1917,
+    "geometryBytes": 1246212
+  },
+  "roadBudget": {
+    "newRecords": 4,
+    "geometryProvenanceBytes": 160164,
+    "channelBytes": 35434,
+    "extraBytes": 195598,
+    "extraTriangles": 684,
+    "sourcePatchTriangles": {
+      "near": 486,
+      "far": 348
+    }
+  },
+  "art": {
+    "status": "accepted-representative-scope",
+    "acceptedViews": [
+      "native marisa balanced",
+      "native marisa low",
+      "one indexed-ground near contact",
+      "native marisaRear",
+      "native kourindou"
+    ],
+    "camera": {
+      "eye": [
+        -1035,
+        91,
+        183
+      ],
+      "target": [
+        -997,
+        76,
+        140
+      ],
+      "fov": 49
+    },
+    "capture": {
+      "viewport": [
+        1280,
+        720
+      ],
+      "dpr": 1,
+      "browser": "Chromium151 SwiftShader",
+      "quality": "balanced",
+      "lighting": "neutral",
+      "weather": "clear",
+      "clock": 12.5,
+      "motion": false,
+      "labels": false,
+      "characters": false,
+      "ao": true,
+      "bloom": false,
+      "reflections": false
+    },
+    "previewSHA256": {
+      "forest-canopy-after.png": "bde73f96b9d62d15838cc06b5ee3d8ae494df9ddfd9fec0b87e81cf3e647318e",
+      "forest-canopy-before.png": "c6d76cd0e8969465a87bc9586f4d205982415d4bcbd4d175e0caca469a633850",
+      "forest-canopy-near.png": "36d8583cb98b1b6b970a07a7a011bfa8bef3365f23e5ff756948bb9dcd493109"
+    },
+    "approvalSHA256": "ef2f0b633323bcd03b5e0c6e0f3e529edc4707249bbd7ab47eaa68239be4bf82",
+    "limits": [
+      "Low fine understorey appears thin/stippled.",
+      "Tree identity/layout is retained; large slopes and the other708 native crowns remain original.",
+      "Local sparse edge groups do not complete the full forest understorey."
+    ]
+  },
+  "staticCost": {
+    "scope": "Fixed warmed Marisa frames; total calls/triangles include postprocessing. No device FPS, physical VRAM, loading-speed or overall performance claim.",
+    "baseline": {
+      "totalCalls": 556,
+      "totalTriangles": 1286303,
+      "stableAttributeBytes": 42863422,
+      "textures": 13,
+      "programs": 156
+    },
+    "candidate": {
+      "totalCalls": 563,
+      "totalTriangles": 1308823,
+      "stableAttributeBytes": 44851900,
+      "textures": 13,
+      "programs": 156
+    },
+    "firstCandidateAttributeBytes": 50167400,
+    "naturalGraceEvictionBytes": 5315500
+  },
+  "fullRegression": {
+    "command": "Node22 tools/check.mjs",
+    "inputCount": 192,
+    "artifactSHA256": "cf78491451d35ce279ce9f0bd5d752e83f57451a5d2bc120ab076fabafea033d",
+    "releaseSHA256": "55b429025128c282a39673e63f0a93dba07b60a52c20504834593081aba97dbc",
+    "actualExitCode": 0,
+    "durationSeconds": 856.284583871995,
+    "logSHA256": "5c38e38de2087d8f963f12e0b2e052d2a60092b1d1f2c1c54d6d777ca0a0a74e",
+    "inputsUnchanged": true,
+    "releaseUnchanged": true,
+    "passed": true,
+    "groups": 40
+  },
+  "functional": {
+    "status": "accepted",
+    "historyReportSHA256": "5b8d04c06780290f8a1da393332bfd17bc716eb131b88e839fdd3da699122ebd",
+    "cleanupErrors": [],
+    "sourceBeforeExact": true,
+    "dropPassed": true,
+    "releaseOwnership": {
+      "witnessArrays": 740,
+      "geometryRefs": 0,
+      "indexRefs": 0,
+      "records": 0,
+      "objects": 0,
+      "typedViews": 0,
+      "signs": 0
+    },
+    "returnedSourceExact": true,
+    "returnedPNGExact": true,
+    "resourceComparison": {
+      "geometries": {
+        "before": 302,
+        "after": 311,
+        "delta": 9
+      },
+      "textures": {
+        "before": 13,
+        "after": 13,
+        "delta": 0
+      },
+      "programs": {
+        "before": 187,
+        "after": 186,
+        "delta": -1
+      },
+      "attributeBytes": {
+        "before": 44851900,
+        "after": 44851900,
+        "delta": 0
+      },
+      "geometryEntries": {
+        "before": 310,
+        "after": 310,
+        "delta": 0
+      }
+    },
+    "acceptanceBasis": "Exact object ownership and disposal in the saved V6.3 single-cycle diagnostic; original raw counter-equality failure is preserved, not retrospectively passed.",
+    "originalDiagnosticReportSHA256": "8463780c99d412f19a39096c0c30b1815db99bfa4a5d501689c24035ef661dc1",
+    "originalDiagnosticCLIExitCode": 1,
+    "originalStrictCounterEqualityPassed": false,
+    "originalStrictAssertionUnchanged": true,
+    "exactAttribution": {
+      "geometryRegistrationDelta": [
+        {
+          "id": 1556,
+          "uuid": "574d5852-fee6-4f0e-9c11-c52f103d7ca2",
+          "record": "highland:public-path:island:terrain:-1024:-2048:far",
+          "registeredByPhase": [
+            false,
+            true,
+            true,
+            true
+          ],
+          "sameOwnedArrayAndBytes": true
+        },
+        {
+          "id": 1742,
+          "uuid": "f404f678-2921-423b-b05e-713dc767c0e6",
+          "record": "highland:public-path:island:terrain:-1280:-1280:far",
+          "registeredByPhase": [
+            false,
+            true,
+            true,
+            true
+          ],
+          "sameOwnedArrayAndBytes": true
+        },
+        {
+          "id": 1658,
+          "uuid": "cb739cb5-471b-4ce4-9397-111bfc0abcd3",
+          "record": "highland:public-path:island:terrain:-1280:-2048:far",
+          "registeredByPhase": [
+            false,
+            true,
+            true,
+            true
+          ],
+          "sameOwnedArrayAndBytes": true
+        },
+        {
+          "id": 1728,
+          "uuid": "a1f7a731-b5a8-4029-a29e-0d2454dccab7",
+          "record": "island:terrain:1536:-256:far",
+          "registeredByPhase": [
+            false,
+            true,
+            true,
+            true
+          ],
+          "sameOwnedArrayAndBytes": true
+        },
+        {
+          "id": 1604,
+          "uuid": "6d9b61a0-d7dd-4692-ab3d-843a1cca5a8c",
+          "record": "overview:mountain:hlod:architecture:mountain:-1:-6:ground",
+          "registeredByPhase": [
+            false,
+            true,
+            true,
+            true
+          ],
+          "sameOwnedArrayAndBytes": true
+        },
+        {
+          "id": 1603,
+          "uuid": "40104628-050b-453e-9a38-8bf5c2869d39",
+          "record": "overview:mountain:hlod:architecture:mountain:-1:-6:matte",
+          "registeredByPhase": [
+            false,
+            true,
+            true,
+            true
+          ],
+          "sameOwnedArrayAndBytes": true
+        },
+        {
+          "id": 1605,
+          "uuid": "bdfad357-ab5c-4e9c-8721-9323ff869030",
+          "record": "overview:mountain:hlod:architecture:mountain:-1:-6:templeStone",
+          "registeredByPhase": [
+            false,
+            true,
+            true,
+            true
+          ],
+          "sameOwnedArrayAndBytes": true
+        },
+        {
+          "id": 1743,
+          "uuid": "bdde62db-5c5e-4a4b-95a4-8d914c7fec34",
+          "record": "seiki:public-road:island:terrain:-1280:-1024:far",
+          "registeredByPhase": [
+            false,
+            true,
+            true,
+            true
+          ],
+          "sameOwnedArrayAndBytes": true
+        },
+        {
+          "id": 1744,
+          "uuid": "13a51001-d15b-415e-ba62-701762c55da2",
+          "record": "seiki:public-road:island:terrain:-1280:-1280:far",
+          "registeredByPhase": [
+            false,
+            true,
+            true,
+            true
+          ],
+          "sameOwnedArrayAndBytes": true
+        }
+      ],
+      "programRemoval": {
+        "id": 162,
+        "keySHA256": "eee89c94f853ee727e570b498b1fb609cb7573261f04f0d45f7470e75bec588f",
+        "onlyOwnerMaterialIds": [
+          450,
+          451
+        ],
+        "reason": "Old sign materials disposed; their earlier warmed inactive program variant was released."
+      },
+      "activeSignProgram": {
+        "oldId": 159,
+        "newId": 191,
+        "sameKeySHA256": "0fc3c80a16a400aa2c0fb07623bfba2342402b7160d92cb691fa5e2e3385545d",
+        "usedTimes": 2
+      },
+      "oldNativeGeometriesDisposed": 55,
+      "oldSignMaterialsDisposed": 2,
+      "unknownGeometryAtAllFourInventories": 0,
+      "unchangedUnenumeratedProgramKeys": 4,
+      "coreSourceStateAndPNGExact": true,
+      "browserRerun": false,
+      "productionOrAssertionChanges": false,
+      "limits": [
+        "One observed production unload/rebuild cycle; not a long-session leak proof.",
+        "The original counter-equality run still failed with CLI1.",
+        "One unassigned HTTP404 retained; no JS/GL/context errors.",
+        "Cold proxy artwork and forest-wide/topography refinement remain outside this sample."
+      ]
+    },
+    "savedDataAcceptance": {
+      "checkerExitCode": 0,
+      "reportSHA256": "5ab4f05a7c5f0dbf498a61f889a6548f1121f191fd51b031dd30cde7523cf802",
+      "checkerSHA256": "56bc2e640d9736c8b83479809da3af2502c7a04ccace169ea21f5c67e1b189dd",
+      "executionStatusSHA256": "3be9290e26e58e8f102ebfc65b5d5cfdbf29e79e128206ac9eba99cc96c1463a",
+      "cleanupSHA256": "47bc4c7f163ed46601c2c1b696a549fb7526ab8336433861fb580bdc1bee1ff0",
+      "independentReview": "renderer_review confirmed exact ownership; browser author separately confirmed saved evidence."
+    }
+  },
+  "history": [
+    "Two foliage texture candidates were rejected on quality; keeping geometry did not complete forest art.",
+    "V1 shrink, V2.1 flat leaves/production-hook bug, V3-V4 thin scattered groups, and V5 offscreen transition bands were rejected.",
+    "V6.0 followup HUD-state mistake and V6.1 native-rig 7.1e-15 roundoff comparison failures remain preserved.",
+    "V6.2 strict engine-counter equality failed after exact source/PNG restoration; it is not retroactively passed.",
+    "V6.3 retained strict counter equality and CLI1. Saved ownership explains all +9 registered public geometries and -1 old sign program; no unknown growth was left in this single trajectory. No browser/full-check rerun or production change was used to close this question."
+  ],
+  "remaining": [
+    "755-tree native crown rollout and existing Human Village street/courtyard vegetation are parallel isolated drafts from accepted ec9fdada, not included in this commit.",
+    "Forest-wide understorey distribution, topography and transitions; cold proxies need separate art review.",
+    "Alice understorey proposal retained, followed by the other existing main-island regions on docs/main-island-upgrade.md."
+  ]
+}

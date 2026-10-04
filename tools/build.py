@@ -216,6 +216,8 @@ def build(output_dir):
     read_bytes('tools/trail-landscape-baseline.json')
     read_bytes('tools/check-trail-landscape-renderer.mjs')
     read_bytes('tools/check-forest-entrance.mjs')
+    read_bytes('tools/check-forest-canopy.mjs')
+    read_bytes('tools/check-forest-canopy-road.mjs')
     read_bytes('tools/check-forest-path-renderer.mjs')
     read_bytes('tools/check-forest-path-coverage.mjs')
     read_bytes('tools/generate-forest-path-colors.mjs')

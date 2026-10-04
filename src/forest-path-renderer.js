@@ -1,12 +1,13 @@
 /* Forest-road albedo softening, loaded after the source color asset,
  * Kourindou and forest-home renderer modules. The audited public roads replace
- * the duplicate detail ribbon only while all eight public records are present.
- * Source geometry and heights remain intact; source colors are not contact.
+ * the duplicate detail ribbon only while all eight public records and any
+ * reviewed terrain-specific replacements are present. Colors are not contact.
  */
 (function(G){'use strict';
 const Base=G.DioramaRenderer,MAX_BYTES=256*1024;
-const target=m=>m.id==='forest:paths'||/^island:routes:forest:-?\d+:-?\d+(?::shoulder)?$/.test(m.id);
-const shoulder=m=>m.id.endsWith(':shoulder');
+const target=m=>m.id==='forest:paths'||/^island:routes:forest:-?\d+:-?\d+(?::shoulder)?$/.test(m.id)||
+ G.FOREST_CANOPY_ROAD?.sources.some(s=>m.id===G.FOREST_CANOPY_ROAD.nearId(s.id)||m.id===G.FOREST_CANOPY_ROAD.farId(s.id))===true;
+const shoulder=m=>(m.forestCanopyRoad?m.sourceId:m.id).endsWith(':shoulder');
 const coverageIds=Object.freeze(['-2:-1','-3:-1','-2:0','-3:0'].flatMap(key=>['island:routes:forest:'+key,'island:routes:forest:'+key+':shoulder']));
 const coverageSources=coverageIds.map(id=>G.FOREST_PATH_COLORS?.metadata.records.find(m=>m.id===id));
 const legacySource=G.FOREST_PATH_COLORS?.metadata.records.find(m=>m.id==='forest:paths');
@@ -31,8 +32,20 @@ const junction=Object.freeze({revision:1,record:'island:routes:forest:-2:0',rout
 
 function channels(m,a,index){
  const count=a.length/9,size=index?.length??count;
+ if(m.forestCanopyRoad){
+  if(index!==m.index||!G.FOREST_PATH_COLORS)throw Error('Unsupported repaired forest path source: '+m.id);
+  const extra=G.FOREST_CANOPY_ROAD.channels(m,a,(id,n,ix)=>G.FOREST_PATH_COLORS.get(id,n,ix));
+  const ground=G.FOREST_CANOPY_GROUND?.pathColors?G.FOREST_CANOPY_GROUND.pathColors({id:extra.sourceId},a,extra.ground):extra.ground;
+  if(!ArrayBuffer.isView(ground)||ground.constructor.name!=='Uint8Array'||ground.length!==count*3)
+   throw Error('Unsupported repaired forest path colors: '+m.id);
+  return{side:extra.side,ground,bytes:extra.side.byteLength+ground.byteLength};
+ }
  if(!Number.isInteger(count)||size%6||!G.FOREST_PATH_COLORS)throw Error('Unsupported forest path source/colors: '+m.id);
- const ground=G.FOREST_PATH_COLORS.get(m.id,count,index?.length||0),side=new Float32Array(count);side.fill(NaN);
+ const originalGround=G.FOREST_PATH_COLORS.get(m.id,count,index?.length||0);
+ const ground=G.FOREST_CANOPY_GROUND?.pathColors?G.FOREST_CANOPY_GROUND.pathColors(m,a,originalGround):originalGround;
+ if(!ArrayBuffer.isView(ground)||ground.constructor.name!=='Uint8Array'||ground.length!==count*3)
+  throw Error('Unsupported forest canopy path colors: '+m.id);
+ const side=new Float32Array(count);side.fill(NaN);
  const values=m.id==='forest:paths'?[1,1,-1,1,-1,-1]:shoulder(m)?[1,2,2,1,2,1]:[-1,1,1,-1,1,-1];
  const vertex=i=>index?index[i]:i;
  const same=(i,j)=>[0,1,2].every(k=>Math.abs(a[vertex(i)*9+k]-a[vertex(j)*9+k])<1e-5);
@@ -53,8 +66,10 @@ class ForestPathRenderer extends Base{
  forestPublicPathsPresent(){
   for(let i=0;i<coverageIds.length;i++){
    const data=this.recordMap.get(coverageIds[i])?.data,source=coverageSources[i];
+   if(data?.forestCanopyRoad){if(!G.FOREST_CANOPY_ROAD?.compatible(data,source))return false;continue;}
    if(!source||data?.group!=='roads'||data.globalSurface!==true||data.overview!==true||data.component!=='connection-road'||data.pathOwner!=='forest'||data.material!=='ground'||data.vertices?.length!==source.vertexCount*9||data.index?.length!==source.indexCount)return false;
   }
+  if(G.FOREST_CANOPY_ROAD&&!G.FOREST_CANOPY_ROAD.coverageReady(this.recordMap))return false;
   return true;
  }
  forestPathCovered(m,publicReady){
@@ -143,11 +158,11 @@ class ForestPathRenderer extends Base{
  }
  info(){
   const result=super.info(),arrays=new Set();for(const r of this.records)if(target(r.data))for(const a of [r.data.vertices,r.data.farVertices].filter(Boolean))arrays.add(a);
-  result.forestPath={revision:3,targets:this.records.filter(r=>target(r.data)).map(r=>r.data.id),legacyPathCovered:!!this.recordMap.get('forest:paths')&&this.forestPathCovered(this.recordMap.get('forest:paths').data),junctionRevision:1,junctionEnabled:this.forestPathJunctionUniform?.value===1,expectedAttributeBytes:[...arrays].reduce((n,a)=>n+a.length/9*7,0),residentAttributeBytes:this.forestPathResidentAttributeBytes||0,peakAttributeBytes:this.forestPathPeakAttributeBytes||0,attributeBuilds:this.forestPathAttributeBuilds||0,attributeBudget:MAX_BYTES,colorSourceBytes:G.FOREST_PATH_COLORS.decodedBytes(),colorsBaseline:G.FOREST_PATH_COLORS.metadata.sourceBaseline,colorsSHA:G.FOREST_PATH_COLORS.metadata.payloadSHA,programKeys:[...(this.forestPathMaterials?.values()||[])].map(m=>m.customProgramCacheKey()),newTextures:0,newLights:0,newTargets:0,groundBasis:'Offline near public-terrain triangle albedo only; original road/terrain positions, normals and indices retained'};
+  result.forestPath={revision:4,targets:this.records.filter(r=>target(r.data)).map(r=>r.data.id),legacyPathCovered:!!this.recordMap.get('forest:paths')&&this.forestPathCovered(this.recordMap.get('forest:paths').data),junctionRevision:1,junctionEnabled:this.forestPathJunctionUniform?.value===1,expectedAttributeBytes:[...arrays].reduce((n,a)=>n+a.length/9*7,0),residentAttributeBytes:this.forestPathResidentAttributeBytes||0,peakAttributeBytes:this.forestPathPeakAttributeBytes||0,attributeBuilds:this.forestPathAttributeBuilds||0,attributeBudget:MAX_BYTES,colorSourceBytes:G.FOREST_PATH_COLORS.decodedBytes(),colorsBaseline:G.FOREST_PATH_COLORS.metadata.sourceBaseline,colorsSHA:G.FOREST_PATH_COLORS.metadata.payloadSHA,programKeys:[...(this.forestPathMaterials?.values()||[])].map(m=>m.customProgramCacheKey()),newTextures:0,newLights:0,newTargets:0,contactRepairRevision:G.FOREST_CANOPY_ROAD?.revision||0,groundBasis:'Offline public-terrain albedo; bounded Marisa bend follows its selected near/far terrain. Remaining road geometry and all terrain geometry are retained.'};
   return result;
  }
  dispose(){try{super.dispose();}finally{this.forestPathArrays=new WeakMap();this.forestPathMaterials?.clear();}}
 }
-G.FOREST_PATH_RENDERER={revision:3,target,channels,coverageIds,junction,attributeBudget:MAX_BYTES,bytesPerVertex:7};
+G.FOREST_PATH_RENDERER={revision:4,target,channels,coverageIds,junction,attributeBudget:MAX_BYTES,bytesPerVertex:7};
 G.DioramaRenderer=ForestPathRenderer;
 })(globalThis.GA);

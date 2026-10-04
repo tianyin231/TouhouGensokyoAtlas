@@ -11,6 +11,7 @@ import {checkTrail} from './check-trail.mjs';
 import {checkTrailLandscape} from './check-trail-landscape.mjs';
 import {checkTrailLandscapeRenderer} from './check-trail-landscape-renderer.mjs';
 import {checkForestEntrance} from './check-forest-entrance.mjs';
+import {checkForestCanopyRoad} from './check-forest-canopy-road.mjs';
 import {checkGeyserCenter} from './check-geyser-center.mjs';
 import {checkGeyser} from './check-geyser.mjs';
 import {checkWindCave} from './check-wind-cave.mjs';
@@ -106,6 +107,7 @@ for (const [id, file] of [
 }
 const context = vm.createContext({ performance, TextDecoder, TextEncoder });
 vm.runInContext(builder, context);
+let forestCanopyPublic;
 // Reuse one public package, in production hook order. Kourindou transfers
 // nearby public trees before the entrance sees its retained source instances;
 // contact-only preparation cannot stand in for those predecessor hooks.
@@ -120,6 +122,17 @@ vm.runInContext(builder, context);
   assert(entranceIndex >= 0, '森林入口总览入口未登记');
   for (const build of builders.slice(0, entranceIndex)) overview.meshes.push(...build(atlas, overview));
   console.log('森林入口源数据检查通过：'+JSON.stringify(checkForestEntrance(context.GA, overview, read)));
+  // The entrance checker uses its own transactional copy. Apply the real
+  // remaining hooks too, so native forest detail receives the same rendered
+  // terrain contacts as the browser and Worker.
+  for (const build of builders.slice(entranceIndex)) {
+    const canopy = build === context.GA.FOREST_CANOPY.prepare;
+    if (canopy) forestCanopyPublic = {overviewBefore:{...overview,meshes:overview.meshes.slice()}};
+    overview.meshes.push(...build(atlas, overview));
+    if (canopy) forestCanopyPublic.overviewAfter = {...overview,meshes:overview.meshes.slice()};
+  }
+  assert(forestCanopyPublic?.overviewAfter,'原生林冠实际总览入口未登记');
+  console.log('雾雨弯道路面接地检查通过：'+JSON.stringify(checkForestCanopyRoad(context.GA,forestCanopyPublic.overviewBefore,forestCanopyPublic.overviewAfter,read)));
 }
 console.log('博丽神社检查通过：'+JSON.stringify(await checkHakurei(context.GA,atlas,read)));
 const pack = context.GA.buildOldHell();
@@ -185,7 +198,7 @@ console.log('山麓间歇泉检查通过：'+JSON.stringify(await checkGeyser(co
 console.log('间歇泉地下中心检查通过：'+JSON.stringify(await checkGeyserCenter(context.GA,atlas,JSON.parse(script('character-data')),read)));
 
 console.log('香霖堂精修检查通过：'+JSON.stringify(await checkKourindou(context.GA,atlas,JSON.parse(script('character-data')),read)));
-console.log('森林住宅与木板径检查通过：'+JSON.stringify(await checkForest(context.GA,atlas,JSON.parse(script('character-data')),read)));
+console.log('森林住宅与木板径检查通过：'+JSON.stringify(await checkForest(context.GA,atlas,JSON.parse(script('character-data')),read,forestCanopyPublic)));
 console.log('人里精修检查通过：'+JSON.stringify(await checkVillage(context.GA,atlas,JSON.parse(script('character-data')),read)));
 console.log('兽道桥头与夜雀屋结构检查通过：'+JSON.stringify(await checkTrail(context.GA,atlas,JSON.parse(script('character-data')),read)));
 console.log('兽道树林与地表样板检查通过：'+JSON.stringify(await checkTrailLandscape(context.GA,atlas,JSON.parse(script('character-data')),read)));
