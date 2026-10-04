@@ -1,0 +1,223 @@
+{
+  "status": "accepted",
+  "baseCommit": "741554f7a6974b9bcfe4c0c6d2413ae0680b62bb",
+  "scope": {
+    "nativeTrees": 755,
+    "additionalTreesBeyondAcceptedSample": 708,
+    "pairs": 155,
+    "records": 310,
+    "originalSeeds": [
+      134,
+      591,
+      833
+    ],
+    "coldOverviewTreesUnchanged": 304,
+    "wholeForestLandscapeComplete": false,
+    "villageDraftIncluded": false
+  },
+  "candidate": {
+    "inputCount": 193,
+    "artifactSHA256": "092c07365756ad61676ced9c1eaad096a12503abc86645980aa8afe6ab4ee06f",
+    "releaseSHA256": "7f411ea70dae91bd13a0be3a39f4d2aeaf881251f2a044d141430ebc9bc1964f"
+  },
+  "integration": {
+    "oneCrownEntryAndWoodCache": true,
+    "sample24RecordsExact": true,
+    "nonTree53RecordsExact": true,
+    "ground4RecordsExact": true,
+    "groundRoadPrepareRendererUnchanged": true,
+    "nativeSourceBytes": 13202308,
+    "sourceReviewSHA256": "df7b769dfaa0f47dbe7c6fe7ed2fb659c2d7ea912e6310683933e5cc882e27b4",
+    "frozenSourceSHA256": {
+      "src/forest-crown-rollout.js": "133abcaa7bdfaec3ede8617643fa9beb302642c194cb9f2971caa01b8f919820",
+      "src/forest-canopy.js": "6820b51c35b707dccd920a552347b10decaa6e246d81bd81d5745e0db6eaf29a",
+      "project.json": "04113dc570f1abf731d363da0bb0d1e4db590dc62dd5e6f811afd6256064f9da",
+      "tools/check-forest-canopy.mjs": "e6789bf2a4604d11be12a279fbd5b00cc3fbff647c64b2896a388b361973b2d7",
+      "tools/check-forest.mjs": "5262de1e54f58190096457c81d5fa84533b8072dc4e616cbb4a8d7934ff5fc4d",
+      "tools/check-kourindou.mjs": "dd67e34e4c92947b0b75ef1f4b71a954efec2d08d3b328223a13f6b54c0bc700"
+    },
+    "trees": {
+      "originalTrees": 755,
+      "selectedTrees": 755,
+      "selectedPairs": 155,
+      "selectedVariants": [
+        241,
+        283,
+        231
+      ],
+      "acceptedSampleTrees": 47,
+      "additionalTrees": 708,
+      "fullMatrixRGBOrdinalIdentity": true
+    },
+    "triangles": {
+      "selectedOriginalNear": 2056620,
+      "selectedOriginalFar": 306530,
+      "selectedCandidateNear": 2056620,
+      "selectedCandidateFar": 303510,
+      "perTreeNearMaximum": 2724,
+      "perTreeFarMaximum": 406,
+      "meaning": "Expanded source budget, not full frame or GPU performance"
+    },
+    "transformedVerticesChecked": 7080390,
+    "sphereMarginMinimum": 6.822009949984313,
+    "oneForestBuildNoOtherRegions": true,
+    "reviewSeconds": 28.101854038000003
+  },
+  "art": {
+    "accepted": true,
+    "attempts": 1,
+    "camera": {
+      "view": "forestOverview",
+      "eye": [
+        -604,
+        580,
+        714
+      ],
+      "target": [
+        -1080,
+        74,
+        -56
+      ],
+      "fov": 49
+    },
+    "capture": {
+      "viewport": [
+        1280,
+        720
+      ],
+      "dpr": 1,
+      "quality": "balanced",
+      "clock": 12.5,
+      "weather": "clear",
+      "lighting": "neutral",
+      "motion": false,
+      "labels": false,
+      "characters": false,
+      "ao": true,
+      "bloom": false,
+      "reflections": false,
+      "backend": "Chromium151 SwiftShader"
+    },
+    "photos": {
+      "forest-crown-before.png": "85f4cfa3d534747cddbf177f5b6c81864b651ac964cd9ccd2a1c8a96ac2b48d8",
+      "forest-crown-after.png": "a55a445182e79c7d00e3b5ba444b4c580860c2bde4132a8ce487d08c303542de"
+    },
+    "captureBaseCommit": "ec9fdada167f955f1f2b16a6bb8a230e9577b786",
+    "captureCandidateHTML": "1606db7d12cfb7cb1cfc632e3675b759768ff0539bec9e77328e62c2e127b6ec",
+    "rootApprovalSHA256": "bd9c976058bf211d9a5166efa5141c59030461a91b3cac80e1ea054a29eb5ee7",
+    "scope": "Native755 crown panorama; final741 composition uses the same tree geometry and retains the separately accepted47 sample/ground. These PNGs are not claimed to be captures of the combined final artifact.",
+    "limits": [
+      "All155 native leaf batches use far LOD in this panorama; near prototypes reuse the accepted three variants.",
+      "755 instances belong to visible batches; no per-pixel occlusion count is claimed.",
+      "Cold304 proxies are not visible in this panorama and remain unchanged.",
+      "Population layout, slopes, outer ground-color boundaries and forest-wide understorey remain unfinished."
+    ]
+  },
+  "browser": {
+    "actualCLIExitCode": 1,
+    "fullCandidateSourceAuditExecuted": false,
+    "reason": "After both images and actual active-target inventory, scratch observer read .meta from cache entry {pack,last} instead of .pack.meta and raised TypeError. Original failure remains; no GPU rerun.",
+    "sourceProtectionCompletedSeparately": "Final production forest-only review compared all755 identities, original47 and every non-tree source; final Node22 full40 regression passed with actual exit0 and all193 input hashes unchanged. The original browser observer exit1 and unexecuted full runtime source scan remain recorded.",
+    "stateEquality": {
+      "camera": true,
+      "options": true,
+      "wanted": true,
+      "lights": true,
+      "scene": true
+    },
+    "actualWoodPrefixChecks": [
+      {
+        "mode": "original",
+        "checks": 6,
+        "passed": true
+      },
+      {
+        "mode": "candidate",
+        "checks": 6,
+        "passed": true
+      }
+    ],
+    "runtimePrototypeObjects": 12,
+    "scriptOrGLErrors": 0,
+    "contextEvents": 0,
+    "unassignedConsole404PerSession": 1,
+    "cleanupPassed": true,
+    "evidenceSHA256": {
+      "report.json": "e21e442b7c2779e03c6ffc92527c272c56e2605cf6e6a22cddfa2587abb05388",
+      "execution-status.json": "2d2139e528c1d91532ef5866eab1f1fa7c9e1a05f9b7a97514345650cb5b5669",
+      "cleanup.json": "d656a8a94549daa05b13c2286da6b7dcef5524cf04af5d8f6a86be945cfce6cb"
+    }
+  },
+  "staticCost": {
+    "scope": "Standalone ec9 versus pure755 panorama, one image per version. Includes postprocessing and shadow submissions; not final combined artifact timing/FPS/physical VRAM.",
+    "before": {
+      "totalCalls": 1263,
+      "totalTriangles": 1284830,
+      "residentAttributeBytes": 32256982,
+      "geometries": 429,
+      "textures": 13,
+      "residentObjects": 920
+    },
+    "after": {
+      "totalCalls": 1263,
+      "totalTriangles": 1278790,
+      "residentAttributeBytes": 32255686,
+      "geometries": 429,
+      "textures": 13,
+      "residentObjects": 920
+    },
+    "delta": {
+      "calls": 0,
+      "totalCalls": 0,
+      "triangles": -6040,
+      "totalTriangles": -6040,
+      "residentAttributeBytes": -1296,
+      "geometries": 0,
+      "textures": 0,
+      "residentObjects": 0
+    }
+  },
+  "fixture": {
+    "UTC": "2026-10-04T14:11:33.489012+00:00",
+    "reviewer": "root",
+    "evidenceSHA256": "df7b769dfaa0f47dbe7c6fe7ed2fb659c2d7ea912e6310683933e5cc882e27b4",
+    "forestBefore": "795ff759e9e253fbc77c4f77803c2d366395c0034843c7394d822a6ab740aea7",
+    "forestAfter": "3140bd2856d80b9191ef2e7203d2e128662d34a3ee0fe1b361140fa461c1b710",
+    "other12RegionsAndPriorHistoryUnchanged": true,
+    "fixtureSHA256": "ac975e29a94fb0196fb76c63ff05ea7c75c67a1f7be89e6fa58fe0f12a0ca47f",
+    "automaticFixtureRefresh": false
+  },
+  "fullRegression": {
+    "status": "completed",
+    "command": [
+      "/home/agent/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node",
+      "tools/check.mjs"
+    ],
+    "startedUTC": "2026-10-04T14:11:33.798786+00:00",
+    "artifactSHA256": "092c07365756ad61676ced9c1eaad096a12503abc86645980aa8afe6ab4ee06f",
+    "releaseSHA256": "7f411ea70dae91bd13a0be3a39f4d2aeaf881251f2a044d141430ebc9bc1964f",
+    "inputCount": 193,
+    "actualExitCode": 0,
+    "passed": true,
+    "finishedUTC": "2026-10-04T14:25:14.462270+00:00",
+    "durationSeconds": 820.6634886449901,
+    "inputsUnchanged": true,
+    "releaseUnchanged": true,
+    "logSHA256": "25de110bbba20f0641af98abe007597139bda4e25c24bf7ace8e658f8349b26f",
+    "groups": 40,
+    "repeatedUnchangedPassedChecksLocally": false
+  },
+  "remaining": [
+    "Village v1 wide scene rejected; one final volume revision in isolated ec9 worktree.",
+    "Forest cold304 proxy appearance, planting distribution, Alice understorey and terrain transitions.",
+    "Other already planned main-island regions; no new major district or engine rewrite."
+  ],
+  "acceptedUTC": "2026-10-04T14:26:05.290196+00:00",
+  "independentCodeReview": {
+    "passed": true,
+    "reviewer": "renderer_review",
+    "sourceFileCount": 6,
+    "reportSHA256": "cbc3c51f56c94e4658cc74a5e2e0370ec16a650a833878cd19085c25d19784c5",
+    "findings": []
+  }
+}

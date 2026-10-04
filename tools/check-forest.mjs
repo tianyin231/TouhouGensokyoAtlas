@@ -77,8 +77,8 @@ export async function inspectForest(G,data,read,options={}){
  result.boardwalkLods=boardwalkLods(G,data,read,overview,additions,walks);
  const current=await G.buildRegion(data,'forest'),retained=current.meshes.find(m=>m.id==='forest:understorey'),old=original.meshes.find(m=>m.id==='forest:understorey'),prefix=F.legacyBoardwalk(t);assert.equal(prefix.length/27,1080);assert.equal(hash(raw(retained.vertices)),hash(raw(old.vertices.subarray(prefix.length))));assert.equal(retained.vertices.byteOffset,0);assert.equal(retained.vertices.byteLength,retained.vertices.buffer.byteLength,'Removed prefix is still retained in buffer');
  const canopyGroundIDs=new Set([-1280,-1024].flatMap(x=>['near','far'].map(lod=>'forest:canopy-ground:'+x+':0:'+lod)));
- const keep=m=>!['alice','marisa','kourindou'].includes(m.component)&&m.id!=='forest:understorey'&&!G.FOREST_CANOPY.targets.has(m.id)&&!canopyGroundIDs.has(m.id);
- assert.equal(geometryDigest({meshes:current.meshes.filter(keep)}),geometryDigest({meshes:original.meshes.filter(keep)}),'Untouched forest trees, route, fungi or ancient oak changed');
+ const keep=m=>!['alice','marisa','kourindou'].includes(m.component)&&m.id!=='forest:understorey'&&!/^forest:trees:-?\d+:-?\d+:[012]:(wood|leaf)$/.test(m.id)&&!canopyGroundIDs.has(m.id);
+ assert.equal(geometryDigest({meshes:current.meshes.filter(keep)}),geometryDigest({meshes:original.meshes.filter(keep)}),'Retained forest route, fungi or ancient oak changed');
  assert(options.overviewBefore&&options.overviewAfter,'Actual production overview snapshots required for canopy checks');
  result.canopy=checkForestCanopy(G,original,current,read,options);
  result.canopyGround=checkForestCanopyGround(G,original,options.overviewBefore,read,{currentDetail:current});

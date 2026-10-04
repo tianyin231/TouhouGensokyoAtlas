@@ -40,10 +40,10 @@ export async function checkKourindou(G,atlas,characters,read){
  assert.equal(G.resolveLocation('kourindou').view,'kourindou');assert.equal(G.resolveLocation('tengu').view,null);
  const original=G.buildForest(t),current=await G.buildRegion(atlas,'forest','');
  assert.equal(geometryDigest(original),f.originalForest,'The preserved v0.14 forest builder changed');
- // Homes, the removed boardwalk prefix and the exact Marisa canopy sample
+ // Homes, the removed boardwalk prefix and the exact native canopy ID family
  // have independent strict checks in check-forest. Keep all other protection.
  const canopyGroundIDs=new Set([-1280,-1024].flatMap(x=>['near','far'].map(lod=>'forest:canopy-ground:'+x+':0:'+lod)));
- const retained=m=>!['kourindou','alice','marisa'].includes(m.component)&&m.id!=='forest:understorey'&&!G.FOREST_CANOPY.targets.has(m.id)&&!canopyGroundIDs.has(m.id);
+ const retained=m=>!['kourindou','alice','marisa'].includes(m.component)&&m.id!=='forest:understorey'&&!/^forest:trees:-?\d+:-?\d+:[012]:(wood|leaf)$/.test(m.id)&&!canopyGroundIDs.has(m.id);
  assert.equal(geometryDigest({meshes:original.meshes.filter(retained)}),geometryDigest({meshes:current.meshes.filter(retained)}),'Forest roads or retained old vegetation changed');
  assert.equal(JSON.stringify(current.signs),JSON.stringify(original.signs),'Sign content or placement changed');
  assert.equal(K.bytes(current.meshes),current.bytes);assert(!current.meshes.some(m=>m.id.startsWith('forest:kourindou:')),'Old shop is still overlaid');

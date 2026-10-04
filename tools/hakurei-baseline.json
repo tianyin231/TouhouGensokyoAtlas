@@ -12,7 +12,7 @@
     "sunflower": "9071b82b2a121e04808696b96925c720efb70e7bcab49750c75a35e54dc3563a",
     "nameless": "3c3b2ce4e78c02a2128bedefc7bdafcf036e192a80f86a2660550e8bcf5f35c5",
     "mountain": "60c85c21d85ad70b158155458d9b35c66a51e19aa8fc7b2f094dfce8458de521",
-    "forest": "795ff759e9e253fbc77c4f77803c2d366395c0034843c7394d822a6ab740aea7",
+    "forest": "3140bd2856d80b9191ef2e7203d2e128662d34a3ee0fe1b361140fa461c1b710",
     "muenzuka": "fce019a1625ad753025841ebb396bf84a5844c9d9284dce9f45250789514a058",
     "genbu": "f6a4a51132c512ff3087115e67c5ed1497f51ddde07995eceda55825826ca188"
   },
@@ -61,6 +61,15 @@
       "after": "795ff759e9e253fbc77c4f77803c2d366395c0034843c7394d822a6ab740aea7",
       "reason": "用户授权既有主空岛逐区精修；雾雨邸样板只替换四个112米树格的47棵原生冠层，完整实例矩阵、颜色、原木干前缀、材质、LOD、范围保持。其余708棵原生树、304个冷代理、古木、菌类、倒木及原混合林下源保持；114处新低蕨与灌木合为四条随实际地形精度切换的记录。两宅部件、木板径、原路线及香霖堂独立期望不变。root以同一次生产original/current包、真实总览hook、独立树形/接地/枝叶连接/闭体/净空/原子性检查及正常档、低档、近景和屋后实图显式审阅登记。局部公共路面裁交由独立道路检查保护，不借此放宽详情树保护。其余12区摘要和原有审阅历史保留，测试不自动刷新；完整回归、运行时恢复与整片森林美术范围另记。",
       "review": "docs/forest-canopy-handoff.md"
+    },
+    "forestCrownRollout": {
+      "base": "741554f7a6974b9bcfe4c0c6d2413ae0680b62bb",
+      "reason": "Promote accepted native crown prototypes to all755 trees with original instance identities and one shared cache; retain accepted47 and all non-tree forest output.",
+      "before": "795ff759e9e253fbc77c4f77803c2d366395c0034843c7394d822a6ab740aea7",
+      "after": "3140bd2856d80b9191ef2e7203d2e128662d34a3ee0fe1b361140fa461c1b710",
+      "evidenceSHA256": "df7b769dfaa0f47dbe7c6fe7ed2fb659c2d7ea912e6310683933e5cc882e27b4",
+      "reviewer": "root",
+      "automaticRefresh": false
     }
   },
   "reviewedSourceChanges": {

@@ -37,7 +37,7 @@ function viewsBytes(ms){const arrays=new Set();for(const m of ms)for(const [,a]o
 function sourceSnapshots(ms){const arraySHA=new Map(),records=ms.map(m=>{for(const [,a]of typed(m))if(!arraySHA.has(a))arraySHA.set(a,hash(raw(a)));return{m,metadata:json(metadata(m)),arrays:new Map(typed(m))};});return{arraySHA,records};}
 function intact(snapshot){for(const [a,sha]of snapshot.arraySHA)assert.equal(hash(raw(a)),sha,'Original source array mutated');for(const r of snapshot.records){assert.equal(json(metadata(r.m)),r.metadata,'Original metadata mutated');for(const [k,a]of r.arrays)assert.equal(r.m[k],a,'Original reference mutated');}}
 function probeTransactions(G,before){const U=G.FOREST_CANOPY,P=G.FOREST_CANOPY_PLANTS,oldGround=G.FOREST_CANOPY_GROUND;
- const trees=treeRecords(before).map(m=>({...m,owner:'forest',region:m.region||'forest',space:m.space||'surface'})),first=TARGETS.keys().next().value;
+ const trees=treeRecords(before).map(m=>({...m,owner:'forest',region:m.region||'forest',space:m.space||'surface'})),first=trees[0].id;
  const snapshot=sourceSnapshots(trees),failures=[];
  function failed(name,ms,ground,plants=P){const pack={meshes:ms,meta:{treeCount:755}},list=pack.meshes,meta=pack.meta;try{G.FOREST_CANOPY_GROUND=ground;G.FOREST_CANOPY_PLANTS=plants;assert.throws(()=>U.applyDetail(null,pack),undefined,name);assert.equal(pack.meshes,list,'Partial commit '+name);assert.equal(pack.meta,meta,'Partial metadata commit '+name);}finally{G.FOREST_CANOPY_GROUND=oldGround;G.FOREST_CANOPY_PLANTS=P;}failures.push(name);}
  const passthrough={detail:(_data,p)=>p};
@@ -268,25 +268,25 @@ export function checkForestCanopyGround(G,detailInput,overviewInput,read,options
 }
 
 export function checkForestCanopy(G,before,after,read,options={}){
- const U=G.FOREST_CANOPY,P=G.FOREST_CANOPY_PLANTS;assert(U?.replaceTree&&U?.applyDetail&&P?.prototype,'Canopy helpers missing');
- assert.equal(U.targets.size,24);for(const [id,t]of TARGETS)assert.equal(json(U.targets.get(id)),json(t),'Expanded canopy target scope');
+ const U=G.FOREST_CANOPY,C=G.FOREST_CROWN_ROLLOUT,P=G.FOREST_CANOPY_PLANTS;assert(U?.replaceTree&&U?.applyDetail&&C?.applyDetail&&P?.prototype,'Canopy helpers missing');
+ // This fixed 24-ID set is the accepted sample/ground scope, not the rollout scope.
+ assert.equal(U.targets.size,24);for(const [id,t]of TARGETS)assert.equal(json(U.targets.get(id)),json(t),'Original sample target scope changed');
  const originals=treeRecords(before),candidates=treeRecords(after),old=inventory(originals),now=inventory(candidates),source=sourceSnapshots(originals);
  assert.equal(originals.length,310);assert.equal(candidates.length,310);assert.equal(old.pairs.size,155);assert.equal(now.pairs.size,155);assert.equal(old.count,755);assert.equal(now.count,755);
  assert.equal(before.meta.treeCount,755);assert.equal(after.meta.treeCount,755);
- const otherArrays=new Set(candidates.filter(m=>!TARGETS.has(m.id)).flatMap(m=>typed(m).map(([,a])=>a))),shared=new Map(),geometry=new Map(),selected=[];
- let selectedTrees=0,untouchedTrees=0,near=0,far=0,unchangedRecords=0;
- const variants=[0,0,0],prefixChecks=[];
+ const originalGeometry=new Set(originals.flatMap(m=>[m.vertices,m.farVertices])),shared=new Map(),geometry=new Map(),selected=[];
+ let selectedTrees=0,sampleTrees=0,near=0,far=0;const variants=[0,0,0],prefixChecks=[];
  const rendererSource=String(read('src/renderer.js')),shadowExpression=rendererSource.match(/let castShadow=([^;]+);/);assert(shadowExpression,'Production native shadow condition changed');const cast=Function('m','shadows','return Boolean('+shadowExpression[1]+')');
- for(const m of originals){const n=now.map.get(m.id);assert(n,'Native tree lost '+m.id);const t=TARGETS.get(m.id);
+ for(const m of originals){const n=now.map.get(m.id);assert(n,'Native tree lost '+m.id);const t={variant:Number(m.id.split(':')[4]),part:m.id.endsWith(':wood')?'wood':'leaf',count:m.instances.length/16},sample=TARGETS.get(m.id);
   assert.equal(json(metadata(n)),json(metadata(m,true)),'Tree metadata/bounds/LOD changed '+m.id);assert.equal(typed(n).length,typed(m).length,'New native tree attribute');
-  if(!t){assert(!n.forestCanopyRevision,'Marker escaped target scope');for(const [k,a]of typed(m))sameView(a,n[k],'Untouched native '+m.id+'/'+k);unchangedRecords++;if(m.id.endsWith(':leaf'))untouchedTrees+=m.instances.length/16;continue;}
-  assert.equal(n.forestCanopyRevision,U.revision);assert.equal(m.instances.length,t.count*16);assert.equal(m.instanceColors.length,t.count*3);sameView(n.instances,m.instances,'Full original matrix '+m.id);sameView(n.instanceColors,m.instanceColors,'Original RGB '+m.id);
+  if(sample){assert.equal(n.forestCanopyRevision,1,'Accepted sample marker changed');assert.equal(t.count,sample.count,'Accepted sample population changed');}else assert(!('forestCanopyRevision' in n),'Sample marker escaped original 24 records');
+  sameView(n.instances,m.instances,'Full original matrix '+m.id);sameView(n.instanceColors,m.instanceColors,'Original RGB '+m.id);
   assert.equal(cast({...m,...metadata(m,true)},true),cast(n,true),'Native shadow qualification changed');assert(cast(n,true),'Native tree lost shadow eligibility');
   const probeInput={...m,...metadata(m,true)},probe=U.replaceTree(probeInput,t);assert.equal(probe.instances,m.instances,'Production replacement copied/merged original matrix');assert.equal(probe.instanceColors,m.instanceColors,'Production replacement copied original RGB');assert.equal(json(metadata(probe)),json(metadata(m,true)));
   for(const [field,lod,wood,leaf]of[['vertices','near',324,2400],['farVertices','far',126,280]]){
    const p=P.prototype(t.variant,lod);assert.equal(P.prototype(t.variant,lod),p,'Prototype cache unstable');assert(float(p.extraWood)&&float(p.leaf));
-   const total=wood+(p.extraWood.length+p.leaf.length)/27;assert(total<=(lod==='near'?2724:406),'Whole-tree per-instance budget');
-   assert.equal(m[field].length,(t.part==='wood'?wood:leaf)*27,'Original native prototype changed');assert(!otherArrays.has(n[field]),'Selected tree reused source geometry used by other trees');
+   const total=wood+(p.extraWood.length+p.leaf.length)/27;assert(total<=(lod==='near'?2724:406),'Whole-tree per-instance budget');assert.equal(total,lod==='near'?2724:402,'Reviewed rollout budget changed');
+   assert.equal(m[field].length,(t.part==='wood'?wood:leaf)*27,'Original native prototype changed');assert(!originalGeometry.has(n[field]),'Candidate reused protected original geometry');
    if(t.part==='wood'){sameView(n[field].subarray(0,m[field].length),m[field],'Original wood prefix '+m.id+'/'+field);sameView(n[field].subarray(m[field].length),p.extraWood,'Appended wood '+m.id+'/'+field);prefixChecks.push({id:m.id,field,retainedTriangles:wood,addedTriangles:p.extraWood.length/27});}
    else assert.equal(n[field],p.leaf,'Leaf private cache bypassed');
    sameView(probe[field],n[field],'Production replacement differs from final same-source output');
@@ -295,12 +295,12 @@ export function checkForestCanopy(G,before,after,read,options={}){
    if(t.part==='leaf'){if(lod==='near')near+=total*t.count;else far+=total*t.count;}
   }
   const fit=boundsFit(n);selected.push({id:m.id,instances:t.count,center:n.center,radius:n.radius,bounds:fit});
-  if(t.part==='leaf'){selectedTrees+=t.count;variants[t.variant]+=t.count;}
+  if(t.part==='leaf'){selectedTrees+=t.count;variants[t.variant]+=t.count;if(sample)sampleTrees+=t.count;}
  }
- assert.equal(selectedTrees,47);assert.equal(untouchedTrees,708);assert.equal(unchangedRecords,286);assert.equal(json(variants),json([18,14,15]));assert.equal(shared.size,12);
- assert(near<=47*2724&&far<=47*406);assert.equal(after.meta.forestCanopy.trees,47);assert.equal(after.meta.forestCanopy.treeRecords,24);
+ assert.equal(selectedTrees,755);assert.equal(sampleTrees,47);assert.equal(json(variants),json([241,283,231]));assert.equal(shared.size,12);
+ assert.equal(near,2056620);assert.equal(far,303510);assert.equal(after.meta.forestCanopy.trees,755);assert.equal(after.meta.forestCanopy.treeRecords,310);assert.equal(after.meta.forestCrownRollout.trees,755);assert.equal(json(Array.from(C.seeds)),json([134,591,833]));
  assert.equal(U.applyDetail(null,after),after,'Repeated application rebuilt a package');
  const transactions=probeTransactions(G,before);intact(source);
- let overview=null;if(options.overviewBefore||options.overviewAfter){assert(options.overviewBefore&&options.overviewAfter,'Supply both overview snapshots');const find=p=>p.meshes.find(m=>m.id==='overview:forest:trees'),a=find(options.overviewBefore),b=find(options.overviewAfter);assert(a&&b);assert.equal(a.instances.length/16,304);assert.equal(json(metadata(a)),json(metadata(b)));for(const [k,v]of typed(a))sameView(v,b[k],'Untouched overview304 '+k);overview={trees:304,allArraysAndMetadataExact:true};}
- return{revision:U.revision,scope:'Same-current-build native before/final packages; no internal construction or fixture writes',sourceSHA:Object.fromEntries(['src/forest-canopy-plants.js','src/forest-canopy.js'].map(p=>[p,hash(read(p))])),population:{originalTrees:755,selectedTrees,selectedPairs:12,selectedVariants:variants,unchangedTrees:untouchedTrees,unchangedPairs:143,unchangedRecords,fullMatrixRGBOrdinalIdentity:true},protection:{allTreeMetadataAndBoundsPreserved:true,allOriginalSourceArrayBytesUnchanged:true,originalWoodPrefixChecks:prefixChecks,productionReplacementReferencePreserved:true,shadow:{productionSourceSHA:hash(rendererSource),selectedRecords:24,eligibilityPreserved:true},idempotent:true,...transactions,overview},triangles:{selectedOriginalNear:47*2724,selectedOriginalFar:47*406,selectedCandidateNear:near,selectedCandidateFar:far,perTreeNearMaximum:2724,perTreeFarMaximum:406,meaning:'Expanded source budget, not full frame or GPU performance'},prototypes:[...geometry.values()],selectedRecords:selected,resources:{originalTreeViews:viewsBytes(originals),candidateTreeViews:viewsBytes(candidates),candidateSharedGeometryViews:shared.size,meaning:'Unique typed-array views. Original prototypes remain referenced by 708 unmodified trees; resident GPU/backing ownership measured separately.'},acceptance:'Tree CPU safety only; ground/roads and real visual acceptance are separate checks.'};
+ let overview=null;if(options.overviewBefore||options.overviewAfter){assert(options.overviewBefore&&options.overviewAfter,'Supply both overview snapshots');const find=p=>p.meshes.find(m=>m.id==='overview:forest:trees'),a=find(options.overviewBefore),b=find(options.overviewAfter);assert(a&&b);assert.equal(a.instances.length/16,304);assert.equal(json(metadata(a)),json(metadata(b)));for(const [k,v]of typed(a))sameView(v,b[k],'Untouched overview304 '+k);overview={trees:304,allArraysAndMetadataExact:true,upgraded:false};}
+ return{revision:U.revision,scope:'Same-current-build native before/final packages; no internal construction or fixture writes',sourceSHA:Object.fromEntries(['src/forest-canopy-plants.js','src/forest-crown-rollout.js','src/forest-canopy.js'].map(p=>[p,hash(read(p))])),population:{originalTrees:755,selectedTrees,selectedPairs:155,selectedVariants:variants,acceptedSampleTrees:sampleTrees,additionalTrees:708,fullMatrixRGBOrdinalIdentity:true},protection:{allTreeMetadataAndBoundsPreserved:true,original24SampleMarkersPreserved:true,allOriginalSourceArrayBytesUnchanged:true,originalWoodPrefixChecks:prefixChecks,productionReplacementReferencePreserved:true,shadow:{productionSourceSHA:hash(rendererSource),selectedRecords:310,eligibilityPreserved:true},idempotent:true,...transactions,overview},triangles:{selectedOriginalNear:2056620,selectedOriginalFar:306530,selectedCandidateNear:near,selectedCandidateFar:far,perTreeNearMaximum:2724,perTreeFarMaximum:406,meaning:'Expanded source budget, not full frame or GPU performance'},prototypes:[...geometry.values()],selectedRecords:selected,resources:{originalTreeViews:viewsBytes(originals),candidateTreeViews:viewsBytes(candidates),candidateSharedGeometryViews:shared.size,meaning:'Unique typed-array views. All 755 native trees use the same three near/far prototype pairs; resident GPU/backing ownership remains a separate measurement.'},acceptance:'Full native-tree CPU safety only; accepted panorama, local ground/roads and unchanged cold overview are separate scopes.'};
 }
