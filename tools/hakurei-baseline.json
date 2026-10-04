@@ -3,7 +3,7 @@
   "description": "神社改造前固定的其他主区域输出；不由测试改写。",
   "regions": {
     "village": "554ea956479592654a49c475b5af087574b14678b84dce2326846ee74b42bdd9",
-    "trail": "7db23fd0ef0d28b6540795370cdd7653dbaaf2dc82f3755f837f52fdeae1aef3",
+    "trail": "ac2d5561b67dd392888345a22a3d1f1b7a9f61f86ca548e8ef1b743838f39ca7",
     "scarlet": "2437235f0b9fac3413104f785eeaa91fda6853135da7d15da0f750ff41d6e0fb",
     "myouren": "0286d2f49c75e5f6c613c8ef68373cf1f090ee2799245c267427055b403672c6",
     "mausoleum": "a8116e9b215b7711b1903df0c5b976e54edb8b42f1f74512f7fd853e562e4948",
@@ -17,6 +17,13 @@
     "genbu": "f6a4a51132c512ff3087115e67c5ed1497f51ddde07995eceda55825826ca188"
   },
   "reviewedUpstreamChanges": {
+    "trail": {
+      "base": "040e5369b1ef0d5f45242ff4e1193ab0874e2f2b",
+      "before": "7db23fd0ef0d28b6540795370cdd7653dbaaf2dc82f3755f837f52fdeae1aef3",
+      "after": "ac2d5561b67dd392888345a22a3d1f1b7a9f61f86ca548e8ef1b743838f39ca7",
+      "reason": "用户授权既有主空岛逐区精修，当前整景样板限于兽道溪桥—夜雀屋。桥头、厨房凹窗和棚架由独立结构期望保护；v2.2仅将厨房9个石膏块的边界改为连续外壳，背墙为单quad，窗木与厨房外修复体逐字节不变，消除实图发现的内盖接线。树林层保留204棵原兽道树、同身份冷总览、10棵公共树和27＋3株灌木的完整矩阵、树种和RGB，替换枝端叶簇与分级简化；无legacy作者链只额外替换27株原灌木，其余34条结构层记录逐位保持。区外实例、道路、地形、溪流与原来源保持，局部地表复用现有图像。最终作者链与真实legacy链由check-trail-landscape校验，结构由check-trail校验；其余12区与其他审阅记录不变。本次期望由root依据源码、CPU语义保护和草案差异显式登记，测试不自动刷新；实际画面验收另记。",
+      "structuralStage": "b196b0d1f2ea0e27bf0af76634d8f69b3d63d611b665c9b34f129754787449cb"
+    },
     "village": {
       "base": "096849ad53725be1fdec67f1d85ddc18bcae3781",
       "before": "2875880afaab25b7a49f7845ac6e7be50496a4485839399f5e1b7fe145a6993c",

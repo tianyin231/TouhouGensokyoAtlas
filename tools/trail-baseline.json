@@ -1,0 +1,26 @@
+{
+  "revision": 3,
+  "sourceBaseline": "040e5369b1ef0d5f45242ff4e1193ab0874e2f2b",
+  "geometrySHA": "b196b0d1f2ea0e27bf0af76634d8f69b3d63d611b665c9b34f129754787449cb",
+  "originalGeometrySHA": "7db23fd0ef0d28b6540795370cdd7653dbaaf2dc82f3755f837f52fdeae1aef3",
+  "bridgeNearSHA": "b225d6cb1ad11d79ef19fa4a80d333cef83baf2001bdf33608720b83894a819f",
+  "bridgeFarSHA": "f232762dff0dcc4827916f32ccc9edaa77adae8706f65136bc9428bcd3e4c0dc",
+  "houseSHA": "2a94edfa96da39b21fd6bde6054f3538485b039433b2023472d34f12dacaf0cf",
+  "publicNearSHA": "9df38cc7379157e54c5bcd60bda959f200b3297c8098d2fc45b063a418f5c4ae",
+  "publicFarSHA": "82304781ba7fd7653b715a128e1a03d6a3797a8b371cfe34ef46a96a13c72974",
+  "retainedHouseTriangles": 3499,
+  "housePatches": [
+    {
+      "name": "kitchen",
+      "start": 19764,
+      "end": 31752,
+      "newFloats": 17172
+    },
+    {
+      "name": "awning",
+      "start": 36558,
+      "end": 39204,
+      "newFloats": 2916
+    }
+  ]
+}

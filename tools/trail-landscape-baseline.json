@@ -1,0 +1,22 @@
+{
+  "revision": 1,
+  "baseline": "040e5369b1ef0d5f45242ff4e1193ab0874e2f2b",
+  "originalAuthorSHA": "b196b0d1f2ea0e27bf0af76634d8f69b3d63d611b665c9b34f129754787449cb",
+  "authorBodySHA": "ac2d5561b67dd392888345a22a3d1f1b7a9f61f86ca548e8ef1b743838f39ca7",
+  "withLegacySHA": "f6a1a95d1cacd7de31c7e3c00c37f560a95c0d3bb5d18e38ad9cd38cd78a763d",
+  "overviewSHA": "8fbf4593f995b6d7ddb3cb4edfec1a2a7f69d40f7a85dd0eb58b5f924b28c0c2",
+  "prototypeSHA": "2aad1065ca2d92237603c8141c03aa2c2c525b12019f7af15c7374107c629c2a",
+  "selected": {
+    "nativeTrees": 204,
+    "coldTrees": 204,
+    "publicTrees": 10,
+    "nativeShrubs": 27,
+    "publicShrubs": 3
+  },
+  "kinds": {
+    "broadleaf": 97,
+    "hinoki": 63,
+    "cherry": 42,
+    "willow": 2
+  }
+}

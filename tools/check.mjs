@@ -7,6 +7,9 @@ import {checkStreamingLifecycle} from './check-streaming-lifecycle.mjs';
 import {checkKourindou} from './check-kourindou.mjs';
 import {checkForest} from './check-forest.mjs';
 import {checkVillage} from './check-village.mjs';
+import {checkTrail} from './check-trail.mjs';
+import {checkTrailLandscape} from './check-trail-landscape.mjs';
+import {checkTrailLandscapeRenderer} from './check-trail-landscape-renderer.mjs';
 import {checkGeyserCenter} from './check-geyser-center.mjs';
 import {checkGeyser} from './check-geyser.mjs';
 import {checkWindCave} from './check-wind-cave.mjs';
@@ -103,7 +106,7 @@ for (const [id, file] of [
 const context = vm.createContext({ performance, TextDecoder, TextEncoder });
 vm.runInContext(builder, context);
 // Prepare the same public ground contacts used by the production overview
-// before any inherited checker requests forest or village detail.
+// before any inherited checker requests forest, village or trail detail.
 {
   const raw = gunzipSync(read('assets/packs/overview.pack.gz'));
   const overview = context.GA.decodePack(raw.buffer.slice(raw.byteOffset, raw.byteOffset + raw.byteLength));
@@ -113,6 +116,7 @@ vm.runInContext(builder, context);
   context.GA.FOREST_UPGRADE.prepare(atlas, overview);
   const village = context.GA.VILLAGE_UPGRADE;
   context.GA.SurfaceContact.prepare(atlas, overview, village.contactId, village.contactBounds);
+  context.GA.TRAIL_UPGRADE.prepare(atlas, overview);
 }
 console.log('博丽神社检查通过：'+JSON.stringify(await checkHakurei(context.GA,atlas,read)));
 const pack = context.GA.buildOldHell();
@@ -180,3 +184,6 @@ console.log('间歇泉地下中心检查通过：'+JSON.stringify(await checkGey
 console.log('香霖堂精修检查通过：'+JSON.stringify(await checkKourindou(context.GA,atlas,JSON.parse(script('character-data')),read)));
 console.log('森林住宅与木板径检查通过：'+JSON.stringify(await checkForest(context.GA,atlas,JSON.parse(script('character-data')),read)));
 console.log('人里精修检查通过：'+JSON.stringify(await checkVillage(context.GA,atlas,JSON.parse(script('character-data')),read)));
+console.log('兽道桥头与夜雀屋结构检查通过：'+JSON.stringify(await checkTrail(context.GA,atlas,JSON.parse(script('character-data')),read)));
+console.log('兽道树林与地表样板检查通过：'+JSON.stringify(await checkTrailLandscape(context.GA,atlas,JSON.parse(script('character-data')),read)));
+console.log('兽道样板材质与资源检查通过：'+JSON.stringify(checkTrailLandscapeRenderer(context.GA,read)));

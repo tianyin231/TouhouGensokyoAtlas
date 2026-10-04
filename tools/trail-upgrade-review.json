@@ -1,0 +1,219 @@
+{
+  "revision": 1,
+  "baselineCommit": "040e5369b1ef0d5f45242ff4e1193ab0874e2f2b",
+  "status": "Historical structure-v1 snapshot: 36-group Node22 exit0. No standalone structure browser run; this layer later appeared in rejected scene v1.1. New scene and structure-v3 acceptance is recorded separately.",
+  "artifact": {
+    "sha256": "23afce4244f9f9bedc22cf1682a54fe97902fa80a7b2a76e4bafe3fa292362ea",
+    "bytes": 36054922,
+    "inputCount": 175,
+    "releaseSHA256": "566ea61509ba0f4f54e45388581f2f889a350d56448a11c77f5698c2b7dfc147",
+    "cleanRebuildByteIdentical": true
+  },
+  "candidateSources": {
+    "src/trail-upgrade.js": "d152cca141aa69f4b06ccda4780a9a8c12cc12ea51f5a3e1be88858f70683cb6",
+    "src/trail-renderer.js": "8c605fd08809218f513c57da15ac7f5e6499fcd4302478246dc9d6d503b082b5",
+    "tools/check-trail.mjs": "28f483a2c95217b558e805d0dbe728cae78218ba9868d4237157fd24855bee1b"
+  },
+  "changedOriginalRecords": [
+    "trail:matte:base:9:1",
+    "mystia-house:matte:base:11:2",
+    "overview:trail:hlod:architecture:world:3:0:matte"
+  ],
+  "newPublicRecords": [
+    "trail:public:bridge-approaches:near",
+    "trail:public:bridge-approaches:far"
+  ],
+  "fixture": {
+    "revision": 1,
+    "sourceBaseline": "040e5369b1ef0d5f45242ff4e1193ab0874e2f2b",
+    "geometrySHA": "7a32a9d36d6826883af3646bcdd755cf069f3a3aa3c3468eaa89a40e019f6078",
+    "originalGeometrySHA": "7db23fd0ef0d28b6540795370cdd7653dbaaf2dc82f3755f837f52fdeae1aef3",
+    "bridgeNearSHA": "b225d6cb1ad11d79ef19fa4a80d333cef83baf2001bdf33608720b83894a819f",
+    "bridgeFarSHA": "f232762dff0dcc4827916f32ccc9edaa77adae8706f65136bc9428bcd3e4c0dc",
+    "houseSHA": "8381aefda9dfe329404ecba2a4621117bc54487f944bfb4ca9d7d520e9657fc6",
+    "publicNearSHA": "96212cf8b1667c6cf46652fde7f82b1fb4b67baecf73e264a0c8b9c57ed4e34d",
+    "publicFarSHA": "4a3c0323cea1b213d134878d3a03add0e5be9eb24bbab9f11537035ff804d6a8",
+    "retainedHouseTriangles": 3499,
+    "housePatches": [
+      {
+        "name": "kitchen",
+        "start": 19764,
+        "end": 31752,
+        "newFloats": 18468
+      },
+      {
+        "name": "awning",
+        "start": 36558,
+        "end": 39204,
+        "newFloats": 2916
+      }
+    ]
+  },
+  "authored": {
+    "records": 35,
+    "unchangedRecords": 33,
+    "sourceBytes": 2639524,
+    "originalSourceBytes": 2591356,
+    "expandedTriangles": 39928,
+    "houseTriangles": 4291,
+    "retainedHouseTriangles": 3499,
+    "bridgeNearTriangles": 504,
+    "bridgeFarTriangles": 216
+  },
+  "public": {
+    "records": 2,
+    "triangles": [
+      240,
+      112
+    ],
+    "sourceBytes": 38016,
+    "unchangedOverviewRecords": 1139,
+    "pureBridgeProxyOnly": true
+  },
+  "contacts": {
+    "positionBytes": 2592,
+    "nearTerrainBytes": 1080,
+    "farTerrainBytes": 432,
+    "roadBytes": 1080,
+    "prepareRecordedMs": 4.024474000001646,
+    "prepareObservedMs": 4.234363999999914,
+    "cloneMs": 0.07615300000179559,
+    "clonePositionArrays": 3,
+    "cloneMetadataJSONBytes": 789,
+    "scope": "CPU positions and small metadata cloned with existing Worker atlas; not GPU memory"
+  },
+  "targetedCPU": {
+    "exitCode": 0,
+    "reportSHA256": "9c6bbfb45ddb3a0cf4ccf7fc88f3c2ea4975364bdf2d30ed7e3ac8969b5ef3cc",
+    "semanticCounts": {
+      "endpointRays": 108,
+      "roadWidthRays": 72,
+      "terrainOverlayPoints": 348,
+      "footingRays": 40,
+      "postRays": 20
+    },
+    "windowRays": 6,
+    "minimumTopClearanceMeters": 0.12466651723312339,
+    "maximumAbsoluteMeasuredBearingHeightDifferenceMeters": 6.863018768399343e-06,
+    "allowedBearingHeightDifferenceMeters": 5e-05,
+    "boundaryRayNudges": 14,
+    "boundaryRayMaximumMoveMeters": 8.485281374238571e-05,
+    "precisionLimit": "Boundary rays may be nudged independently for each object; reported successful-probe Y delta is not a guaranteed identical-XZ physical gap for every corner. Single-triangle support construction and independent interior rays also checked.",
+    "resources": {
+      "visibilityCases": 24,
+      "lowBridgeLevels": [
+        {
+          "distance": 30,
+          "level": 0
+        },
+        {
+          "distance": 200,
+          "level": 1
+        },
+        {
+          "distance": 30,
+          "level": 0
+        }
+      ],
+      "nonfiniteDistanceKeepsCallerLOD": true,
+      "nativeProxyTerrainPairs": [
+        "native:far",
+        "native:near",
+        "proxy:far",
+        "proxy:near"
+      ],
+      "reentries": 3,
+      "publicAttributeBytes": 38016,
+      "addedCustomAttributeBytes": 0,
+      "addedMaterials": 0,
+      "addedProgramVariants": 0,
+      "missingTerrainHidesCap": true,
+      "finalResidentBytes": 0
+    }
+  },
+  "staticReview": {
+    "acceptedForBrowserStage": true,
+    "reportSHA256": "e4acc7772bb2a77072328fe06abeb9cd2a7d8aab59814f03c060decc25c1d8f8",
+    "newTests": 0,
+    "initialIssuesResolved": [
+      "Mirrored actual top triangulation replaces differing bottom fan",
+      "Signed-outline side winding points outward",
+      "Bearing rectangle fits inside one real ramp triangle",
+      "Full indexed terrain loop and nonempty overlay guard",
+      "Actual replacement canopy and separate bearing/underside ray meshes"
+    ]
+  },
+  "protected": {
+    "authorRecordsUnchanged": 33,
+    "houseTrianglesUnchanged": 3499,
+    "trailPlants": 604,
+    "mystiaTrees": 14,
+    "allLegacyFoliage": true,
+    "routeShrineControlPoints": 13,
+    "routeWidthMeters": 5,
+    "originalTerrainAndRoadArrays": true,
+    "otherOverviewRecords": 1139,
+    "otherHakureiBaselineRegions": 12,
+    "nativeBridgePrefixTriangles": 504,
+    "newTextures": 0,
+    "newLights": 0,
+    "newTargets": 0,
+    "sourcePacksUnchanged": true,
+    "charactersAndNavigationUnchanged": true
+  },
+  "baseline": {
+    "summarySHA256": "e7701374347a61779df1e5a5bdb50e11fab1a62640f32ff35d977a828845fa1d",
+    "validViews": 5,
+    "stablePNGs": 15,
+    "sessionOrders": [
+      [
+        "trailStream",
+        "mystiaCounter",
+        "reviewVillageTrailJoin"
+      ],
+      [
+        "reviewMystiaBackCorrected",
+        "reviewShrineTrailJoin"
+      ]
+    ],
+    "failedAttemptsRetained": [
+      "Scratch observer used undefined GA.THREE; first attempt exit1/0PNG",
+      "Old rear camera occluded by original tree; second attempt exit1 after 3valid views and blocked PNG; corrected 2-view continuation exit0"
+    ],
+    "productionScriptShaderContextErrors": [],
+    "unattributed404PerSession": 1
+  },
+  "fullRegression": {
+    "command": [
+      "/home/agent/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node",
+      "tools/check.mjs"
+    ],
+    "sourceRoot": "/workspace/scratch/trail-runtime-v1/clean-source",
+    "artifactSHA256": "23afce4244f9f9bedc22cf1682a54fe97902fa80a7b2a76e4bafe3fa292362ea",
+    "inputCount": 175,
+    "startedUTC": "2026-10-04T00:50:56.508662+00:00",
+    "status": "completed",
+    "node": "v22.23.3",
+    "releaseSHA256": "566ea61509ba0f4f54e45388581f2f889a350d56448a11c77f5698c2b7dfc147",
+    "exitCode": 0,
+    "wallSeconds": 793.7348049659922,
+    "completedUTC": "2026-10-04T01:04:10.248472+00:00",
+    "logSHA256": "037618eef55a8ca16ccb6e44a3a2d28bf9ceed50093fe7143e69aec8aff2fb7c",
+    "passedGroups": 36,
+    "trailFixtureExact": true
+  },
+  "browserCandidate": {
+    "status": "not-started-paused-at-safe-point",
+    "browsersStarted": 0,
+    "PNGs": 0,
+    "reason": "User rejected equating house/seam progress with whole regional art completion; planned scene/tree sample will share final validation"
+  },
+  "notClaimed": [
+    "Entire trail or all connections completed",
+    "Hardware FPS or physical VRAM improvement",
+    "New night, ABBA, complete-map or long pressure local run",
+    "Underlying historical context-loss root cause fixed"
+  ],
+  "historicalOnly": true,
+  "supersededBy": "tools/trail-landscape-review.json"
+}

@@ -1,0 +1,889 @@
+{
+  "revision": 3,
+  "baselineCommit": "040e5369b1ef0d5f45242ff4e1193ab0874e2f2b",
+  "status": "Accepted representative scene sample for direct main delivery: clean build,38 Node22 groups, fixed-camera art/source checks and one low/cache-reentry passed. Whole Trail and main-island art remain incomplete.",
+  "scope": {
+    "region": "trail",
+    "roi": [
+      810,
+      1145,
+      125,
+      330
+    ],
+    "groundFadeMeters": 20,
+    "matrixColorAndSpeciesPreserved": true,
+    "newMajorRegions": 0,
+    "texturesImagesAdded": 0,
+    "lightsAdded": 0,
+    "targetsAdded": 0
+  },
+  "artifact": {
+    "sha256": "a2b85c427607f0d74088c796a8881ea3892bb619e4eba48091488e9c0bcb2a5d",
+    "bytes": 36135748,
+    "inputCount": 181,
+    "releaseSHA256": "aae5c673695bd2a8657e452861bb8fa897b693b60eee8e5be45e5d7dace2217b",
+    "cleanRebuildByteIdentical": true
+  },
+  "sourceSHA256": {
+    "src/trail-upgrade.js": "cce321e38e5c9a26d585092029ed415b9b78032c46000ba47b55ed190f21932f",
+    "src/trail-plants.js": "9b27de1ef04d9b309212b198e203890f848bc85a107c3b7dc7fa4818806a2696",
+    "src/trail-landscape.js": "ef50de3407b2f6e31eed41939ec8003c27a16dccf7e907b98bf72fc4a13919a6",
+    "src/trail-landscape-renderer.js": "ee70209bbc5316c8b63a25a564f9b1a71ada399ac2c6f470f760446d4a42ac70",
+    "tools/check-trail.mjs": "a9e52221c8746f85b2bea15cc21ce6886da77fedbdd2dd72bf3fd961d0800f4a",
+    "tools/check-trail-landscape.mjs": "9cccfbed2ac3275bd0729ff85d4700976bbf8308c42219e1c120178e3a03a191",
+    "tools/check-trail-landscape-renderer.mjs": "43fa7f01c9842140a83a39e109ab825969be7fdd980fde29336adce32b8c6044",
+    "src/trail-renderer.js": "8c605fd08809218f513c57da15ac7f5e6499fcd4302478246dc9d6d503b082b5"
+  },
+  "population": {
+    "nativeTrees": 204,
+    "coldTrees": 204,
+    "publicTrees": 10,
+    "nativeShrubs": 27,
+    "publicShrubs": 3,
+    "totalOriginalTrailTrees": 568,
+    "coldRetainedTrees": 364,
+    "fullMatrixAndColorByteIdentity": true,
+    "kinds": {
+      "broadleaf": 97,
+      "hinoki": 63,
+      "cherry": 42,
+      "willow": 2
+    }
+  },
+  "triangles": {
+    "nativeTreesNear": 211488,
+    "nativeTreesFar": 74760,
+    "coldTrees": 19584,
+    "publicTreesNear": 10320,
+    "publicTreesFar": 3660,
+    "nativeShrubsNear": 10854,
+    "nativeShrubsFar": 3888,
+    "publicShrubsNear": 1206,
+    "publicShrubsFar": 432,
+    "originalNativeTreesNear": 770997,
+    "originalNativeTreesFar": 84389,
+    "originalColdTrees": 9792,
+    "scope": "Expanded source submission upper bounds, not camera or whole-frame performance"
+  },
+  "sourceRecords": {
+    "nativeTrees": 52,
+    "nativeShrubs": 8,
+    "coldTrees": 7,
+    "publicTrees": 6,
+    "publicShrubs": 4,
+    "pairedGroups": 35
+  },
+  "sourceProtection": {
+    "overview": {
+      "intactRecords": 1053,
+      "partlySelectedRecords": 6,
+      "retainedInstances": 529
+    },
+    "authorBody": {
+      "intactRecords": 34,
+      "partlySelectedRecords": 0,
+      "retainedInstances": 0
+    },
+    "detailWithLegacy": {
+      "intactRecords": 72,
+      "partlySelectedRecords": 11,
+      "retainedInstances": 43
+    },
+    "publicShadows": {
+      "originalSites": 13,
+      "replacementParts": 2,
+      "productionSourceSHA": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+      "comparisons": 156,
+      "componentPreserved": true,
+      "eligibilityPreserved": true
+    },
+    "originalSourceFiles": 7,
+    "routeAndPresetsUnchanged": true,
+    "idempotentOverview": true
+  },
+  "cpuRenderer": {
+    "revision": 2,
+    "scope": "CPU methods, shader composition and ownership; no region build or WebGL",
+    "routeSamplesCompared": 668,
+    "routeDeviationMax": 0.1723658104495065,
+    "analyticalCreekDeviationMax": 0.14433624603280473,
+    "routeSegments": 17,
+    "creekSegments": 7,
+    "segmentUniformBytes": 384,
+    "segmentBudget": 36,
+    "newTextureImages": 0,
+    "newTreeStandardMaterials": 4,
+    "newPrivateDepthMaterials": 3,
+    "groundProgramKeys": 1,
+    "groundMaterialRoles": 2,
+    "uvBytesPerSixVertices": 48,
+    "sharedUVCountedOnce": true,
+    "sourceArraysAndInstanceColorsUnchanged": true,
+    "uvFaultRollbackChecks": 2,
+    "lightingChecks": 3,
+    "productionRecoveryMethodChecked": true,
+    "reentryCycles": 3,
+    "qualityStatesChecked": 9,
+    "graceBudgetAndForcedTrimChecked": true,
+    "finalResidentBytes": 0,
+    "sharedImagesDisposedOnce": true,
+    "automaticDistanceCutoutReviewed": true,
+    "webGLCompiled": false,
+    "visualAccepted": false
+  },
+  "cpuEvidenceSHA256": {
+    "landscapeDraft": "f92dc97c2cf2399a83dd95f1cf31efa23021a4249a6a72224f3e68a48831bb6c",
+    "integratedStructure": "3b88407ca4db5c356d6ee9c65d667abb87bbfa7619ec6e38f3e889c27d724f1b",
+    "kitchen": "f980cfd28516ab82ccc620b1abf7769c1a170b693c103681d638411a2091d6c2",
+    "rendererV2": "7e7bd1c1d3015c9e0cd861425863857c6d467a691c636c41751b5e8a0657f455"
+  },
+  "bridge": {
+    "revision": 3,
+    "originalBridgeAndEastApproachPreserved": true,
+    "westApproachPlanSpanMeters": {
+      "original": 7.1301506,
+      "candidate": 4.793294
+    },
+    "roadSourceIndexOffset": 744,
+    "publicTriangles": [
+      240,
+      112
+    ],
+    "publicAttributeBytes": 38016,
+    "terrainOverlayPoints": 372,
+    "independentFootingRays": 40,
+    "maxSuccessfulProbeHeightDifferenceMeters": 1.1904e-05,
+    "allowedHeightDifferenceMeters": 5e-05,
+    "minimumOriginalBeamUndersideClearanceMeters": 0.02421596806935611,
+    "cpuBlockedPixelsNowHitCapTop": 6,
+    "physicalAbsoluteZeroGapClaimed": false,
+    "streamRepairAccepted": {
+      "firstPNGSHA256": "2389bf2157e551d962685d0e5f0206f87f4a14df84add4bcbc1e350b2542f2dd",
+      "threeStableFrames": true,
+      "originalProtrusionGone": true,
+      "capAndV2SourceCheckSHA256": "6abcb8068a8d32630ec4d1674438673053079c13bda67236ef615cc2ffbdc82f"
+    }
+  },
+  "rejectedCandidates": [
+    {
+      "version": "v1.1",
+      "artifactSHA256": "54a1129f68c592a2d7e719e11f3d78af989eec8bdd2ee629bede666a4f02e3d8",
+      "summarySHA256": "3ee14ec89d8965e2d22781c70feb4b29effc63545d4cd0c05ff0eb572fa95147",
+      "applicationChecksPassed": true,
+      "aestheticAccepted": false,
+      "reasons": [
+        "Camouflage-like ground patches obscured the road/clearing hierarchy",
+        "Dark spherical hinoki shells and open broadleaf/cherry crowns",
+        "West bridge approach read as an oversized cantilever platform"
+      ]
+    },
+    {
+      "version": "v2",
+      "artifactSHA256": "49e5e9a50831aaeb0912cecef3feefb066d84366f088bd3ee47a6594a5a3f6b0",
+      "applicationChecksPassed": true,
+      "aestheticAccepted": false,
+      "reason": "Shorter bridge approach exposes original north beam by about9.72cm.",
+      "sourceBoundDiagnostic": {
+        "source": "original trail bridge north longitudinal beam, triangles 300..311",
+        "firstHitTriangle": 309,
+        "samplePixel": [
+          225,
+          507
+        ],
+        "originalWestOverhangMeters": 0.7049560546875,
+        "exposedHeightMeters": 0.0972366,
+        "diagnosticSHA256": "0859656dbe2b174971d80a4c06c354e5c97357f1051917680b9eb4a2eff98314",
+        "scope": "CPU reconstruction exactly matches captured native/cap source hashes; no new GPU run",
+        "repair": "Reshape existing first ramp row to clear preserved beam; keep road endpoint, original beam, east cap and triangle/material budgets"
+      }
+    },
+    {
+      "version": "v2.1 / structure-v3",
+      "artifactSHA256": "9142f68442955d5c45748f9c242b2d4d2d41531e996300496f55b102ad864516",
+      "bridgeAccepted": true,
+      "aestheticAccepted": false,
+      "reason": "New thin dotted lines across the kitchen plaster rear wall, absent from original fixed-camera image; local shell correction pending."
+    }
+  ],
+  "acceptance": {
+    "fullNode22": {
+      "artifactSHA256": "a2b85c427607f0d74088c796a8881ea3892bb619e4eba48091488e9c0bcb2a5d",
+      "inputCount": 181,
+      "exitCode": 0,
+      "node": "v22.23.3",
+      "seconds": 807.2748902669991,
+      "logSHA256": "686dd40c767aac167faa8779965162b007e52fadb07b454aa9ba70d1b831c5d3",
+      "passedGroups": 38,
+      "allWorkingBuildInputsMatchFrozen": true,
+      "lastChecks": [
+        "人里精修检查通过",
+        "兽道桥头与夜雀屋结构检查通过",
+        "兽道树林与地表样板检查通过",
+        "兽道样板材质与资源检查通过"
+      ],
+      "scope": "Required full static/CPU regression; browser and visual acceptance recorded separately."
+    },
+    "webGL": {
+      "artifactSHA256": "a2b85c427607f0d74088c796a8881ea3892bb619e4eba48091488e9c0bcb2a5d",
+      "status": "Final rear3, wide1 and low/native clear-reentry passed; all browser/server sessions closed.",
+      "sessions": [
+        {
+          "name": "rear",
+          "reportSHA256": "3d980d3c5103caeedc8f923b16ec8a689b4c6a046e4338e64e5b95740d1b8a76",
+          "runnerSHA256": "51a5af3aebef333fa25da0ae88458f4231ec13d8c9e78249128c26aab34dc1e3",
+          "executionSHA256": "9aef5d68338f8dad7c3868f73e8d47f03abdaf866e0acb7897c111cc7475a3d2",
+          "applicationPassed": true,
+          "actualCLIExit": 0,
+          "cleanupErrors": [],
+          "views": [
+            {
+              "name": "reviewMystiaBackCorrected",
+              "camera": {
+                "eye": [
+                  1088,
+                  47,
+                  287
+                ],
+                "target": [
+                  1072,
+                  44.4,
+                  276
+                ],
+                "fov": 49
+              },
+              "frames": 3,
+              "firstPNGSHA256": "e2f07ebc710007f03ff34bebb8b0f0139366f1b4e7e9501647b1eadd51b9fb9b",
+              "stability": [
+                {
+                  "changedPixels": 0,
+                  "maxChannelDifference": 0,
+                  "meanAbsoluteDifference": 0.0
+                },
+                {
+                  "changedPixels": 0,
+                  "maxChannelDifference": 0,
+                  "meanAbsoluteDifference": 0.0
+                }
+              ],
+              "sourceIntegrity": {
+                "file": "reviewMystiaBackCorrected-source-integrity.json",
+                "sha256": "9ac1c8003be4a61cfea0e83d7c981392f3bfd42b13fba1682d4842b527c17e34",
+                "comparison": {
+                  "passed": true,
+                  "records": 2293,
+                  "protectedExactRecords": 2290,
+                  "detailPacks": [
+                    "trail"
+                  ],
+                  "independentOverrideIds": [
+                    "mystia-house:matte:base:11:2",
+                    "trail:public:bridge-approaches:far",
+                    "trail:public:bridge-approaches:near"
+                  ],
+                  "allowedCapIds": [
+                    "trail:public:bridge-approaches:far",
+                    "trail:public:bridge-approaches:near"
+                  ],
+                  "allowedHouseId": "mystia-house:matte:base:11:2"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "wide",
+          "reportSHA256": "f9830790cc5a990e5854de4b75207bc2a3c5003a26c64137d4435dfca859609d",
+          "runnerSHA256": "51a5af3aebef333fa25da0ae88458f4231ec13d8c9e78249128c26aab34dc1e3",
+          "executionSHA256": "ce09920b5bd6d0c5c4afd51de9149e1a897036144691898f3e5355f44f3422cf",
+          "applicationPassed": true,
+          "actualCLIExit": 0,
+          "cleanupErrors": [],
+          "views": [
+            {
+              "name": "reviewTrailScene",
+              "camera": {
+                "eye": [
+                  1030,
+                  140,
+                  35
+                ],
+                "target": [
+                  970,
+                  39,
+                  240
+                ],
+                "fov": 49
+              },
+              "frames": 1,
+              "firstPNGSHA256": "1e1175b01edcc7e5a3153a4bf0e66c8f2089d71adfa4bcbb309ac8f5dccc6db4",
+              "stability": [],
+              "sourceIntegrity": {
+                "file": "reviewTrailScene-source-integrity.json",
+                "sha256": "9ac1c8003be4a61cfea0e83d7c981392f3bfd42b13fba1682d4842b527c17e34",
+                "comparison": {
+                  "passed": true,
+                  "records": 2293,
+                  "protectedExactRecords": 2290,
+                  "detailPacks": [
+                    "trail"
+                  ],
+                  "independentOverrideIds": [
+                    "mystia-house:matte:base:11:2",
+                    "trail:public:bridge-approaches:far",
+                    "trail:public:bridge-approaches:near"
+                  ],
+                  "allowedCapIds": [
+                    "trail:public:bridge-approaches:far",
+                    "trail:public:bridge-approaches:near"
+                  ],
+                  "allowedHouseId": "mystia-house:matte:base:11:2"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "functional-low-aware",
+          "runnerSHA256": "392e7e3d21a3ac40d693c4fb23d1b06726177ce0d8d3c499aee1a7fe03f0d1dc",
+          "artifactSHA256": "a2b85c427607f0d74088c796a8881ea3892bb619e4eba48091488e9c0bcb2a5d",
+          "rootActuallyViewedAll3PNGs": true,
+          "acceptedForBoundedFunctionalCoverage": true,
+          "reportSHA256": "fff2209f27119a3bb15615336f0df9209261f8db283a9fd240abfd0af6cda436",
+          "executionSHA256": "36023849738e845d22725a13db13c7d57d60c4b9a0886fb2d4f802de1cafe659",
+          "actualCLIExit": 0,
+          "cleanupErrors": [],
+          "nativeRecordsDropped": 143,
+          "watchedArrays": 249,
+          "releasedReferences": {
+            "geometryRefs": 0,
+            "indexRefs": 0,
+            "records": 0,
+            "objects": 0,
+            "typedViews": 0,
+            "signs": 0
+          },
+          "permanentRecordCount": 2150,
+          "restoredRecords": 2293,
+          "allRecordDescriptorsExactlyRestored": true,
+          "wholeSourceJSONFilesByteIdentical": false,
+          "wholeSourceDifference": "streaming request/build/eviction counters only",
+          "lowAndNativeReturnPNGByteIdentical": true,
+          "lowPNGSHA256": "f49d0d6c619d1620995575a7f88bd4d6510247a526d94b99b8dbb6ebc54d018d",
+          "coldProxyPNGSHA256": "23a9f46c14eb7864261adc1a1dff8140f5e2eaf59402e537a167bcf9b7789393",
+          "newScriptShaderContextErrors": [],
+          "resourceErrors": [
+            "Failed to load resource: the server responded with a status of 404 (File not found)"
+          ],
+          "coldProxyVisibleTradeoff": "Lower-detail solid crown proxies and public ground appearance remain visible while the native Worker is pending; no claim of equal image detail during loading.",
+          "noHardwareFPSClaim": true
+        }
+      ],
+      "browser": "Chromium151.0.7922.173 / SwiftShader",
+      "viewport": [
+        1280,
+        720
+      ],
+      "DPR": 1,
+      "performanceMeasured": false,
+      "failedHarnessAttempt": {
+        "reportSHA256": "e6c8e091f962b21a6e12e9bc2cf3d1c6910594c94824a839836278eb416018b5",
+        "runnerSHA256": "51a5af3aebef333fa25da0ae88458f4231ec13d8c9e78249128c26aab34dc1e3",
+        "actualCLIExit": 1,
+        "cleanupErrors": [],
+        "PNGs": 0,
+        "cacheClearStarted": false,
+        "reason": "Balanced-only public castShadow=true assertion wrongly applied to low. Frozen renderer393/401 explicitly disables shadows at low; production remains unchanged.",
+        "replacementFunctionalStatus": "Completed actualCLIExit0 and source/cleanup/image checks; old failure preserved."
+      },
+      "applicationPassed": true,
+      "finalSummarySHA256": "5b937521c72d858ffb56a93a4595db7922861231b093b169a36b5f5eb0587a20",
+      "finalPNGCount": 7,
+      "allBrowsersAndServersClosed": true,
+      "successfulSessions": 3
+    },
+    "aesthetic": {
+      "accepted": true,
+      "pending": [],
+      "acceptanceCriteria": [
+        "Branch/crown changes readable in original same-camera wide and close views",
+        "Calm road/clearing/creek ground with no random camouflage patches",
+        "No new roof/wall/bridge penetrations, broken support or camera obstruction",
+        "Low/reentry retains complete geometry and protected source identities"
+      ],
+      "wholeRegionOrIslandCompletion": false,
+      "rearAndWideAccepted": true,
+      "rootActuallyViewedFinalRearAndWide": true,
+      "nonBlockingCosmeticFollowup": "Faint divided-panel lines remain on the wooden side wall near the window; future surface refinement, not claimed fixed.",
+      "scope": "Representative creek-to-night-sparrow scene sample only",
+      "lowAndReentryActuallyViewed": true
+    }
+  },
+  "remainingArt": [
+    "Whole-island layout and major landform silhouette remain unchanged",
+    "No broad redesign of forest/village tree distribution or understorey",
+    "Village exit and shrine-foot ground transitions remain unfinished; both tested images match originals exactly"
+  ],
+  "limits": [
+    "Fewer triangles do not establish an FPS gain; calls rise by about32% in the compared sample views",
+    "Close-view resident geometry attributes increased by1277588bytes; software attribute bytes are not physical VRAM",
+    "Reusing existing leaf images adds materials; the measured texture counts remain equal for the compared views",
+    "Static/source checks, runtime stability and aesthetic acceptance are recorded separately",
+    "Lower-detail solid crown proxies and public ground appearance remain visible while the native Worker is pending; no claim of equal image detail during loading."
+  ],
+  "kitchen": {
+    "sourceBinding": {
+      "originalHouseSHA": "41a631f9d3b243b6abff7fd7709edf9179fb6945bbb6966c0c68a3f9d6b00817",
+      "previousHouseSHA": "8381aefda9dfe329404ecba2a4621117bc54487f944bfb4ca9d7d520e9657fc6",
+      "candidateHouseSHA": "2a94edfa96da39b21fd6bde6054f3538485b039433b2023472d34f12dacaf0cf",
+      "restoringOnlyPlasterRestoresPriorChromeBody": true
+    },
+    "semantic": {
+      "shell": {
+        "plasterTriangles": 60,
+        "originalPlasterTriangles": 108,
+        "minimumTriangleArea": 0.32991897594183683,
+        "externalBoundaryChecks": 60,
+        "rearWallTriangles": 2,
+        "rearRays": 18,
+        "internalLidsAtRear": 0,
+        "windowWoodFloatsPreserved": 15552,
+        "testedFaceCentersMatchOriginalVolume": true
+      },
+      "windowRays": [
+        {
+          "name": "front-right",
+          "originalDepth": 1.1925048828125,
+          "repairedDepth": 1.722503662109375,
+          "actualRecess": 0.529998779296875
+        },
+        {
+          "name": "front-left",
+          "originalDepth": 1.1925048828125,
+          "repairedDepth": 1.722503662109375,
+          "actualRecess": 0.529998779296875
+        },
+        {
+          "name": "left-centre",
+          "originalDepth": 1.1300048828125,
+          "repairedDepth": 1.7550048828125,
+          "actualRecess": 0.625
+        },
+        {
+          "name": "right-centre",
+          "originalDepth": 1.1300048828125,
+          "repairedDepth": 1.7550048828125,
+          "actualRecess": 0.625
+        },
+        {
+          "name": "left-bay",
+          "originalDepth": 1.1300048828125,
+          "repairedDepth": 1.7550048828125,
+          "actualRecess": 0.625
+        },
+        {
+          "name": "right-bay",
+          "originalDepth": 1.1300048828125,
+          "repairedDepth": 1.7550048828125,
+          "actualRecess": 0.625
+        }
+      ]
+    },
+    "preservation": {
+      "retainedOriginalMixedTriangles": 3499,
+      "retainedFromPreviousRepairTriangles": 4183,
+      "kitchenWindowWoodFloats": 15552,
+      "bridgeCapSourcePrefixSHA": "aa8c7251042b30412ad140c7eeccc7fb030cc4dd528df27dc0d25f1a5d612a2a",
+      "nonKitchenSourceSuffixSHA": "2d3d3ee954cb3d7a06a0be79acdeb6af4189f472bd41dd49a85626a7629f2afd",
+      "capsProofSHA256": "44458ef0c3a59cbb75460dd74c916c508fbba8feefe5750f48b1b62e295dda45"
+    },
+    "resources": {
+      "houseTriangles": 4243,
+      "houseSourceBytes": 458244,
+      "sourceByteDeltaFromPrevious": -5184,
+      "newRecords": 0,
+      "newMaterials": 0,
+      "newAttributes": 0,
+      "newTextures": 0,
+      "newLights": 0,
+      "newTargets": 0
+    },
+    "descriptorSHA256": "1ad735d265ddc08f81e11289eea86b05580dce00aee6104e8a9d6f43b719be24",
+    "scope": "One original Mystia author body and its two local repair segments; no trail region, bridge suite, Worker, WebGL or browser"
+  },
+  "historicalV2_1Verification": {
+    "artifactSHA256": "9142f68442955d5c45748f9c242b2d4d2d41531e996300496f55b102ad864516",
+    "fullNode22": {
+      "artifactSHA256": "9142f68442955d5c45748f9c242b2d4d2d41531e996300496f55b102ad864516",
+      "inputCount": 181,
+      "exitCode": 0,
+      "node": "v22.23.3",
+      "seconds": 799.0562075739872,
+      "logSHA256": "c26d030d698e9c36301d594949201cef96838be4e47e39f5edf28bcf90d3f6c6",
+      "passedGroups": 38,
+      "allWorkingBuildInputsMatchFrozen": true,
+      "lastChecks": [
+        "人里精修检查通过",
+        "兽道桥头与夜雀屋结构检查通过",
+        "兽道树林与地表样板检查通过",
+        "兽道样板材质与资源检查通过"
+      ],
+      "scope": "Required full static/CPU regression; browser and visual acceptance recorded separately."
+    },
+    "webGL": {
+      "artifactSHA256": "9142f68442955d5c45748f9c242b2d4d2d41531e996300496f55b102ad864516",
+      "browser": "Chromium151.0.7922.173 / SwiftShader",
+      "viewport": [
+        1280,
+        720
+      ],
+      "DPR": 1,
+      "quality": "balanced",
+      "time": 12.5,
+      "weather": "clear",
+      "motionLabelsCharactersBloomReflections": false,
+      "AO": true,
+      "sessions": [
+        {
+          "name": "A",
+          "reportSHA256": "0ebefe9c95f66b262c9999fedaa4fd89c26bdd79ec9c03860999f3f4f5970ee9",
+          "executionSHA256": "b3e4fe4c0921f4104ad4ccdb467ed44f46b363cbf8cbd3b84fcce2d73b061d24",
+          "passed": true,
+          "cliExit": 0,
+          "cleanupErrors": [],
+          "failures": [],
+          "views": [
+            {
+              "name": "trailStream",
+              "frames": 3,
+              "firstPNGSHA256": "2389bf2157e551d962685d0e5f0206f87f4a14df84add4bcbc1e350b2542f2dd",
+              "camera": {
+                "eye": [
+                  852,
+                  43.2,
+                  203
+                ],
+                "target": [
+                  870,
+                  37.3,
+                  191
+                ],
+                "fov": 49
+              },
+              "stable": true,
+              "originalPNGSHA256": "4465f9af242d461689e84e7d6aaea6bfc8eba8e70b351dad1badffef6d14acfc"
+            },
+            {
+              "name": "mystiaCounter",
+              "frames": 3,
+              "firstPNGSHA256": "a9e611671d8c29ebd50f98da5308cbbd6e4471743bcf15e55e334a5a1b28be25",
+              "camera": {
+                "eye": [
+                  1079,
+                  46.8,
+                  258
+                ],
+                "target": [
+                  1072,
+                  45.8,
+                  272
+                ],
+                "fov": 49
+              },
+              "stable": true,
+              "originalPNGSHA256": "29d5f0242aea23c720c172230370677795f407c660a137e27ada89139b0042f3"
+            },
+            {
+              "name": "reviewVillageTrailJoin",
+              "frames": 3,
+              "firstPNGSHA256": "5d743ccebbfd16c9dd9352f06139752ae6c8eaa4d53b622c80f6ec6d18cc56fc",
+              "camera": {
+                "eye": [
+                  282,
+                  38,
+                  85
+                ],
+                "target": [
+                  332,
+                  33.5,
+                  42
+                ],
+                "fov": 49
+              },
+              "stable": true,
+              "originalPNGSHA256": "5d743ccebbfd16c9dd9352f06139752ae6c8eaa4d53b622c80f6ec6d18cc56fc"
+            }
+          ]
+        },
+        {
+          "name": "B",
+          "reportSHA256": "7dbac384f86246f30d43d21535b3a645bccf7d91d89d58f22f2944cdca891610",
+          "executionSHA256": "a020792940f64d8f76c81c6a96e6946f4cf0d6a899156fd15a8bbcc97c4bfc78",
+          "passed": true,
+          "cliExit": 0,
+          "cleanupErrors": [],
+          "failures": [],
+          "views": [
+            {
+              "name": "reviewMystiaBackCorrected",
+              "frames": 3,
+              "firstPNGSHA256": "acf9f7ae91ce678465e56738b7fa27109bf66ee50621da47ea32ac5f7b788bce",
+              "camera": {
+                "eye": [
+                  1088,
+                  47,
+                  287
+                ],
+                "target": [
+                  1072,
+                  44.4,
+                  276
+                ],
+                "fov": 49
+              },
+              "stable": true,
+              "originalPNGSHA256": "3dcfb4a038167f7fed125907d5f782e6a5f98a0a3a02f9141061c30c66bf57a2"
+            },
+            {
+              "name": "reviewShrineTrailJoin",
+              "frames": 3,
+              "firstPNGSHA256": "a81f33fa52a85b62c729da5e8f1afb4b6987905befd9be7fd6e2eadb817eb1bf",
+              "camera": {
+                "eye": [
+                  1430,
+                  157,
+                  182
+                ],
+                "target": [
+                  1458,
+                  155.5,
+                  160
+                ],
+                "fov": 49
+              },
+              "stable": true,
+              "originalPNGSHA256": "a81f33fa52a85b62c729da5e8f1afb4b6987905befd9be7fd6e2eadb817eb1bf"
+            }
+          ]
+        }
+      ]
+    },
+    "interimBrowserSummarySHA256": "46f557cfdd7bf9b5cf187374d45a9b529e118c94475551bdf320af783144d247",
+    "applicationPassIsNotAestheticAcceptance": true
+  },
+  "previews": {
+    "preview/trail-scene-before.png": {
+      "sha256": "3a06d2ff2b1a881b8ecb1c6f1cc189ece28deb3fe26d3002bf901dac8f98387a",
+      "bytes": 813722,
+      "artifact": "8fd6a6489b1c5260b7942d8e50f56eff646cb830d9ab29d785c01fb1de6750e6"
+    },
+    "preview/trail-scene-rear.png": {
+      "sha256": "e2f07ebc710007f03ff34bebb8b0f0139366f1b4e7e9501647b1eadd51b9fb9b",
+      "bytes": 742794,
+      "artifact": "a2b85c427607f0d74088c796a8881ea3892bb619e4eba48091488e9c0bcb2a5d",
+      "source": "/workspace/scratch/texture-experiment/candidate-v2.2-rear/reviewMystiaBackCorrected-candidate-frame-1.png"
+    },
+    "preview/trail-scene-after.png": {
+      "sha256": "1e1175b01edcc7e5a3153a4bf0e66c8f2089d71adfa4bcbb309ac8f5dccc6db4",
+      "bytes": 814898,
+      "artifact": "a2b85c427607f0d74088c796a8881ea3892bb619e4eba48091488e9c0bcb2a5d",
+      "source": "/workspace/scratch/texture-experiment/candidate-v2.2-wide/reviewTrailScene-candidate-frame-1.png"
+    }
+  },
+  "historicalCameraCosts": {
+    "artifactSHA256": "9142f68442955d5c45748f9c242b2d4d2d41531e996300496f55b102ad864516",
+    "scope": "Historical v2 wide and v2.1 stream counts; new v2.2 has48 fewer kitchen triangles. Final v2.2 wide remains to be measured. Software submission/attribute counts, not hardware FPS or physical VRAM.",
+    "wideHistoricalV2": {
+      "calls": {
+        "original": 270,
+        "candidate": 358,
+        "delta": 88
+      },
+      "totalCalls": {
+        "original": 272,
+        "candidate": 360,
+        "delta": 88
+      },
+      "triangles": {
+        "original": 739796,
+        "candidate": 627730,
+        "delta": -112066
+      },
+      "totalTriangles": {
+        "original": 739800,
+        "candidate": 627734,
+        "delta": -112066
+      },
+      "geometries": {
+        "original": 134,
+        "candidate": 156,
+        "delta": 22
+      },
+      "textures": {
+        "original": 12,
+        "candidate": 12,
+        "delta": 0
+      },
+      "residentAttributeBytes": {
+        "original": 11630716,
+        "candidate": 11613044,
+        "delta": -17672
+      }
+    },
+    "stream": {
+      "calls": {
+        "original": 162,
+        "candidate": 214,
+        "delta": 52
+      },
+      "totalCalls": {
+        "original": 164,
+        "candidate": 216,
+        "delta": 52
+      },
+      "triangles": {
+        "original": 2055137,
+        "candidate": 1239181,
+        "delta": -815956
+      },
+      "totalTriangles": {
+        "original": 2055141,
+        "candidate": 1239185,
+        "delta": -815956
+      },
+      "geometries": {
+        "original": 107,
+        "candidate": 143,
+        "delta": 36
+      },
+      "textures": {
+        "original": 11,
+        "candidate": 11,
+        "delta": 0
+      },
+      "residentAttributeBytes": {
+        "original": 11720700,
+        "candidate": 12998288,
+        "delta": 1277588
+      }
+    }
+  },
+  "fixedCameraCosts": {
+    "baselineCommit": "040e5369b1ef0d5f45242ff4e1193ab0874e2f2b",
+    "candidateArtifactSHA256": "a2b85c427607f0d74088c796a8881ea3892bb619e4eba48091488e9c0bcb2a5d",
+    "views": [
+      {
+        "view": "reviewTrailScene",
+        "sameCameraOptionsLightsScene": true,
+        "counters": {
+          "calls": {
+            "before": 270,
+            "after": 358,
+            "delta": 88
+          },
+          "totalCalls": {
+            "before": 272,
+            "after": 360,
+            "delta": 88
+          },
+          "triangles": {
+            "before": 739796,
+            "after": 627634,
+            "delta": -112162
+          },
+          "totalTriangles": {
+            "before": 739800,
+            "after": 627638,
+            "delta": -112162
+          }
+        },
+        "resources": {
+          "geometries": {
+            "before": 134,
+            "after": 156,
+            "delta": 22
+          },
+          "textures": {
+            "before": 12,
+            "after": 12,
+            "delta": 0
+          },
+          "programs": {
+            "before": 118,
+            "after": 128,
+            "delta": 10
+          },
+          "attributeBytes": {
+            "before": 11630716,
+            "after": 11607860,
+            "delta": -22856
+          },
+          "geometryEntries": {
+            "before": 131,
+            "after": 153,
+            "delta": 22
+          }
+        }
+      },
+      {
+        "view": "reviewMystiaBackCorrected",
+        "sameCameraOptionsLightsScene": true,
+        "counters": {
+          "calls": {
+            "before": 930,
+            "after": 990,
+            "delta": 60
+          },
+          "totalCalls": {
+            "before": 932,
+            "after": 992,
+            "delta": 60
+          },
+          "triangles": {
+            "before": 2272426,
+            "after": 1546166,
+            "delta": -726260
+          },
+          "totalTriangles": {
+            "before": 2272430,
+            "after": 1546170,
+            "delta": -726260
+          }
+        },
+        "resources": {
+          "geometries": {
+            "before": 643,
+            "after": 680,
+            "delta": 37
+          },
+          "textures": {
+            "before": 12,
+            "after": 12,
+            "delta": 0
+          },
+          "programs": {
+            "before": 173,
+            "after": 182,
+            "delta": 9
+          },
+          "attributeBytes": {
+            "before": 63577490,
+            "after": 64903074,
+            "delta": 1325584
+          },
+          "geometryEntries": {
+            "before": 641,
+            "after": 679,
+            "delta": 38
+          }
+        }
+      }
+    ],
+    "scope": "Same named frame/stat fields in actual cold captures. Software WebGL submission/resource counts; no hardware FPS or physical VRAM; wall times not used.",
+    "rootReviewSHA256": "febd2ad34c1a2547e54576b39cc6e47a3faffa55473ff85dc535a0fd7ca5deba"
+  },
+  "delivery": {
+    "parent": "040e5369b1ef0d5f45242ff4e1193ab0874e2f2b",
+    "mode": "Direct main, no PR, as authorized",
+    "remoteCI": "Pending this commit; previous main040e536 remote acceptance is separately recorded."
+  }
+}
