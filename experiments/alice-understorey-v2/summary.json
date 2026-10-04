@@ -1,0 +1,202 @@
+{
+  "checkpoint": "alice-understorey-v2",
+  "base": "94865cb1dbf2348bfe5d51e2dfc37f22961352b3",
+  "status": "rejected-art; isolated recoverable checkpoint",
+  "attempts": {
+    "V1": {
+      "technicalCLIExitCode": 0,
+      "artAccepted": false,
+      "reason": "Sparse isolated leaf points; no coherent left slope/tree-foot connection."
+    },
+    "V2": {
+      "technicalCLIExitCode": 0,
+      "artAccepted": false,
+      "reason": "Left slope remains a sparse diagonal row without natural low/middle layers; right edge improved and building/yard clearance retained."
+    }
+  },
+  "decision": {
+    "mergeMain": false,
+    "thirdDraft": false,
+    "longRegressionExecuted": false,
+    "checkpointOnly": true
+  },
+  "sourceSHA256": {
+    "project.json": "3b1279db6e1eb0922b5fe366ac509595b4666614b8d188a488ba386c3b5503a0",
+    "src/alice-understorey-ground.js": "86c535c6f05ffad3f52aaaf6462fb2e9a258bfb52fa6ed13f9a2114a61a9e7d4",
+    "src/alice-understorey.js": "79d6028e5cc6954daa2b9725544bbe2eb080cf2cfece83f60461a2b08bcb5e8b",
+    "src/alice-understorey-renderer.js": "0b7558c13988dbc1922ecaa64256a83ee57b0445685bd97a0f87e1c1024ac1f5"
+  },
+  "scope": {
+    "sites": 28,
+    "shrubs": 12,
+    "ferns": 16,
+    "records": 4,
+    "nearTriangles": 4880,
+    "farTriangles": 904,
+    "geometryBytes": 624672,
+    "terrainSources": [
+      "island:terrain:-1280:-512",
+      "island:terrain:-1280:-512:far",
+      "island:terrain:-1280:-256",
+      "island:terrain:-1280:-256:far"
+    ],
+    "component": "alice-understorey",
+    "nativeAndColdTreesChanged": false,
+    "buildRegionWrapperAdded": false,
+    "newTexturesLightsRenderTargets": 0
+  },
+  "cpuV2": {
+    "passed": true,
+    "node": "v22.23.3",
+    "geometry": {
+      "minArea": 0.0002857781946659088,
+      "maxNormalError": 4.058391933625671e-08,
+      "maxSourceSphereExcess": -38.518710706691536,
+      "maxFootError": 7.3377293301479796e-06
+    },
+    "clearance": {
+      "minYardGap": 5.662325267042627,
+      "minRoadGap": 51.238772926361015,
+      "minRootGap": 0.7750751496148469
+    },
+    "actualPerVertexYardGap": 7.437442823649065,
+    "conservativeRouteGap": 52.566537773673296,
+    "footCentersInsideViewport": true,
+    "qualification": "Finite saved actual-terrain arrays; no world/region or visual acceptance implied."
+  },
+  "integrationV1Reused": {
+    "passed": true,
+    "milliseconds": 501.598118,
+    "checks": {
+      "productionPushPreservesAllFour": true,
+      "privatePublish": true,
+      "lateActualHelperFailureRollback": true,
+      "retryPublishesAllFour": true,
+      "idempotent": true,
+      "originalTerrainArraysUnchanged": true,
+      "nativeBuilderReferenceUnchanged": true,
+      "fullRendererWantedTrials": 16
+    },
+    "sourceGroundSHA256": "2a9b8dfc2b76caf7e09d73fe5dd990c1eb6d5ca9b4e391084dd7c6baa76b211f",
+    "reuseReason": "Wrapper, renderer, project inputs unchanged; V2 only layout scale/ROI/revision changed with fresh geometry/contact/clearance proof.",
+    "qualification": "Executed against V1 ground, not rerun on V2; wrapper/renderer/project unchanged and V2 geometry helpers byte-identical."
+  },
+  "sameView": {
+    "view": "alice",
+    "eye": [
+      -1180,
+      107,
+      -207
+    ],
+    "target": [
+      -1138,
+      91,
+      -260
+    ],
+    "fov": 49,
+    "viewport": [
+      1280,
+      720
+    ],
+    "dpr": 1,
+    "options": {
+      "quality": "balanced",
+      "lighting": "neutral",
+      "weather": "clear",
+      "clock": 12.5,
+      "motion": false,
+      "labels": false,
+      "characters": false,
+      "bloom": false,
+      "reflections": false,
+      "ao": true,
+      "vegetation": true
+    },
+    "baseline": {
+      "calls": 356,
+      "triangles": 823532,
+      "residentAttributeMiB": 23.768997192382812,
+      "residentAttributeBytes": 24923600,
+      "actualCLIExitCode": 0,
+      "fullSourceScanExecuted": false,
+      "performanceMeasured": false
+    },
+    "V1": {
+      "calls": 358,
+      "triangles": 828412,
+      "residentAttributeMiB": 24.271621704101562,
+      "residentAttributeBytes": 25450640,
+      "actualCLIExitCode": 0,
+      "fullSourceScanExecuted": false,
+      "performanceMeasured": false
+    },
+    "V2": {
+      "calls": 358,
+      "triangles": 828412,
+      "residentAttributeMiB": 24.271621704101562,
+      "residentAttributeBytes": 25450640,
+      "actualCLIExitCode": 0,
+      "fullSourceScanExecuted": false,
+      "performanceMeasured": false
+    },
+    "qualification": "Single fixed-view submission counts and resident-attribute estimate, not FPS or hardware memory."
+  },
+  "frozenRuntime": {
+    "HTMLSHA256": "b7633a126b103b67ead36f155d4d8a0db1df5680a304f15096ea30c0f2ef46c3",
+    "HTMLBytes": 36343678,
+    "releaseSHA256": "f205d26a2e7efb082d62aa4584792ac30ab8361cb94eca8ed5b9d010fd4ccda6",
+    "inputCount": 196,
+    "buildActualExitCode": 0,
+    "baselineHTMLSHA256": "092c07365756ad61676ced9c1eaad096a12503abc86645980aa8afe6ab4ee06f"
+  },
+  "imagesSHA256": {
+    "before.png": "7390de0618a31bb008198124f1e28e982532a1b36293186b6308c02699672993",
+    "rejected-v2.png": "8ff44592db583b487320b4dee5655d6df085d2a4a75f51fa392c2656858a9992"
+  },
+  "evidenceScratch": [
+    {
+      "path": "/workspace/scratch/alice-understorey-v2/cpu-report.json",
+      "sha256": "373434a349fc8c464f3482803559d6b6053c09cc72632bbaff603693de42ebfc"
+    },
+    {
+      "path": "/workspace/scratch/alice-understorey-v2/footprint-proof.json",
+      "sha256": "e4c1cec4a54f0673dc2981d3302c2efd86767977c52d11adcf065865cd04ec88"
+    },
+    {
+      "path": "/workspace/scratch/alice-understorey-integration-v1/cpu-report.json",
+      "sha256": "3ebfd2a68a3378dd706d34537465c2e96563653116bf6f06cd8dc62fea70e51b"
+    },
+    {
+      "path": "/workspace/scratch/alice-understorey-v2/change-scope.json",
+      "sha256": "5f173b8e522a5f18eb013add0552171fcf17cb1d8a5789d9a6b5cc529cc65e4b"
+    },
+    {
+      "path": "/workspace/scratch/alice-understorey-runtime-v2/manifest.json",
+      "sha256": "8db3eabfc6a4dacc1f5f08c3b406dae5d5098f51e8f5c0b4155dfb3ad3abac76"
+    },
+    {
+      "path": "/workspace/scratch/texture-experiment/alice-understorey-baseline-94865cb/report.json",
+      "sha256": "d02e544c6d47f85704f6f87e38addd6807a8913d1333e014c6f473388c935401"
+    },
+    {
+      "path": "/workspace/scratch/texture-experiment/alice-understorey-v1-visual/report.json",
+      "sha256": "784ab39feed5e2c47bb3bee2c6faf6c324db75935e122eeb3f078b0c79ed67bd"
+    },
+    {
+      "path": "/workspace/scratch/texture-experiment/alice-understorey-v1-visual/root-art-rejection.json",
+      "sha256": "38808d9bd72a1525422539b22a277423f851c41eff0be2b0e250ab1ca874c574"
+    },
+    {
+      "path": "/workspace/scratch/texture-experiment/alice-understorey-v2-visual/report.json",
+      "sha256": "fa02966113ed2611792281fae26ab13f3bac47ba8bc28052c992b95481a579a2"
+    }
+  ],
+  "notRun": [
+    "long regression",
+    "full source scan",
+    "low/night/other views",
+    "resource unload/reentry stress",
+    "V3"
+  ],
+  "checkpointAssembly": "Only archival text and two image copies written; four candidate production inputs untouched; no tests/build/world/GPU run."
+}
