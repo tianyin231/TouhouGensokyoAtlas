@@ -1,0 +1,45 @@
+{
+  "reviewedUTC": "2026-10-04T04:57:56.532414+00:00",
+  "workflowChangeCommit": "55992ca36321306b7ed7bb01ca8d0de97bb542e3",
+  "runtimeSceneCommit": "f1344de3da5f9291d7a996ce2e511570d63c296f",
+  "reason": "Pages run 37177186364 exceeded the 15-minute limit. Reviewed commit 55992ca changes only the timeout from 15 to 25 minutes, retaining every check and permission. Run 37178110786 then exposed five inherited-file guards holding the old workflow digest. This explicit review updates only those five protected workflow digests.",
+  "workflow": ".github/workflows/pages.yml",
+  "beforeSHA256": "35ce8d4f6be1c78b44c9bad0b9816275cfd48467182b0cccb32621bebd6d9899",
+  "afterSHA256": "8c39a09c897807aed15e1408740c12a6bb172e7d00d2b396d7ba6fad9ff7e6e1",
+  "updatedFixtures": [
+    "tools/backdoor-baseline.json",
+    "tools/kasen-baseline.json",
+    "tools/current-hell-baseline.json",
+    "tools/rainbow-mine-baseline.json",
+    "tools/highland-baseline.json"
+  ],
+  "onlyProtectedWorkflowDigestChanged": true,
+  "geometryExpectationsUnchanged": true,
+  "otherProtectedFilesUnchanged": true,
+  "testAutoRefresh": false,
+  "htmlSHA256": "a2b85c427607f0d74088c796a8881ea3892bb619e4eba48091488e9c0bcb2a5d",
+  "htmlBytes": 36135748,
+  "buildInputCount": 181,
+  "changedBuildInputs": [
+    "tools/backdoor-baseline.json",
+    "tools/kasen-baseline.json",
+    "tools/current-hell-baseline.json",
+    "tools/rainbow-mine-baseline.json",
+    "tools/highland-baseline.json"
+  ],
+  "evidence": [
+    "https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37177186364/job/111362151816",
+    "https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37178110786/job/111364894584"
+  ],
+  "validation": {
+    "node": "v22.23.3",
+    "fullCheckExitCode": 0,
+    "passedGroups": 38,
+    "startedUTC": "2026-10-04T04:58:11.020793+00:00",
+    "endedUTC": "2026-10-04T05:11:34.433411+00:00",
+    "elapsedSeconds": 803.4126309580024,
+    "checkLogSHA256": "7c9fbbd459ac01f0f4c6f30c93ee34f54eeadaf6e9ac6f4a517a2e443a8070cf",
+    "inputHashesUnchanged": true,
+    "runtimeHTMLUnchanged": true
+  }
+}
