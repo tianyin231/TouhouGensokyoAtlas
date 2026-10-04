@@ -1,0 +1,455 @@
+{
+  "passed": true,
+  "failures": [],
+  "node": "v22.23.3",
+  "sourceSHA256": {
+    "src/lake-shore-plants.js": "b6a5f34253e5a3f5dd158692c899f66f0fce563366f7b9a2c4736c7e151e70a1",
+    "src/lake-shore-ground.js": "13596ee9a46c072c2ebe948ba7191226432ff7cf4f507d6b935813fd70c8110b"
+  },
+  "worldBuilt": false,
+  "buildRegionCalls": 0,
+  "worker": false,
+  "gpu": false,
+  "visualAcceptance": false,
+  "rows": [
+    {
+      "label": "cedar:near",
+      "triangles": 126,
+      "bytes": 13608,
+      "nonfinite": 0,
+      "degenerate": 0,
+      "normal": 0
+    },
+    {
+      "label": "cedar:far",
+      "triangles": 54,
+      "bytes": 5832,
+      "nonfinite": 0,
+      "degenerate": 0,
+      "normal": 0
+    },
+    {
+      "label": "broadleaf:near",
+      "triangles": 1677,
+      "bytes": 181116,
+      "nonfinite": 0,
+      "degenerate": 0,
+      "normal": 0
+    },
+    {
+      "label": "broadleaf:far",
+      "triangles": 372,
+      "bytes": 40176,
+      "nonfinite": 0,
+      "degenerate": 0,
+      "normal": 0
+    },
+    {
+      "label": "willow:near",
+      "triangles": 3948,
+      "bytes": 426384,
+      "nonfinite": 0,
+      "degenerate": 0,
+      "normal": 0
+    },
+    {
+      "label": "willow:far",
+      "triangles": 543,
+      "bytes": 58644,
+      "nonfinite": 0,
+      "degenerate": 0,
+      "normal": 0
+    },
+    {
+      "label": "proxy:cedar",
+      "triangles": 45,
+      "bytes": 4860,
+      "nonfinite": 0,
+      "degenerate": 0,
+      "normal": 0
+    },
+    {
+      "label": "proxy:broadleaf",
+      "triangles": 73,
+      "bytes": 7884,
+      "nonfinite": 0,
+      "degenerate": 0,
+      "normal": 0
+    },
+    {
+      "label": "proxy:willow",
+      "triangles": 93,
+      "bytes": 10044,
+      "nonfinite": 0,
+      "degenerate": 0,
+      "normal": 0
+    },
+    {
+      "label": "lake-shore:understorey:near",
+      "triangles": 1863,
+      "bytes": 201204,
+      "nonfinite": 0,
+      "degenerate": 0,
+      "normal": 0
+    },
+    {
+      "label": "lake-shore:understorey:far",
+      "triangles": 1407,
+      "bytes": 151956,
+      "nonfinite": 0,
+      "degenerate": 0,
+      "normal": 0
+    }
+  ],
+  "sites": [
+    {
+      "id": "lake-shore:0",
+      "group": "front",
+      "kind": "shrub",
+      "x": 683.6,
+      "z": -565.7,
+      "scale": 1.12,
+      "angle": 0,
+      "nearTerrainY": 101.58302192687988,
+      "screen": [
+        1073.2702975504671,
+        662.4265643507936
+      ],
+      "depth": 42.16165759716023
+    },
+    {
+      "id": "lake-shore:1",
+      "group": "front",
+      "kind": "shrub",
+      "x": 686,
+      "z": -566.2,
+      "scale": 1.05,
+      "angle": 2.399,
+      "nearTerrainY": 101.7326545715332,
+      "screen": [
+        1076.976750390048,
+        646.9917281658902
+      ],
+      "depth": 44.220680287475034
+    },
+    {
+      "id": "lake-shore:2",
+      "group": "front",
+      "kind": "shrub",
+      "x": 686.4,
+      "z": -568.6,
+      "scale": 1.12,
+      "angle": 4.798,
+      "nearTerrainY": 101.69913406372069,
+      "screen": [
+        1034.020188863109,
+        636.5208417458655
+      ],
+      "depth": 46.19348469936949
+    },
+    {
+      "id": "lake-shore:3",
+      "group": "front",
+      "kind": "shrub",
+      "x": 682.5,
+      "z": -568.7,
+      "scale": 1.05,
+      "angle": 7.197,
+      "nearTerrainY": 101.43295478820801,
+      "screen": [
+        1007.3023505229482,
+        656.7871868087813
+      ],
+      "depth": 43.489461025464834
+    },
+    {
+      "id": "lake-shore:4",
+      "group": "middle",
+      "kind": "shrub",
+      "x": 696.2,
+      "z": -578.9,
+      "scale": 1.12,
+      "angle": 9.596,
+      "nearTerrainY": 103.59577808380129,
+      "screen": [
+        935.8007154925576,
+        553.160988600548
+      ],
+      "depth": 60.46404299163146
+    },
+    {
+      "id": "lake-shore:5",
+      "group": "middle",
+      "kind": "shrub",
+      "x": 698.3,
+      "z": -579.8,
+      "scale": 1.1,
+      "angle": 11.995000000000001,
+      "nearTerrainY": 104.08332357406616,
+      "screen": [
+        936.3079573206863,
+        541.3719773690532
+      ],
+      "depth": 62.60425284119128
+    },
+    {
+      "id": "lake-shore:6",
+      "group": "middle",
+      "kind": "shrub",
+      "x": 699.8,
+      "z": -582,
+      "scale": 1.1,
+      "angle": 14.394,
+      "nearTerrainY": 104.3844289779663,
+      "screen": [
+        918.2913910599041,
+        531.5691211984398
+      ],
+      "depth": 65.22804755743914
+    },
+    {
+      "id": "lake-shore:7",
+      "group": "middle",
+      "kind": "shrub",
+      "x": 695.8,
+      "z": -581.6,
+      "scale": 1.12,
+      "angle": 16.793,
+      "nearTerrainY": 103.16887035369871,
+      "screen": [
+        900.195854136334,
+        554.3426723840279
+      ],
+      "depth": 62.06686626986743
+    },
+    {
+      "id": "lake-shore:8",
+      "group": "pier",
+      "kind": "shrub",
+      "x": 710.4,
+      "z": -610.4,
+      "scale": 1.08,
+      "angle": 19.192,
+      "nearTerrainY": 107.00128669738768,
+      "screen": [
+        727.6647343428676,
+        466.70302269559437
+      ],
+      "depth": 92.84027476601636
+    },
+    {
+      "id": "lake-shore:9",
+      "group": "pier",
+      "kind": "shrub",
+      "x": 712.8,
+      "z": -611.4,
+      "scale": 1.14,
+      "angle": 21.591,
+      "nearTerrainY": 107.7549078941345,
+      "screen": [
+        733.569232336576,
+        458.4504609150853
+      ],
+      "depth": 95.27315796810535
+    },
+    {
+      "id": "lake-shore:10",
+      "group": "pier",
+      "kind": "shrub",
+      "x": 711.1,
+      "z": -613.3,
+      "scale": 1.1,
+      "angle": 23.990000000000002,
+      "nearTerrainY": 107.36571989059449,
+      "screen": [
+        712.3686218757472,
+        461.5879690149025
+      ],
+      "depth": 95.39222606927956
+    },
+    {
+      "id": "lake-shore:11",
+      "group": "front",
+      "kind": "reed",
+      "x": 681.4,
+      "z": -569.9,
+      "scale": 1.45,
+      "angle": 26.389,
+      "nearTerrainY": 101.34737820625304,
+      "screen": [
+        977.274044428485,
+        657.9564558246565
+      ],
+      "depth": 43.55175876030353
+    },
+    {
+      "id": "lake-shore:12",
+      "group": "front",
+      "kind": "reed",
+      "x": 688.7,
+      "z": -565.2,
+      "scale": 1.35,
+      "angle": 28.788,
+      "nearTerrainY": 102.05588903427125,
+      "screen": [
+        1110.6437501048986,
+        634.4180783259168
+      ],
+      "depth": 45.442103434598266
+    },
+    {
+      "id": "lake-shore:13",
+      "group": "middle",
+      "kind": "reed",
+      "x": 693.8,
+      "z": -582.4,
+      "scale": 1.5,
+      "angle": 31.187,
+      "nearTerrainY": 102.56873302459715,
+      "screen": [
+        878.3968365992882,
+        564.4709512313673
+      ],
+      "depth": 61.19089525914876
+    },
+    {
+      "id": "lake-shore:14",
+      "group": "middle",
+      "kind": "reed",
+      "x": 699.6,
+      "z": -576.5,
+      "scale": 1.55,
+      "angle": 33.586,
+      "nearTerrainY": 104.83385047912599,
+      "screen": [
+        984.9900175182202,
+        535.1202316486497
+      ],
+      "depth": 61.22849679091337
+    },
+    {
+      "id": "lake-shore:15",
+      "group": "middle",
+      "kind": "reed",
+      "x": 701.7,
+      "z": -580.7,
+      "scale": 1.45,
+      "angle": 35.985,
+      "nearTerrainY": 105.11617136001588,
+      "screen": [
+        943.5479271780832,
+        521.7658090216165
+      ],
+      "depth": 65.68567672350457
+    },
+    {
+      "id": "lake-shore:16",
+      "group": "middle",
+      "kind": "reed",
+      "x": 696.4,
+      "z": -584.3,
+      "scale": 1.45,
+      "angle": 38.384,
+      "nearTerrainY": 103.07609748840332,
+      "screen": [
+        872.4954578967934,
+        549.4923128801939
+      ],
+      "depth": 64.39063638619893
+    },
+    {
+      "id": "lake-shore:17",
+      "group": "pier",
+      "kind": "reed",
+      "x": 708.3,
+      "z": -611.4,
+      "scale": 1.4,
+      "angle": 40.783,
+      "nearTerrainY": 106.44583325386046,
+      "screen": [
+        709.6384726961305,
+        472.1580900813782
+      ],
+      "depth": 92.03588242136789
+    },
+    {
+      "id": "lake-shore:18",
+      "group": "pier",
+      "kind": "reed",
+      "x": 710.3,
+      "z": -607.8,
+      "scale": 1.5,
+      "angle": 43.182,
+      "nearTerrainY": 106.8565041065216,
+      "screen": [
+        744.914378615834,
+        469.6043966319993
+      ],
+      "depth": 90.93288347460862
+    },
+    {
+      "id": "lake-shore:19",
+      "group": "pier",
+      "kind": "reed",
+      "x": 714.8,
+      "z": -611.8,
+      "scale": 1.55,
+      "angle": 45.581,
+      "nearTerrainY": 108.35889806747434,
+      "screen": [
+        741.0778004272074,
+        452.2847867045384
+      ],
+      "depth": 96.99448159752001
+    },
+    {
+      "id": "lake-shore:20",
+      "group": "pier",
+      "kind": "reed",
+      "x": 711.8,
+      "z": -615.6,
+      "scale": 1.45,
+      "angle": 47.980000000000004,
+      "nearTerrainY": 107.69688425064086,
+      "screen": [
+        701.568941120215,
+        457.30618439377645
+      ],
+      "depth": 97.52037562624537
+    }
+  ],
+  "rejected": [],
+  "colors": {
+    "island:terrain:512:-768": 27,
+    "island:terrain:512:-768:far": 7
+  },
+  "budgets": {
+    "near": 1863,
+    "far": 1407
+  },
+  "camera": {
+    "eye": [
+      637,
+      117.2,
+      -552
+    ],
+    "target": [
+      791,
+      125,
+      -705
+    ],
+    "fov": 49
+  },
+  "addedRecords": [
+    {
+      "id": "lake-shore:understorey:near",
+      "terrainSource": "island:terrain:512:-768",
+      "material": "matte"
+    },
+    {
+      "id": "lake-shore:understorey:far",
+      "terrainSource": "island:terrain:512:-768:far",
+      "material": "matte"
+    }
+  ]
+}

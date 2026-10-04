@@ -45,7 +45,10 @@
     "src/forest-canopy-ground.js",
     "src/forest-canopy-road.js",
     "src/forest-crown-rollout.js",
-    "src/forest-canopy.js"
+    "src/forest-canopy.js",
+    "src/lake-shore-plants.js",
+    "src/lake-shore-ground.js",
+    "src/lake-shore.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",
@@ -65,6 +68,7 @@
     "src/forest-path-colors.js",
     "src/forest-path-renderer.js",
     "src/forest-canopy-renderer.js",
+    "src/lake-shore-renderer.js",
     "src/render-recovery.js",
     "src/render-diagnostics.js"
   ],

@@ -1,0 +1,24 @@
+{
+  "frozenUTC": "2026-10-04T15:38:13.324353+00:00",
+  "sourceRoot": "/workspace/lake-shore-refinement",
+  "base": "94865cb1dbf2348bfe5d51e2dfc37f22961352b3",
+  "HTML": "/workspace/scratch/lake-shore-runtime-v2/TouhouGensokyoAtlas-v0.29.html",
+  "HTMLSHA256": "8f7111cb61c6cd75857d773eb0bbb637790d9eba8f8072d9b5196380b0638715",
+  "HTMLBytes": 36360301,
+  "release": "/workspace/scratch/lake-shore-runtime-v2/release.json",
+  "releaseSHA256": "c897bb3157432fc87bafbb667abcbec0a1d9f837f78906a297bae135cde63d54",
+  "inputCount": 197,
+  "inputHashesVerified": true,
+  "sourceSHA256": {
+    "project.json": "9e339fd5b014fcecbe0d3cdcd6351abd2a545e8a7b03c432c20b85c8c3eb13ee",
+    "src/lake-shore.js": "f378fb0312fbb7f011f43700c6d7fdefbe53699b0149b3398aa5300c66a63c43",
+    "src/lake-shore-plants.js": "b6a5f34253e5a3f5dd158692c899f66f0fce563366f7b9a2c4736c7e151e70a1",
+    "src/lake-shore-ground.js": "13596ee9a46c072c2ebe948ba7191226432ff7cf4f507d6b935813fd70c8110b",
+    "src/lake-shore-renderer.js": "85f26e2f55192a5c7891ad472b958c1e3db3b8cf70a03b664217d2c1152ba095"
+  },
+  "buildActualExitCode": 0,
+  "designerCPU": "/workspace/scratch/lake-shore-v2/cpu-report.json",
+  "integrationCPU": "/workspace/scratch/lake-shore-integration-v2/cpu-report.json",
+  "artAccepted": false,
+  "fullRegressionExecuted": false
+}

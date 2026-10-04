@@ -1,0 +1,19 @@
+{
+  "attempt": 2,
+  "reviewedUTC": "2026-10-04T15:41:04.548622+00:00",
+  "HTMLSHA256": "8f7111cb61c6cd75857d773eb0bbb637790d9eba8f8072d9b5196380b0638715",
+  "PNG": "/workspace/scratch/texture-experiment/lake-shore-v2-visual/scarletLake-candidate.png",
+  "PNG_SHA256": "9a52f03a8a1bcffac4e4ceac37265a71ed8e1d34cd248170e4b3fa0bde4534f6",
+  "personallyViewed": true,
+  "accepted": false,
+  "improvementsOverV1": [
+    "Broadleaf crowns have clearer vertical volume.",
+    "Cedar tier silhouettes restored; willow leaf blocks thinner.",
+    "Low planting is grouped into three masses instead of scattered rows."
+  ],
+  "remainingReasons": [
+    "Low shrub masses still read as flat green stone-like discs, below the accepted foliage reference.",
+    "The foreground shore stones to tree-foot transition remains visually sparse and abrupt across the whole frame."
+  ],
+  "decision": "Stop lake V2. No V3, long regression, or main publication; preserve isolated exact source, images and reproduction. Continue independent Alice understorey from accepted main."
+}

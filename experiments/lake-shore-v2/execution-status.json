@@ -1,0 +1,10 @@
+{
+  "actualCLIExitCode": 0,
+  "execSessionID": 36328,
+  "observedAtUTC": "2026-10-04T15:41:04.548622+00:00",
+  "runner": "/workspace/scratch/lake-shore-v2-oneview.py",
+  "runnerSHA256": "64ed9da8a8d3072effc8d1fa45937b22bfe43e9527f9eee796b8f6926949f0e7",
+  "reportSHA256": "7982d10460270ea06fd1f90a5e23c91e1baed1778912360ee02de3a50e988156",
+  "requestedPNGs": 1,
+  "note": "Exit code observed directly from exec/write_stdin; visual verdict is separate."
+}

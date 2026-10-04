@@ -1,0 +1,261 @@
+{
+  "passed": true,
+  "node": "v22.23.3",
+  "sourceSHA": {
+    "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+    "src/surface-contact.js": "719a315917b55fa5025ec32659509b5be8965d8a577cdfc92c63c96db4dedf5e",
+    "src/lake-shore-plants.js": "b6a5f34253e5a3f5dd158692c899f66f0fce563366f7b9a2c4736c7e151e70a1",
+    "src/lake-shore-ground.js": "13596ee9a46c072c2ebe948ba7191226432ff7cf4f507d6b935813fd70c8110b",
+    "src/lake-shore.js": "f378fb0312fbb7f011f43700c6d7fdefbe53699b0149b3398aa5300c66a63c43",
+    "src/lake-shore-renderer.js": "85f26e2f55192a5c7891ad472b958c1e3db3b8cf70a03b664217d2c1152ba095",
+    "project.json": "9e339fd5b014fcecbe0d3cdcd6351abd2a545e8a7b03c432c20b85c8c3eb13ee"
+  },
+  "native": {
+    "selected": 14,
+    "retained": 94,
+    "allMatricesRGBOrdinalsMetadataExact": true,
+    "allOriginalWoodTrianglesExact": true,
+    "originalWoodTrianglesChecked": 11592,
+    "sharedViews": 6,
+    "expandedNearTriangles": 20985,
+    "expandedFarTriangles": 3813,
+    "transformedVertices": 74394,
+    "minimumSphereMargin": 11.446509468123914
+  },
+  "cold": {
+    "selected": 14,
+    "retained": 94,
+    "allMatricesRGBExact": true,
+    "records": 4
+  },
+  "production": {
+    "emptyLegacyExact": true,
+    "atomicLateFailure": true,
+    "retryAfterFailure": true,
+    "pushOriginalStatementPreservesAdditions": true,
+    "idempotent": true,
+    "workerPrivateCacheUndetached": true,
+    "wantedTrials": 8
+  },
+  "ground": {
+    "revision": 2,
+    "bounds": [
+      648,
+      -752,
+      768,
+      -548
+    ],
+    "sites": [
+      {
+        "id": "lake-shore:0",
+        "group": "front",
+        "kind": "shrub",
+        "x": 683.6,
+        "z": -565.7,
+        "scale": 1.12,
+        "angle": 0
+      },
+      {
+        "id": "lake-shore:1",
+        "group": "front",
+        "kind": "shrub",
+        "x": 686,
+        "z": -566.2,
+        "scale": 1.05,
+        "angle": 2.399
+      },
+      {
+        "id": "lake-shore:2",
+        "group": "front",
+        "kind": "shrub",
+        "x": 686.4,
+        "z": -568.6,
+        "scale": 1.12,
+        "angle": 4.798
+      },
+      {
+        "id": "lake-shore:3",
+        "group": "front",
+        "kind": "shrub",
+        "x": 682.5,
+        "z": -568.7,
+        "scale": 1.05,
+        "angle": 7.197
+      },
+      {
+        "id": "lake-shore:4",
+        "group": "middle",
+        "kind": "shrub",
+        "x": 696.2,
+        "z": -578.9,
+        "scale": 1.12,
+        "angle": 9.596
+      },
+      {
+        "id": "lake-shore:5",
+        "group": "middle",
+        "kind": "shrub",
+        "x": 698.3,
+        "z": -579.8,
+        "scale": 1.1,
+        "angle": 11.995000000000001
+      },
+      {
+        "id": "lake-shore:6",
+        "group": "middle",
+        "kind": "shrub",
+        "x": 699.8,
+        "z": -582,
+        "scale": 1.1,
+        "angle": 14.394
+      },
+      {
+        "id": "lake-shore:7",
+        "group": "middle",
+        "kind": "shrub",
+        "x": 695.8,
+        "z": -581.6,
+        "scale": 1.12,
+        "angle": 16.793
+      },
+      {
+        "id": "lake-shore:8",
+        "group": "pier",
+        "kind": "shrub",
+        "x": 710.4,
+        "z": -610.4,
+        "scale": 1.08,
+        "angle": 19.192
+      },
+      {
+        "id": "lake-shore:9",
+        "group": "pier",
+        "kind": "shrub",
+        "x": 712.8,
+        "z": -611.4,
+        "scale": 1.14,
+        "angle": 21.591
+      },
+      {
+        "id": "lake-shore:10",
+        "group": "pier",
+        "kind": "shrub",
+        "x": 711.1,
+        "z": -613.3,
+        "scale": 1.1,
+        "angle": 23.990000000000002
+      },
+      {
+        "id": "lake-shore:11",
+        "group": "front",
+        "kind": "reed",
+        "x": 681.4,
+        "z": -569.9,
+        "scale": 1.45,
+        "angle": 26.389
+      },
+      {
+        "id": "lake-shore:12",
+        "group": "front",
+        "kind": "reed",
+        "x": 688.7,
+        "z": -565.2,
+        "scale": 1.35,
+        "angle": 28.788
+      },
+      {
+        "id": "lake-shore:13",
+        "group": "middle",
+        "kind": "reed",
+        "x": 693.8,
+        "z": -582.4,
+        "scale": 1.5,
+        "angle": 31.187
+      },
+      {
+        "id": "lake-shore:14",
+        "group": "middle",
+        "kind": "reed",
+        "x": 699.6,
+        "z": -576.5,
+        "scale": 1.55,
+        "angle": 33.586
+      },
+      {
+        "id": "lake-shore:15",
+        "group": "middle",
+        "kind": "reed",
+        "x": 701.7,
+        "z": -580.7,
+        "scale": 1.45,
+        "angle": 35.985
+      },
+      {
+        "id": "lake-shore:16",
+        "group": "middle",
+        "kind": "reed",
+        "x": 696.4,
+        "z": -584.3,
+        "scale": 1.45,
+        "angle": 38.384
+      },
+      {
+        "id": "lake-shore:17",
+        "group": "pier",
+        "kind": "reed",
+        "x": 708.3,
+        "z": -611.4,
+        "scale": 1.4,
+        "angle": 40.783
+      },
+      {
+        "id": "lake-shore:18",
+        "group": "pier",
+        "kind": "reed",
+        "x": 710.3,
+        "z": -607.8,
+        "scale": 1.5,
+        "angle": 43.182
+      },
+      {
+        "id": "lake-shore:19",
+        "group": "pier",
+        "kind": "reed",
+        "x": 714.8,
+        "z": -611.8,
+        "scale": 1.55,
+        "angle": 45.581
+      },
+      {
+        "id": "lake-shore:20",
+        "group": "pier",
+        "kind": "reed",
+        "x": 711.8,
+        "z": -615.6,
+        "scale": 1.45,
+        "angle": 47.980000000000004
+      }
+    ],
+    "rejected": [],
+    "colors": {
+      "island:terrain:512:-768": 27,
+      "island:terrain:512:-768:far": 7
+    },
+    "budgets": {
+      "near": 1863,
+      "far": 1407
+    }
+  },
+  "execution": {
+    "milliseconds": 711.7934349999999,
+    "worlds": 0,
+    "regions": 0,
+    "GPU": false,
+    "fullSuite": false,
+    "fixtureWrites": false
+  },
+  "limitations": [
+    "Architecture is structurally returned by reference; its original actual30 array SHA protection is in the saved inventory and awaits candidate browser full-source check.",
+    "No whole-building triangle contact or scene-art acceptance is claimed."
+  ]
+}
