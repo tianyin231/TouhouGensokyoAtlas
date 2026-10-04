@@ -1,0 +1,520 @@
+{
+  "passed": true,
+  "worldBuilt": false,
+  "rows": [
+    {
+      "kind": "broadleaf",
+      "lod": "near",
+      "bank": 0,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "near",
+      "bank": 1,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "near",
+      "bank": 2,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "near",
+      "bank": 3,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "near",
+      "bank": 4,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "near",
+      "bank": 5,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "near",
+      "bank": 6,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "near",
+      "bank": 7,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "far",
+      "bank": 0,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "far",
+      "bank": 1,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "far",
+      "bank": 2,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "far",
+      "bank": 3,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "far",
+      "bank": 4,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "far",
+      "bank": 5,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "far",
+      "bank": 6,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "broadleaf",
+      "lod": "far",
+      "bank": 7,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "near",
+      "bank": 0,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "near",
+      "bank": 1,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "near",
+      "bank": 2,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "near",
+      "bank": 3,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "near",
+      "bank": 4,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "near",
+      "bank": 5,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "near",
+      "bank": 6,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "near",
+      "bank": 7,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "far",
+      "bank": 0,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "far",
+      "bank": 1,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "far",
+      "bank": 2,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "far",
+      "bank": 3,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "far",
+      "bank": 4,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "far",
+      "bank": 5,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "far",
+      "bank": 6,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "cherry",
+      "lod": "far",
+      "bank": 7,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "near",
+      "bank": 0,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "near",
+      "bank": 1,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "near",
+      "bank": 2,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "near",
+      "bank": 3,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "near",
+      "bank": 4,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "near",
+      "bank": 5,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "near",
+      "bank": 6,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "near",
+      "bank": 7,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "far",
+      "bank": 0,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "far",
+      "bank": 1,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "far",
+      "bank": 2,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "far",
+      "bank": 3,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "far",
+      "bank": 4,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "far",
+      "bank": 5,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "far",
+      "bank": 6,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "willow",
+      "lod": "far",
+      "bank": 7,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "near",
+      "variant": 0,
+      "bank": 0,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "near",
+      "variant": 0,
+      "bank": 1,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "near",
+      "variant": 0,
+      "bank": 2,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "near",
+      "variant": 0,
+      "bank": 3,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "near",
+      "variant": 0,
+      "bank": 4,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "far",
+      "variant": 0,
+      "bank": 0,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true,
+      "connectedViaOverlap": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "far",
+      "variant": 0,
+      "bank": 1,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true,
+      "connectedViaOverlap": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "near",
+      "variant": 1,
+      "bank": 0,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "near",
+      "variant": 1,
+      "bank": 1,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "near",
+      "variant": 1,
+      "bank": 2,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "near",
+      "variant": 1,
+      "bank": 3,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "near",
+      "variant": 1,
+      "bank": 4,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "far",
+      "variant": 1,
+      "bank": 0,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": true,
+      "connectedViaOverlap": true
+    },
+    {
+      "kind": "shrub",
+      "lod": "far",
+      "variant": 1,
+      "bank": 1,
+      "closed": true,
+      "euler": 2,
+      "supportEndInside": false,
+      "connectedViaOverlap": true
+    }
+  ]
+}

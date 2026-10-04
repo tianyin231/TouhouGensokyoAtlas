@@ -1,0 +1,910 @@
+{
+  "passed": true,
+  "failures": [],
+  "node": "v22.23.3",
+  "sourceFiles": {
+    "src/village-landscape-plants.js": "422bc58156eb9b318073310a200d20f816c9c480c24604d75a33ab2c414dff5f",
+    "src/village-landscape.js": "05f0e80203f70652e3e64130f17a0cbd326c3e06c1d6f4643bf7a01306f95ef7"
+  },
+  "worldBuilt": false,
+  "buildRegionCalls": 0,
+  "worker": false,
+  "gpu": false,
+  "visualAcceptance": false,
+  "arrays": [
+    {
+      "label": "willow:near",
+      "triangles": 4060,
+      "bytes": 438480,
+      "bounds": {
+        "min": [
+          -3.1812474727630615,
+          -0.020385675132274628,
+          -3.4937522411346436
+        ],
+        "max": [
+          3.4581809043884277,
+          7.622900009155273,
+          3.450857162475586
+        ]
+      },
+      "sha256": "71aee43042cd762a06c010817df8108499964082e373d50c6515ff745b16fdd6",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "willow:far",
+      "triangles": 524,
+      "bytes": 56592,
+      "bounds": {
+        "min": [
+          -2.977851152420044,
+          -0.020385675132274628,
+          -3.270782709121704
+        ],
+        "max": [
+          3.362058162689209,
+          7.53000020980835,
+          2.809983730316162
+        ]
+      },
+      "sha256": "61b84eff7c20e448b1551dec17bbccecee740bb68f4f8b07928ca3b75604efe9",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "broadleaf:near",
+      "triangles": 2722,
+      "bytes": 293976,
+      "bounds": {
+        "min": [
+          -3.65547251701355,
+          -0.020385675132274628,
+          -3.7397000789642334
+        ],
+        "max": [
+          3.8177006244659424,
+          7.800000190734863,
+          3.737894058227539
+        ]
+      },
+      "sha256": "c298ccebbfeb4761d97b516f1550c095f9e002b3cf2b2c4d2f843013be892e9a",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "broadleaf:far",
+      "triangles": 362,
+      "bytes": 39096,
+      "bounds": {
+        "min": [
+          -3.619809865951538,
+          -0.020385675132274628,
+          -3.6130480766296387
+        ],
+        "max": [
+          3.557425022125244,
+          7.800000190734863,
+          3.623196601867676
+        ]
+      },
+      "sha256": "0cce52842e07512fd3b3655c07e76de2836171f38314e027042a3135efc5d113",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "cherry:near",
+      "triangles": 2722,
+      "bytes": 293976,
+      "bounds": {
+        "min": [
+          -3.7855095863342285,
+          -0.020385675132274628,
+          -3.690700054168701
+        ],
+        "max": [
+          4.01780366897583,
+          7.803699970245361,
+          3.8549561500549316
+        ]
+      },
+      "sha256": "151e8c0fe11cc3935d8849fc8ae0631d79941e54cabcf3b4fefc75f8ba5f4765",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "cherry:far",
+      "triangles": 362,
+      "bytes": 39096,
+      "bounds": {
+        "min": [
+          -3.7738099098205566,
+          -0.020385675132274628,
+          -3.611675500869751
+        ],
+        "max": [
+          3.7149250507354736,
+          7.699999809265137,
+          3.7683966159820557
+        ]
+      },
+      "sha256": "e33248ac32c5fb4039dbcc8c04d47df2a688bff48be8004726b394b5612953c7",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "props:shrub:0:0:near",
+      "triangles": 390,
+      "bytes": 42120,
+      "bounds": {
+        "min": [
+          -0.6917656660079956,
+          -0.010128906928002834,
+          -0.8403860330581665
+        ],
+        "max": [
+          0.9083774089813232,
+          0.9200000166893005,
+          0.46443769335746765
+        ]
+      },
+      "sha256": "9569dcf4e33016322139be6835b22684605ca17a33c5786466e13f112c98e5e9",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "props:shrub:0:0:far",
+      "triangles": 72,
+      "bytes": 7776,
+      "bounds": {
+        "min": [
+          -0.5789018869400024,
+          0.01283918134868145,
+          -0.843885064125061
+        ],
+        "max": [
+          0.9044541120529175,
+          0.9200000166893005,
+          0.47021952271461487
+        ]
+      },
+      "sha256": "9834e2b6172d647b91b7af26f456c65b5cd0e761e197932f090b9f40fb35f2c7",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "props:shrub:1:0:near",
+      "triangles": 390,
+      "bytes": 42120,
+      "bounds": {
+        "min": [
+          -0.6844975352287292,
+          -0.010128906928002834,
+          -0.8577619791030884
+        ],
+        "max": [
+          0.890457272529602,
+          0.9200000166893005,
+          0.4773430824279785
+        ]
+      },
+      "sha256": "c55f9e78a6dc0cea3a136a20e9145c718561d8de71f526cf4fe6f0af5c761982",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "props:shrub:1:0:far",
+      "triangles": 72,
+      "bytes": 7776,
+      "bounds": {
+        "min": [
+          -0.6522542834281921,
+          0.01283918134868145,
+          -0.8269765377044678
+        ],
+        "max": [
+          0.8976096510887146,
+          0.9200000166893005,
+          0.38875478506088257
+        ]
+      },
+      "sha256": "1f977409a3f1467ab633adc9d40309771b82764ce39ae022ae2b18f971446198",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "proxy:broadleaf",
+      "triangles": 169,
+      "bytes": 18252,
+      "bounds": {
+        "min": [
+          -3.2964208126068115,
+          -0.004594280384480953,
+          -3.324915885925293
+        ],
+        "max": [
+          3.341442823410034,
+          7.800000190734863,
+          3.2739450931549072
+        ]
+      },
+      "sha256": "3bcd2d899990cf0ae7cc366a884496280f077451be187e7c964a137158ad7adc",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "proxy:cherry",
+      "triangles": 169,
+      "bytes": 18252,
+      "bounds": {
+        "min": [
+          -3.45042085647583,
+          -0.004594280384480953,
+          -3.4707157611846924
+        ],
+        "max": [
+          3.4989426136016846,
+          7.699999809265137,
+          3.419145107269287
+        ]
+      },
+      "sha256": "0f9241ae1c1a443788f0941fe97f29c4e014ee26f69a99c83c0a524a77ed9eac",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "proxy:willow",
+      "triangles": 241,
+      "bytes": 26028,
+      "bounds": {
+        "min": [
+          -2.8352298736572266,
+          -0.004594280384480953,
+          -2.8613975048065186
+        ],
+        "max": [
+          3.0817301273345947,
+          7.53000020980835,
+          2.659688711166382
+        ]
+      },
+      "sha256": "58d34e545a0b8096e9d3e4f4620a3a043c8e81126ba49807a97de39ba4fba6fa",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "village-landscape:shrub:near",
+      "triangles": 3510,
+      "bytes": 379080,
+      "bounds": {
+        "min": [
+          58.846317291259766,
+          29.69464874267578,
+          16.525156021118164
+        ],
+        "max": [
+          103.51697540283203,
+          31.581199645996094,
+          123.62377166748047
+        ]
+      },
+      "sha256": "18920e9403aec130b62f007104444c7faea986554547a2655cd98d29edad5ef9",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "village-landscape:shrub:far",
+      "triangles": 648,
+      "bytes": 69984,
+      "bounds": {
+        "min": [
+          58.75920104980469,
+          29.737369537353516,
+          16.429153442382812
+        ],
+        "max": [
+          103.54690551757812,
+          31.581199645996094,
+          123.5519027709961
+        ]
+      },
+      "sha256": "1fe9791bd31e8930aeb8af8028edfc28f27a893675f9ce645ad02c96b4251626",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "village-landscape:herb:near",
+      "triangles": 2016,
+      "bytes": 217728,
+      "bounds": {
+        "min": [
+          58.86212158203125,
+          29.72193145751953,
+          14.59656810760498
+        ],
+        "max": [
+          105.90423583984375,
+          30.535335540771484,
+          125.78677368164062
+        ]
+      },
+      "sha256": "f6deacc3b5305e48ce2271a5969e4eb17b0a066d0dc3d79b263b38d2cbd03998",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    },
+    {
+      "label": "village-landscape:herb:far",
+      "triangles": 1260,
+      "bytes": 136080,
+      "bounds": {
+        "min": [
+          58.86212158203125,
+          29.72193145751953,
+          14.59656810760498
+        ],
+        "max": [
+          105.90423583984375,
+          30.535335540771484,
+          125.78677368164062
+        ]
+      },
+      "sha256": "7cdcde52c3f39d2a8605c3d6d36a6c9e5e838964bd66f6dcd7dea7e45cb23410",
+      "nonfinite": 0,
+      "degenerate": 0,
+      "nonnormal": 0
+    }
+  ],
+  "retainedOriginalTrees": 39,
+  "retainedOriginalShrubs": 193,
+  "targetRecords": 12,
+  "nearTargetExpanded": 186780,
+  "farTargetExpanded": 28662,
+  "newPublicGroups": 2,
+  "newPublicSites": 23,
+  "newPublicNear": 5526,
+  "newPublicFar": 1908,
+  "newPublicGeometryBytes": 802872,
+  "minimumDeclaredSphereMargin": 2.347601500667082,
+  "sites": [
+    {
+      "id": "willow-middle:0",
+      "kind": "shrub",
+      "x": 71.828017,
+      "z": 68.495381,
+      "scale": 1.2,
+      "angle": 1.1,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 1.5812000310421013,
+      "screen": {
+        "x": 743.261646508093,
+        "y": 489.6136709564451,
+        "depth": 145.07231071814311,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "willow-middle:2",
+      "kind": "herb",
+      "x": 68.812458,
+      "z": 70.256482,
+      "scale": 1,
+      "angle": 1.96,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.44855182886123757,
+      "screen": {
+        "x": 724.2368650707406,
+        "y": 488.11552450788406,
+        "depth": 145.75207542676065,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "willow-middle:7",
+      "kind": "herb",
+      "x": 68.461344,
+      "z": 62.951351,
+      "scale": 1.15,
+      "angle": 4.11,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.5353346031904245,
+      "screen": {
+        "x": 745.2456364577102,
+        "y": 476.45527706889584,
+        "depth": 151.26874347873675,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "willow-middle:8",
+      "kind": "herb",
+      "x": 69.768925,
+      "z": 61.468167,
+      "scale": 1,
+      "angle": 4.54,
+      "nearTerrain": 30.000000000000004,
+      "farTerrain": 29.999999999999996,
+      "rootY": 29.869999999999997,
+      "rootBurial": [
+        0.1300000000000061,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.44855182886123046,
+      "screen": {
+        "x": 755.3269749543317,
+        "y": 475.99526579951214,
+        "depth": 151.494958316399,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "willow-middle:13",
+      "kind": "herb",
+      "x": 73.955977,
+      "z": 67.464065,
+      "scale": 1.15,
+      "angle": 6.69,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.5353346031904245,
+      "screen": {
+        "x": 756.1468091504526,
+        "y": 491.0208889318201,
+        "depth": 144.4395534748689,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "willow-middle:16",
+      "kind": "herb",
+      "x": 70.093165,
+      "z": 69.670697,
+      "scale": 1,
+      "angle": 7.98,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.44855182886123757,
+      "screen": {
+        "x": 731.7816441644424,
+        "y": 489.0088477560152,
+        "depth": 145.34597683081162,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "willow-front:0",
+      "kind": "shrub",
+      "x": 77.737357,
+      "z": 123.090371,
+      "scale": 1.2,
+      "angle": 0.4,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 1.5812000310421013,
+      "screen": {
+        "x": 538.6398012695784,
+        "y": 626.5459190543669,
+        "depth": 101.71373508613479,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "willow-front:9",
+      "kind": "shrub",
+      "x": 73.959759,
+      "z": 119.469548,
+      "scale": 1.2,
+      "angle": 4.27,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 1.5812000310421013,
+      "screen": {
+        "x": 540.5002228468588,
+        "y": 604.7914375044544,
+        "depth": 106.78411036773801,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "willow-front:11",
+      "kind": "herb",
+      "x": 77.024021,
+      "z": 117.795313,
+      "scale": 1.15,
+      "angle": 5.13,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.5353346031904245,
+      "screen": {
+        "x": 565.1070080704266,
+        "y": 607.9786530109371,
+        "depth": 106.00988124372876,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "willow-front:12",
+      "kind": "shrub",
+      "x": 77.257665,
+      "z": 120.147157,
+      "scale": 1.2,
+      "angle": 5.56,
+      "nearTerrain": 30,
+      "farTerrain": 29.999999999999996,
+      "rootY": 29.869999999999997,
+      "rootBurial": [
+        0.13000000000000256,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 1.5812000310420977,
+      "screen": {
+        "x": 553.1957043924986,
+        "y": 615.8045099317247,
+        "depth": 104.15564023482096,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "willow-front:16",
+      "kind": "herb",
+      "x": 77.167146,
+      "z": 125.107235,
+      "scale": 1,
+      "angle": 7.28,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.44855182886123757,
+      "screen": {
+        "x": 523.6444495953172,
+        "y": 631.5116919638812,
+        "depth": 100.62312526500452,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "willow-front:25",
+      "kind": "herb",
+      "x": 75.727052,
+      "z": 118.344128,
+      "scale": 1.15,
+      "angle": 11.15,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.5353346031904245,
+      "screen": {
+        "x": 555.5321367320023,
+        "y": 606.1476357184796,
+        "depth": 106.45328868918921,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "street-grove:0",
+      "kind": "shrub",
+      "x": 63.028269,
+      "z": 22.575228,
+      "scale": 1.2,
+      "angle": 1.3,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 1.5812000310421013,
+      "screen": {
+        "x": 824.7500036815665,
+        "y": 421.62120842836435,
+        "depth": 184.02384121441483,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "street-grove:2",
+      "kind": "herb",
+      "x": 59.722713,
+      "z": 23.700895,
+      "scale": 1,
+      "angle": 2.16,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.44855182886123757,
+      "screen": {
+        "x": 809.730653884868,
+        "y": 419.8070960401135,
+        "depth": 185.35166320829714,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "street-grove:3",
+      "kind": "shrub",
+      "x": 59.894741,
+      "z": 21.3444,
+      "scale": 1.2,
+      "angle": 2.59,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 1.5812000310421013,
+      "screen": {
+        "x": 815.4665254773975,
+        "y": 417.66251802908425,
+        "depth": 186.94629471679855,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "street-grove:6",
+      "kind": "shrub",
+      "x": 60.208813,
+      "z": 17.991992,
+      "scale": 1.2,
+      "angle": 3.88,
+      "nearTerrain": 29.84348910148144,
+      "farTerrain": 30,
+      "rootY": 29.71348910148144,
+      "rootBurial": [
+        0.129999999999999,
+        0.2865108985185607
+      ],
+      "heightAboveNearGround": 1.5812000310421013,
+      "screen": {
+        "x": 823.6834098116027,
+        "y": 415.35675503803054,
+        "depth": 189.20680066147256,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "street-grove:8",
+      "kind": "herb",
+      "x": 62.406275,
+      "z": 15.278783,
+      "scale": 1,
+      "angle": 4.74,
+      "nearTerrain": 29.905279580122887,
+      "farTerrain": 30,
+      "rootY": 29.775279580122888,
+      "rootBurial": [
+        0.129999999999999,
+        0.22472041987711222
+      ],
+      "heightAboveNearGround": 0.44855182886123757,
+      "screen": {
+        "x": 837.5262879099676,
+        "y": 414.40820344966966,
+        "depth": 189.7321466108482,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "street-grove:9",
+      "kind": "shrub",
+      "x": 63.516425,
+      "z": 17.365295,
+      "scale": 1.2,
+      "angle": 5.17,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 1.5812000310421013,
+      "screen": {
+        "x": 837.5201832812495,
+        "y": 416.9535793434326,
+        "depth": 187.4794878868383,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "court-link:1",
+      "kind": "herb",
+      "x": 99.003207,
+      "z": 68.872792,
+      "scale": 1.15,
+      "angle": 3.03,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.5353346031904245,
+      "screen": {
+        "x": 881.9727282766804,
+        "y": 534.7974085843658,
+        "depth": 127.18273802282499,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "court-link:2",
+      "kind": "herb",
+      "x": 98.31139,
+      "z": 67.020617,
+      "scale": 1,
+      "angle": 3.46,
+      "nearTerrain": 30,
+      "farTerrain": 29.999999999999996,
+      "rootY": 29.869999999999997,
+      "rootBurial": [
+        0.13000000000000256,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.448551828861234,
+      "screen": {
+        "x": 883.0257972905434,
+        "y": 529.7134998569686,
+        "depth": 128.9722195533539,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "court-link:11",
+      "kind": "herb",
+      "x": 104.982391,
+      "z": 72.443504,
+      "scale": 1.15,
+      "angle": 7.33,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.5353346031904245,
+      "screen": {
+        "x": 908.4867466774382,
+        "y": 554.408431599337,
+        "depth": 120.7214657384784,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "court-link:12",
+      "kind": "shrub",
+      "x": 102.942791,
+      "z": 71.248328,
+      "scale": 1.2,
+      "angle": 7.76,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 1.5812000310421013,
+      "screen": {
+        "x": 899.066047102308,
+        "y": 547.5381390846344,
+        "depth": 122.90896755374884,
+        "inFrame": true
+      }
+    },
+    {
+      "id": "court-link:25",
+      "kind": "herb",
+      "x": 105.300681,
+      "z": 71.071886,
+      "scale": 1.15,
+      "angle": 13.35,
+      "nearTerrain": 30,
+      "farTerrain": 30,
+      "rootY": 29.87,
+      "rootBurial": [
+        0.129999999999999,
+        0.129999999999999
+      ],
+      "heightAboveNearGround": 0.5353346031904245,
+      "screen": {
+        "x": 914.2381344154886,
+        "y": 551.9090087156344,
+        "depth": 121.50821259288692,
+        "inFrame": true
+      }
+    }
+  ],
+  "camera": {
+    "eye": [
+      148,
+      88,
+      182
+    ],
+    "target": [
+      -6,
+      32,
+      10
+    ],
+    "fov": 49,
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "visualAttempts": 1
+}

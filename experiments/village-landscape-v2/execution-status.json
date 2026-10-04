@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "actualCLIExitCode": 0,
+  "execSessionID": 12785,
+  "runner": "/workspace/scratch/village-landscape-v2.1-gate.py",
+  "runnerSHA256": "f1db9a21358741a0bfda3fa65c2b778c9cb0ce41bccb670a82e09b16b9c8ec99",
+  "observedAtUTC": "2026-10-04T14:26:58.420212+00:00",
+  "baselineReused": true,
+  "requestedCandidatePNGs": 1,
+  "completedObservedAtUTC": "2026-10-04T14:30:04.106414+00:00",
+  "reportSHA256": "968a7648f0ad7421ebed046870b6203e96cfad61f988712032e016bc96d31159",
+  "cleanupSHA256": "db75df804b771183c55f4e08469d6bb0355f9380e6aa5326984ec09df94ee453"
+}

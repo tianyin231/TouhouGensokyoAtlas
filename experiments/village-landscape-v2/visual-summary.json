@@ -1,0 +1,135 @@
+{
+  "state": "visualRejected",
+  "artAccepted": false,
+  "fullAcceptance": false,
+  "visualAttempt": 2,
+  "noFurtherVisualAttemptsForThisMethod": true,
+  "rootDecision": "树冠体量相对V1恢复，但同原版整体对照仍不足以通过街院整景；低中植被far档仍微小散点。停止此方法，无V3/其它机位/full。",
+  "independentVisualOpinion": "同意收束：V2绿冠与樱冠恢复连续厚度，较V1稀薄叶片有改善；但与ec9原图相比，庭院树形和新增小群落仍未形成清楚的整体层次。房屋、路、河岸保持，没有凭此单图作完整地区验收。",
+  "actualCLIExitCode": 0,
+  "applicationNecessaryActualGuardsPassed": true,
+  "fullSourceScanExecuted": false,
+  "sourceProtectionScope": "187输入精确绑定、V1到V2只有plants源码变动；实际原39树/193灌木身份矩阵RGB/material/LOD、原树干前缀、terrain位置/法线、322冷身份分组和已加载5新增源验证。此次未重做全部源扫描。",
+  "baselineReused": {
+    "path": "/workspace/scratch/texture-experiment/village-landscape-v1.1-visual/riverside-original.png",
+    "sha256": "92d29e279633b72f1e3c5c3427f43542442b5e6eb8d9446586b56ae10b24dd55",
+    "reportSHA256": "1401eb4f3930d1f11ef70b130f0444d3a6677f268f88d2b5cd06dd9c6af4f465"
+  },
+  "metrics": [
+    {
+      "mode": "original",
+      "HTMLSHA256": "d0a39547bbbdc5308362eba9fbefa59707d861776eeac97dee2ec603119559df",
+      "releaseSHA256": "7445563f30033006722ef3b586fbf5f379154c4941f860bd1235106a39ca10dd",
+      "PNG": {
+        "file": "riverside-original.png",
+        "sha256": "92d29e279633b72f1e3c5c3427f43542442b5e6eb8d9446586b56ae10b24dd55"
+      },
+      "browser": "151.0.7922.173",
+      "calls": 827,
+      "totalCalls": 829,
+      "triangles": 3264852,
+      "totalTriangles": 3264856,
+      "residentAttributeBytes": 121936078,
+      "geometries": 508,
+      "textures": 11,
+      "residentObjects": 744,
+      "sourceRecordCount": 2466,
+      "originalHouses": 226,
+      "originalGardens": 140,
+      "siteParameterCount": 0,
+      "nativeTreeVisibleBatches": 9,
+      "instancesInNativeTreeVisibleBatches": 38,
+      "newPublicLOD": [],
+      "pixelOcclusionCountClaimed": false,
+      "errors": [],
+      "contextEvents": [],
+      "resourceErrors": [
+        "Failed to load resource: the server responded with a status of 404 (File not found)"
+      ]
+    },
+    {
+      "mode": "candidate",
+      "HTMLSHA256": "aaf3307e394708ad4f699cb4a096c3a37b45d2905e8f89ae94d1875c118023fa",
+      "releaseSHA256": "08bf702524d84813d4dc22ca8f2f582ded32274d7d1428f44ed0fc03549d9e95",
+      "PNG": {
+        "file": "riverside-candidate.png",
+        "sha256": "24bbba9d26c83255066412708f790d49a536bebd4e91645b514bd9787531a3e5"
+      },
+      "browser": "151.0.7922.173",
+      "calls": 829,
+      "totalCalls": 831,
+      "triangles": 3256721,
+      "totalTriangles": 3256725,
+      "residentAttributeBytes": 123209830,
+      "geometries": 514,
+      "textures": 11,
+      "residentObjects": 746,
+      "sourceRecordCount": 2471,
+      "originalHouses": 226,
+      "originalGardens": 140,
+      "siteParameterCount": 23,
+      "nativeTreeVisibleBatches": 9,
+      "instancesInNativeTreeVisibleBatches": 38,
+      "newPublicLOD": [
+        {
+          "id": "village-landscape:shrub",
+          "level": 1,
+          "wanted": true,
+          "visible": true,
+          "nearTriangles": 3510,
+          "farTriangles": 648
+        },
+        {
+          "id": "village-landscape:herb",
+          "level": 1,
+          "wanted": true,
+          "visible": true,
+          "nearTriangles": 2016,
+          "farTriangles": 1260
+        }
+      ],
+      "pixelOcclusionCountClaimed": false,
+      "errors": [],
+      "contextEvents": [],
+      "resourceErrors": [
+        "Failed to load resource: the server responded with a status of 404 (File not found)"
+      ]
+    }
+  ],
+  "delta": {
+    "calls": 2,
+    "totalCalls": 2,
+    "triangles": -8131,
+    "totalTriangles": -8131,
+    "residentAttributeBytes": 1273752,
+    "geometries": 6,
+    "textures": 0,
+    "residentObjects": 2
+  },
+  "measurementLimit": "Chromium151/SwiftShader软件后端，仅提交计数及驻留属性；没有FPS/提速/加载收益结论。",
+  "resource404": "候选有1条未归因console404，没有捕获URL，不猜来源。",
+  "cleanup": {
+    "reportCleanupErrors": [],
+    "normalBrowserAndServerCleanupReturned": true,
+    "liveChromiumProcesses": [],
+    "passed": true
+  },
+  "manifest": "/workspace/scratch/village-landscape-runtime-v2/manifest.json",
+  "manifestSHA256": "3f396e450cec52b22b875f6746da473d20686e0dbdef7b2d36599f97de4d95d7",
+  "runnerSHA256": "f1db9a21358741a0bfda3fa65c2b778c9cb0ce41bccb670a82e09b16b9c8ec99",
+  "evidence": {
+    "report.json": {
+      "path": "/workspace/scratch/texture-experiment/village-landscape-v2-visual/report.json",
+      "sha256": "968a7648f0ad7421ebed046870b6203e96cfad61f988712032e016bc96d31159"
+    },
+    "execution-status.json": {
+      "path": "/workspace/scratch/texture-experiment/village-landscape-v2-visual/execution-status.json",
+      "sha256": "3d2d2ad8f1e1e2c80815d787ddc75ebe5ca5720e76c297a3358421ee6e5786c2"
+    },
+    "cleanup.json": {
+      "path": "/workspace/scratch/texture-experiment/village-landscape-v2-visual/cleanup.json",
+      "sha256": "db75df804b771183c55f4e08469d6bb0355f9380e6aa5326984ec09df94ee453"
+    }
+  },
+  "priorFailuresRemain": "V1两次CLI1及V2零GPU路径校验CLI1均保留，不追认成功。"
+}

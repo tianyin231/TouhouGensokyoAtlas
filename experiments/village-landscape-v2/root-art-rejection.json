@@ -1,0 +1,26 @@
+{
+  "reviewedUTC": "2026-10-04T14:29:34.579371+00:00",
+  "reviewer": "root",
+  "personallyViewedBothImages": true,
+  "scope": "Village riverside native same camera whole scene",
+  "artAccepted": false,
+  "attempt": 2,
+  "consecutiveWholeSceneRejections": 2,
+  "maximumConsecutiveAttempts": 2,
+  "baselinePNG": {
+    "path": "/workspace/scratch/texture-experiment/village-landscape-v1.1-visual/riverside-original.png",
+    "sha256": "92d29e279633b72f1e3c5c3427f43542442b5e6eb8d9446586b56ae10b24dd55"
+  },
+  "candidatePNG": {
+    "path": "/workspace/scratch/texture-experiment/village-landscape-v2-visual/riverside-candidate.png",
+    "sha256": "24bbba9d26c83255066412708f790d49a536bebd4e91645b514bd9787531a3e5"
+  },
+  "runtimeManifest": "/workspace/scratch/village-landscape-runtime-v2/manifest.json",
+  "findings": [
+    "Compared with V1 the crowns recover solid volume, but the change from the original scene is still insufficient for the agreed whole-scene gate.",
+    "New low/middle plant groups remain tiny scattered marks at the actual far LOD; a readable riverbank-to-tree-foot-to-courtyard vegetation transition is missing.",
+    "Buildings, paths and bridges remain protected; distant mountain/cube trees remain outside this candidate and must not be claimed improved."
+  ],
+  "decision": "Reject for whole-scene delivery; checkpoint V2 on isolated branch, retain evidence and stop this method. No V3, no full regression, no main merge.",
+  "nextMethodReview": "Reconsider visible screen-space volume and courtyard planting groups before any future proposal; do not extend small prototype edits indefinitely."
+}

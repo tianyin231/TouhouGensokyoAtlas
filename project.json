@@ -35,6 +35,8 @@
     "src/kourindou-upgrade.js",
     "src/forest-upgrade.js",
     "src/village-upgrade.js",
+    "src/village-landscape-plants.js",
+    "src/village-landscape.js",
     "src/trail-upgrade.js",
     "src/trail-plants.js",
     "src/trail-landscape.js",
