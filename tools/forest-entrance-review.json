@@ -1,0 +1,409 @@
+{
+  "status": "Accepted bounded forest approach sample; local full, visual and lifecycle verification passed",
+  "scope": "Existing Kourindou approach public planting sample; not whole forest or main-island completion",
+  "baseCommit": "bdf1f93572c3f3a143d0eba215f02ddbec942c4c",
+  "candidate": {
+    "plantRevision": 4,
+    "groundRevision": 2,
+    "integrationRevision": 1,
+    "artifactSHA256": "d0a39547bbbdc5308362eba9fbefa59707d861776eeac97dee2ec603119559df",
+    "artifactBytes": 36180358,
+    "releaseSHA256": "7445563f30033006722ef3b586fbf5f379154c4941f860bd1235106a39ca10dd",
+    "inputCount": 185,
+    "sourceSHA256": {
+      "project.json": "9366d61d856d0f91e2a9fdfe03b69d1a61d9e893fb1969dcb9422a2bfdb58e59",
+      "tools/build.py": "2a66b114ef36988b282972d2ed7cf8a001264aa748b27374c603584a6fa1f391",
+      "tools/check.mjs": "065209a2ec4512b32106c2c130d69c18048ac545fd57062ed7d27258d89ca8d5",
+      "src/forest-entrance-plants.js": "b42c6959cf4005e362954d468bc1130a459c3104aa85316dff752fd99ddc6ca1",
+      "src/forest-entrance-ground.js": "cc603d5a2b8bd24fd24ec78d48a7124e66e79e67a5751b9ef281a5dba2839ecc",
+      "src/forest-entrance.js": "0320d5c1a6a89d75e29ce3728135222c7a6de3b22b572769b9c32b27c16dee5c",
+      "tools/check-forest-entrance.mjs": "e4170e93fb052f3ca80d1fb9a05a9cc41604ed17b302d7198b132b05683220a5"
+    }
+  },
+  "population": {
+    "tree": 42,
+    "shrub": 49,
+    "grass": 1165,
+    "plantRecords": 15,
+    "groundRecords": 5,
+    "totalOriginalSites": 1256,
+    "fullMatrixRGBOrdinalIdentity": true
+  },
+  "sourceBudgets": {
+    "originalNear": 256827,
+    "originalFar": 37587,
+    "candidateNear": 250359,
+    "candidateFar": 37587,
+    "byKind": {
+      "tree": {
+        "originalNear": 134232,
+        "originalFar": 3780,
+        "candidateNear": 133644,
+        "candidateFar": 3780
+      },
+      "shrub": {
+        "originalNear": 91140,
+        "originalFar": 2352,
+        "candidateNear": 85260,
+        "candidateFar": 2352
+      },
+      "grass": {
+        "originalNear": 31455,
+        "originalFar": 31455,
+        "candidateNear": 31455,
+        "candidateFar": 31455
+      }
+    },
+    "meaning": "Expanded source model budget, not camera submission or FPS"
+  },
+  "prototypeSharing": {
+    "cachedArrays": 9,
+    "newDrawBatches": 0,
+    "newPrivateAttributeViewBytes": 1926540,
+    "note": "Other records retain old shared prototypes; this byte count is not physical VRAM."
+  },
+  "ground": {
+    "roi": [
+      -672,
+      0,
+      -448,
+      192
+    ],
+    "edgeFadeMetres": 20,
+    "records": 5,
+    "positionsNormalsIndexUnchanged": true,
+    "protectedKourCoreRadius": 0.67,
+    "CPUProofSHA256": "504dc4bb1a13f6d3c2072eca39a873c39d94298a861b8b081128f62b83775876"
+  },
+  "smallCPU": {
+    "node": "v22.23.3",
+    "exitCode": 0,
+    "actualCapturedRecords": 20,
+    "syntheticSharedSourceSentinels": 2,
+    "reportSHA256": "a3302a9e2b15f91e01cc9b95c4b6873992fca9e935cfb355b7c68feed86fb46d",
+    "knownCaptureLimit": "Original three grass prototype SHA differ Node/Chrome; matrices/RGB/metadata match. Final full browser audit uses actual Chrome sources."
+  },
+  "balancedBrowser": {
+    "CLIExit": 0,
+    "cleanupErrors": [],
+    "allBrowserAndServerClosed": true,
+    "reportSHA256": "ffe9fcba91cde0324a4293f82f917b515bf58c40561041510a556c6364a791f1",
+    "sourceIntegritySHA256": "a16a5aa9444ecee7f91764eb1ba225ffdc4bc562c18140aae1f9b571496ded59",
+    "runnerSHA256": "55ab196c3d3a31772ac4b99c0fbdb29e49ed2d0d4868d91e02ae32be00407eb8",
+    "sourceProtection": {
+      "passed": true,
+      "records": 2825,
+      "protectedRecords": 2805,
+      "plantTargets": 15,
+      "groundTargets": 5,
+      "changedTargetIDs": [
+        "island:terrain:-512:0",
+        "island:terrain:-512:0:far",
+        "island:terrain:-768:0",
+        "island:terrain:-768:0:far",
+        "landscape:forest-road",
+        "landscape:planting:broad0:-6:0",
+        "landscape:planting:broad0:-6:1",
+        "landscape:planting:broad0:-7:1",
+        "landscape:planting:broad1:-6:0",
+        "landscape:planting:broad1:-6:1",
+        "landscape:planting:broad1:-7:1",
+        "landscape:planting:broad2:-6:0",
+        "landscape:planting:broad2:-6:1",
+        "landscape:planting:broad2:-7:1",
+        "landscape:planting:grass:-6:0",
+        "landscape:planting:grass:-6:1",
+        "landscape:planting:grass:-7:1",
+        "landscape:planting:shrub:-6:0",
+        "landscape:planting:shrub:-6:1",
+        "landscape:planting:shrub:-7:1"
+      ],
+      "instanceMatricesAndRGBExact": true,
+      "oldMetadataExactExceptTwoSpecifiedPlantAdditions": true,
+      "allOtherSourceArraysExact": true
+    },
+    "camera": {
+      "nativePreset": "forestApproach",
+      "eye": [
+        -474,
+        44.86402887881689,
+        49
+      ],
+      "target": [
+        -522,
+        46.460583593522614,
+        55
+      ],
+      "fov": 64
+    },
+    "options": {
+      "quality": "balanced",
+      "lighting": "neutral",
+      "weather": "clear",
+      "clock": 12.5,
+      "motion": false,
+      "labels": false,
+      "characters": false,
+      "bloom": false,
+      "reflections": false,
+      "ao": true,
+      "vegetation": true
+    },
+    "viewport": [
+      1280,
+      720
+    ],
+    "dpr": 1,
+    "stableFrames": 3,
+    "pixelChangesBetweenFrames": 0,
+    "counts": {
+      "calls": {
+        "original": 668,
+        "candidate": 668,
+        "delta": 0
+      },
+      "totalCalls": {
+        "original": 670,
+        "candidate": 670,
+        "delta": 0
+      },
+      "triangles": {
+        "original": 1536983,
+        "candidate": 1525655,
+        "delta": -11328
+      },
+      "totalTriangles": {
+        "original": 1536987,
+        "candidate": 1525659,
+        "delta": -11328
+      },
+      "attributeBytes": {
+        "original": 22873390,
+        "candidate": 24104914,
+        "delta": 1231524
+      }
+    },
+    "geometryCount": {
+      "original": 277,
+      "candidate": 283
+    },
+    "textures": 11,
+    "programs": 154,
+    "scriptShaderContextErrors": [],
+    "unattributedResource404Count": 1,
+    "driver": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "performanceMeasured": false,
+    "capturedReleaseSHA256": "7445563f30033006722ef3b586fbf5f379154c4941f860bd1235106a39ca10dd",
+    "independentSummarySHA256": "62e3fa6af744b995944acb034df4874f8ddb6e5f1053a97fb2e555e91f127edf"
+  },
+  "visual": {
+    "balancedDirectionAcceptedByRootAndIndependentReviewer": true,
+    "fullAcceptance": true,
+    "beforePNG": "preview/forest-entrance-before.png",
+    "beforeSHA256": "a6cc7734d83e9c3022d9fc44fecfd9c38555de1e301eb8f079985f3ca0b905a0",
+    "afterPNG": "preview/forest-entrance-after.png",
+    "afterSHA256": "bb503b279e6d141bdb9bc63e63d8eaa5765d45ab3690ccc4f1031c7e10b66988",
+    "lowAccepted": true,
+    "lowIssue": null,
+    "lowSHA256": "8ab635e2c18a5d72bf28aef0c1e4ec4ec387be261e62633871a785ec584d041f",
+    "lowLimit": "Coarse solid crown/shrub volumes retain simplified low-tier appearance; near leaf detail is intentionally absent.",
+    "acceptanceScope": "Only this bounded entrance sample; not whole forest or main island"
+  },
+  "functionalBrowser": {
+    "status": "passed",
+    "CLIExit": 0,
+    "cleanupErrors": [],
+    "allBrowserAndServerClosed": true,
+    "reportSHA256": "1db4edd0b6f6ec1065d57d1aead6b8c6e480244dba8e62fb16512df73e37322b",
+    "runnerSHA256": "6a8a930a53fe9a3aeed2d11199ad32ef702258c5eb29cb7f232b0285dd454da6",
+    "artifactSHA256": "d0a39547bbbdc5308362eba9fbefa59707d861776eeac97dee2ec603119559df",
+    "releaseSHA256": "7445563f30033006722ef3b586fbf5f379154c4941f860bd1235106a39ca10dd",
+    "lowSameCameraAndSourcePassed": true,
+    "sourceRecordCount": 2825,
+    "permanentPublicRecordsPreserved": 2150,
+    "released": {
+      "records": 675,
+      "arrays": 1520
+    },
+    "releaseOwnership": {
+      "witnessArrays": 1520,
+      "geometryRefs": 0,
+      "indexRefs": 0,
+      "records": 0,
+      "objects": 0,
+      "typedViews": 0,
+      "signs": 0
+    },
+    "completeReturnedSourceExact": true,
+    "returnedPNGMatchesBalanced": true,
+    "resourceComparison": {
+      "geometries": {
+        "before": 283,
+        "after": 283,
+        "delta": 0
+      },
+      "textures": {
+        "before": 11,
+        "after": 11,
+        "delta": 0
+      },
+      "programs": {
+        "before": 156,
+        "after": 156,
+        "delta": 0
+      },
+      "attributeBytes": {
+        "before": 24104914,
+        "after": 24104914,
+        "delta": 0
+      },
+      "geometryEntries": {
+        "before": 281,
+        "after": 281,
+        "delta": 0
+      }
+    },
+    "nativeProductionEvidence": {
+      "passed": true,
+      "provenance": "Unmodified RegionStreaming.info() log and actual ready/cache/pack state; no Worker replacement",
+      "newBuilds": 2,
+      "removedDetailPacks": 2,
+      "buildRegions": [
+        "forest",
+        "village"
+      ],
+      "loadingPerformanceClaimed": false
+    },
+    "workerObservationCompleteForBothPacks": true,
+    "scriptShaderContextErrors": [],
+    "unattributedResource404Count": 1,
+    "performanceMeasured": false,
+    "lowMemoryComparisonExcluded": "Cold original/candidate cache residence differed; not a memory saving claim.",
+    "warmProgramsNote": "156 after both quality tiers vs 154 in independent cold balanced run.",
+    "canonical2825RecordsSHA256": "5ac3f23a4b533372d33315e92643cb9d4d8d9a2276fc7eff3deaa57b52e28df6"
+  },
+  "fullRegression": {
+    "status": "passed",
+    "node": "v22.23.3",
+    "exitCode": 0,
+    "startedUTC": "2026-10-04T07:25:33.322670+00:00",
+    "endedUTC": "2026-10-04T07:38:51.186244+00:00",
+    "wallSeconds": 797.8353496799973,
+    "passedGroups": 39,
+    "artifactSHA256": "d0a39547bbbdc5308362eba9fbefa59707d861776eeac97dee2ec603119559df",
+    "inputs": 185,
+    "sourceInputsUnchanged": true,
+    "artifactUnchanged": true,
+    "logSHA256": "8b3616c204593a1a5b6d8c068881503f7c430cf23c884738e03651a31d512ff8",
+    "scope": "Required static/CPU regression; not visual acceptance or FPS.",
+    "reportSHA256": "3c7ebf31a0d12aff8876ef395c23dc763dd64f336a1445b718332f402547026b"
+  },
+  "cleanRebuild": {
+    "status": "passed",
+    "checkedUTC": "2026-10-04T07:39:14.730545+00:00",
+    "base": "bdf1f93572c3f3a143d0eba215f02ddbec942c4c",
+    "buildExit": 0,
+    "artifactSHA256": "d0a39547bbbdc5308362eba9fbefa59707d861776eeac97dee2ec603119559df",
+    "artifactBytes": 36180358,
+    "releaseSHA256": "7445563f30033006722ef3b586fbf5f379154c4941f860bd1235106a39ca10dd",
+    "inputs": 185,
+    "allTestedInputsByteEqual": true,
+    "HTMLByteEqual": true,
+    "releaseByteEqual": true,
+    "fullRegressionReportSHA256": "3c7ebf31a0d12aff8876ef395c23dc763dd64f336a1445b718332f402547026b"
+  },
+  "history": [
+    {
+      "revision": 1,
+      "technical": "corrected runner passed; earlier wrapper and shadow-comparison failures retained",
+      "art": "rejected smooth canopy and rubbery shrubs"
+    },
+    {
+      "revision": 2,
+      "technical": "passed; report9a2b8dda7e03af498ea15b214523a3b82d6636f805633f1456dbed6a39768ed0",
+      "art": "rejected sparse shrubs and unsupported upper sprays; confirmed side-leaf attachment beyond own twig"
+    },
+    {
+      "revision": 3,
+      "balanced": "accepted bounded sample direction; all source guards pass",
+      "low": "art rejected umbrella-like aggregates",
+      "functional": "CLI1 auxiliary recorder failure, source-after incomplete; partial evidence retained"
+    }
+  ],
+  "remaining": [
+    "Whole-island layout and mountain silhouette",
+    "Native forest crowns, regional planting density and understorey distribution",
+    "Other existing-region transitions",
+    "Entity GPU FPS and physical VRAM unmeasured"
+  ],
+  "historicalCheckerOnlyRepair": {
+    "createdUTC": "2026-10-04T07:05:02.024323+00:00",
+    "HTMLSHA256": "16fe8ca1c10e8c0cbb1530dbba2dde6055a9f63ce617ae969b9d7a2d63340e79",
+    "HTMLBytes": 36179260,
+    "HTMLByteEqual": true,
+    "oldReleaseSHA256": "254ae37da3ac8366600e3c4cc641a518e292b99aebf7ba05207258aec40de1ac",
+    "newReleaseSHA256": "f47c015a7918a8f9da36779c29c153ac487b8dde0bebf47032b07c53a24b26ff",
+    "onlyChangedInput": {
+      "tools/check.mjs": {
+        "old": "1ec16f518d48b54d3f6331e52ab266bf28fa19be6c0fa4724056337c23e6dcfa",
+        "new": "065209a2ec4512b32106c2c130d69c18048ac545fd57062ed7d27258d89ca8d5"
+      }
+    },
+    "meaning": "Browser evidence remains bound to v3 original release; scene HTML exact equality separately transfers runtime relevance. This does not turn failed old full regression into a pass."
+  },
+  "previousFullRegression": {
+    "status": "rerun cancelled by root after low art rejection; no complete pass",
+    "oldFailedRun": {
+      "node": "v22.23.3",
+      "exitCode": 1,
+      "startedUTC": "2026-10-04T06:52:26.007670+00:00",
+      "endedUTC": "2026-10-04T06:53:49.768040+00:00",
+      "wallSeconds": 83.73230792400136,
+      "passedGroups": 8,
+      "artifactSHA256": "16fe8ca1c10e8c0cbb1530dbba2dde6055a9f63ce617ae969b9d7a2d63340e79",
+      "inputs": 185,
+      "sourceInputsUnchanged": true,
+      "artifactUnchanged": true,
+      "logSHA256": "6ddb20b0ef05007fab2da852d800de77124f9b30b4ca88c7bbda6e759066c7f8",
+      "scope": "Required static/CPU regression; not visual acceptance or FPS."
+    },
+    "cause": "CPU preparation skipped predecessor overview hooks; broad0:-6:0 had six original instances instead of two retained after Kourindou transfer. Product guard remained correct.",
+    "fix": "Run actual predecessor overview hooks once in order before checking the entrance; preserve exact target/source guards.",
+    "targetedPreparationCheck": {
+      "exitCode": 0,
+      "publicRecords": 1624,
+      "predecessorHooks": 15,
+      "reportSHA256": "c6313e46c701d03949720d064c2b74ce959ad0338f61021750d4e46de778ae4f"
+    },
+    "cancelledRerun": {
+      "node": "v22.23.3",
+      "exitCode": -15,
+      "startedUTC": "2026-10-04T07:04:12.337961+00:00",
+      "endedUTC": "2026-10-04T07:08:12.844492+00:00",
+      "wallSeconds": 240.47812041500583,
+      "passedGroups": 12,
+      "artifactSHA256": "16fe8ca1c10e8c0cbb1530dbba2dde6055a9f63ce617ae969b9d7a2d63340e79",
+      "inputs": 185,
+      "sourceInputsUnchanged": true,
+      "artifactUnchanged": true,
+      "logSHA256": "26e4abb7d35073606d2b1156057e3581e017a9e5a84464631db30e50a0d8c1dc",
+      "scope": "Required static/CPU regression; not visual acceptance or FPS."
+    }
+  },
+  "previousFunctionalBrowser": {
+    "status": "incomplete: CLI1/cleanup0",
+    "reason": "Auxiliary passive observer missed village message; complete returned source hashes not collected",
+    "returnPNGMatchesAcceptedBalanced": true,
+    "fiveResourceCountsEqual": true,
+    "mustNotInferFullPass": true
+  },
+  "nearPreservationV4": {
+    "allFiveNearArraysAndFarGrassByteEqualToV3": true,
+    "evidenceSHA256": "7a8631873a58700492590f8a4343c7980eae6792a48065797f8dfc9b4e76bb46"
+  },
+  "staticReview": {
+    "status": "no new source blocker in bounded far-prototype review",
+    "reportSHA256": "2e1392d12b8e7ff5a614c283af33abc9d8238c82bb7cd4207fbd7202e88b810f",
+    "scope": "Independent source and existing CPU evidence review; not an additional browser run or full regression."
+  }
+}

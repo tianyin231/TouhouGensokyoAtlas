@@ -37,7 +37,10 @@
     "src/village-upgrade.js",
     "src/trail-upgrade.js",
     "src/trail-plants.js",
-    "src/trail-landscape.js"
+    "src/trail-landscape.js",
+    "src/forest-entrance-plants.js",
+    "src/forest-entrance-ground.js",
+    "src/forest-entrance.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",

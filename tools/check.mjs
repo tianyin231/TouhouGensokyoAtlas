@@ -10,6 +10,7 @@ import {checkVillage} from './check-village.mjs';
 import {checkTrail} from './check-trail.mjs';
 import {checkTrailLandscape} from './check-trail-landscape.mjs';
 import {checkTrailLandscapeRenderer} from './check-trail-landscape-renderer.mjs';
+import {checkForestEntrance} from './check-forest-entrance.mjs';
 import {checkGeyserCenter} from './check-geyser-center.mjs';
 import {checkGeyser} from './check-geyser.mjs';
 import {checkWindCave} from './check-wind-cave.mjs';
@@ -105,18 +106,20 @@ for (const [id, file] of [
 }
 const context = vm.createContext({ performance, TextDecoder, TextEncoder });
 vm.runInContext(builder, context);
-// Prepare the same public ground contacts used by the production overview
-// before any inherited checker requests forest, village or trail detail.
+// Reuse one public package, in production hook order. Kourindou transfers
+// nearby public trees before the entrance sees its retained source instances;
+// contact-only preparation cannot stand in for those predecessor hooks.
 {
   const raw = gunzipSync(read('assets/packs/overview.pack.gz'));
   const overview = context.GA.decodePack(raw.buffer.slice(raw.byteOffset, raw.byteOffset + raw.byteLength));
   const terrain = new context.GA.Terrain(atlas);
   context.GA.LANDSCAPE.apply(overview, terrain);
   context.GA.applyHighlandGround(overview, terrain);
-  context.GA.FOREST_UPGRADE.prepare(atlas, overview);
-  const village = context.GA.VILLAGE_UPGRADE;
-  context.GA.SurfaceContact.prepare(atlas, overview, village.contactId, village.contactBounds);
-  context.GA.TRAIL_UPGRADE.prepare(atlas, overview);
+  const builders = context.GA.extraOverviewBuilders;
+  const entranceIndex = builders.indexOf(context.GA.FOREST_ENTRANCE.applyOverview);
+  assert(entranceIndex >= 0, '森林入口总览入口未登记');
+  for (const build of builders.slice(0, entranceIndex)) overview.meshes.push(...build(atlas, overview));
+  console.log('森林入口源数据检查通过：'+JSON.stringify(checkForestEntrance(context.GA, overview, read)));
 }
 console.log('博丽神社检查通过：'+JSON.stringify(await checkHakurei(context.GA,atlas,read)));
 const pack = context.GA.buildOldHell();
