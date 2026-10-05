@@ -218,6 +218,7 @@ def main():
                     report['nativeRegression'] = dict(productionRAF=True, manualDraws=False, gpuFinish=False,
                                                        cycles=1, longTermLeakTest=False, states=[], comparisons=[])
                     lifecycle = report['nativeRegression']
+                    lifecycle['anchorProtocol'] = 'Real input tested separately; each comparison anchor is overview -> native UI clear -> cold Myouren -> three production wakes'
                     page.evaluate("()=>{globalThis.ATLAS_TEST_PAUSE=false;Object.assign(ATLAS.state,{clock:12.5,motion:false,lighting:'neutral',weather:'clear',ao:true,bloom:false,reflections:false});ATLAS.wake();}")
                     quality('balanced')
 
@@ -269,6 +270,10 @@ def main():
                     state('real wheel completed')
                     check('Mouse orbit and wheel wake the production scheduler', True,
                           'Native events; CPU values retained in state samples and never converted to hardware FPS')
+                    # Input can legitimately change retained LOD hysteresis. Use
+                    # the same cold-entry path for both resource comparisons.
+                    visit('diorama')
+                    clear()
                     visit('myouren')
                     settle()
                     before = state('detail before native unload')
