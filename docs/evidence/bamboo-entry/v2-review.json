@@ -1,0 +1,47 @@
+{
+  "sourceSHA": {
+    "src/bamboo-entry-plants.js": "5c6a5a93061bedf8b34b4832aef6d24ef8d67ffac8ad90793c7b732599238120",
+    "src/bamboo-entry-upgrade.js": "64ba7d16dab555fef410fb9c4aa70a226ada5f440f1963eb4fe6d76fe8a4a967",
+    "project.json": "2e00a31b8610f6e43846008c347d32dbb56ec70c0203b61caff2026fe27ec1f9"
+  },
+  "artifactSHA": "7fbeb277667d8dba9b0fbb3a9ceb3655cedcac04c9711698ae10f912912a9fd6",
+  "cameraSequence": [
+    "bambooOverview",
+    "bambooEntry"
+  ],
+  "hardwareFPSMeasured": false,
+  "visualAcceptance": "rejected for low-quality far representation; near branch sample shows improvement but is not accepted for release",
+  "boundedSourceChecker": {
+    "passed": true,
+    "checks": 23,
+    "checkerSHA": "0ad4d633c021299cc2207ad6c5731f94dcf965dc8813ce93f85f6f0b907bf890"
+  },
+  "comparisons": [
+    {
+      "view": "bambooOverview",
+      "delta": {
+        "drawCalls": 0,
+        "triangles": 0,
+        "residentAttributeBytes": 35964,
+        "geometries": 6,
+        "textures": 0
+      }
+    },
+    {
+      "view": "bambooEntry",
+      "delta": {
+        "drawCalls": 0,
+        "triangles": -26962,
+        "residentAttributeBytes": 626616,
+        "geometries": 12,
+        "textures": 0
+      }
+    }
+  ],
+  "visualFindings": [
+    "Near entry and back views retain a useful improvement in clustered branch foliage and terminal shoots.",
+    "Low quality merges narrow foliage into oversized solid triangle/diamond shapes and loses bamboo leaf identity.",
+    "Night view shows no newly identified rendering fault.",
+    "No complete Node or native lifecycle run occurred."
+  ]
+}

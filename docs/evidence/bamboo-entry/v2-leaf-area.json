@@ -1,0 +1,107 @@
+{
+  "scope": "Leaf surfaces and same-instance, same-camera CPU projected triangle area sum; overlaps are counted, this is NOT visible coverage/occlusion or a rendered image",
+  "sourceSHA": "5c6a5a93061bedf8b34b4832aef6d24ef8d67ffac8ad90793c7b732599238120",
+  "sourceSHAs": {
+    "src/bamboo-entry-plants.js": "5c6a5a93061bedf8b34b4832aef6d24ef8d67ffac8ad90793c7b732599238120",
+    "src/bamboo-entry-upgrade.js": "64ba7d16dab555fef410fb9c4aa70a226ada5f440f1963eb4fe6d76fe8a4a967",
+    "project.json": "2e00a31b8610f6e43846008c347d32dbb56ec70c0203b61caff2026fe27ec1f9"
+  },
+  "probeSHA": "60ea64f3b6c3c3c25b6692ca453e45e15245af29170d298c0128666ad5fcef12",
+  "prototypes": [
+    {
+      "variant": 0,
+      "near": {
+        "oldTriangles": 616,
+        "newTriangles": 936,
+        "oldLeafFaces": 308,
+        "newLeafRecords": 234,
+        "oldLeafSurfaceArea": 30.98578080122017,
+        "newLeafSurfaceArea": 30.941820562564164,
+        "areaRatio": 0.9985812770400069
+      },
+      "far": {
+        "oldTriangles": 96,
+        "newTriangles": 36,
+        "oldLeafFaces": 48,
+        "newLeafRecords": 18,
+        "oldLeafSurfaceArea": 11.312890969654259,
+        "newLeafSurfaceArea": 14.93822247945979,
+        "areaRatio": 1.3204602183058367
+      }
+    },
+    {
+      "variant": 1,
+      "near": {
+        "oldTriangles": 616,
+        "newTriangles": 936,
+        "oldLeafFaces": 308,
+        "newLeafRecords": 234,
+        "oldLeafSurfaceArea": 30.55517941438542,
+        "newLeafSurfaceArea": 30.76235964204373,
+        "areaRatio": 1.006780527283069
+      },
+      "far": {
+        "oldTriangles": 96,
+        "newTriangles": 36,
+        "oldLeafFaces": 48,
+        "newLeafRecords": 18,
+        "oldLeafSurfaceArea": 11.414932573441007,
+        "newLeafSurfaceArea": 14.736029501830261,
+        "areaRatio": 1.2909431927891026
+      }
+    },
+    {
+      "variant": 2,
+      "near": {
+        "oldTriangles": 616,
+        "newTriangles": 936,
+        "oldLeafFaces": 308,
+        "newLeafRecords": 234,
+        "oldLeafSurfaceArea": 30.51178911803337,
+        "newLeafSurfaceArea": 30.873660523805473,
+        "areaRatio": 1.0118600520071839
+      },
+      "far": {
+        "oldTriangles": 96,
+        "newTriangles": 36,
+        "oldLeafFaces": 48,
+        "newLeafRecords": 18,
+        "oldLeafSurfaceArea": 11.1964573713995,
+        "newLeafSurfaceArea": 14.541984527029625,
+        "areaRatio": 1.2988022947486961
+      }
+    }
+  ],
+  "entryProjection": {
+    "record": "bamboo:leaf:0:4:8",
+    "viewport": [
+      1280,
+      720
+    ],
+    "eye": [
+      457,
+      70.8,
+      754
+    ],
+    "target": [
+      411,
+      73,
+      845
+    ],
+    "fov": 49,
+    "lod": "near",
+    "before": {
+      "triangleAreaSumPixels": 124137.67701249634,
+      "clippedSubmittedTriangles": 41651,
+      "instances": 74
+    },
+    "after": {
+      "triangleAreaSumPixels": 150717.5048539375,
+      "clippedSubmittedTriangles": 63152,
+      "instances": 74
+    },
+    "ratio": 1.214115717976304,
+    "omitsShaderWind": true
+  },
+  "CPUms": 5319.823066
+}

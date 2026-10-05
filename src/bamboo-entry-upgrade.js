@@ -2,7 +2,7 @@
  * colors, bounds, LOD distance, paths, buildings and cold overview unchanged.
  */
 (function(G){'use strict';
-const revision=1,cells=Object.freeze(['3:8','4:8','3:9','4:9']),cellSet=new Set(cells),
+const revision=2,cells=Object.freeze(['3:8','4:8','3:9','4:9']),cellSet=new Set(cells),
       recordID=/^bamboo:(stem|leaf):([012]):(-?\d+):(-?\d+)$/;
 const target=m=>{const match=recordID.exec(m.id);return match&&cellSet.has(match[3]+':'+match[4])?{part:match[1],variant:Number(match[2]),cell:match[3]+':'+match[4]}:null;};
 function bytes(meshes){const seen=new Set();let n=0;for(const m of meshes)for(const k of ['vertices','farVertices','instances','instanceColors','index']){const a=m[k];if(a&&!seen.has(a.buffer)){seen.add(a.buffer);n+=a.buffer.byteLength;}}return n;}

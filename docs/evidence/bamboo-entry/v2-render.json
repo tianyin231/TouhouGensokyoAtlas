@@ -1,0 +1,552 @@
+{
+  "artifactSHA": "7fbeb277667d8dba9b0fbb3a9ceb3655cedcac04c9711698ae10f912912a9fd6",
+  "viewport": [
+    1280,
+    720
+  ],
+  "dpr": 1,
+  "clock": 12.5,
+  "hardwareFPSMeasured": false,
+  "frames": [
+    {
+      "name": "bambooOverview",
+      "samples": [
+        {
+          "stats": {
+            "calls": 2277,
+            "triangles": 4388714,
+            "totalCalls": 2279,
+            "totalTriangles": 4388718,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 2557.10000000149,
+            "geometries": 743,
+            "textures": 11,
+            "residentObjects": 1638,
+            "residentAttributeMiB": 64.96642112731934,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 969,
+            "detailDrawObjects": 669,
+            "evictions": 240,
+            "uploads": 1878,
+            "renderCount": 3,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": null,
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          },
+          "memory": {
+            "geometries": 743,
+            "textures": 11
+          },
+          "residentAttributeBytes": 68122230,
+          "programs": 184,
+          "lost": false,
+          "eye": [
+            1104,
+            471,
+            1890
+          ],
+          "target": [
+            500,
+            72,
+            1250
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "lighting": "neutral",
+          "ao": true,
+          "view": "bambooOverview",
+          "stream": {
+            "requests": 1,
+            "builds": 1,
+            "cancelled": 0,
+            "evictions": 0,
+            "cacheHits": 0,
+            "staleDropped": 0,
+            "cached": [
+              "bamboo"
+            ],
+            "building": null,
+            "required": [
+              "bamboo"
+            ],
+            "detailSourceMiB": 17.431251525878906,
+            "softBudgetMiB": 220,
+            "log": [
+              {
+                "region": "bamboo",
+                "buildMs": 522.7999999970198,
+                "sourceBytes": 18277992,
+                "epoch": 1
+              }
+            ]
+          }
+        },
+        {
+          "stats": {
+            "calls": 1635,
+            "triangles": 2841707,
+            "totalCalls": 1637,
+            "totalTriangles": 2841711,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 24.899999998509884,
+            "geometries": 743,
+            "textures": 11,
+            "residentObjects": 1638,
+            "residentAttributeMiB": 64.96642112731934,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 969,
+            "detailDrawObjects": 669,
+            "evictions": 240,
+            "uploads": 1878,
+            "renderCount": 4,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": null,
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          },
+          "memory": {
+            "geometries": 743,
+            "textures": 11
+          },
+          "residentAttributeBytes": 68122230,
+          "programs": 184,
+          "lost": false,
+          "eye": [
+            1104,
+            471,
+            1890
+          ],
+          "target": [
+            500,
+            72,
+            1250
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "lighting": "neutral",
+          "ao": true,
+          "view": "bambooOverview",
+          "stream": {
+            "requests": 1,
+            "builds": 1,
+            "cancelled": 0,
+            "evictions": 0,
+            "cacheHits": 0,
+            "staleDropped": 0,
+            "cached": [
+              "bamboo"
+            ],
+            "building": null,
+            "required": [
+              "bamboo"
+            ],
+            "detailSourceMiB": 17.431251525878906,
+            "softBudgetMiB": 220,
+            "log": [
+              {
+                "region": "bamboo",
+                "buildMs": 522.7999999970198,
+                "sourceBytes": 18277992,
+                "epoch": 1
+              }
+            ]
+          }
+        },
+        {
+          "stats": {
+            "calls": 1635,
+            "triangles": 2841707,
+            "totalCalls": 1637,
+            "totalTriangles": 2841711,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 17.399999998509884,
+            "geometries": 743,
+            "textures": 11,
+            "residentObjects": 1638,
+            "residentAttributeMiB": 64.96642112731934,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 969,
+            "detailDrawObjects": 669,
+            "evictions": 240,
+            "uploads": 1878,
+            "renderCount": 5,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": null,
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          },
+          "memory": {
+            "geometries": 743,
+            "textures": 11
+          },
+          "residentAttributeBytes": 68122230,
+          "programs": 184,
+          "lost": false,
+          "eye": [
+            1104,
+            471,
+            1890
+          ],
+          "target": [
+            500,
+            72,
+            1250
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "lighting": "neutral",
+          "ao": true,
+          "view": "bambooOverview",
+          "stream": {
+            "requests": 1,
+            "builds": 1,
+            "cancelled": 0,
+            "evictions": 0,
+            "cacheHits": 0,
+            "staleDropped": 0,
+            "cached": [
+              "bamboo"
+            ],
+            "building": null,
+            "required": [
+              "bamboo"
+            ],
+            "detailSourceMiB": 17.431251525878906,
+            "softBudgetMiB": 220,
+            "log": [
+              {
+                "region": "bamboo",
+                "buildMs": 522.7999999970198,
+                "sourceBytes": 18277992,
+                "epoch": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "bambooEntry",
+      "samples": [
+        {
+          "stats": {
+            "calls": 539,
+            "triangles": 1830403,
+            "totalCalls": 541,
+            "totalTriangles": 1830407,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 9,
+            "geometries": 148,
+            "textures": 11,
+            "residentObjects": 552,
+            "residentAttributeMiB": 9.944023132324219,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 87,
+            "detailDrawObjects": 465,
+            "evictions": 1383,
+            "uploads": 1935,
+            "renderCount": 7,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": null,
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          },
+          "memory": {
+            "geometries": 148,
+            "textures": 11
+          },
+          "residentAttributeBytes": 10427064,
+          "programs": 185,
+          "lost": false,
+          "eye": [
+            457,
+            70.8,
+            754
+          ],
+          "target": [
+            411,
+            73,
+            845
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "lighting": "neutral",
+          "ao": true,
+          "view": "bambooEntry",
+          "stream": {
+            "requests": 1,
+            "builds": 1,
+            "cancelled": 0,
+            "evictions": 0,
+            "cacheHits": 1,
+            "staleDropped": 0,
+            "cached": [
+              "bamboo"
+            ],
+            "building": null,
+            "required": [
+              "bamboo"
+            ],
+            "detailSourceMiB": 17.431251525878906,
+            "softBudgetMiB": 220,
+            "log": [
+              {
+                "region": "bamboo",
+                "buildMs": 522.7999999970198,
+                "sourceBytes": 18277992,
+                "epoch": 1
+              }
+            ]
+          }
+        },
+        {
+          "stats": {
+            "calls": 539,
+            "triangles": 1830403,
+            "totalCalls": 541,
+            "totalTriangles": 1830407,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 21.899999998509884,
+            "geometries": 148,
+            "textures": 11,
+            "residentObjects": 552,
+            "residentAttributeMiB": 9.944023132324219,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 87,
+            "detailDrawObjects": 465,
+            "evictions": 1383,
+            "uploads": 1935,
+            "renderCount": 8,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": null,
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          },
+          "memory": {
+            "geometries": 148,
+            "textures": 11
+          },
+          "residentAttributeBytes": 10427064,
+          "programs": 185,
+          "lost": false,
+          "eye": [
+            457,
+            70.8,
+            754
+          ],
+          "target": [
+            411,
+            73,
+            845
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "lighting": "neutral",
+          "ao": true,
+          "view": "bambooEntry",
+          "stream": {
+            "requests": 1,
+            "builds": 1,
+            "cancelled": 0,
+            "evictions": 0,
+            "cacheHits": 1,
+            "staleDropped": 0,
+            "cached": [
+              "bamboo"
+            ],
+            "building": null,
+            "required": [
+              "bamboo"
+            ],
+            "detailSourceMiB": 17.431251525878906,
+            "softBudgetMiB": 220,
+            "log": [
+              {
+                "region": "bamboo",
+                "buildMs": 522.7999999970198,
+                "sourceBytes": 18277992,
+                "epoch": 1
+              }
+            ]
+          }
+        },
+        {
+          "stats": {
+            "calls": 539,
+            "triangles": 1830403,
+            "totalCalls": 541,
+            "totalTriangles": 1830407,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 10.899999998509884,
+            "geometries": 148,
+            "textures": 11,
+            "residentObjects": 552,
+            "residentAttributeMiB": 9.944023132324219,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 87,
+            "detailDrawObjects": 465,
+            "evictions": 1383,
+            "uploads": 1935,
+            "renderCount": 9,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": null,
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          },
+          "memory": {
+            "geometries": 148,
+            "textures": 11
+          },
+          "residentAttributeBytes": 10427064,
+          "programs": 185,
+          "lost": false,
+          "eye": [
+            457,
+            70.8,
+            754
+          ],
+          "target": [
+            411,
+            73,
+            845
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "lighting": "neutral",
+          "ao": true,
+          "view": "bambooEntry",
+          "stream": {
+            "requests": 1,
+            "builds": 1,
+            "cancelled": 0,
+            "evictions": 0,
+            "cacheHits": 1,
+            "staleDropped": 0,
+            "cached": [
+              "bamboo"
+            ],
+            "building": null,
+            "required": [
+              "bamboo"
+            ],
+            "detailSourceMiB": 17.431251525878906,
+            "softBudgetMiB": 220,
+            "log": [
+              {
+                "region": "bamboo",
+                "buildMs": 522.7999999970198,
+                "sourceBytes": 18277992,
+                "epoch": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "externalErrors": [
+    "Failed to load resource: the server responded with a status of 404 (File not found)"
+  ],
+  "contextEvents": [],
+  "httpFailures": [
+    {
+      "path": "/favicon.ico",
+      "status": 404,
+      "source": "local HTTP server"
+    }
+  ],
+  "browser": "151.0.7922.173",
+  "driver": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+}

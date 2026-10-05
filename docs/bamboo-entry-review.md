@@ -22,6 +22,16 @@ V1将羽片式枝叶改为曲枝和窄叶，但近景冠层明显变稀，呈细
 
 两个探针当时以inline JS执行，未在运行前绑定脚本SHA；按实际调用原文保存到 `tools/experiments/bamboo-entry/` 供重现，不冒称预先冻结的脚本。完整候选checker实际SHA为 `ca02be885b9b8d0e8126b339e3d64fa09120e15f9daa1f64a7f0a3662ff8773e`。
 
+## V2补查：近枝有收益，低画质拒收
+
+[原版入口](previews/bamboo-entry/before-entry.png) → [V2入口](previews/bamboo-entry/v2-entry.png)有可保留的近枝叶束和梢叶变化；背面近档也成立，夜景未发现新增异常。但[原版低档](previews/bamboo-entry/before-low.png) → [V2低档](previews/bamboo-entry/v2-low-rejected.png)暴露了远档表示问题：合并束变成宽大的实心三角／菱形片，窄竹叶辨识变差。本稿整体仍未验收，不能因近景有收益而发布。
+
+最终plants SHA `5c6a5a93061bedf8b34b4832aef6d24ef8d67ffac8ad90793c7b732599238120`，HTML SHA `7fbeb277667d8dba9b0fbb3a9ceb3655cedcac04c9711698ae10f912912a9fd6`。近1823、远111三角；共享源626616B，原身份和净空保持。[独立23项](evidence/bamboo-entry/v2-independent.json)实际5.82秒全部通过，准确checker SHA `0ad4d633c021299cc2207ad6c5731f94dcf965dc8813ce93f85f6f0b907bf890`，原V1失败不改写。近叶面积回到原99.86%—101.19%，远叶面积129.09%—132.05%；面积接近没有防止远叶形状失败。
+
+同入口541 calls、1,830,407三角、10,427,064属性B、148几何、11纹理；相对基线减少26,962个提交三角、增加626,616属性B。低档519 calls／1,324,581三角不变，属性增加35,964B、几何增加6、纹理9不变。背面与夜景的同机位指标及原始检查见[v2-detail-render](evidence/bamboo-entry/v2-detail-render.json)和[baseline-detail-render](evidence/bamboo-entry/baseline-detail-render.json)。软件GPU样本不代表硬件FPS或CPU交互改善。
+
+本稿实际执行构建、一次完整有界CPU检查、一次叶面积探针、全景／入口及背面／低档／夜景的真实对照。23项源检查与浏览器预算通过，不等于视觉接受。完整Node22、连续路线LOD、CPU交互、原生加载／卸载重入、CI与部署均未运行。
+
 ## 继续入口
 
-首稿源码在本提交；活跃工作树 `/workspace/bamboo-entry-refinement`，下一稿需同时补足冠层体量和远档枝叶连接，保留预算。两次无改善则停止对应构形方法并隔离，继续任务无需等待用户逐步确认。竹林林分疏密、地面过渡与永远亭庭院不在本首稿完成范围。
+V1、V2精确源码分别由提交历史保存。活跃工作树 `/workspace/bamboo-entry-refinement`；下一步保留近景，改用真实窄叶与轻枝重做远档表示，仍守111三角和0.6MiB预算。只重测受影响项，不重跑未改变且已通过的昂贵检查。无需逐步等待用户确认；主入口群落疏密、裸地、林下过渡及庭院仍是独立欠账。
