@@ -70,7 +70,8 @@
     "src/forest-path-renderer.js",
     "src/forest-canopy-renderer.js",
     "src/render-recovery.js",
-    "src/render-diagnostics.js"
+    "src/render-diagnostics.js",
+    "src/muenzuka-edge-renderer.js"
   ],
   "extensionData": [
     "data/asama.json",

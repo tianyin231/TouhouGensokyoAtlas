@@ -1,0 +1,80 @@
+{
+  "kind": "Muenzuka local bounds and paired lifecycle review checkpoint",
+  "candidateOnly": true,
+  "noDirectMainMerge": true,
+  "runtimeSourceSHA256": {
+    "src/muenzuka-edge.js": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+    "src/muenzuka-edge-renderer.js": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4",
+    "project.json": "c08082becb98fcd912095789e61ca79b20ec375580360fdfd3e371063054eef8"
+  },
+  "HTMLSHA256": "ce843445fca81f3e3cef42ac1b58ed16870ba43ed251d23b2e2e4928caf12a97",
+  "buildInputs": 204,
+  "independentSourceInputDifference": "Independent12/12 uses205 inputs, with one additional checker; exact same runtime HTML.",
+  "files": {
+    "art-review-bounds.json": {
+      "bytes": 6678,
+      "sha256": "d72b988667ff83767ff0cee34c4a707c31e8f2422c81702badeb3c50302f9d31"
+    },
+    "bounds-capture-binding.json": {
+      "bytes": 1654,
+      "sha256": "b821b112bf608cb7fd35e7f6b470b82c186b2db8e7a87da5f3c8491131f84405"
+    },
+    "check-muenzuka-edge-executed.mjs": {
+      "bytes": 19300,
+      "sha256": "5f0568c0bf37dda0fd1ecebca7899aa8d932fe95b108a23f218845f57f4f8c4a"
+    },
+    "independent-bounds-extension-03.json": {
+      "bytes": 39101,
+      "sha256": "0fd00f7616dfea98aa149beb90a43c014335df7b974c8e16d65b0b5838ec2fac"
+    },
+    "independent-bounds-extension-03.mjs": {
+      "bytes": 8361,
+      "sha256": "3e98cccd264897d2138b6312190acc6664f2181dca72bb5b25694d3a9a59a96f"
+    },
+    "independent-source-01-execution.json": {
+      "bytes": 21185,
+      "sha256": "db0d661a0b01e34023acdb80621f617042659e81fad8f10784985facfff106ae"
+    },
+    "independent-source-01.json": {
+      "bytes": 18393,
+      "sha256": "7f022b177b7722675204d2d9f45de7ea5bb942b2a6fc15e638f9ea6f2e9fadf7"
+    },
+    "native/check-native-draft.py": {
+      "bytes": 21476,
+      "sha256": "885eb056a8f8b2ccd300b66b1d38ae3e203fcbdad2882ea98587bf95df48bb77"
+    },
+    "native/evidence.json": {
+      "bytes": 121276,
+      "sha256": "b520d03ef4bef9bdd03627260fd29424dabd60b4f3e0c6a9cee2c3eb1e006b55"
+    },
+    "native/native-protocol-preparation.json": {
+      "bytes": 7153,
+      "sha256": "042a6889ee4ee4f01c66b3c50cd75412f1ff9d1e7cece5aafd7a94cbf1a9bc97"
+    },
+    "native/native-source-probe.js": {
+      "bytes": 7141,
+      "sha256": "cb46a92390e9d7a3696d0408273c57899dd2a7b716244b9978b199721b4999a7"
+    },
+    "native/tools/check-sunflower-browser.py": {
+      "bytes": 25316,
+      "sha256": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4"
+    }
+  },
+  "retainedPriorFailureCommit": "32d4196916ed0296e4ac9828ff97f7b29615d43b",
+  "notCopied": [
+    "dist or generated HTML",
+    "native V8 snapshots",
+    "two ~16MB original lifecycle reports",
+    "full screenshot batches"
+  ],
+  "stillPending": [
+    "integrated full Node",
+    "final commit CI/Pages/online artifact validation",
+    "continuous LOD camera-crossing and dynamic-wind image sweep"
+  ],
+  "visualLimitations": [
+    "near camera foreground occludes target close inspection",
+    "cold31/native62 density difference persists",
+    "east crowns, ground and understory unfinished"
+  ]
+}

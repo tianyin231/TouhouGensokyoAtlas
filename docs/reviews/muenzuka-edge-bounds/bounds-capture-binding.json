@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "sourceSHA256": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+  "rendererSHA256": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4",
+  "projectSHA256": "c08082becb98fcd912095789e61ca79b20ec375580360fdfd3e371063054eef8",
+  "artifactSHA256": "ce843445fca81f3e3cef42ac1b58ed16870ba43ed251d23b2e2e4928caf12a97",
+  "buildInputs": 204,
+  "overview": {
+    "oldProtocolSHA256": "de39ed0dc9e75b4cdf39c8852bc83d32a55ccdf720ee8df51599ca99084a747f",
+    "newProtocolSHA256": "666a3f01c0863ef8c408e352d27c06728192cddbe92d918f448ddb3222d32809",
+    "browserBodySHA256": "c96ead30302e2b7e2bead823ddd18d7c9321e950f36fcf08ea96b29b0ea8a281",
+    "browserBodyByteIdentical": true
+  },
+  "views": {
+    "oldProtocolSHA256": "70665892a5ffb7371e7bc0022f27e72e3e2e25ab37477dfa06b2e169995c33db",
+    "newProtocolSHA256": "a55b69b69e78e11ef3478ee6221c7f23043b3b1893815cbf5b777813da3d98f9",
+    "browserBodySHA256": "005b1768ad10eceab78f1e4a8517248a1332cef804b925b7845ba509c8d24a45",
+    "browserBodyByteIdentical": true,
+    "specSHA256": "2c4e7d2ce6631f092e6dc48c18d02d429c34f991a869c1625090194d4dc3a007"
+  },
+  "changes": [
+    "Artifact/path/input-count bindings updated for only new local culling renderer and project registration.",
+    "No freeze on unrelated Flower candidate, which Sol is now authorised to change.",
+    "A can compare original same-body baseline; B uses new protocol for both baseline and candidate."
+  ],
+  "separateSessions": "Overview fresh browser; A fresh browser near then back; B fresh browser cold then native low and night; never concatenate overview+A.",
+  "budgetsUnchanged": true
+}

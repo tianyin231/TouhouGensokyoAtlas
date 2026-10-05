@@ -1,0 +1,2887 @@
+{
+  "schema": 1,
+  "kind": "Compact review of actual Muenzuka paired production lifecycle",
+  "createdUTC": "2026-10-05T22:23:08.224450+00:00",
+  "originalReportsPreserved": true,
+  "originalReportsCopiedIntoThisBundle": false,
+  "scripts": {
+    "check-native-draft.py": {
+      "bytes": 21476,
+      "sha256": "885eb056a8f8b2ccd300b66b1d38ae3e203fcbdad2882ea98587bf95df48bb77"
+    },
+    "native-protocol-preparation.json": {
+      "bytes": 7153,
+      "sha256": "042a6889ee4ee4f01c66b3c50cd75412f1ff9d1e7cece5aafd7a94cbf1a9bc97"
+    },
+    "native-source-probe.js": {
+      "bytes": 7141,
+      "sha256": "cb46a92390e9d7a3696d0408273c57899dd2a7b716244b9978b199721b4999a7"
+    },
+    "tools/check-sunflower-browser.py": {
+      "bytes": 25316,
+      "sha256": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4"
+    }
+  },
+  "sessions": [
+    {
+      "variant": "baseline",
+      "originalReport": {
+        "path": "/workspace/muenzuka-evidence/baseline-native/report.json",
+        "bytes": 15907654,
+        "sha256": "e00d733da751694ff8ba0f0d94fe96c92a613309b97faccfa96a7db9d7c04f8e"
+      },
+      "execution": {
+        "variant": "baseline",
+        "startedUTC": "2026-10-05T22:12:17.213706+00:00",
+        "approvedPreparationSHA256": "042a6889ee4ee4f01c66b3c50cd75412f1ff9d1e7cece5aafd7a94cbf1a9bc97",
+        "protocolSHA256Before": "885eb056a8f8b2ccd300b66b1d38ae3e203fcbdad2882ea98587bf95df48bb77",
+        "probeSHA256Before": "cb46a92390e9d7a3696d0408273c57899dd2a7b716244b9978b199721b4999a7",
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "/workspace/muenzuka-evidence/check-native-draft.py",
+          "--variant",
+          "baseline",
+          "--repo",
+          "/workspace/sunflower-entry-refinement",
+          "--dist",
+          "/workspace/sunflower-entry-evidence/final-dist",
+          "--output",
+          "/workspace/muenzuka-evidence/baseline-native"
+        ],
+        "cwd": "/workspace",
+        "CPUOverlap": "Sol may perform light offline diagnostics against existing V8 data; no other GPU or heavy native construction is authorized during this session. Wall time is not a speed comparison.",
+        "GPUOwner": "Muenzuka lifecycle baseline, one browser session",
+        "endedUTC": "2026-10-05T22:16:06.999220+00:00",
+        "elapsedSeconds": 229.7855376390071,
+        "exitCode": 0,
+        "protocolSHA256After": "885eb056a8f8b2ccd300b66b1d38ae3e203fcbdad2882ea98587bf95df48bb77",
+        "probeSHA256After": "cb46a92390e9d7a3696d0408273c57899dd2a7b716244b9978b199721b4999a7",
+        "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reportSHA256": "e00d733da751694ff8ba0f0d94fe96c92a613309b97faccfa96a7db9d7c04f8e",
+        "passedChecks": 22,
+        "totalChecksReached": 22,
+        "failure": null,
+        "inputsUnchanged": true,
+        "artifactUnchanged": true
+      },
+      "checks": [
+        {
+          "name": "Actual native application booted",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Production balanced quality and both memory budgets",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Existing bounded public retention remains six seconds",
+          "passed": true,
+          "data": 6
+        },
+        {
+          "name": "Actual mouse orbit and wheel wake production RAF",
+          "passed": true,
+          "data": "Raw per-event CPU samples remain software-backend observations, not hardware speed claims."
+        },
+        {
+          "name": "Only Muenzuka is required, cached, installed and actually visible",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Exact comparison pose",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Complete Muenzuka native, all public and independent cold sources inventoried",
+          "passed": true,
+          "data": {
+            "publicRecords": 2154,
+            "nativeRecords": 63,
+            "muenzukaColdRecords": 13,
+            "coldOrdinaryTrees": 31,
+            "sourceViews": 3576,
+            "uniqueBackings": 1871,
+            "uniqueBackingBytes": 150273440
+          }
+        },
+        {
+          "name": "Original baseline has no Muenzuka private prototype or culling extension",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "All native source bytes have explicit bank-only backing ownership",
+          "passed": true,
+          "data": {
+            "backings": 132,
+            "inventoriedBytes": 4718792,
+            "managedBytes": 4718792
+          }
+        },
+        {
+          "name": "Nonempty exclusively Muenzuka GPU geometry ownership",
+          "passed": true,
+          "data": {
+            "count": 22
+          }
+        },
+        {
+          "name": "Native CPU cache, pending task, renderer pack and record maps truly clear",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "All public records survive unload",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "All exclusively native GPU geometries are released",
+          "passed": true,
+          "data": {
+            "count": 22,
+            "retained": []
+          }
+        },
+        {
+          "name": "All public arrays, metadata and source identities survive unload unchanged",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Main-thread private near/far buffers survive unload without being counted as native GPU ownership",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Every native/public source value, public identity and private cache restores exactly",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Actual sphere values, residency and prototype GPU status restore exactly",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Camera, neighbors, wanted identities and LOD restore",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Strict comparable resource counters restore",
+          "passed": true,
+          "data": {}
+        },
+        {
+          "name": "Program keys and reference counts restore",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Exact native reentry image restores",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "One second static view draws zero frames at paused clock",
+          "passed": true,
+          "data": null
+        }
+      ],
+      "sourceBinding": {
+        "HEADBefore": "451c8b53df9334693c4e91421363a691033e1fdf",
+        "HEADAfter": "451c8b53df9334693c4e91421363a691033e1fdf",
+        "releaseSHA256": "3bb39b8868379e6ade114da35d29c373eaccac3bad34e8972a7b4c0194f427f6",
+        "artifactSHA256": "402224fe67018c0fc33c6820f09d04cdea33b80914a79e62ca54de0e627bf8f8",
+        "protocolSHA256": "885eb056a8f8b2ccd300b66b1d38ae3e203fcbdad2882ea98587bf95df48bb77",
+        "sourceProbeSHA256": "cb46a92390e9d7a3696d0408273c57899dd2a7b716244b9978b199721b4999a7",
+        "stateHelperSHA256": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+        "inputsBefore": {
+          "project.json": "382c288ce75ee249e37f39f972a03f68ff9963d4fd1ce748acf87c1eac06ead0",
+          "data/lunar.json": "92abf8f26344ef31bee7cb197330fe6cb7b4854a590e2687cfc7565dd4827ccc",
+          "data/makai.json": "3d5566dc31dcf696865246ba63f5d9cef7ad45464f5dcccc00e135564f166435",
+          "data/netherworld.json": "dfb60f6170e841f9f034a3b41cb7bea565e2c5cefa5b371099509693e14aa248",
+          "data/heaven.json": "6383792bb7608ff61f52653dafc81eedd2a6155287864a25fc653889c2e3111a",
+          "data/higan.json": "aed41a6af1c6ef21250f4533dd888f0f7610eb81db6907cb0b3219ebaa377bcd",
+          "data/animal.json": "58294cbe1b2c9e3dc28a316d927bbd410b32fb3bd024adce425266b4b0fe176f",
+          "data/backdoor.json": "a174f1344ae3dc8b73e336c130d0d87598b386e35bfc69c7c3336fdc78a3e289",
+          "data/kasen.json": "b03522e4d5f14aa691de7fc2ffcf596fe6c13840d6cc2b5d7c7e391c5d30fdbf",
+          "data/current-hell.json": "4e99e4f519f90d77f7f51267064ac4f408bd5067450be249c1138c4d7b0b2b1a",
+          "data/rainbow-mine.json": "d852d34cfbbcf3ee2a2168fbb9da9e139e33f2b320456bb8588c91ebe29bcc9b",
+          "data/highland.json": "b15892fb6b9a589aa890e4e3f44e7d8d0a57b234b16809f91ec1a58b7bb6775d",
+          "data/asama.json": "72098c152fd80bd90e7f70ab96053a477bb2a5bdd8f73ff72440416e6f67344b",
+          "data/hiten.json": "01c78bd126626d5a36470d0a2f0752ae0a1ae28b53aedf66e7c36d67825d8d26",
+          "data/mayohiga.json": "a9c8bcf0ecf74c54c115914875ecd9542e4fbf9f32e363760d79336add62ae47",
+          "data/peony.json": "67923caf740dc7cecd29f7a54893424d65ffc141a694e3a416f4f817c3448a5c",
+          "data/waterfall-cave.json": "45719d3e91fc6b4d0fba6ff0f350e844e54ba172b809355dfacec58d59fdcdcc",
+          "data/cucumber-farm.json": "4478346595556725f3007e1d1e7ad64b65b454adf67ea281e9ad97ee7cadd5b2",
+          "data/wind-cave.json": "a3c37a35721107173aacafef9d5188146769d32bee6ef57464ce1a143530af6a",
+          "data/geyser.json": "c9384ca594800782eec387af75a22df7c241831bdb27dd6a10405501580671b7",
+          "data/geyser-center.json": "faa4cc8582fef8f76595bcd6ddb6819bfe308c270a8878b8ebd3766942783646",
+          "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
+          "data/characters.json": "b87604e876804b5b9469657adf653451eccd561cddecdbb578f8966745beacc9",
+          "vendor/three/three.core.js": "78b2c4218834ca8670547ed2315bfc21a00ff4dc3403bbffc8c31493d31d14de",
+          "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+          "src/old-hell.js": "fde1ded5cfad70061c9a69b09b000fbd35bab17edcd583ed4d7973d5c9cfa643",
+          "src/kishinjou.js": "a90ac62e8244c71583fa85b007186bd8798454eba406136199f66949024a2899",
+          "src/lunar.js": "b7a870cf111ffa1ad4c68c5a9fed5d7f31ae08e4fb2c85dce1e8c60308243203",
+          "src/makai.js": "00746b16369b07c2ae549da3d8bcd34505f059b276f592cefd4053704b6a294b",
+          "src/netherworld.js": "e74f73aa97eb1fcca45e44abc894465b5279467e274089e0eeec83f6d871485a",
+          "src/landmarks.js": "04b8e640ca0fc597f889625b8a8173a767eced751355e5dbe034f44fadfd7ff9",
+          "src/heaven.js": "3231eef2637ac64cfb7eb257f35ddf1b5e59bd976642db1aa5a55baf93c3010d",
+          "src/higan.js": "deb81b207343b112ed0080d9378693a4bc04f93f82ad0af6cbaa626b623df34c",
+          "src/landscape.js": "4ef7b6f8076842506e8cac09086db4aa8277f92468e08aa0069c326f77ef35dc",
+          "src/animal.js": "055fe408319dd4d2faca1db8b0619c9d3222a2e42c8c575ebfbb7bf0cdfa7241",
+          "src/backdoor.js": "08031b368a145b1a4d774bd8d7e85dfc81c5adde2682515c069af774b882f098",
+          "src/kasen.js": "cf824cc3b34ef32f42bc127ca9d4ff8570876a9b47626ca5c43acfb709493004",
+          "src/current-hell.js": "47b27653fc2df883b38cbb212eca268b122eea8d72c03d047b590b6f8a8dd7f8",
+          "src/rainbow-mine.js": "8d41ee356f7d1323316e866cf96a88e6775edca6ef8784fc9dc812b9856a8d87",
+          "src/highland.js": "8816c040dd6f3c24d42beef3edb7a2c2604131bb41507c8964886ab659cda9d3",
+          "src/hakurei-plants.js": "8d149696fef5fc9a85204bfb3c2c4bd45992652cf9a2c81f498c0440f5e159f1",
+          "src/hakurei-transition.js": "18c8cb5751436fd08b9c92c32459ad5e71084ecde8f18e26ef44354decc47b3d",
+          "src/asama.js": "42fdf7c969a20389ceb7fb35cdfac96115a1501fb4a5483ede80268814176f15",
+          "src/asama-roads.js": "983371f7f2e24ef21b03bee452c1b50bba85747c035725f842ec42ba2a96a49a",
+          "src/surface-contact.js": "719a315917b55fa5025ec32659509b5be8965d8a577cdfc92c63c96db4dedf5e",
+          "src/hiten.js": "b2671674c180a44753bbccd61a994cc4efb3089618c10d586eba97a33696412e",
+          "src/mayohiga.js": "3cbb575944f32ef1f26e3041f9400a2e9259b98aef3d4f9a78d52c5624c8d75e",
+          "src/peony.js": "0116a5ba2d34cc8e05696e00d9d96b358ae2a9fcb1a395ca50e2b8d22821bc9b",
+          "src/waterfall-cave.js": "eb2430945bb41dc7ba2f2977cc93c6953c5611ec3cb4b5098d7f52c9002f8094",
+          "src/cucumber-farm.js": "f5e4b9c53963f81b170fd56371934267d3587e7770dc4210c957c534f7b9e90d",
+          "src/wind-cave.js": "94ce9aa01c17eb5c1faed009311b3039166879912b96f8a5b3cd5cf22e325737",
+          "src/geyser.js": "e6dd521faf5903bd410390e04ab8477f6b7a2b82f7dedbe4bf54f35530de376c",
+          "src/geyser-center.js": "b58dc4782ff80b95811236967864852776a36def8e0c01863ea46b31babd9f86",
+          "src/kourindou-upgrade.js": "e4c7371c745a6a4b69ed618f7fdcb7f44208b092b65f0379cbb752ba9db52599",
+          "src/forest-upgrade.js": "6468c87138443f3599c7cffbfbd0191e0733ad2259f46f87e3a5d302c1845270",
+          "src/village-upgrade.js": "4f56749811034552227f3280c9b34c534484fc1d1e7b631b52d6d2c17242c44f",
+          "src/trail-upgrade.js": "cce321e38e5c9a26d585092029ed415b9b78032c46000ba47b55ed190f21932f",
+          "src/trail-plants.js": "9b27de1ef04d9b309212b198e203890f848bc85a107c3b7dc7fa4818806a2696",
+          "src/trail-landscape.js": "ef50de3407b2f6e31eed41939ec8003c27a16dccf7e907b98bf72fc4a13919a6",
+          "src/forest-entrance-plants.js": "b42c6959cf4005e362954d468bc1130a459c3104aa85316dff752fd99ddc6ca1",
+          "src/forest-entrance-ground.js": "cc603d5a2b8bd24fd24ec78d48a7124e66e79e67a5751b9ef281a5dba2839ecc",
+          "src/forest-entrance.js": "0320d5c1a6a89d75e29ce3728135222c7a6de3b22b572769b9c32b27c16dee5c",
+          "src/forest-canopy-plants.js": "043a18fa90e756686cc5f28ebe82295271fe6e99386d22e5c8661ac578156b66",
+          "src/forest-canopy-ground.js": "fa889105ad3689bddd44538fe5d72e73334c02cca755ec466eb83f9f87995d99",
+          "src/forest-canopy-road.js": "ac7211359b2a4079713788c97329d6a79383da50f1e601d03eac860f10f2c2a8",
+          "src/forest-crown-rollout.js": "133abcaa7bdfaec3ede8617643fa9beb302642c194cb9f2971caa01b8f919820",
+          "src/forest-canopy.js": "6820b51c35b707dccd920a552347b10decaa6e246d81bd81d5745e0db6eaf29a",
+          "src/bamboo-entry-plants.js": "ff487a6667e53d393523a2607655ae693f5bdcd69775ade31a246899d74948fe",
+          "src/bamboo-entry-upgrade.js": "937f915a583b0e7b14588f95980ff0055f27f54d6c7d1918d301ce0fb6e1cbe1",
+          "src/sunflower-entry.js": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+          "src/styles.css": "b1e9f17efcfb21d3e806e2fc19c74cfbc381e59f6a0b417c81e74b48b77091e7",
+          "data/expansion.json": "0ffb83baa4a828bbc3366b8b49df4602f18ef8db99d22f03e6079c6ee1c274a1",
+          "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+          "assets/packs/legacy.pack.gz": "46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88",
+          "vendor/three/three.module.js": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7",
+          "vendor/three/LICENSE": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+          "src/camera.js": "0bc9225d4a9b3eff946464b36619b7d17da180d4ca43a6dd31f1e3e160f6d721",
+          "src/renderer.js": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+          "src/old-hell-renderer.js": "fb91047212002fd1f9933189dceed6033c39883bde32f63437967e6b8f594870",
+          "src/kishinjou-renderer.js": "031b0edcbe51d900c4dfc9dd8da72a453c65d33076765109e48b10df46cf4130",
+          "src/lunar-renderer.js": "c472465371e21d441072ac44ffb1cb09195fa26c8d3a22c8225f192461f62360",
+          "src/makai-renderer.js": "ed54303436ef7c53d8dd0d111560a9b2b09393f4a42911475b79178565a8fcdd",
+          "src/netherworld-renderer.js": "7d81bc869fc86297705e972c93a1ade2c4e871663802cc0e78cf5c424b520148",
+          "src/heaven-renderer.js": "4e03583f3ff823520e2159ef77afd6e7ba9db30804e047b0ddb65601b0f4bb49",
+          "src/higan-renderer.js": "8efb15489c3d93135646cb183a85b8a54415f3db2adebdc6538926b98cb3b322",
+          "src/landscape-renderer.js": "0ed0dc2c076ce224f0d9020e7b97f75e269b15e27a13e939e5bbffe6dfccc98e",
+          "src/animal-renderer.js": "c8a5d5164d73b913687c9133a4f7bf556e44272477ddbf906646035f878f35d9",
+          "src/backdoor-renderer.js": "ff9868540c78daeb981a6c8ad977882158881c9d2f2ec329eb268eba3f053e25",
+          "src/kasen-renderer.js": "eb72f106c4bba31d2ea73498393e89a80b67c5ca47262c6e2a01e6e41a7c044d",
+          "src/current-hell-renderer.js": "29458b481da3f2d7dd5ccead903263e5fc46e661f1d9db6be149afad27498d76",
+          "src/rainbow-mine-renderer.js": "f43d1fa1764cc3f8c883d27c2ee75a98240e7bf69112f4cc78d0e06af1a327a8",
+          "src/highland-renderer.js": "b8f18fda335539faf732fa2c16189cd07ac654dd611c052e7a7e0d5983cb3e16",
+          "src/hakurei-renderer.js": "6eb73c24d252dc8c843b1fd62d4626a0a5b74bf3763c5ed8b6dbafb14b12e4fc",
+          "src/night-renderer.js": "785b896192f547ae9b7012fb4efbf52c39361320958a4ef5e02f75f542129b05",
+          "src/asama-renderer.js": "d82d5c1062b270c669648e784490123e656ad1482294eac9f5900db74f4f6110",
+          "src/hiten-renderer.js": "3a307a1de5d454ab7e4ec07cad6cfce91dc8446d5c3c49ed7216570e30b53da3",
+          "src/mayohiga-renderer.js": "79882b326e5732d0d28606b15b0dc03b0a5ab86abbcdc274f6b1395e6428d815",
+          "src/peony-renderer.js": "aa51146ce1cc5c9b0b0a56132fe0eac38e760cae744956239d3671cdc913334a",
+          "src/waterfall-cave-renderer.js": "75e35695e6274501ed2e0a7c8f7d4f3b06e846ce51effee4308eeb99d06247c9",
+          "src/cucumber-farm-renderer.js": "d05a5fefc19c0cf4b656ca573c3ebe655d5999f6e5a9e27e4748e16f884a8ae6",
+          "src/wind-cave-renderer.js": "88d40b8c951460534078740b2d10c3f1878b0477307f43e0ee32be38cb39720a",
+          "src/geyser-renderer.js": "34cc5f6390d60ac2f0b27fc5779532a0ffb60111970e3a5dd2e09ee003d2c9ce",
+          "src/geyser-center-renderer.js": "60f09d73d875820d8278a80072889f76b7daaf66cbf427c59108512d40aa0063",
+          "src/kourindou-renderer.js": "c84bebcc837d7b4ccc9bef90551695cecac67616eed68eb1f24141cfaa26354f",
+          "src/forest-renderer.js": "23dfb91f835803e00bb9208ed5aeb945996ef2460833f076121d88fc91bfe35b",
+          "src/village-renderer.js": "7d48c5f32c0ad59ac0620e9b1b6bce5b88b1905b75ad10248870713afe49ddd4",
+          "src/trail-renderer.js": "8c605fd08809218f513c57da15ac7f5e6499fcd4302478246dc9d6d503b082b5",
+          "src/trail-landscape-renderer.js": "ee70209bbc5316c8b63a25a564f9b1a71ada399ac2c6f470f760446d4a42ac70",
+          "src/forest-path-colors.js": "a91a09b0f347b40379bbaf52342cf36bf4a943e54b334acee9a1ed8050e85eb5",
+          "src/forest-path-renderer.js": "372f3bba7340b01b5649b8525593ada9592786bb4abb577315e17cfb45fe5073",
+          "src/forest-canopy-renderer.js": "e0d70e6acac3c2cd89e3859dd4a67ef93bb1e3c08f18b54764a9a4b32942e6cc",
+          "src/render-recovery.js": "191976863744f357bfae24dd946485b6cf49de0f782abe035f2c7cfdff2778b4",
+          "src/render-diagnostics.js": "ee2c16425f4ec27d03684cc32d9e29f0fd1c7aceb3f96cca954f62f8bc047b93",
+          "src/characters.js": "2efbdff0ffdc569d544331ad15a5456c0d8e8bbf5f7dc7e5ff016cee33320643",
+          "src/streaming.js": "3ae540dd6a1ca4878ca73ef18a628903dcef7b6866c3753a54ac0f11d435a5dd",
+          "src/app.js": "a5810a049c3ff33d4e9a3987acc1827f390e1a0d4ef1f97079dd9f1d7c68b0c3",
+          "src/index.html": "dd636efdc4da9138c7e2d79c270deab0ebf97e2c08f68d952ec20ff9af824257",
+          "tools/build.py": "014317ce484b6c4b9dbba6f148394b3028f69950cbbd68ffe78cbaf7ff5a0b3f",
+          "tools/check.mjs": "7f9c778258976cc0f169cb95617844b99359b9d6c5992f0e87e3cda5b3d6046f",
+          "tools/check-landscape.mjs": "a72e138bdaebaf059b88f203159f989b523b4f674462878d00273bf37961ecf8",
+          "tools/check-kishinjou.mjs": "f0db98fdc9ddcf92eb7693cf6dff39657c500a14cdc863b37e38cf2d5d107ed1",
+          "tools/kishinjou-baseline.json": "126c933c0d2e12b5676f8c9594e6cecdbdc713169ea18af21e9ebba7e9d959ac",
+          "tools/check-lunar.mjs": "7dc97b27d1a87a5107d0f9b9d82742c99edb9f05fb1bba82ad91d35710a792a8",
+          "tools/lunar-baseline.json": "3e4ff4dccee7b1a2a298aa9f851034a88e2e5931ee187abb3c1cc3e3cc3d8940",
+          "tools/check-makai.mjs": "136c722ccfc03f58fb1a9a2b5ffb877f4d44e206c18a0e6cf5996bb1874d0784",
+          "tools/makai-baseline.json": "1734aa17de0071d3420b70ed792d28817f0b7cb8897a51b82077035a666844d4",
+          "tools/check-netherworld.mjs": "2acea0283b1365f2ec115bde84efaacca1fe94887567a0e769f2caf538b3e2d8",
+          "tools/netherworld-baseline.json": "7ffe9d17fdeecbe4047f6d374e4cdfbbc0c52b13ccb944f655f0d96f65d97c69",
+          "tools/audit-landmarks.mjs": "d9101abb321175a5ee8f9acd5343e0e5bb1e3ed09933e454262ab4647583b516",
+          "tools/check-heaven.mjs": "92991b29ee13484febaa83858583adfb9bf62f58d6efa07b01d5b753ded500c9",
+          "tools/heaven-baseline.json": "e799dd1028023bfdd80c3481a50f98eb0da66a9a6bdc9c04026d31c7380b252a",
+          "tools/check-higan.mjs": "9c4c97083229cf3b3b714bb19b9ac4e99402726907f08c8bf39467e1b13fa673",
+          "tools/higan-baseline.json": "b7501f24350121f16e9e654d78c4805ee7e338504bdb59d6494c8d4e20be65fd",
+          "tools/check-animal.mjs": "7a6f6c33f8013e3651943203ee3b1e7d1958995f888ca7ddf750e6430af26190",
+          "tools/animal-baseline.json": "1c7712a395c1d9adc6c801348470d1847b00cb4ee3968cfa94213d79e258b3d6",
+          "tools/check-backdoor.mjs": "3005259c177526da9d1e3340d110e0e015f14493374cc8949c4704d6c506e278",
+          "tools/backdoor-baseline.json": "44a681c946b751d3d613d78ffe9fe2fc8e979809d2559919ae65f5572aef3cae",
+          "tools/check-kasen.mjs": "f7fc4ae9f9af79f872d4cafada6c448e1a21dcd5cdfbd439ca21e6936f842e32",
+          "tools/kasen-baseline.json": "f119c2fcf7f96aac4440c7ee78ef3b23a665e21a3ffbe448c8ed1acce99dfd55",
+          "tools/check-current-hell.mjs": "e78bc169d49f5fb8042c4da46b03dda7927cc4a2a0ccea298497de30a04c937d",
+          "tools/current-hell-baseline.json": "d45d4966ae7eb3b10f428a5984904b78c8597f4ecb149cf141a43a0ba7d7715e",
+          "tools/check-rainbow-mine.mjs": "92c7e64478a74f665d6adb4d7cb2cc2ae5af6be9447d0cfdb6cdd1ac8b1b9de2",
+          "tools/rainbow-mine-baseline.json": "3d793efb1f5a984a3229dea0c710852b09a4b6e6e5294806dd0cfb7a2856bee4",
+          "tools/check-highland.mjs": "1a876fc8cbf29c46b548a2fa17f04c9e9777b3b1750f57a40912b981e7214340",
+          "tools/highland-baseline.json": "1552e5afc72ac453a892a2a9cbc3c5087d42eeb82ba606142840e1db8652463e",
+          "tools/check-asama.mjs": "7d2539b2f98bbae0df472c70e199ae574abc7b58a32d732e0081d2e27411b240",
+          "tools/asama-baseline.json": "ba15fdb0a284f489fa5944bcedd6e0ba9c60359a0fe2fcfceecdee82447c7ee4",
+          "tools/check-evidence-corrections.py": "97bc60805620272d24e2c5911c857e95c90c584f8f6c950895f0a082fe23196b",
+          "tools/current-coverage.json": "cb8038b9b7c1f933ae77456cfc00303997e1fbb95d8deb2c16963886fab59fe8",
+          "tools/check-geyser-center.mjs": "708ef3a9976212c71400ffd56b9d43715e087fd322d7e8c6b774b1f52a41bc9b",
+          "tools/geyser-center-baseline.json": "cf5e0483694884fb593e9b7c00b7378b693a67a2a042d55e6fbbbf71b7a1d5b3",
+          "tools/check-geyser.mjs": "f465a6b8910a2e87b892681375b9e384ba2b2360f055682d72baf141a129648e",
+          "tools/geyser-baseline.json": "cd8106c9c4a6c5ab6b970ac587b0d3f59951b0d2564b3caab5e8451873457df0",
+          "tools/check-wind-cave.mjs": "9a1242dea8d6ee50eef693ae0851f0ad93d61e9292531c543fe279b1a1ae5df3",
+          "tools/wind-cave-baseline.json": "84cb0e7696e2752c08f94f075a7867b076eb021cd597186a34a8f320cee431d8",
+          "tools/check-cucumber-farm.mjs": "715fdd1b6e7b32679d86678c89ee67c225c2812f95cd9e1ab686fd16c6c9d1ed",
+          "tools/cucumber-farm-baseline.json": "5ec3ce0339272685be83c09b526ae4de984aba609e58bf22661a4ab153f09f12",
+          "tools/check-waterfall-cave.mjs": "a828bd5418e4acc1cf82faaf22c5395f6b121166c7a245085678eda89a46cb93",
+          "tools/waterfall-cave-baseline.json": "6a1ef7dc336f90f1b077c365d7c6c73e51f58feb4a7a121c4c5444f9565d9083",
+          "tools/check-peony.mjs": "b88a1347f642d5083478f5eb2bbbc4092358da18960dc96c83a76a340d232340",
+          "tools/peony-baseline.json": "12f795ed975b7bc61d9793a27bd9978eedd48ed37a0d411d2db877d3fa5a691a",
+          "tools/check-mayohiga.mjs": "72cef14478d9230ff1c51fde8c9907c75dab5531a33cc71da7d0881f5ac8ff45",
+          "tools/mayohiga-baseline.json": "70473533bee801c39f0f22cd3368bbc62c2ef1cac5e18595f478e73619277174",
+          "tools/check-hiten.mjs": "4955a316796da56b50419b93285845c5d40817d17c22385d01a8092b533c1a74",
+          "tools/hiten-baseline.json": "7c4d0085dbd8647035ae84d4ecf2c1b37393023eaed821a94df07896179d5b1f",
+          "tools/check-kourindou.mjs": "dd67e34e4c92947b0b75ef1f4b71a954efec2d08d3b328223a13f6b54c0bc700",
+          "tools/kourindou-baseline.json": "1b0c06085b599fbfbc8d3df7575a6cd0027f353e8b7bf24f7ea24ef66c743dd8",
+          "tools/check-kourindou-browser.py": "90bb41467c19c55b74c33ef610450fbc1c2674de8d6df5a2f7d55be1900f59d2",
+          "tools/check-forest.mjs": "5262de1e54f58190096457c81d5fa84533b8072dc4e616cbb4a8d7934ff5fc4d",
+          "tools/forest-baseline.json": "e29ac935dfb20857397cc22b3b1943fb7e51ed318e4f49b92cdd145466ad795b",
+          "tools/check-village.mjs": "7ee33fe598f9f447726df991d12b6a02c12de86605d0c150643ce73d148ecda2",
+          "tools/village-baseline.json": "040073c347617b50a3cd10556ef41f0bfede73eff0b24d4e95acbf9cea6553b9",
+          "tools/check-trail.mjs": "a9e52221c8746f85b2bea15cc21ce6886da77fedbdd2dd72bf3fd961d0800f4a",
+          "tools/trail-baseline.json": "18517e0ba96f413aeed4df29805933f0ae2a8cb7c61234a6f5c1d03f45c3f36a",
+          "tools/check-trail-landscape.mjs": "9cccfbed2ac3275bd0729ff85d4700976bbf8308c42219e1c120178e3a03a191",
+          "tools/trail-landscape-baseline.json": "5d0abe56447f7ef03752071f2e9cf422717c331e99ebb5d5c6a277b71cfe4fe2",
+          "tools/check-trail-landscape-renderer.mjs": "43fa7f01c9842140a83a39e109ab825969be7fdd980fde29336adce32b8c6044",
+          "tools/check-forest-entrance.mjs": "e4170e93fb052f3ca80d1fb9a05a9cc41604ed17b302d7198b132b05683220a5",
+          "tools/check-forest-canopy.mjs": "e6789bf2a4604d11be12a279fbd5b00cc3fbff647c64b2896a388b361973b2d7",
+          "tools/check-forest-canopy-road.mjs": "2952dbe47687c21b2d0193eb60f74e20f6e95960839363ba5de2758b567013e3",
+          "tools/check-bamboo-entry.mjs": "0ad4d633c021299cc2207ad6c5731f94dcf965dc8813ce93f85f6f0b907bf890",
+          "tools/check-bamboo-browser.py": "49ea1c552fdee368ccfe96d7d74e098af0702985f414f0ce7035c3778f119864",
+          "tools/check-bamboo-lod-route.py": "e60a2de5c10b1498f5d951a050d024511166a4e64cb68e38628d68a71289ceb1",
+          "tools/bamboo-entry-route.json": "6dd0332f03d236ef1455c654fb02bb3915cedb9a05c69ce58f31a92122c1fae1",
+          "tools/check-sunflower-entry.mjs": "f08399f3396fde1338b9c61fdbd3bfc2d23c3bf87818015775a9cf812efd126b",
+          "tools/check-sunflower-browser.py": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+          "tools/check-forest-path-renderer.mjs": "c98a7e20bc30bad262e3f512abaaf7d8d246ce84c67a93ae63192f178548a05d",
+          "tools/check-forest-path-coverage.mjs": "50285847cfffefe171b53fb6c5365dbb413d5766b4233412ebacf7f4e2b72a3e",
+          "tools/generate-forest-path-colors.mjs": "d9f5674c3892d0808ea6c3ee50a412204389f96256dfffcfedbda00d1dfd1f00",
+          "tools/check-foliage-texture-browser.py": "505bcfd6401c95c9ed44538f4145e958ec8275c07a74c1586cdf1b980af1fb58",
+          "tools/check-ui-work.mjs": "84be632770e6fa4ef4c4d42495428c701dd3a43938f63b11b079a731e1362a4f",
+          "tools/check-frame-work.mjs": "2318e76bc1b805abf6892b54d89fc845156bd40717a1e31a20ec6d63246b886e",
+          "tools/check-frame-work-browser.py": "71ae510bd98ad072e694817896253cd932d0122e37fd6566530ba72f6127288b",
+          "tools/frame-work-source-review.json": "15d4e83b852f680ae9b99f68f596151680149b7c4595c0245b1f7011fb451322",
+          "tools/check-render-diagnostics.mjs": "f80d544f4e7a476badfb797f073d28c7e7acbd158bf6c315884136419014b677",
+          "tools/check-render-resources.mjs": "8172b43fab245fa6774c5019770407af76e4af2a9cbde8f35c19b1a6bb224337",
+          "tools/check-render-ownership.mjs": "b8bc5fcb9dd283a2621e387c2fee2bcd856a457cd701f1ace5f81928d06eae17",
+          "tools/render-lifecycle-source-review.json": "2d6283e5f204b7b242b35b3f6ebf7c76be4eeb3065871cf4e78999d8d9b426da",
+          "tools/check-streaming-lifecycle.mjs": "8a2d9443392fd7a037a6e6fbb74f340db0b83f364973450c27ebd6f2b2f251f1",
+          "tools/check-render-lifecycle-browser.py": "5b4c6a2180d329dda3addf1034a1f030f28778b1a14195e534eea1dad81b4999",
+          "tools/check-hakurei.mjs": "aca484da0ef951fc69c39cc7e60cdbebe0b3bb92d17f9da1152b442b60a2a3a2",
+          "tools/hakurei-baseline.json": "8a7764b129b21e7e9e72d9061ebcda9a354e6d86c566b1bf0b7cb7a4f19c6128"
+        },
+        "inputsAfterCanonicalSHA256": "9ae01054bb1c832cf05acb2bf1696d76bfa8df9b95e4a75aee255bc8db042d30",
+        "inputsBeforeCanonicalSHA256": "9ae01054bb1c832cf05acb2bf1696d76bfa8df9b95e4a75aee255bc8db042d30",
+        "inputsUnchanged": true,
+        "artifactUnchanged": true,
+        "protocolUnchanged": true,
+        "sourceProbeUnchanged": true,
+        "helperUnchanged": true
+      },
+      "browser": "151.0.7922.173",
+      "driver": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "frameConfiguration": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "dpr": 1,
+        "clock": 12.5,
+        "fov": 49,
+        "pose": {
+          "space": "surface",
+          "eye": [
+            -1898,
+            106,
+            565
+          ],
+          "target": [
+            -1775,
+            82,
+            583
+          ]
+        },
+        "cameraFixture": {
+          "id": "muenzukaNativeCheck",
+          "region": "muenzuka",
+          "detailNeighbors": [],
+          "requiredRegions": [
+            "muenzuka"
+          ],
+          "pose": {
+            "space": "surface",
+            "eye": [
+              -1898,
+              106,
+              565
+            ],
+            "target": [
+              -1775,
+              82,
+              583
+            ]
+          }
+        },
+        "productionRAF": true,
+        "manualDraws": false,
+        "gpuFinish": false,
+        "retentionWaitMs": 6250,
+        "anchorProtocol": "overview -> actual native-clear UI -> test camera via production setView -> three production wakes -> existing graceSeconds plus250ms -> three production wakes"
+      },
+      "GPUAnchors": {
+        "before": {
+          "geometries": 458,
+          "textures": 11,
+          "programs": 161,
+          "attributeBytes": 52061306,
+          "geometryEntries": 456,
+          "residentObjects": 667
+        },
+        "after": {
+          "geometries": 458,
+          "textures": 11,
+          "programs": 161,
+          "attributeBytes": 52061306,
+          "geometryEntries": 456,
+          "residentObjects": 667
+        },
+        "unloaded": {
+          "geometries": 893,
+          "textures": 11,
+          "programs": 161,
+          "attributeBytes": 75964342,
+          "geometryEntries": 891,
+          "residentObjects": 1198
+        }
+      },
+      "sourceAndLOD": {
+        "beforeCounts": {
+          "publicRecords": 2154,
+          "nativeRecords": 63,
+          "muenzukaColdRecords": 13,
+          "coldOrdinaryTrees": 31,
+          "sourceViews": 3576,
+          "uniqueBackings": 1871,
+          "uniqueBackingBytes": 150273440
+        },
+        "afterCounts": {
+          "publicRecords": 2154,
+          "nativeRecords": 63,
+          "muenzukaColdRecords": 13,
+          "coldOrdinaryTrees": 31,
+          "sourceViews": 3576,
+          "uniqueBackings": 1871,
+          "uniqueBackingBytes": 150273440
+        },
+        "unloadedCounts": {
+          "publicRecords": 2154,
+          "nativeRecords": 0,
+          "muenzukaColdRecords": 13,
+          "coldOrdinaryTrees": 31,
+          "sourceViews": 3444,
+          "uniqueBackings": 1739,
+          "uniqueBackingBytes": 145554648
+        },
+        "privatePrototypesBefore": [],
+        "privatePrototypesAfterCanonicalSHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "prototypeResidencyBefore": [],
+        "prototypeResidencyAfter": [],
+        "sourceFieldDigests": {
+          "records": {
+            "before": "01eba440a1d9d76e5c1e74604ebe5d742c9d639950e81653dd68989fb9466765",
+            "after": "01eba440a1d9d76e5c1e74604ebe5d742c9d639950e81653dd68989fb9466765",
+            "equal": true
+          },
+          "dataArrays": {
+            "before": "24f05b9f03e1107d75c03135bd753f790302981055a70759c5958b95883aa12d",
+            "after": "24f05b9f03e1107d75c03135bd753f790302981055a70759c5958b95883aa12d",
+            "equal": true
+          },
+          "privatePrototypes": {
+            "before": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "after": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "equal": true
+          },
+          "counts": {
+            "before": "0f011a6ccc270d76a507a3fb55cc7f88f43100e6af93f3fe0bc7080d750381a3",
+            "after": "0f011a6ccc270d76a507a3fb55cc7f88f43100e6af93f3fe0bc7080d750381a3",
+            "equal": true
+          },
+          "backingLedger": {
+            "before": "a0ef8ee2c0d44120001811ad3e17510f3c810db9f77c7d8fc17cee5832c33386",
+            "after": "a0ef8ee2c0d44120001811ad3e17510f3c810db9f77c7d8fc17cee5832c33386",
+            "equal": true
+          }
+        },
+        "rigBefore": {
+          "eye": [
+            -1898,
+            106,
+            565
+          ],
+          "target": [
+            -1775,
+            82,
+            583
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "rigAfter": {
+          "eye": [
+            -1898,
+            106,
+            565
+          ],
+          "target": [
+            -1775,
+            82,
+            583
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "wantedBeforeCanonicalSHA256": "69cdf5dcd321c2c314399eb6c85be19f2c1d612ff3606ceb24972e69946776b2",
+        "wantedAfterCanonicalSHA256": "69cdf5dcd321c2c314399eb6c85be19f2c1d612ff3606ceb24972e69946776b2",
+        "wantedCountBefore": 667,
+        "wantedCountAfter": 667,
+        "nativeOwnedGeometryIDsBefore": [
+          1464,
+          1465,
+          1466,
+          1467,
+          1468,
+          1469,
+          1470,
+          1471,
+          1472,
+          1473,
+          1474,
+          1475,
+          1476,
+          1477,
+          1478,
+          1479,
+          1480,
+          1481,
+          1482,
+          1483,
+          1484,
+          1485
+        ],
+        "retainedOwnedGeometryIDsAfterUnload": [],
+        "droppedManagedSourceBytes": 0,
+        "nativeCacheAfterUnload": {
+          "requests": 2,
+          "builds": 2,
+          "cancelled": 0,
+          "evictions": 2,
+          "cacheHits": 0,
+          "staleDropped": 0,
+          "cached": [],
+          "building": null,
+          "required": [],
+          "detailSourceMiB": 0,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "muenzuka",
+              "buildMs": 171.59999999403954,
+              "sourceBytes": 4718792,
+              "epoch": 2
+            },
+            {
+              "region": "muenzuka",
+              "buildMs": 162.6000000089407,
+              "sourceBytes": 4718792,
+              "epoch": 4
+            }
+          ]
+        },
+        "nativeRecordsAfterUnload": [],
+        "nativeMapAfterUnload": [],
+        "rendererPackIDsAfterUnload": []
+      },
+      "programs": {
+        "beforeCount": 161,
+        "afterCount": 161,
+        "beforeKeysAndReferencesCanonicalSHA256": "f6e906b85351f6c5a8b0b1fb19fdae7ab9f64bde444e7734b518da6ffada415a",
+        "afterKeysAndReferencesCanonicalSHA256": "f6e906b85351f6c5a8b0b1fb19fdae7ab9f64bde444e7734b518da6ffada415a",
+        "exact": true
+      },
+      "actualSpheresBefore": [
+        {
+          "id": "muenzuka:trees:-23:6:0:leaf",
+          "pack": "muenzuka",
+          "eligible": false,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1792.4151993017044,
+              85.06479682866073,
+              531.5471025685961
+            ],
+            "radius": 40.74616662609465
+          },
+          "actualWindEnvelope": null
+        },
+        {
+          "id": "muenzuka:trees:-23:6:1:leaf",
+          "pack": "muenzuka",
+          "eligible": false,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1788.864242690372,
+              85.87243768320457,
+              515.8575814350844
+            ],
+            "radius": 39.10700387452469
+          },
+          "actualWindEnvelope": null
+        },
+        {
+          "id": "muenzuka:trees:-23:7:0:leaf",
+          "pack": "muenzuka",
+          "eligible": false,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1797.3178796285345,
+              85.1324351186307,
+              612.1003047939012
+            ],
+            "radius": 39.80064890702078
+          },
+          "actualWindEnvelope": null
+        },
+        {
+          "id": "muenzuka:trees:-23:7:1:leaf",
+          "pack": "muenzuka",
+          "eligible": false,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1815.4579942015052,
+              85.04628245763323,
+              584.9331140576033
+            ],
+            "radius": 35.2804724101656
+          },
+          "actualWindEnvelope": null
+        },
+        {
+          "id": "muenzuka:trees:-23:8:0:leaf",
+          "pack": "muenzuka",
+          "eligible": false,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1782.3843380245398,
+              87.04366286622172,
+              656.2441923782319
+            ],
+            "radius": 12.118576764897291
+          },
+          "actualWindEnvelope": null
+        },
+        {
+          "id": "muenzuka:trees:-23:8:1:leaf",
+          "pack": "muenzuka",
+          "eligible": false,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1781.8944874945867,
+              86.96224018739872,
+              645.1333177109474
+            ],
+            "radius": 10.732183933472784
+          },
+          "actualWindEnvelope": null
+        }
+      ],
+      "actualSpheresAfter": [
+        {
+          "id": "muenzuka:trees:-23:6:0:leaf",
+          "pack": "muenzuka",
+          "eligible": false,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1792.4151993017044,
+              85.06479682866073,
+              531.5471025685961
+            ],
+            "radius": 40.74616662609465
+          },
+          "actualWindEnvelope": null
+        },
+        {
+          "id": "muenzuka:trees:-23:6:1:leaf",
+          "pack": "muenzuka",
+          "eligible": false,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1788.864242690372,
+              85.87243768320457,
+              515.8575814350844
+            ],
+            "radius": 39.10700387452469
+          },
+          "actualWindEnvelope": null
+        },
+        {
+          "id": "muenzuka:trees:-23:7:0:leaf",
+          "pack": "muenzuka",
+          "eligible": false,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1797.3178796285345,
+              85.1324351186307,
+              612.1003047939012
+            ],
+            "radius": 39.80064890702078
+          },
+          "actualWindEnvelope": null
+        },
+        {
+          "id": "muenzuka:trees:-23:7:1:leaf",
+          "pack": "muenzuka",
+          "eligible": false,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1815.4579942015052,
+              85.04628245763323,
+              584.9331140576033
+            ],
+            "radius": 35.2804724101656
+          },
+          "actualWindEnvelope": null
+        },
+        {
+          "id": "muenzuka:trees:-23:8:0:leaf",
+          "pack": "muenzuka",
+          "eligible": false,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1782.3843380245398,
+              87.04366286622172,
+              656.2441923782319
+            ],
+            "radius": 12.118576764897291
+          },
+          "actualWindEnvelope": null
+        },
+        {
+          "id": "muenzuka:trees:-23:8:1:leaf",
+          "pack": "muenzuka",
+          "eligible": false,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1781.8944874945867,
+              86.96224018739872,
+              645.1333177109474
+            ],
+            "radius": 10.732183933472784
+          },
+          "actualWindEnvelope": null
+        }
+      ],
+      "actualSpheresUnloaded": [],
+      "CPUObservationsRaw": [
+        {
+          "label": "before actual input",
+          "at": 68834.70000000298,
+          "drawnFrames": 15,
+          "snapshotSubmittedCPUms": 16.599999994039536,
+          "stats": {
+            "calls": 664,
+            "triangles": 1537526,
+            "totalCalls": 666,
+            "totalTriangles": 1537530,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 16.599999994039536,
+            "geometries": 458,
+            "textures": 11,
+            "residentObjects": 667,
+            "residentAttributeMiB": 49.6495304107666,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 604,
+            "detailDrawObjects": 63,
+            "evictions": 610,
+            "uploads": 1277,
+            "renderCount": 15,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": "muenzuka",
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        },
+        {
+          "label": "actual orbit completed",
+          "at": 84095.29999999702,
+          "drawnFrames": 18,
+          "snapshotSubmittedCPUms": 10.400000005960464,
+          "stats": {
+            "calls": 693,
+            "triangles": 1752209,
+            "totalCalls": 695,
+            "totalTriangles": 1752213,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 10.400000005960464,
+            "geometries": 456,
+            "textures": 11,
+            "residentObjects": 664,
+            "residentAttributeMiB": 49.59584617614746,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 582,
+            "detailDrawObjects": 63,
+            "evictions": 616,
+            "uploads": 1280,
+            "renderCount": 18,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": "muenzuka",
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        },
+        {
+          "label": "actual wheel completed",
+          "at": 94010,
+          "drawnFrames": 19,
+          "snapshotSubmittedCPUms": 12.200000002980232,
+          "stats": {
+            "calls": 635,
+            "triangles": 1512256,
+            "totalCalls": 637,
+            "totalTriangles": 1512260,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 12.200000002980232,
+            "geometries": 442,
+            "textures": 11,
+            "residentObjects": 643,
+            "residentAttributeMiB": 49.192182540893555,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 580,
+            "detailDrawObjects": 63,
+            "evictions": 637,
+            "uploads": 1280,
+            "renderCount": 19,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": "muenzuka",
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        },
+        {
+          "label": "detail before native unload",
+          "at": 140142.29999999702,
+          "drawnFrames": 33,
+          "snapshotSubmittedCPUms": 9.099999994039536,
+          "stats": {
+            "calls": 664,
+            "triangles": 1537526,
+            "totalCalls": 666,
+            "totalTriangles": 1537530,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 9.099999994039536,
+            "geometries": 458,
+            "textures": 11,
+            "residentObjects": 667,
+            "residentAttributeMiB": 49.6495304107666,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 604,
+            "detailDrawObjects": 63,
+            "evictions": 1326,
+            "uploads": 1993,
+            "renderCount": 33,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": "muenzuka",
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        },
+        {
+          "label": "native cache cleared",
+          "at": 180018,
+          "drawnFrames": 43,
+          "snapshotSubmittedCPUms": 13.700000002980232,
+          "stats": {
+            "calls": 1206,
+            "triangles": 1653178,
+            "totalCalls": 1207,
+            "totalTriangles": 1653180,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 1,
+            "submittedCPUms": 13.700000002980232,
+            "geometries": 893,
+            "textures": 11,
+            "residentObjects": 1198,
+            "residentAttributeMiB": 72.44524192810059,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 1198,
+            "detailDrawObjects": 0,
+            "evictions": 1405,
+            "uploads": 2603,
+            "renderCount": 43,
+            "hdr": true,
+            "contactOcclusion": false,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": null,
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        },
+        {
+          "label": "detail after native reentry",
+          "at": 211855,
+          "drawnFrames": 50,
+          "snapshotSubmittedCPUms": 7.200000002980232,
+          "stats": {
+            "calls": 664,
+            "triangles": 1537526,
+            "totalCalls": 666,
+            "totalTriangles": 1537530,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 7.200000002980232,
+            "geometries": 458,
+            "textures": 11,
+            "residentObjects": 667,
+            "residentAttributeMiB": 49.6495304107666,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 604,
+            "detailDrawObjects": 63,
+            "evictions": 2015,
+            "uploads": 2682,
+            "renderCount": 50,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": "muenzuka",
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        },
+        {
+          "label": "one second idle",
+          "at": 226887.29999999702,
+          "drawnFrames": 50,
+          "snapshotSubmittedCPUms": 7.200000002980232,
+          "stats": {
+            "calls": 664,
+            "triangles": 1537526,
+            "totalCalls": 666,
+            "totalTriangles": 1537530,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 7.200000002980232,
+            "geometries": 458,
+            "textures": 11,
+            "residentObjects": 667,
+            "residentAttributeMiB": 49.6495304107666,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 604,
+            "detailDrawObjects": 63,
+            "evictions": 2015,
+            "uploads": 2682,
+            "renderCount": 50,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": "muenzuka",
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        }
+      ],
+      "nativeWorkerBuildLog": [
+        {
+          "region": "muenzuka",
+          "buildMs": 171.59999999403954,
+          "sourceBytes": 4718792,
+          "epoch": 2
+        },
+        {
+          "region": "muenzuka",
+          "buildMs": 162.6000000089407,
+          "sourceBytes": 4718792,
+          "epoch": 4
+        },
+        {
+          "region": "muenzuka",
+          "buildMs": 286.20000000298023,
+          "sourceBytes": 4718792,
+          "epoch": 6
+        }
+      ],
+      "imageRestoration": {
+        "beforeSHA256": "c6540d31799cc2fc824bf047bf5fe054ef208438dcfa04fcf03865351b1e59cf",
+        "afterSHA256": "c6540d31799cc2fc824bf047bf5fe054ef208438dcfa04fcf03865351b1e59cf",
+        "byteExact": true
+      },
+      "errors": [],
+      "contextEvents": [],
+      "httpFailures": [
+        {
+          "path": "/favicon.ico",
+          "status": 404
+        }
+      ],
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "variant": "candidate",
+      "originalReport": {
+        "path": "/workspace/muenzuka-evidence/candidate-native/report.json",
+        "bytes": 15948577,
+        "sha256": "d48b350b80c625e29fa6f0ca1b9b51deefebb427399d11cf109eae6142aad38d"
+      },
+      "execution": {
+        "variant": "candidate",
+        "startedUTC": "2026-10-05T22:16:31.544807+00:00",
+        "approvedPreparationSHA256": "042a6889ee4ee4f01c66b3c50cd75412f1ff9d1e7cece5aafd7a94cbf1a9bc97",
+        "protocolSHA256Before": "885eb056a8f8b2ccd300b66b1d38ae3e203fcbdad2882ea98587bf95df48bb77",
+        "probeSHA256Before": "cb46a92390e9d7a3696d0408273c57899dd2a7b716244b9978b199721b4999a7",
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "/workspace/muenzuka-evidence/check-native-draft.py",
+          "--variant",
+          "candidate",
+          "--repo",
+          "/workspace/muenzuka-refinement",
+          "--dist",
+          "/workspace/muenzuka-evidence/bounds-dist",
+          "--output",
+          "/workspace/muenzuka-evidence/candidate-native"
+        ],
+        "cwd": "/workspace",
+        "CPUOverlap": "Sol may perform light offline diagnostics against existing V8 data; no other GPU or heavy native construction is authorized during this session. Wall time is not a speed comparison.",
+        "GPUOwner": "Muenzuka lifecycle candidate, one browser session",
+        "endedUTC": "2026-10-05T22:20:17.974622+00:00",
+        "elapsedSeconds": 226.42983865599672,
+        "exitCode": 0,
+        "protocolSHA256After": "885eb056a8f8b2ccd300b66b1d38ae3e203fcbdad2882ea98587bf95df48bb77",
+        "probeSHA256After": "cb46a92390e9d7a3696d0408273c57899dd2a7b716244b9978b199721b4999a7",
+        "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reportSHA256": "d48b350b80c625e29fa6f0ca1b9b51deefebb427399d11cf109eae6142aad38d",
+        "passedChecks": 24,
+        "totalChecksReached": 24,
+        "failure": null,
+        "inputsUnchanged": true,
+        "artifactUnchanged": true
+      },
+      "checks": [
+        {
+          "name": "Actual native application booted",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Production balanced quality and both memory budgets",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Existing bounded public retention remains six seconds",
+          "passed": true,
+          "data": 6
+        },
+        {
+          "name": "Actual mouse orbit and wheel wake production RAF",
+          "passed": true,
+          "data": "Raw per-event CPU samples remain software-backend observations, not hardware speed claims."
+        },
+        {
+          "name": "Only Muenzuka is required, cached, installed and actually visible",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Exact comparison pose",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Complete Muenzuka native, all public and independent cold sources inventoried",
+          "passed": true,
+          "data": {
+            "publicRecords": 2156,
+            "nativeRecords": 63,
+            "muenzukaColdRecords": 15,
+            "coldOrdinaryTrees": 31,
+            "sourceViews": 3588,
+            "uniqueBackings": 1887,
+            "uniqueBackingBytes": 150851220
+          }
+        },
+        {
+          "name": "Both main-thread near and far prototypes already exist, including nonresident near",
+          "passed": true,
+          "data": {
+            "arrays": [
+              {
+                "id": "privateMuenzuka:0:near",
+                "variant": 0,
+                "lod": "near",
+                "array": {
+                  "type": "Float32Array",
+                  "length": 31104,
+                  "bytes": 124416,
+                  "sha256": "de3591e605e89d1eaa6ad6610e83399fa53b2a6fe048fd41eb00adb2147f10b7",
+                  "viewToken": 3451,
+                  "bufferToken": 1750,
+                  "byteOffset": 0
+                }
+              },
+              {
+                "id": "privateMuenzuka:0:far",
+                "variant": 0,
+                "lod": "far",
+                "array": {
+                  "type": "Float32Array",
+                  "length": 4860,
+                  "bytes": 19440,
+                  "sha256": "2a0ad78f840b1ac7bfcd906e9658a5421ae447dde3b9ffcc7aaffa17c5f56a63",
+                  "viewToken": 2023,
+                  "bufferToken": 423,
+                  "byteOffset": 0
+                }
+              },
+              {
+                "id": "privateMuenzuka:1:near",
+                "variant": 1,
+                "lod": "near",
+                "array": {
+                  "type": "Float32Array",
+                  "length": 31104,
+                  "bytes": 124416,
+                  "sha256": "2fee35765f9bc3ff03e97c4e47aa4c92bdd27104371336ce5e9e48c862c6bd77",
+                  "viewToken": 3452,
+                  "bufferToken": 1751,
+                  "byteOffset": 0
+                }
+              },
+              {
+                "id": "privateMuenzuka:1:far",
+                "variant": 1,
+                "lod": "far",
+                "array": {
+                  "type": "Float32Array",
+                  "length": 4860,
+                  "bytes": 19440,
+                  "sha256": "b2dbb8e1f729416dcaf9d4e03306d39c1acbbb5dad8b24c1968cb8dab0455f4e",
+                  "viewToken": 2032,
+                  "bufferToken": 428,
+                  "byteOffset": 0
+                }
+              }
+            ],
+            "residency": [
+              {
+                "id": "privateMuenzuka:0:near",
+                "residentInGPU": false,
+                "publicArrayOwners": []
+              },
+              {
+                "id": "privateMuenzuka:0:far",
+                "residentInGPU": false,
+                "publicArrayOwners": [
+                  "overview016:muenzuka|forestLeaf|vegetation|I7:muenzuka-west-edge"
+                ]
+              },
+              {
+                "id": "privateMuenzuka:1:near",
+                "residentInGPU": false,
+                "publicArrayOwners": []
+              },
+              {
+                "id": "privateMuenzuka:1:far",
+                "residentInGPU": false,
+                "publicArrayOwners": [
+                  "overview016:muenzuka|forestLeaf|vegetation|I9:muenzuka-west-edge"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Six actual native mesh spheres installed by production ensure contain both LODs and all wind phases",
+          "passed": true,
+          "data": [
+            {
+              "id": "muenzuka:trees:-23:6:0:leaf",
+              "pack": "muenzuka",
+              "eligible": true,
+              "resident": true,
+              "wanted": true,
+              "level": 0,
+              "sphere": {
+                "center": [
+                  -1792.4403697012365,
+                  84.09952425845269,
+                  532.053325742858
+                ],
+                "radius": 41.520832724325686
+              },
+              "actualWindEnvelope": {
+                "maximumOutside": -0.7817388621482024,
+                "points": 79920,
+                "tolerance": 1e-07
+              }
+            },
+            {
+              "id": "muenzuka:trees:-23:6:1:leaf",
+              "pack": "muenzuka",
+              "eligible": true,
+              "resident": true,
+              "wanted": true,
+              "level": 0,
+              "sphere": {
+                "center": [
+                  -1789.54053156499,
+                  85.47982895773083,
+                  516.1129427989438
+                ],
+                "radius": 39.9619595797357
+              },
+              "actualWindEnvelope": {
+                "maximumOutside": -1.4906731872889694,
+                "points": 79920,
+                "tolerance": 1e-07
+              }
+            },
+            {
+              "id": "muenzuka:trees:-23:7:0:leaf",
+              "pack": "muenzuka",
+              "eligible": true,
+              "resident": true,
+              "wanted": true,
+              "level": 0,
+              "sphere": {
+                "center": [
+                  -1797.3563069447766,
+                  84.16826529110195,
+                  612.1895863433183
+                ],
+                "radius": 39.93930900577837
+              },
+              "actualWindEnvelope": {
+                "maximumOutside": -0.05687400870213821,
+                "points": 111888,
+                "tolerance": 1e-07
+              }
+            },
+            {
+              "id": "muenzuka:trees:-23:7:1:leaf",
+              "pack": "muenzuka",
+              "eligible": true,
+              "resident": true,
+              "wanted": true,
+              "level": 0,
+              "sphere": {
+                "center": [
+                  -1815.9320448371345,
+                  84.67309335240718,
+                  584.8048879327376
+                ],
+                "radius": 35.594498296078584
+              },
+              "actualWindEnvelope": {
+                "maximumOutside": -1.0550884431070386,
+                "points": 95904,
+                "tolerance": 1e-07
+              }
+            },
+            {
+              "id": "muenzuka:trees:-23:8:0:leaf",
+              "pack": "muenzuka",
+              "eligible": true,
+              "resident": true,
+              "wanted": true,
+              "level": 0,
+              "sphere": {
+                "center": [
+                  -1782.5511701575545,
+                  85.95872157987463,
+                  655.4952282978464
+                ],
+                "radius": 12.585858628424422
+              },
+              "actualWindEnvelope": {
+                "maximumOutside": -0.00032355127174277243,
+                "points": 15984,
+                "tolerance": 1e-07
+              }
+            },
+            {
+              "id": "muenzuka:trees:-23:8:1:leaf",
+              "pack": "muenzuka",
+              "eligible": true,
+              "resident": true,
+              "wanted": true,
+              "level": 0,
+              "sphere": {
+                "center": [
+                  -1782.3674890801437,
+                  86.52338384818586,
+                  644.5627806303692
+                ],
+                "radius": 11.448900342523125
+              },
+              "actualWindEnvelope": {
+                "maximumOutside": -0.00031229430612000897,
+                "points": 15984,
+                "tolerance": 1e-07
+              }
+            }
+          ]
+        },
+        {
+          "name": "All native source bytes have explicit bank-only backing ownership",
+          "passed": true,
+          "data": {
+            "backings": 136,
+            "inventoriedBytes": 5006504,
+            "managedBytes": 5006504
+          }
+        },
+        {
+          "name": "Nonempty exclusively Muenzuka GPU geometry ownership",
+          "passed": true,
+          "data": {
+            "count": 22
+          }
+        },
+        {
+          "name": "Native CPU cache, pending task, renderer pack and record maps truly clear",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "All public records survive unload",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "All exclusively native GPU geometries are released",
+          "passed": true,
+          "data": {
+            "count": 22,
+            "retained": []
+          }
+        },
+        {
+          "name": "All public arrays, metadata and source identities survive unload unchanged",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Main-thread private near/far buffers survive unload without being counted as native GPU ownership",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Every resident local cold mesh uses its actual complete wind sphere",
+          "passed": true,
+          "data": {
+            "residentColdSpheres": [
+              {
+                "id": "overview016:muenzuka|forestLeaf|vegetation|I7:muenzuka-west-edge",
+                "pack": "overview",
+                "eligible": true,
+                "resident": true,
+                "wanted": true,
+                "level": 0,
+                "sphere": {
+                  "center": [
+                    -1802.9262653123349,
+                    84.98202539397712,
+                    583.5400082067904
+                  ],
+                  "radius": 69.90149288287819
+                },
+                "actualWindEnvelope": {
+                  "maximumOutside": -1.4162907949897345,
+                  "points": 12960,
+                  "tolerance": 1e-07
+                }
+              },
+              {
+                "id": "overview016:muenzuka|forestLeaf|vegetation|I9:muenzuka-west-edge",
+                "pack": "overview",
+                "eligible": true,
+                "resident": true,
+                "wanted": true,
+                "level": 0,
+                "sphere": {
+                  "center": [
+                    -1806.1977471770558,
+                    85.07766325566747,
+                    559.6328298095351
+                  ],
+                  "radius": 70.11724237127652
+                },
+                "actualWindEnvelope": {
+                  "maximumOutside": -1.4280403020698031,
+                  "points": 8640,
+                  "tolerance": 1e-07
+                }
+              }
+            ],
+            "unresidentColdIds": [],
+            "meaning": "Only actual resident spheres checked here; all cold CPU arrays are checked regardless of residency. Fixed cold view and independent source checks cover the full cold pair."
+          }
+        },
+        {
+          "name": "Every native/public source value, public identity and private cache restores exactly",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Actual sphere values, residency and prototype GPU status restore exactly",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Camera, neighbors, wanted identities and LOD restore",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Strict comparable resource counters restore",
+          "passed": true,
+          "data": {}
+        },
+        {
+          "name": "Program keys and reference counts restore",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Exact native reentry image restores",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "One second static view draws zero frames at paused clock",
+          "passed": true,
+          "data": null
+        }
+      ],
+      "sourceBinding": {
+        "HEADBefore": "32d4196916ed0296e4ac9828ff97f7b29615d43b",
+        "HEADAfter": "32d4196916ed0296e4ac9828ff97f7b29615d43b",
+        "releaseSHA256": "b0e3d0fbc9c18b0590db33a69d56f8925ac9c13ccb2ef2f0146bce23d3915b92",
+        "artifactSHA256": "ce843445fca81f3e3cef42ac1b58ed16870ba43ed251d23b2e2e4928caf12a97",
+        "protocolSHA256": "885eb056a8f8b2ccd300b66b1d38ae3e203fcbdad2882ea98587bf95df48bb77",
+        "sourceProbeSHA256": "cb46a92390e9d7a3696d0408273c57899dd2a7b716244b9978b199721b4999a7",
+        "stateHelperSHA256": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+        "inputsBefore": {
+          "project.json": "c08082becb98fcd912095789e61ca79b20ec375580360fdfd3e371063054eef8",
+          "data/lunar.json": "92abf8f26344ef31bee7cb197330fe6cb7b4854a590e2687cfc7565dd4827ccc",
+          "data/makai.json": "3d5566dc31dcf696865246ba63f5d9cef7ad45464f5dcccc00e135564f166435",
+          "data/netherworld.json": "dfb60f6170e841f9f034a3b41cb7bea565e2c5cefa5b371099509693e14aa248",
+          "data/heaven.json": "6383792bb7608ff61f52653dafc81eedd2a6155287864a25fc653889c2e3111a",
+          "data/higan.json": "aed41a6af1c6ef21250f4533dd888f0f7610eb81db6907cb0b3219ebaa377bcd",
+          "data/animal.json": "58294cbe1b2c9e3dc28a316d927bbd410b32fb3bd024adce425266b4b0fe176f",
+          "data/backdoor.json": "a174f1344ae3dc8b73e336c130d0d87598b386e35bfc69c7c3336fdc78a3e289",
+          "data/kasen.json": "b03522e4d5f14aa691de7fc2ffcf596fe6c13840d6cc2b5d7c7e391c5d30fdbf",
+          "data/current-hell.json": "4e99e4f519f90d77f7f51267064ac4f408bd5067450be249c1138c4d7b0b2b1a",
+          "data/rainbow-mine.json": "d852d34cfbbcf3ee2a2168fbb9da9e139e33f2b320456bb8588c91ebe29bcc9b",
+          "data/highland.json": "b15892fb6b9a589aa890e4e3f44e7d8d0a57b234b16809f91ec1a58b7bb6775d",
+          "data/asama.json": "72098c152fd80bd90e7f70ab96053a477bb2a5bdd8f73ff72440416e6f67344b",
+          "data/hiten.json": "01c78bd126626d5a36470d0a2f0752ae0a1ae28b53aedf66e7c36d67825d8d26",
+          "data/mayohiga.json": "a9c8bcf0ecf74c54c115914875ecd9542e4fbf9f32e363760d79336add62ae47",
+          "data/peony.json": "67923caf740dc7cecd29f7a54893424d65ffc141a694e3a416f4f817c3448a5c",
+          "data/waterfall-cave.json": "45719d3e91fc6b4d0fba6ff0f350e844e54ba172b809355dfacec58d59fdcdcc",
+          "data/cucumber-farm.json": "4478346595556725f3007e1d1e7ad64b65b454adf67ea281e9ad97ee7cadd5b2",
+          "data/wind-cave.json": "a3c37a35721107173aacafef9d5188146769d32bee6ef57464ce1a143530af6a",
+          "data/geyser.json": "c9384ca594800782eec387af75a22df7c241831bdb27dd6a10405501580671b7",
+          "data/geyser-center.json": "faa4cc8582fef8f76595bcd6ddb6819bfe308c270a8878b8ebd3766942783646",
+          "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
+          "data/characters.json": "b87604e876804b5b9469657adf653451eccd561cddecdbb578f8966745beacc9",
+          "vendor/three/three.core.js": "78b2c4218834ca8670547ed2315bfc21a00ff4dc3403bbffc8c31493d31d14de",
+          "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+          "src/old-hell.js": "fde1ded5cfad70061c9a69b09b000fbd35bab17edcd583ed4d7973d5c9cfa643",
+          "src/kishinjou.js": "a90ac62e8244c71583fa85b007186bd8798454eba406136199f66949024a2899",
+          "src/lunar.js": "b7a870cf111ffa1ad4c68c5a9fed5d7f31ae08e4fb2c85dce1e8c60308243203",
+          "src/makai.js": "00746b16369b07c2ae549da3d8bcd34505f059b276f592cefd4053704b6a294b",
+          "src/netherworld.js": "e74f73aa97eb1fcca45e44abc894465b5279467e274089e0eeec83f6d871485a",
+          "src/landmarks.js": "04b8e640ca0fc597f889625b8a8173a767eced751355e5dbe034f44fadfd7ff9",
+          "src/heaven.js": "3231eef2637ac64cfb7eb257f35ddf1b5e59bd976642db1aa5a55baf93c3010d",
+          "src/higan.js": "deb81b207343b112ed0080d9378693a4bc04f93f82ad0af6cbaa626b623df34c",
+          "src/landscape.js": "4ef7b6f8076842506e8cac09086db4aa8277f92468e08aa0069c326f77ef35dc",
+          "src/animal.js": "055fe408319dd4d2faca1db8b0619c9d3222a2e42c8c575ebfbb7bf0cdfa7241",
+          "src/backdoor.js": "08031b368a145b1a4d774bd8d7e85dfc81c5adde2682515c069af774b882f098",
+          "src/kasen.js": "cf824cc3b34ef32f42bc127ca9d4ff8570876a9b47626ca5c43acfb709493004",
+          "src/current-hell.js": "47b27653fc2df883b38cbb212eca268b122eea8d72c03d047b590b6f8a8dd7f8",
+          "src/rainbow-mine.js": "8d41ee356f7d1323316e866cf96a88e6775edca6ef8784fc9dc812b9856a8d87",
+          "src/highland.js": "8816c040dd6f3c24d42beef3edb7a2c2604131bb41507c8964886ab659cda9d3",
+          "src/hakurei-plants.js": "8d149696fef5fc9a85204bfb3c2c4bd45992652cf9a2c81f498c0440f5e159f1",
+          "src/hakurei-transition.js": "18c8cb5751436fd08b9c92c32459ad5e71084ecde8f18e26ef44354decc47b3d",
+          "src/asama.js": "42fdf7c969a20389ceb7fb35cdfac96115a1501fb4a5483ede80268814176f15",
+          "src/asama-roads.js": "983371f7f2e24ef21b03bee452c1b50bba85747c035725f842ec42ba2a96a49a",
+          "src/surface-contact.js": "719a315917b55fa5025ec32659509b5be8965d8a577cdfc92c63c96db4dedf5e",
+          "src/hiten.js": "b2671674c180a44753bbccd61a994cc4efb3089618c10d586eba97a33696412e",
+          "src/mayohiga.js": "3cbb575944f32ef1f26e3041f9400a2e9259b98aef3d4f9a78d52c5624c8d75e",
+          "src/peony.js": "0116a5ba2d34cc8e05696e00d9d96b358ae2a9fcb1a395ca50e2b8d22821bc9b",
+          "src/waterfall-cave.js": "eb2430945bb41dc7ba2f2977cc93c6953c5611ec3cb4b5098d7f52c9002f8094",
+          "src/cucumber-farm.js": "f5e4b9c53963f81b170fd56371934267d3587e7770dc4210c957c534f7b9e90d",
+          "src/wind-cave.js": "94ce9aa01c17eb5c1faed009311b3039166879912b96f8a5b3cd5cf22e325737",
+          "src/geyser.js": "e6dd521faf5903bd410390e04ab8477f6b7a2b82f7dedbe4bf54f35530de376c",
+          "src/geyser-center.js": "b58dc4782ff80b95811236967864852776a36def8e0c01863ea46b31babd9f86",
+          "src/kourindou-upgrade.js": "e4c7371c745a6a4b69ed618f7fdcb7f44208b092b65f0379cbb752ba9db52599",
+          "src/forest-upgrade.js": "6468c87138443f3599c7cffbfbd0191e0733ad2259f46f87e3a5d302c1845270",
+          "src/village-upgrade.js": "4f56749811034552227f3280c9b34c534484fc1d1e7b631b52d6d2c17242c44f",
+          "src/trail-upgrade.js": "cce321e38e5c9a26d585092029ed415b9b78032c46000ba47b55ed190f21932f",
+          "src/trail-plants.js": "9b27de1ef04d9b309212b198e203890f848bc85a107c3b7dc7fa4818806a2696",
+          "src/trail-landscape.js": "ef50de3407b2f6e31eed41939ec8003c27a16dccf7e907b98bf72fc4a13919a6",
+          "src/forest-entrance-plants.js": "b42c6959cf4005e362954d468bc1130a459c3104aa85316dff752fd99ddc6ca1",
+          "src/forest-entrance-ground.js": "cc603d5a2b8bd24fd24ec78d48a7124e66e79e67a5751b9ef281a5dba2839ecc",
+          "src/forest-entrance.js": "0320d5c1a6a89d75e29ce3728135222c7a6de3b22b572769b9c32b27c16dee5c",
+          "src/forest-canopy-plants.js": "043a18fa90e756686cc5f28ebe82295271fe6e99386d22e5c8661ac578156b66",
+          "src/forest-canopy-ground.js": "fa889105ad3689bddd44538fe5d72e73334c02cca755ec466eb83f9f87995d99",
+          "src/forest-canopy-road.js": "ac7211359b2a4079713788c97329d6a79383da50f1e601d03eac860f10f2c2a8",
+          "src/forest-crown-rollout.js": "133abcaa7bdfaec3ede8617643fa9beb302642c194cb9f2971caa01b8f919820",
+          "src/forest-canopy.js": "6820b51c35b707dccd920a552347b10decaa6e246d81bd81d5745e0db6eaf29a",
+          "src/bamboo-entry-plants.js": "ff487a6667e53d393523a2607655ae693f5bdcd69775ade31a246899d74948fe",
+          "src/bamboo-entry-upgrade.js": "937f915a583b0e7b14588f95980ff0055f27f54d6c7d1918d301ce0fb6e1cbe1",
+          "src/sunflower-entry.js": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+          "src/muenzuka-edge.js": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+          "src/styles.css": "b1e9f17efcfb21d3e806e2fc19c74cfbc381e59f6a0b417c81e74b48b77091e7",
+          "data/expansion.json": "0ffb83baa4a828bbc3366b8b49df4602f18ef8db99d22f03e6079c6ee1c274a1",
+          "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+          "assets/packs/legacy.pack.gz": "46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88",
+          "vendor/three/three.module.js": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7",
+          "vendor/three/LICENSE": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+          "src/camera.js": "0bc9225d4a9b3eff946464b36619b7d17da180d4ca43a6dd31f1e3e160f6d721",
+          "src/renderer.js": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+          "src/old-hell-renderer.js": "fb91047212002fd1f9933189dceed6033c39883bde32f63437967e6b8f594870",
+          "src/kishinjou-renderer.js": "031b0edcbe51d900c4dfc9dd8da72a453c65d33076765109e48b10df46cf4130",
+          "src/lunar-renderer.js": "c472465371e21d441072ac44ffb1cb09195fa26c8d3a22c8225f192461f62360",
+          "src/makai-renderer.js": "ed54303436ef7c53d8dd0d111560a9b2b09393f4a42911475b79178565a8fcdd",
+          "src/netherworld-renderer.js": "7d81bc869fc86297705e972c93a1ade2c4e871663802cc0e78cf5c424b520148",
+          "src/heaven-renderer.js": "4e03583f3ff823520e2159ef77afd6e7ba9db30804e047b0ddb65601b0f4bb49",
+          "src/higan-renderer.js": "8efb15489c3d93135646cb183a85b8a54415f3db2adebdc6538926b98cb3b322",
+          "src/landscape-renderer.js": "0ed0dc2c076ce224f0d9020e7b97f75e269b15e27a13e939e5bbffe6dfccc98e",
+          "src/animal-renderer.js": "c8a5d5164d73b913687c9133a4f7bf556e44272477ddbf906646035f878f35d9",
+          "src/backdoor-renderer.js": "ff9868540c78daeb981a6c8ad977882158881c9d2f2ec329eb268eba3f053e25",
+          "src/kasen-renderer.js": "eb72f106c4bba31d2ea73498393e89a80b67c5ca47262c6e2a01e6e41a7c044d",
+          "src/current-hell-renderer.js": "29458b481da3f2d7dd5ccead903263e5fc46e661f1d9db6be149afad27498d76",
+          "src/rainbow-mine-renderer.js": "f43d1fa1764cc3f8c883d27c2ee75a98240e7bf69112f4cc78d0e06af1a327a8",
+          "src/highland-renderer.js": "b8f18fda335539faf732fa2c16189cd07ac654dd611c052e7a7e0d5983cb3e16",
+          "src/hakurei-renderer.js": "6eb73c24d252dc8c843b1fd62d4626a0a5b74bf3763c5ed8b6dbafb14b12e4fc",
+          "src/night-renderer.js": "785b896192f547ae9b7012fb4efbf52c39361320958a4ef5e02f75f542129b05",
+          "src/asama-renderer.js": "d82d5c1062b270c669648e784490123e656ad1482294eac9f5900db74f4f6110",
+          "src/hiten-renderer.js": "3a307a1de5d454ab7e4ec07cad6cfce91dc8446d5c3c49ed7216570e30b53da3",
+          "src/mayohiga-renderer.js": "79882b326e5732d0d28606b15b0dc03b0a5ab86abbcdc274f6b1395e6428d815",
+          "src/peony-renderer.js": "aa51146ce1cc5c9b0b0a56132fe0eac38e760cae744956239d3671cdc913334a",
+          "src/waterfall-cave-renderer.js": "75e35695e6274501ed2e0a7c8f7d4f3b06e846ce51effee4308eeb99d06247c9",
+          "src/cucumber-farm-renderer.js": "d05a5fefc19c0cf4b656ca573c3ebe655d5999f6e5a9e27e4748e16f884a8ae6",
+          "src/wind-cave-renderer.js": "88d40b8c951460534078740b2d10c3f1878b0477307f43e0ee32be38cb39720a",
+          "src/geyser-renderer.js": "34cc5f6390d60ac2f0b27fc5779532a0ffb60111970e3a5dd2e09ee003d2c9ce",
+          "src/geyser-center-renderer.js": "60f09d73d875820d8278a80072889f76b7daaf66cbf427c59108512d40aa0063",
+          "src/kourindou-renderer.js": "c84bebcc837d7b4ccc9bef90551695cecac67616eed68eb1f24141cfaa26354f",
+          "src/forest-renderer.js": "23dfb91f835803e00bb9208ed5aeb945996ef2460833f076121d88fc91bfe35b",
+          "src/village-renderer.js": "7d48c5f32c0ad59ac0620e9b1b6bce5b88b1905b75ad10248870713afe49ddd4",
+          "src/trail-renderer.js": "8c605fd08809218f513c57da15ac7f5e6499fcd4302478246dc9d6d503b082b5",
+          "src/trail-landscape-renderer.js": "ee70209bbc5316c8b63a25a564f9b1a71ada399ac2c6f470f760446d4a42ac70",
+          "src/forest-path-colors.js": "a91a09b0f347b40379bbaf52342cf36bf4a943e54b334acee9a1ed8050e85eb5",
+          "src/forest-path-renderer.js": "372f3bba7340b01b5649b8525593ada9592786bb4abb577315e17cfb45fe5073",
+          "src/forest-canopy-renderer.js": "e0d70e6acac3c2cd89e3859dd4a67ef93bb1e3c08f18b54764a9a4b32942e6cc",
+          "src/render-recovery.js": "191976863744f357bfae24dd946485b6cf49de0f782abe035f2c7cfdff2778b4",
+          "src/render-diagnostics.js": "ee2c16425f4ec27d03684cc32d9e29f0fd1c7aceb3f96cca954f62f8bc047b93",
+          "src/muenzuka-edge-renderer.js": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4",
+          "src/characters.js": "2efbdff0ffdc569d544331ad15a5456c0d8e8bbf5f7dc7e5ff016cee33320643",
+          "src/streaming.js": "3ae540dd6a1ca4878ca73ef18a628903dcef7b6866c3753a54ac0f11d435a5dd",
+          "src/app.js": "a5810a049c3ff33d4e9a3987acc1827f390e1a0d4ef1f97079dd9f1d7c68b0c3",
+          "src/index.html": "dd636efdc4da9138c7e2d79c270deab0ebf97e2c08f68d952ec20ff9af824257",
+          "tools/build.py": "014317ce484b6c4b9dbba6f148394b3028f69950cbbd68ffe78cbaf7ff5a0b3f",
+          "tools/check.mjs": "7f9c778258976cc0f169cb95617844b99359b9d6c5992f0e87e3cda5b3d6046f",
+          "tools/check-landscape.mjs": "a72e138bdaebaf059b88f203159f989b523b4f674462878d00273bf37961ecf8",
+          "tools/check-kishinjou.mjs": "f0db98fdc9ddcf92eb7693cf6dff39657c500a14cdc863b37e38cf2d5d107ed1",
+          "tools/kishinjou-baseline.json": "126c933c0d2e12b5676f8c9594e6cecdbdc713169ea18af21e9ebba7e9d959ac",
+          "tools/check-lunar.mjs": "7dc97b27d1a87a5107d0f9b9d82742c99edb9f05fb1bba82ad91d35710a792a8",
+          "tools/lunar-baseline.json": "3e4ff4dccee7b1a2a298aa9f851034a88e2e5931ee187abb3c1cc3e3cc3d8940",
+          "tools/check-makai.mjs": "136c722ccfc03f58fb1a9a2b5ffb877f4d44e206c18a0e6cf5996bb1874d0784",
+          "tools/makai-baseline.json": "1734aa17de0071d3420b70ed792d28817f0b7cb8897a51b82077035a666844d4",
+          "tools/check-netherworld.mjs": "2acea0283b1365f2ec115bde84efaacca1fe94887567a0e769f2caf538b3e2d8",
+          "tools/netherworld-baseline.json": "7ffe9d17fdeecbe4047f6d374e4cdfbbc0c52b13ccb944f655f0d96f65d97c69",
+          "tools/audit-landmarks.mjs": "d9101abb321175a5ee8f9acd5343e0e5bb1e3ed09933e454262ab4647583b516",
+          "tools/check-heaven.mjs": "92991b29ee13484febaa83858583adfb9bf62f58d6efa07b01d5b753ded500c9",
+          "tools/heaven-baseline.json": "e799dd1028023bfdd80c3481a50f98eb0da66a9a6bdc9c04026d31c7380b252a",
+          "tools/check-higan.mjs": "9c4c97083229cf3b3b714bb19b9ac4e99402726907f08c8bf39467e1b13fa673",
+          "tools/higan-baseline.json": "b7501f24350121f16e9e654d78c4805ee7e338504bdb59d6494c8d4e20be65fd",
+          "tools/check-animal.mjs": "7a6f6c33f8013e3651943203ee3b1e7d1958995f888ca7ddf750e6430af26190",
+          "tools/animal-baseline.json": "1c7712a395c1d9adc6c801348470d1847b00cb4ee3968cfa94213d79e258b3d6",
+          "tools/check-backdoor.mjs": "3005259c177526da9d1e3340d110e0e015f14493374cc8949c4704d6c506e278",
+          "tools/backdoor-baseline.json": "44a681c946b751d3d613d78ffe9fe2fc8e979809d2559919ae65f5572aef3cae",
+          "tools/check-kasen.mjs": "f7fc4ae9f9af79f872d4cafada6c448e1a21dcd5cdfbd439ca21e6936f842e32",
+          "tools/kasen-baseline.json": "f119c2fcf7f96aac4440c7ee78ef3b23a665e21a3ffbe448c8ed1acce99dfd55",
+          "tools/check-current-hell.mjs": "e78bc169d49f5fb8042c4da46b03dda7927cc4a2a0ccea298497de30a04c937d",
+          "tools/current-hell-baseline.json": "d45d4966ae7eb3b10f428a5984904b78c8597f4ecb149cf141a43a0ba7d7715e",
+          "tools/check-rainbow-mine.mjs": "92c7e64478a74f665d6adb4d7cb2cc2ae5af6be9447d0cfdb6cdd1ac8b1b9de2",
+          "tools/rainbow-mine-baseline.json": "3d793efb1f5a984a3229dea0c710852b09a4b6e6e5294806dd0cfb7a2856bee4",
+          "tools/check-highland.mjs": "1a876fc8cbf29c46b548a2fa17f04c9e9777b3b1750f57a40912b981e7214340",
+          "tools/highland-baseline.json": "1552e5afc72ac453a892a2a9cbc3c5087d42eeb82ba606142840e1db8652463e",
+          "tools/check-asama.mjs": "7d2539b2f98bbae0df472c70e199ae574abc7b58a32d732e0081d2e27411b240",
+          "tools/asama-baseline.json": "ba15fdb0a284f489fa5944bcedd6e0ba9c60359a0fe2fcfceecdee82447c7ee4",
+          "tools/check-evidence-corrections.py": "97bc60805620272d24e2c5911c857e95c90c584f8f6c950895f0a082fe23196b",
+          "tools/current-coverage.json": "cb8038b9b7c1f933ae77456cfc00303997e1fbb95d8deb2c16963886fab59fe8",
+          "tools/check-geyser-center.mjs": "708ef3a9976212c71400ffd56b9d43715e087fd322d7e8c6b774b1f52a41bc9b",
+          "tools/geyser-center-baseline.json": "cf5e0483694884fb593e9b7c00b7378b693a67a2a042d55e6fbbbf71b7a1d5b3",
+          "tools/check-geyser.mjs": "f465a6b8910a2e87b892681375b9e384ba2b2360f055682d72baf141a129648e",
+          "tools/geyser-baseline.json": "cd8106c9c4a6c5ab6b970ac587b0d3f59951b0d2564b3caab5e8451873457df0",
+          "tools/check-wind-cave.mjs": "9a1242dea8d6ee50eef693ae0851f0ad93d61e9292531c543fe279b1a1ae5df3",
+          "tools/wind-cave-baseline.json": "84cb0e7696e2752c08f94f075a7867b076eb021cd597186a34a8f320cee431d8",
+          "tools/check-cucumber-farm.mjs": "715fdd1b6e7b32679d86678c89ee67c225c2812f95cd9e1ab686fd16c6c9d1ed",
+          "tools/cucumber-farm-baseline.json": "5ec3ce0339272685be83c09b526ae4de984aba609e58bf22661a4ab153f09f12",
+          "tools/check-waterfall-cave.mjs": "a828bd5418e4acc1cf82faaf22c5395f6b121166c7a245085678eda89a46cb93",
+          "tools/waterfall-cave-baseline.json": "6a1ef7dc336f90f1b077c365d7c6c73e51f58feb4a7a121c4c5444f9565d9083",
+          "tools/check-peony.mjs": "b88a1347f642d5083478f5eb2bbbc4092358da18960dc96c83a76a340d232340",
+          "tools/peony-baseline.json": "12f795ed975b7bc61d9793a27bd9978eedd48ed37a0d411d2db877d3fa5a691a",
+          "tools/check-mayohiga.mjs": "72cef14478d9230ff1c51fde8c9907c75dab5531a33cc71da7d0881f5ac8ff45",
+          "tools/mayohiga-baseline.json": "70473533bee801c39f0f22cd3368bbc62c2ef1cac5e18595f478e73619277174",
+          "tools/check-hiten.mjs": "4955a316796da56b50419b93285845c5d40817d17c22385d01a8092b533c1a74",
+          "tools/hiten-baseline.json": "7c4d0085dbd8647035ae84d4ecf2c1b37393023eaed821a94df07896179d5b1f",
+          "tools/check-kourindou.mjs": "dd67e34e4c92947b0b75ef1f4b71a954efec2d08d3b328223a13f6b54c0bc700",
+          "tools/kourindou-baseline.json": "1b0c06085b599fbfbc8d3df7575a6cd0027f353e8b7bf24f7ea24ef66c743dd8",
+          "tools/check-kourindou-browser.py": "90bb41467c19c55b74c33ef610450fbc1c2674de8d6df5a2f7d55be1900f59d2",
+          "tools/check-forest.mjs": "5262de1e54f58190096457c81d5fa84533b8072dc4e616cbb4a8d7934ff5fc4d",
+          "tools/forest-baseline.json": "e29ac935dfb20857397cc22b3b1943fb7e51ed318e4f49b92cdd145466ad795b",
+          "tools/check-village.mjs": "7ee33fe598f9f447726df991d12b6a02c12de86605d0c150643ce73d148ecda2",
+          "tools/village-baseline.json": "040073c347617b50a3cd10556ef41f0bfede73eff0b24d4e95acbf9cea6553b9",
+          "tools/check-trail.mjs": "a9e52221c8746f85b2bea15cc21ce6886da77fedbdd2dd72bf3fd961d0800f4a",
+          "tools/trail-baseline.json": "18517e0ba96f413aeed4df29805933f0ae2a8cb7c61234a6f5c1d03f45c3f36a",
+          "tools/check-trail-landscape.mjs": "9cccfbed2ac3275bd0729ff85d4700976bbf8308c42219e1c120178e3a03a191",
+          "tools/trail-landscape-baseline.json": "5d0abe56447f7ef03752071f2e9cf422717c331e99ebb5d5c6a277b71cfe4fe2",
+          "tools/check-trail-landscape-renderer.mjs": "43fa7f01c9842140a83a39e109ab825969be7fdd980fde29336adce32b8c6044",
+          "tools/check-forest-entrance.mjs": "e4170e93fb052f3ca80d1fb9a05a9cc41604ed17b302d7198b132b05683220a5",
+          "tools/check-forest-canopy.mjs": "e6789bf2a4604d11be12a279fbd5b00cc3fbff647c64b2896a388b361973b2d7",
+          "tools/check-forest-canopy-road.mjs": "2952dbe47687c21b2d0193eb60f74e20f6e95960839363ba5de2758b567013e3",
+          "tools/check-bamboo-entry.mjs": "0ad4d633c021299cc2207ad6c5731f94dcf965dc8813ce93f85f6f0b907bf890",
+          "tools/check-bamboo-browser.py": "49ea1c552fdee368ccfe96d7d74e098af0702985f414f0ce7035c3778f119864",
+          "tools/check-bamboo-lod-route.py": "e60a2de5c10b1498f5d951a050d024511166a4e64cb68e38628d68a71289ceb1",
+          "tools/bamboo-entry-route.json": "6dd0332f03d236ef1455c654fb02bb3915cedb9a05c69ce58f31a92122c1fae1",
+          "tools/check-sunflower-entry.mjs": "f08399f3396fde1338b9c61fdbd3bfc2d23c3bf87818015775a9cf812efd126b",
+          "tools/check-sunflower-browser.py": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+          "tools/check-forest-path-renderer.mjs": "c98a7e20bc30bad262e3f512abaaf7d8d246ce84c67a93ae63192f178548a05d",
+          "tools/check-forest-path-coverage.mjs": "50285847cfffefe171b53fb6c5365dbb413d5766b4233412ebacf7f4e2b72a3e",
+          "tools/generate-forest-path-colors.mjs": "d9f5674c3892d0808ea6c3ee50a412204389f96256dfffcfedbda00d1dfd1f00",
+          "tools/check-foliage-texture-browser.py": "505bcfd6401c95c9ed44538f4145e958ec8275c07a74c1586cdf1b980af1fb58",
+          "tools/check-ui-work.mjs": "84be632770e6fa4ef4c4d42495428c701dd3a43938f63b11b079a731e1362a4f",
+          "tools/check-frame-work.mjs": "2318e76bc1b805abf6892b54d89fc845156bd40717a1e31a20ec6d63246b886e",
+          "tools/check-frame-work-browser.py": "71ae510bd98ad072e694817896253cd932d0122e37fd6566530ba72f6127288b",
+          "tools/frame-work-source-review.json": "15d4e83b852f680ae9b99f68f596151680149b7c4595c0245b1f7011fb451322",
+          "tools/check-render-diagnostics.mjs": "f80d544f4e7a476badfb797f073d28c7e7acbd158bf6c315884136419014b677",
+          "tools/check-render-resources.mjs": "8172b43fab245fa6774c5019770407af76e4af2a9cbde8f35c19b1a6bb224337",
+          "tools/check-render-ownership.mjs": "b8bc5fcb9dd283a2621e387c2fee2bcd856a457cd701f1ace5f81928d06eae17",
+          "tools/render-lifecycle-source-review.json": "2d6283e5f204b7b242b35b3f6ebf7c76be4eeb3065871cf4e78999d8d9b426da",
+          "tools/check-streaming-lifecycle.mjs": "8a2d9443392fd7a037a6e6fbb74f340db0b83f364973450c27ebd6f2b2f251f1",
+          "tools/check-render-lifecycle-browser.py": "5b4c6a2180d329dda3addf1034a1f030f28778b1a14195e534eea1dad81b4999",
+          "tools/check-hakurei.mjs": "aca484da0ef951fc69c39cc7e60cdbebe0b3bb92d17f9da1152b442b60a2a3a2",
+          "tools/hakurei-baseline.json": "8a7764b129b21e7e9e72d9061ebcda9a354e6d86c566b1bf0b7cb7a4f19c6128"
+        },
+        "inputsAfterCanonicalSHA256": "6719a99207db486129f1b064a76433f81f5949865e07407cc74e911312d02dd7",
+        "inputsBeforeCanonicalSHA256": "6719a99207db486129f1b064a76433f81f5949865e07407cc74e911312d02dd7",
+        "inputsUnchanged": true,
+        "artifactUnchanged": true,
+        "protocolUnchanged": true,
+        "sourceProbeUnchanged": true,
+        "helperUnchanged": true
+      },
+      "browser": "151.0.7922.173",
+      "driver": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "frameConfiguration": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "dpr": 1,
+        "clock": 12.5,
+        "fov": 49,
+        "pose": {
+          "space": "surface",
+          "eye": [
+            -1898,
+            106,
+            565
+          ],
+          "target": [
+            -1775,
+            82,
+            583
+          ]
+        },
+        "cameraFixture": {
+          "id": "muenzukaNativeCheck",
+          "region": "muenzuka",
+          "detailNeighbors": [],
+          "requiredRegions": [
+            "muenzuka"
+          ],
+          "pose": {
+            "space": "surface",
+            "eye": [
+              -1898,
+              106,
+              565
+            ],
+            "target": [
+              -1775,
+              82,
+              583
+            ]
+          }
+        },
+        "productionRAF": true,
+        "manualDraws": false,
+        "gpuFinish": false,
+        "retentionWaitMs": 6250,
+        "anchorProtocol": "overview -> actual native-clear UI -> test camera via production setView -> three production wakes -> existing graceSeconds plus250ms -> three production wakes"
+      },
+      "GPUAnchors": {
+        "before": {
+          "geometries": 458,
+          "textures": 11,
+          "programs": 161,
+          "attributeBytes": 51827594,
+          "geometryEntries": 456,
+          "residentObjects": 667
+        },
+        "after": {
+          "geometries": 458,
+          "textures": 11,
+          "programs": 161,
+          "attributeBytes": 51827594,
+          "geometryEntries": 456,
+          "residentObjects": 667
+        },
+        "unloaded": {
+          "geometries": 895,
+          "textures": 11,
+          "programs": 161,
+          "attributeBytes": 76003222,
+          "geometryEntries": 893,
+          "residentObjects": 1200
+        }
+      },
+      "sourceAndLOD": {
+        "beforeCounts": {
+          "publicRecords": 2156,
+          "nativeRecords": 63,
+          "muenzukaColdRecords": 15,
+          "coldOrdinaryTrees": 31,
+          "sourceViews": 3588,
+          "uniqueBackings": 1887,
+          "uniqueBackingBytes": 150851220
+        },
+        "afterCounts": {
+          "publicRecords": 2156,
+          "nativeRecords": 63,
+          "muenzukaColdRecords": 15,
+          "coldOrdinaryTrees": 31,
+          "sourceViews": 3588,
+          "uniqueBackings": 1887,
+          "uniqueBackingBytes": 150851220
+        },
+        "unloadedCounts": {
+          "publicRecords": 2156,
+          "nativeRecords": 0,
+          "muenzukaColdRecords": 15,
+          "coldOrdinaryTrees": 31,
+          "sourceViews": 3452,
+          "uniqueBackings": 1751,
+          "uniqueBackingBytes": 145844716
+        },
+        "privatePrototypesBefore": [
+          {
+            "id": "privateMuenzuka:0:near",
+            "variant": 0,
+            "lod": "near",
+            "array": {
+              "type": "Float32Array",
+              "length": 31104,
+              "bytes": 124416,
+              "sha256": "de3591e605e89d1eaa6ad6610e83399fa53b2a6fe048fd41eb00adb2147f10b7",
+              "viewToken": 3451,
+              "bufferToken": 1750,
+              "byteOffset": 0
+            }
+          },
+          {
+            "id": "privateMuenzuka:0:far",
+            "variant": 0,
+            "lod": "far",
+            "array": {
+              "type": "Float32Array",
+              "length": 4860,
+              "bytes": 19440,
+              "sha256": "2a0ad78f840b1ac7bfcd906e9658a5421ae447dde3b9ffcc7aaffa17c5f56a63",
+              "viewToken": 2023,
+              "bufferToken": 423,
+              "byteOffset": 0
+            }
+          },
+          {
+            "id": "privateMuenzuka:1:near",
+            "variant": 1,
+            "lod": "near",
+            "array": {
+              "type": "Float32Array",
+              "length": 31104,
+              "bytes": 124416,
+              "sha256": "2fee35765f9bc3ff03e97c4e47aa4c92bdd27104371336ce5e9e48c862c6bd77",
+              "viewToken": 3452,
+              "bufferToken": 1751,
+              "byteOffset": 0
+            }
+          },
+          {
+            "id": "privateMuenzuka:1:far",
+            "variant": 1,
+            "lod": "far",
+            "array": {
+              "type": "Float32Array",
+              "length": 4860,
+              "bytes": 19440,
+              "sha256": "b2dbb8e1f729416dcaf9d4e03306d39c1acbbb5dad8b24c1968cb8dab0455f4e",
+              "viewToken": 2032,
+              "bufferToken": 428,
+              "byteOffset": 0
+            }
+          }
+        ],
+        "privatePrototypesAfterCanonicalSHA256": "91ca7c5f42c6c541962265459e0a7c8319e1113f7bc0bd225849023410496b01",
+        "prototypeResidencyBefore": [
+          {
+            "id": "privateMuenzuka:0:near",
+            "residentInGPU": false,
+            "publicArrayOwners": []
+          },
+          {
+            "id": "privateMuenzuka:0:far",
+            "residentInGPU": false,
+            "publicArrayOwners": [
+              "overview016:muenzuka|forestLeaf|vegetation|I7:muenzuka-west-edge"
+            ]
+          },
+          {
+            "id": "privateMuenzuka:1:near",
+            "residentInGPU": false,
+            "publicArrayOwners": []
+          },
+          {
+            "id": "privateMuenzuka:1:far",
+            "residentInGPU": false,
+            "publicArrayOwners": [
+              "overview016:muenzuka|forestLeaf|vegetation|I9:muenzuka-west-edge"
+            ]
+          }
+        ],
+        "prototypeResidencyAfter": [
+          {
+            "id": "privateMuenzuka:0:near",
+            "residentInGPU": false,
+            "publicArrayOwners": []
+          },
+          {
+            "id": "privateMuenzuka:0:far",
+            "residentInGPU": false,
+            "publicArrayOwners": [
+              "overview016:muenzuka|forestLeaf|vegetation|I7:muenzuka-west-edge"
+            ]
+          },
+          {
+            "id": "privateMuenzuka:1:near",
+            "residentInGPU": false,
+            "publicArrayOwners": []
+          },
+          {
+            "id": "privateMuenzuka:1:far",
+            "residentInGPU": false,
+            "publicArrayOwners": [
+              "overview016:muenzuka|forestLeaf|vegetation|I9:muenzuka-west-edge"
+            ]
+          }
+        ],
+        "sourceFieldDigests": {
+          "records": {
+            "before": "fdd193fabe420e5e2c7a150041f5daf995e1df8428e0b98b5056e6cb630f9f7f",
+            "after": "fdd193fabe420e5e2c7a150041f5daf995e1df8428e0b98b5056e6cb630f9f7f",
+            "equal": true
+          },
+          "dataArrays": {
+            "before": "a2cd5910a2e158e86ccc73fcf6f1932e8421bfb7e50cc142bb116ecbd9a92dc8",
+            "after": "a2cd5910a2e158e86ccc73fcf6f1932e8421bfb7e50cc142bb116ecbd9a92dc8",
+            "equal": true
+          },
+          "privatePrototypes": {
+            "before": "91ca7c5f42c6c541962265459e0a7c8319e1113f7bc0bd225849023410496b01",
+            "after": "91ca7c5f42c6c541962265459e0a7c8319e1113f7bc0bd225849023410496b01",
+            "equal": true
+          },
+          "counts": {
+            "before": "bd9e899211f53d60b99b766faa1cafa1408b1146f2b12203a23b581b8a572bff",
+            "after": "bd9e899211f53d60b99b766faa1cafa1408b1146f2b12203a23b581b8a572bff",
+            "equal": true
+          },
+          "backingLedger": {
+            "before": "84daec4b5d505e317a558e4f2252a82fc4103784f5ccd7497867594d36517d7b",
+            "after": "84daec4b5d505e317a558e4f2252a82fc4103784f5ccd7497867594d36517d7b",
+            "equal": true
+          }
+        },
+        "rigBefore": {
+          "eye": [
+            -1898,
+            106,
+            565
+          ],
+          "target": [
+            -1775,
+            82,
+            583
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "rigAfter": {
+          "eye": [
+            -1898,
+            106,
+            565
+          ],
+          "target": [
+            -1775,
+            82,
+            583
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "wantedBeforeCanonicalSHA256": "69cdf5dcd321c2c314399eb6c85be19f2c1d612ff3606ceb24972e69946776b2",
+        "wantedAfterCanonicalSHA256": "69cdf5dcd321c2c314399eb6c85be19f2c1d612ff3606ceb24972e69946776b2",
+        "wantedCountBefore": 667,
+        "wantedCountAfter": 667,
+        "nativeOwnedGeometryIDsBefore": [
+          1468,
+          1469,
+          1470,
+          1471,
+          1472,
+          1473,
+          1474,
+          1475,
+          1476,
+          1477,
+          1478,
+          1479,
+          1480,
+          1481,
+          1482,
+          1483,
+          1484,
+          1485,
+          1486,
+          1487,
+          1488,
+          1489
+        ],
+        "retainedOwnedGeometryIDsAfterUnload": [],
+        "droppedManagedSourceBytes": 0,
+        "nativeCacheAfterUnload": {
+          "requests": 2,
+          "builds": 2,
+          "cancelled": 0,
+          "evictions": 2,
+          "cacheHits": 0,
+          "staleDropped": 0,
+          "cached": [],
+          "building": null,
+          "required": [],
+          "detailSourceMiB": 0,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "muenzuka",
+              "buildMs": 166.09999999403954,
+              "sourceBytes": 5006504,
+              "epoch": 2
+            },
+            {
+              "region": "muenzuka",
+              "buildMs": 163.80000001192093,
+              "sourceBytes": 5006504,
+              "epoch": 4
+            }
+          ]
+        },
+        "nativeRecordsAfterUnload": [],
+        "nativeMapAfterUnload": [],
+        "rendererPackIDsAfterUnload": []
+      },
+      "programs": {
+        "beforeCount": 161,
+        "afterCount": 161,
+        "beforeKeysAndReferencesCanonicalSHA256": "f6e906b85351f6c5a8b0b1fb19fdae7ab9f64bde444e7734b518da6ffada415a",
+        "afterKeysAndReferencesCanonicalSHA256": "f6e906b85351f6c5a8b0b1fb19fdae7ab9f64bde444e7734b518da6ffada415a",
+        "exact": true
+      },
+      "actualSpheresBefore": [
+        {
+          "id": "muenzuka:trees:-23:6:0:leaf",
+          "pack": "muenzuka",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1792.4403697012365,
+              84.09952425845269,
+              532.053325742858
+            ],
+            "radius": 41.520832724325686
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -0.7817388621482024,
+            "points": 79920,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "muenzuka:trees:-23:6:1:leaf",
+          "pack": "muenzuka",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1789.54053156499,
+              85.47982895773083,
+              516.1129427989438
+            ],
+            "radius": 39.9619595797357
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -1.4906731872889694,
+            "points": 79920,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "muenzuka:trees:-23:7:0:leaf",
+          "pack": "muenzuka",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1797.3563069447766,
+              84.16826529110195,
+              612.1895863433183
+            ],
+            "radius": 39.93930900577837
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -0.05687400870213821,
+            "points": 111888,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "muenzuka:trees:-23:7:1:leaf",
+          "pack": "muenzuka",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1815.9320448371345,
+              84.67309335240718,
+              584.8048879327376
+            ],
+            "radius": 35.594498296078584
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -1.0550884431070386,
+            "points": 95904,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "muenzuka:trees:-23:8:0:leaf",
+          "pack": "muenzuka",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1782.5511701575545,
+              85.95872157987463,
+              655.4952282978464
+            ],
+            "radius": 12.585858628424422
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -0.00032355127174277243,
+            "points": 15984,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "muenzuka:trees:-23:8:1:leaf",
+          "pack": "muenzuka",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1782.3674890801437,
+              86.52338384818586,
+              644.5627806303692
+            ],
+            "radius": 11.448900342523125
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -0.00031229430612000897,
+            "points": 15984,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "overview016:muenzuka|forestLeaf|vegetation|I7:muenzuka-west-edge",
+          "pack": "overview",
+          "eligible": true,
+          "resident": false,
+          "wanted": false,
+          "level": -1,
+          "sphere": null,
+          "actualWindEnvelope": null
+        },
+        {
+          "id": "overview016:muenzuka|forestLeaf|vegetation|I9:muenzuka-west-edge",
+          "pack": "overview",
+          "eligible": true,
+          "resident": false,
+          "wanted": false,
+          "level": -1,
+          "sphere": null,
+          "actualWindEnvelope": null
+        }
+      ],
+      "actualSpheresAfter": [
+        {
+          "id": "muenzuka:trees:-23:6:0:leaf",
+          "pack": "muenzuka",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1792.4403697012365,
+              84.09952425845269,
+              532.053325742858
+            ],
+            "radius": 41.520832724325686
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -0.7817388621482024,
+            "points": 79920,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "muenzuka:trees:-23:6:1:leaf",
+          "pack": "muenzuka",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1789.54053156499,
+              85.47982895773083,
+              516.1129427989438
+            ],
+            "radius": 39.9619595797357
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -1.4906731872889694,
+            "points": 79920,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "muenzuka:trees:-23:7:0:leaf",
+          "pack": "muenzuka",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1797.3563069447766,
+              84.16826529110195,
+              612.1895863433183
+            ],
+            "radius": 39.93930900577837
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -0.05687400870213821,
+            "points": 111888,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "muenzuka:trees:-23:7:1:leaf",
+          "pack": "muenzuka",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1815.9320448371345,
+              84.67309335240718,
+              584.8048879327376
+            ],
+            "radius": 35.594498296078584
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -1.0550884431070386,
+            "points": 95904,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "muenzuka:trees:-23:8:0:leaf",
+          "pack": "muenzuka",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1782.5511701575545,
+              85.95872157987463,
+              655.4952282978464
+            ],
+            "radius": 12.585858628424422
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -0.00032355127174277243,
+            "points": 15984,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "muenzuka:trees:-23:8:1:leaf",
+          "pack": "muenzuka",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1782.3674890801437,
+              86.52338384818586,
+              644.5627806303692
+            ],
+            "radius": 11.448900342523125
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -0.00031229430612000897,
+            "points": 15984,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "overview016:muenzuka|forestLeaf|vegetation|I7:muenzuka-west-edge",
+          "pack": "overview",
+          "eligible": true,
+          "resident": false,
+          "wanted": false,
+          "level": -1,
+          "sphere": null,
+          "actualWindEnvelope": null
+        },
+        {
+          "id": "overview016:muenzuka|forestLeaf|vegetation|I9:muenzuka-west-edge",
+          "pack": "overview",
+          "eligible": true,
+          "resident": false,
+          "wanted": false,
+          "level": -1,
+          "sphere": null,
+          "actualWindEnvelope": null
+        }
+      ],
+      "actualSpheresUnloaded": [
+        {
+          "id": "overview016:muenzuka|forestLeaf|vegetation|I7:muenzuka-west-edge",
+          "pack": "overview",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1802.9262653123349,
+              84.98202539397712,
+              583.5400082067904
+            ],
+            "radius": 69.90149288287819
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -1.4162907949897345,
+            "points": 12960,
+            "tolerance": 1e-07
+          }
+        },
+        {
+          "id": "overview016:muenzuka|forestLeaf|vegetation|I9:muenzuka-west-edge",
+          "pack": "overview",
+          "eligible": true,
+          "resident": true,
+          "wanted": true,
+          "level": 0,
+          "sphere": {
+            "center": [
+              -1806.1977471770558,
+              85.07766325566747,
+              559.6328298095351
+            ],
+            "radius": 70.11724237127652
+          },
+          "actualWindEnvelope": {
+            "maximumOutside": -1.4280403020698031,
+            "points": 8640,
+            "tolerance": 1e-07
+          }
+        }
+      ],
+      "CPUObservationsRaw": [
+        {
+          "label": "before actual input",
+          "at": 67023.69999998808,
+          "drawnFrames": 15,
+          "snapshotSubmittedCPUms": 11.400000005960464,
+          "stats": {
+            "calls": 664,
+            "triangles": 1510476,
+            "totalCalls": 666,
+            "totalTriangles": 1510480,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 11.400000005960464,
+            "geometries": 458,
+            "textures": 11,
+            "residentObjects": 667,
+            "residentAttributeMiB": 49.426645278930664,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 604,
+            "detailDrawObjects": 63,
+            "evictions": 612,
+            "uploads": 1279,
+            "renderCount": 15,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": "muenzuka",
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        },
+        {
+          "label": "actual orbit completed",
+          "at": 82003,
+          "drawnFrames": 18,
+          "snapshotSubmittedCPUms": 16.600000008940697,
+          "stats": {
+            "calls": 693,
+            "triangles": 1698109,
+            "totalCalls": 695,
+            "totalTriangles": 1698113,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 16.600000008940697,
+            "geometries": 456,
+            "textures": 11,
+            "residentObjects": 664,
+            "residentAttributeMiB": 49.37296104431152,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 582,
+            "detailDrawObjects": 63,
+            "evictions": 618,
+            "uploads": 1282,
+            "renderCount": 18,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": "muenzuka",
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        },
+        {
+          "label": "actual wheel completed",
+          "at": 91585.89999999106,
+          "drawnFrames": 19,
+          "snapshotSubmittedCPUms": 9,
+          "stats": {
+            "calls": 635,
+            "triangles": 1485206,
+            "totalCalls": 637,
+            "totalTriangles": 1485210,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 9,
+            "geometries": 442,
+            "textures": 11,
+            "residentObjects": 643,
+            "residentAttributeMiB": 48.96929740905762,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 580,
+            "detailDrawObjects": 63,
+            "evictions": 639,
+            "uploads": 1282,
+            "renderCount": 19,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": "muenzuka",
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        },
+        {
+          "label": "detail before native unload",
+          "at": 136852.39999999106,
+          "drawnFrames": 33,
+          "snapshotSubmittedCPUms": 6.800000011920929,
+          "stats": {
+            "calls": 664,
+            "triangles": 1510476,
+            "totalCalls": 666,
+            "totalTriangles": 1510480,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 6.800000011920929,
+            "geometries": 458,
+            "textures": 11,
+            "residentObjects": 667,
+            "residentAttributeMiB": 49.426645278930664,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 604,
+            "detailDrawObjects": 63,
+            "evictions": 1330,
+            "uploads": 1997,
+            "renderCount": 33,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": "muenzuka",
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        },
+        {
+          "label": "native cache cleared",
+          "at": 177085.5,
+          "drawnFrames": 43,
+          "snapshotSubmittedCPUms": 17.80000001192093,
+          "stats": {
+            "calls": 1208,
+            "triangles": 1652818,
+            "totalCalls": 1209,
+            "totalTriangles": 1652820,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 1,
+            "submittedCPUms": 17.80000001192093,
+            "geometries": 895,
+            "textures": 11,
+            "residentObjects": 1200,
+            "residentAttributeMiB": 72.48232078552246,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 1200,
+            "detailDrawObjects": 0,
+            "evictions": 1409,
+            "uploads": 2609,
+            "renderCount": 43,
+            "hdr": true,
+            "contactOcclusion": false,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": null,
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        },
+        {
+          "label": "detail after native reentry",
+          "at": 208470,
+          "drawnFrames": 50,
+          "snapshotSubmittedCPUms": 8.400000005960464,
+          "stats": {
+            "calls": 664,
+            "triangles": 1510476,
+            "totalCalls": 666,
+            "totalTriangles": 1510480,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 8.400000005960464,
+            "geometries": 458,
+            "textures": 11,
+            "residentObjects": 667,
+            "residentAttributeMiB": 49.426645278930664,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 604,
+            "detailDrawObjects": 63,
+            "evictions": 2021,
+            "uploads": 2688,
+            "renderCount": 50,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": "muenzuka",
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        },
+        {
+          "label": "one second idle",
+          "at": 223379.39999999106,
+          "drawnFrames": 50,
+          "snapshotSubmittedCPUms": 8.400000005960464,
+          "stats": {
+            "calls": 664,
+            "triangles": 1510476,
+            "totalCalls": 666,
+            "totalTriangles": 1510480,
+            "reflectionCalls": 0,
+            "reflectionTriangles": 0,
+            "postPasses": 2,
+            "submittedCPUms": 8.400000005960464,
+            "geometries": 458,
+            "textures": 11,
+            "residentObjects": 667,
+            "residentAttributeMiB": 49.426645278930664,
+            "budgetMiB": 160,
+            "proxyDrawObjects": 604,
+            "detailDrawObjects": 63,
+            "evictions": 2021,
+            "uploads": 2688,
+            "renderCount": 50,
+            "hdr": true,
+            "contactOcclusion": true,
+            "renderTargetsEstimateMiB": 12.3046875,
+            "weather": "clear",
+            "skyVisible": true,
+            "surfaceComponents": 1,
+            "localCutaway": false,
+            "rainSegments": 0,
+            "westernFocused": "muenzuka",
+            "backdoorWindows": {
+              "targets": 0,
+              "buildPasses": 0,
+              "framePasses": 0,
+              "livePortals": false
+            },
+            "surfaceNight": false,
+            "nightLocalLights": 0
+          }
+        }
+      ],
+      "nativeWorkerBuildLog": [
+        {
+          "region": "muenzuka",
+          "buildMs": 166.09999999403954,
+          "sourceBytes": 5006504,
+          "epoch": 2
+        },
+        {
+          "region": "muenzuka",
+          "buildMs": 163.80000001192093,
+          "sourceBytes": 5006504,
+          "epoch": 4
+        },
+        {
+          "region": "muenzuka",
+          "buildMs": 191.3999999910593,
+          "sourceBytes": 5006504,
+          "epoch": 6
+        }
+      ],
+      "imageRestoration": {
+        "beforeSHA256": "98da5d29f837c594119768b59b0b3f8bf4f8fe56b8dfab0ed2853266bdbf6d7d",
+        "afterSHA256": "98da5d29f837c594119768b59b0b3f8bf4f8fe56b8dfab0ed2853266bdbf6d7d",
+        "byteExact": true
+      },
+      "errors": [],
+      "contextEvents": [],
+      "httpFailures": [
+        {
+          "path": "/favicon.ico",
+          "status": 404
+        }
+      ],
+      "passed": true,
+      "exitCode": 0
+    }
+  ],
+  "scope": "Two sequential actual browser sessions, original202 then candidate204; one measured native unload/reentry per session and three actual Worker builds including real-input/reset prelude. Main-thread near prototypes remain persistent public CPU cache.",
+  "CPUInterpretation": "Raw observations retained exactly; SwiftShader software backend and potential Sol light offline CPU overlap prohibit wall-time speedup or hardware-FPS/VRAM inference.",
+  "notCovered": [
+    "JavaScript final GC timing",
+    "long-term leak test",
+    "continuous LOD boundary camera trajectory",
+    "dynamic wind screenshot sweep",
+    "final integrated Node/CI/Pages/online response"
+  ],
+  "productionFilesOrProtocolsModifiedForRun": false,
+  "allBrowsersClosed": true
+}

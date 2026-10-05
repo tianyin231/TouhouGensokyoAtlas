@@ -1,0 +1,187 @@
+{
+  "schema": 1,
+  "reviewedUTC": "2026-10-05T21:45:09.286726+00:00",
+  "reviewer": "Astra art lead; direct original-PNG review, separate from root independent source testing",
+  "sourceSHA256": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+  "rendererSHA256": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4",
+  "projectSHA256": "c08082becb98fcd912095789e61ca79b20ec375580360fdfd3e371063054eef8",
+  "artifactSHA256": "ce843445fca81f3e3cef42ac1b58ed16870ba43ed251d23b2e2e4928caf12a97",
+  "inputCount": 204,
+  "decision": "Limited western-crown sample passes fixed-view visual gate; ready for independent source/native/reentry/regression checks, not release acceptance.",
+  "visual": {
+    "overviewAndA": "New culling envelope yields byte-identical overview/near/back PNGs to b2ef; prior bounded visual judgment retained. near remains largely occluded by unchanged eastern foreground.",
+    "cold": "Selected 10 original coarse trees use deep, rounded bough masses; roots/identity and the old 31-tree sparse cold representation remain.",
+    "low": "Western arc keeps coherent depth and silhouette under actual far-only quality; no paper-like enlarged leaf cards or crown collapse seen.",
+    "night": "Effective western back camera shows intact crown outline, original boughs/roots and purple cherry without new night artifact. Existing very dark ambient scene is not a lighting upgrade."
+  },
+  "remaining": [
+    "Near-labelled view does not certify unobstructed close foliage detail.",
+    "Cold31/native62 population mismatch and density transition remain.",
+    "Eastern original crowns, forest floor and clearing depth remain unfinished."
+  ],
+  "sourceBudgetBytes": 577780,
+  "newRendererTypedBackingBytes": 0,
+  "previousBoundsCLI1Preserved": true,
+  "independentLocalEnvelope": {
+    "reportSHA256": "0fd00f7616dfea98aa149beb90a43c014335df7b974c8e16d65b0b5838ec2fac",
+    "checksPassed": 5,
+    "CLI": 0,
+    "newNativeBuild": false,
+    "GPU": false,
+    "fullPublicBoot": false
+  },
+  "runs": {
+    "bounds-overview": {
+      "passed": true,
+      "exitCode": 0,
+      "elapsedSeconds": 28.3727173669904,
+      "protocolSHA256": "666a3f01c0863ef8c408e352d27c06728192cddbe92d918f448ddb3222d32809",
+      "inputsUnchanged": true,
+      "artifactUnchanged": true,
+      "errors": [],
+      "contextEvents": [],
+      "httpFailures": [
+        {
+          "path": "/favicon.ico",
+          "status": 404
+        }
+      ],
+      "originalReportSHA256": "d315e1247cf00a48ff0357822894b1175e1bc0719b7e4b2af8ccfc2f7aec91bc",
+      "pngs": {
+        "muenzukaOverview.png": "d6996022734954334f22adcbad6f18bc9f7997ab01640e2d3344910d19f47145"
+      }
+    },
+    "bounds-A": {
+      "passed": true,
+      "exitCode": 0,
+      "elapsedSeconds": 55.28756103600608,
+      "protocolSHA256": "a55b69b69e78e11ef3478ee6221c7f23043b3b1893815cbf5b777813da3d98f9",
+      "inputsUnchanged": true,
+      "artifactUnchanged": true,
+      "errors": [],
+      "contextEvents": [],
+      "httpFailures": [
+        {
+          "path": "/favicon.ico",
+          "status": 404
+        }
+      ],
+      "comparisons": [
+        {
+          "view": "near",
+          "delta": {
+            "calls": 0,
+            "triangles": -16590,
+            "attributeBytes": 287712,
+            "geometries": 4,
+            "textures": 0
+          },
+          "budgetPassed": true
+        },
+        {
+          "view": "back",
+          "delta": {
+            "calls": 0,
+            "triangles": -27050,
+            "attributeBytes": 248832,
+            "geometries": 2,
+            "textures": 0
+          },
+          "budgetPassed": true
+        }
+      ],
+      "originalReportSHA256": "58d49c8164b927d462dac425045f6b83fdf57036b8f567a186958f88e696b5e1",
+      "pngs": {
+        "near.png": "e9c8c5aa4aedb3d24275509cc320be42b6f4f7dc7021f418eafa44dad109e82e",
+        "back.png": "d4103edf60d44bf576391ef755dc7ba0becdcd3aeb615f0981bca8b60e0984c5"
+      }
+    },
+    "baseline-B": {
+      "passed": true,
+      "exitCode": 0,
+      "elapsedSeconds": 50.53837898001075,
+      "protocolSHA256": "e0e39f718bca8d86af900c2ba319a581cab43be5ed5f003e343fdf3b3aefc4a0",
+      "inputsUnchanged": true,
+      "artifactUnchanged": true,
+      "errors": [],
+      "contextEvents": [],
+      "httpFailures": [
+        {
+          "path": "/favicon.ico",
+          "status": 404
+        }
+      ],
+      "originalReportSHA256": "5ccc63054080cfbc749a3f62f383870a4d349f6c17f440013870bc373dcbeaef",
+      "pngs": {
+        "low.png": "fc97608783886c78ed7bdbadebd480c3c2351f278dac1554bba8f39a659d1381",
+        "cold.png": "cf1b20c39e3999410538142f11dcefa46aa401bd94f0af77350f9963ebc7fa13",
+        "night.png": "6b7bc98238de9076908de80a187bcdfe963785a7a93ce0505943c8ff7569db9f"
+      }
+    },
+    "bounds-B": {
+      "passed": true,
+      "exitCode": 0,
+      "elapsedSeconds": 49.577439514003345,
+      "protocolSHA256": "e0e39f718bca8d86af900c2ba319a581cab43be5ed5f003e343fdf3b3aefc4a0",
+      "inputsUnchanged": true,
+      "artifactUnchanged": true,
+      "errors": [],
+      "contextEvents": [],
+      "httpFailures": [
+        {
+          "path": "/favicon.ico",
+          "status": 404
+        }
+      ],
+      "comparisons": [
+        {
+          "view": "cold",
+          "delta": {
+            "calls": 2,
+            "triangles": -360,
+            "attributeBytes": 38880,
+            "geometries": 2,
+            "textures": 0
+          },
+          "budgetPassed": true
+        },
+        {
+          "view": "low",
+          "delta": {
+            "calls": 0,
+            "triangles": -900,
+            "attributeBytes": 77760,
+            "geometries": 4,
+            "textures": 0
+          },
+          "budgetPassed": true
+        },
+        {
+          "view": "night",
+          "delta": {
+            "calls": 0,
+            "triangles": -27050,
+            "attributeBytes": -233712,
+            "geometries": 0,
+            "textures": 0
+          },
+          "budgetPassed": true
+        }
+      ],
+      "originalReportSHA256": "559cbbb2a12dc01c85943add0deae18dd305568d5ecbcffe5365b5fe330b2c07",
+      "pngs": {
+        "low.png": "aba4373e0490cc7cfa918434fc27e83d3ed0eb38791f3c5e55679ff63cde7ee5",
+        "cold.png": "34abb2225df9fb6d7b2d8ccb01e190659301d3cb3132556f8619a8224b792ed8",
+        "night.png": "62f83380302f65f28b3ef2795ade43c3376f805f5a8a059f900d57925fe036a9"
+      }
+    }
+  },
+  "notRun": [
+    "Full independent production source protection (parent preparing)",
+    "Native interaction/unload/reentry",
+    "Continuous browser LOD/frustum/wind route",
+    "Full Node suite",
+    "Final CI/deployment"
+  ],
+  "hardwareFPSMeasured": false
+}

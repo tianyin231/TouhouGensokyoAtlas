@@ -2,9 +2,11 @@
 
 2026-10-05从重核远端main `504808ea4d297ba67a8cd435fd52282cde33ad74`独立起步。花丘870候选、已交付太阳花田与其他工作树保持。本页记录局部候选，不代表无缘塚或主岛已完成。
 
-**评审检查点，技术未通过，不可直接合入main。** 本分支`experiment/muenzuka-edge-20261005`及其候选提交仅保存真实过程；最终交付须从最新main独立整合已修复、已验收内容。当前b2ef构形有局部画面收益，独立包围球检查CLI1仍阻塞交付；近机位遮挡，B冷／低／夜、原生重入和完整Node均未运行。
+**评审分支，不可直接合入main。** 本分支`experiment/muenzuka-edge-20261005`及其候选提交仅保存真实过程；最终交付须从最新main独立整合已修复、已验收内容。独立检查点`32d4196916ed0296e4ac9828ff97f7b29615d43b`保存包围球CLI1和当时未完成的B组。204输入局部包络版现已通过B组实际画面、独立源12／12及原生交互／重入24／24，原202同协议22／22；原失败仍保留。完整集成Node、最终CI／部署尚未完成，近机位遮挡限制和整区欠账仍在。
 
 入库精选实图：[原全景](previews/muenzuka-edge/before-overview.png)、[V2全景](previews/muenzuka-edge/after-overview.png)、[原背面](previews/muenzuka-edge/before-back.png)、[V2背面](previews/muenzuka-edge/after-back.png)。[绑定证据与原执行协议](reviews/muenzuka-edge-v2/README.md)保留准确源码、HTML、输入和失败状态；不包含dist、原生V8或全批截图。
+
+本次修复及生命周期的[精简评审材料](reviews/muenzuka-edge-bounds/README.md)保留逐字节执行脚本、完整输入与报告散列；新增包络版overview／back原PNG与上列V2图片逐字节一致，无需重复存图。
 
 ## 实际基线与范围
 
@@ -62,3 +64,45 @@ V2冻结源码`b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045`
 root独立离线检查`/workspace/muenzuka-evidence/independent-bounds-v2.json`实际CLI1：基线9组近远缓存球／风动组合有越界，V2为10组，V2最大约0.23407米；`-23:7:0`出现新的轻微越界。原实例／record bounds保持通过，不等于Three实际缓存的实例球完整覆盖近远原型和所有风动。原独立失败保留；不能缩冠、收紧假球或用已有越界放行。root正在研究仅这六条原生叶记录及两条新冷叶记录的显式近远风动包络，当前b2ef源码／project继续冻结，尚未接入修复。
 
 按此阻塞暂停B冷总览／低画质／夜间采集、完整Node及原生交互／卸载重入。A两图成本断言实际通过，不代表任意视锥／LOD切换或初始阴影重绘已通过。独立全源保护、冷层实际成本、低档／夜间、原生重入、候选CI及部署仍未完成。本次只保存独立评审检查点，未交付main；等待有界包围修复后按已声明B协议继续，不把冠层小样替代无缘塚整景与主岛地形欠账。
+
+## 局部包络修复与B组实际检查
+
+上一段是已推远端的32d4196检查点状态，并非下述新执行结果。该独立分支普通推送后已用`ls-remote`核到准确SHA，main仍为504808e；没有直接合入main。
+
+随后接入root提供的`src/muenzuka-edge-renderer.js`（SHA `49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4`），仅覆盖六条目标原生叶记录和两条新增冷叶记录的实际mesh包围球。两档真实几何与forestLeaf完整风动相位共用保守包络，保持原几何、材质、实例、LOD距离与通用renderer；WeakMap不持有GPU对象，没有新增typed backing或纹理。root独立离线检查5／5、CLI0，0.713秒，24组原生近远组合均包含，最小余量约0.312毫米；冷层两个子记录完整包络也通过。原9组基线失败和b2ef的10组CLI1未覆盖。该检查本身没有GPU／完整公共前驱／新原生build。
+
+Builder仍为b2ef，project变为`c08082becb98fcd912095789e61ca79b20ec375580360fdfd3e371063054eef8`；新构建204输入、HTML `ce843445fca81f3e3cef42ac1b58ed16870ba43ed251d23b2e2e4928caf12a97`。独立overview与A会话按原顺序复拍，三张PNG分别与旧b2ef版逐字节相同，成本同前；A执行55.288秒CLI0。新协议只调整产物／路径／204输入绑定，并移除已获准并行修改的旁侧Flower工作树冻结；实际浏览器body与旧协议逐字节相同，全部变化绑定在`/workspace/muenzuka-evidence/bounds-capture-binding.json`，原协议不改。全景与A仍分别开新浏览器，没有串接成新LOD历史。
+
+鉴于A近机位被未改前景遮挡，B执行前单独声明夜间改用已有效的back机位；cold／low不变。新spec SHA `767fea11911decb6f073d34e3b6866b536ddf8cede14b570993e09f87a11c7bc`，B协议SHA `e0e39f718bca8d86af900c2ba319a581cab43be5ed5f003e343fdf3b3aefc4a0`。基线和候选使用同一协议、同一spec，各开新浏览器按cold→low→night顺序执行。cold先检查0原生缓存／0原生绘制，再通过真实Worker加载原生；night仍用12.5时钟与night时段覆盖，不改变源场景迁就取景。
+
+| B固定视角 | 基线调用／三角 | 包络版调用／三角 | 属性驻留增量 | 纹理增量 |
+| --- | --- | --- | --- | --- |
+| cold，总览原机位 | 223／313431 | 225／313071 | +38880B | 0 |
+| low，原生原机位 | 274／523962 | 274／523062 | +77760B | 0 |
+| night，背面机位 | 666／1537530 | 666／1510480 | −233712B | 0 |
+
+B基线50.538秒、候选49.577秒，均CLI0；204候选输入／HTML与两份协议／spec前后相同，末三帧成本稳定，无JS／着色器／上下文错误，仅favicon404。调用／三角／纹理全部满足原预算；source仍577780B，未以降低画质或扩大预算通过。时长不作性能比较；表中驻留受本组cold→low→night历史影响，不能与A直接混成内存回收结论，更不能宣称FPS提升。
+
+Astra实际逐对查看`/workspace/muenzuka-evidence/baseline-B/`与`bounds-B/`三张原图：cold十株目标冠形变厚、轮廓与原生修改方向一致，原31株粗代理的稀疏语义保持；low仍可读西弧连续冠体，没有纸片或塌冠；back-night冠形、原枝根与紫樱保持，未见新增夜间异常。这一限定冠层小样可进入独立源与发布回归门槛。冷31株与原生62株的密度差仍在，不能称冷转原生跳变消除；东侧旧冠、空地和林下深度仍未完成。
+
+本组固定视图结束时，源码／project再次冻结，局部包络模块尚未随新提交推送；完整独立源保护、真正连续LOD边界与风动浏览器检查、原生交互／卸载重入、完整Node、最终CI和部署尚未完成。不把原离线5／5或六张固定机位图替代这些检查，后续实际结果追加于下。
+
+## 独立源检查与待执行生命周期协议
+
+root于2026-10-05 21:45:14 UTC完成独立源检查：12／12、CLI0、35.968秒，两次真实native构造，205项输入／HTML `ce843445` 与执行checker前后保持。准确报告为 `/workspace/muenzuka-evidence/independent-source-01.json`，SHA `7f022b177b7722675204d2d9f45de7ea5bb942b2a6fc15e638f9ea6f2e9fadf7`；checker SHA `5f0568c0bf37dda0fd1ecebca7899aa8d932fe95b108a23f218845f57f4f8c4a`。本工作树204项产物与该205项HTML相同，差一项是独立checker输入，不能把两个输入清单混写为同一清单。
+
+检查准确复现原native `fce019a1625ad753025841ebb396bf84a5844c9d9284dce9f45250789514a058`，候选为 `c0f2f1378ec19e5e10be8dc5e21240390315e4eddbd616c4eccc4dc8db6123b2`。63条native记录中除6条目标leaf外原字节保持；31株冷代理独立身份、全部公共前驱、原枝根／紫樱／道路／供养台／棚屋／花群保持。9个闭合冠体、108组依附折叶、两执行域新增577780B及8条完整风动包络通过。原b2ef实际球越界CLI1和旧基线失败保留于32d4196，未被新结果覆盖。
+
+协议准备时，`/workspace/muenzuka-evidence/check-native-draft.py` 与 `native-source-probe.js` 仅通过Python／Node语法检查，尚未运行浏览器。事先声明分别执行原202／HTML402224与本工作树204／HTMLce843，固定背面机位 `[-1898,106,565] → [-1775,82,583]`、balanced、12.5晴天，仅加载muenzuka，采用真实pointer／wheel与清缓存UI，生产RAF和6秒＋250毫秒比较锚点。检查公共源保持、原生独占GPU释放、native cache／records清空、主线程两variant近远缓存及显式球、源／资源／程序／相机／wanted／LOD／PNG严格恢复、静止一秒0新增绘制。不调用手动绘制／finish，不把原Solar生命周期成绩当作本区基线。
+
+该准备节点冻结builder `b2ef1b7c`、包络模块 `49edfb8f`、project `c08082be` 与204产物，生命周期待root审阅并与Flower实验串行安排；下节记录随后实际执行结果。完整Node、该候选CI／部署和连续LOD边界浏览器验收不由独立源12／12替代。
+
+## 真实交互与卸载重入：202／204成对通过
+
+root审阅后实际执行同一 `885eb056` 协议与 `cb46a923` 源探针，先202原版，后204候选，两个独立浏览器会话均已关闭。基线22／22、CLI0，候选24／24、CLI0；原始报告分别为 `/workspace/muenzuka-evidence/baseline-native/report.json`（SHA `e00d733da751694ff8ba0f0d94fe96c92a613309b97faccfa96a7db9d7c04f8e`）和 `candidate-native/report.json`（SHA `d48b350b80c625e29fa6f0ca1b9b51deefebb427399d11cf109eae6142aad38d`）。精简配对结果及完整输入／协议绑定留在 `/workspace/muenzuka-evidence/native-review/`，不把两份约16MB原始报告复制入库。
+
+真实拖拽、滚轮与清缓存UI均触发生产调度。两版各22个原生独占GPU几何全部释放，native cache／pending／pack／record map清空、原生源字节为0；所有公共源记录、数组身份和嵌套provenance保持。重入后六项GPU计数、程序键／引用、相机、wanted／LOD和源精确恢复，PNG均逐字节相同，静止一秒0新增绘制。每会话仅比较一次卸载重入；输入交互前置及复位使实际Worker构造数各为3，不能写成一次构造。
+
+候选主线程四份近远原型共287712B，其中248832B近档未驻留GPU；卸载前后仍作为公共CPU缓存保持。六组真实原生mesh球及卸载后实际驻留的两组cold球均包含两档实际顶点和完整风动范围。候选GPU比较锚点前后同为458几何／11纹理／161程序／51827594属性字节／456 geometry entries／667 resident objects；未放宽任何资源或PNG断言，也未调用手动draw／finish。基线锚点属性为52061306B，其余五项相同；只记录这两个明确状态的实测值，不称FPS提升。
+
+202／204输入、各自HTML、源码／协议／探针／STATE helper前后均一致，0 JS／上下文异常，仅favicon404。基线229.786秒、候选226.430秒含软件渲染及可能与Sol轻量离线CPU诊断重叠，不能作为提速比较。JavaScript最终GC时刻、长会话泄漏、连续LOD穿越与动态风动画面扫描未由本协议证明；完整集成Node、最终CI和部署仍待完成。东侧旧冠、林下与空地层次继续保留为主岛待办。
