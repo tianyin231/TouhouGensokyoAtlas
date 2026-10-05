@@ -45,7 +45,8 @@
     "src/forest-canopy-ground.js",
     "src/forest-canopy-road.js",
     "src/forest-crown-rollout.js",
-    "src/forest-canopy.js"
+    "src/forest-canopy.js",
+    "src/myouren-rock-form.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",

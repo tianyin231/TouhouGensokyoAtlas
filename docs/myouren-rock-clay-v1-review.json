@@ -1,0 +1,35 @@
+{
+  "status": "not_accepted_as_natural_rock_mass",
+  "artifactSHA256": "f359834e7f85c6e0507da9b9d6167cb30cb25b1a207dbe522699d5e89b57903a",
+  "sourceSHA256": "279d0e6128b4c78ad6f104a9777215b90d6f9188592713c9a0c12aa3ca4a137a",
+  "reviewers": [
+    "root",
+    "gpt-6-astra / max art lead"
+  ],
+  "visibleChange": "前伸坡脚、厚台肩与上下承托已经在全景可读，区别于旧方法。",
+  "remainingProblems": [
+    "等高长台肩及直立面像切割混凝土",
+    "尖窄竖片和长斜三角像折纸",
+    "原坡从体块间露出造成拼贴交叉线"
+  ],
+  "nextAction": "一次控制网修订，继续单色；不靠材质或碎植物遮盖。",
+  "metrics": {
+    "totalCalls": 280,
+    "totalTriangles": 659056,
+    "residentAttributeBytes": 29394792,
+    "textures": 24
+  },
+  "hardwareFPSMeasured": false,
+  "HTTP404": [
+    {
+      "path": "/favicon.ico",
+      "status": 404,
+      "source": "local HTTP server"
+    }
+  ],
+  "notRun": [
+    "front/night/low/rear/cutaway candidate review",
+    "candidate native lifecycle",
+    "full Node regression"
+  ]
+}
