@@ -1,0 +1,152 @@
+{
+  "sourceSHA256": "6d325f94256bc1ef92780b564886006435a2a1a8cfa43da8789e803b9330c857",
+  "checkerSHA256": "2ba8c8482f890a7f998b9ef35811f20c16e3cc7965dfa73ddda5883c69f1730d",
+  "node": "v22.23.3",
+  "startUTC": "2026-10-05T18:06:16.058Z",
+  "endUTC": "2026-10-05T18:07:37.216Z",
+  "elapsedWallMs": 81157.17197699999,
+  "nativeBuildCount": 2,
+  "passed": false,
+  "rawReportSHA256": "73d05089ec99ce95663e17f56f65ab989b0c3023108f2c2514e380a172905821",
+  "rawReportPath": "/workspace/sunflower-entry-evidence/independent-v2.json",
+  "logSHA256": "d96d76e41b4295d04ce1179144145e8171d189f20716824f7450887208c25236",
+  "exitCode": 1,
+  "checksPassed": 24,
+  "checksCount": 28,
+  "checks": [
+    {
+      "name": "frozen source and approved envelope",
+      "passed": true
+    },
+    {
+      "name": "actual public boot predecessor sequence",
+      "passed": true
+    },
+    {
+      "name": "production Solar wrapper including shared source guards",
+      "passed": true
+    },
+    {
+      "name": "record identity, flags and non-target bytes",
+      "passed": true
+    },
+    {
+      "name": "near terrain envelope, original XY and index protection",
+      "passed": true
+    },
+    {
+      "name": "far retained faces and actual near face replacement",
+      "passed": true
+    },
+    {
+      "name": "actual retained far to fine T interfaces",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Actual far/fine open boundaries: [{\"cell\":\"-18,21\",\"adjacent\":\"-19,21\",\"x\":-576,\"z\":680,\"gap\":0.011499404907226562},{\"cell\":\"-18,21\",\"adjacent\":\"-19,21\",\"x\":-576,\"z\":688,\"gap\":0.022998809814453125},{\"cell\":\"-18,21\",\"adjacent\":\"-19,21\",\"x\":-576,\"z\":696,\"gap\":0.011499404907226562},{\"cell\":\"-18,21\",\"adjacent\":\"-18,20\",\"x\":-568,\"z\":672,\"gap\":0.03270149230957031},{\"cell\":\"-18,21\",\"adjacent\":\"-18,20\",\"x\":-560,\"z\":672,\"gap\":0.06540298461914062},{\"cell\":\"-18,21\",\"adjacent\":\"-18,20\",\"x\":-552,\"z\":672,\"gap\":0.03270149230957031},{\"cell\":\"-17,21\",\"adjacent\":\"-17,20\",\"x\":-536,\"z\":672,\"gap\":0.012952804565429688},{\"cell\":\"-17,21\",\"adjacent\":\"-17,20\",\"x\":-528,\"z\":672,\"gap\":0.025905609130859375},{\"cell\":\"-17,21\",\"adjacent\":\"-17,20\",\"x\":-520,\"z\":672,\"gap\":0.012952804565429688},{\"cell\":\"-16,21\",\"adjacent\":\"-16,20\",\"x\":-504,\"z\":672,\"gap\":0.05837535858154297},{\"cell\":\"-16,21\",\"adjacent\":\"-16,20\",\"x\":-496,\"z\":672,\"gap\":0.11675071716308594},{\"cell\":\"-16,21\",\"adjacent\":\"-16,20\",\"x\":-488,\"z\":672,\"gap\":0.05837535858154297}]\n\n21 !== 0\n\n    at file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:171:750\n    at check (file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:144:53)\n    at checkSunflowerEntry (file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:171:8)\n    at async file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:207:13"
+    },
+    {
+      "name": "near tile interfaces introduce no new opening",
+      "passed": true
+    },
+    {
+      "name": "retained contact equals actual near triangles and terrain query",
+      "passed": true
+    },
+    {
+      "name": "only explicitly authorized original roadside instances migrate",
+      "passed": true
+    },
+    {
+      "name": "public trees/unlisted plants keep fifteen matrix components; listed plants keep thirteen",
+      "passed": true
+    },
+    {
+      "name": "cold flower and architecture non-target vertex attributes",
+      "passed": true
+    },
+    {
+      "name": "platform and umbrella query and actual support preservation",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Protected rendered support moved: [{\"id\":\"sun-ridge-rest\",\"x\":-755.5,\"z\":1017.5,\"before\":130.1078221461599,\"after\":129.97870113522308,\"delta\":0.12912101093681372},{\"id\":\"sun-ridge-rest\",\"x\":-755.5,\"z\":1020.75,\"before\":129.57176133607075,\"after\":129.49995209843414,\"delta\":0.0718092376366144},{\"id\":\"sun-ridge-rest\",\"x\":-755.5,\"z\":1027.25,\"before\":128.37352078639339,\"after\":128.34718259226548,\"delta\":0.02633819412790217},{\"id\":\"sun-ridge-rest\",\"x\":-755.5,\"z\":1030.5,\"before\":127.67927997790643,\"after\":127.65489753138294,\"delta\":0.02438244652348942},{\"id\":\"sun-ridge-rest\",\"x\":-751.75,\"z\":1017.5,\"before\":129.3285726356189,\"after\":129.21646827823497,\"delta\":0.11210435738394153},{\"id\":\"sun-ridge-rest\",\"x\":-751.75,\"z\":1020.75,\"before\":128.7925118255298,\"after\":128.73771924144603,\"delta\":0.054792584083770635},{\"id\":\"sun-ridge-rest\",\"x\":-748,\"z\":1017.5,\"before\":128.97512729594018,\"after\":128.90081077680225,\"delta\":0.07431651913793758},{\"id\":\"sun-ridge-rest\",\"x\":-748,\"z\":1020.75,\"before\":128.43906648585107,\"after\":128.4220617400133,\"delta\":0.017004745837766677},{\"id\":\"sun-ridge-rest\",\"x\":-744.25,\"z\":1017.5,\"before\":128.66090754177998,\"after\":128.60914952390584,\"delta\":0.051758017874135476},{\"id\":\"sun-ridge-rest\",\"x\":-740.5,\"z\":1017.5,\"before\":128.44294934704158,\"after\":128.35045011221155,\"delta\":0.09249923483002931},{\"id\":\"sun-ridge-rest\",\"x\":-740.5,\"z\":1020.75,\"before\":127.82763116791102,\"after\":127.79578180490716,\"delta\":0.031849363003857434},{\"id\":\"sun-ridge-rest\",\"x\":-740.5,\"z\":1027.25,\"before\":127.48236642534903,\"after\":127.46668469832366,\"delta\":0.015681727025366854}]\n\n12 !== 0\n\n    at file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:177:648\n    at check (file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:144:53)\n    at checkSunflowerEntry (file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:177:8)\n    at async file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:207:13"
+    },
+    {
+      "name": "public road start complete cross-section joins retained geometry",
+      "passed": true
+    },
+    {
+      "name": "all unrelated public road and shoulder faces retained byte-exact",
+      "passed": true
+    },
+    {
+      "name": "actual ground grade and road/shoulder surface contact",
+      "passed": true
+    },
+    {
+      "name": "actual public plant triangles clear new road and tree shoulder headroom",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Actual vegetation crosses walkable road / tree-clear shoulder headroom: [{\"id\":\"island:transition:shrub:-1:1\",\"instance\":32,\"triangle\":474,\"roadTriangle\":150,\"shoulder\":false,\"clearanceRange\":[0.8548173117453217,0.855312609094284]},{\"id\":\"island:transition:shrub:-1:1\",\"instance\":32,\"triangle\":475,\"roadTriangle\":150,\"shoulder\":false,\"clearanceRange\":[0.8548173117453217,0.8553637350881118]},{\"id\":\"island:transition:shrub:-1:1\",\"instance\":32,\"triangle\":582,\"roadTriangle\":152,\"shoulder\":false,\"clearanceRange\":[0.7830314046132045,0.8103389299068269]},{\"id\":\"island:transition:shrub:-1:1\",\"instance\":32,\"triangle\":583,\"roadTriangle\":152,\"shoulder\":false,\"clearanceRange\":[0.7830314046132045,0.8119436814113499]},{\"id\":\"island:transition:shrub:-1:1\",\"instance\":32,\"triangle\":656,\"roadTriangle\":152,\"shoulder\":false,\"clearanceRange\":[0.646342370017706,0.6483052755121221]},{\"id\":\"island:transition:shrub:-1:1\",\"instance\":32,\"triangle\":657,\"roadTriangle\":152,\"shoulder\":false,\"clearanceRange\":[0.646342370017706,0.6537657116780267]},{\"id\":\"island:transition:shrub:-1:1\",\"instance\":32,\"triangle\":670,\"roadTriangle\":150,\"shoulder\":false,\"clearanceRange\":[0.9431850179476626,0.9447963383764488]},{\"id\":\"island:transition:shrub:-1:1\",\"instance\":32,\"triangle\":670,\"roadTriangle\":151,\"shoulder\":false,\"clearanceRange\":[0.9439487526902468,0.9464162531343661]},{\"id\":\"island:transition:shrub:-1:1\",\"instance\":32,\"triangle\":670,\"roadTriangle\":152,\"shoulder\":false,\"clearanceRange\":[0.9439487526902468,0.9447115136154167]},{\"id\":\"island:transition:shrub:-1:1\",\"instance\":32,\"triangle\":671,\"roadTriangle\":150,\"shoulder\":false,\"clearanceRange\":[0.9431850179476626,0.9465793751253528]},{\"id\":\"island:transition:shrub:-1:1\",\"instance\":32,\"triangle\":671,\"roadTriangle\":151,\"shoulder\":false,\"clearanceRange\":[0.9447963383764488,0.9464696967067923]},{\"id\":\"island:transition:shrub:-1:1\",\"instance\":32,\"triangle\":712,\"roadTriangle\":152,\"shoulder\":false,\"clearanceRange\":[0.8408249567905131,0.8491736290512151]}]\n\n142 !== 0\n\n    at roadClearance (file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:108:9)\n    at file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:182:92\n    at check (file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:144:53)\n    at checkSunflowerEntry (file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:182:8)\n    at async file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:207:13"
+    },
+    {
+      "name": "public endpoint matches native width, complete corners, tangent, normals and colors",
+      "passed": true
+    },
+    {
+      "name": "renderer vertices cache identity compatible with every index",
+      "passed": true
+    },
+    {
+      "name": "all reachable added backing including contacts and metadata",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Public source byte accounting\n+ actual - expected\n\n+ 144214416\n- 144265068\n      ^\n\n    at file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:186:425\n    at check (file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:144:53)\n    at checkSunflowerEntry (file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:186:8)\n    at async file:///workspace/sunflower-entry-refinement/tools/check-sunflower-entry.mjs:207:13"
+    },
+    {
+      "name": "same pack idempotence and fresh pack guard retained",
+      "passed": true
+    },
+    {
+      "name": "original native baseline independently fixed",
+      "passed": true
+    },
+    {
+      "name": "native identities, plant prototypes, colors and fifteen matrix components",
+      "passed": true
+    },
+    {
+      "name": "native buildings and seasonal stage held at original geometry",
+      "passed": true
+    },
+    {
+      "name": "actual native first segment shares all public endpoint attributes",
+      "passed": true
+    },
+    {
+      "name": "actual native plant geometry clears the new public road",
+      "passed": true
+    },
+    {
+      "name": "native bounds contain actual prototypes and population is conserved",
+      "passed": true
+    },
+    {
+      "name": "frozen source retained through execution",
+      "passed": true
+    }
+  ],
+  "sourceBinding": "All 200 inputs exactly match the archived captured artifact; checker separately pinned to the executed snapshot.",
+  "interpretation": {
+    "artGate": "Entry panorama accepted for northern slope and road composition only",
+    "delivery": "BLOCKED by all four independent failures; no main merge",
+    "repairsPlanned": [
+      "Close actual far/fine boundaries without relaxing tolerance",
+      "Preserve original triangles supporting the overlook footprint",
+      "Clear the road using only explicitly inventoried existing roadside plants",
+      "Attribute and correct the public source-byte accounting omission"
+    ],
+    "notRun": [
+      "Complete Node regression",
+      "Candidate other-view acceptance",
+      "Native interaction and unload/reentry",
+      "Candidate CI and deployment"
+    ],
+    "nativeProtection": "Actual nonempty prototype/color/matrix checks, population, buildings and bounds passed; prior zero-record author probe is still not counted."
+  }
+}

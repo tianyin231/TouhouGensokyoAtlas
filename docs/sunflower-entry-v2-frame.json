@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "createdUTC": "2026-10-05T18:07:09.681876+00:00",
+  "beforeArtifactSHA": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+  "afterArtifactSHA": "13bda0e1df91ae44ac423a96adbf6bc298fca10e8afeeb6e65fb59a04849a5c7",
+  "sourceSHA": "6d325f94256bc1ef92780b564886006435a2a1a8cfa43da8789e803b9330c857",
+  "protocolSHA": "ab81458a203d12549c257063522be766c74a2a885116ada87f774c9a680186cf",
+  "checks": {
+    "sameEnvironment": true,
+    "sameActualCamera": true,
+    "sameView": true,
+    "twoStableSettledSamples": true,
+    "noJSErrorOrContextEvent": true,
+    "sourceAndArtifactUnchanged": true,
+    "entryBudget": true
+  },
+  "passed": true,
+  "before": {
+    "stats": {
+      "calls": 504,
+      "triangles": 6257433,
+      "totalCalls": 506,
+      "totalTriangles": 6257437,
+      "reflectionCalls": 0,
+      "reflectionTriangles": 0,
+      "postPasses": 2,
+      "submittedCPUms": 13,
+      "geometries": 92,
+      "textures": 11,
+      "residentObjects": 512,
+      "residentAttributeMiB": 13.761043548583984,
+      "budgetMiB": 160,
+      "proxyDrawObjects": 83,
+      "detailDrawObjects": 429,
+      "evictions": 1130,
+      "uploads": 1642,
+      "renderCount": 5,
+      "hdr": true,
+      "contactOcclusion": true,
+      "renderTargetsEstimateMiB": 12.3046875,
+      "weather": "clear",
+      "skyVisible": true,
+      "surfaceComponents": 1,
+      "localCutaway": false,
+      "rainSegments": 0,
+      "westernFocused": null,
+      "backdoorWindows": {
+        "targets": 0,
+        "buildPasses": 0,
+        "framePasses": 0,
+        "livePortals": false
+      },
+      "surfaceNight": false,
+      "nightLocalLights": 0
+    },
+    "memory": {
+      "geometries": 92,
+      "textures": 11
+    },
+    "residentAttributeBytes": 14429500
+  },
+  "after": {
+    "stats": {
+      "calls": 504,
+      "triangles": 6257691,
+      "totalCalls": 506,
+      "totalTriangles": 6257695,
+      "reflectionCalls": 0,
+      "reflectionTriangles": 0,
+      "postPasses": 2,
+      "submittedCPUms": 11.199999995529652,
+      "geometries": 92,
+      "textures": 11,
+      "residentObjects": 512,
+      "residentAttributeMiB": 13.790569305419922,
+      "budgetMiB": 160,
+      "proxyDrawObjects": 83,
+      "detailDrawObjects": 429,
+      "evictions": 1130,
+      "uploads": 1642,
+      "renderCount": 5,
+      "hdr": true,
+      "contactOcclusion": true,
+      "renderTargetsEstimateMiB": 12.3046875,
+      "weather": "clear",
+      "skyVisible": true,
+      "surfaceComponents": 1,
+      "localCutaway": false,
+      "rainSegments": 0,
+      "westernFocused": null,
+      "backdoorWindows": {
+        "targets": 0,
+        "buildPasses": 0,
+        "framePasses": 0,
+        "livePortals": false
+      },
+      "surfaceNight": false,
+      "nightLocalLights": 0
+    },
+    "memory": {
+      "geometries": 92,
+      "textures": 11
+    },
+    "residentAttributeBytes": 14460460
+  },
+  "delta": {
+    "calls": 0,
+    "triangles": 258,
+    "residentAttributeBytes": 30960,
+    "geometries": 0,
+    "textures": 0
+  },
+  "bindings": {
+    "baseline/report.json": "3e6d04d44cedb833016976d0d7ee5bad6ac23a050356d5ed783356eac25a347f",
+    "baseline/transitionFlowers.png": "4aca53c84165c7d8198b383b79d73104a4d6608351c5b065ba28d72cf2bfb356",
+    "v2-capture/report.json": "6050a655a82e10c5b983db96f81071cf162e7d1ff30038bc3c2a4de6bd1fcd3e",
+    "v2-capture/transitionFlowers.png": "1a447634844b53bc884c1fd376c4148a0722eaa3469118c4933c5f45442adbcf",
+    "v2-capture/execution.json": "b6739c12e9fe6b2d8e3f82d90b629147a65f686f130b48aa8ea35aaeee7162e1"
+  },
+  "visualGate": {
+    "root": "Pass for the northern slope and approach; not the complete sunflower region.",
+    "astra": "Independent actual-image pass: broad slope retained, angular road junction repaired, old grass track removed without added decoration.",
+    "remaining": [
+      "Large bare slope",
+      "Regular flower boundary",
+      "Sparse original tree silhouettes and understory"
+    ]
+  },
+  "performanceLimits": [
+    "SwiftShader renderer submission and attribute residency only",
+    "Single CPU submission samples retained without speedup claim",
+    "Hardware FPS and physical VRAM unmeasured",
+    "Other views and native interaction/reentry still pending"
+  ]
+}

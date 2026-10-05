@@ -3,14 +3,23 @@
  * textures. Native flower paths keep their XY topology and original plant IDs.
  */
 (function(G){'use strict';
-const revision=1,scope=Object.freeze([-896,704,-192,1152]),metadata=new WeakMap(),samplers=new WeakMap();
+const revision=2,scope=Object.freeze([-896,704,-192,1152]),metadata=new WeakMap(),samplers=new WeakMap();
 const BaseHeight=G.Terrain.prototype.height,originalBuildRegion=G.buildRegion;
 const originalRoute=G.ISLAND.allRoutes.find(r=>r.id==='route-flower');
 const sourceRoute={...originalRoute,points:originalRoute.points.map(p=>p.slice()),samples:originalRoute.samples.map(p=>p.slice())};
 const routeStart=sourceRoute.samples.findIndex(p=>p[1]>=704),routeAnchor=sourceRoute.samples[routeStart];
-const approachControls=Object.freeze([routeAnchor,[-425,780],[-460,830],[-470,870],[-435,901],[-390,920]].map(p=>Object.freeze(p.slice())));
+const nativePath=G.FLOWERLANDS.paths.find(p=>p.id==='sun-main'),nativeStart=nativePath.samples[0],nativeNext=nativePath.samples[1];
+const nativeDirection=G.norm([nativeNext[0]-nativeStart[0],0,nativeNext[1]-nativeStart[1]]);
+const nativeJoin=Object.freeze({pathId:nativePath.id,point:Object.freeze(nativeStart.slice()),normal:Object.freeze([-nativeDirection[2],nativeDirection[0]]),width:nativePath.width*.97,shoulder:.60,lift:.24,taperDistance:56});
+const approachControls=Object.freeze([routeAnchor,[-425,780],[-460,830],[-470,870],[-423,873],[-386,878],[nativeStart[0]-nativeDirection[0]*28,nativeStart[1]-nativeDirection[2]*28],nativeStart].map(p=>Object.freeze(p.slice())));
 const approach=G.spline(approachControls,4),routeSamples=[...sourceRoute.samples.slice(0,routeStart),...approach];
+// The last rendered chord and cross-section share the native entrance tangent.
+const penultimate=routeSamples.at(-2),lastLength=Math.hypot(nativeStart[0]-penultimate[0],nativeStart[1]-penultimate[1]);
+routeSamples[routeSamples.length-2]=[nativeStart[0]-nativeDirection[0]*lastLength,nativeStart[1]-nativeDirection[2]*lastLength];
+function cumulative(samples){let length=0;return samples.map((p,i)=>{if(i)length+=Math.hypot(p[0]-samples[i-1][0],p[1]-samples[i-1][1]);return length;});}
+const sourceDistances=cumulative(sourceRoute.samples),routeDistances=cumulative(routeSamples);
 const roadIDs=Object.freeze(['island:routes:connections:-1:1','island:routes:connections:-1:1:shoulder']);
+const roadsideSources=Object.freeze([{recordId:'island:transition:grass:-1:1',first:141,last:252,kind:'grass'},{recordId:'island:transition:shrub:-1:1',first:31,last:38,kind:'shrub'}].map(Object.freeze));
 const sections=Object.freeze([
  {x:-896,toe:848,shoulder:1040,inner:1144,height:137},
  {x:-800,toe:810,shoulder:1024,inner:1120,height:131},
@@ -54,12 +63,26 @@ function rebuildBounds(m){const a=m.vertices,lo=[Infinity,Infinity,Infinity],hi=
 function growInstanceBounds(m,dy){m.radius+=Math.abs(dy);}
 function exclusive(pack,targets,keys=['vertices','index']){const all=[];for(const m of pack.meshes)for(const k of ['vertices','farVertices','index','instances','instanceColors'])if(m[k])all.push({m,k,a:m[k]});for(const m of targets)for(const k of keys){const a=m[k];if(!a)continue;for(const v of all){if(v.m===m&&v.k===k)continue;if(v.a.buffer===a.buffer&&v.a.byteOffset<a.byteOffset+a.byteLength&&v.a.byteOffset+v.a.byteLength>a.byteOffset)throw Error('Sunflower source view is shared: '+m.id+'/'+k+' with '+v.m.id+'/'+v.k);}}}
 function updateRouteMetadata(){for(const r of [G.routes.find(r=>r.id==='route-flower'),G.ISLAND.allRoutes.find(r=>r.id==='route-flower')]){r.samples=routeSamples.map(p=>p.slice());r.points=[...sourceRoute.points.slice(0,-1),...approachControls.map(p=>p.slice())];r.note='P：保留村里与花田端点，北外坡末段沿缓坡绕行。';}}
-function roadGeometry(samples,height,start=0){const road=new G.Geometry(),shoulder=new G.Geometry();for(let i=start;i<samples.length-1;i++){
+function roadSection(i,height,originalHeight=height){const p=routeSamples[i],a=routeSamples[Math.max(0,i-1)],b=routeSamples[Math.min(routeSamples.length-1,i+1)],dx=b[0]-a[0],dz=b[1]-a[1],l=Math.hypot(dx,dz)||1;
+ const blend=G.smooth(routeDistances.at(-1)-nativeJoin.taperDistance,routeDistances.at(-1),routeDistances[i]),normal=i===routeSamples.length-1?nativeJoin.normal:[-dz/l,dx/l],half=lerp(2,nativeJoin.width/2,blend),outer=half+lerp(2.5,nativeJoin.shoulder,blend),lift=lerp(.13,nativeJoin.lift,blend);
+ // Retain the exact old cross-section, including its original surface query.
+ // One shoulder corner crosses the contact boundary although its centre does not.
+ const at=i===routeStart-1?originalHeight:height,point=s=>{const x=p[0]+normal[0]*s,z=p[1]+normal[1]*s;return[x,at(x,z)+lift,z];};
+ return{blend,normal,half,outer,lift,road:[point(-half),point(half)],shoulder:[point(-outer),point(outer)]};
+}
+function roadGeometry(samples,height,start=0,terrain=null){const road=new G.Geometry(),shoulder=new G.Geometry();
+ if(terrain){const soil=G.rgb('#b2a17d'),edge=G.rgb('#8d8765'),oldRoad=G.rgb('#9e946f'),oldShoulder=G.rgb('#839063'),normal=p=>G.norm([height(p[0]-1,p[2])-height(p[0]+1,p[2]),2,height(p[0],p[2]-1)-height(p[0],p[2]+1)]);
+  const quad=(g,ps,weights,isShoulder,outer)=>{const up=G.cross(G.sub(ps[1],ps[0]),G.sub(ps[2],ps[0]))[1]>=0;for(const tri of up?[[0,1,2],[0,2,3]]:[[0,2,1],[0,3,2]]){const face=G.norm(G.cross(G.sub(ps[tri[1]],ps[tri[0]]),G.sub(ps[tri[2]],ps[tri[0]])));for(const j of tri){const p=ps[j],n=normal(p),nativeColor=outer[j]?G.blend(terrain.color(p[0],p[2],p[1],n),soil,.12):G.blend(soil,edge,G.noise(p[0]/8,p[2]/12)*.18);g.vertex(p,G.norm(G.blend(face,n,weights[j])),G.blend(isShoulder?oldShoulder:oldRoad,nativeColor,weights[j]));}}};
+  const originalHeight=(x,z)=>BaseHeight.call(terrain,x,z);
+  for(let i=start;i<samples.length-1;i++){const a=roadSection(i,height,originalHeight),b=roadSection(i+1,height,originalHeight),w=[a.blend,a.blend,b.blend,b.blend];quad(road,[a.road[0],a.road[1],b.road[1],b.road[0]],w,false,[false,false,false,false]);for(const side of[0,1])quad(shoulder,[a.road[side],a.shoulder[side],b.shoulder[side],b.road[side]],w,true,[false,true,true,false]);}
+  return[road,shoulder];
+ }
+ for(let i=start;i<samples.length-1;i++){
  const a=samples[i],b=samples[i+1],prev=samples[Math.max(0,i-1)],next=samples[Math.min(samples.length-1,i+2)],normal=(p,q)=>{const dx=q[0]-p[0],dz=q[1]-p[1],l=Math.hypot(dx,dz)||1;return[-dz/l,dx/l];},na=normal(prev,b),nb=normal(a,next),point=(p,n,s)=>{const x=p[0]+n[0]*s,z=p[1]+n[1]*s;return[x,height(x,z)+.13,z];};
  road.quad(point(a,na,-2),point(a,na,2),point(b,nb,2),point(b,nb,-2),G.rgb('#9e946f'));
  for(const side of[-1,1])shoulder.quad(point(a,na,side*2),point(a,na,side*4.5),point(b,nb,side*4.5),point(b,nb,side*2),G.rgb('#839063'));
  }return[road,shoulder];}
-function replaceRoad(pack,base,height){const original=roadGeometry(sourceRoute.samples,base,routeStart-1),replacement=roadGeometry(routeSamples,height,routeStart-1),changes=[];
+function replaceRoad(pack,base,height,terrain){const original=roadGeometry(sourceRoute.samples,base,routeStart-1),replacement=roadGeometry(routeSamples,height,routeStart-1,terrain),changes=[];
  for(let k=0;k<2;k++){const m=pack.meshes.find(m=>m.id===roadIDs[k]);if(!m)throw Error('Missing public sunflower approach: '+roadIDs[k]);const keys=new Set();for(let i=0;i<original[k].a.length;i+=27)keys.add(triKey([0,1,2].map(j=>original[k].a.slice(i+j*9,i+j*9+3))));
  const keep=[],a=m.vertices,ix=m.index;let removed=0;for(let i=0;i<ix.length;i+=3){if(keys.has(triKey(positions(m,i)))){removed++;continue;}keep.push(ix[i],ix[i+1],ix[i+2]);}
  if(removed!==original[k].a.length/27)throw Error('Public approach exact source mismatch '+m.id+': '+removed+'/'+original[k].a.length/27);
@@ -67,6 +90,21 @@ function replaceRoad(pack,base,height){const original=roadGeometry(sourceRoute.s
  const verts=new Float32Array(keptVertices.length+replacement[k].a.length);verts.set(keptVertices);verts.set(replacement[k].a,keptVertices.length);const idx=new Uint32Array(keep.length+replacement[k].a.length/9);idx.set(keptIndices);for(let i=keep.length;i<idx.length;i++)idx[i]=keptVertices.length/9+i-keep.length;
  m.vertices=verts;m.index=idx;rebuildBounds(m);changes.push({id:m.id,removed,added:replacement[k].a.length/27});
  }return changes;}
+function nearestRoute(samples,distances,x,z){let best={distance:Infinity};for(let i=routeStart;i<samples.length-1;i++){const a=samples[i],b=samples[i+1],dx=b[0]-a[0],dz=b[1]-a[1],length=Math.hypot(dx,dz),t=clamp(((x-a[0])*dx+(z-a[1])*dz)/(length*length),0,1),X=a[0]+dx*t,Z=a[1]+dz*t,distance=Math.hypot(x-X,z-Z);if(distance<best.distance)best={distance,segment:i,along:distances[i]+length*t,sideOffset:(x-X)*(-dz/length)+(z-Z)*(dx/length)};}return best;}
+function sourceAnchorMatches(x,z,i,side){const a=sourceRoute.samples[i],b=sourceRoute.samples[i+1],length=Math.hypot(b[0]-a[0],b[1]-a[1]),n=[-(b[1]-a[1])/length*side,(b[0]-a[0])/length*side];let lo=sourceRoute.width/2+1.5,hi=lo+7;
+ for(let k=0;k<2;k++){const delta=(k?z:x)-a[k];if(Math.abs(n[k])<1e-10){if(delta<-.001||delta>2.001)return false;continue;}const u=(delta-2.001)/n[k],v=(delta+.001)/n[k];lo=Math.max(lo,Math.min(u,v));hi=Math.min(hi,Math.max(u,v));}return lo<=hi;
+}
+function planRoadside(pack){const moves=[],grass=[];for(const def of roadsideSources){const m=pack.meshes.find(m=>m.id===def.recordId);if(!m?.instances||m.instances.length/16<=def.last)throw Error('Missing original sunflower roadside instances: '+def.recordId);
+  for(let instanceIndex=def.first;instanceIndex<=def.last;instanceIndex++){const i=instanceIndex*16,source=[m.instances[i+12],m.instances[i+13],m.instances[i+14]],x=source[0],z=source[2];let sourceAnchor,pairedGrass;
+   if(def.kind==='grass'){const matches=[];for(let j=3;j<sourceRoute.samples.length-3;j+=3){if(j<routeStart||G.DIORAMA.owner(...sourceRoute.samples[j]))continue;for(const side of[-1,1])if(sourceAnchorMatches(x,z,j,side))matches.push({sample:j,side});}if(matches.length!==1)throw Error('Ambiguous original sunflower roadside anchor: '+def.recordId+'/'+instanceIndex);sourceAnchor=matches[0];}
+   else{const paired=grass.filter(g=>g.source[0]===x&&g.source[2]===z);if(paired.length!==1)throw Error('Unpaired original sunflower roadside shrub: '+instanceIndex);sourceAnchor=paired[0].sourceAnchor;pairedGrass={recordId:paired[0].recordId,instanceIndex:paired[0].instanceIndex};}
+   const old=nearestRoute(sourceRoute.samples,sourceDistances,x,z),relativeAlong=(old.along-sourceDistances[routeStart])/(sourceDistances.at(-1)-sourceDistances[routeStart]),newAlong=lerp(routeDistances[routeStart],routeDistances.at(-1),relativeAlong);let j=routeStart;while(j<routeSamples.length-2&&routeDistances[j+1]<newAlong)j++;
+   const a=routeSamples[j],b=routeSamples[j+1],length=routeDistances[j+1]-routeDistances[j],f=clamp((newAlong-routeDistances[j])/length,0,1),nx=-(b[1]-a[1])/length,nz=(b[0]-a[0])/length,targetXZ=[lerp(a[0],b[0],f)+nx*old.sideOffset,lerp(a[1],b[1],f)+nz*old.sideOffset];
+   if(!inside(x,z)||!inside(...targetXZ)||protectedAt(...targetXZ))throw Error('Sunflower roadside migration escaped its approved slope');
+   const move={recordId:def.recordId,instanceIndex,source,sourceAnchor,sourceSegment:old.segment,oldAlong:old.along,relativeAlong,sideOffset:old.sideOffset,newAlong,targetXZ,...pairedGrass?{pairedGrass}:{}};moves.push(move);if(def.kind==='grass')grass.push(move);
+  }
+ }return moves;
+}
 function prepare(data,pack){if(metadata.has(pack))return[];if(data.sunflowerEntry)throw Error('Sunflower entry contact prepared twice');
  const sourceBuffers=new Set();for(const m of pack.meshes)for(const k of ['vertices','farVertices','index','instances','instanceColors'])if(m[k])sourceBuffers.add(m[k].buffer);
  const terrain=new G.Terrain(data),baseCache=new Map(),heightCache=new Map(),base=(x,z)=>{const k=x+','+z;if(!baseCache.has(k))baseCache.set(k,BaseHeight.call(terrain,x,z));return baseCache.get(k);},height=(x,z)=>{const k=x+','+z;if(!heightCache.has(k))heightCache.set(k,profile(base,x,z));return heightCache.get(k);};
@@ -100,14 +138,18 @@ function prepare(data,pack){if(metadata.has(pack))return[];if(data.sunflowerEntr
  }
  const contactList=[];for(const m of near)for(let i=0;i<m.index.length;i+=3){const ps=positions(m,i),x=ps.reduce((s,p)=>s+p[0],0)/3,z=ps.reduce((s,p)=>s+p[2],0)/3;if(!contactCells.has(cellKey(x,z)))continue;for(const p of ps)contactList.push(...p);}
  const contact=Float32Array.from(contactList),surface=sampler(contact),ground=(x,z)=>{const y=inside(x,z)?surface(x,z):null;return y===null?base(x,z):y;};
- const roads=replaceRoad(pack,base,ground),instances=[],coldSurfaces=[];
- const instanceTargets=pack.meshes.filter(m=>{if(!m.instances||!(m.globalSurface&&m.component==='transition-vegetation'||m.id==='overview:sunflower:trees'))return false;for(let i=0;i<m.instances.length;i+=16){const x=m.instances[i+12],z=m.instances[i+14],y=inside(x,z)&&!protectedAt(x,z)?surface(x,z):null;if(y!==null&&Math.abs(y-base(x,z))>=1e-5)return true;}return false;});
+ const roads=replaceRoad(pack,base,ground,terrain),instances=[],coldSurfaces=[],roadsideMoves=planRoadside(pack),roadsideMap=new Map(roadsideMoves.map(m=>[m.recordId+'/'+m.instanceIndex,m]));
+ const instanceTargets=pack.meshes.filter(m=>{if(!m.instances||!(m.globalSurface&&m.component==='transition-vegetation'||m.id==='overview:sunflower:trees'))return false;for(let i=0;i<m.instances.length;i+=16){if(roadsideMap.has(m.id+'/'+i/16))return true;const x=m.instances[i+12],z=m.instances[i+14],y=inside(x,z)&&!protectedAt(x,z)?surface(x,z):null;if(y!==null&&Math.abs(y-base(x,z))>=1e-5)return true;}return false;});
  // Accepted tree families outside the slope may intentionally share their
  // instance view. Prove exclusivity only for views this transaction writes.
  exclusive(pack,instanceTargets,['instances']);
- // Public vegetation keeps original identity and the original root offset.
- // No prototype vertex is bent and no XY matrix component is edited.
- for(const m of instanceTargets){let moved=0,maxDelta=0;for(let i=0;i<m.instances.length;i+=16){const x=m.instances[i+12],z=m.instances[i+14],y=inside(x,z)?surface(x,z):null;if(y===null||protectedAt(x,z))continue;const dy=y-base(x,z);if(Math.abs(dy)<1e-5)continue;m.instances[i+13]+=dy;moved++;maxDelta=Math.max(maxDelta,Math.abs(dy));}if(moved){growInstanceBounds(m,maxDelta);instances.push({id:m.id,moved,maxDelta});}}
+ // Only the listed, uniquely attributed roadside grass/shrubs translate in
+ // XZ. Their original root offset, full shape, colour and orientation stay.
+ // Every tree and every unlisted instance keeps its original XZ components.
+ for(const m of instanceTargets){let moved=0,maxDelta=0,maxDisplacement=0;for(let i=0;i<m.instances.length;i+=16){const x=m.instances[i+12],oldY=m.instances[i+13],z=m.instances[i+14],migration=roadsideMap.get(m.id+'/'+i/16);
+   if(migration){const [X,Z]=migration.targetXZ,Y=ground(X,Z)+(oldY-base(x,z));m.instances[i+12]=X;m.instances[i+13]=Y;m.instances[i+14]=Z;migration.target=[m.instances[i+12],m.instances[i+13],m.instances[i+14]];moved++;maxDelta=Math.max(maxDelta,Math.abs(Y-oldY));maxDisplacement=Math.max(maxDisplacement,Math.hypot(X-x,Y-oldY,Z-z));continue;}
+   const y=inside(x,z)?surface(x,z):null;if(y===null||protectedAt(x,z))continue;const dy=y-base(x,z);if(Math.abs(dy)<1e-5)continue;m.instances[i+13]+=dy;moved++;maxDelta=Math.max(maxDelta,Math.abs(dy));maxDisplacement=Math.max(maxDisplacement,Math.abs(dy));
+  }if(moved){growInstanceBounds(m,maxDisplacement);instances.push({id:m.id,moved,maxDelta,maxDisplacement});}}
  // The cold field has independent positions; retain its carpet, original
  // offsets and identity, but bind those positions to the same new surface.
  for(const m of pack.meshes){if(m.owner!=='sunflower'||m.instances||m.component==='terrain'||m.group==='terrain'||!m.overview)continue;let changed=0,maxDelta=0;const a=m.vertices;if(!a)continue;for(let i=0;i<a.length;i+=9){const x=a[i],z=a[i+2],y=inside(x,z)?surface(x,z):null;if(y===null||protectedAt(x,z))continue;const dy=y-base(x,z);if(Math.abs(dy)<1e-5)continue;a[i+1]+=dy;changed++;maxDelta=Math.max(maxDelta,Math.abs(dy));}if(changed){rebuildBounds(m);coldSurfaces.push({id:m.id,changedVertices:changed,maxDelta});}}
@@ -116,10 +158,10 @@ function prepare(data,pack){if(metadata.has(pack))return[];if(data.sunflowerEntr
  const sourceBytes=[...newBuffers].reduce((n,b)=>n+b.byteLength,0),farDelta=farChanges.reduce((n,m)=>n+m.added-m.removed,0),roadDelta=roads.reduce((n,m)=>n+m.added-m.removed,0);
  if(sourceBytes>.6*1048576)throw Error('Sunflower entry source budget exceeded: '+sourceBytes);
  if(farDelta+roadDelta>4000)throw Error('Sunflower entry submitted triangle budget exceeded: '+(farDelta+roadDelta));
- pack.bytes=byteCount(pack.meshes);metadata.set(pack,{revision,scope:scope.slice(),sections,approachControls,activeCells:[...active],contactCells:[...contactCells],alignedVertices,nearChanges,farChanges,roads,instances,coldSurfaces,contactBytes:contact.byteLength,sourceBytes,farDelta,roadDelta,textureDelta:0,newRecords:0});
+ pack.bytes=byteCount(pack.meshes);metadata.set(pack,{revision,scope:scope.slice(),sections,approachControls,nativeJoin,roadsideMoves,activeCells:[...active],contactCells:[...contactCells],alignedVertices,nearChanges,farChanges,roads,instances,coldSurfaces,contactBytes:contact.byteLength,sourceBytes,farDelta,roadDelta,textureDelta:0,newRecords:0});
  return[];
 }
 G.buildRegion=async function(data,id,legacy){const result=await originalBuildRegion(data,id,legacy);if(id==='sunflower'&&data.sunflowerEntry)result.meta.sunflowerEntry={revision,scope:scope.slice(),ground:'shared actual terrain contact; original native XY routes and plant IDs'};return result;};
 (G.extraOverviewBuilders??=[]).push((data,pack)=>prepare(data,pack));
-G.SUNFLOWER_ENTRY=Object.freeze({revision,scope,sections,protectedPads,sourceRoute,routeStart,approachControls,routeSamples,roadIDs,prepare,metadata,sampler,profile,BaseHeight,contactHeight,originalBuildRegion,byteCount});
+G.SUNFLOWER_ENTRY=Object.freeze({revision,scope,sections,protectedPads,sourceRoute,routeStart,approachControls,routeSamples,roadIDs,nativeJoin,roadSection,roadsideSources,planRoadside,prepare,metadata,sampler,profile,BaseHeight,contactHeight,originalBuildRegion,byteCount});
 })(globalThis.GA);
