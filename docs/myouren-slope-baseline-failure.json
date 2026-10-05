@@ -1,0 +1,187 @@
+{
+  "status": "baseline_failed_preserved_not_candidate_validation",
+  "baselineCommit": "8f62a36a2af28118943e0922766c598f9ea98df3",
+  "artifactSHA256": "092c07365756ad61676ced9c1eaad096a12503abc86645980aa8afe6ab4ee06f",
+  "exitCode": 1,
+  "elapsedSeconds": 106.522,
+  "rawReportSHA256": "bd2840c921567440aa7e8fe11a1f1eec774715cae5164410c6dbd2e1bdb5bed6",
+  "checkerProvenance": {
+    "path": "/workspace/myouren-evidence/sol-baseline-native/check-myouren-browser-before-protocol-fix.py",
+    "sha256": "f7b4d50136dae382efbf7025efe99f8fef6c5f7d85bbe0d0bb9a2de49cd386b4",
+    "reconstructedFrom": "Undo the sole post-run cold-anchor protocol patch; failed check remains at recorded traceback line 293",
+    "startupCheckerHashRecorded": false,
+    "laterProtocolExecuted": false
+  },
+  "diagnosis": {
+    "failure": "AssertionError('Camera, wanted IDs and selected LOD restored')",
+    "rigBefore": {
+      "eye": [
+        503,
+        226.00000000000003,
+        167
+      ],
+      "target": [
+        305,
+        86,
+        419
+      ],
+      "fov": 49,
+      "mode": "orbit"
+    },
+    "rigAfter": {
+      "eye": [
+        503,
+        226.00000000000003,
+        167
+      ],
+      "target": [
+        305,
+        86,
+        419
+      ],
+      "fov": 49,
+      "mode": "orbit"
+    },
+    "rigEqual": true,
+    "wantedCount": [
+      273,
+      273
+    ],
+    "addedWanted": [],
+    "removedWanted": [],
+    "changedWanted": [
+      {
+        "id": "myouren:legacy:plants:garden-broadleaf:4:2",
+        "before": {
+          "id": "myouren:legacy:plants:garden-broadleaf:4:2",
+          "pack": "myouren",
+          "level": 0
+        },
+        "after": {
+          "id": "myouren:legacy:plants:garden-broadleaf:4:2",
+          "pack": "myouren",
+          "level": 1
+        }
+      },
+      {
+        "id": "myouren:legacy:plants:garden-broadleaf:4:3",
+        "before": {
+          "id": "myouren:legacy:plants:garden-broadleaf:4:3",
+          "pack": "myouren",
+          "level": 0
+        },
+        "after": {
+          "id": "myouren:legacy:plants:garden-broadleaf:4:3",
+          "pack": "myouren",
+          "level": 1
+        }
+      },
+      {
+        "id": "myouren:legacy:plants:hinoki:4:2",
+        "before": {
+          "id": "myouren:legacy:plants:hinoki:4:2",
+          "pack": "myouren",
+          "level": 0
+        },
+        "after": {
+          "id": "myouren:legacy:plants:hinoki:4:2",
+          "pack": "myouren",
+          "level": 1
+        }
+      },
+      {
+        "id": "myouren:legacy:plants:hinoki:4:3",
+        "before": {
+          "id": "myouren:legacy:plants:hinoki:4:3",
+          "pack": "myouren",
+          "level": 0
+        },
+        "after": {
+          "id": "myouren:legacy:plants:hinoki:4:3",
+          "pack": "myouren",
+          "level": 1
+        }
+      }
+    ],
+    "resources": {
+      "geometries": [
+        202,
+        213
+      ],
+      "textures": [
+        24,
+        24
+      ],
+      "programs": [
+        133,
+        133
+      ],
+      "attributeBytes": [
+        30811212,
+        34339488
+      ],
+      "geometryEntries": [
+        188,
+        198
+      ],
+      "residentObjects": [
+        273,
+        286
+      ]
+    },
+    "resourceEqual": false,
+    "sourceHashEqual": true,
+    "checks": [
+      {
+        "name": "Native application booted",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Mouse orbit and wheel wake the production scheduler",
+        "passed": true,
+        "data": "Native events; CPU values retained in state samples and never converted to hardware FPS"
+      },
+      {
+        "name": "Myouren CPU source and detail records removed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All public records survive native unload",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All owned Myouren GPU geometries released",
+        "passed": true,
+        "data": {
+          "ownedCount": 32,
+          "retained": []
+        }
+      },
+      {
+        "name": "Exact source metadata and array hashes restored",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Camera, wanted IDs and selected LOD restored",
+        "passed": false,
+        "data": null
+      }
+    ]
+  },
+  "errors": [],
+  "externalErrors": [
+    "Failed to load resource: the server responded with a status of 404 (File not found)"
+  ],
+  "contextEvents": [],
+  "remainingUnknown": "Renderer geometries increased by 11; geometryRefs identifies 10 net model entries. One renderer-internal geometry was not identified by this snapshot.",
+  "notReached": [
+    "Strict final resource equality assertion",
+    "Idle zero-frame assertion"
+  ],
+  "ownershipReport": "myouren-slope-baseline-ownership.json",
+  "noAdditionalBrowserRun": true
+}

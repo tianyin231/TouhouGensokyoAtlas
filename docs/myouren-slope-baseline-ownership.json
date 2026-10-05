@@ -1,0 +1,699 @@
+{
+  "cameraEqual": true,
+  "wantedIDsEqual": true,
+  "addedResidentRecords": [
+    {
+      "id": "overview:myouren:hlod:architecture:myouren:0:1:roof",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 1098,
+      "geometryBytes": 37440,
+      "geometryRefs": 1
+    },
+    {
+      "id": "overview:myouren:hlod:architecture:myouren:1:1:cave",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 1093,
+      "geometryBytes": 616320,
+      "geometryRefs": 1
+    },
+    {
+      "id": "overview:myouren:hlod:architecture:myouren:1:1:matte",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 1091,
+      "geometryBytes": 711792,
+      "geometryRefs": 1
+    },
+    {
+      "id": "overview:myouren:hlod:architecture:myouren:1:1:roof",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 1092,
+      "geometryBytes": 227640,
+      "geometryRefs": 1
+    },
+    {
+      "id": "overview:myouren:hlod:architecture:myouren:1:1:templePaving",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 1090,
+      "geometryBytes": 21792,
+      "geometryRefs": 1
+    },
+    {
+      "id": "overview:myouren:hlod:architecture:myouren:1:1:templeStone",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 1089,
+      "geometryBytes": 2200992,
+      "geometryRefs": 1
+    },
+    {
+      "id": "overview:myouren:hlod:architecture:myouren:1:2:matte",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 1096,
+      "geometryBytes": 310776,
+      "geometryRefs": 1
+    },
+    {
+      "id": "overview:myouren:hlod:architecture:myouren:1:2:paving",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 1097,
+      "geometryBytes": 1344,
+      "geometryRefs": 1
+    },
+    {
+      "id": "overview:myouren:hlod:architecture:myouren:1:2:templePaving",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 1095,
+      "geometryBytes": 1008,
+      "geometryRefs": 1
+    },
+    {
+      "id": "overview:myouren:hlod:architecture:myouren:1:2:templeStone",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 1094,
+      "geometryBytes": 305136,
+      "geometryRefs": 1
+    },
+    {
+      "id": "overview:myouren:hlod:architecture:world:0:0:ground",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 1011,
+      "geometryBytes": 240,
+      "geometryRefs": 1
+    },
+    {
+      "id": "overview:myouren:hlod:architecture:world:1:2:ground",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 1014,
+      "geometryBytes": 11448,
+      "geometryRefs": 1
+    },
+    {
+      "id": "overview:myouren:trees",
+      "pack": "overview",
+      "level": 0,
+      "wanted": false,
+      "geometryId": 166,
+      "geometryBytes": 5184,
+      "geometryRefs": 9
+    }
+  ],
+  "removedResidentRecords": [],
+  "changedLOD": [
+    {
+      "id": "myouren:legacy:plants:garden-broadleaf:4:2",
+      "before": {
+        "id": "myouren:legacy:plants:garden-broadleaf:4:2",
+        "pack": "myouren",
+        "level": 0,
+        "wanted": true,
+        "geometryId": 996,
+        "geometryBytes": 305532,
+        "geometryRefs": 2
+      },
+      "after": {
+        "id": "myouren:legacy:plants:garden-broadleaf:4:2",
+        "pack": "myouren",
+        "level": 1,
+        "wanted": true,
+        "geometryId": 1813,
+        "geometryBytes": 42336,
+        "geometryRefs": 15
+      }
+    },
+    {
+      "id": "myouren:legacy:plants:garden-broadleaf:4:3",
+      "before": {
+        "id": "myouren:legacy:plants:garden-broadleaf:4:3",
+        "pack": "myouren",
+        "level": 0,
+        "wanted": true,
+        "geometryId": 996,
+        "geometryBytes": 305532,
+        "geometryRefs": 2
+      },
+      "after": {
+        "id": "myouren:legacy:plants:garden-broadleaf:4:3",
+        "pack": "myouren",
+        "level": 1,
+        "wanted": true,
+        "geometryId": 1813,
+        "geometryBytes": 42336,
+        "geometryRefs": 15
+      }
+    },
+    {
+      "id": "myouren:legacy:plants:hinoki:4:2",
+      "before": {
+        "id": "myouren:legacy:plants:hinoki:4:2",
+        "pack": "myouren",
+        "level": 0,
+        "wanted": true,
+        "geometryId": 997,
+        "geometryBytes": 633096,
+        "geometryRefs": 2
+      },
+      "after": {
+        "id": "myouren:legacy:plants:hinoki:4:2",
+        "pack": "myouren",
+        "level": 1,
+        "wanted": true,
+        "geometryId": 1814,
+        "geometryBytes": 49356,
+        "geometryRefs": 19
+      }
+    },
+    {
+      "id": "myouren:legacy:plants:hinoki:4:3",
+      "before": {
+        "id": "myouren:legacy:plants:hinoki:4:3",
+        "pack": "myouren",
+        "level": 0,
+        "wanted": true,
+        "geometryId": 997,
+        "geometryBytes": 633096,
+        "geometryRefs": 2
+      },
+      "after": {
+        "id": "myouren:legacy:plants:hinoki:4:3",
+        "pack": "myouren",
+        "level": 1,
+        "wanted": true,
+        "geometryId": 1814,
+        "geometryBytes": 49356,
+        "geometryRefs": 19
+      }
+    }
+  ],
+  "hysteresis": [
+    {
+      "id": "myouren:legacy:plants:garden-broadleaf:4:2",
+      "distance": 213.9495598856931,
+      "threshold": 230,
+      "retainedNearLimit": 257.6,
+      "coldFarBoundary": 202.4,
+      "withinHysteresisBand": true,
+      "meaning": "Production wanted stores center distance without subtracting radius; focus transform identity here"
+    },
+    {
+      "id": "myouren:legacy:plants:garden-broadleaf:4:3",
+      "distance": 228.24848802211633,
+      "threshold": 230,
+      "retainedNearLimit": 257.6,
+      "coldFarBoundary": 202.4,
+      "withinHysteresisBand": true,
+      "meaning": "Production wanted stores center distance without subtracting radius; focus transform identity here"
+    },
+    {
+      "id": "myouren:legacy:plants:hinoki:4:2",
+      "distance": 209.118579195741,
+      "threshold": 230,
+      "retainedNearLimit": 257.6,
+      "coldFarBoundary": 202.4,
+      "withinHysteresisBand": true,
+      "meaning": "Production wanted stores center distance without subtracting radius; focus transform identity here"
+    },
+    {
+      "id": "myouren:legacy:plants:hinoki:4:3",
+      "distance": 225.0150543875847,
+      "threshold": 230,
+      "retainedNearLimit": 257.6,
+      "coldFarBoundary": 202.4,
+      "withinHysteresisBand": true,
+      "meaning": "Production wanted stores center distance without subtracting radius; focus transform identity here"
+    }
+  ],
+  "unknownSourceGeometryOwners": {
+    "before": [],
+    "after": []
+  },
+  "sourceGeometryEntryCount": [
+    188,
+    198
+  ],
+  "sourceGeometryBytes": [
+    30446640,
+    33953940
+  ],
+  "instanceOrOtherAttributeBytes": [
+    364572,
+    385548
+  ],
+  "extraGeometryOwnerGroups": [
+    {
+      "bytes": 5184,
+      "owners": [
+        {
+          "id": "overview:bamboo:trees",
+          "pack": "overview",
+          "level": 0,
+          "wanted": true
+        },
+        {
+          "id": "overview:forest:trees",
+          "pack": "overview",
+          "level": 0,
+          "wanted": true
+        },
+        {
+          "id": "overview:mountain:trees",
+          "pack": "overview",
+          "level": 0,
+          "wanted": true
+        },
+        {
+          "id": "overview:myouren:trees",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        },
+        {
+          "id": "overview:nameless:trees",
+          "pack": "overview",
+          "level": 0,
+          "wanted": true
+        },
+        {
+          "id": "overview:scarlet:trees",
+          "pack": "overview",
+          "level": 0,
+          "wanted": true
+        },
+        {
+          "id": "overview:sunflower:trees",
+          "pack": "overview",
+          "level": 0,
+          "wanted": true
+        },
+        {
+          "id": "overview:trail:trees",
+          "pack": "overview",
+          "level": 0,
+          "wanted": true
+        },
+        {
+          "id": "overview:village:trees",
+          "pack": "overview",
+          "level": 0,
+          "wanted": true
+        }
+      ]
+    },
+    {
+      "bytes": 240,
+      "owners": [
+        {
+          "id": "overview:myouren:hlod:architecture:world:0:0:ground",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ]
+    },
+    {
+      "bytes": 11448,
+      "owners": [
+        {
+          "id": "overview:myouren:hlod:architecture:world:1:2:ground",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ]
+    },
+    {
+      "bytes": 2200992,
+      "owners": [
+        {
+          "id": "overview:myouren:hlod:architecture:myouren:1:1:templeStone",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ]
+    },
+    {
+      "bytes": 21792,
+      "owners": [
+        {
+          "id": "overview:myouren:hlod:architecture:myouren:1:1:templePaving",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ]
+    },
+    {
+      "bytes": 711792,
+      "owners": [
+        {
+          "id": "overview:myouren:hlod:architecture:myouren:1:1:matte",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ]
+    },
+    {
+      "bytes": 227640,
+      "owners": [
+        {
+          "id": "overview:myouren:hlod:architecture:myouren:1:1:roof",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ]
+    },
+    {
+      "bytes": 616320,
+      "owners": [
+        {
+          "id": "overview:myouren:hlod:architecture:myouren:1:1:cave",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ]
+    },
+    {
+      "bytes": 305136,
+      "owners": [
+        {
+          "id": "overview:myouren:hlod:architecture:myouren:1:2:templeStone",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ]
+    },
+    {
+      "bytes": 1008,
+      "owners": [
+        {
+          "id": "overview:myouren:hlod:architecture:myouren:1:2:templePaving",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ]
+    },
+    {
+      "bytes": 310776,
+      "owners": [
+        {
+          "id": "overview:myouren:hlod:architecture:myouren:1:2:matte",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ]
+    },
+    {
+      "bytes": 1344,
+      "owners": [
+        {
+          "id": "overview:myouren:hlod:architecture:myouren:1:2:paving",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ]
+    },
+    {
+      "bytes": 37440,
+      "owners": [
+        {
+          "id": "overview:myouren:hlod:architecture:myouren:0:1:roof",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ]
+    },
+    {
+      "bytes": 42336,
+      "owners": [
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:1:4",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:1:5",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:2:4",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:2:5",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:2:6",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:3:2",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:3:3",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:3:5",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:3:6",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:4:2",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:4:3",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:4:4",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:4:5",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:4:6",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:garden-broadleaf:5:5",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        }
+      ]
+    },
+    {
+      "bytes": 49356,
+      "owners": [
+        {
+          "id": "myouren:legacy:plants:hinoki:1:4",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:1:5",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:1:6",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:2:3",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:2:4",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:2:5",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:2:6",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:3:2",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:3:3",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:3:5",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:3:6",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:4:2",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:4:3",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:4:4",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:4:5",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:4:6",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:5:3",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:5:4",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        },
+        {
+          "id": "myouren:legacy:plants:hinoki:5:5",
+          "pack": "myouren",
+          "level": 1,
+          "wanted": true
+        }
+      ]
+    }
+  ],
+  "strictFailurePreserved": true,
+  "noAdditionalBrowserRun": true,
+  "knownPublicNonwantedExtraGeometryBytes": 4445928,
+  "removedUniqueNearPrototypeBytes": 938628,
+  "modelGeometryByteDeltaReconstruction": 3507300,
+  "measuredModelGeometryByteDelta": 3507300,
+  "instanceByteDelta": 20976,
+  "totalAttributeDeltaReconstruction": 3528276,
+  "measuredTotalAttributeDelta": 3528276,
+  "programKeysAndReferencesEqual": true,
+  "programCount": [
+    133,
+    133
+  ],
+  "diagnosticCounters": [
+    {
+      "contextLost": 0,
+      "contextRestored": 0,
+      "renderErrors": 0,
+      "recoveryErrors": 0
+    },
+    {
+      "contextLost": 0,
+      "contextRestored": 0,
+      "renderErrors": 0,
+      "recoveryErrors": 0
+    }
+  ]
+}
