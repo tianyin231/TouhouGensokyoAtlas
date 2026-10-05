@@ -1,0 +1,256 @@
+{
+  "kind": "Four fixed child spheres: both cached LODs contain all selected LOD vertices and wind phases",
+  "startedUTC": "2026-10-05T21:13:44.277Z",
+  "scriptSHA256": "3f4decc0993517eb30096ced602838d49e8aaaa96de2e952c30618e68ae65c9f",
+  "sourceReportSHA256": "9c7107284078457fe005f8e2d6a325d7b48e7a88a3a7336f0af980ffd076cca3",
+  "snapshotSHA256": "3a5eb73515148625538498a56e9d53e5860634a5ec19874185bd18922f2dfda3",
+  "noGPU": true,
+  "noNativeBuild": true,
+  "unchangedEarlierOriginalReports": true,
+  "checks": [
+    {
+      "child": 1,
+      "instances": 59,
+      "cached": "near",
+      "selected": "near",
+      "vertices": 164079,
+      "maximumAnyShaderPhaseOutside": -0.08053981013854816,
+      "at": {
+        "sourceInstance": 98,
+        "prototypeVertex": 134,
+        "sx": -1,
+        "sz": 1
+      },
+      "passed": true
+    },
+    {
+      "child": 1,
+      "instances": 59,
+      "cached": "near",
+      "selected": "far",
+      "vertices": 5133,
+      "maximumAnyShaderPhaseOutside": -0.08053981013854816,
+      "at": {
+        "sourceInstance": 98,
+        "prototypeVertex": 14,
+        "sx": -1,
+        "sz": 1
+      },
+      "passed": true
+    },
+    {
+      "child": 1,
+      "instances": 59,
+      "cached": "far",
+      "selected": "near",
+      "vertices": 164079,
+      "maximumAnyShaderPhaseOutside": -0.07829402348687253,
+      "at": {
+        "sourceInstance": 98,
+        "prototypeVertex": 134,
+        "sx": -1,
+        "sz": 1
+      },
+      "passed": true
+    },
+    {
+      "child": 1,
+      "instances": 59,
+      "cached": "far",
+      "selected": "far",
+      "vertices": 5133,
+      "maximumAnyShaderPhaseOutside": -0.07829402348687253,
+      "at": {
+        "sourceInstance": 98,
+        "prototypeVertex": 14,
+        "sx": -1,
+        "sz": 1
+      },
+      "passed": true
+    },
+    {
+      "child": 0,
+      "instances": 52,
+      "cached": "near",
+      "selected": "near",
+      "vertices": 144612,
+      "maximumAnyShaderPhaseOutside": -0.06968776488541373,
+      "at": {
+        "sourceInstance": 88,
+        "prototypeVertex": 62,
+        "sx": 1,
+        "sz": -1
+      },
+      "passed": true
+    },
+    {
+      "child": 0,
+      "instances": 52,
+      "cached": "near",
+      "selected": "far",
+      "vertices": 4524,
+      "maximumAnyShaderPhaseOutside": -0.06968776488541373,
+      "at": {
+        "sourceInstance": 88,
+        "prototypeVertex": 2,
+        "sx": 1,
+        "sz": -1
+      },
+      "passed": true
+    },
+    {
+      "child": 0,
+      "instances": 52,
+      "cached": "far",
+      "selected": "near",
+      "vertices": 144612,
+      "maximumAnyShaderPhaseOutside": -0.04666656244148726,
+      "at": {
+        "sourceInstance": 88,
+        "prototypeVertex": 62,
+        "sx": 1,
+        "sz": -1
+      },
+      "passed": true
+    },
+    {
+      "child": 0,
+      "instances": 52,
+      "cached": "far",
+      "selected": "far",
+      "vertices": 4524,
+      "maximumAnyShaderPhaseOutside": -0.04666656244148726,
+      "at": {
+        "sourceInstance": 88,
+        "prototypeVertex": 2,
+        "sx": 1,
+        "sz": -1
+      },
+      "passed": true
+    },
+    {
+      "child": 2,
+      "instances": 48,
+      "cached": "near",
+      "selected": "near",
+      "vertices": 133488,
+      "maximumAnyShaderPhaseOutside": -0.42780043625370645,
+      "at": {
+        "sourceInstance": 187,
+        "prototypeVertex": 128,
+        "sx": -1,
+        "sz": -1
+      },
+      "passed": true
+    },
+    {
+      "child": 2,
+      "instances": 48,
+      "cached": "near",
+      "selected": "far",
+      "vertices": 4176,
+      "maximumAnyShaderPhaseOutside": -0.44918610880367815,
+      "at": {
+        "sourceInstance": 187,
+        "prototypeVertex": 14,
+        "sx": -1,
+        "sz": -1
+      },
+      "passed": true
+    },
+    {
+      "child": 2,
+      "instances": 48,
+      "cached": "far",
+      "selected": "near",
+      "vertices": 133488,
+      "maximumAnyShaderPhaseOutside": -0.415325526799176,
+      "at": {
+        "sourceInstance": 187,
+        "prototypeVertex": 128,
+        "sx": -1,
+        "sz": -1
+      },
+      "passed": true
+    },
+    {
+      "child": 2,
+      "instances": 48,
+      "cached": "far",
+      "selected": "far",
+      "vertices": 4176,
+      "maximumAnyShaderPhaseOutside": -0.43687540659760593,
+      "at": {
+        "sourceInstance": 187,
+        "prototypeVertex": 14,
+        "sx": -1,
+        "sz": -1
+      },
+      "passed": true
+    },
+    {
+      "child": 3,
+      "instances": 53,
+      "cached": "near",
+      "selected": "near",
+      "vertices": 147393,
+      "maximumAnyShaderPhaseOutside": -0.2774355610214574,
+      "at": {
+        "sourceInstance": 198,
+        "prototypeVertex": 62,
+        "sx": 1,
+        "sz": 1
+      },
+      "passed": true
+    },
+    {
+      "child": 3,
+      "instances": 53,
+      "cached": "near",
+      "selected": "far",
+      "vertices": 4611,
+      "maximumAnyShaderPhaseOutside": -0.2774355610214574,
+      "at": {
+        "sourceInstance": 198,
+        "prototypeVertex": 2,
+        "sx": 1,
+        "sz": 1
+      },
+      "passed": true
+    },
+    {
+      "child": 3,
+      "instances": 53,
+      "cached": "far",
+      "selected": "near",
+      "vertices": 147393,
+      "maximumAnyShaderPhaseOutside": -0.27730086395399134,
+      "at": {
+        "sourceInstance": 198,
+        "prototypeVertex": 62,
+        "sx": 1,
+        "sz": 1
+      },
+      "passed": true
+    },
+    {
+      "child": 3,
+      "instances": 53,
+      "cached": "far",
+      "selected": "far",
+      "vertices": 4611,
+      "maximumAnyShaderPhaseOutside": -0.27730086395399134,
+      "at": {
+        "sourceInstance": 198,
+        "prototypeVertex": 2,
+        "sx": 1,
+        "sz": 1
+      },
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "minimumSafeMargin": 0.04666656244148726,
+  "endedUTC": "2026-10-05T21:13:44.668Z",
+  "elapsedWallMs": 386.124193
+}

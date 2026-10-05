@@ -1,0 +1,1018 @@
+{
+  "schema": 1,
+  "kind": "Bounded paired Nameless native source and actual lily visibility diagnosis",
+  "startUTC": "2026-10-05T20:53:57.701Z",
+  "node": "v22.23.3",
+  "scriptSHA256": "2a56935c0659a92b6bbf6f4afb38f0bbfed2457e73e73e5677675cd02577b442",
+  "sourceSHA256": "87096ff308a83880c2332b79a554ec9edc098bd0f534db52a1fc965934c7114b",
+  "noGPU": true,
+  "noFullNode": true,
+  "noFixtureUpdate": true,
+  "nativeBuildCount": 2,
+  "reusedPublicEvidence": {
+    "path": "/workspace/flower-hill-evidence/independent-public-v2.json",
+    "sha256": "14d1da5ab4c472fd7bac179e0510278265b0ff20f6092a3f417312f1379d6421"
+  },
+  "checks": [
+    {
+      "name": "frozen source, true project prefix and reused public evidence",
+      "passed": true,
+      "result": {
+        "prefixLength": 46,
+        "prefixSHA256": "ed0a8a18476b9f510bfe7a5199e4e6de19bda9e3ad6cea3e13095c9304ab7f04",
+        "projectSHA256": "d9ae63c0be3e3527eb1800924c79702cf03d64ba516ef8e3247d9bdcc28ab574",
+        "reusedPublicChecks": 19
+      }
+    },
+    {
+      "name": "actual baseline Nameless digest binds the accepted owner",
+      "passed": true,
+      "result": {
+        "nativeGeometrySHA256": "3c3b2ce4e78c02a2128bedefc7bdafcf036e192a80f86a2660550e8bcf5f35c5",
+        "records": 411,
+        "sourceBytes": 6672708
+      }
+    },
+    {
+      "name": "native record identities, nonempty prototypes, colors and all non-Y matrix components",
+      "passed": true,
+      "result": {
+        "records": 375,
+        "instances": 67347,
+        "moved": 20069,
+        "offsetSamples": 20400,
+        "minimumInheritedRootNearOffset": -0.7598215633770451,
+        "maximumInheritedRootNearOffset": 0.6323034560903693,
+        "maximumOffsetChange": 0.00005459610838443041,
+        "tolerance": 0.00015,
+        "zeroRootNearErrorClaimed": false
+      }
+    },
+    {
+      "name": "real original paths, native roads XY and protected stone-seat attributes",
+      "passed": true,
+      "result": {
+        "nativeRoadRecords": 13,
+        "actualRoadVertices": 7812,
+        "protectedStoneVertices": 360,
+        "pathDefinitions": 8
+      }
+    },
+    {
+      "name": "native recursive source accounting and conservative transformed population bounds",
+      "passed": true,
+      "result": {
+        "originalBytes": 6672708,
+        "candidateBytes": 6672708,
+        "prototypeInstancePairsChecked": 134694,
+        "maximumCornerBoundsExcess": 0,
+        "tolerance": 0.05,
+        "note": "Conservative transformed prototype-box corners; full real near/far vertices are separately retained and checked for the selected lily batch."
+      }
+    },
+    {
+      "name": "baseline actual near plants clear native roads and tree-clear shoulders",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Actual vegetation crosses walkable road / tree-clear shoulder headroom: [{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":44,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.015608750888816303,-0.001352809281769396]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":44,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.006470030409076344,0.01027829054413587]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":45,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.015608750888816303,-0.006470030409104766]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":45,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.006470030409076344,0.007197350252738488]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":46,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.015608750888816303,0.012720914349898749]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":46,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.0013528092817409743,0.013798151394894376]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":47,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.015608750888816303,-0.001352809281769396]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":47,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.0013528092817409743,0.01027829054413587]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":44,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.017126447477096463,0.080034968639211]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":45,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.017126447477096463,0.07653925278421525]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":46,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.017126447477096463,0.0833029878654088]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":47,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.017126447477096463,0.080034968639211]}]\n\n188 !== 0\n\n    at roadClearance (<anonymous>:19:9)\n    at file:///workspace/flower-hill-evidence/diagnose-nameless-native.mjs:138:168\n    at check (file:///workspace/flower-hill-evidence/diagnose-nameless-native.mjs:43:52)\n    at file:///workspace/flower-hill-evidence/diagnose-nameless-native.mjs:136:116"
+    },
+    {
+      "name": "baseline actual far plants clear native roads and tree-clear shoulders",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Actual vegetation crosses walkable road / tree-clear shoulder headroom: [{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":4,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.019232264613435746,-0.015608750888816303]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":4,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.022209671715216928,-0.019232264613464167]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":5,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.019232264613435746,-0.015608750888816303]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":5,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.022209671715216928,-0.019232264613464167]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":6,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.019232264613435746,-0.015608750888816303]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":6,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.022209671715216928,-0.019232264613464167]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":7,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.019232264613435746,-0.015608750888816303]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":7,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.022209671715216928,-0.019232264613464167]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":4,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.0405889106414179,-0.017126447477096463]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":5,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.0405889106414179,-0.017126447477096463]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":6,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.0405889106414179,-0.017126447477096463]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":7,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.0405889106414179,-0.017126447477096463]}]\n\n80 !== 0\n\n    at roadClearance (<anonymous>:19:9)\n    at file:///workspace/flower-hill-evidence/diagnose-nameless-native.mjs:138:168\n    at check (file:///workspace/flower-hill-evidence/diagnose-nameless-native.mjs:43:52)\n    at file:///workspace/flower-hill-evidence/diagnose-nameless-native.mjs:136:116"
+    },
+    {
+      "name": "candidate actual near plants clear native roads and tree-clear shoulders",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Actual vegetation crosses walkable road / tree-clear shoulder headroom: [{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":44,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.013451565147619249,0.0007660077919808828]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":44,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.004316262207225918,0.01236777302224823]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":45,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.013451565147619249,-0.004316262207225918]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":45,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.004316262207225918,0.009349691947704741]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":46,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.013451565147619249,0.014743606494761252]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":46,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[0.0007660077920377262,0.015815819532093656]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":47,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.013451565147619249,0.0007660077919808828]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":47,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[0.0007660077920377262,0.01236777302224823]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":44,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.010391059557775861,0.086529268326899]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":45,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.010391059557775861,0.08317040682260313]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":46,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.010391059557775861,0.08966934733490461]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":47,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.010391059557775861,0.086529268326899]}]\n\n182 !== 0\n\n    at roadClearance (<anonymous>:19:9)\n    at file:///workspace/flower-hill-evidence/diagnose-nameless-native.mjs:138:168\n    at check (file:///workspace/flower-hill-evidence/diagnose-nameless-native.mjs:43:52)\n    at file:///workspace/flower-hill-evidence/diagnose-nameless-native.mjs:136:116"
+    },
+    {
+      "name": "candidate actual far plants clear native roads and tree-clear shoulders",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Actual vegetation crosses walkable road / tree-clear shoulder headroom: [{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":4,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.017113447545426652,-0.013451565147619249]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":4,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.020120189244693165,-0.017113447545483496]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":5,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.017113447545426652,-0.013451565147619249]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":5,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.020120189244693165,-0.017113447545483496]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":6,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.017113447545426652,-0.013451565147619249]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":6,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.020120189244693165,-0.017113447545483496]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":7,\"roadTriangle\":180,\"shoulder\":false,\"clearanceRange\":[-0.017113447545426652,-0.013451565147619249]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":229,\"triangle\":7,\"roadTriangle\":181,\"shoulder\":false,\"clearanceRange\":[-0.020120189244693165,-0.017113447545483496]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":4,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.034094610968651295,-0.010391059557775861]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":5,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.034094610968651295,-0.010391059557775861]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":6,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.034094610968651295,-0.010391059557775861]},{\"id\":\"flowerlands:nameless:lily:0:-40:31\",\"instance\":233,\"triangle\":7,\"roadTriangle\":211,\"shoulder\":false,\"clearanceRange\":[-0.034094610968651295,-0.010391059557775861]}]\n\n80 !== 0\n\n    at roadClearance (<anonymous>:19:9)\n    at file:///workspace/flower-hill-evidence/diagnose-nameless-native.mjs:138:168\n    at check (file:///workspace/flower-hill-evidence/diagnose-nameless-native.mjs:43:52)\n    at file:///workspace/flower-hill-evidence/diagnose-nameless-native.mjs:136:116"
+    }
+  ],
+  "passed": false,
+  "scope": [
+    -1280,
+    960,
+    -928,
+    1376
+  ],
+  "arraysDirectory": "/workspace/flower-hill-evidence/nameless-native-arrays",
+  "costFailurePreserved": {
+    "path": "/workspace/flower-hill-evidence/final-views/report.json",
+    "sha256": "418f2e593a08ebe2540f232fa2d4a2d79d67550a44a7ed30f3cdfb98588c9944",
+    "deltaTriangles": 8464,
+    "budget": 4000
+  },
+  "exactPublicScaffoldSHA256": "d2fe3cbbdaac9e24c042afda037615186abb912a4b05518d3783665443cae407",
+  "fullProductionPreparation": {
+    "wallMs": 34342.741524000005,
+    "moduleCount": 47,
+    "registeredHooks": 19,
+    "sourceBytes": 484008,
+    "SolarContactSHA256": "1e27050b82f74f09165bc9d380566d0630981883b58fe55736a2b29556c94c79"
+  },
+  "originalBuildWallMs": 18698.524006,
+  "originalNativeGeometrySHA256": "3c3b2ce4e78c02a2128bedefc7bdafcf036e192a80f86a2660550e8bcf5f35c5",
+  "candidateBuildWallMs": 20467.338046999997,
+  "candidateNativeGeometrySHA256": "9d35b100a873fa464c75de4dbab4872a57468d58d5ebaa61a8fd80f601560f06",
+  "completeNativeSnapshots": [
+    {
+      "label": "baseline",
+      "path": "/workspace/flower-hill-evidence/nameless-native-arrays/baseline.v8",
+      "bytes": 6843045,
+      "sha256": "ee5f22a017609ef807696c11bc1e92cd3a0cedf1c83c6928dfffaa74ce28f027",
+      "meaning": "Node22 diagnostic value snapshot. Exact array values retained; backing-buffer identity after deserialize must not replace original source ownership accounting."
+    },
+    {
+      "label": "candidate",
+      "path": "/workspace/flower-hill-evidence/nameless-native-arrays/candidate.v8",
+      "bytes": 6843210,
+      "sha256": "3a5eb73515148625538498a56e9d53e5860634a5ec19874185bd18922f2dfda3",
+      "meaning": "Node22 diagnostic value snapshot. Exact array values retained; backing-buffer identity after deserialize must not replace original source ownership accounting."
+    },
+    {
+      "label": "baseline-manifest",
+      "path": "/workspace/flower-hill-evidence/nameless-native-arrays/baseline-manifest.v8",
+      "bytes": 1491673,
+      "sha256": "4eec0b50fbd69ede5dcd93225ef3a9ccc609b8d8a738555b63a29f5e4e93fdc3",
+      "meaning": "Node22 diagnostic value snapshot. Exact array values retained; backing-buffer identity after deserialize must not replace original source ownership accounting."
+    },
+    {
+      "label": "candidate-manifest",
+      "path": "/workspace/flower-hill-evidence/nameless-native-arrays/candidate-manifest.v8",
+      "bytes": 1729285,
+      "sha256": "6979d1d4516dce9759f57e1f4b27b0366e9b849b2565cf2c62663bc1ce0b5ce7",
+      "meaning": "Node22 diagnostic value snapshot. Exact array values retained; backing-buffer identity after deserialize must not replace original source ownership accounting."
+    }
+  ],
+  "unchangedCollisionHelperSHA256": "ccdead8df1b4487c90a8abd46756434ce0b16158220e758dc114a4192cbff398",
+  "baselineLily": {
+    "id": "flowerlands:nameless:lily:0:-39:35",
+    "metadata": {
+      "id": "flowerlands:nameless:lily:0:-39:35",
+      "group": "vegetation",
+      "region": "nameless",
+      "evidence": "P",
+      "material": "lilyFlower",
+      "center": [
+        -1232.114864407833,
+        184.9494840892155,
+        1135.990539298169
+      ],
+      "radius": 24.015853130620922,
+      "local": true,
+      "lodDistance": 28,
+      "flowerKind": "lily",
+      "owner": "nameless",
+      "space": "surface"
+    },
+    "files": {
+      "vertices": {
+        "path": "/workspace/flower-hill-evidence/nameless-native-arrays/baseline-vertices.f32",
+        "type": "Float32Array",
+        "length": 25029,
+        "bytes": 100116,
+        "sha256": "98a996088fb82079ec34525e93293ffbc4dde2e8a1523d5aac117a934ae1e014"
+      },
+      "farVertices": {
+        "path": "/workspace/flower-hill-evidence/nameless-native-arrays/baseline-farVertices.f32",
+        "type": "Float32Array",
+        "length": 783,
+        "bytes": 3132,
+        "sha256": "b5c9b277be1067066c6cfc6a9de35dd2944bab6ee673730da907b1144b92e343"
+      },
+      "instances": {
+        "path": "/workspace/flower-hill-evidence/nameless-native-arrays/baseline-instances.f32",
+        "type": "Float32Array",
+        "length": 3392,
+        "bytes": 13568,
+        "sha256": "d5e1ba3b930b6a9beb1700a5b5658533736b35105ee260d3ce77954af1c70b00"
+      },
+      "instanceColors": {
+        "path": "/workspace/flower-hill-evidence/nameless-native-arrays/baseline-instanceColors.f32",
+        "type": "Float32Array",
+        "length": 636,
+        "bytes": 2544,
+        "sha256": "8228f0ba688657544e64edb8b7807d3fa44589934b55df0cb189c606f343e888"
+      }
+    },
+    "variants": {
+      "near": {
+        "file": {
+          "path": "/workspace/flower-hill-evidence/nameless-native-arrays/baseline-near-world-xyz.f64",
+          "type": "Float64Array",
+          "length": 1768716,
+          "bytes": 14149728,
+          "sha256": "13552b6f0351b9a29ab49a4efb2adc6e105b07f0356e0864f19eee43d28e455e"
+        },
+        "transformedVertices": 589572,
+        "instances": 212,
+        "prototypeTriangles": 927,
+        "staticVisibleTriangles": 0,
+        "staticVisibleInstances": [],
+        "conservativePossibleWindTriangles": 0,
+        "conservativePossibleWindInstances": [],
+        "planes": [
+          {
+            "name": "left",
+            "normal": [
+              -0.8576441904230598,
+              -0.11824319094496373,
+              0.5004647744134718
+            ],
+            "offset": -1363.1510137033786,
+            "minVertexDistance": 219.90072789708006,
+            "maxVertexDistance": 259.93744150204043,
+            "maxVertexDistanceWithAnyShaderPhase": 259.93896139949385
+          },
+          {
+            "name": "right",
+            "normal": [
+              0.6802794040056142,
+              -0.11824319094496372,
+              0.7233522518669029
+            ],
+            "offset": 16.745359210812694,
+            "minVertexDistance": -44.514002130636186,
+            "maxVertexDistance": -1.1131413796726974,
+            "maxVertexDistanceWithAnyShaderPhase": -1.1119059290421471
+          },
+          {
+            "name": "bottom",
+            "normal": [
+              -0.08293562177077961,
+              0.8158706963747582,
+              0.5722557902183792
+            ],
+            "offset": -800.04520813967,
+            "minVertexDistance": 92.42774665709453,
+            "maxVertexDistance": 113.56794530861964,
+            "maxVertexDistanceWithAnyShaderPhase": 113.56882846216988
+          },
+          {
+            "name": "top",
+            "normal": [
+              -0.03390513243328782,
+              -0.9716583686468478,
+              0.23394541378968597
+            ],
+            "offset": -86.91243048244004,
+            "minVertexDistance": 33.212407773133464,
+            "maxVertexDistance": 48.5912602409407,
+            "maxVertexDistanceWithAnyShaderPhase": 48.59126025391538
+          },
+          {
+            "name": "near",
+            "normal": [
+              -0.1408761250311991,
+              -0.18783483337493212,
+              0.9720452627152737
+            ],
+            "offset": -1069.6141444660043,
+            "minVertexDistance": 157.099851699493,
+            "maxVertexDistance": 190.36481739259557,
+            "maxVertexDistanceWithAnyShaderPhase": 190.3664967972144
+          },
+          {
+            "name": "far",
+            "normal": [
+              0.1408761250311991,
+              0.18783483337493212,
+              -0.9720452627152737
+            ],
+            "offset": 19069.414144466005,
+            "minVertexDistance": 17809.435182607405,
+            "maxVertexDistance": 17842.700148300508,
+            "maxVertexDistanceWithAnyShaderPhase": 17842.702627811817
+          }
+        ],
+        "windRule": {
+          "amp": 0.013,
+          "localX": "+-pow(max(0,position.y),1.8)*amp",
+          "localZ": "+-0.5*bend",
+          "matrixLinearTransform": true,
+          "anyClockAndPhase": true
+        },
+        "windExpandedAABB": {
+          "min": [
+            -1248.5214753978435,
+            180.06877632995034,
+            1119.7402654739174
+          ],
+          "max": [
+            -1215.647104548122,
+            189.65274999172706,
+            1152.2229304546217
+          ]
+        },
+        "tightConservativeSphere": {
+          "center": [
+            -1232.0842899729828,
+            184.8607631608387,
+            1135.9815979642694
+          ],
+          "radius": 23.059081268136055,
+          "roundingPadding": 0.001,
+          "margins": [
+            {
+              "plane": "left",
+              "signedCenterDistance": 240.19916734985532,
+              "radius": 23.059081268136055,
+              "margin": 263.2582486179914
+            },
+            {
+              "plane": "right",
+              "signedCenterDistance": -21.559886806530017,
+              "radius": 23.059081268136055,
+              "margin": 1.499194461606038
+            },
+            {
+              "plane": "bottom",
+              "signedCenterDistance": 103.03299511223179,
+              "radius": 23.059081268136055,
+              "margin": 126.09207638036784
+            },
+            {
+              "plane": "top",
+              "signedCenterDistance": 40.99772797161518,
+              "radius": 23.059081268136055,
+              "margin": 64.05680923975123
+            },
+            {
+              "plane": "near",
+              "signedCenterDistance": 173.45935620422165,
+              "radius": 23.059081268136055,
+              "margin": 196.5184374723577
+            },
+            {
+              "plane": "far",
+              "signedCenterDistance": 17826.34064379578,
+              "radius": 23.059081268136055,
+              "margin": 17849.399725063915
+            }
+          ]
+        },
+        "maximumAxisEnvelopePaddingLength": 0.007219365326803163,
+        "assertion": "Sphere contains every transformed vertex and the full independent local-X/Z shader envelope. Frustum clipping is geometry visibility, not occlusion, raster coverage or pixel count."
+      },
+      "far": {
+        "file": {
+          "path": "/workspace/flower-hill-evidence/nameless-native-arrays/baseline-far-world-xyz.f64",
+          "type": "Float64Array",
+          "length": 55332,
+          "bytes": 442656,
+          "sha256": "4b08236775a949ab83ff4bd41f3bffb5b9df5756a995e9b78f6532156fdf8c49"
+        },
+        "transformedVertices": 18444,
+        "instances": 212,
+        "prototypeTriangles": 29,
+        "staticVisibleTriangles": 0,
+        "staticVisibleInstances": [],
+        "conservativePossibleWindTriangles": 0,
+        "conservativePossibleWindInstances": [],
+        "planes": [
+          {
+            "name": "left",
+            "normal": [
+              -0.8576441904230598,
+              -0.11824319094496373,
+              0.5004647744134718
+            ],
+            "offset": -1363.1510137033786,
+            "minVertexDistance": 219.90072789708006,
+            "maxVertexDistance": 259.9267469051522,
+            "maxVertexDistanceWithAnyShaderPhase": 259.927425030288
+          },
+          {
+            "name": "right",
+            "normal": [
+              0.6802794040056142,
+              -0.11824319094496372,
+              0.7233522518669029
+            ],
+            "offset": 16.745359210812694,
+            "minVertexDistance": -44.514002130636186,
+            "maxVertexDistance": -1.1131413796726974,
+            "maxVertexDistanceWithAnyShaderPhase": -1.1119059290421471
+          },
+          {
+            "name": "bottom",
+            "normal": [
+              -0.08293562177077961,
+              0.8158706963747582,
+              0.5722557902183792
+            ],
+            "offset": -800.04520813967,
+            "minVertexDistance": 92.42774665709453,
+            "maxVertexDistance": 113.54138833261777,
+            "maxVertexDistanceWithAnyShaderPhase": 113.54178236487294
+          },
+          {
+            "name": "top",
+            "normal": [
+              -0.03390513243328782,
+              -0.9716583686468478,
+              0.23394541378968597
+            ],
+            "offset": -86.91243048244004,
+            "minVertexDistance": 33.231580125616574,
+            "maxVertexDistance": 48.590878171063,
+            "maxVertexDistanceWithAnyShaderPhase": 48.590878171063
+          },
+          {
+            "name": "near",
+            "normal": [
+              -0.1408761250311991,
+              -0.18783483337493212,
+              0.9720452627152737
+            ],
+            "offset": -1069.6141444660043,
+            "minVertexDistance": 157.19631435930341,
+            "maxVertexDistance": 190.34654311847976,
+            "maxVertexDistanceWithAnyShaderPhase": 190.34729241013935
+          },
+          {
+            "name": "far",
+            "normal": [
+              0.1408761250311991,
+              0.18783483337493212,
+              -0.9720452627152737
+            ],
+            "offset": 19069.414144466005,
+            "minVertexDistance": 17809.45345688152,
+            "maxVertexDistance": 17842.603685640697,
+            "maxVertexDistanceWithAnyShaderPhase": 17842.60593106955
+          }
+        ],
+        "windRule": {
+          "amp": 0.013,
+          "localX": "+-pow(max(0,position.y),1.8)*amp",
+          "localZ": "+-0.5*bend",
+          "matrixLinearTransform": true,
+          "anyClockAndPhase": true
+        },
+        "windExpandedAABB": {
+          "min": [
+            -1248.5214753978435,
+            180.0662262033239,
+            1119.7402654739174
+          ],
+          "max": [
+            -1215.647104548122,
+            189.6308065698579,
+            1152.204378407705
+          ]
+        },
+        "tightConservativeSphere": {
+          "center": [
+            -1232.0842899729828,
+            184.84851638659092,
+            1135.972321940811
+          ],
+          "radius": 23.055186103328165,
+          "roundingPadding": 0.001,
+          "margins": [
+            {
+              "plane": "left",
+              "signedCenterDistance": 240.1959731245338,
+              "radius": 23.055186103328165,
+              "margin": 263.25115922786193
+            },
+            {
+              "plane": "right",
+              "signedCenterDistance": -21.56514854132115,
+              "radius": 23.055186103328165,
+              "margin": 1.4900375620070143
+            },
+            {
+              "plane": "bottom",
+              "signedCenterDistance": 103.01769506986363,
+              "radius": 23.055186103328165,
+              "margin": 126.0728811731918
+            },
+            {
+              "plane": "top",
+              "signedCenterDistance": 41.00745756915569,
+              "radius": 23.055186103328165,
+              "margin": 64.06264367248386
+            },
+            {
+              "plane": "near",
+              "signedCenterDistance": 173.4526398603623,
+              "radius": 23.055186103328165,
+              "margin": 196.50782596369046
+            },
+            {
+              "plane": "far",
+              "signedCenterDistance": 17826.34736013964,
+              "radius": 23.055186103328165,
+              "margin": 17849.402546242967
+            }
+          ]
+        },
+        "maximumAxisEnvelopePaddingLength": 0.006717056612377148,
+        "assertion": "Sphere contains every transformed vertex and the full independent local-X/Z shader envelope. Frustum clipping is geometry visibility, not occlusion, raster coverage or pixel count."
+      }
+    }
+  },
+  "candidateLily": {
+    "id": "flowerlands:nameless:lily:0:-39:35",
+    "metadata": {
+      "id": "flowerlands:nameless:lily:0:-39:35",
+      "group": "vegetation",
+      "region": "nameless",
+      "evidence": "P",
+      "material": "lilyFlower",
+      "center": [
+        -1232.114864407833,
+        182.78077286289084,
+        1135.990539298169
+      ],
+      "radius": 24.142657313997262,
+      "local": true,
+      "lodDistance": 28,
+      "flowerKind": "lily",
+      "owner": "nameless",
+      "space": "surface"
+    },
+    "files": {
+      "vertices": {
+        "path": "/workspace/flower-hill-evidence/nameless-native-arrays/candidate-vertices.f32",
+        "type": "Float32Array",
+        "length": 25029,
+        "bytes": 100116,
+        "sha256": "98a996088fb82079ec34525e93293ffbc4dde2e8a1523d5aac117a934ae1e014"
+      },
+      "farVertices": {
+        "path": "/workspace/flower-hill-evidence/nameless-native-arrays/candidate-farVertices.f32",
+        "type": "Float32Array",
+        "length": 783,
+        "bytes": 3132,
+        "sha256": "b5c9b277be1067066c6cfc6a9de35dd2944bab6ee673730da907b1144b92e343"
+      },
+      "instances": {
+        "path": "/workspace/flower-hill-evidence/nameless-native-arrays/candidate-instances.f32",
+        "type": "Float32Array",
+        "length": 3392,
+        "bytes": 13568,
+        "sha256": "e53154f2019ce6114abe740bc228b6de6145c10ed4370a7133b5684592485003"
+      },
+      "instanceColors": {
+        "path": "/workspace/flower-hill-evidence/nameless-native-arrays/candidate-instanceColors.f32",
+        "type": "Float32Array",
+        "length": 636,
+        "bytes": 2544,
+        "sha256": "8228f0ba688657544e64edb8b7807d3fa44589934b55df0cb189c606f343e888"
+      }
+    },
+    "variants": {
+      "near": {
+        "file": {
+          "path": "/workspace/flower-hill-evidence/nameless-native-arrays/candidate-near-world-xyz.f64",
+          "type": "Float64Array",
+          "length": 1768716,
+          "bytes": 14149728,
+          "sha256": "83d14e62812fe1d2cc71f60d1ab3c02316193fb65d7729037245cdb295d418e9"
+        },
+        "transformedVertices": 589572,
+        "instances": 212,
+        "prototypeTriangles": 927,
+        "staticVisibleTriangles": 0,
+        "staticVisibleInstances": [],
+        "conservativePossibleWindTriangles": 0,
+        "conservativePossibleWindInstances": [],
+        "planes": [
+          {
+            "name": "left",
+            "normal": [
+              -0.8576441904230598,
+              -0.11824319094496373,
+              0.5004647744134718
+            ],
+            "offset": -1363.1510137033786,
+            "minVertexDistance": 219.92592241487705,
+            "maxVertexDistance": 260.32102460743135,
+            "maxVertexDistanceWithAnyShaderPhase": 260.3225445048848
+          },
+          {
+            "name": "right",
+            "normal": [
+              0.6802794040056142,
+              -0.11824319094496372,
+              0.7233522518669029
+            ],
+            "offset": 16.745359210812694,
+            "minVertexDistance": -44.32608790669656,
+            "maxVertexDistance": -0.7836369968493955,
+            "maxVertexDistanceWithAnyShaderPhase": -0.7824015462188451
+          },
+          {
+            "name": "bottom",
+            "normal": [
+              -0.08293562177077961,
+              0.8158706963747582,
+              0.5722557902183792
+            ],
+            "offset": -800.04520813967,
+            "minVertexDistance": 92.25390604423785,
+            "maxVertexDistance": 110.92124563135417,
+            "maxVertexDistanceWithAnyShaderPhase": 110.9221287849044
+          },
+          {
+            "name": "top",
+            "normal": [
+              -0.03390513243328782,
+              -0.9716583686468478,
+              0.23394541378968597
+            ],
+            "offset": -86.91243048244004,
+            "minVertexDistance": 34.75658487812822,
+            "maxVertexDistance": 51.298948425921,
+            "maxVertexDistanceWithAnyShaderPhase": 51.29894843889568
+          },
+          {
+            "name": "near",
+            "normal": [
+              -0.1408761250311991,
+              -0.18783483337493212,
+              0.9720452627152737
+            ],
+            "offset": -1069.6141444660043,
+            "minVertexDistance": 157.25487218644298,
+            "maxVertexDistance": 191.02621463463197,
+            "maxVertexDistanceWithAnyShaderPhase": 191.0278940392508
+          },
+          {
+            "name": "far",
+            "normal": [
+              0.1408761250311991,
+              0.18783483337493212,
+              -0.9720452627152737
+            ],
+            "offset": 19069.414144466005,
+            "minVertexDistance": 17808.77378536537,
+            "maxVertexDistance": 17842.54512781356,
+            "maxVertexDistanceWithAnyShaderPhase": 17842.54760732487
+          }
+        ],
+        "windRule": {
+          "amp": 0.013,
+          "localX": "+-pow(max(0,position.y),1.8)*amp",
+          "localZ": "+-0.5*bend",
+          "matrixLinearTransform": true,
+          "anyClockAndPhase": true
+        },
+        "windExpandedAABB": {
+          "min": [
+            -1248.5214753978435,
+            177.32052873265604,
+            1119.7402654739174
+          ],
+          "max": [
+            -1215.647104548122,
+            188.06353185207863,
+            1152.2229304546217
+          ]
+        },
+        "tightConservativeSphere": {
+          "center": [
+            -1232.0842899729828,
+            182.69203029236735,
+            1135.9815979642694
+          ],
+          "radius": 23.177689642752053,
+          "roundingPadding": 0.001,
+          "margins": [
+            {
+              "plane": "left",
+              "signedCenterDistance": 240.45560524453072,
+              "radius": 23.177689642752053,
+              "margin": 263.6332948872828
+            },
+            {
+              "plane": "right",
+              "signedCenterDistance": -21.30344891185473,
+              "radius": 23.177689642752053,
+              "margin": 1.8742407308973235
+            },
+            {
+              "plane": "bottom",
+              "signedCenterDistance": 101.2635895165813,
+              "radius": 23.177689642752053,
+              "margin": 124.44127915933336
+            },
+            {
+              "plane": "top",
+              "signedCenterDistance": 43.104995412624845,
+              "radius": 23.177689642752053,
+              "margin": 66.2826850553769
+            },
+            {
+              "plane": "near",
+              "signedCenterDistance": 173.86671978120557,
+              "radius": 23.177689642752053,
+              "margin": 197.04440942395763
+            },
+            {
+              "plane": "far",
+              "signedCenterDistance": 17825.933280218796,
+              "radius": 23.177689642752053,
+              "margin": 17849.110969861547
+            }
+          ]
+        },
+        "maximumAxisEnvelopePaddingLength": 0.007219365326803163,
+        "assertion": "Sphere contains every transformed vertex and the full independent local-X/Z shader envelope. Frustum clipping is geometry visibility, not occlusion, raster coverage or pixel count."
+      },
+      "far": {
+        "file": {
+          "path": "/workspace/flower-hill-evidence/nameless-native-arrays/candidate-far-world-xyz.f64",
+          "type": "Float64Array",
+          "length": 55332,
+          "bytes": 442656,
+          "sha256": "22873e5b2b3fe916adb732bdbd2afbd5c46756e5a339587fd5ce4e2e0da74881"
+        },
+        "transformedVertices": 18444,
+        "instances": 212,
+        "prototypeTriangles": 29,
+        "staticVisibleTriangles": 0,
+        "staticVisibleInstances": [],
+        "conservativePossibleWindTriangles": 0,
+        "conservativePossibleWindInstances": [],
+        "planes": [
+          {
+            "name": "left",
+            "normal": [
+              -0.8576441904230598,
+              -0.11824319094496373,
+              0.5004647744134718
+            ],
+            "offset": -1363.1510137033786,
+            "minVertexDistance": 219.92592241487705,
+            "maxVertexDistance": 260.3103300105429,
+            "maxVertexDistanceWithAnyShaderPhase": 260.3110081356787
+          },
+          {
+            "name": "right",
+            "normal": [
+              0.6802794040056142,
+              -0.11824319094496372,
+              0.7233522518669029
+            ],
+            "offset": 16.745359210812694,
+            "minVertexDistance": -44.32608790669656,
+            "maxVertexDistance": -0.7836369968493955,
+            "maxVertexDistanceWithAnyShaderPhase": -0.7824015462188451
+          },
+          {
+            "name": "bottom",
+            "normal": [
+              -0.08293562177077961,
+              0.8158706963747582,
+              0.5722557902183792
+            ],
+            "offset": -800.04520813967,
+            "minVertexDistance": 92.25390604423785,
+            "maxVertexDistance": 110.8946886553523,
+            "maxVertexDistanceWithAnyShaderPhase": 110.89508268760747
+          },
+          {
+            "name": "top",
+            "normal": [
+              -0.03390513243328782,
+              -0.9716583686468478,
+              0.23394541378968597
+            ],
+            "offset": -86.91243048244004,
+            "minVertexDistance": 34.77575723061133,
+            "maxVertexDistance": 51.29856635604327,
+            "maxVertexDistanceWithAnyShaderPhase": 51.29856635604327
+          },
+          {
+            "name": "near",
+            "normal": [
+              -0.1408761250311991,
+              -0.18783483337493212,
+              0.9720452627152737
+            ],
+            "offset": -1069.6141444660043,
+            "minVertexDistance": 157.31516999140217,
+            "maxVertexDistance": 191.00794036051616,
+            "maxVertexDistanceWithAnyShaderPhase": 191.00868965217575
+          },
+          {
+            "name": "far",
+            "normal": [
+              0.1408761250311991,
+              0.18783483337493212,
+              -0.9720452627152737
+            ],
+            "offset": 19069.414144466005,
+            "minVertexDistance": 17808.792059639483,
+            "maxVertexDistance": 17842.484830008598,
+            "maxVertexDistanceWithAnyShaderPhase": 17842.48707543745
+          }
+        ],
+        "windRule": {
+          "amp": 0.013,
+          "localX": "+-pow(max(0,position.y),1.8)*amp",
+          "localZ": "+-0.5*bend",
+          "matrixLinearTransform": true,
+          "anyClockAndPhase": true
+        },
+        "windExpandedAABB": {
+          "min": [
+            -1248.5214753978435,
+            177.31789180251695,
+            1119.7402654739174
+          ],
+          "max": [
+            -1215.647104548122,
+            188.04158843020946,
+            1152.204378407705
+          ]
+        },
+        "tightConservativeSphere": {
+          "center": [
+            -1232.0842899729828,
+            182.6797401163632,
+            1135.972321940811
+          ],
+          "radius": 23.17413011240519,
+          "roundingPadding": 0.001,
+          "margins": [
+            {
+              "plane": "left",
+              "signedCenterDistance": 240.45241615117106,
+              "radius": 23.17413011240519,
+              "margin": 263.62654626357624
+            },
+            {
+              "plane": "right",
+              "signedCenterDistance": -21.308705514683652,
+              "radius": 23.17413011240519,
+              "margin": 1.865424597721539
+            },
+            {
+              "plane": "bottom",
+              "signedCenterDistance": 101.24825406399191,
+              "radius": 23.17413011240519,
+              "margin": 124.4223841763971
+            },
+            {
+              "plane": "top",
+              "signedCenterDistance": 43.11476718184514,
+              "radius": 23.17413011240519,
+              "margin": 66.28889729425033
+            },
+            {
+              "plane": "near",
+              "signedCenterDistance": 173.86001158970794,
+              "radius": 23.17413011240519,
+              "margin": 197.03414170211312
+            },
+            {
+              "plane": "far",
+              "signedCenterDistance": 17825.939988410293,
+              "radius": 23.17413011240519,
+              "margin": 17849.1141185227
+            }
+          ]
+        },
+        "maximumAxisEnvelopePaddingLength": 0.006717056612377148,
+        "assertion": "Sphere contains every transformed vertex and the full independent local-X/Z shader envelope. Frustum clipping is geometry visibility, not occlusion, raster coverage or pixel count."
+      }
+    }
+  },
+  "lilyConclusion": {
+    "candidateFarStaticVisibleTriangles": 0,
+    "candidateFarConservativeWindTriangles": 0,
+    "candidateNearStaticVisibleTriangles": 0,
+    "candidateFarTightSphereMargins": [
+      {
+        "plane": "left",
+        "signedCenterDistance": 240.45241615117106,
+        "radius": 23.17413011240519,
+        "margin": 263.62654626357624
+      },
+      {
+        "plane": "right",
+        "signedCenterDistance": -21.308705514683652,
+        "radius": 23.17413011240519,
+        "margin": 1.865424597721539
+      },
+      {
+        "plane": "bottom",
+        "signedCenterDistance": 101.24825406399191,
+        "radius": 23.17413011240519,
+        "margin": 124.4223841763971
+      },
+      {
+        "plane": "top",
+        "signedCenterDistance": 43.11476718184514,
+        "radius": 23.17413011240519,
+        "margin": 66.28889729425033
+      },
+      {
+        "plane": "near",
+        "signedCenterDistance": 173.86001158970794,
+        "radius": 23.17413011240519,
+        "margin": 197.03414170211312
+      },
+      {
+        "plane": "far",
+        "signedCenterDistance": 17825.939988410293,
+        "radius": 23.17413011240519,
+        "margin": 17849.1141185227
+      }
+    ],
+    "noSourceOrRendererChange": true,
+    "costGateStillFailed": true,
+    "pixelCoverageNotMeasured": true
+  },
+  "notRun": [
+    "Sunflower paired native bank",
+    "Native unload/reentry and input CPU",
+    "Complete Node regression",
+    "Any additional GPU frame"
+  ],
+  "inputSHA256": {
+    "src/flower-hill-entry.js": "87096ff308a83880c2332b79a554ec9edc098bd0f534db52a1fc965934c7114b",
+    "tools/check-flower-hill-entry.mjs": "73b12295942f16d30b63822c640dab45dff131a96de109aa811ee063c78983e2",
+    "project.json": "d9ae63c0be3e3527eb1800924c79702cf03d64ba516ef8e3247d9bdcc28ab574",
+    "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+    "src/old-hell.js": "fde1ded5cfad70061c9a69b09b000fbd35bab17edcd583ed4d7973d5c9cfa643",
+    "src/kishinjou.js": "a90ac62e8244c71583fa85b007186bd8798454eba406136199f66949024a2899",
+    "src/lunar.js": "b7a870cf111ffa1ad4c68c5a9fed5d7f31ae08e4fb2c85dce1e8c60308243203",
+    "src/makai.js": "00746b16369b07c2ae549da3d8bcd34505f059b276f592cefd4053704b6a294b",
+    "src/netherworld.js": "e74f73aa97eb1fcca45e44abc894465b5279467e274089e0eeec83f6d871485a",
+    "src/landmarks.js": "04b8e640ca0fc597f889625b8a8173a767eced751355e5dbe034f44fadfd7ff9",
+    "src/heaven.js": "3231eef2637ac64cfb7eb257f35ddf1b5e59bd976642db1aa5a55baf93c3010d",
+    "src/higan.js": "deb81b207343b112ed0080d9378693a4bc04f93f82ad0af6cbaa626b623df34c",
+    "src/landscape.js": "4ef7b6f8076842506e8cac09086db4aa8277f92468e08aa0069c326f77ef35dc",
+    "src/animal.js": "055fe408319dd4d2faca1db8b0619c9d3222a2e42c8c575ebfbb7bf0cdfa7241",
+    "src/backdoor.js": "08031b368a145b1a4d774bd8d7e85dfc81c5adde2682515c069af774b882f098",
+    "src/kasen.js": "cf824cc3b34ef32f42bc127ca9d4ff8570876a9b47626ca5c43acfb709493004",
+    "src/current-hell.js": "47b27653fc2df883b38cbb212eca268b122eea8d72c03d047b590b6f8a8dd7f8",
+    "src/rainbow-mine.js": "8d41ee356f7d1323316e866cf96a88e6775edca6ef8784fc9dc812b9856a8d87",
+    "src/highland.js": "8816c040dd6f3c24d42beef3edb7a2c2604131bb41507c8964886ab659cda9d3",
+    "src/hakurei-plants.js": "8d149696fef5fc9a85204bfb3c2c4bd45992652cf9a2c81f498c0440f5e159f1",
+    "src/hakurei-transition.js": "18c8cb5751436fd08b9c92c32459ad5e71084ecde8f18e26ef44354decc47b3d",
+    "src/asama.js": "42fdf7c969a20389ceb7fb35cdfac96115a1501fb4a5483ede80268814176f15",
+    "src/asama-roads.js": "983371f7f2e24ef21b03bee452c1b50bba85747c035725f842ec42ba2a96a49a",
+    "src/surface-contact.js": "719a315917b55fa5025ec32659509b5be8965d8a577cdfc92c63c96db4dedf5e",
+    "src/hiten.js": "b2671674c180a44753bbccd61a994cc4efb3089618c10d586eba97a33696412e",
+    "src/mayohiga.js": "3cbb575944f32ef1f26e3041f9400a2e9259b98aef3d4f9a78d52c5624c8d75e",
+    "src/peony.js": "0116a5ba2d34cc8e05696e00d9d96b358ae2a9fcb1a395ca50e2b8d22821bc9b",
+    "src/waterfall-cave.js": "eb2430945bb41dc7ba2f2977cc93c6953c5611ec3cb4b5098d7f52c9002f8094",
+    "src/cucumber-farm.js": "f5e4b9c53963f81b170fd56371934267d3587e7770dc4210c957c534f7b9e90d",
+    "src/wind-cave.js": "94ce9aa01c17eb5c1faed009311b3039166879912b96f8a5b3cd5cf22e325737",
+    "src/geyser.js": "e6dd521faf5903bd410390e04ab8477f6b7a2b82f7dedbe4bf54f35530de376c",
+    "src/geyser-center.js": "b58dc4782ff80b95811236967864852776a36def8e0c01863ea46b31babd9f86",
+    "src/kourindou-upgrade.js": "e4c7371c745a6a4b69ed618f7fdcb7f44208b092b65f0379cbb752ba9db52599",
+    "src/forest-upgrade.js": "6468c87138443f3599c7cffbfbd0191e0733ad2259f46f87e3a5d302c1845270",
+    "src/village-upgrade.js": "4f56749811034552227f3280c9b34c534484fc1d1e7b631b52d6d2c17242c44f",
+    "src/trail-upgrade.js": "cce321e38e5c9a26d585092029ed415b9b78032c46000ba47b55ed190f21932f",
+    "src/trail-plants.js": "9b27de1ef04d9b309212b198e203890f848bc85a107c3b7dc7fa4818806a2696",
+    "src/trail-landscape.js": "ef50de3407b2f6e31eed41939ec8003c27a16dccf7e907b98bf72fc4a13919a6",
+    "src/forest-entrance-plants.js": "b42c6959cf4005e362954d468bc1130a459c3104aa85316dff752fd99ddc6ca1",
+    "src/forest-entrance-ground.js": "cc603d5a2b8bd24fd24ec78d48a7124e66e79e67a5751b9ef281a5dba2839ecc",
+    "src/forest-entrance.js": "0320d5c1a6a89d75e29ce3728135222c7a6de3b22b572769b9c32b27c16dee5c",
+    "src/forest-canopy-plants.js": "043a18fa90e756686cc5f28ebe82295271fe6e99386d22e5c8661ac578156b66",
+    "src/forest-canopy-ground.js": "fa889105ad3689bddd44538fe5d72e73334c02cca755ec466eb83f9f87995d99",
+    "src/forest-canopy-road.js": "ac7211359b2a4079713788c97329d6a79383da50f1e601d03eac860f10f2c2a8",
+    "src/forest-crown-rollout.js": "133abcaa7bdfaec3ede8617643fa9beb302642c194cb9f2971caa01b8f919820",
+    "src/forest-canopy.js": "6820b51c35b707dccd920a552347b10decaa6e246d81bd81d5745e0db6eaf29a",
+    "src/bamboo-entry-plants.js": "ff487a6667e53d393523a2607655ae693f5bdcd69775ade31a246899d74948fe",
+    "src/bamboo-entry-upgrade.js": "937f915a583b0e7b14588f95980ff0055f27f54d6c7d1918d301ce0fb6e1cbe1",
+    "src/sunflower-entry.js": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+    "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
+    "data/lunar.json": "92abf8f26344ef31bee7cb197330fe6cb7b4854a590e2687cfc7565dd4827ccc",
+    "data/makai.json": "3d5566dc31dcf696865246ba63f5d9cef7ad45464f5dcccc00e135564f166435",
+    "data/netherworld.json": "dfb60f6170e841f9f034a3b41cb7bea565e2c5cefa5b371099509693e14aa248",
+    "data/heaven.json": "6383792bb7608ff61f52653dafc81eedd2a6155287864a25fc653889c2e3111a",
+    "data/higan.json": "aed41a6af1c6ef21250f4533dd888f0f7610eb81db6907cb0b3219ebaa377bcd",
+    "data/animal.json": "58294cbe1b2c9e3dc28a316d927bbd410b32fb3bd024adce425266b4b0fe176f",
+    "data/backdoor.json": "a174f1344ae3dc8b73e336c130d0d87598b386e35bfc69c7c3336fdc78a3e289",
+    "data/kasen.json": "b03522e4d5f14aa691de7fc2ffcf596fe6c13840d6cc2b5d7c7e391c5d30fdbf",
+    "data/current-hell.json": "4e99e4f519f90d77f7f51267064ac4f408bd5067450be249c1138c4d7b0b2b1a",
+    "data/rainbow-mine.json": "d852d34cfbbcf3ee2a2168fbb9da9e139e33f2b320456bb8588c91ebe29bcc9b",
+    "data/highland.json": "b15892fb6b9a589aa890e4e3f44e7d8d0a57b234b16809f91ec1a58b7bb6775d",
+    "data/asama.json": "72098c152fd80bd90e7f70ab96053a477bb2a5bdd8f73ff72440416e6f67344b",
+    "data/hiten.json": "01c78bd126626d5a36470d0a2f0752ae0a1ae28b53aedf66e7c36d67825d8d26",
+    "data/mayohiga.json": "a9c8bcf0ecf74c54c115914875ecd9542e4fbf9f32e363760d79336add62ae47",
+    "data/peony.json": "67923caf740dc7cecd29f7a54893424d65ffc141a694e3a416f4f817c3448a5c",
+    "data/waterfall-cave.json": "45719d3e91fc6b4d0fba6ff0f350e844e54ba172b809355dfacec58d59fdcdcc",
+    "data/cucumber-farm.json": "4478346595556725f3007e1d1e7ad64b65b454adf67ea281e9ad97ee7cadd5b2",
+    "data/wind-cave.json": "a3c37a35721107173aacafef9d5188146769d32bee6ef57464ce1a143530af6a",
+    "data/geyser.json": "c9384ca594800782eec387af75a22df7c241831bdb27dd6a10405501580671b7",
+    "data/geyser-center.json": "faa4cc8582fef8f76595bcd6ddb6819bfe308c270a8878b8ebd3766942783646",
+    "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+    "tools/check-sunflower-entry.mjs": "f08399f3396fde1338b9c61fdbd3bfc2d23c3bf87818015775a9cf812efd126b"
+  },
+  "inputsUnchanged": true,
+  "endUTC": "2026-10-05T20:55:29.313Z",
+  "elapsedWallMs": 91607.957952
+}
