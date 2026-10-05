@@ -222,6 +222,8 @@ def build(output_dir):
     read_bytes('tools/check-bamboo-browser.py')
     read_bytes('tools/check-bamboo-lod-route.py')
     read_bytes('tools/bamboo-entry-route.json')
+    read_bytes('tools/check-sunflower-entry.mjs')
+    read_bytes('tools/check-sunflower-browser.py')
     read_bytes('tools/check-forest-path-renderer.mjs')
     read_bytes('tools/check-forest-path-coverage.mjs')
     read_bytes('tools/generate-forest-path-colors.mjs')

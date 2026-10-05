@@ -1,0 +1,3859 @@
+{
+  "schema": 1,
+  "scope": "Sunflower north slope and public entry; not the entire field or main island",
+  "baseMain": "9905a0918edbfb5708cda05582d5bf5d23d3d448",
+  "candidateSourceSHA256": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+  "candidateHTMLSHA256": "402224fe67018c0fc33c6820f09d04cdea33b80914a79e62ca54de0e627bf8f8",
+  "buildInputCount": 202,
+  "buildInputs": {
+    "project.json": "382c288ce75ee249e37f39f972a03f68ff9963d4fd1ce748acf87c1eac06ead0",
+    "data/lunar.json": "92abf8f26344ef31bee7cb197330fe6cb7b4854a590e2687cfc7565dd4827ccc",
+    "data/makai.json": "3d5566dc31dcf696865246ba63f5d9cef7ad45464f5dcccc00e135564f166435",
+    "data/netherworld.json": "dfb60f6170e841f9f034a3b41cb7bea565e2c5cefa5b371099509693e14aa248",
+    "data/heaven.json": "6383792bb7608ff61f52653dafc81eedd2a6155287864a25fc653889c2e3111a",
+    "data/higan.json": "aed41a6af1c6ef21250f4533dd888f0f7610eb81db6907cb0b3219ebaa377bcd",
+    "data/animal.json": "58294cbe1b2c9e3dc28a316d927bbd410b32fb3bd024adce425266b4b0fe176f",
+    "data/backdoor.json": "a174f1344ae3dc8b73e336c130d0d87598b386e35bfc69c7c3336fdc78a3e289",
+    "data/kasen.json": "b03522e4d5f14aa691de7fc2ffcf596fe6c13840d6cc2b5d7c7e391c5d30fdbf",
+    "data/current-hell.json": "4e99e4f519f90d77f7f51267064ac4f408bd5067450be249c1138c4d7b0b2b1a",
+    "data/rainbow-mine.json": "d852d34cfbbcf3ee2a2168fbb9da9e139e33f2b320456bb8588c91ebe29bcc9b",
+    "data/highland.json": "b15892fb6b9a589aa890e4e3f44e7d8d0a57b234b16809f91ec1a58b7bb6775d",
+    "data/asama.json": "72098c152fd80bd90e7f70ab96053a477bb2a5bdd8f73ff72440416e6f67344b",
+    "data/hiten.json": "01c78bd126626d5a36470d0a2f0752ae0a1ae28b53aedf66e7c36d67825d8d26",
+    "data/mayohiga.json": "a9c8bcf0ecf74c54c115914875ecd9542e4fbf9f32e363760d79336add62ae47",
+    "data/peony.json": "67923caf740dc7cecd29f7a54893424d65ffc141a694e3a416f4f817c3448a5c",
+    "data/waterfall-cave.json": "45719d3e91fc6b4d0fba6ff0f350e844e54ba172b809355dfacec58d59fdcdcc",
+    "data/cucumber-farm.json": "4478346595556725f3007e1d1e7ad64b65b454adf67ea281e9ad97ee7cadd5b2",
+    "data/wind-cave.json": "a3c37a35721107173aacafef9d5188146769d32bee6ef57464ce1a143530af6a",
+    "data/geyser.json": "c9384ca594800782eec387af75a22df7c241831bdb27dd6a10405501580671b7",
+    "data/geyser-center.json": "faa4cc8582fef8f76595bcd6ddb6819bfe308c270a8878b8ebd3766942783646",
+    "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
+    "data/characters.json": "b87604e876804b5b9469657adf653451eccd561cddecdbb578f8966745beacc9",
+    "vendor/three/three.core.js": "78b2c4218834ca8670547ed2315bfc21a00ff4dc3403bbffc8c31493d31d14de",
+    "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+    "src/old-hell.js": "fde1ded5cfad70061c9a69b09b000fbd35bab17edcd583ed4d7973d5c9cfa643",
+    "src/kishinjou.js": "a90ac62e8244c71583fa85b007186bd8798454eba406136199f66949024a2899",
+    "src/lunar.js": "b7a870cf111ffa1ad4c68c5a9fed5d7f31ae08e4fb2c85dce1e8c60308243203",
+    "src/makai.js": "00746b16369b07c2ae549da3d8bcd34505f059b276f592cefd4053704b6a294b",
+    "src/netherworld.js": "e74f73aa97eb1fcca45e44abc894465b5279467e274089e0eeec83f6d871485a",
+    "src/landmarks.js": "04b8e640ca0fc597f889625b8a8173a767eced751355e5dbe034f44fadfd7ff9",
+    "src/heaven.js": "3231eef2637ac64cfb7eb257f35ddf1b5e59bd976642db1aa5a55baf93c3010d",
+    "src/higan.js": "deb81b207343b112ed0080d9378693a4bc04f93f82ad0af6cbaa626b623df34c",
+    "src/landscape.js": "4ef7b6f8076842506e8cac09086db4aa8277f92468e08aa0069c326f77ef35dc",
+    "src/animal.js": "055fe408319dd4d2faca1db8b0619c9d3222a2e42c8c575ebfbb7bf0cdfa7241",
+    "src/backdoor.js": "08031b368a145b1a4d774bd8d7e85dfc81c5adde2682515c069af774b882f098",
+    "src/kasen.js": "cf824cc3b34ef32f42bc127ca9d4ff8570876a9b47626ca5c43acfb709493004",
+    "src/current-hell.js": "47b27653fc2df883b38cbb212eca268b122eea8d72c03d047b590b6f8a8dd7f8",
+    "src/rainbow-mine.js": "8d41ee356f7d1323316e866cf96a88e6775edca6ef8784fc9dc812b9856a8d87",
+    "src/highland.js": "8816c040dd6f3c24d42beef3edb7a2c2604131bb41507c8964886ab659cda9d3",
+    "src/hakurei-plants.js": "8d149696fef5fc9a85204bfb3c2c4bd45992652cf9a2c81f498c0440f5e159f1",
+    "src/hakurei-transition.js": "18c8cb5751436fd08b9c92c32459ad5e71084ecde8f18e26ef44354decc47b3d",
+    "src/asama.js": "42fdf7c969a20389ceb7fb35cdfac96115a1501fb4a5483ede80268814176f15",
+    "src/asama-roads.js": "983371f7f2e24ef21b03bee452c1b50bba85747c035725f842ec42ba2a96a49a",
+    "src/surface-contact.js": "719a315917b55fa5025ec32659509b5be8965d8a577cdfc92c63c96db4dedf5e",
+    "src/hiten.js": "b2671674c180a44753bbccd61a994cc4efb3089618c10d586eba97a33696412e",
+    "src/mayohiga.js": "3cbb575944f32ef1f26e3041f9400a2e9259b98aef3d4f9a78d52c5624c8d75e",
+    "src/peony.js": "0116a5ba2d34cc8e05696e00d9d96b358ae2a9fcb1a395ca50e2b8d22821bc9b",
+    "src/waterfall-cave.js": "eb2430945bb41dc7ba2f2977cc93c6953c5611ec3cb4b5098d7f52c9002f8094",
+    "src/cucumber-farm.js": "f5e4b9c53963f81b170fd56371934267d3587e7770dc4210c957c534f7b9e90d",
+    "src/wind-cave.js": "94ce9aa01c17eb5c1faed009311b3039166879912b96f8a5b3cd5cf22e325737",
+    "src/geyser.js": "e6dd521faf5903bd410390e04ab8477f6b7a2b82f7dedbe4bf54f35530de376c",
+    "src/geyser-center.js": "b58dc4782ff80b95811236967864852776a36def8e0c01863ea46b31babd9f86",
+    "src/kourindou-upgrade.js": "e4c7371c745a6a4b69ed618f7fdcb7f44208b092b65f0379cbb752ba9db52599",
+    "src/forest-upgrade.js": "6468c87138443f3599c7cffbfbd0191e0733ad2259f46f87e3a5d302c1845270",
+    "src/village-upgrade.js": "4f56749811034552227f3280c9b34c534484fc1d1e7b631b52d6d2c17242c44f",
+    "src/trail-upgrade.js": "cce321e38e5c9a26d585092029ed415b9b78032c46000ba47b55ed190f21932f",
+    "src/trail-plants.js": "9b27de1ef04d9b309212b198e203890f848bc85a107c3b7dc7fa4818806a2696",
+    "src/trail-landscape.js": "ef50de3407b2f6e31eed41939ec8003c27a16dccf7e907b98bf72fc4a13919a6",
+    "src/forest-entrance-plants.js": "b42c6959cf4005e362954d468bc1130a459c3104aa85316dff752fd99ddc6ca1",
+    "src/forest-entrance-ground.js": "cc603d5a2b8bd24fd24ec78d48a7124e66e79e67a5751b9ef281a5dba2839ecc",
+    "src/forest-entrance.js": "0320d5c1a6a89d75e29ce3728135222c7a6de3b22b572769b9c32b27c16dee5c",
+    "src/forest-canopy-plants.js": "043a18fa90e756686cc5f28ebe82295271fe6e99386d22e5c8661ac578156b66",
+    "src/forest-canopy-ground.js": "fa889105ad3689bddd44538fe5d72e73334c02cca755ec466eb83f9f87995d99",
+    "src/forest-canopy-road.js": "ac7211359b2a4079713788c97329d6a79383da50f1e601d03eac860f10f2c2a8",
+    "src/forest-crown-rollout.js": "133abcaa7bdfaec3ede8617643fa9beb302642c194cb9f2971caa01b8f919820",
+    "src/forest-canopy.js": "6820b51c35b707dccd920a552347b10decaa6e246d81bd81d5745e0db6eaf29a",
+    "src/bamboo-entry-plants.js": "ff487a6667e53d393523a2607655ae693f5bdcd69775ade31a246899d74948fe",
+    "src/bamboo-entry-upgrade.js": "937f915a583b0e7b14588f95980ff0055f27f54d6c7d1918d301ce0fb6e1cbe1",
+    "src/sunflower-entry.js": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+    "src/styles.css": "b1e9f17efcfb21d3e806e2fc19c74cfbc381e59f6a0b417c81e74b48b77091e7",
+    "data/expansion.json": "0ffb83baa4a828bbc3366b8b49df4602f18ef8db99d22f03e6079c6ee1c274a1",
+    "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+    "assets/packs/legacy.pack.gz": "46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88",
+    "vendor/three/three.module.js": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7",
+    "vendor/three/LICENSE": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+    "src/camera.js": "0bc9225d4a9b3eff946464b36619b7d17da180d4ca43a6dd31f1e3e160f6d721",
+    "src/renderer.js": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+    "src/old-hell-renderer.js": "fb91047212002fd1f9933189dceed6033c39883bde32f63437967e6b8f594870",
+    "src/kishinjou-renderer.js": "031b0edcbe51d900c4dfc9dd8da72a453c65d33076765109e48b10df46cf4130",
+    "src/lunar-renderer.js": "c472465371e21d441072ac44ffb1cb09195fa26c8d3a22c8225f192461f62360",
+    "src/makai-renderer.js": "ed54303436ef7c53d8dd0d111560a9b2b09393f4a42911475b79178565a8fcdd",
+    "src/netherworld-renderer.js": "7d81bc869fc86297705e972c93a1ade2c4e871663802cc0e78cf5c424b520148",
+    "src/heaven-renderer.js": "4e03583f3ff823520e2159ef77afd6e7ba9db30804e047b0ddb65601b0f4bb49",
+    "src/higan-renderer.js": "8efb15489c3d93135646cb183a85b8a54415f3db2adebdc6538926b98cb3b322",
+    "src/landscape-renderer.js": "0ed0dc2c076ce224f0d9020e7b97f75e269b15e27a13e939e5bbffe6dfccc98e",
+    "src/animal-renderer.js": "c8a5d5164d73b913687c9133a4f7bf556e44272477ddbf906646035f878f35d9",
+    "src/backdoor-renderer.js": "ff9868540c78daeb981a6c8ad977882158881c9d2f2ec329eb268eba3f053e25",
+    "src/kasen-renderer.js": "eb72f106c4bba31d2ea73498393e89a80b67c5ca47262c6e2a01e6e41a7c044d",
+    "src/current-hell-renderer.js": "29458b481da3f2d7dd5ccead903263e5fc46e661f1d9db6be149afad27498d76",
+    "src/rainbow-mine-renderer.js": "f43d1fa1764cc3f8c883d27c2ee75a98240e7bf69112f4cc78d0e06af1a327a8",
+    "src/highland-renderer.js": "b8f18fda335539faf732fa2c16189cd07ac654dd611c052e7a7e0d5983cb3e16",
+    "src/hakurei-renderer.js": "6eb73c24d252dc8c843b1fd62d4626a0a5b74bf3763c5ed8b6dbafb14b12e4fc",
+    "src/night-renderer.js": "785b896192f547ae9b7012fb4efbf52c39361320958a4ef5e02f75f542129b05",
+    "src/asama-renderer.js": "d82d5c1062b270c669648e784490123e656ad1482294eac9f5900db74f4f6110",
+    "src/hiten-renderer.js": "3a307a1de5d454ab7e4ec07cad6cfce91dc8446d5c3c49ed7216570e30b53da3",
+    "src/mayohiga-renderer.js": "79882b326e5732d0d28606b15b0dc03b0a5ab86abbcdc274f6b1395e6428d815",
+    "src/peony-renderer.js": "aa51146ce1cc5c9b0b0a56132fe0eac38e760cae744956239d3671cdc913334a",
+    "src/waterfall-cave-renderer.js": "75e35695e6274501ed2e0a7c8f7d4f3b06e846ce51effee4308eeb99d06247c9",
+    "src/cucumber-farm-renderer.js": "d05a5fefc19c0cf4b656ca573c3ebe655d5999f6e5a9e27e4748e16f884a8ae6",
+    "src/wind-cave-renderer.js": "88d40b8c951460534078740b2d10c3f1878b0477307f43e0ee32be38cb39720a",
+    "src/geyser-renderer.js": "34cc5f6390d60ac2f0b27fc5779532a0ffb60111970e3a5dd2e09ee003d2c9ce",
+    "src/geyser-center-renderer.js": "60f09d73d875820d8278a80072889f76b7daaf66cbf427c59108512d40aa0063",
+    "src/kourindou-renderer.js": "c84bebcc837d7b4ccc9bef90551695cecac67616eed68eb1f24141cfaa26354f",
+    "src/forest-renderer.js": "23dfb91f835803e00bb9208ed5aeb945996ef2460833f076121d88fc91bfe35b",
+    "src/village-renderer.js": "7d48c5f32c0ad59ac0620e9b1b6bce5b88b1905b75ad10248870713afe49ddd4",
+    "src/trail-renderer.js": "8c605fd08809218f513c57da15ac7f5e6499fcd4302478246dc9d6d503b082b5",
+    "src/trail-landscape-renderer.js": "ee70209bbc5316c8b63a25a564f9b1a71ada399ac2c6f470f760446d4a42ac70",
+    "src/forest-path-colors.js": "a91a09b0f347b40379bbaf52342cf36bf4a943e54b334acee9a1ed8050e85eb5",
+    "src/forest-path-renderer.js": "372f3bba7340b01b5649b8525593ada9592786bb4abb577315e17cfb45fe5073",
+    "src/forest-canopy-renderer.js": "e0d70e6acac3c2cd89e3859dd4a67ef93bb1e3c08f18b54764a9a4b32942e6cc",
+    "src/render-recovery.js": "191976863744f357bfae24dd946485b6cf49de0f782abe035f2c7cfdff2778b4",
+    "src/render-diagnostics.js": "ee2c16425f4ec27d03684cc32d9e29f0fd1c7aceb3f96cca954f62f8bc047b93",
+    "src/characters.js": "2efbdff0ffdc569d544331ad15a5456c0d8e8bbf5f7dc7e5ff016cee33320643",
+    "src/streaming.js": "3ae540dd6a1ca4878ca73ef18a628903dcef7b6866c3753a54ac0f11d435a5dd",
+    "src/app.js": "a5810a049c3ff33d4e9a3987acc1827f390e1a0d4ef1f97079dd9f1d7c68b0c3",
+    "src/index.html": "dd636efdc4da9138c7e2d79c270deab0ebf97e2c08f68d952ec20ff9af824257",
+    "tools/build.py": "014317ce484b6c4b9dbba6f148394b3028f69950cbbd68ffe78cbaf7ff5a0b3f",
+    "tools/check.mjs": "7f9c778258976cc0f169cb95617844b99359b9d6c5992f0e87e3cda5b3d6046f",
+    "tools/check-landscape.mjs": "a72e138bdaebaf059b88f203159f989b523b4f674462878d00273bf37961ecf8",
+    "tools/check-kishinjou.mjs": "f0db98fdc9ddcf92eb7693cf6dff39657c500a14cdc863b37e38cf2d5d107ed1",
+    "tools/kishinjou-baseline.json": "126c933c0d2e12b5676f8c9594e6cecdbdc713169ea18af21e9ebba7e9d959ac",
+    "tools/check-lunar.mjs": "7dc97b27d1a87a5107d0f9b9d82742c99edb9f05fb1bba82ad91d35710a792a8",
+    "tools/lunar-baseline.json": "3e4ff4dccee7b1a2a298aa9f851034a88e2e5931ee187abb3c1cc3e3cc3d8940",
+    "tools/check-makai.mjs": "136c722ccfc03f58fb1a9a2b5ffb877f4d44e206c18a0e6cf5996bb1874d0784",
+    "tools/makai-baseline.json": "1734aa17de0071d3420b70ed792d28817f0b7cb8897a51b82077035a666844d4",
+    "tools/check-netherworld.mjs": "2acea0283b1365f2ec115bde84efaacca1fe94887567a0e769f2caf538b3e2d8",
+    "tools/netherworld-baseline.json": "7ffe9d17fdeecbe4047f6d374e4cdfbbc0c52b13ccb944f655f0d96f65d97c69",
+    "tools/audit-landmarks.mjs": "d9101abb321175a5ee8f9acd5343e0e5bb1e3ed09933e454262ab4647583b516",
+    "tools/check-heaven.mjs": "92991b29ee13484febaa83858583adfb9bf62f58d6efa07b01d5b753ded500c9",
+    "tools/heaven-baseline.json": "e799dd1028023bfdd80c3481a50f98eb0da66a9a6bdc9c04026d31c7380b252a",
+    "tools/check-higan.mjs": "9c4c97083229cf3b3b714bb19b9ac4e99402726907f08c8bf39467e1b13fa673",
+    "tools/higan-baseline.json": "b7501f24350121f16e9e654d78c4805ee7e338504bdb59d6494c8d4e20be65fd",
+    "tools/check-animal.mjs": "7a6f6c33f8013e3651943203ee3b1e7d1958995f888ca7ddf750e6430af26190",
+    "tools/animal-baseline.json": "1c7712a395c1d9adc6c801348470d1847b00cb4ee3968cfa94213d79e258b3d6",
+    "tools/check-backdoor.mjs": "3005259c177526da9d1e3340d110e0e015f14493374cc8949c4704d6c506e278",
+    "tools/backdoor-baseline.json": "44a681c946b751d3d613d78ffe9fe2fc8e979809d2559919ae65f5572aef3cae",
+    "tools/check-kasen.mjs": "f7fc4ae9f9af79f872d4cafada6c448e1a21dcd5cdfbd439ca21e6936f842e32",
+    "tools/kasen-baseline.json": "f119c2fcf7f96aac4440c7ee78ef3b23a665e21a3ffbe448c8ed1acce99dfd55",
+    "tools/check-current-hell.mjs": "e78bc169d49f5fb8042c4da46b03dda7927cc4a2a0ccea298497de30a04c937d",
+    "tools/current-hell-baseline.json": "d45d4966ae7eb3b10f428a5984904b78c8597f4ecb149cf141a43a0ba7d7715e",
+    "tools/check-rainbow-mine.mjs": "92c7e64478a74f665d6adb4d7cb2cc2ae5af6be9447d0cfdb6cdd1ac8b1b9de2",
+    "tools/rainbow-mine-baseline.json": "3d793efb1f5a984a3229dea0c710852b09a4b6e6e5294806dd0cfb7a2856bee4",
+    "tools/check-highland.mjs": "1a876fc8cbf29c46b548a2fa17f04c9e9777b3b1750f57a40912b981e7214340",
+    "tools/highland-baseline.json": "1552e5afc72ac453a892a2a9cbc3c5087d42eeb82ba606142840e1db8652463e",
+    "tools/check-asama.mjs": "7d2539b2f98bbae0df472c70e199ae574abc7b58a32d732e0081d2e27411b240",
+    "tools/asama-baseline.json": "ba15fdb0a284f489fa5944bcedd6e0ba9c60359a0fe2fcfceecdee82447c7ee4",
+    "tools/check-evidence-corrections.py": "97bc60805620272d24e2c5911c857e95c90c584f8f6c950895f0a082fe23196b",
+    "tools/current-coverage.json": "cb8038b9b7c1f933ae77456cfc00303997e1fbb95d8deb2c16963886fab59fe8",
+    "tools/check-geyser-center.mjs": "708ef3a9976212c71400ffd56b9d43715e087fd322d7e8c6b774b1f52a41bc9b",
+    "tools/geyser-center-baseline.json": "cf5e0483694884fb593e9b7c00b7378b693a67a2a042d55e6fbbbf71b7a1d5b3",
+    "tools/check-geyser.mjs": "f465a6b8910a2e87b892681375b9e384ba2b2360f055682d72baf141a129648e",
+    "tools/geyser-baseline.json": "cd8106c9c4a6c5ab6b970ac587b0d3f59951b0d2564b3caab5e8451873457df0",
+    "tools/check-wind-cave.mjs": "9a1242dea8d6ee50eef693ae0851f0ad93d61e9292531c543fe279b1a1ae5df3",
+    "tools/wind-cave-baseline.json": "84cb0e7696e2752c08f94f075a7867b076eb021cd597186a34a8f320cee431d8",
+    "tools/check-cucumber-farm.mjs": "715fdd1b6e7b32679d86678c89ee67c225c2812f95cd9e1ab686fd16c6c9d1ed",
+    "tools/cucumber-farm-baseline.json": "5ec3ce0339272685be83c09b526ae4de984aba609e58bf22661a4ab153f09f12",
+    "tools/check-waterfall-cave.mjs": "a828bd5418e4acc1cf82faaf22c5395f6b121166c7a245085678eda89a46cb93",
+    "tools/waterfall-cave-baseline.json": "6a1ef7dc336f90f1b077c365d7c6c73e51f58feb4a7a121c4c5444f9565d9083",
+    "tools/check-peony.mjs": "b88a1347f642d5083478f5eb2bbbc4092358da18960dc96c83a76a340d232340",
+    "tools/peony-baseline.json": "12f795ed975b7bc61d9793a27bd9978eedd48ed37a0d411d2db877d3fa5a691a",
+    "tools/check-mayohiga.mjs": "72cef14478d9230ff1c51fde8c9907c75dab5531a33cc71da7d0881f5ac8ff45",
+    "tools/mayohiga-baseline.json": "70473533bee801c39f0f22cd3368bbc62c2ef1cac5e18595f478e73619277174",
+    "tools/check-hiten.mjs": "4955a316796da56b50419b93285845c5d40817d17c22385d01a8092b533c1a74",
+    "tools/hiten-baseline.json": "7c4d0085dbd8647035ae84d4ecf2c1b37393023eaed821a94df07896179d5b1f",
+    "tools/check-kourindou.mjs": "dd67e34e4c92947b0b75ef1f4b71a954efec2d08d3b328223a13f6b54c0bc700",
+    "tools/kourindou-baseline.json": "1b0c06085b599fbfbc8d3df7575a6cd0027f353e8b7bf24f7ea24ef66c743dd8",
+    "tools/check-kourindou-browser.py": "90bb41467c19c55b74c33ef610450fbc1c2674de8d6df5a2f7d55be1900f59d2",
+    "tools/check-forest.mjs": "5262de1e54f58190096457c81d5fa84533b8072dc4e616cbb4a8d7934ff5fc4d",
+    "tools/forest-baseline.json": "e29ac935dfb20857397cc22b3b1943fb7e51ed318e4f49b92cdd145466ad795b",
+    "tools/check-village.mjs": "7ee33fe598f9f447726df991d12b6a02c12de86605d0c150643ce73d148ecda2",
+    "tools/village-baseline.json": "040073c347617b50a3cd10556ef41f0bfede73eff0b24d4e95acbf9cea6553b9",
+    "tools/check-trail.mjs": "a9e52221c8746f85b2bea15cc21ce6886da77fedbdd2dd72bf3fd961d0800f4a",
+    "tools/trail-baseline.json": "18517e0ba96f413aeed4df29805933f0ae2a8cb7c61234a6f5c1d03f45c3f36a",
+    "tools/check-trail-landscape.mjs": "9cccfbed2ac3275bd0729ff85d4700976bbf8308c42219e1c120178e3a03a191",
+    "tools/trail-landscape-baseline.json": "5d0abe56447f7ef03752071f2e9cf422717c331e99ebb5d5c6a277b71cfe4fe2",
+    "tools/check-trail-landscape-renderer.mjs": "43fa7f01c9842140a83a39e109ab825969be7fdd980fde29336adce32b8c6044",
+    "tools/check-forest-entrance.mjs": "e4170e93fb052f3ca80d1fb9a05a9cc41604ed17b302d7198b132b05683220a5",
+    "tools/check-forest-canopy.mjs": "e6789bf2a4604d11be12a279fbd5b00cc3fbff647c64b2896a388b361973b2d7",
+    "tools/check-forest-canopy-road.mjs": "2952dbe47687c21b2d0193eb60f74e20f6e95960839363ba5de2758b567013e3",
+    "tools/check-bamboo-entry.mjs": "0ad4d633c021299cc2207ad6c5731f94dcf965dc8813ce93f85f6f0b907bf890",
+    "tools/check-bamboo-browser.py": "49ea1c552fdee368ccfe96d7d74e098af0702985f414f0ce7035c3778f119864",
+    "tools/check-bamboo-lod-route.py": "e60a2de5c10b1498f5d951a050d024511166a4e64cb68e38628d68a71289ceb1",
+    "tools/bamboo-entry-route.json": "6dd0332f03d236ef1455c654fb02bb3915cedb9a05c69ce58f31a92122c1fae1",
+    "tools/check-sunflower-entry.mjs": "f08399f3396fde1338b9c61fdbd3bfc2d23c3bf87818015775a9cf812efd126b",
+    "tools/check-sunflower-browser.py": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+    "tools/check-forest-path-renderer.mjs": "c98a7e20bc30bad262e3f512abaaf7d8d246ce84c67a93ae63192f178548a05d",
+    "tools/check-forest-path-coverage.mjs": "50285847cfffefe171b53fb6c5365dbb413d5766b4233412ebacf7f4e2b72a3e",
+    "tools/generate-forest-path-colors.mjs": "d9f5674c3892d0808ea6c3ee50a412204389f96256dfffcfedbda00d1dfd1f00",
+    "tools/check-foliage-texture-browser.py": "505bcfd6401c95c9ed44538f4145e958ec8275c07a74c1586cdf1b980af1fb58",
+    "tools/check-ui-work.mjs": "84be632770e6fa4ef4c4d42495428c701dd3a43938f63b11b079a731e1362a4f",
+    "tools/check-frame-work.mjs": "2318e76bc1b805abf6892b54d89fc845156bd40717a1e31a20ec6d63246b886e",
+    "tools/check-frame-work-browser.py": "71ae510bd98ad072e694817896253cd932d0122e37fd6566530ba72f6127288b",
+    "tools/frame-work-source-review.json": "15d4e83b852f680ae9b99f68f596151680149b7c4595c0245b1f7011fb451322",
+    "tools/check-render-diagnostics.mjs": "f80d544f4e7a476badfb797f073d28c7e7acbd158bf6c315884136419014b677",
+    "tools/check-render-resources.mjs": "8172b43fab245fa6774c5019770407af76e4af2a9cbde8f35c19b1a6bb224337",
+    "tools/check-render-ownership.mjs": "b8bc5fcb9dd283a2621e387c2fee2bcd856a457cd701f1ace5f81928d06eae17",
+    "tools/render-lifecycle-source-review.json": "2d6283e5f204b7b242b35b3f6ebf7c76be4eeb3065871cf4e78999d8d9b426da",
+    "tools/check-streaming-lifecycle.mjs": "8a2d9443392fd7a037a6e6fbb74f340db0b83f364973450c27ebd6f2b2f251f1",
+    "tools/check-render-lifecycle-browser.py": "5b4c6a2180d329dda3addf1034a1f030f28778b1a14195e534eea1dad81b4999",
+    "tools/check-hakurei.mjs": "aca484da0ef951fc69c39cc7e60cdbebe0b3bb92d17f9da1152b442b60a2a3a2",
+    "tools/hakurei-baseline.json": "8a7764b129b21e7e9e72d9061ebcda9a354e6d86c566b1bf0b7cb7a4f19c6128"
+  },
+  "models": {
+    "artLead": "gpt-6-astra / max",
+    "independentRegression": "gpt-6.1-sol / max"
+  },
+  "budgets": {
+    "additionalAllChannelCalls": 4,
+    "additionalAllChannelTriangles": 4000,
+    "additionalUniqueSourceBytesIncludingContact": 629145.6,
+    "additionalTextures": 0
+  },
+  "sourceCosts": {
+    "additionalUniqueSourceBytes": 612060,
+    "contactBytes": 225144,
+    "additionalFarTerrainTriangles": 3047,
+    "additionalRoadTriangles": 258,
+    "additionalRecords": 0,
+    "additionalTextures": 0
+  },
+  "independent": {
+    "report": {
+      "localPath": "/workspace/sunflower-entry-evidence/independent-final.json",
+      "SHA256": "e59addc222a8ea760af0cc84abe9d38af109908e2829b68cc01871a878c333e6"
+    },
+    "execution": {
+      "schema": 1,
+      "kind": "Exact complete public source and candidate-only native execution",
+      "command": [
+        "/tmp/node-v22.23.3-linux-x64/bin/node",
+        "tools/check-sunflower-entry.mjs",
+        "--native-candidate-only",
+        "--reuse-native-evidence",
+        "/workspace/sunflower-entry-evidence/independent-v2.json",
+        "--reuse-native-evidence-sha",
+        "73d05089ec99ce95663e17f56f65ab989b0c3023108f2c2514e380a172905821",
+        "--source-sha",
+        "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+        "--output",
+        "/workspace/sunflower-entry-evidence/independent-final.json"
+      ],
+      "cwd": "/workspace/sunflower-entry-refinement",
+      "exitCode": 0,
+      "checkerSHA256": "f08399f3396fde1338b9c61fdbd3bfc2d23c3bf87818015775a9cf812efd126b",
+      "checkerSnapshot": "/workspace/sunflower-entry-evidence/independent-final-source/tools/check-sunflower-entry.mjs",
+      "sourceSHA256": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+      "projectSHA256": "382c288ce75ee249e37f39f972a03f68ff9963d4fd1ce748acf87c1eac06ead0",
+      "report": "/workspace/sunflower-entry-evidence/independent-final.json",
+      "reportSHA256": "e59addc222a8ea760af0cc84abe9d38af109908e2829b68cc01871a878c333e6",
+      "log": "/workspace/sunflower-entry-evidence/independent-final.log",
+      "logSHA256": "5c53e056c44b4b73812796853b0fd3a3ee156aee487a884483d87d8aeaaacfb5",
+      "startUTC": "2026-10-05T18:38:07.312Z",
+      "endUTC": "2026-10-05T18:39:02.861Z",
+      "elapsedWallMs": 55548.660774,
+      "actualChecks": 27,
+      "passedChecks": 27,
+      "nativeMode": "candidate-only",
+      "nativeBuildCount": 1,
+      "candidateNativeBuildWallMs": 19663.211698000006,
+      "candidateNativeGeometrySHA256": "f0e2d1871500518bedaf20c83d8ee71fb038fc61ee9f6d144428828444fce6ae",
+      "reusedPriorEvidenceSHA256": "73d05089ec99ce95663e17f56f65ab989b0c3023108f2c2514e380a172905821",
+      "reusedNativeComparisonsNotNewlyMeasured": [
+        "original native baseline independently fixed",
+        "native identities, plant prototypes, colors and fifteen matrix components",
+        "native buildings and seasonal stage held at original geometry",
+        "actual native first segment shares all public endpoint attributes",
+        "actual native plant geometry clears the new public road",
+        "native bounds contain actual prototypes and population is conserved"
+      ],
+      "originalFailedReportRetained": {
+        "path": "/workspace/sunflower-entry-evidence/independent-v2.json",
+        "SHA256": "73d05089ec99ce95663e17f56f65ab989b0c3023108f2c2514e380a172905821",
+        "exitCode": 1,
+        "checks": 28,
+        "passedChecks": 24,
+        "failedChecks": 4
+      },
+      "noGPU": true,
+      "fixtureRewritten": false,
+      "timingMeaning": "performance.now wall-clock source builder samples; not input-handler time, CPU cycles or FPS",
+      "notRun": [
+        "Original native build and paired identity/prototype/color/matrix/architecture comparisons: retained from the exact prior report, not re-executed",
+        "WebGL visual acceptance",
+        "All-channel renderer cost and resources",
+        "Native unload/reentry and real interaction",
+        "Complete Node regression"
+      ]
+    },
+    "checks": [
+      {
+        "name": "frozen source and approved envelope",
+        "passed": true,
+        "result": {
+          "sourceSHA256": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+          "scope": [
+            -896,
+            704,
+            -192,
+            1152
+          ]
+        }
+      },
+      {
+        "name": "actual public boot predecessor sequence",
+        "passed": true,
+        "result": {
+          "overviewHooks": 18,
+          "recordsBeforeSolar": 2154,
+          "protocol": "All boot overview additions, LANDSCAPE, highland ground and additions, then each preceding extraOverviewBuilder"
+        }
+      },
+      {
+        "name": "production Solar wrapper including shared source guards",
+        "passed": true,
+        "dataOmittedFromCompactCopy": "Large per-record metadata retained in the SHA-bound original report"
+      },
+      {
+        "name": "record identity, flags and non-target bytes",
+        "passed": true,
+        "result": {
+          "records": 2154,
+          "changed": 35,
+          "unchanged": 2119
+        }
+      },
+      {
+        "name": "near terrain envelope, original XY and index protection",
+        "passed": true,
+        "result": {
+          "records": 12,
+          "changedVertices": 2915,
+          "geometrySanity": [
+            {
+              "id": "island:terrain:-1024:512",
+              "triangles": 1216,
+              "minimumArea": 9.14289272093139
+            },
+            {
+              "id": "island:terrain:-768:512",
+              "triangles": 1216,
+              "minimumArea": 9.14329459214429
+            },
+            {
+              "id": "island:terrain:-512:512",
+              "triangles": 1216,
+              "minimumArea": 9.143029649668883
+            },
+            {
+              "id": "island:terrain:-256:512",
+              "triangles": 1216,
+              "minimumArea": 9.143019943032606
+            },
+            {
+              "id": "island:terrain:-1024:768",
+              "triangles": 1216,
+              "minimumArea": 9.156685638527584
+            },
+            {
+              "id": "island:terrain:-768:768",
+              "triangles": 1216,
+              "minimumArea": 9.142822265625
+            },
+            {
+              "id": "island:terrain:-512:768",
+              "triangles": 1216,
+              "minimumArea": 9.143127056520651
+            },
+            {
+              "id": "island:terrain:-256:768",
+              "triangles": 1216,
+              "minimumArea": 9.142916795922005
+            },
+            {
+              "id": "island:terrain:-1024:1024",
+              "triangles": 1216,
+              "minimumArea": 9.144024149333502
+            },
+            {
+              "id": "island:terrain:-768:1024",
+              "triangles": 1216,
+              "minimumArea": 9.142822265625
+            },
+            {
+              "id": "island:terrain:-512:1024",
+              "triangles": 1216,
+              "minimumArea": 9.148261215059751
+            },
+            {
+              "id": "island:terrain:-256:1024",
+              "triangles": 1216,
+              "minimumArea": 9.143045716463783
+            }
+          ]
+        }
+      },
+      {
+        "name": "far retained faces and actual near face replacement",
+        "passed": true,
+        "result": {
+          "records": 12,
+          "originalFarFaces": 5760,
+          "expectedFineFaces": 5126,
+          "geometrySanity": [
+            {
+              "id": "island:terrain:-1024:512:far",
+              "triangles": 480,
+              "minimumArea": 11.636770365259716
+            },
+            {
+              "id": "island:terrain:-768:512:far",
+              "triangles": 649,
+              "minimumArea": 9.146237783624375
+            },
+            {
+              "id": "island:terrain:-512:512:far",
+              "triangles": 627,
+              "minimumArea": 9.143029649668883
+            },
+            {
+              "id": "island:terrain:-256:512:far",
+              "triangles": 480,
+              "minimumArea": 11.63641269884722
+            },
+            {
+              "id": "island:terrain:-1024:768:far",
+              "triangles": 803,
+              "minimumArea": 9.156685638527584
+            },
+            {
+              "id": "island:terrain:-768:768:far",
+              "triangles": 1216,
+              "minimumArea": 9.142822265625
+            },
+            {
+              "id": "island:terrain:-512:768:far",
+              "triangles": 1206,
+              "minimumArea": 9.143127056520651
+            },
+            {
+              "id": "island:terrain:-256:768:far",
+              "triangles": 592,
+              "minimumArea": 9.149582910144426
+            },
+            {
+              "id": "island:terrain:-1024:1024:far",
+              "triangles": 653,
+              "minimumArea": 9.144024149333502
+            },
+            {
+              "id": "island:terrain:-768:1024:far",
+              "triangles": 718,
+              "minimumArea": 9.142822265625
+            },
+            {
+              "id": "island:terrain:-512:1024:far",
+              "triangles": 813,
+              "minimumArea": 9.150936888048161
+            },
+            {
+              "id": "island:terrain:-256:1024:far",
+              "triangles": 570,
+              "minimumArea": 9.229782704444656
+            }
+          ],
+          "authorActiveCellCount": 266,
+          "actualYChangedCellCount": 329
+        }
+      },
+      {
+        "name": "actual retained far to fine T interfaces",
+        "passed": true,
+        "result": {
+          "edges": 76,
+          "samples": 380,
+          "maximumGap": 7.62939453125e-06,
+          "tolerance": 0.0003
+        }
+      },
+      {
+        "name": "near tile interfaces introduce no new opening",
+        "passed": true,
+        "result": {
+          "samples": 1386,
+          "maximumIncrease": 0,
+          "tolerance": 0.0003
+        }
+      },
+      {
+        "name": "retained contact equals actual near triangles and terrain query",
+        "passed": true,
+        "result": {
+          "triangles": 6254,
+          "samples": 6254,
+          "maximumError": 8.526512829121202e-14,
+          "contactBytes": 225144
+        }
+      },
+      {
+        "name": "only explicitly authorized original roadside instances migrate",
+        "passed": true,
+        "result": {
+          "count": 120,
+          "grass": 112,
+          "shrubs": 8,
+          "keys": [
+            "island:transition:grass:-1:1/141",
+            "island:transition:grass:-1:1/142",
+            "island:transition:grass:-1:1/143",
+            "island:transition:grass:-1:1/144",
+            "island:transition:grass:-1:1/145",
+            "island:transition:grass:-1:1/146",
+            "island:transition:grass:-1:1/147",
+            "island:transition:grass:-1:1/148",
+            "island:transition:grass:-1:1/149",
+            "island:transition:grass:-1:1/150",
+            "island:transition:grass:-1:1/151",
+            "island:transition:grass:-1:1/152",
+            "island:transition:grass:-1:1/153",
+            "island:transition:grass:-1:1/154",
+            "island:transition:grass:-1:1/155",
+            "island:transition:grass:-1:1/156",
+            "island:transition:grass:-1:1/157",
+            "island:transition:grass:-1:1/158",
+            "island:transition:grass:-1:1/159",
+            "island:transition:grass:-1:1/160",
+            "island:transition:grass:-1:1/161",
+            "island:transition:grass:-1:1/162",
+            "island:transition:grass:-1:1/163",
+            "island:transition:grass:-1:1/164",
+            "island:transition:grass:-1:1/165",
+            "island:transition:grass:-1:1/166",
+            "island:transition:grass:-1:1/167",
+            "island:transition:grass:-1:1/168",
+            "island:transition:grass:-1:1/169",
+            "island:transition:grass:-1:1/170",
+            "island:transition:grass:-1:1/171",
+            "island:transition:grass:-1:1/172",
+            "island:transition:grass:-1:1/173",
+            "island:transition:grass:-1:1/174",
+            "island:transition:grass:-1:1/175",
+            "island:transition:grass:-1:1/176",
+            "island:transition:grass:-1:1/177",
+            "island:transition:grass:-1:1/178",
+            "island:transition:grass:-1:1/179",
+            "island:transition:grass:-1:1/180",
+            "island:transition:grass:-1:1/181",
+            "island:transition:grass:-1:1/182",
+            "island:transition:grass:-1:1/183",
+            "island:transition:grass:-1:1/184",
+            "island:transition:grass:-1:1/185",
+            "island:transition:grass:-1:1/186",
+            "island:transition:grass:-1:1/187",
+            "island:transition:grass:-1:1/188",
+            "island:transition:grass:-1:1/189",
+            "island:transition:grass:-1:1/190",
+            "island:transition:grass:-1:1/191",
+            "island:transition:grass:-1:1/192",
+            "island:transition:grass:-1:1/193",
+            "island:transition:grass:-1:1/194",
+            "island:transition:grass:-1:1/195",
+            "island:transition:grass:-1:1/196",
+            "island:transition:grass:-1:1/197",
+            "island:transition:grass:-1:1/198",
+            "island:transition:grass:-1:1/199",
+            "island:transition:grass:-1:1/200",
+            "island:transition:grass:-1:1/201",
+            "island:transition:grass:-1:1/202",
+            "island:transition:grass:-1:1/203",
+            "island:transition:grass:-1:1/204",
+            "island:transition:grass:-1:1/205",
+            "island:transition:grass:-1:1/206",
+            "island:transition:grass:-1:1/207",
+            "island:transition:grass:-1:1/208",
+            "island:transition:grass:-1:1/209",
+            "island:transition:grass:-1:1/210",
+            "island:transition:grass:-1:1/211",
+            "island:transition:grass:-1:1/212",
+            "island:transition:grass:-1:1/213",
+            "island:transition:grass:-1:1/214",
+            "island:transition:grass:-1:1/215",
+            "island:transition:grass:-1:1/216",
+            "island:transition:grass:-1:1/217",
+            "island:transition:grass:-1:1/218",
+            "island:transition:grass:-1:1/219",
+            "island:transition:grass:-1:1/220",
+            "island:transition:grass:-1:1/221",
+            "island:transition:grass:-1:1/222",
+            "island:transition:grass:-1:1/223",
+            "island:transition:grass:-1:1/224",
+            "island:transition:grass:-1:1/225",
+            "island:transition:grass:-1:1/226",
+            "island:transition:grass:-1:1/227",
+            "island:transition:grass:-1:1/228",
+            "island:transition:grass:-1:1/229",
+            "island:transition:grass:-1:1/230",
+            "island:transition:grass:-1:1/231",
+            "island:transition:grass:-1:1/232",
+            "island:transition:grass:-1:1/233",
+            "island:transition:grass:-1:1/234",
+            "island:transition:grass:-1:1/235",
+            "island:transition:grass:-1:1/236",
+            "island:transition:grass:-1:1/237",
+            "island:transition:grass:-1:1/238",
+            "island:transition:grass:-1:1/239",
+            "island:transition:grass:-1:1/240",
+            "island:transition:grass:-1:1/241",
+            "island:transition:grass:-1:1/242",
+            "island:transition:grass:-1:1/243",
+            "island:transition:grass:-1:1/244",
+            "island:transition:grass:-1:1/245",
+            "island:transition:grass:-1:1/246",
+            "island:transition:grass:-1:1/247",
+            "island:transition:grass:-1:1/248",
+            "island:transition:grass:-1:1/249",
+            "island:transition:grass:-1:1/250",
+            "island:transition:grass:-1:1/251",
+            "island:transition:grass:-1:1/252",
+            "island:transition:shrub:-1:1/31",
+            "island:transition:shrub:-1:1/32",
+            "island:transition:shrub:-1:1/33",
+            "island:transition:shrub:-1:1/34",
+            "island:transition:shrub:-1:1/35",
+            "island:transition:shrub:-1:1/36",
+            "island:transition:shrub:-1:1/37",
+            "island:transition:shrub:-1:1/38"
+          ]
+        }
+      },
+      {
+        "name": "public trees/unlisted plants keep fifteen matrix components; listed plants keep thirteen",
+        "passed": true,
+        "result": {
+          "records": 300,
+          "instances": 9783,
+          "moved": 198,
+          "authorizedFullTranslations": 120,
+          "treeAndUnlistedPermittedComponent": 13,
+          "prototypesAndColorsUnchanged": true
+        }
+      },
+      {
+        "name": "cold flower and architecture non-target vertex attributes",
+        "passed": true,
+        "result": {
+          "records": 10,
+          "changedVertices": 7120,
+          "coldIsNotNativeSubset": true
+        }
+      },
+      {
+        "name": "platform and umbrella query and actual support preservation",
+        "passed": true,
+        "result": {
+          "samples": 50,
+          "maximumMeshChange": 0,
+          "queryUnchanged": true,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "name": "public road start complete cross-section joins retained geometry",
+        "passed": true,
+        "result": {
+          "sourceJoinSample": 121,
+          "corners": [
+            {
+              "width": -4.5,
+              "position": [
+                -355.4177551269531,
+                39.300846099853516,
+                704.12890625
+              ]
+            },
+            {
+              "width": -2,
+              "position": [
+                -357.8332214355469,
+                39.27216339111328,
+                703.484375
+              ]
+            },
+            {
+              "width": 2,
+              "position": [
+                -361.6980285644531,
+                39.2100830078125,
+                702.453125
+              ]
+            },
+            {
+              "width": 4.5,
+              "position": [
+                -364.1134948730469,
+                39.17448425292969,
+                701.80859375
+              ]
+            }
+          ],
+          "nativeXYPathsUnchanged": true
+        }
+      },
+      {
+        "name": "all unrelated public road and shoulder faces retained byte-exact",
+        "passed": true,
+        "result": {
+          "retainedFaces": 312,
+          "removedFaces": 270,
+          "newRoadAndShoulderFaces": 528
+        }
+      },
+      {
+        "name": "actual ground grade and road/shoulder surface contact",
+        "passed": true,
+        "result": {
+          "publicRoad": {
+            "maximumGrade": 0.27642543228190797,
+            "horizontalLength": 345.3254453043554
+          },
+          "nativeEntry": {
+            "maximumGrade": 0.28267317508852585,
+            "horizontalLength": 323.16763791972903
+          },
+          "actualRoadAndShoulderSamples": 2108,
+          "minimumSurfaceGap": 0.08082047093193978,
+          "maximumSurfaceGap": 0.24027633666992188,
+          "burialTolerance": 0.05,
+          "gradeLimit": 0.3,
+          "meaning": "Actual contact heights and submitted road triangle interiors; grades are not frame-rate or human-accessibility claims."
+        }
+      },
+      {
+        "name": "actual public plant triangles clear new road and tree shoulder headroom",
+        "passed": true,
+        "result": {
+          "transformedInstances": 106,
+          "testedTriangles": 24616,
+          "intersections": 0,
+          "roadFaces": 528,
+          "headroom": 2.4,
+          "scope": "Real near prototype triangles clipped against actual new road triangles. Grass and low shrubs may occupy the shoulder; tree triangles are checked there too. No tree-center radius substitute."
+        }
+      },
+      {
+        "name": "actual far public prototypes clear new road and tree shoulder headroom",
+        "passed": true,
+        "result": {
+          "transformedInstances": 106,
+          "testedTriangles": 1320,
+          "intersections": 0,
+          "roadFaces": 528,
+          "headroom": 2.4,
+          "scope": "Real near prototype triangles clipped against actual new road triangles. Grass and low shrubs may occupy the shoulder; tree triangles are checked there too. No tree-center radius substitute."
+        }
+      },
+      {
+        "name": "public endpoint matches native width, complete corners, tangent, normals and colors",
+        "passed": true,
+        "result": {
+          "tangentDot": 1,
+          "nativeActualStartWidth": 3.492,
+          "nativeShoulder": 0.6,
+          "corners": [
+            {
+              "side": -1,
+              "outer": false,
+              "attributes": [
+                -388.6580810546875,
+                88.55867767333984,
+                921.1170654296875,
+                0.029638996347784996,
+                0.9656580686569214,
+                -0.258120059967041,
+                0.42045795917510986,
+                0.3406118154525757,
+                0.19471049308776855
+              ]
+            },
+            {
+              "side": -1,
+              "outer": true,
+              "attributes": [
+                -388.19696044921875,
+                88.64713287353516,
+                921.5009155273438,
+                0.029638996347784996,
+                0.9656580686569214,
+                -0.258120059967041,
+                0.2140885293483734,
+                0.2673005759716034,
+                0.1077202707529068
+              ]
+            },
+            {
+              "side": 1,
+              "outer": false,
+              "attributes": [
+                -391.3419189453125,
+                88.04443359375,
+                918.8829345703125,
+                0.030488288030028343,
+                0.9658435583114624,
+                -0.25732603669166565,
+                0.4183221161365509,
+                0.3392489552497864,
+                0.19381551444530487
+              ]
+            },
+            {
+              "side": 1,
+              "outer": true,
+              "attributes": [
+                -391.80303955078125,
+                87.95698547363281,
+                918.4990844726562,
+                0.030803313478827477,
+                0.9659119844436646,
+                -0.2570314109325409,
+                0.21444161236286163,
+                0.26763972640037537,
+                0.10783745348453522
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "renderer vertices cache identity compatible with every index",
+        "passed": true,
+        "result": {
+          "verticesIdentities": 1820,
+          "sharedIdentities": 34
+        }
+      },
+      {
+        "name": "all reachable added backing including contacts and metadata",
+        "passed": true,
+        "result": {
+          "addedBackingBytes": 612060,
+          "contactBytes": 225144,
+          "newBackingCount": 25,
+          "packBackingBytes": 144263220,
+          "staticTriangleDelta": 3305,
+          "newRecords": 0,
+          "textureDelta": 0,
+          "note": "Static source accounting only. All-channel submitted calls/triangles, texture residency and CPU interaction require fixed-camera browser measurements."
+        }
+      },
+      {
+        "name": "same pack idempotence and fresh pack guard retained",
+        "passed": true,
+        "result": {
+          "samePackUnchanged": true,
+          "freshPackRejectedBeforeMutation": true
+        }
+      },
+      {
+        "name": "candidate native roots follow final actual contact",
+        "passed": true,
+        "result": {
+          "records": 456,
+          "instances": 132113,
+          "queriedRoots": 52330,
+          "tolerance": 0.00015,
+          "nativeGeometrySHA256": "f0e2d1871500518bedaf20c83d8ee71fb038fc61ee9f6d144428828444fce6ae",
+          "note": "Current roots inside the approved slope checked against final query/contact. Original non-Y, color and prototype comparisons are retained evidence, not newly run."
+        }
+      },
+      {
+        "name": "actual native first segment shares all public endpoint attributes",
+        "passed": true,
+        "result": {
+          "corners": [
+            {
+              "side": -1,
+              "outer": false,
+              "attributes": [
+                -388.6580810546875,
+                88.55867767333984,
+                921.1170654296875,
+                0.029638996347784996,
+                0.9656580686569214,
+                -0.258120059967041,
+                0.42045795917510986,
+                0.3406118154525757,
+                0.19471049308776855
+              ]
+            },
+            {
+              "side": -1,
+              "outer": true,
+              "attributes": [
+                -388.19696044921875,
+                88.64713287353516,
+                921.5009155273438,
+                0.029638996347784996,
+                0.9656580686569214,
+                -0.258120059967041,
+                0.2140885293483734,
+                0.2673005759716034,
+                0.1077202707529068
+              ]
+            },
+            {
+              "side": 1,
+              "outer": false,
+              "attributes": [
+                -391.3419189453125,
+                88.04443359375,
+                918.8829345703125,
+                0.030488288030028343,
+                0.9658435583114624,
+                -0.25732603669166565,
+                0.4183221161365509,
+                0.3392489552497864,
+                0.19381551444530487
+              ]
+            },
+            {
+              "side": 1,
+              "outer": true,
+              "attributes": [
+                -391.80303955078125,
+                87.95698547363281,
+                918.4990844726562,
+                0.030803313478827477,
+                0.9659119844436646,
+                -0.2570314109325409,
+                0.21444161236286163,
+                0.26763972640037537,
+                0.10783745348453522
+              ]
+            }
+          ],
+          "actualNativeRoadRecords": 23
+        }
+      },
+      {
+        "name": "actual native plant geometry clears the new public road",
+        "passed": true,
+        "result": {
+          "transformedInstances": 7,
+          "testedTriangles": 560,
+          "intersections": 0,
+          "roadFaces": 528,
+          "headroom": 2.4,
+          "scope": "Real near prototype triangles clipped against actual new road triangles. Grass and low shrubs may occupy the shoulder; tree triangles are checked there too. No tree-center radius substitute."
+        }
+      },
+      {
+        "name": "native bounds contain actual prototypes and population is conserved",
+        "passed": true,
+        "result": {
+          "instancesChecked": 132113,
+          "sunflowers": 124002,
+          "originalBytes": 11575700,
+          "candidateBytes": 11575700,
+          "originalBytesSource": "retained original paired report",
+          "note": "Bounding-box corner bound is conservative; any failure is retained and needs actual-vertex attribution, not weakened silently."
+        }
+      },
+      {
+        "name": "frozen source retained through execution",
+        "passed": true,
+        "result": {
+          "sourceSHA256": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d"
+        }
+      }
+    ],
+    "reusedNativeEvidence": {
+      "reportSHA256": "73d05089ec99ce95663e17f56f65ab989b0c3023108f2c2514e380a172905821",
+      "previousSourceSHA256": "6d325f94256bc1ef92780b564886006435a2a1a8cfa43da8789e803b9330c857",
+      "originalGeometrySHA256": "9071b82b2a121e04808696b96925c720efb70e7bcab49750c75a35e54dc3563a",
+      "sourcePrerequisitesMatched": [
+        "project.json",
+        "src/world-builder.js",
+        "src/old-hell.js",
+        "src/kishinjou.js",
+        "src/lunar.js",
+        "src/makai.js",
+        "src/netherworld.js",
+        "src/landmarks.js",
+        "src/heaven.js",
+        "src/higan.js",
+        "src/landscape.js",
+        "src/animal.js",
+        "src/backdoor.js",
+        "src/kasen.js",
+        "src/current-hell.js",
+        "src/rainbow-mine.js",
+        "src/highland.js",
+        "src/hakurei-plants.js",
+        "src/hakurei-transition.js",
+        "src/asama.js",
+        "src/asama-roads.js",
+        "src/surface-contact.js",
+        "src/hiten.js",
+        "src/mayohiga.js",
+        "src/peony.js",
+        "src/waterfall-cave.js",
+        "src/cucumber-farm.js",
+        "src/wind-cave.js",
+        "src/geyser.js",
+        "src/geyser-center.js",
+        "src/kourindou-upgrade.js",
+        "src/forest-upgrade.js",
+        "src/village-upgrade.js",
+        "src/trail-upgrade.js",
+        "src/trail-plants.js",
+        "src/trail-landscape.js",
+        "src/forest-entrance-plants.js",
+        "src/forest-entrance-ground.js",
+        "src/forest-entrance.js",
+        "src/forest-canopy-plants.js",
+        "src/forest-canopy-ground.js",
+        "src/forest-canopy-road.js",
+        "src/forest-crown-rollout.js",
+        "src/forest-canopy.js",
+        "src/bamboo-entry-plants.js",
+        "src/bamboo-entry-upgrade.js",
+        "data/atlas.json",
+        "data/lunar.json",
+        "data/makai.json",
+        "data/netherworld.json",
+        "data/heaven.json",
+        "data/higan.json",
+        "data/animal.json",
+        "data/backdoor.json",
+        "data/kasen.json",
+        "data/current-hell.json",
+        "data/rainbow-mine.json",
+        "data/highland.json",
+        "data/asama.json",
+        "data/hiten.json",
+        "data/mayohiga.json",
+        "data/peony.json",
+        "data/waterfall-cave.json",
+        "data/cucumber-farm.json",
+        "data/wind-cave.json",
+        "data/geyser.json",
+        "data/geyser-center.json",
+        "assets/packs/overview.pack.gz"
+      ],
+      "checks": [
+        {
+          "name": "original native baseline independently fixed",
+          "result": {
+            "digest": "9071b82b2a121e04808696b96925c720efb70e7bcab49750c75a35e54dc3563a",
+            "records": 485,
+            "sourceBytes": 11575700
+          }
+        },
+        {
+          "name": "native identities, plant prototypes, colors and fifteen matrix components",
+          "result": {
+            "records": 456,
+            "instances": 132113,
+            "moved": 50760,
+            "prototypesAndColorsUnchanged": true
+          }
+        },
+        {
+          "name": "native buildings and seasonal stage held at original geometry",
+          "result": {
+            "features": [
+              "sun-overlook",
+              "sun-parasol"
+            ],
+            "stageUnchanged": true
+          }
+        },
+        {
+          "name": "actual native first segment shares all public endpoint attributes",
+          "result": {
+            "corners": [
+              {
+                "side": -1,
+                "outer": false,
+                "attributes": [
+                  -388.6580810546875,
+                  88.55867767333984,
+                  921.1170654296875,
+                  0.029638996347784996,
+                  0.9656580686569214,
+                  -0.258120059967041,
+                  0.42045795917510986,
+                  0.3406118154525757,
+                  0.19471049308776855
+                ]
+              },
+              {
+                "side": -1,
+                "outer": true,
+                "attributes": [
+                  -388.19696044921875,
+                  88.64713287353516,
+                  921.5009155273438,
+                  0.029638996347784996,
+                  0.9656580686569214,
+                  -0.258120059967041,
+                  0.2140885293483734,
+                  0.2673005759716034,
+                  0.1077202707529068
+                ]
+              },
+              {
+                "side": 1,
+                "outer": false,
+                "attributes": [
+                  -391.3419189453125,
+                  88.04443359375,
+                  918.8829345703125,
+                  0.030488288030028343,
+                  0.9658435583114624,
+                  -0.25732603669166565,
+                  0.4183221161365509,
+                  0.3392489552497864,
+                  0.19381551444530487
+                ]
+              },
+              {
+                "side": 1,
+                "outer": true,
+                "attributes": [
+                  -391.80303955078125,
+                  87.95698547363281,
+                  918.4990844726562,
+                  0.030803313478827477,
+                  0.9659119844436646,
+                  -0.2570314109325409,
+                  0.21444161236286163,
+                  0.26763972640037537,
+                  0.10783745348453522
+                ]
+              }
+            ],
+            "actualNativeRoadRecords": 23
+          }
+        },
+        {
+          "name": "actual native plant geometry clears the new public road",
+          "result": {
+            "transformedInstances": 7,
+            "testedTriangles": 560,
+            "intersections": 0,
+            "roadFaces": 528,
+            "headroom": 2.4,
+            "scope": "Real near prototype triangles clipped against actual new road triangles. Grass and low shrubs may occupy the shoulder; tree triangles are checked there too. No tree-center radius substitute."
+          }
+        },
+        {
+          "name": "native bounds contain actual prototypes and population is conserved",
+          "result": {
+            "instancesChecked": 132113,
+            "sunflowers": 124002,
+            "originalBytes": 11575700,
+            "candidateBytes": 11575700,
+            "note": "Bounding-box corner bound is conservative; any failure is retained and needs actual-vertex attribution, not weakened silently."
+          }
+        }
+      ],
+      "meaning": "Prior paired native checks retained as evidence; these comparisons are not newly executed in candidate-only mode."
+    }
+  },
+  "fixtureReview": {
+    "updatedAfterIndependentCLI0": true,
+    "regionsChanged": {
+      "sunflower": [
+        "9071b82b2a121e04808696b96925c720efb70e7bcab49750c75a35e54dc3563a",
+        "f0e2d1871500518bedaf20c83d8ee71fb038fc61ee9f6d144428828444fce6ae"
+      ]
+    },
+    "allOtherDataEqual": true,
+    "independentReportSHA": "e59addc222a8ea760af0cc84abe9d38af109908e2829b68cc01871a878c333e6",
+    "originalFixtureSHA": "67d6b2d5f9bf3061bba72341637de2bb6517eafd1c0e7746531f27cc9cf4035c",
+    "newFixtureSHA": "8a7764b129b21e7e9e72d9061ebcda9a354e6d86c566b1bf0b7cb7a4f19c6128",
+    "originalIndependentDigestStillPinned": true
+  },
+  "artReview": {
+    "schema": 1,
+    "reviewedUTC": "2026-10-05T18:49:13.185419+00:00",
+    "reviewer": "Astra art lead, visual inspection of actual PNGs",
+    "sourceSHA256": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+    "HTMLSHA256": "402224fe67018c0fc33c6820f09d04cdea33b80914a79e62ca54de0e627bf8f8",
+    "captureExecution": "/workspace/sunflower-entry-evidence/final-detail/execution.json",
+    "captureExecutionSHA256": "f6b19397424a0aeebeec06a3dba9dd07b0c768109662f9603bc0a785f556d683",
+    "decision": "Art gate passed for the north slope and entry-route stage; release regressions remain separate",
+    "visualBlockers": [],
+    "views": [
+      {
+        "view": "sunflowerOverview",
+        "baseline": "/workspace/sunflower-entry-evidence/baseline-detail/sunflowerOverview.png",
+        "baselineSHA256": "cd6be2265e69a86f3773a21cbca4c7d6fbc3463ab62c93a818f539f3a248649e",
+        "final": "/workspace/sunflower-entry-evidence/final-detail/sunflowerOverview.png",
+        "finalSHA256": "3cbff8811bf3c157ad1b91fb7b39e7dc4462ba3d35785748d0be7abfb5f72115",
+        "inspectedBothImages": true,
+        "decision": "pass for this bounded slope-and-entry stage",
+        "observation": "全田回环与周边道路保持；北侧新坡肩和田缘高低可读，未见新的断面或面片丢失。花海仍是均匀密集纹样，本视角不能称整田完成。"
+      },
+      {
+        "view": "close",
+        "baseline": "/workspace/sunflower-entry-evidence/baseline-detail/close.png",
+        "baselineSHA256": "5f9526dc1b89bb3bb6d0fd723c99b00857c45a6df15a82277bfbcdef35bf270f",
+        "final": "/workspace/sunflower-entry-evidence/final-detail/close.png",
+        "finalSHA256": "a971ef605b0e4c0ac3bc342cc152e8a06d217a343811d458c09a0c27b9ba2102",
+        "inspectedBothImages": true,
+        "decision": "pass for this bounded slope-and-entry stage",
+        "observation": "最明确收益：原灰色大陡板与悬断直路消失，来路经宽坡连续转入原生小径。可见坡脚无开缝或硬台口；近路草灌没有伸入可见路面。坡面仍空白。"
+      },
+      {
+        "view": "back",
+        "baseline": "/workspace/sunflower-entry-evidence/baseline-detail/back.png",
+        "baselineSHA256": "ea3bd58f082b55caca03e6214db0b9fe4c428d73cfa7f668db01773f892dfa3e",
+        "final": "/workspace/sunflower-entry-evidence/final-detail/back.png",
+        "finalSHA256": "db7184bf5b6c7338a33852aabda901a9b875e4e83ec461d1139fa9a72d81dc6e",
+        "inspectedBothImages": true,
+        "decision": "pass for this bounded slope-and-entry stage",
+        "observation": "原生内部交叉路及远处村落保持，新低鞍部露出原有背景树群；未见新墙面、断路或孤立悬空原株。并非新增树群。"
+      },
+      {
+        "view": "low",
+        "baseline": "/workspace/sunflower-entry-evidence/baseline-detail/low.png",
+        "baselineSHA256": "b53e0ab3f934cdf6d63febae99250ce0f1836a19c1cd7c1622cab8269c6dce2a",
+        "final": "/workspace/sunflower-entry-evidence/final-detail/low.png",
+        "finalSHA256": "2f86c83423af87ba1005348e1de53a6530afa0e055669b89b02bd528bc80b877",
+        "inspectedBothImages": true,
+        "decision": "pass for this bounded slope-and-entry stage",
+        "observation": "低画质保留宽坡和完整绕路，原陡板脚的折齿及断路问题减弱。没有出现粗细地形裂缝或大片突然缺面。静态低档图不证明动态LOD无跳变。"
+      },
+      {
+        "view": "night",
+        "baseline": "/workspace/sunflower-entry-evidence/baseline-detail/night.png",
+        "baselineSHA256": "80c488cef7bf7a35542a8201c8628d6499ed682c17dd47c134e97631535a11b1",
+        "final": "/workspace/sunflower-entry-evidence/final-detail/night.png",
+        "finalSHA256": "8ed168691f191e20b56dfddb40e41a31394dab727983053234905b231ed33390",
+        "inspectedBothImages": true,
+        "decision": "pass for this bounded slope-and-entry stage",
+        "observation": "没有新亮缝、悬空亮片或局部异常阴影；原大陡墙形成的整片阴影减弱。场景整体仍暗，本次没有进行花田夜景精修。"
+      },
+      {
+        "view": "sunflowerRim",
+        "baseline": "/workspace/sunflower-entry-evidence/baseline-detail/sunflowerRim.png",
+        "baselineSHA256": "f544e563d8fe643746832bec42c08168fd320ae1121cf127e706a96ae739bead",
+        "final": "/workspace/sunflower-entry-evidence/final-detail/sunflowerRim.png",
+        "finalSHA256": "6fbc805c27faf9af40ffe2895888d1fb417ef7792d3dfe6e4fa3edf75361647e",
+        "inspectedBothImages": true,
+        "decision": "pass for this bounded slope-and-entry stage",
+        "observation": "近处板台、栏杆及可见边缘保持，周围花随实际坡面起伏，未见明显浮根；平台腿与底面被板台及花遮挡，不能用这张图声称全底面已检查。"
+      },
+      {
+        "view": "overview",
+        "baseline": "/workspace/sunflower-entry-evidence/baseline-detail/overview.png",
+        "baselineSHA256": "86c25956cc3dc45181c469952df28efd0c7e48e03bd528c74115481d517ed5ba",
+        "final": "/workspace/sunflower-entry-evidence/final-detail/overview.png",
+        "finalSHA256": "a2cacc1ee47aec957adee8127603a12f798ad922ca156a304ea7c2434d79bf5a",
+        "inspectedBothImages": true,
+        "decision": "pass for this bounded slope-and-entry stage",
+        "observation": "全岛轮廓和既有地区未见新的裂口或可见破坏；改造范围像素很小，冷花田仍呈规则黄色斑块，不能据此称全岛或总览细节已精修。"
+      }
+    ],
+    "focusedChecks": [
+      "Visible front toe including the entrance approach shows no newly visible seam or hard ledge.",
+      "Visible deck and railing are preserved; complete under-deck support is not visible.",
+      "The actual production shrub-32 0.55m correction does not protrude into the visible road or damage the bend composition."
+    ],
+    "remainingArtDebt": [
+      "Large blank slope and sparse tree grouping",
+      "Uniform flower boundary and repeating dense far-field noise",
+      "Adjacent hills, terrain transitions and understorey outside the accepted stage",
+      "Night lighting remains the original general treatment"
+    ],
+    "limits": [
+      "Static images do not establish dynamic LOD behavior or camera ground/interaction correctness.",
+      "No claim that all platform legs/undersides are visible.",
+      "Subpixel seam and collision conclusions rely on independent geometry checks, not screenshot precision.",
+      "No performance or FPS conclusion is made by this art review."
+    ],
+    "sourceOrBuildInputsEdited": false,
+    "newSceneGPUOrHeavyCheckRun": false
+  },
+  "browserEnvironment": {
+    "browser": "Chromium 151.0.7922.173",
+    "driver": "ANGLE Vulkan SwiftShader",
+    "viewport": [
+      1280,
+      720
+    ],
+    "DPR": 1,
+    "hardwareFPSMeasured": false,
+    "physicalVRAMMeasured": false
+  },
+  "baselineViews": {
+    "report": {
+      "localPath": "/workspace/sunflower-entry-evidence/baseline-detail/report.json",
+      "SHA256": "f50b576f70d1da56ba04c2a3d8fdfe0cd319e98a8855c797f4fdb1ad4e3efc3d"
+    },
+    "execution": {
+      "localPath": "/workspace/sunflower-entry-evidence/baseline-detail/execution.json",
+      "SHA256": "ea8387ff7974fca9a3e16fe739d4af9b2375fbfcddd7862a02fba6728be45f4c"
+    },
+    "startedUTC": "2026-10-05T18:10:51.737172+00:00",
+    "finishedUTC": "2026-10-05T18:15:03.357206+00:00",
+    "elapsedSeconds": 251.615299228004,
+    "exitCode": 0,
+    "inputsUnchanged": true,
+    "artifactUnchanged": true,
+    "protocolUnchanged": true,
+    "HTMLSHA256": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+    "protocolSHA256": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+    "passed": true,
+    "checks": [
+      {
+        "name": "Native application booted",
+        "passed": true,
+        "data": null
+      }
+    ],
+    "errors": [],
+    "httpFailures": [
+      {
+        "path": "/favicon.ico",
+        "status": 404,
+        "source": "local HTTP server"
+      }
+    ],
+    "views": [
+      {
+        "view": "sunflowerOverview",
+        "PNG": "sunflowerOverview.png",
+        "PNGSHA256": "cd6be2265e69a86f3773a21cbca4c7d6fbc3463ab62c93a818f539f3a248649e",
+        "camera": {
+          "eye": [
+            -350,
+            360.965600253521,
+            1630
+          ],
+          "target": [
+            -580,
+            80.965600253521,
+            1190
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "rendererQuality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "ao": true,
+          "view": "sunflowerOverview"
+        },
+        "settled": {
+          "allChannelCalls": 1079,
+          "allChannelTriangles": 6736942,
+          "attributeBytes": 51959446,
+          "geometries": 478,
+          "textures": 11,
+          "programs": 171
+        }
+      },
+      {
+        "view": "close",
+        "PNG": "close.png",
+        "PNGSHA256": "5f9526dc1b89bb3bb6d0fd723c99b00857c45a6df15a82277bfbcdef35bf270f",
+        "camera": {
+          "eye": [
+            -330,
+            129,
+            841
+          ],
+          "target": [
+            -408,
+            89,
+            942
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "rendererQuality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "ao": true,
+          "view": "transitionFlowers"
+        },
+        "settled": {
+          "allChannelCalls": 471,
+          "allChannelTriangles": 6078252,
+          "attributeBytes": 13998300,
+          "geometries": 87,
+          "textures": 11,
+          "programs": 173
+        }
+      },
+      {
+        "view": "back",
+        "PNG": "back.png",
+        "PNGSHA256": "ea3bd58f082b55caca03e6214db0b9fe4c428d73cfa7f668db01773f892dfa3e",
+        "camera": {
+          "eye": [
+            -650,
+            180,
+            1230
+          ],
+          "target": [
+            -540,
+            91,
+            965
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "rendererQuality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "ao": true,
+          "view": "sunflowerOverview"
+        },
+        "settled": {
+          "allChannelCalls": 737,
+          "allChannelTriangles": 3139597,
+          "attributeBytes": 55984258,
+          "geometries": 460,
+          "textures": 11,
+          "programs": 187
+        }
+      },
+      {
+        "view": "low",
+        "PNG": "low.png",
+        "PNGSHA256": "b53e0ab3f934cdf6d63febae99250ce0f1836a19c1cd7c1622cab8269c6dce2a",
+        "camera": {
+          "eye": [
+            -245,
+            155,
+            735
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "quality": "low",
+          "rendererQuality": "low",
+          "lighting": "neutral",
+          "weather": "clear",
+          "ao": true,
+          "view": "transitionFlowers"
+        },
+        "settled": {
+          "allChannelCalls": 505,
+          "allChannelTriangles": 5960029,
+          "attributeBytes": 13883452,
+          "geometries": 89,
+          "textures": 9,
+          "programs": 189
+        }
+      },
+      {
+        "view": "night",
+        "PNG": "night.png",
+        "PNGSHA256": "80c488cef7bf7a35542a8201c8628d6499ed682c17dd47c134e97631535a11b1",
+        "camera": {
+          "eye": [
+            -245,
+            155,
+            735
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "rendererQuality": "balanced",
+          "lighting": "night",
+          "weather": "clear",
+          "ao": true,
+          "view": "transitionFlowers"
+        },
+        "settled": {
+          "allChannelCalls": 506,
+          "allChannelTriangles": 6257437,
+          "attributeBytes": 14429500,
+          "geometries": 91,
+          "textures": 11,
+          "programs": 190
+        }
+      },
+      {
+        "view": "sunflowerRim",
+        "PNG": "sunflowerRim.png",
+        "PNGSHA256": "f544e563d8fe643746832bec42c08168fd320ae1121cf127e706a96ae739bead",
+        "camera": {
+          "eye": [
+            -750,
+            133.08000692890303,
+            1021
+          ],
+          "target": [
+            -607,
+            79.93857011014558,
+            1210
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "rendererQuality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "ao": true,
+          "view": "sunflowerRim"
+        },
+        "settled": {
+          "allChannelCalls": 389,
+          "allChannelTriangles": 5464093,
+          "attributeBytes": 10953028,
+          "geometries": 81,
+          "textures": 11,
+          "programs": 191
+        }
+      },
+      {
+        "view": "overview",
+        "PNG": "overview.png",
+        "PNGSHA256": "86c25956cc3dc45181c469952df28efd0c7e48e03bd528c74115481d517ed5ba",
+        "camera": {
+          "eye": [
+            3360,
+            2750,
+            4580
+          ],
+          "target": [
+            -100,
+            110,
+            -250
+          ],
+          "fov": 42,
+          "quality": "balanced",
+          "rendererQuality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "ao": true,
+          "view": "diorama"
+        },
+        "settled": {
+          "allChannelCalls": 1207,
+          "allChannelTriangles": 1649875,
+          "attributeBytes": 75837706,
+          "geometries": 893,
+          "textures": 11,
+          "programs": 191
+        }
+      }
+    ],
+    "performanceComparisons": []
+  },
+  "finalViews": {
+    "report": {
+      "localPath": "/workspace/sunflower-entry-evidence/final-detail/report.json",
+      "SHA256": "37ae2433378cdec69ac5df7c1afa006da3458323c3a6477d2b820a7b6c730a7d"
+    },
+    "execution": {
+      "localPath": "/workspace/sunflower-entry-evidence/final-detail/execution.json",
+      "SHA256": "f6b19397424a0aeebeec06a3dba9dd07b0c768109662f9603bc0a785f556d683"
+    },
+    "startedUTC": "2026-10-05T18:40:46.740529+00:00",
+    "finishedUTC": "2026-10-05T18:45:02.975562+00:00",
+    "elapsedSeconds": 256.229485130003,
+    "exitCode": 0,
+    "inputsUnchanged": true,
+    "artifactUnchanged": true,
+    "protocolUnchanged": true,
+    "HTMLSHA256": "402224fe67018c0fc33c6820f09d04cdea33b80914a79e62ca54de0e627bf8f8",
+    "protocolSHA256": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+    "passed": true,
+    "checks": [
+      {
+        "name": "Native application booted",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Same capture environment and view order",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Same camera/options at sunflowerOverview",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Two stable settled frame counters at sunflowerOverview",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Sunflower entry cost budget at sunflowerOverview",
+        "passed": true,
+        "data": {
+          "calls": 0,
+          "triangles": 897,
+          "attributeBytes": 51804,
+          "geometries": 0,
+          "textures": 0,
+          "programs": 0
+        }
+      },
+      {
+        "name": "Same camera/options at close",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Two stable settled frame counters at close",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Sunflower entry cost budget at close",
+        "passed": true,
+        "data": {
+          "calls": 0,
+          "triangles": 258,
+          "attributeBytes": 30960,
+          "geometries": 0,
+          "textures": 0,
+          "programs": 0
+        }
+      },
+      {
+        "name": "Same camera/options at back",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Two stable settled frame counters at back",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Sunflower entry cost budget at back",
+        "passed": true,
+        "data": {
+          "calls": 0,
+          "triangles": 1854,
+          "attributeBytes": 50716,
+          "geometries": 1,
+          "textures": 0,
+          "programs": 0
+        }
+      },
+      {
+        "name": "Same camera/options at low",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Two stable settled frame counters at low",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Sunflower entry cost budget at low",
+        "passed": true,
+        "data": {
+          "calls": 0,
+          "triangles": 258,
+          "attributeBytes": 30960,
+          "geometries": 0,
+          "textures": 0,
+          "programs": 0
+        }
+      },
+      {
+        "name": "Same camera/options at night",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Two stable settled frame counters at night",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Sunflower entry cost budget at night",
+        "passed": true,
+        "data": {
+          "calls": 0,
+          "triangles": 258,
+          "attributeBytes": 30960,
+          "geometries": 0,
+          "textures": 0,
+          "programs": 0
+        }
+      },
+      {
+        "name": "Same camera/options at sunflowerRim",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Two stable settled frame counters at sunflowerRim",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Sunflower entry cost budget at sunflowerRim",
+        "passed": true,
+        "data": {
+          "calls": -2,
+          "triangles": -291116,
+          "attributeBytes": 19984,
+          "geometries": 1,
+          "textures": 0,
+          "programs": 0
+        }
+      },
+      {
+        "name": "Same camera/options at overview",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Two stable settled frame counters at overview",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Sunflower entry cost budget at overview",
+        "passed": true,
+        "data": {
+          "calls": 0,
+          "triangles": 3305,
+          "attributeBytes": 126636,
+          "geometries": 0,
+          "textures": 0,
+          "programs": 0
+        }
+      }
+    ],
+    "errors": [],
+    "httpFailures": [
+      {
+        "path": "/favicon.ico",
+        "status": 404,
+        "source": "local HTTP server"
+      }
+    ],
+    "views": [
+      {
+        "view": "sunflowerOverview",
+        "PNG": "sunflowerOverview.png",
+        "PNGSHA256": "3cbff8811bf3c157ad1b91fb7b39e7dc4462ba3d35785748d0be7abfb5f72115",
+        "camera": {
+          "eye": [
+            -350,
+            360.965600253521,
+            1630
+          ],
+          "target": [
+            -580,
+            80.965600253521,
+            1190
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "rendererQuality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "ao": true,
+          "view": "sunflowerOverview"
+        },
+        "settled": {
+          "allChannelCalls": 1079,
+          "allChannelTriangles": 6737839,
+          "attributeBytes": 52011250,
+          "geometries": 478,
+          "textures": 11,
+          "programs": 171
+        }
+      },
+      {
+        "view": "close",
+        "PNG": "close.png",
+        "PNGSHA256": "a971ef605b0e4c0ac3bc342cc152e8a06d217a343811d458c09a0c27b9ba2102",
+        "camera": {
+          "eye": [
+            -330,
+            129,
+            841
+          ],
+          "target": [
+            -408,
+            89,
+            942
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "rendererQuality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "ao": true,
+          "view": "transitionFlowers"
+        },
+        "settled": {
+          "allChannelCalls": 471,
+          "allChannelTriangles": 6078510,
+          "attributeBytes": 14029260,
+          "geometries": 87,
+          "textures": 11,
+          "programs": 173
+        }
+      },
+      {
+        "view": "back",
+        "PNG": "back.png",
+        "PNGSHA256": "db7184bf5b6c7338a33852aabda901a9b875e4e83ec461d1139fa9a72d81dc6e",
+        "camera": {
+          "eye": [
+            -650,
+            180,
+            1230
+          ],
+          "target": [
+            -540,
+            91,
+            965
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "rendererQuality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "ao": true,
+          "view": "sunflowerOverview"
+        },
+        "settled": {
+          "allChannelCalls": 737,
+          "allChannelTriangles": 3141451,
+          "attributeBytes": 56034974,
+          "geometries": 461,
+          "textures": 11,
+          "programs": 187
+        }
+      },
+      {
+        "view": "low",
+        "PNG": "low.png",
+        "PNGSHA256": "2f86c83423af87ba1005348e1de53a6530afa0e055669b89b02bd528bc80b877",
+        "camera": {
+          "eye": [
+            -245,
+            155,
+            735
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "quality": "low",
+          "rendererQuality": "low",
+          "lighting": "neutral",
+          "weather": "clear",
+          "ao": true,
+          "view": "transitionFlowers"
+        },
+        "settled": {
+          "allChannelCalls": 505,
+          "allChannelTriangles": 5960287,
+          "attributeBytes": 13914412,
+          "geometries": 89,
+          "textures": 9,
+          "programs": 189
+        }
+      },
+      {
+        "view": "night",
+        "PNG": "night.png",
+        "PNGSHA256": "8ed168691f191e20b56dfddb40e41a31394dab727983053234905b231ed33390",
+        "camera": {
+          "eye": [
+            -245,
+            155,
+            735
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "rendererQuality": "balanced",
+          "lighting": "night",
+          "weather": "clear",
+          "ao": true,
+          "view": "transitionFlowers"
+        },
+        "settled": {
+          "allChannelCalls": 506,
+          "allChannelTriangles": 6257695,
+          "attributeBytes": 14460460,
+          "geometries": 91,
+          "textures": 11,
+          "programs": 190
+        }
+      },
+      {
+        "view": "sunflowerRim",
+        "PNG": "sunflowerRim.png",
+        "PNGSHA256": "6fbc805c27faf9af40ffe2895888d1fb417ef7792d3dfe6e4fa3edf75361647e",
+        "camera": {
+          "eye": [
+            -750,
+            133.08000692890303,
+            1021
+          ],
+          "target": [
+            -607,
+            79.93857011014558,
+            1210
+          ],
+          "fov": 49,
+          "quality": "balanced",
+          "rendererQuality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "ao": true,
+          "view": "sunflowerRim"
+        },
+        "settled": {
+          "allChannelCalls": 387,
+          "allChannelTriangles": 5172977,
+          "attributeBytes": 10973012,
+          "geometries": 82,
+          "textures": 11,
+          "programs": 191
+        }
+      },
+      {
+        "view": "overview",
+        "PNG": "overview.png",
+        "PNGSHA256": "a2cacc1ee47aec957adee8127603a12f798ad922ca156a304ea7c2434d79bf5a",
+        "camera": {
+          "eye": [
+            3360,
+            2750,
+            4580
+          ],
+          "target": [
+            -100,
+            110,
+            -250
+          ],
+          "fov": 42,
+          "quality": "balanced",
+          "rendererQuality": "balanced",
+          "lighting": "neutral",
+          "weather": "clear",
+          "ao": true,
+          "view": "diorama"
+        },
+        "settled": {
+          "allChannelCalls": 1207,
+          "allChannelTriangles": 1653180,
+          "attributeBytes": 75964342,
+          "geometries": 893,
+          "textures": 11,
+          "programs": 191
+        }
+      }
+    ],
+    "performanceComparisons": [
+      {
+        "view": "sunflowerOverview",
+        "delta": {
+          "calls": 0,
+          "triangles": 897,
+          "attributeBytes": 51804,
+          "geometries": 0,
+          "textures": 0,
+          "programs": 0
+        },
+        "meaning": "Same software backend and settled frame; first sample separately retains invalidated-shadow costs"
+      },
+      {
+        "view": "close",
+        "delta": {
+          "calls": 0,
+          "triangles": 258,
+          "attributeBytes": 30960,
+          "geometries": 0,
+          "textures": 0,
+          "programs": 0
+        },
+        "meaning": "Same software backend and settled frame; first sample separately retains invalidated-shadow costs"
+      },
+      {
+        "view": "back",
+        "delta": {
+          "calls": 0,
+          "triangles": 1854,
+          "attributeBytes": 50716,
+          "geometries": 1,
+          "textures": 0,
+          "programs": 0
+        },
+        "meaning": "Same software backend and settled frame; first sample separately retains invalidated-shadow costs"
+      },
+      {
+        "view": "low",
+        "delta": {
+          "calls": 0,
+          "triangles": 258,
+          "attributeBytes": 30960,
+          "geometries": 0,
+          "textures": 0,
+          "programs": 0
+        },
+        "meaning": "Same software backend and settled frame; first sample separately retains invalidated-shadow costs"
+      },
+      {
+        "view": "night",
+        "delta": {
+          "calls": 0,
+          "triangles": 258,
+          "attributeBytes": 30960,
+          "geometries": 0,
+          "textures": 0,
+          "programs": 0
+        },
+        "meaning": "Same software backend and settled frame; first sample separately retains invalidated-shadow costs"
+      },
+      {
+        "view": "sunflowerRim",
+        "delta": {
+          "calls": -2,
+          "triangles": -291116,
+          "attributeBytes": 19984,
+          "geometries": 1,
+          "textures": 0,
+          "programs": 0
+        },
+        "meaning": "Same software backend and settled frame; first sample separately retains invalidated-shadow costs"
+      },
+      {
+        "view": "overview",
+        "delta": {
+          "calls": 0,
+          "triangles": 3305,
+          "attributeBytes": 126636,
+          "geometries": 0,
+          "textures": 0,
+          "programs": 0
+        },
+        "meaning": "Same software backend and settled frame; first sample separately retains invalidated-shadow costs"
+      }
+    ]
+  },
+  "baselineNative": {
+    "status": "completed",
+    "report": {
+      "localPath": "/workspace/sunflower-entry-evidence/baseline-native/report.json",
+      "SHA256": "67703cc973fbd6f490ecdce4f58ce1b8378f3d9e003e30166396d4d6ff4ce5e1"
+    },
+    "execution": {
+      "localPath": "/workspace/sunflower-entry-evidence/baseline-native/execution.json",
+      "SHA256": "e99ca9d072f3387f760a1679b7d89f879eed47b2b26a08d86e24ac655eaab562"
+    },
+    "exitCode": 1,
+    "startedUTC": "2026-10-05T18:47:02.943721+00:00",
+    "finishedUTC": "2026-10-05T18:51:07.711099+00:00",
+    "elapsedSeconds": 244.76232240399986,
+    "inputsUnchanged": true,
+    "artifactUnchanged": true,
+    "protocolUnchanged": true,
+    "HTMLSHA256": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+    "protocolSHA256": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+    "passed": false,
+    "failure": "AssertionError('Strict comparable resource counters restored')",
+    "checks": [
+      {
+        "name": "Native application booted",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Mouse orbit and wheel wake the production scheduler",
+        "passed": true,
+        "data": "Native events; CPU values retained in state samples and never converted to hardware FPS"
+      },
+      {
+        "name": "Native Sunflower CPU source and detail are present at comparison anchor",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Owned Sunflower GPU geometry set is nonempty before unload",
+        "passed": true,
+        "data": {
+          "ownedCount": 29
+        }
+      },
+      {
+        "name": "Sunflower CPU source and detail records removed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All public records survive native unload",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All owned Sunflower GPU geometries released",
+        "passed": true,
+        "data": {
+          "ownedCount": 29,
+          "retained": []
+        }
+      },
+      {
+        "name": "Exact source metadata and array hashes restored",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Camera, wanted IDs and selected LOD restored",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Strict comparable resource counters restored",
+        "passed": false,
+        "data": {
+          "geometries": [
+            102,
+            92
+          ],
+          "attributeBytes": [
+            15278924,
+            14429500
+          ],
+          "geometryEntries": [
+            100,
+            90
+          ],
+          "residentObjects": [
+            523,
+            512
+          ]
+        }
+      }
+    ],
+    "states": [
+      {
+        "label": "before real input",
+        "gpu": {
+          "geometries": 92,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 14429500,
+          "geometryEntries": 90,
+          "residentObjects": 512
+        },
+        "drawnFrames": 12,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            -245,
+            155,
+            735
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 9,
+        "stream": {
+          "requests": 1,
+          "builds": 1,
+          "cancelled": 0,
+          "evictions": 0,
+          "cacheHits": 0,
+          "staleDropped": 0,
+          "cached": [
+            "sunflower"
+          ],
+          "building": null,
+          "required": [
+            "sunflower"
+          ],
+          "detailSourceMiB": 11.039447784423828,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1744.3999999985099,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      },
+      {
+        "label": "real orbit completed",
+        "gpu": {
+          "geometries": 93,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 14449532,
+          "geometryEntries": 91,
+          "residentObjects": 514
+        },
+        "drawnFrames": 14,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            -217.81265788071084,
+            160.17229745786022,
+            756.2035524705836
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 14.600000001490116,
+        "stream": {
+          "requests": 1,
+          "builds": 1,
+          "cancelled": 0,
+          "evictions": 0,
+          "cacheHits": 1,
+          "staleDropped": 0,
+          "cached": [
+            "sunflower"
+          ],
+          "building": null,
+          "required": [
+            "sunflower"
+          ],
+          "detailSourceMiB": 11.039447784423828,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1744.3999999985099,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      },
+      {
+        "label": "real wheel completed",
+        "gpu": {
+          "geometries": 92,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 14408408,
+          "geometryEntries": 90,
+          "residentObjects": 513
+        },
+        "drawnFrames": 15,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            -238.73941521015252,
+            155.93044965105662,
+            781.8670429198067
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 10.599999994039536,
+        "stream": {
+          "requests": 1,
+          "builds": 1,
+          "cancelled": 0,
+          "evictions": 0,
+          "cacheHits": 1,
+          "staleDropped": 0,
+          "cached": [
+            "sunflower"
+          ],
+          "building": null,
+          "required": [
+            "sunflower"
+          ],
+          "detailSourceMiB": 11.039447784423828,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1744.3999999985099,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      },
+      {
+        "label": "detail before native unload",
+        "gpu": {
+          "geometries": 102,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 15278924,
+          "geometryEntries": 100,
+          "residentObjects": 523
+        },
+        "drawnFrames": 26,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            -245,
+            155,
+            735
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 24.299999997019768,
+        "stream": {
+          "requests": 2,
+          "builds": 2,
+          "cancelled": 0,
+          "evictions": 1,
+          "cacheHits": 1,
+          "staleDropped": 0,
+          "cached": [
+            "sunflower"
+          ],
+          "building": null,
+          "required": [
+            "sunflower"
+          ],
+          "detailSourceMiB": 11.039447784423828,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1744.3999999985099,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            },
+            {
+              "region": "sunflower",
+              "buildMs": 1960.6999999955297,
+              "sourceBytes": 11575700,
+              "epoch": 5
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      },
+      {
+        "label": "native cache clear completed",
+        "gpu": {
+          "geometries": 893,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 75837706,
+          "geometryEntries": 891,
+          "residentObjects": 1198
+        },
+        "drawnFrames": 33,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            3360,
+            2750.000000000001,
+            4580
+          ],
+          "target": [
+            -100,
+            110,
+            -250
+          ],
+          "fov": 42,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 10.5,
+        "stream": {
+          "requests": 2,
+          "builds": 2,
+          "cancelled": 0,
+          "evictions": 2,
+          "cacheHits": 1,
+          "staleDropped": 0,
+          "cached": [],
+          "building": null,
+          "required": [],
+          "detailSourceMiB": 0,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1744.3999999985099,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            },
+            {
+              "region": "sunflower",
+              "buildMs": 1960.6999999955297,
+              "sourceBytes": 11575700,
+              "epoch": 5
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      },
+      {
+        "label": "detail after native reentry",
+        "gpu": {
+          "geometries": 92,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 14429500,
+          "geometryEntries": 90,
+          "residentObjects": 512
+        },
+        "drawnFrames": 38,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            -245,
+            155,
+            735
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 9.5,
+        "stream": {
+          "requests": 3,
+          "builds": 3,
+          "cancelled": 0,
+          "evictions": 2,
+          "cacheHits": 1,
+          "staleDropped": 0,
+          "cached": [
+            "sunflower"
+          ],
+          "building": null,
+          "required": [
+            "sunflower"
+          ],
+          "detailSourceMiB": 11.039447784423828,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1744.3999999985099,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            },
+            {
+              "region": "sunflower",
+              "buildMs": 1960.6999999955297,
+              "sourceBytes": 11575700,
+              "epoch": 5
+            },
+            {
+              "region": "sunflower",
+              "buildMs": 2120.9000000059605,
+              "sourceBytes": 11575700,
+              "epoch": 7
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      }
+    ],
+    "productionRAF": true,
+    "manualDraws": false,
+    "gpuFinish": false,
+    "cycles": 1,
+    "longTermLeakTest": false,
+    "comparisons": [
+      {
+        "label": "strict resources after one native reentry",
+        "differences": {
+          "geometries": [
+            102,
+            92
+          ],
+          "attributeBytes": [
+            15278924,
+            14429500
+          ],
+          "geometryEntries": [
+            100,
+            90
+          ],
+          "residentObjects": [
+            523,
+            512
+          ]
+        }
+      }
+    ],
+    "imageRestoration": null,
+    "errors": [],
+    "httpFailures": [
+      {
+        "path": "/favicon.ico",
+        "status": 404,
+        "source": "local HTTP server"
+      }
+    ]
+  },
+  "finalNative": {
+    "status": "completed",
+    "report": {
+      "localPath": "/workspace/sunflower-entry-evidence/final-native/report.json",
+      "SHA256": "e714d8efba8fd87c90b2b0e4ab3413918f9a8c86824b98813d3cd120b6a39f16"
+    },
+    "execution": {
+      "localPath": "/workspace/sunflower-entry-evidence/final-native/execution.json",
+      "SHA256": "0b847367d8e05b2c1f7ea58acce26f173bf50e1b68dd5a76d38654d1bd1a7caf"
+    },
+    "exitCode": 0,
+    "startedUTC": "2026-10-05T18:51:21.729657+00:00",
+    "finishedUTC": "2026-10-05T18:55:38.411952+00:00",
+    "elapsedSeconds": 256.6709190160036,
+    "inputsUnchanged": true,
+    "artifactUnchanged": true,
+    "protocolUnchanged": true,
+    "HTMLSHA256": "402224fe67018c0fc33c6820f09d04cdea33b80914a79e62ca54de0e627bf8f8",
+    "protocolSHA256": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+    "passed": true,
+    "failure": null,
+    "checks": [
+      {
+        "name": "Native application booted",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Mouse orbit and wheel wake the production scheduler",
+        "passed": true,
+        "data": "Native events; CPU values retained in state samples and never converted to hardware FPS"
+      },
+      {
+        "name": "Native Sunflower CPU source and detail are present at comparison anchor",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Owned Sunflower GPU geometry set is nonempty before unload",
+        "passed": true,
+        "data": {
+          "ownedCount": 29
+        }
+      },
+      {
+        "name": "Sunflower CPU source and detail records removed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All public records survive native unload",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All owned Sunflower GPU geometries released",
+        "passed": true,
+        "data": {
+          "ownedCount": 29,
+          "retained": []
+        }
+      },
+      {
+        "name": "Exact source metadata and array hashes restored",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Camera, wanted IDs and selected LOD restored",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Strict comparable resource counters restored",
+        "passed": true,
+        "data": {}
+      },
+      {
+        "name": "Program cache keys and references restored",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Static view draws zero frames and keeps paused clock",
+        "passed": true,
+        "data": null
+      }
+    ],
+    "states": [
+      {
+        "label": "before real input",
+        "gpu": {
+          "geometries": 92,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 14460460,
+          "geometryEntries": 90,
+          "residentObjects": 512
+        },
+        "drawnFrames": 12,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            -245,
+            155,
+            735
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 9.5,
+        "stream": {
+          "requests": 1,
+          "builds": 1,
+          "cancelled": 0,
+          "evictions": 0,
+          "cacheHits": 0,
+          "staleDropped": 0,
+          "cached": [
+            "sunflower"
+          ],
+          "building": null,
+          "required": [
+            "sunflower"
+          ],
+          "detailSourceMiB": 11.039447784423828,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1816.1000000014901,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      },
+      {
+        "label": "real orbit completed",
+        "gpu": {
+          "geometries": 92,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 14461448,
+          "geometryEntries": 90,
+          "residentObjects": 513
+        },
+        "drawnFrames": 14,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            -231.18455965855418,
+            157.5870952938057,
+            745.3274521383757
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 9.199999995529652,
+        "stream": {
+          "requests": 1,
+          "builds": 1,
+          "cancelled": 0,
+          "evictions": 0,
+          "cacheHits": 0,
+          "staleDropped": 0,
+          "cached": [
+            "sunflower"
+          ],
+          "building": null,
+          "required": [
+            "sunflower"
+          ],
+          "detailSourceMiB": 11.039447784423828,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1816.1000000014901,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      },
+      {
+        "label": "real wheel completed",
+        "gpu": {
+          "geometries": 93,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 14480492,
+          "geometryEntries": 91,
+          "residentObjects": 514
+        },
+        "drawnFrames": 15,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            -217.81265788071084,
+            160.17229745786022,
+            756.2035524705836
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 11.800000004470348,
+        "stream": {
+          "requests": 1,
+          "builds": 1,
+          "cancelled": 0,
+          "evictions": 0,
+          "cacheHits": 1,
+          "staleDropped": 0,
+          "cached": [
+            "sunflower"
+          ],
+          "building": null,
+          "required": [
+            "sunflower"
+          ],
+          "detailSourceMiB": 11.039447784423828,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1816.1000000014901,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      },
+      {
+        "label": "detail before native unload",
+        "gpu": {
+          "geometries": 92,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 14460460,
+          "geometryEntries": 90,
+          "residentObjects": 512
+        },
+        "drawnFrames": 27,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            -245,
+            155,
+            735
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 8,
+        "stream": {
+          "requests": 2,
+          "builds": 2,
+          "cancelled": 0,
+          "evictions": 1,
+          "cacheHits": 1,
+          "staleDropped": 0,
+          "cached": [
+            "sunflower"
+          ],
+          "building": null,
+          "required": [
+            "sunflower"
+          ],
+          "detailSourceMiB": 11.039447784423828,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1816.1000000014901,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            },
+            {
+              "region": "sunflower",
+              "buildMs": 1834.5,
+              "sourceBytes": 11575700,
+              "epoch": 5
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      },
+      {
+        "label": "native cache clear completed",
+        "gpu": {
+          "geometries": 893,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 75964342,
+          "geometryEntries": 891,
+          "residentObjects": 1198
+        },
+        "drawnFrames": 34,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            3360,
+            2750.000000000001,
+            4580
+          ],
+          "target": [
+            -100,
+            110,
+            -250
+          ],
+          "fov": 42,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 10.799999997019768,
+        "stream": {
+          "requests": 2,
+          "builds": 2,
+          "cancelled": 0,
+          "evictions": 2,
+          "cacheHits": 1,
+          "staleDropped": 0,
+          "cached": [],
+          "building": null,
+          "required": [],
+          "detailSourceMiB": 0,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1816.1000000014901,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            },
+            {
+              "region": "sunflower",
+              "buildMs": 1834.5,
+              "sourceBytes": 11575700,
+              "epoch": 5
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      },
+      {
+        "label": "detail after native reentry",
+        "gpu": {
+          "geometries": 92,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 14460460,
+          "geometryEntries": 90,
+          "residentObjects": 512
+        },
+        "drawnFrames": 39,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            -245,
+            155,
+            735
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 14.5,
+        "stream": {
+          "requests": 3,
+          "builds": 3,
+          "cancelled": 0,
+          "evictions": 2,
+          "cacheHits": 1,
+          "staleDropped": 0,
+          "cached": [
+            "sunflower"
+          ],
+          "building": null,
+          "required": [
+            "sunflower"
+          ],
+          "detailSourceMiB": 11.039447784423828,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1816.1000000014901,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            },
+            {
+              "region": "sunflower",
+              "buildMs": 1834.5,
+              "sourceBytes": 11575700,
+              "epoch": 5
+            },
+            {
+              "region": "sunflower",
+              "buildMs": 1692.6999999955297,
+              "sourceBytes": 11575700,
+              "epoch": 7
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      },
+      {
+        "label": "one second production idle",
+        "gpu": {
+          "geometries": 92,
+          "textures": 11,
+          "programs": 116,
+          "attributeBytes": 14460460,
+          "geometryEntries": 90,
+          "residentObjects": 512
+        },
+        "drawnFrames": 39,
+        "clock": 12.5,
+        "rig": {
+          "eye": [
+            -245,
+            155,
+            735
+          ],
+          "target": [
+            -490,
+            105,
+            1090
+          ],
+          "fov": 49,
+          "mode": "orbit"
+        },
+        "submittedCPUmsSingleFrame": 14.5,
+        "stream": {
+          "requests": 3,
+          "builds": 3,
+          "cancelled": 0,
+          "evictions": 2,
+          "cacheHits": 1,
+          "staleDropped": 0,
+          "cached": [
+            "sunflower"
+          ],
+          "building": null,
+          "required": [
+            "sunflower"
+          ],
+          "detailSourceMiB": 11.039447784423828,
+          "softBudgetMiB": 220,
+          "log": [
+            {
+              "region": "sunflower",
+              "buildMs": 1816.1000000014901,
+              "sourceBytes": 11575700,
+              "epoch": 2
+            },
+            {
+              "region": "sunflower",
+              "buildMs": 1834.5,
+              "sourceBytes": 11575700,
+              "epoch": 5
+            },
+            {
+              "region": "sunflower",
+              "buildMs": 1692.6999999955297,
+              "sourceBytes": 11575700,
+              "epoch": 7
+            }
+          ]
+        },
+        "geometryInventoryComplete": true,
+        "diagnosticCounters": {
+          "contextLost": 0,
+          "contextRestored": 0,
+          "renderErrors": 0,
+          "recoveryErrors": 0
+        }
+      }
+    ],
+    "productionRAF": true,
+    "manualDraws": false,
+    "gpuFinish": false,
+    "cycles": 1,
+    "longTermLeakTest": false,
+    "comparisons": [
+      {
+        "label": "strict resources after one native reentry",
+        "differences": {}
+      }
+    ],
+    "imageRestoration": {
+      "beforeSHA": "b61e4657517d6fc236de5f60a1667d2cb4eeaf13133f7d5c145dd813ce8ae6ee",
+      "afterSHA": "b61e4657517d6fc236de5f60a1667d2cb4eeaf13133f7d5c145dd813ce8ae6ee",
+      "byteExact": true,
+      "meaning": "Actual screenshots; hash equality is recorded separately from source/resource assertions"
+    },
+    "errors": [],
+    "httpFailures": [
+      {
+        "path": "/favicon.ico",
+        "status": 404,
+        "source": "local HTTP server"
+      }
+    ]
+  },
+  "nativeResourceAttribution": {
+    "originalReport": {
+      "localPath": "/workspace/sunflower-entry-evidence/native-final-attribution.json",
+      "SHA256": "d3b6edcdc095ab37a4173361150d7d1e92cb9da12bd4b65c0a8601cb14b0529c"
+    },
+    "execution": {
+      "schema": 1,
+      "recordedUTC": "2026-10-05T19:07:01.575383+00:00",
+      "executionKind": "Offline existing-JSON attribution only",
+      "noBrowserNativeBuilderOrGPUExecution": true,
+      "originalProductReportsMutated": false,
+      "runs": [
+        {
+          "script": "attribute-final-evidence-run-01.py",
+          "scriptSHA256": "69bcebe5c0cf843a6b6b0585051387ac095dfabb2957d6ac78d6a4a36fca0041",
+          "exitCode": 1,
+          "observedException": "AssertionError at line259: assert not common_changes and not prototype_or_population_changes",
+          "reason": "Seven non-instanced native meadow ground vertex hashes intentionally differ; original analysis incorrectly included them as plant prototypes. No plant prototype/color/population differences or common wanted/LOD changes were found."
+        },
+        {
+          "script": "attribute-final-evidence.py",
+          "scriptSHA256": "9de13b822bee5cbc552eff01d1b62fdaad66da1a385f3a9d26560366f11a0168",
+          "exitCode": 0,
+          "stdout": "attribute-final-evidence.log",
+          "stdoutSHA256": "57d61b49eafb7dd81b63a24cc989e54f8f1fbb473ef973401db646af1abdd121",
+          "stderr": "attribute-final-evidence.stderr.log",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reportedExecWallSeconds": 0.071966674,
+          "outputs": {
+            "native-final-attribution.json": "d3b6edcdc095ab37a4173361150d7d1e92cb9da12bd4b65c0a8601cb14b0529c",
+            "rim-final-attribution.json": "0de0a394f4aa4861d26ce330ce40585358fb09457ed083be003d621e37eb3f27"
+          }
+        }
+      ]
+    },
+    "baselineStrictFailureAttribution": {
+      "status": "Original CLI1 preserved; all four counter differences exactly attributed",
+      "removedOwners": [
+        {
+          "id": "overview:sunflower:flowers",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-2:3:meadowGround",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-2:4:meadowGround",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-2:5:meadowGround",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-3:3:meadowGround",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-3:3:timber",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-3:4:matte",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-3:4:meadowGround",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-3:5:meadowGround",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-4:4:meadowGround",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        },
+        {
+          "id": "overview:sunflower:trees",
+          "pack": "overview",
+          "level": 0,
+          "wanted": false
+        }
+      ],
+      "addedOwners": [],
+      "allRemovedOwnersAreUnwantedPublic": true,
+      "releasedUniqueGeometries": [
+        {
+          "id": 1025,
+          "bytes": 11148,
+          "refs": 1,
+          "owners": [
+            {
+              "id": "overview:sunflower:hlod:architecture:sunflower:-2:3:meadowGround",
+              "pack": "overview",
+              "level": 0,
+              "wanted": false
+            }
+          ]
+        },
+        {
+          "id": 1026,
+          "bytes": 42552,
+          "refs": 1,
+          "owners": [
+            {
+              "id": "overview:sunflower:hlod:architecture:sunflower:-3:4:meadowGround",
+              "pack": "overview",
+              "level": 0,
+              "wanted": false
+            }
+          ]
+        },
+        {
+          "id": 1027,
+          "bytes": 5760,
+          "refs": 1,
+          "owners": [
+            {
+              "id": "overview:sunflower:hlod:architecture:sunflower:-3:4:matte",
+              "pack": "overview",
+              "level": 0,
+              "wanted": false
+            }
+          ]
+        },
+        {
+          "id": 1028,
+          "bytes": 37800,
+          "refs": 1,
+          "owners": [
+            {
+              "id": "overview:sunflower:hlod:architecture:sunflower:-3:5:meadowGround",
+              "pack": "overview",
+              "level": 0,
+              "wanted": false
+            }
+          ]
+        },
+        {
+          "id": 1029,
+          "bytes": 18792,
+          "refs": 1,
+          "owners": [
+            {
+              "id": "overview:sunflower:hlod:architecture:sunflower:-2:5:meadowGround",
+              "pack": "overview",
+              "level": 0,
+              "wanted": false
+            }
+          ]
+        },
+        {
+          "id": 1030,
+          "bytes": 17424,
+          "refs": 1,
+          "owners": [
+            {
+              "id": "overview:sunflower:hlod:architecture:sunflower:-3:3:meadowGround",
+              "pack": "overview",
+              "level": 0,
+              "wanted": false
+            }
+          ]
+        },
+        {
+          "id": 1031,
+          "bytes": 19512,
+          "refs": 1,
+          "owners": [
+            {
+              "id": "overview:sunflower:hlod:architecture:sunflower:-3:3:timber",
+              "pack": "overview",
+              "level": 0,
+              "wanted": false
+            }
+          ]
+        },
+        {
+          "id": 1032,
+          "bytes": 36744,
+          "refs": 1,
+          "owners": [
+            {
+              "id": "overview:sunflower:hlod:architecture:sunflower:-4:4:meadowGround",
+              "pack": "overview",
+              "level": 0,
+              "wanted": false
+            }
+          ]
+        },
+        {
+          "id": 1033,
+          "bytes": 25560,
+          "refs": 1,
+          "owners": [
+            {
+              "id": "overview:sunflower:hlod:architecture:sunflower:-2:4:meadowGround",
+              "pack": "overview",
+              "level": 0,
+              "wanted": false
+            }
+          ]
+        },
+        {
+          "id": 1099,
+          "bytes": 633600,
+          "refs": 1,
+          "owners": [
+            {
+              "id": "overview:sunflower:flowers",
+              "pack": "overview",
+              "level": 0,
+              "wanted": false
+            }
+          ]
+        }
+      ],
+      "releasedUniqueGeometryBytes": 848892,
+      "sharedGeometryChanges": [
+        {
+          "before": {
+            "id": 166,
+            "bytes": 5184,
+            "refs": 8,
+            "owners": [
+              {
+                "id": "overview:bamboo:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              },
+              {
+                "id": "overview:forest:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              },
+              {
+                "id": "overview:myouren:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              },
+              {
+                "id": "overview:nameless:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              },
+              {
+                "id": "overview:scarlet:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              },
+              {
+                "id": "overview:sunflower:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": false
+              },
+              {
+                "id": "overview:trail:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              },
+              {
+                "id": "overview:village:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              }
+            ]
+          },
+          "after": {
+            "id": 166,
+            "bytes": 5184,
+            "refs": 7,
+            "owners": [
+              {
+                "id": "overview:bamboo:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              },
+              {
+                "id": "overview:forest:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              },
+              {
+                "id": "overview:myouren:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              },
+              {
+                "id": "overview:nameless:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              },
+              {
+                "id": "overview:scarlet:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              },
+              {
+                "id": "overview:trail:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              },
+              {
+                "id": "overview:village:trees",
+                "pack": "overview",
+                "level": 0,
+                "wanted": true
+              }
+            ]
+          },
+          "removedOwners": [
+            {
+              "id": "overview:sunflower:trees",
+              "pack": "overview",
+              "level": 0,
+              "wanted": false
+            }
+          ]
+        }
+      ],
+      "releasedPerObjectInstanceAttributes": [
+        {
+          "id": "overview:sunflower:flowers",
+          "pack": "overview",
+          "attributes": {},
+          "bytes": 0
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-2:3:meadowGround",
+          "pack": "overview",
+          "attributes": {},
+          "bytes": 0
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-2:4:meadowGround",
+          "pack": "overview",
+          "attributes": {},
+          "bytes": 0
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-2:5:meadowGround",
+          "pack": "overview",
+          "attributes": {},
+          "bytes": 0
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-3:3:meadowGround",
+          "pack": "overview",
+          "attributes": {},
+          "bytes": 0
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-3:3:timber",
+          "pack": "overview",
+          "attributes": {},
+          "bytes": 0
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-3:4:matte",
+          "pack": "overview",
+          "attributes": {},
+          "bytes": 0
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-3:4:meadowGround",
+          "pack": "overview",
+          "attributes": {},
+          "bytes": 0
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-3:5:meadowGround",
+          "pack": "overview",
+          "attributes": {},
+          "bytes": 0
+        },
+        {
+          "id": "overview:sunflower:hlod:architecture:sunflower:-4:4:meadowGround",
+          "pack": "overview",
+          "attributes": {},
+          "bytes": 0
+        },
+        {
+          "id": "overview:sunflower:trees",
+          "pack": "overview",
+          "attributes": {
+            "instances": {
+              "type": "Float32Array",
+              "length": 112,
+              "bytes": 448,
+              "sha256": "0381dc4bceb3b95c985d27735d1aca40fcc3d65ef51f4eb9202fbd90973e87b5"
+            },
+            "instanceColors": {
+              "type": "Float32Array",
+              "length": 21,
+              "bytes": 84,
+              "sha256": "3e81d451ed2da46c7f0a5df91c68d3df61307b0550f0d6c47be476cf72daff5d"
+            }
+          },
+          "bytes": 532
+        }
+      ],
+      "releasedInstanceMatrixAndColorBytes": 532,
+      "attributeBytesArithmetic": {
+        "uniqueGeometry": 848892,
+        "instanceAttributes": 532,
+        "sum": 849424,
+        "observedReleased": 849424
+      },
+      "counterChanges": {
+        "geometries": -10,
+        "geometryEntries": -10,
+        "residentObjects": -11,
+        "attributeBytes": -849424
+      },
+      "notReachedInOriginalBaseline": [
+        "Program cache-key/reference assertion",
+        "After-reentry screenshot/image restoration",
+        "One-second production idle assertion"
+      ],
+      "retentionPolicy": {
+        "source": "src/renderer.js",
+        "sourceSHA256": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+        "graceSeconds": 6,
+        "ordinaryEviction": "trim(false) during render; expire unwanted record if now-lastUsed > graceSeconds",
+        "inference": "Before anchor retained 11 unwanted public objects, after anchor retained none. Three production wakes do not guarantee expiration of six wall-clock seconds.",
+        "unmeasured": "The original inventory did not capture each record lastUsed age; exact expiry timing was not measured."
+      },
+      "proposedSupplement": {
+        "status": "Not executed; cancelled as unnecessary after candidate passed the unchanged original protocol",
+        "historicalProposal": "Candidate only, one native unload/reentry cycle with two builds, skip already passed real input and fixed captures. Wait existing six-second grace plus margin at both cold anchors then ordinary production wake/trim.",
+        "unchangedAssertions": [
+          "Exact source metadata and array hashes",
+          "Rig, wanted IDs and selected LOD",
+          "All six strict GPU resource counters",
+          "Nonempty owned geometry set and complete owned GPU release",
+          "All public record IDs survive",
+          "Program cache keys plus references",
+          "Static view zero frames and paused clock",
+          "No shader/context/application errors"
+        ],
+        "noSourceOrProtocolChange": true
+      }
+    },
+    "crossArtifactMatureEntryComparison": {
+      "method": "Saved after-reentry anchors; each artifact restored its own exact source, rig and wanted/LOD",
+      "baselineGPU": {
+        "geometries": 92,
+        "textures": 11,
+        "programs": 116,
+        "attributeBytes": 14429500,
+        "geometryEntries": 90,
+        "residentObjects": 512
+      },
+      "candidateGPU": {
+        "geometries": 92,
+        "textures": 11,
+        "programs": 116,
+        "attributeBytes": 14460460,
+        "geometryEntries": 90,
+        "residentObjects": 512
+      },
+      "delta": {
+        "geometries": 0,
+        "textures": 0,
+        "programs": 0,
+        "attributeBytes": 30960,
+        "geometryEntries": 0,
+        "residentObjects": 0
+      },
+      "submissionDelta": {
+        "totalCalls": 0,
+        "totalTriangles": 258
+      },
+      "programKeysAndReferencesEqualAcrossArtifacts": true
+    },
+    "timingLimits": "Values are last renderer CPU submission samples and whole protocol wall-clock times on software WebGL; they are not input-handler duration, hardware FPS, or evidence of interaction acceleration.",
+    "noNewBrowserBuilderOrGPUExecution": true
+  },
+  "rimSubmissionAttribution": {
+    "originalReport": {
+      "localPath": "/workspace/sunflower-entry-evidence/rim-final-attribution.json",
+      "SHA256": "0de0a394f4aa4861d26ce330ce40585358fb09457ed083be003d621e37eb3f27"
+    },
+    "wanted": {
+      "baselineCount": 405,
+      "candidateCount": 406,
+      "removed": [],
+      "added": [
+        {
+          "id": "island:transition:grass:-1:1",
+          "pack": "overview",
+          "level": 1
+        }
+      ],
+      "commonPackOrLODChanges": [],
+      "stableAcrossEachThreeSamples": true,
+      "nativeSelectedIDsAndLODsIdentical": true,
+      "nativeSelectedCount": 321
+    },
+    "nativePrototypeOrPopulationChanges": [],
+    "analysisRevision": {
+      "originalOfflineAnalysis": "attribute-final-evidence-run-01.py",
+      "originalExitCode": 1,
+      "reason": "Initial analysis classified all native arrays as instanced prototypes; seven ordinary meadow terrain records have intentional same-length changed vertices at the reconstructed ground.",
+      "correction": "Separate actual instanced prototype/population conservation from non-instanced native ground attribute hashes; retain the seven original differing records explicitly.",
+      "notAProductCheckOrSourceChange": true
+    },
+    "sourceSupportedInference": {
+      "rendererSource": "src/renderer.js",
+      "rendererSHA256": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+      "looseWantedCulling": "IslandRenderer.wanted checks metadata center and radius+6 (lines 474-481)",
+      "engineCulling": "ensure computes actual InstancedMesh boundingSphere from geometry and instance matrices and enables mesh.frustumCulled (lines 237-246)",
+      "meaning": "Changed ground Y and native instance/batch bounds can change the actual Three.js frustum submission while the looser wanted IDs and selected LOD remain the same.",
+      "inferenceOnly": true
+    },
+    "unresolved": {
+      "actualSubmittedBatchIDsRecorded": false,
+      "exactTwoBatchOrTriangleAttribution": "Not recoverable from the saved wanted list, counters, and hashed matrix metadata; engine render-list IDs/bounding spheres were not captured.",
+      "newExperimentRequiredForBudgetAcceptance": false
+    },
+    "conclusion": "Observed -2 calls/-291116 submitted triangles at the same camera is a view-dependent submission difference. No object or LOD deletion is present in the wanted inventory; do not describe this as geometry optimization or FPS improvement.",
+    "noNewBrowserBuilderOrGPUExecution": true
+  },
+  "finalEntryComparison": {
+    "sameCameraAndOptions": true,
+    "protocolSHA256": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+    "baselineHTML": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+    "finalHTML": "402224fe67018c0fc33c6820f09d04cdea33b80914a79e62ca54de0e627bf8f8",
+    "camera": {
+      "eye": [
+        -245,
+        155,
+        735
+      ],
+      "target": [
+        -490,
+        105,
+        1090
+      ],
+      "fov": 49,
+      "mode": "orbit"
+    },
+    "viewport": [
+      1280,
+      720
+    ],
+    "DPR": 1,
+    "reference": "Native screenshot before the single unload cycle; public grace-period residency does not change wanted set. Raw baseline CLI1 retained.",
+    "baselinePNG": "4aca53c84165c7d8198b383b79d73104a4d6608351c5b065ba28d72cf2bfb356",
+    "finalPNG": "b61e4657517d6fc236de5f60a1667d2cb4eeaf13133f7d5c145dd813ce8ae6ee"
+  },
+  "fullNode": {
+    "startedUTC": "2026-10-05T19:02:09.126402+00:00",
+    "command": [
+      "/tmp/node-v22.23.3-linux-x64/bin/node",
+      "tools/check.mjs",
+      "/workspace/sunflower-entry-evidence/final-dist"
+    ],
+    "cwd": "/workspace/sunflower-entry-refinement",
+    "HEAD": "9905a0918edbfb5708cda05582d5bf5d23d3d448",
+    "nodeVersion": "v22.23.3",
+    "HTMLSHA256": "402224fe67018c0fc33c6820f09d04cdea33b80914a79e62ca54de0e627bf8f8",
+    "releaseSHA256": "3bb39b8868379e6ade114da35d29c373eaccac3bad34e8972a7b4c0194f427f6",
+    "buildInputCount": 202,
+    "boundSourceCount": 240,
+    "wrapperSHA256": "270bd0e1503dc1e54fee11d7f24a36eb2185eaa030eaa2042dfed04d069640c4",
+    "status": "completed",
+    "scope": "Complete required check.mjs, including unchanged assertions and historical workflow guards",
+    "finishedUTC": "2026-10-05T19:16:46.595006+00:00",
+    "elapsedSeconds": 877.4623913739997,
+    "exitCode": 0,
+    "sourceUnchanged": true,
+    "artifactUnchanged": true,
+    "releaseUnchanged": true,
+    "stdoutSHA256": "e4b0084aad4aebdda65f46fed5679c29c92299f2e66efb3686fdeea6b50c07d6",
+    "stdoutBytes": 373575,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrBytes": 0,
+    "completedCheckLines": 42,
+    "originalExecution": {
+      "localPath": "/workspace/sunflower-entry-evidence/full-node-final.json",
+      "SHA256": "450cfd74bcd4465dd40afcb8a79c9cb45a44f220e703c768746a1fe038068d46"
+    },
+    "buildInputsMatchBoundSource": true,
+    "completedSections": [
+      "隐藏界面工作量检查通过",
+      "渲染循环工作量检查通过",
+      "渲染诊断检查通过",
+      "渲染资源检查通过",
+      "渲染引用检查通过",
+      "Worker生命周期检查通过",
+      "森林路边属性检查通过",
+      "森林公共路覆盖检查通过",
+      "森林入口源数据检查通过",
+      "雾雨弯道路面接地检查通过",
+      "博丽神社检查通过",
+      "竹林入口源数据检查通过",
+      "太阳花田入口源数据检查通过",
+      "辉针城检查通过",
+      "检查通过",
+      "月世界检查通过",
+      "魔界检查通过",
+      "冥界及目录检查通过",
+      "天界检查通过",
+      "此岸彼岸检查通过",
+      "林缘样板检查通过",
+      "畜生界检查通过",
+      "后户之国检查通过",
+      "华扇仙界检查通过",
+      "现行地狱检查通过",
+      "虹龙洞检查通过",
+      "伪天棚检查通过",
+      "圣域／浅间净秽山检查通过",
+      "秘天崖检查通过",
+      "迷途之家检查通过",
+      "芍药田检查通过",
+      "瀑后洞穴检查通过",
+      "黄瓜田检查通过",
+      "幻想风穴检查通过",
+      "山麓间歇泉检查通过",
+      "间歇泉地下中心检查通过",
+      "香霖堂精修检查通过",
+      "森林住宅与木板径检查通过",
+      "人里精修检查通过",
+      "兽道桥头与夜雀屋结构检查通过",
+      "兽道树林与地表样板检查通过",
+      "兽道样板材质与资源检查通过"
+    ]
+  },
+  "remoteCIAndDeployment": {
+    "status": "not run for this candidate"
+  },
+  "preservedFailures": [
+    {
+      "stage": "V1 first production boot",
+      "evidence": {
+        "localPath": "/workspace/sunflower-entry-evidence/v1-capture/execution.json",
+        "SHA256": "769ac6ac078655a92061ed825f587c55ac471e2fb23f51bd9037e3f81b4de80c"
+      },
+      "exitCode": 1,
+      "reason": "Out-of-scope shared Hakurei view falsely included in write targets; target selection corrected without removing sharing assertion"
+    },
+    {
+      "stage": "V1 visual",
+      "commit": "1e7874e964f0f0cf04943960dc80cfc4caf14c2c",
+      "reason": "Hard road corner and old roadside vegetation line"
+    },
+    {
+      "stage": "V2 independent",
+      "commit": "c5d8268bc3f885f095bb1e5e9aa74255fd2a2831",
+      "report": {
+        "localPath": "/workspace/sunflower-entry-evidence/independent-v2.json",
+        "SHA256": "73d05089ec99ce95663e17f56f65ab989b0c3023108f2c2514e380a172905821"
+      },
+      "exitCode": 1,
+      "passedChecks": 24,
+      "actualChecks": 28,
+      "failures": [
+        "21 coarse/fine seam samples outside ROI",
+        "12 changed lookout support samples",
+        "142 road/plant triangle intersections across five plants",
+        "50652 bytes of old forest provenance omitted from pack accounting"
+      ]
+    }
+  ],
+  "limits": [
+    "Static art review does not expose the complete deck underside",
+    "Single native reentry is not a long-term leak test",
+    "Single-frame software-backend CPU observations are not hardware FPS or a speedup claim",
+    "Final candidate reused six expressly identified native protection comparisons from prior paired evidence",
+    "Flower edge regularity, broad bare slopes, tree density and understory remain unfinished"
+  ]
+}
