@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "purpose": "Same-camera supplemental review of the full saddle, east shoulder, reverse side, default entry, cold overview, low quality and night. Camera proposals are CPU-only until executed.",
+  "views": [
+    {"name": "coldOverview", "mode": "coldOverview"},
+    {"name": "defaultEntry", "mode": "defaultEntry"},
+    {"name": "flowerHillSaddle", "mode": "warmBoth", "expectVisible": ["nameless", "sunflower"], "pose": {"space": "surface", "eye": [-920, 315, 1520], "target": [-1138, 146, 1190]}},
+    {"name": "flowerHillEastLow", "mode": "warmBoth", "pose": {"space": "surface", "eye": [-900, 164, 1110], "target": [-984, 137, 1160]}},
+    {"name": "flowerHillReverse", "mode": "warmBoth", "pose": {"space": "surface", "eye": [-1040, 184, 985], "target": [-1070, 144, 1192]}},
+    {"name": "low", "mode": "warmBoth", "quality": "low", "expectVisible": ["nameless", "sunflower"], "pose": {"space": "surface", "eye": [-920, 315, 1520], "target": [-1138, 146, 1190]}},
+    {"name": "night", "mode": "warmBoth", "lighting": "night", "expectVisible": ["nameless", "sunflower"], "pose": {"space": "surface", "eye": [-920, 315, 1520], "target": [-1138, 146, 1190]}}
+  ]
+}
