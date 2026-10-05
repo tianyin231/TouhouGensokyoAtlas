@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "headSHA": "29663c94616067de77657dddd41c01035b8bf58d",
+  "checkedAtUTC": "2026-10-05 16:12:38 UTC",
+  "runs": [
+    {
+      "kind": "pages",
+      "run_id": 37333473347,
+      "expectedJobs": 1,
+      "listedJobs": 1,
+      "succeeded": 0,
+      "failed": [
+        {
+          "id": 111852354013,
+          "name": "deploy",
+          "conclusion": "failure"
+        }
+      ],
+      "pending": [],
+      "artifactHeadSHAVerified": true,
+      "artifactCount": 2
+    },
+    {
+      "kind": "scene",
+      "run_id": 37333473399,
+      "expectedJobs": 5,
+      "listedJobs": 5,
+      "succeeded": 5,
+      "failed": [],
+      "pending": [],
+      "artifactHeadSHAVerified": true,
+      "artifactCount": 4
+    },
+    {
+      "kind": "targeted",
+      "run_id": 37333473669,
+      "expectedJobs": 14,
+      "listedJobs": 14,
+      "succeeded": 14,
+      "failed": [],
+      "pending": [],
+      "artifactHeadSHAVerified": true,
+      "artifactCount": 14
+    }
+  ],
+  "successfulIndependentJobs": 19,
+  "pagesRunURL": "https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37333473347",
+  "attempts": [
+    {
+      "attempt": 1,
+      "jobId": 111842187376,
+      "conclusion": "failure"
+    },
+    {
+      "attempt": 2,
+      "jobId": 111852354013,
+      "conclusion": "failure"
+    }
+  ],
+  "artifactIDs": [
+    11356441593,
+    11357746077
+  ],
+  "artifactHeadSHAVerified": true,
+  "artifactCompressedBytesEach": 23147510,
+  "sourceBuildCheckPreparationAndUpload": "passed on both attempts",
+  "failedStep": "发布网站 / actions/deploy-pages@v5",
+  "attempt1Cause": "Artifact lookup returned 0 immediately after upload. Metadata propagation delay is an inference, not a proven root cause.",
+  "attempt2Cause": "Artifact lookup returned 2 artifacts with the same github-pages name in the same workflow run.",
+  "retryCount": 1,
+  "thirdRetryRequested": false,
+  "oldArtifactsDeleted": false,
+  "onlineHTMLSHA256Verified": false,
+  "fullLocalEvidenceSHA256": "d4896d53830e4c9750042d5729d77dd749dded4006dbb623a8b3d18eae12c6fb",
+  "logs": [
+    {
+      "file": "main-29663c-pages-failed.log",
+      "bytes": 312600,
+      "sha256": "5a9e8ff1f38376005b5d1c87713e4810ccd5639b55ccabecf85b70a71a10684a",
+      "exactSelectedLines": [
+        "2026-10-05T15:48:06.0788688Z Artifact github-pages successfully finalized. Artifact ID 11356441593",
+        "2026-10-05T15:48:06.8227726Z Found 0 artifact(s)",
+        "2026-10-05T15:48:06.9989681Z ##[error]Error: No artifacts named \"github-pages\" were found for this workflow run. Ensure artifacts are uploaded with actions/upload-artifact@v4 or later.",
+        "2026-10-05T15:48:06.9996327Z ##[error]Error: No artifacts named \"github-pages\" were found for this workflow run. Ensure artifacts are uploaded with actions/upload-artifact@v4 or later."
+      ]
+    },
+    {
+      "file": "main-29663c-pages-retry-failed.log",
+      "bytes": 312537,
+      "sha256": "c3a9bf2132c84f59396a865b0872f60e3f0ee9c3225409bea0e6cf9fc2c1a69d",
+      "exactSelectedLines": [
+        "2026-10-05T16:10:13.2137230Z Artifact github-pages successfully finalized. Artifact ID 11357746077",
+        "2026-10-05T16:10:13.5969409Z Found 2 artifact(s)",
+        "2026-10-05T16:10:13.7614214Z ##[error]Error: Multiple artifacts named \"github-pages\" were unexpectedly found for this workflow run. Artifact count is 2.",
+        "2026-10-05T16:10:13.7621387Z ##[error]Error: Multiple artifacts named \"github-pages\" were unexpectedly found for this workflow run. Artifact count is 2."
+      ]
+    }
+  ],
+  "recoveryChange": {
+    "workflowSHA256": "c6331714ab9c8dab49457dc1870bdba3032f486ee7904e640a1144f2a9704d6f",
+    "buildAndDeploySeparate": true,
+    "artifactName": "github-pages-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}",
+    "artifactNamePassedFromBuildOutput": true,
+    "permissionsTriggersConcurrencyActionsAndChecksUnchanged": true,
+    "acceptedRuntimeInputsByteExact": 199,
+    "localValidation": "YAML parsed, six existing pre-upload steps retained, unique-name shell evaluated for attempts1/2; independent Sol static review passed12 checks. The initial local comparison accidentally included the replaced upload step in the unchanged prefix and failed; it was corrected to the six actually unchanged steps.",
+    "independentReviewSHA256": "d82623d0f8ae19dff6f261839fa6f8f53d430d235197fe52678d5b997de753db",
+    "newRemoteRunStatus": "pending; requires this workflow commit",
+    "fullNodeOrGPURepeatedLocally": false,
+    "firstZeroArtifactCauseProven": false,
+    "officialReferences": [
+      "https://github.com/actions/upload-pages-artifact/blob/v5/action.yml",
+      "https://github.com/actions/deploy-pages/blob/v5/action.yml",
+      "https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages#linking-separate-build-and-deploy-jobs"
+    ]
+  }
+}
