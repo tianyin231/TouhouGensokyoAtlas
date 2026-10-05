@@ -20,14 +20,24 @@ const metadata=m=>JSON.stringify(m,(k,v)=>fields.includes(k)?undefined:v);
 const sourceIds=[0,256].flatMap(x=>['',':far',':cut',':cut:far'].map(s=>'island:terrain:'+x+':256'+s));
 const wallId='island:inspection-walls',stoneId='overview:myouren:hlod:architecture:myouren:1:1:templeStone';
 const nearBoxes=[[218,354,288,391],[312,354,394,391]],farBox=[192,336,416,416];
-const knownRoots=[
- ['overview:village:trees',271,230.314453125,81.83424377441406,359.1158752441406,.5196528687094574],
- ['overview:village:trees',285,217.8450927734375,81.88619232177734,356.60345458984375,.46699707267185503],
- ['overview:village:trees',286,222.86842346191406,83.4708480834961,366.99566650390625,.31704078700399263],
- ['overview:myouren:trees',12,262.4426574707031,87.17833709716797,370.53851318359375,.5049736096097576],
- ['overview:myouren:trees',13,272.57977294921875,89.94184875488281,372.4967041015625,.5252681300147442],
- ['overview:myouren:trees',17,321.1407165527344,88.26381341854308,371.2571105957031,.35195803272422965]
-];
+// Select roots from the actual original cold/native prototypes and matrices.
+// A root base is translation plus prototype minimum Y, not translation alone.
+function originalRoots(records){
+ const found=new Map();
+ for(const m of records){
+  if(!m.instances||!m.instanceColors||!(m.component==='trees'||m.id.includes(':legacy:plants:')))continue;
+  let minY=Infinity;for(let i=1;i<m.vertices.length;i+=9)minY=Math.min(minY,m.vertices[i]);
+  const low=[];for(let i=0;i<m.vertices.length;i+=9)if(m.vertices[i+1]<=minY+.2)low.push(Array.from(m.vertices.subarray(i,i+3)));
+  assert(low.length,'No actual root-base prototype '+m.id);
+  for(let i=0;i<m.instances.length;i+=16){
+   const a=m.instances.subarray(i,i+16),x=a[12],z=a[14];if(x<216||x>396||z<352||z>393)continue;
+   const y=a[13]+minY*a[5],radius=Math.max(...low.map(p=>Math.hypot(a[0]*p[0]+a[8]*p[2],a[2]*p[0]+a[10]*p[2]))),key=[x,a[13],z].join(',');
+   const source={record:m.id,instance:i/16,matrixSHA:hashView(a),translationY:a[13],prototypeMinY:minY,baseY:y,radius};
+   if(!found.has(key))found.set(key,{x,y,z,radius,sources:[source]});else{const r=found.get(key);r.y=Math.min(r.y,y);r.radius=Math.max(r.radius,radius);r.sources.push(source);}
+  }
+ }
+ assert.equal(found.size,6,'Expected all six original root footprints');return [...found.values()];
+}
 
 export function triangles(m,bounds){
  const a=m.vertices,ix=m.index,n=ix?ix.length:a.length/9,out=[];
@@ -74,16 +84,33 @@ function buffers(value,result=new Set(),seen=new Set()){
 }
 function subsequence(old,next){let j=0;for(let i=0;i<old.length&&j<next.length;i+=3)if(old[i]===next[j]&&old[i+1]===next[j+1]&&old[i+2]===next[j+2])j+=3;return j===next.length;}
 const inside=(x,z,b)=>x>=b[0]&&x<=b[2]&&z>=b[1]&&z<=b[3];
+const sub=(a,b)=>a.slice(0,3).map((n,k)=>n-b[k]);
+const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+const dot=(a,b)=>a.reduce((n,v,k)=>n+v*b[k],0);
+const positionKey=p=>p.slice(0,3).map(n=>Object.is(n,-0)?0:n).join(',');
+function onSegment(p,a,b,tolerance=.00006){
+ const d=sub(b,a),q=sub(p,a),length=dot(d,d),u=dot(q,d)/length;
+ return u>=-1e-6&&u<=1+1e-6&&Math.hypot(...q.map((n,k)=>n-u*d[k]))<=tolerance;
+}
 
 async function main(){
+ assert.equal(Number(process.versions.node.split('.')[0]),22,'Use Node22 for stable geometry');
  const started=performance.now(),checkerSHA=sha(fs.readFileSync(import.meta.filename)),checks=[];
  const run=(name,fn)=>{try{const result=fn();checks.push({name,passed:true,result});}catch(e){checks.push({name,passed:false,error:e.message,...(e.result?{result:e.result}:{})});}};
  const failRows=(rows,message)=>{if(rows.length){const e=new Error(message+' ('+rows.length+')');e.result=rows;throw e;}};
+ run('accepted original input digests retained',()=>{
+  const expected={'src/world-builder.js':'d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e','assets/packs/overview.pack.gz':'7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742','assets/packs/legacy.pack.gz':'46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88','data/atlas.json':'74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a','src/renderer.js':'d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36'},actual={};
+  for(const [p,s]of Object.entries(expected)){actual[p]=sha(read(p));assert.equal(actual[p],s,'Original input differs '+p);}return actual;
+ });
+ const sourceSHA=sha(read('src/myouren-terrain-rebuild.js')),expectedAt=process.argv.indexOf('--source-sha');
+ if(expectedAt>=0)assert.equal(sourceSHA,process.argv[expectedAt+1],'Frozen source SHA differs');
  const context=vm.createContext({performance,TextDecoder,TextEncoder}),project=JSON.parse(read('project.json'));
  for(const p of project.worldBuilders)vm.runInContext(String(read(p)),context,{filename:p});
  const G=context.GA,U=G.MYOUREN_TERRAIN_REBUILD,data=JSON.parse(read('data/atlas.json'));
  assert(U?.prepare,'Actual candidate API absent');
  const raw=gunzipSync(read('assets/packs/overview.pack.gz')),pack=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength));
+ const legacyRaw=gunzipSync(read('assets/packs/legacy.pack.gz')),legacy=G.decodePack(legacyRaw.buffer.slice(legacyRaw.byteOffset,legacyRaw.byteOffset+legacyRaw.byteLength));
+ const roots=originalRoots([...pack.meshes,...G.plantSubset(legacy,'myouren')]);
  const targetSet=new Set([...sourceIds,stoneId,wallId]);
  const original=new Map(pack.meshes.map(m=>[m.id,{record:m,meta:metadata(m),arrays:Object.fromEntries(fields.filter(k=>m[k]).map(k=>[k,{ref:m[k],hash:hashView(m[k])}]))}]));
  const oldTerrain=sourceIds.map(id=>{const m=pack.meshes.find(r=>r.id===id);assert(m,'Missing original '+id);return {...m,index:m.index.slice()};});
@@ -124,7 +151,7 @@ async function main(){
   for(const m of [...added,pack.meshes.find(r=>r.id===wallId)]){assert(m.vertices.every(Number.isFinite),'Nonfinite attributes '+m.id);let bad=0;for(const t of triangles(m)){const [a,b,c]=t.p,u=b.map((n,k)=>n-a[k]),v=c.map((n,k)=>n-a[k]),area=Math.hypot(u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0])/2;minimumArea=Math.min(minimumArea,area);if(area<=1e-8)bad++;}assert.equal(bad,0,'Degenerate added faces '+m.id);rows.push({id:m.id,triangles:m.index.length/3});}return {rows,minimumArea};
  });
  run('six actual original tree footprints preserve near support and match far',()=>{
-  const rows=[],bad=[];for(const [record,instance,x,y,z,radius]of knownRoots){const m=pack.meshes.find(r=>r.id===record);assert(m?.instances,'Original root record missing '+record);const M=Array.from(m.instances.subarray(instance*16,instance*16+16));assert(Math.hypot(M[12]-x,M[13]-y,M[14]-z)<.00001,'Original root matrix differs '+record+'/'+instance);let nearError=0,farError=0;for(let j=0;j<=16;j++){const a=j?2*Math.PI*(j-1)/16:0,X=x+(j?radius*Math.cos(a):0),Z=z+(j?radius*Math.sin(a):0),old=heightAt(samplers.oldnearNormal,X,Z),n=heightAt(samplers.newnearNormal,X,Z),f=heightAt(samplers.newfarNormal,X,Z);if(old===null||n===null||f===null){bad.push({record,instance,X,Z,old,n,f});continue;}nearError=Math.max(nearError,Math.abs(n-old));farError=Math.max(farError,Math.abs(f-n));}rows.push({record,instance,radius,nearError,farError});if(nearError>.001||farError>.03)bad.push(rows.at(-1));}failRows(bad,'Tree support lost or altered');return {samplesPerRoot:17,nearTolerance:.001,farNearTolerance:.03,rows};
+  const rows=[],bad=[];for(const r of roots){const {x,z,radius}=r;let nearError=0,farError=0;for(let j=0;j<=16;j++){const a=j?2*Math.PI*(j-1)/16:0,X=x+(j?radius*Math.cos(a):0),Z=z+(j?radius*Math.sin(a):0),old=heightAt(samplers.oldnearNormal,X,Z),n=heightAt(samplers.newnearNormal,X,Z),f=heightAt(samplers.newfarNormal,X,Z);if(old===null||n===null||f===null){bad.push({root:r,X,Z,old,n,f});continue;}nearError=Math.max(nearError,Math.abs(n-old));farError=Math.max(farError,Math.abs(f-n));}rows.push({...r,nearError,farError});if(nearError>.001||farError>.03)bad.push(rows.at(-1));}failRows(bad,'Tree support lost or altered');return {samplesPerRoot:17,nearTolerance:.001,farNearTolerance:.03,rows};
  });
  run('near central stair and protected platform surfaces unchanged',()=>{
   const pts=[];for(let x=288;x<=312;x+=2)for(let z=354;z<=391;z+=2)pts.push([x,z]);for(let x=218;x<=394;x+=4)for(const z of [389.6,390,391,392,394,400,416])pts.push([x,z]);for(let x=248;x<=354;x+=4)for(let z=336;z<=362;z+=2)pts.push([x,z]);for(let x=352;x<=398;x+=4)for(let z=320;z<=376;z+=4)pts.push([x,z]);const bad=[];let maxError=0,checked=0;for(const [x,z]of pts){const old=heightAt(samplers.oldnearNormal,x,z),next=heightAt(samplers.newnearNormal,x,z);if(old===null)continue;checked++;if(next===null)bad.push({x,z,old,next});else{const e=Math.abs(next-old);maxError=Math.max(maxError,e);if(e>.001)bad.push({x,z,old,next,e});}}failRows(bad,'Protected near support differs');return {checked,maxError,tolerance:.001};
@@ -136,16 +163,50 @@ async function main(){
   const bad=[];let checked=0,maxJump=0;for(const far of [false,true])for(const cut of [false,true])for(let z=336;z<=416;z+=.5){if(cut&&z>378)continue;const k=(far?'far':'near')+(cut?'Cut':'Normal'),s=samplers['new'+k],old=samplers['old'+k],a=heightAt(s,255.99,z),b=heightAt(s,256.01,z);if(heightAt(old,255.99,z)===null||heightAt(old,256.01,z)===null)continue;checked++;if(a===null||b===null)bad.push({k,z,a,b});else{const jump=Math.abs(a-b);maxJump=Math.max(maxJump,jump);if(jump>.15)bad.push({k,z,a,b,jump});}}failRows(bad,'Sibling seam missing or discontinuous');return {checked,maxJump,probeSeparation:.02,maxAllowedJump:.15};
  });
  run('normal and cut siblings share actual z378 upper trace',()=>{
-  const bad=[];let checked=0,maxError=0;for(const far of [false,true])for(let x=218;x<=394;x+=.5){const k=far?'far':'near',a=heightAt(samplers['new'+k+'Normal'],x,378),b=heightAt(samplers['new'+k+'Cut'],x,378);checked++;if(a===null||b===null)bad.push({k,x,a,b});else{maxError=Math.max(maxError,Math.abs(a-b));if(Math.abs(a-b)>.001)bad.push({k,x,a,b,error:Math.abs(a-b)});}}failRows(bad,'Cut trace differs from normal actual surface');return {checked,maxError,tolerance:.001};
+  const bad=[];let checked=0,maxError=0,maxExistingCentralDifference=0,maxIntroducedCentralDifference=0;
+  for(const far of [false,true])for(let x=218;x<=394;x+=.5){const k=far?'far':'near',a=heightAt(samplers['new'+k+'Normal'],x,378),b=heightAt(samplers['new'+k+'Cut'],x,378);checked++;if(a===null||b===null){bad.push({k,x,a,b});continue;}
+   if(!far&&x>=288&&x<=312){const oldA=heightAt(samplers.oldnearNormal,x,378),oldB=heightAt(samplers.oldnearCut,x,378);if(oldA===null||oldB===null){bad.push({k,x,oldA,oldB});continue;}const existing=oldA-oldB,introduced=(a-b)-existing;maxExistingCentralDifference=Math.max(maxExistingCentralDifference,Math.abs(existing));maxIntroducedCentralDifference=Math.max(maxIntroducedCentralDifference,Math.abs(introduced));if(Math.abs(introduced)>.001)bad.push({k,x,a,b,oldA,oldB,introduced});
+   }else{maxError=Math.max(maxError,Math.abs(a-b));if(Math.abs(a-b)>.001)bad.push({k,x,a,b,error:Math.abs(a-b)});}
+  }failRows(bad,'Cut trace has a newly introduced discontinuity');return {checked,maxError,maxExistingCentralDifference,maxIntroducedCentralDifference,tolerance:.001,centralProtocol:'Preserve unchanged central near candidate minus baseline difference; modified wings/far must match normal exactly within tolerance.'};
  });
  run('far outer envelope preserves actual old support',()=>{
   const pts=[];for(let x=192;x<=416;x+=2)pts.push([x,336],[x,416]);for(let z=336;z<=416;z+=2)pts.push([192,z],[416,z]);const bad=[];let maxError=0,checked=0;for(const [x,z]of pts){const a=heightAt(samplers.oldfarNormal,x,z),b=heightAt(samplers.newfarNormal,x,z);if(a===null)continue;checked++;if(b===null)bad.push({x,z,a,b});else{maxError=Math.max(maxError,Math.abs(a-b));if(Math.abs(a-b)>.001)bad.push({x,z,a,b,error:Math.abs(a-b)});}}failRows(bad,'Far envelope changed old outer support');return {checked,maxError,tolerance:.001};
  });
- const report={schema:1,checkerSHA,sourceSHA:sha(read('src/myouren-terrain-rebuild.js')),projectSHA:sha(read('project.json')),sourceAssetSHA:sha(read('assets/packs/overview.pack.gz')),node:process.version,prepareCPUms,elapsedCPUms:performance.now()-started,checks,passed:checks.every(c=>c.passed),passedChecks:checks.filter(c=>c.passed).length,totalChecks:checks.length,
+ if(U.revision>=2){
+  run('explicit rock facets exist with actual hard face normals',()=>{
+   assert(U.outcrops?.length===4,'Expected four actual rock control rings');
+   const rows=[],bad=[];let minNormalDot=1;
+   for(const r of U.outcrops)for(let i=0;i<r.ring.length;i++){
+    const p=[r.crest,r.ring[i],r.ring[(i+1)%r.ring.length]],normal=cross(sub(p[1],p[0]),sub(p[2],p[0])),L=Math.hypot(...normal),up=normal.map(n=>n/L*(normal[1]<0?-1:1));let samples=0;
+    for(let u=1;u<5;u++)for(let v=1;v<5-u;v++){
+     const weights=[u/5,v/5,1-(u+v)/5],q=p[0].map((_,k)=>p.reduce((s,a,j)=>s+a[k]*weights[j],0)),hits=samplers.newnearNormal(q[0],q[2]);samples++;
+     if(!hits.length){bad.push({rock:r.id,face:i,point:q,reason:'No actual near face'});continue;}
+     for(const h of hits){const a=h.attributes,n=a.slice(3,6),nd=dot(up,n)/Math.hypot(...n);minNormalDot=Math.min(minNormalDot,nd);if(Math.abs(a[1]-q[1])>.0001||Math.abs(Math.hypot(...n)-1)>.0001||nd<.999)bad.push({rock:r.id,face:i,point:q,actualHeight:a[1],normal:n,normalDot:nd});}
+    }rows.push({rock:r.id,face:i,samples});
+   }failRows(bad,'Rock facet missing, displaced or using blended soil normals');return {facets:rows.length,samples:rows.reduce((n,r)=>n+r.samples,0),minNormalDot,positionTolerance:.0001,rows};
+  });
+  run('actual rock and earth ring edges share exact Float32 positions',()=>{
+   const color=G.rgb('#909084'),near=added.filter(m=>!m.globalFar&&!m.cutOnly).flatMap(m=>triangles(m)),edges=new Map(),rings=U.outcrops.flatMap(r=>r.ring.map((a,i)=>({rock:r.id,edge:i,a,b:r.ring[(i+1)%r.ring.length]})));
+   for(const t of near){const rock=t.p.every(p=>p.slice(6,9).every((n,k)=>Math.abs(n-color[k])<1e-6));for(let k=0;k<3;k++){
+    const a=t.p[k],b=t.p[(k+1)%3],ring=rings.find(r=>onSegment(a,r.a,r.b)&&onSegment(b,r.a,r.b));if(!ring)continue;
+    const A=positionKey(a),B=positionKey(b);if(A===B)continue;const key=A<B?A+'|'+B:B+'|'+A;if(!edges.has(key))edges.set(key,{rock:ring.rock,controlEdge:ring.edge,uses:[],points:[a.slice(0,3),b.slice(0,3)]});edges.get(key).uses.push({record:t.id,face:t.face,material:rock?'rock':'earth'});
+   }}
+   const bad=[];for(const e of edges.values())if(e.uses.length!==2||!e.uses.some(u=>u.material==='rock')||!e.uses.some(u=>u.material==='earth'))bad.push(e);
+   for(const r of rings)if(![...edges.values()].some(e=>e.rock===r.rock&&e.controlEdge===r.edge))bad.push({rock:r.rock,controlEdge:r.edge,reason:'No actual ring edge'});
+   failRows(bad,'Rock/earth actual ring has a missing, duplicated or unmatched edge');return {controlEdges:rings.length,actualSharedEdges:edges.size,Float32PositionKeysExact:true,controlSegmentRecognitionTolerance:.00006};
+  });
+ }
+ run('frozen source stayed unchanged throughout preflight',()=>{assert.equal(sha(read('src/myouren-terrain-rebuild.js')),sourceSHA,'Source changed during execution');return {sourceSHA};});
+ const report={schema:2,checkerSHA,sourceSHA,projectSHA:sha(read('project.json')),sourceAssetSHA:sha(read('assets/packs/overview.pack.gz')),node:process.version,prepareCPUms,elapsedCPUms:performance.now()-started,checks,passed:checks.every(c=>c.passed),passedChecks:checks.filter(c=>c.passed).length,totalChecks:checks.length,
   scope:'Bounded decoded public source prepare and independent actual indexed-face sampling. No native/detail build, no WebGL, no full Node regression.',
   notRun:['Independent retained-fragment barycentric attribute proof','All deleted-face authorized polygon proof','Native detail shrub clump/source protection','Navigation/visible floor adapter and actual input','Renderer draw/tri/residency/reentry and visual acceptance'],
   sourceTriangleDeltas:sourceIds.map(id=>({id,before:oldIndices.get(id).length/3,after:pack.meshes.filter(m=>m.id===id||m.id===id+':myouren-rebuild').reduce((n,m)=>n+m.index.length/3,0)}))};
  const at=process.argv.indexOf('--output'),output=at>=0?resolve(process.argv[at+1]):null;if(output)fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify({output,checkerSHA,sourceSHA:report.sourceSHA,passed:report.passed,passedChecks:report.passedChecks,totalChecks:report.totalChecks,prepareCPUms,elapsedCPUms:report.elapsedCPUms,failures:checks.filter(c=>!c.passed).map(c=>({name:c.name,error:c.error,result:c.result}))}));if(!report.passed)process.exitCode=1;
 }
-if(resolve(process.argv[1]||'')===fileURLToPath(import.meta.url))await main();
+if(resolve(process.argv[1]||'')===fileURLToPath(import.meta.url)){
+ try{await main();}catch(e){
+  const report={schema:2,passed:false,fatal:true,error:e.stack,checkerSHA:sha(fs.readFileSync(import.meta.filename)),sourceSHA:sha(read('src/myouren-terrain-rebuild.js')),node:process.version,scope:'Preflight aborted; no downstream assertion is credited as passed.'};
+  const at=process.argv.indexOf('--output');if(at>=0)fs.writeFileSync(resolve(process.argv[at+1]),JSON.stringify(report,null,2)+'\n');console.error(JSON.stringify(report));process.exitCode=1;
+ }
+}

@@ -1,0 +1,9 @@
+{
+  "exitCode": 1,
+  "sourceSHA": "f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0",
+  "checkerSHA": "7f6db4939fe52f21bfe944deb111dc5ca37be364d8a0414d64ee981bf481d421",
+  "elapsedCPUms": 5759.683617000001,
+  "passedChecks": 14,
+  "totalChecks": 16,
+  "command": "/tmp/node-v22.23.3-linux-x64/bin/node tools/check-myouren-terrain.mjs --source-sha f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0 --output /workspace/myouren-terrain-evidence/independent-v2.json"
+}

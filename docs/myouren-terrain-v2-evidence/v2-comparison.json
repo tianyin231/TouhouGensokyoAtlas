@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "baselineCommit": "29663c94616067de77657dddd41c01035b8bf58d",
+  "sourceSHA256": "f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0",
+  "projectSHA256": "33d1a8580015f00061eb7d1c68f63104c6dad1561f68ebb950c0bef893e7fa11",
+  "protocolSHA256": "ab81458a203d12549c257063522be766c74a2a885116ada87f774c9a680186cf",
+  "actualWebGL": true,
+  "sameCameraAndQuality": true,
+  "camera": {
+    "eye": [
+      503,
+      226,
+      167
+    ],
+    "target": [
+      305,
+      86,
+      419
+    ],
+    "fov": 49,
+    "quality": "balanced",
+    "rendererQuality": "balanced",
+    "lighting": "neutral",
+    "ao": true
+  },
+  "metrics": {
+    "before": {
+      "drawCalls": 278,
+      "triangles": 663480,
+      "residentAttributeBytes": 29872584,
+      "geometries": 201,
+      "textures": 24
+    },
+    "v1": {
+      "drawCalls": 280,
+      "triangles": 659861,
+      "residentAttributeBytes": 29415192,
+      "geometries": 203,
+      "textures": 24
+    },
+    "v2": {
+      "drawCalls": 280,
+      "triangles": 660104,
+      "residentAttributeBytes": 29429700,
+      "geometries": 203,
+      "textures": 24
+    }
+  },
+  "deltaV2VsBaseline": {
+    "drawCalls": 2,
+    "triangles": -3376,
+    "residentAttributeBytes": -442884,
+    "geometries": 2,
+    "textures": 0
+  },
+  "images": {
+    "before": {
+      "sha256": "b3df4e78b6d14f1b6f4f79ba66261c0f4d4bf325f32c41eba936f0bf36ef0a1b",
+      "artifactSHA256": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+      "cliExitCode": 0,
+      "browser": "151.0.7922.173",
+      "elapsedSeconds": 32.05789554799412,
+      "errors": [],
+      "contextEvents": [],
+      "httpFailures": [
+        {
+          "path": "/favicon.ico",
+          "status": 404,
+          "source": "local HTTP server"
+        }
+      ]
+    },
+    "v1": {
+      "sha256": "32e44a2e324e910a35961860ae2fe6211f6aa0648ba8af881cecd8accbba2c7d",
+      "artifactSHA256": "c6878f945fafd91002d1fa24ced3377f3102e1dac399dc2a35d86e131b06876d",
+      "cliExitCode": 0,
+      "browser": "151.0.7922.173",
+      "elapsedSeconds": 34.64367983899865,
+      "errors": [],
+      "contextEvents": [],
+      "httpFailures": [
+        {
+          "path": "/favicon.ico",
+          "status": 404,
+          "source": "local HTTP server"
+        }
+      ]
+    },
+    "v2": {
+      "sha256": "d30b372e50f4c1eec9f724f0ec07d6ab7067e1c64d11a0b05405734eeb65497c",
+      "artifactSHA256": "0723e15ae5c655ce8323803ebca06bfd7916027c0bfd46cc9a0e5ddfa84c5027",
+      "cliExitCode": 0,
+      "browser": "151.0.7922.173",
+      "elapsedSeconds": 32.59848419300397,
+      "errors": [],
+      "contextEvents": [],
+      "httpFailures": [
+        {
+          "path": "/favicon.ico",
+          "status": 404,
+          "source": "local HTTP server"
+        }
+      ]
+    }
+  },
+  "visualVerdict": {
+    "root": "rejected",
+    "Astra": "rejected",
+    "reasons": [
+      "Hard-edged rocks read as similarly spaced pointed gems attached to a wall.",
+      "Broad soil areas still form gray-green vertical curtains, with a straight platform underside and weak foot transition.",
+      "No coherent base/shoulder relation to the central stairs; scattered existing shrubs remain."
+    ],
+    "twoVisualAttemptsComplete": true,
+    "furtherSameMethodDrafts": false
+  },
+  "independentV2Original": {
+    "exitCode": 1,
+    "passedChecks": 14,
+    "totalChecks": 16,
+    "originalFailurePreserved": true,
+    "typedBackingBytes": 607080,
+    "rootSupportAndOriginalFootprints": "passed",
+    "outsideHoleFarCut25Samples": "passed",
+    "rockSeamFalseClassification": "Old V1 color classifier; all 157 actual Float32 soil/rock boundaries shared exactly in a separate diagnostic.",
+    "confirmedNewCutGap": "At x288/312, baseline seam gap0; V2 gap .02818m at z376.5 increasing to .112709m at z378. Unfixed rejected source remains frozen."
+  },
+  "notRun": [
+    "complete Node regression",
+    "other qualities",
+    "night",
+    "rear",
+    "overview",
+    "cutaway image",
+    "native interaction/unload/reentry",
+    "candidate CI/deployment"
+  ],
+  "notImplemented": [
+    "camera actual-surface height sampling"
+  ],
+  "hardwareFPSOrPhysicalVRAMMeasured": false
+}

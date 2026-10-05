@@ -1,0 +1,2230 @@
+{
+  "schema": 1,
+  "probeSHA": "42b3d1a844898b017359b372719856047ae61ed9418d284f23ca69fec62ce180",
+  "checkerSHA": "7f6db4939fe52f21bfe944deb111dc5ca37be364d8a0414d64ee981bf481d421",
+  "sourceSHA": "f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0",
+  "originalCLI1Unchanged": true,
+  "originalReport": "/workspace/myouren-terrain-evidence/independent-v2.json",
+  "ringDiagnosis": {
+    "classifier": "Actual positions inside original control facet plus actual hard normal, independent of color",
+    "controlEdges": 20,
+    "actualSharedEdges": 157,
+    "unmatched": [],
+    "missingControlEdges": [],
+    "passed": true,
+    "originalProtocolError": "The preflight hard-coded the V1 #909084 rock color. V2 uses #92968b, so every rock was falsely labelled earth."
+  },
+  "stairInterfaces": [
+    {
+      "x": 288,
+      "oldSegments": [
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 6174,
+          "a": [
+            288,
+            81.99839782714844,
+            356
+          ],
+          "b": [
+            288,
+            82,
+            352
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6176,
+          "a": [
+            288,
+            82,
+            352
+          ],
+          "b": [
+            288,
+            81.99839782714844,
+            356
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 6430,
+          "a": [
+            288,
+            81.95670318603516,
+            360
+          ],
+          "b": [
+            288,
+            81.99839782714844,
+            356
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6432,
+          "a": [
+            288,
+            81.99839782714844,
+            356
+          ],
+          "b": [
+            288,
+            81.95670318603516,
+            360
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 6686,
+          "a": [
+            288,
+            82.38462829589844,
+            364
+          ],
+          "b": [
+            288,
+            81.95670318603516,
+            360
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6688,
+          "a": [
+            288,
+            81.95670318603516,
+            360
+          ],
+          "b": [
+            288,
+            82.38462829589844,
+            364
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 6942,
+          "a": [
+            288,
+            85.1615982055664,
+            368
+          ],
+          "b": [
+            288,
+            82.38462829589844,
+            364
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6944,
+          "a": [
+            288,
+            82.38462829589844,
+            364
+          ],
+          "b": [
+            288,
+            85.1615982055664,
+            368
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 7198,
+          "a": [
+            288,
+            90.24579620361328,
+            372
+          ],
+          "b": [
+            288,
+            85.1615982055664,
+            368
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 7200,
+          "a": [
+            288,
+            85.1615982055664,
+            368
+          ],
+          "b": [
+            288,
+            90.24579620361328,
+            372
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 7454,
+          "a": [
+            288,
+            95.61764526367188,
+            376
+          ],
+          "b": [
+            288,
+            90.24579620361328,
+            372
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 7456,
+          "a": [
+            288,
+            90.24579620361328,
+            372
+          ],
+          "b": [
+            288,
+            95.61764526367188,
+            376
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 7710,
+          "a": [
+            288,
+            98.40303039550781,
+            378
+          ],
+          "b": [
+            288,
+            95.61764526367188,
+            376
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 7712,
+          "a": [
+            288,
+            95.61764526367188,
+            376
+          ],
+          "b": [
+            288,
+            98.40303039550781,
+            378
+          ]
+        }
+      ],
+      "newSegments": [
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6152,
+          "a": [
+            288,
+            82,
+            352
+          ],
+          "b": [
+            288,
+            81.99839782714844,
+            356
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6314,
+          "a": [
+            288,
+            81.99839782714844,
+            356
+          ],
+          "b": [
+            288,
+            81.95670318603516,
+            360
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6455,
+          "a": [
+            288,
+            81.95670318603516,
+            360
+          ],
+          "b": [
+            288,
+            82.38462829589844,
+            364
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6596,
+          "a": [
+            288,
+            82.38462829589844,
+            364
+          ],
+          "b": [
+            288,
+            85.1615982055664,
+            368
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6737,
+          "a": [
+            288,
+            85.1615982055664,
+            368
+          ],
+          "b": [
+            288,
+            90.24579620361328,
+            372
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6878,
+          "a": [
+            288,
+            90.24579620361328,
+            372
+          ],
+          "b": [
+            288,
+            95.61764526367188,
+            376
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 7019,
+          "a": [
+            288,
+            95.61764526367188,
+            376
+          ],
+          "b": [
+            288,
+            98.40303039550781,
+            378
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 15,
+          "a": [
+            288,
+            81.99919891357422,
+            354
+          ],
+          "b": [
+            288,
+            82,
+            352
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 344,
+          "a": [
+            288,
+            81.99839782714844,
+            356
+          ],
+          "b": [
+            288,
+            81.99919891357422,
+            354
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 348,
+          "a": [
+            288,
+            81.95670318603516,
+            360
+          ],
+          "b": [
+            288,
+            81.99839782714844,
+            356
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 354,
+          "a": [
+            288,
+            82.27764892578125,
+            363
+          ],
+          "b": [
+            288,
+            81.95670318603516,
+            360
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 359,
+          "a": [
+            288,
+            82.38462829589844,
+            364
+          ],
+          "b": [
+            288,
+            82.27764892578125,
+            363
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 363,
+          "a": [
+            288,
+            85.1615982055664,
+            368
+          ],
+          "b": [
+            288,
+            82.38462829589844,
+            364
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 367,
+          "a": [
+            288,
+            90.24579620361328,
+            372
+          ],
+          "b": [
+            288,
+            85.1615982055664,
+            368
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 371,
+          "a": [
+            288,
+            95.61764526367188,
+            376
+          ],
+          "b": [
+            288,
+            90.24579620361328,
+            372
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 375,
+          "a": [
+            288,
+            97.06669616699219,
+            377
+          ],
+          "b": [
+            288,
+            95.61764526367188,
+            376
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 380,
+          "a": [
+            288,
+            98.51573944091797,
+            378
+          ],
+          "b": [
+            288,
+            97.06669616699219,
+            377
+          ]
+        }
+      ],
+      "baselineProfile": [
+        {
+          "z": 354,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6174,
+              "height": 81.99919891357422
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6176,
+              "height": 81.99919891357422
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 355,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6174,
+              "height": 81.99879837036133
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6176,
+              "height": 81.99879837036133
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 358,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6430,
+              "height": 81.9775505065918
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6432,
+              "height": 81.9775505065918
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 362,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6686,
+              "height": 82.1706657409668
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6688,
+              "height": 82.1706657409668
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 366,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6942,
+              "height": 83.77311325073242
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6944,
+              "height": 83.77311325073242
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 370,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7198,
+              "height": 87.70369720458984
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7200,
+              "height": 87.70369720458984
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 374,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7454,
+              "height": 92.93172073364258
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7456,
+              "height": 92.93172073364258
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 375,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7454,
+              "height": 94.27468299865723
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7456,
+              "height": 94.27468299865723
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 376,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7454,
+              "height": 95.61764526367188
+            },
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7710,
+              "height": 95.61764526367188
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7456,
+              "height": 95.61764526367188
+            },
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7712,
+              "height": 95.61764526367188
+            }
+          ],
+          "gaps": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "z": 376.5,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7710,
+              "height": 96.31399154663086
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7712,
+              "height": 96.31399154663086
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 377,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7710,
+              "height": 97.01033782958984
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7712,
+              "height": 97.01033782958984
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 377.5,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7710,
+              "height": 97.70668411254883
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7712,
+              "height": 97.70668411254883
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 377.99,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7710,
+              "height": 98.38910346984865
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7712,
+              "height": 98.38910346984865
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 378,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7710,
+              "height": 98.40303039550781
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7712,
+              "height": 98.40303039550781
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        }
+      ],
+      "candidateProfile": [
+        {
+          "z": 354,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 15,
+              "height": 81.99919891357422
+            },
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 344,
+              "height": 81.99919891357422
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6152,
+              "height": 81.99919891357422
+            }
+          ],
+          "gaps": [
+            0,
+            0
+          ]
+        },
+        {
+          "z": 355,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 344,
+              "height": 81.99879837036133
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6152,
+              "height": 81.99879837036133
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 358,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 348,
+              "height": 81.9775505065918
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6314,
+              "height": 81.9775505065918
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 362,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 354,
+              "height": 82.17066701253255
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6455,
+              "height": 82.1706657409668
+            }
+          ],
+          "gaps": [
+            0.0000012715657504713818
+          ]
+        },
+        {
+          "z": 366,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 363,
+              "height": 83.77311325073242
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6596,
+              "height": 83.77311325073242
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 370,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 367,
+              "height": 87.70369720458984
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6737,
+              "height": 87.70369720458984
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 374,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 371,
+              "height": 92.93172073364258
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6878,
+              "height": 92.93172073364258
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 375,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 371,
+              "height": 94.27468299865723
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6878,
+              "height": 94.27468299865723
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 376,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 371,
+              "height": 95.61764526367188
+            },
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 375,
+              "height": 95.61764526367188
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6878,
+              "height": 95.61764526367188
+            },
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7019,
+              "height": 95.61764526367188
+            }
+          ],
+          "gaps": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "z": 376.5,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 375,
+              "height": 96.34217071533203
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7019,
+              "height": 96.31399154663086
+            }
+          ],
+          "gaps": [
+            0.028179168701171875
+          ]
+        },
+        {
+          "z": 377,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 375,
+              "height": 97.06669616699219
+            },
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 380,
+              "height": 97.06669616699219
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7019,
+              "height": 97.01033782958984
+            }
+          ],
+          "gaps": [
+            0.05635833740234375,
+            0.05635833740234375
+          ]
+        },
+        {
+          "z": 377.5,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 380,
+              "height": 97.79121780395508
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7019,
+              "height": 97.70668411254883
+            }
+          ],
+          "gaps": [
+            0.08453369140625
+          ]
+        },
+        {
+          "z": 377.99,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 380,
+              "height": 98.50124900817872
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7019,
+              "height": 98.38910346984865
+            }
+          ],
+          "gaps": [
+            0.11214553833006846
+          ]
+        },
+        {
+          "z": 378,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 380,
+              "height": 98.51573944091797
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7019,
+              "height": 98.40303039550781
+            }
+          ],
+          "gaps": [
+            0.11270904541015625
+          ]
+        }
+      ]
+    },
+    {
+      "x": 312,
+      "oldSegments": [
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6198,
+          "a": [
+            312,
+            81.99839782714844,
+            356
+          ],
+          "b": [
+            312,
+            82,
+            352
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 6200,
+          "a": [
+            312,
+            82,
+            352
+          ],
+          "b": [
+            312,
+            81.99839782714844,
+            356
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6454,
+          "a": [
+            312,
+            81.95670318603516,
+            360
+          ],
+          "b": [
+            312,
+            81.99839782714844,
+            356
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 6456,
+          "a": [
+            312,
+            81.99839782714844,
+            356
+          ],
+          "b": [
+            312,
+            81.95670318603516,
+            360
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6710,
+          "a": [
+            312,
+            82.38565826416016,
+            364
+          ],
+          "b": [
+            312,
+            81.95670318603516,
+            360
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 6712,
+          "a": [
+            312,
+            81.95670318603516,
+            360
+          ],
+          "b": [
+            312,
+            82.38565826416016,
+            364
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6966,
+          "a": [
+            312,
+            85.17388916015625,
+            368
+          ],
+          "b": [
+            312,
+            82.38565826416016,
+            364
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 6968,
+          "a": [
+            312,
+            82.38565826416016,
+            364
+          ],
+          "b": [
+            312,
+            85.17388916015625,
+            368
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 7222,
+          "a": [
+            312,
+            90.25785064697266,
+            372
+          ],
+          "b": [
+            312,
+            85.17388916015625,
+            368
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 7224,
+          "a": [
+            312,
+            85.17388916015625,
+            368
+          ],
+          "b": [
+            312,
+            90.25785064697266,
+            372
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 7478,
+          "a": [
+            312,
+            95.62370300292969,
+            376
+          ],
+          "b": [
+            312,
+            90.25785064697266,
+            372
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 7480,
+          "a": [
+            312,
+            90.25785064697266,
+            372
+          ],
+          "b": [
+            312,
+            95.62370300292969,
+            376
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 7734,
+          "a": [
+            312,
+            98.40607452392578,
+            378
+          ],
+          "b": [
+            312,
+            95.62370300292969,
+            376
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut",
+          "face": 7736,
+          "a": [
+            312,
+            95.62370300292969,
+            376
+          ],
+          "b": [
+            312,
+            98.40607452392578,
+            378
+          ]
+        }
+      ],
+      "newSegments": [
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6174,
+          "a": [
+            312,
+            81.99839782714844,
+            356
+          ],
+          "b": [
+            312,
+            82,
+            352
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6336,
+          "a": [
+            312,
+            81.95670318603516,
+            360
+          ],
+          "b": [
+            312,
+            81.99839782714844,
+            356
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6477,
+          "a": [
+            312,
+            82.38565826416016,
+            364
+          ],
+          "b": [
+            312,
+            81.95670318603516,
+            360
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6618,
+          "a": [
+            312,
+            85.17388916015625,
+            368
+          ],
+          "b": [
+            312,
+            82.38565826416016,
+            364
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6759,
+          "a": [
+            312,
+            90.25785064697266,
+            372
+          ],
+          "b": [
+            312,
+            85.17388916015625,
+            368
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 6900,
+          "a": [
+            312,
+            95.62370300292969,
+            376
+          ],
+          "b": [
+            312,
+            90.25785064697266,
+            372
+          ]
+        },
+        {
+          "side": "central",
+          "record": "island:terrain:256:256:cut",
+          "face": 7041,
+          "a": [
+            312,
+            98.40607452392578,
+            378
+          ],
+          "b": [
+            312,
+            95.62370300292969,
+            376
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 16,
+          "a": [
+            312,
+            82,
+            352
+          ],
+          "b": [
+            312,
+            81.99919891357422,
+            354
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 382,
+          "a": [
+            312,
+            81.99919891357422,
+            354
+          ],
+          "b": [
+            312,
+            81.99839782714844,
+            356
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 385,
+          "a": [
+            312,
+            81.99839782714844,
+            356
+          ],
+          "b": [
+            312,
+            81.95670318603516,
+            360
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 389,
+          "a": [
+            312,
+            81.95670318603516,
+            360
+          ],
+          "b": [
+            312,
+            82.2784194946289,
+            363
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 400,
+          "a": [
+            312,
+            82.2784194946289,
+            363
+          ],
+          "b": [
+            312,
+            82.38565826416016,
+            364
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 404,
+          "a": [
+            312,
+            82.38565826416016,
+            364
+          ],
+          "b": [
+            312,
+            85.17388916015625,
+            368
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 408,
+          "a": [
+            312,
+            85.17388916015625,
+            368
+          ],
+          "b": [
+            312,
+            90.25785064697266,
+            372
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 412,
+          "a": [
+            312,
+            90.25785064697266,
+            372
+          ],
+          "b": [
+            312,
+            95.62370300292969,
+            376
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 416,
+          "a": [
+            312,
+            95.62370300292969,
+            376
+          ],
+          "b": [
+            312,
+            97.07124328613281,
+            377
+          ]
+        },
+        {
+          "side": "wing",
+          "record": "island:terrain:256:256:cut:myouren-rebuild",
+          "face": 420,
+          "a": [
+            312,
+            97.07124328613281,
+            377
+          ],
+          "b": [
+            312,
+            98.51878356933594,
+            378
+          ]
+        }
+      ],
+      "baselineProfile": [
+        {
+          "z": 354,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6200,
+              "height": 81.99919891357422
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6198,
+              "height": 81.99919891357422
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 355,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6200,
+              "height": 81.99879837036133
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6198,
+              "height": 81.99879837036133
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 358,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6456,
+              "height": 81.9775505065918
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6454,
+              "height": 81.9775505065918
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 362,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6712,
+              "height": 82.17118072509766
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6710,
+              "height": 82.17118072509766
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 366,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6968,
+              "height": 83.7797737121582
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6966,
+              "height": 83.7797737121582
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 370,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7224,
+              "height": 87.71586990356445
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7222,
+              "height": 87.71586990356445
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 374,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7480,
+              "height": 92.94077682495117
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7478,
+              "height": 92.94077682495117
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 375,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7480,
+              "height": 94.28223991394043
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7478,
+              "height": 94.28223991394043
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 376,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7480,
+              "height": 95.62370300292969
+            },
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7736,
+              "height": 95.62370300292969
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7478,
+              "height": 95.62370300292969
+            },
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7734,
+              "height": 95.62370300292969
+            }
+          ],
+          "gaps": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "z": 376.5,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7736,
+              "height": 96.31929588317871
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7734,
+              "height": 96.31929588317871
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 377,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7736,
+              "height": 97.01488876342773
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7734,
+              "height": 97.01488876342773
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 377.5,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7736,
+              "height": 97.71048164367676
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7734,
+              "height": 97.71048164367676
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 377.99,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7736,
+              "height": 98.39216266632081
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7734,
+              "height": 98.39216266632081
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 378,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7736,
+              "height": 98.40607452392578
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7734,
+              "height": 98.40607452392578
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        }
+      ],
+      "candidateProfile": [
+        {
+          "z": 354,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 16,
+              "height": 81.99919891357422
+            },
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 382,
+              "height": 81.99919891357422
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6174,
+              "height": 81.99919891357422
+            }
+          ],
+          "gaps": [
+            0,
+            0
+          ]
+        },
+        {
+          "z": 355,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 382,
+              "height": 81.99879837036133
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6174,
+              "height": 81.99879837036133
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 358,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 385,
+              "height": 81.9775505065918
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6336,
+              "height": 81.9775505065918
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 362,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 389,
+              "height": 82.17118072509766
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6477,
+              "height": 82.17118072509766
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 366,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 404,
+              "height": 83.7797737121582
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6618,
+              "height": 83.7797737121582
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 370,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 408,
+              "height": 87.71586990356445
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6759,
+              "height": 87.71586990356445
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 374,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 412,
+              "height": 92.94077682495117
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6900,
+              "height": 92.94077682495117
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 375,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 412,
+              "height": 94.28223991394043
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6900,
+              "height": 94.28223991394043
+            }
+          ],
+          "gaps": [
+            0
+          ]
+        },
+        {
+          "z": 376,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 412,
+              "height": 95.62370300292969
+            },
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 416,
+              "height": 95.62370300292969
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 6900,
+              "height": 95.62370300292969
+            },
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7041,
+              "height": 95.62370300292969
+            }
+          ],
+          "gaps": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "z": 376.5,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 416,
+              "height": 96.34747314453125
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7041,
+              "height": 96.31929588317871
+            }
+          ],
+          "gaps": [
+            0.028177261352539062
+          ]
+        },
+        {
+          "z": 377,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 416,
+              "height": 97.07124328613281
+            },
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 420,
+              "height": 97.07124328613281
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7041,
+              "height": 97.01488876342773
+            }
+          ],
+          "gaps": [
+            0.056354522705078125,
+            0.056354522705078125
+          ]
+        },
+        {
+          "z": 377.5,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 420,
+              "height": 97.79501342773438
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7041,
+              "height": 97.71048164367676
+            }
+          ],
+          "gaps": [
+            0.08453178405761719
+          ]
+        },
+        {
+          "z": 377.99,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 420,
+              "height": 98.50430816650392
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7041,
+              "height": 98.39216266632081
+            }
+          ],
+          "gaps": [
+            0.11214550018310376
+          ]
+        },
+        {
+          "z": 378,
+          "wing": [
+            {
+              "record": "island:terrain:256:256:cut:myouren-rebuild",
+              "face": 420,
+              "height": 98.51878356933594
+            }
+          ],
+          "central": [
+            {
+              "record": "island:terrain:256:256:cut",
+              "face": 7041,
+              "height": 98.40607452392578
+            }
+          ],
+          "gaps": [
+            0.11270904541015625
+          ]
+        }
+      ]
+    }
+  ],
+  "newGaps": [
+    {
+      "x": 288,
+      "z": 376.5,
+      "gap": 0.028179168701171875
+    },
+    {
+      "x": 288,
+      "z": 377,
+      "gap": 0.05635833740234375
+    },
+    {
+      "x": 288,
+      "z": 377,
+      "gap": 0.05635833740234375
+    },
+    {
+      "x": 288,
+      "z": 377.5,
+      "gap": 0.08453369140625
+    },
+    {
+      "x": 288,
+      "z": 377.99,
+      "gap": 0.11214553833006846
+    },
+    {
+      "x": 288,
+      "z": 378,
+      "gap": 0.11270904541015625
+    },
+    {
+      "x": 312,
+      "z": 376.5,
+      "gap": 0.028177261352539062
+    },
+    {
+      "x": 312,
+      "z": 377,
+      "gap": 0.056354522705078125
+    },
+    {
+      "x": 312,
+      "z": 377,
+      "gap": 0.056354522705078125
+    },
+    {
+      "x": 312,
+      "z": 377.5,
+      "gap": 0.08453178405761719
+    },
+    {
+      "x": 312,
+      "z": 377.99,
+      "gap": 0.11214550018310376
+    },
+    {
+      "x": 312,
+      "z": 378,
+      "gap": 0.11270904541015625
+    }
+  ],
+  "CPUms": 4569.101005
+}

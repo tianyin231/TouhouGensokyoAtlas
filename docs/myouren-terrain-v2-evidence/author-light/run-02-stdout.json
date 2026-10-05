@@ -1,0 +1,326 @@
+{
+  "scope": "Author bounded source preflight, not independent validation or visual acceptance",
+  "sourceSHA": "f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0",
+  "projectSHA": "33d1a8580015f00061eb7d1c68f63104c6dad1561f68ebb950c0bef893e7fa11",
+  "scriptSHA": "800cbc66b6a5f930fad721808932641058e707b5616f76d701bc406793511772",
+  "node": "v22.23.3",
+  "prepareCPUms": 3948.0540260000002,
+  "sourceBytes": 607080,
+  "contactBytes": 98244,
+  "cutTraceBytes": 2700,
+  "artTriangles": 2729,
+  "earthTriangles": 2572,
+  "rockFaces": [
+    {
+      "outcrop": "west-shoulder",
+      "face": 0,
+      "firstArtTriangle": 2572,
+      "triangles": 12,
+      "normal": [
+        0.05964724349858406,
+        0.43833294599493766,
+        -0.8968313301833405
+      ]
+    },
+    {
+      "outcrop": "west-shoulder",
+      "face": 1,
+      "firstArtTriangle": 2584,
+      "triangles": 9,
+      "normal": [
+        0.27432012609979634,
+        0.565608507422266,
+        -0.7777116977056141
+      ]
+    },
+    {
+      "outcrop": "west-shoulder",
+      "face": 2,
+      "firstArtTriangle": 2593,
+      "triangles": 7,
+      "normal": [
+        0.06670791355481168,
+        0.9137302444902803,
+        -0.4008080520310147
+      ]
+    },
+    {
+      "outcrop": "west-shoulder",
+      "face": 3,
+      "firstArtTriangle": 2600,
+      "triangles": 11,
+      "normal": [
+        -0.20669818734500384,
+        0.9210761330812499,
+        -0.32999184295430845
+      ]
+    },
+    {
+      "outcrop": "west-shoulder",
+      "face": 4,
+      "firstArtTriangle": 2611,
+      "triangles": 9,
+      "normal": [
+        -0.3459389466424116,
+        0.7182024450557971,
+        -0.6037478721385391
+      ]
+    },
+    {
+      "outcrop": "stair-east",
+      "face": 0,
+      "firstArtTriangle": 2620,
+      "triangles": 8,
+      "normal": [
+        0.11105427987650794,
+        0.35961594471536573,
+        -0.9264681965548442
+      ]
+    },
+    {
+      "outcrop": "stair-east",
+      "face": 1,
+      "firstArtTriangle": 2628,
+      "triangles": 8,
+      "normal": [
+        0.3612214728156549,
+        0.46857069421563186,
+        -0.8062013099091131
+      ]
+    },
+    {
+      "outcrop": "stair-east",
+      "face": 2,
+      "firstArtTriangle": 2636,
+      "triangles": 8,
+      "normal": [
+        0.24818442850303904,
+        0.8293999467259027,
+        -0.5004999678518368
+      ]
+    },
+    {
+      "outcrop": "stair-east",
+      "face": 3,
+      "firstArtTriangle": 2644,
+      "triangles": 6,
+      "normal": [
+        -0.31014955092398117,
+        0.8139671472213054,
+        -0.4911870715990626
+      ]
+    },
+    {
+      "outcrop": "stair-east",
+      "face": 4,
+      "firstArtTriangle": 2650,
+      "triangles": 8,
+      "normal": [
+        -0.33763441304927405,
+        0.5988232986156904,
+        -0.7262325110871143
+      ]
+    },
+    {
+      "outcrop": "lotus-left",
+      "face": 0,
+      "firstArtTriangle": 2658,
+      "triangles": 11,
+      "normal": [
+        0.011687240340231959,
+        0.23777488968056895,
+        -0.9712499731019932
+      ]
+    },
+    {
+      "outcrop": "lotus-left",
+      "face": 1,
+      "firstArtTriangle": 2669,
+      "triangles": 6,
+      "normal": [
+        0.32554142493437066,
+        0.3417976548606675,
+        -0.8815878536955051
+      ]
+    },
+    {
+      "outcrop": "lotus-left",
+      "face": 2,
+      "firstArtTriangle": 2675,
+      "triangles": 7,
+      "normal": [
+        0.2279024560444817,
+        0.7667252001496463,
+        -0.6001607601171357
+      ]
+    },
+    {
+      "outcrop": "lotus-left",
+      "face": 3,
+      "firstArtTriangle": 2682,
+      "triangles": 7,
+      "normal": [
+        -0.30218410391574924,
+        0.7743642699972622,
+        -0.5559179298172015
+      ]
+    },
+    {
+      "outcrop": "lotus-left",
+      "face": 4,
+      "firstArtTriangle": 2689,
+      "triangles": 5,
+      "normal": [
+        -0.40500464467490327,
+        0.3822185394391079,
+        -0.8305902876272938
+      ]
+    },
+    {
+      "outcrop": "lotus-right",
+      "face": 0,
+      "firstArtTriangle": 2694,
+      "triangles": 9,
+      "normal": [
+        0.08405854895405843,
+        0.2220028797765221,
+        -0.9714159159282235
+      ]
+    },
+    {
+      "outcrop": "lotus-right",
+      "face": 1,
+      "firstArtTriangle": 2703,
+      "triangles": 8,
+      "normal": [
+        0.4390898626529007,
+        0.2920922813313947,
+        -0.8496365056317191
+      ]
+    },
+    {
+      "outcrop": "lotus-right",
+      "face": 2,
+      "firstArtTriangle": 2711,
+      "triangles": 9,
+      "normal": [
+        0.27148308769549523,
+        0.8163258742917503,
+        -0.5098127107645805
+      ]
+    },
+    {
+      "outcrop": "lotus-right",
+      "face": 3,
+      "firstArtTriangle": 2720,
+      "triangles": 4,
+      "normal": [
+        -0.3478207030357872,
+        0.6866698403186636,
+        -0.638361409341473
+      ]
+    },
+    {
+      "outcrop": "lotus-right",
+      "face": 4,
+      "firstArtTriangle": 2724,
+      "triangles": 5,
+      "normal": [
+        -0.3356108431534172,
+        0.4520932259161524,
+        -0.8264242718111436
+      ]
+    }
+  ],
+  "farTriangles": 6020,
+  "changes": [
+    {
+      "source": "island:terrain:0:256",
+      "patch": "island:terrain:0:256:myouren-rebuild",
+      "removedFaces": 380,
+      "retainedFragmentTriangles": 77,
+      "patchTriangles": 771
+    },
+    {
+      "source": "island:terrain:0:256:far",
+      "patch": "island:terrain:0:256:far:myouren-rebuild",
+      "removedFaces": 39,
+      "retainedFragmentTriangles": 3,
+      "patchTriangles": 1696
+    },
+    {
+      "source": "island:terrain:0:256:cut",
+      "patch": "island:terrain:0:256:cut:myouren-rebuild",
+      "removedFaces": 263,
+      "retainedFragmentTriangles": 32,
+      "patchTriangles": 477
+    },
+    {
+      "source": "island:terrain:0:256:cut:far",
+      "patch": "island:terrain:0:256:cut:far:myouren-rebuild",
+      "removedFaces": 35,
+      "retainedFragmentTriangles": 3,
+      "patchTriangles": 1072
+    },
+    {
+      "source": "island:terrain:256:256",
+      "patch": "island:terrain:256:256:myouren-rebuild",
+      "removedFaces": 1121,
+      "retainedFragmentTriangles": 191,
+      "patchTriangles": 2226
+    },
+    {
+      "source": "island:terrain:256:256:far",
+      "patch": "island:terrain:256:256:far:myouren-rebuild",
+      "removedFaces": 72,
+      "retainedFragmentTriangles": 9,
+      "patchTriangles": 4336
+    },
+    {
+      "source": "island:terrain:256:256:cut",
+      "patch": "island:terrain:256:256:cut:myouren-rebuild",
+      "removedFaces": 776,
+      "retainedFragmentTriangles": 70,
+      "patchTriangles": 1307
+    },
+    {
+      "source": "island:terrain:256:256:cut:far",
+      "patch": "island:terrain:256:256:cut:far:myouren-rebuild",
+      "removedFaces": 44,
+      "retainedFragmentTriangles": 9,
+      "patchTriangles": 2298
+    }
+  ],
+  "farCutMissingOutsideHole": [],
+  "invalidTriangles": 0,
+  "minimumTriangleArea": 0.003431190806749185,
+  "rockBoundaryEdges": 157,
+  "unmatchedRockSoilEdges": [],
+  "rockControlProjection": {
+    "camera": {
+      "label": "命莲寺 · 山寺全景",
+      "region": "myouren",
+      "eye": [
+        503,
+        226,
+        167
+      ],
+      "target": [
+        305,
+        86,
+        419
+      ]
+    },
+    "points": 24,
+    "inFrustum": 24,
+    "occlusionTested": false
+  },
+  "passed": true,
+  "notRun": [
+    "Independent Sol checker",
+    "Native shrub detail build",
+    "Navigation adapter",
+    "Browser visual gate",
+    "Long regression"
+  ]
+}

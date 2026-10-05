@@ -1,0 +1,11 @@
+--- a/src/myouren-terrain-rebuild.js
++++ b/src/myouren-terrain-rebuild.js
+@@ -109,7 +109,7 @@
+  // Original grid intersections subdivide the ring edge, never the rock plane.
+  const boundaries=outcrops.map(r=>r.ring.map((a,i)=>{const b=r.ring[(i+1)%r.ring.length];return {a,b,points:new Map([[0,a.map(Math.fround)],[1,b.map(Math.fround)]])};}));
+  let soil=[];for(const tri of soilTriangles(base,nearTris)){let pieces=[tri];for(const r of outcrops)pieces=pieces.flatMap(p=>subtractRing(p,r.ring));for(const p of pieces)soil.push(...triangulate(p));}
+- for(const tri of soil)for(const p of tri)for(const edges of boundaries)for(const edge of edges){const {a,b}=edge,dx=b[0]-a[0],dz=b[2]-a[2],u=((p[0]-a[0])*dx+(p[2]-a[2])*dz)/(dx*dx+dz*dz);if(u< -EPS||u>1+EPS)continue;const v=clamp(u),x=G.mix(a[0],b[0],v),z=G.mix(a[2],b[2],v);if(Math.hypot(p[0]-x,p[2]-z)>5e-5)continue;const key=+v.toFixed(9);let q=[...edge.points.values()].find(q=>Math.hypot(q[0]-x,q[2]-z)<.0001);if(!q){q=a.map((n,k)=>Math.fround(G.mix(n,b[k],key)));edge.points.set(key,q);}for(let k=0;k<3;k++)p[k]=q[k];}
++ for(const tri of soil)for(const p of tri)for(const edges of boundaries)for(const edge of edges){const {a,b}=edge,dx=b[0]-a[0],dz=b[2]-a[2],u=((p[0]-a[0])*dx+(p[2]-a[2])*dz)/(dx*dx+dz*dz);if(u< -EPS||u>1+EPS)continue;const v=clamp(u),x=G.mix(a[0],b[0],v),z=G.mix(a[2],b[2],v);if(Math.hypot(p[0]-x,p[2]-z)>1e-5)continue;const key=+v.toFixed(9);let q=edge.points.get(key);if(!q){q=a.map((n,k)=>Math.fround(G.mix(n,b[k],key)));edge.points.set(key,q);}for(let k=0;k<3;k++)p[k]=q[k];}
+  // Ring corners can land halfway along a clipped soil edge. Insert every
+  // shared boundary position on both sides before triangulating that edge.
+  const seamPoints=[...new Map(boundaries.flat().flatMap(e=>[...e.points.values()]).map(p=>[posKey(p),p])).values()];

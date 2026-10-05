@@ -1,0 +1,5324 @@
+{
+  "schema": 2,
+  "checkerSHA": "7f6db4939fe52f21bfe944deb111dc5ca37be364d8a0414d64ee981bf481d421",
+  "sourceSHA": "f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0",
+  "projectSHA": "33d1a8580015f00061eb7d1c68f63104c6dad1561f68ebb950c0bef893e7fa11",
+  "sourceAssetSHA": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+  "node": "v22.23.3",
+  "prepareCPUms": 4485.654675999999,
+  "elapsedCPUms": 5759.683617000001,
+  "checks": [
+    {
+      "name": "accepted original input digests retained",
+      "passed": true,
+      "result": {
+        "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+        "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+        "assets/packs/legacy.pack.gz": "46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88",
+        "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
+        "src/renderer.js": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36"
+      }
+    },
+    {
+      "name": "exclusive original index byte ranges",
+      "passed": true,
+      "result": {
+        "records": 9,
+        "publicRecords": 1060,
+        "overlaps": 0
+      }
+    },
+    {
+      "name": "new reachable typed backing includes contact and cut trace",
+      "passed": true,
+      "result": {
+        "actual": 607080,
+        "budget": 629145.6,
+        "newBuffers": 20,
+        "contactBytes": 98244,
+        "cutTraceBytes": 2700,
+        "removedFaceOrdinals": 2730,
+        "JSHeapBytesMeasured": false
+      }
+    },
+    {
+      "name": "all non-target public source bytes and metadata retained",
+      "passed": true,
+      "result": {
+        "unchanged": 1050
+      }
+    },
+    {
+      "name": "original terrain attributes and retained index faces unchanged",
+      "passed": true,
+      "result": [
+        {
+          "id": "island:terrain:0:256",
+          "before": 16384,
+          "after": 16004
+        },
+        {
+          "id": "island:terrain:0:256:far",
+          "before": 480,
+          "after": 441
+        },
+        {
+          "id": "island:terrain:0:256:cut",
+          "before": 14804,
+          "after": 14541
+        },
+        {
+          "id": "island:terrain:0:256:cut:far",
+          "before": 433,
+          "after": 398
+        },
+        {
+          "id": "island:terrain:256:256",
+          "before": 16384,
+          "after": 15263
+        },
+        {
+          "id": "island:terrain:256:256:far",
+          "before": 480,
+          "after": 408
+        },
+        {
+          "id": "island:terrain:256:256:cut",
+          "before": 10316,
+          "after": 9540
+        },
+        {
+          "id": "island:terrain:256:256:cut:far",
+          "before": 339,
+          "after": 295
+        },
+        {
+          "id": "overview:myouren:hlod:architecture:myouren:1:1:templeStone",
+          "before": 27974,
+          "after": 23102
+        }
+      ]
+    },
+    {
+      "name": "added eight siblings preserve public ownership and cache identity",
+      "passed": true,
+      "result": [
+        {
+          "id": "island:terrain:0:256:myouren-rebuild",
+          "triangles": 771
+        },
+        {
+          "id": "island:terrain:0:256:far:myouren-rebuild",
+          "triangles": 1696
+        },
+        {
+          "id": "island:terrain:0:256:cut:myouren-rebuild",
+          "triangles": 477
+        },
+        {
+          "id": "island:terrain:0:256:cut:far:myouren-rebuild",
+          "triangles": 1072
+        },
+        {
+          "id": "island:terrain:256:256:myouren-rebuild",
+          "triangles": 2226
+        },
+        {
+          "id": "island:terrain:256:256:far:myouren-rebuild",
+          "triangles": 4336
+        },
+        {
+          "id": "island:terrain:256:256:cut:myouren-rebuild",
+          "triangles": 1307
+        },
+        {
+          "id": "island:terrain:256:256:cut:far:myouren-rebuild",
+          "triangles": 2298
+        }
+      ]
+    },
+    {
+      "name": "actual added and replacement wall arrays finite with valid indices",
+      "passed": true,
+      "result": {
+        "rows": [
+          {
+            "id": "island:terrain:0:256:myouren-rebuild",
+            "triangles": 771
+          },
+          {
+            "id": "island:terrain:0:256:far:myouren-rebuild",
+            "triangles": 1696
+          },
+          {
+            "id": "island:terrain:0:256:cut:myouren-rebuild",
+            "triangles": 477
+          },
+          {
+            "id": "island:terrain:0:256:cut:far:myouren-rebuild",
+            "triangles": 1072
+          },
+          {
+            "id": "island:terrain:256:256:myouren-rebuild",
+            "triangles": 2226
+          },
+          {
+            "id": "island:terrain:256:256:far:myouren-rebuild",
+            "triangles": 4336
+          },
+          {
+            "id": "island:terrain:256:256:cut:myouren-rebuild",
+            "triangles": 1307
+          },
+          {
+            "id": "island:terrain:256:256:cut:far:myouren-rebuild",
+            "triangles": 2298
+          },
+          {
+            "id": "island:inspection-walls",
+            "triangles": 848
+          }
+        ],
+        "minimumArea": 0.003431190806749185
+      }
+    },
+    {
+      "name": "six actual original tree footprints preserve near support and match far",
+      "passed": true,
+      "result": {
+        "samplesPerRoot": 17,
+        "nearTolerance": 0.001,
+        "farNearTolerance": 0.03,
+        "rows": [
+          {
+            "x": 230.314453125,
+            "y": 81.83424377441406,
+            "z": 359.1158752441406,
+            "radius": 0.5196528687094574,
+            "sources": [
+              {
+                "record": "overview:village:trees",
+                "instance": 271,
+                "matrixSHA": "95f6aa89111ea95d5c5c33bd2407b6136ada3d49a6374fc6696b6638e4f93c5d",
+                "translationY": 81.83424377441406,
+                "prototypeMinY": 0,
+                "baseY": 81.83424377441406,
+                "radius": 0.5196528687094574
+              }
+            ],
+            "nearError": 0,
+            "farError": 0
+          },
+          {
+            "x": 217.8450927734375,
+            "y": 81.88619232177734,
+            "z": 356.60345458984375,
+            "radius": 0.46699707267185503,
+            "sources": [
+              {
+                "record": "overview:village:trees",
+                "instance": 285,
+                "matrixSHA": "00ea226aed2ec02d1a27cf49b61b383fc5dd02606273902c9ead9bf7b3ccee87",
+                "translationY": 81.88619232177734,
+                "prototypeMinY": 0,
+                "baseY": 81.88619232177734,
+                "radius": 0.46699707267185503
+              }
+            ],
+            "nearError": 1.4210854715202004e-14,
+            "farError": 0.0009323440155100116
+          },
+          {
+            "x": 222.86842346191406,
+            "y": 83.4708480834961,
+            "z": 366.99566650390625,
+            "radius": 0.31704078700399263,
+            "sources": [
+              {
+                "record": "overview:village:trees",
+                "instance": 286,
+                "matrixSHA": "36b7391ff0d6dd0d037a12c194e2e7b35f8cdbd84e8412542cbbae724e4079b7",
+                "translationY": 83.4708480834961,
+                "prototypeMinY": 0,
+                "baseY": 83.4708480834961,
+                "radius": 0.31704078700399263
+              }
+            ],
+            "nearError": 0,
+            "farError": 0
+          },
+          {
+            "x": 262.4426574707031,
+            "y": 87.17833709716797,
+            "z": 370.53851318359375,
+            "radius": 0.5049736096097576,
+            "sources": [
+              {
+                "record": "overview:myouren:trees",
+                "instance": 12,
+                "matrixSHA": "59570c0714bd505f3fff1e9a5f8ec52cfaa9f5b88294830931118d2e6850b6eb",
+                "translationY": 87.17833709716797,
+                "prototypeMinY": 0,
+                "baseY": 87.17833709716797,
+                "radius": 0.5049736096097576
+              },
+              {
+                "record": "myouren:legacy:plants:hinoki:2:3",
+                "instance": 1,
+                "matrixSHA": "59570c0714bd505f3fff1e9a5f8ec52cfaa9f5b88294830931118d2e6850b6eb",
+                "translationY": 87.17833709716797,
+                "prototypeMinY": 0,
+                "baseY": 87.17833709716797,
+                "radius": 0.5049736096097576
+              }
+            ],
+            "nearError": 0,
+            "farError": 0
+          },
+          {
+            "x": 272.57977294921875,
+            "y": 89.94184875488281,
+            "z": 372.4967041015625,
+            "radius": 0.5252681300147442,
+            "sources": [
+              {
+                "record": "overview:myouren:trees",
+                "instance": 13,
+                "matrixSHA": "44bb500a2265bee3d784f8d1e6434921375b27506c93bbe902a59d0e2ae55427",
+                "translationY": 89.94184875488281,
+                "prototypeMinY": 0,
+                "baseY": 89.94184875488281,
+                "radius": 0.5252681300147442
+              },
+              {
+                "record": "myouren:legacy:plants:hinoki:2:3",
+                "instance": 2,
+                "matrixSHA": "44bb500a2265bee3d784f8d1e6434921375b27506c93bbe902a59d0e2ae55427",
+                "translationY": 89.94184875488281,
+                "prototypeMinY": 0,
+                "baseY": 89.94184875488281,
+                "radius": 0.5252681300147442
+              }
+            ],
+            "nearError": 0,
+            "farError": 0
+          },
+          {
+            "x": 321.1407165527344,
+            "y": 88.26381341854308,
+            "z": 371.2571105957031,
+            "radius": 0.35195803272422965,
+            "sources": [
+              {
+                "record": "overview:myouren:trees",
+                "instance": 17,
+                "matrixSHA": "b348eed41a24c7a1916c2451ca9f60f173d3966b4c056a5af7a9c779c3b5fb84",
+                "translationY": 88.28887176513672,
+                "prototypeMinY": 0,
+                "baseY": 88.28887176513672,
+                "radius": 0.35195803272422965
+              },
+              {
+                "record": "myouren:legacy:plants:garden-broadleaf:3:3",
+                "instance": 3,
+                "matrixSHA": "b348eed41a24c7a1916c2451ca9f60f173d3966b4c056a5af7a9c779c3b5fb84",
+                "translationY": 88.28887176513672,
+                "prototypeMinY": -0.020385675132274628,
+                "baseY": 88.26381341854308,
+                "radius": 0.31676197151419705
+              }
+            ],
+            "nearError": 0,
+            "farError": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "near central stair and protected platform surfaces unchanged",
+      "passed": true,
+      "result": {
+        "checked": 1096,
+        "maxError": 0.000003814697265625,
+        "tolerance": 0.001
+      }
+    },
+    {
+      "name": "cut siblings retain ground outside the actual inspection hole",
+      "passed": true,
+      "result": {
+        "rows": [
+          {
+            "x": 194,
+            "z": 380,
+            "lod": "near",
+            "old": 97.52015686035156,
+            "next": 97.52015686035156
+          },
+          {
+            "x": 194,
+            "z": 380,
+            "lod": "far",
+            "old": 97.30668862660727,
+            "next": 98.15719604492188
+          },
+          {
+            "x": 194,
+            "z": 382,
+            "lod": "near",
+            "old": 100.28662109375,
+            "next": 100.28662109375
+          },
+          {
+            "x": 194,
+            "z": 382,
+            "lod": "far",
+            "old": 99.94967619578043,
+            "next": 99.56930541992188
+          },
+          {
+            "x": 194,
+            "z": 390,
+            "lod": "near",
+            "old": 106.92599487304688,
+            "next": 106.92599487304688
+          },
+          {
+            "x": 194,
+            "z": 390,
+            "lod": "far",
+            "old": 103.95632314682007,
+            "next": 103.57732391357422
+          },
+          {
+            "x": 194,
+            "z": 405,
+            "lod": "near",
+            "old": 106.94146156311035,
+            "next": 106.94146156311035
+          },
+          {
+            "x": 194,
+            "z": 405,
+            "lod": "far",
+            "old": 105.91885256767273,
+            "next": 105.51900291442871
+          },
+          {
+            "x": 194,
+            "z": 414,
+            "lod": "near",
+            "old": 106.97250366210938,
+            "next": 106.97250366210938
+          },
+          {
+            "x": 194,
+            "z": 414,
+            "lod": "far",
+            "old": 106.74778413772583,
+            "next": 106.66526794433594
+          },
+          {
+            "x": 196,
+            "z": 380,
+            "lod": "near",
+            "old": 98.37580871582031,
+            "next": 98.37580871582031
+          },
+          {
+            "x": 196,
+            "z": 380,
+            "lod": "far",
+            "old": 98.16891415913899,
+            "next": 97.44683074951172
+          },
+          {
+            "x": 196,
+            "z": 382,
+            "lod": "near",
+            "old": 100.99054336547852,
+            "next": 100.99054336547852
+          },
+          {
+            "x": 196,
+            "z": 382,
+            "lod": "far",
+            "old": 100.81190172831218,
+            "next": 100.15922546386719
+          },
+          {
+            "x": 196,
+            "z": 390,
+            "lod": "near",
+            "old": 107.54023742675781,
+            "next": 107.54023742675781
+          },
+          {
+            "x": 196,
+            "z": 390,
+            "lod": "far",
+            "old": 105.21859550476074,
+            "next": 104.71664810180664
+          },
+          {
+            "x": 196,
+            "z": 405,
+            "lod": "near",
+            "old": 107.93441772460938,
+            "next": 107.93441772460938
+          },
+          {
+            "x": 196,
+            "z": 405,
+            "lod": "far",
+            "old": 107.35972571372986,
+            "next": 106.57923698425293
+          },
+          {
+            "x": 196,
+            "z": 414,
+            "lod": "near",
+            "old": 107.9442024230957,
+            "next": 107.9442024230957
+          },
+          {
+            "x": 196,
+            "z": 414,
+            "lod": "far",
+            "old": 107.49148511886597,
+            "next": 107.0572624206543
+          },
+          {
+            "x": 200,
+            "z": 380,
+            "lod": "near",
+            "old": 99.76336669921875,
+            "next": 99.76336669921875
+          },
+          {
+            "x": 200,
+            "z": 380,
+            "lod": "far",
+            "old": 99.49375152587889,
+            "next": 98.7657470703125
+          },
+          {
+            "x": 200,
+            "z": 382,
+            "lod": "near",
+            "old": 102.44439697265625,
+            "next": 102.44439697265625
+          },
+          {
+            "x": 200,
+            "z": 382,
+            "lod": "far",
+            "old": 102.83161417643228,
+            "next": 101.4762077331543
+          },
+          {
+            "x": 200,
+            "z": 390,
+            "lod": "near",
+            "old": 109.16404342651367,
+            "next": 109.16404342651367
+          },
+          {
+            "x": 200,
+            "z": 390,
+            "lod": "far",
+            "old": 107.38593864440918,
+            "next": 106.77208709716797
+          },
+          {
+            "x": 200,
+            "z": 405,
+            "lod": "near",
+            "old": 109.58175659179688,
+            "next": 109.58175659179688
+          },
+          {
+            "x": 200,
+            "z": 405,
+            "lod": "far",
+            "old": 109.37000679969788,
+            "next": 108.74114036560059
+          },
+          {
+            "x": 200,
+            "z": 414,
+            "lod": "near",
+            "old": 109.59371185302734,
+            "next": 109.59371185302734
+          },
+          {
+            "x": 200,
+            "z": 414,
+            "lod": "far",
+            "old": 108.97888708114624,
+            "next": 107.84942245483398
+          },
+          {
+            "x": 204,
+            "z": 380,
+            "lod": "near",
+            "old": 101.27239227294922,
+            "next": 101.27239227294922
+          },
+          {
+            "x": 204,
+            "z": 380,
+            "lod": "far",
+            "old": 100.76641273498535,
+            "next": 100.32099914550781
+          },
+          {
+            "x": 204,
+            "z": 382,
+            "lod": "near",
+            "old": 103.88531875610352,
+            "next": 103.88531875610352
+          },
+          {
+            "x": 204,
+            "z": 382,
+            "lod": "far",
+            "old": 104.79915046691895,
+            "next": 102.99309539794922
+          },
+          {
+            "x": 204,
+            "z": 390,
+            "lod": "near",
+            "old": 110.43717956542969,
+            "next": 110.43717956542969
+          },
+          {
+            "x": 204,
+            "z": 390,
+            "lod": "far",
+            "old": 109.55328178405762,
+            "next": 108.6131591796875
+          },
+          {
+            "x": 204,
+            "z": 405,
+            "lod": "near",
+            "old": 110.85470199584961,
+            "next": 110.85470199584961
+          },
+          {
+            "x": 204,
+            "z": 405,
+            "lod": "far",
+            "old": 110.58950757980347,
+            "next": 110.42509460449219
+          },
+          {
+            "x": 204,
+            "z": 414,
+            "lod": "near",
+            "old": 110.86823272705078,
+            "next": 110.86823272705078
+          },
+          {
+            "x": 204,
+            "z": 414,
+            "lod": "far",
+            "old": 110.46628904342651,
+            "next": 108.62741470336914
+          },
+          {
+            "x": 206,
+            "z": 380,
+            "lod": "near",
+            "old": 101.57398223876953,
+            "next": 101.57398223876953
+          },
+          {
+            "x": 206,
+            "z": 380,
+            "lod": "far",
+            "old": 101.5503740310669,
+            "next": 100.89728164672852
+          },
+          {
+            "x": 206,
+            "z": 382,
+            "lod": "near",
+            "old": 106.57782745361328,
+            "next": 106.57782745361328
+          },
+          {
+            "x": 206,
+            "z": 382,
+            "lod": "far",
+            "old": 105.58311176300049,
+            "next": 104.9200439453125
+          },
+          {
+            "x": 206,
+            "z": 390,
+            "lod": "near",
+            "old": 111.4268798828125,
+            "next": 111.4268798828125
+          },
+          {
+            "x": 206,
+            "z": 390,
+            "lod": "far",
+            "old": 110.28836727142334,
+            "next": 109.7831039428711
+          },
+          {
+            "x": 206,
+            "z": 405,
+            "lod": "near",
+            "old": 111.41897201538086,
+            "next": 111.41897201538086
+          },
+          {
+            "x": 206,
+            "z": 405,
+            "lod": "far",
+            "old": 110.9760069847107,
+            "next": 110.90305519104004
+          },
+          {
+            "x": 206,
+            "z": 414,
+            "lod": "near",
+            "old": 111.49127960205078,
+            "next": 111.49127960205078
+          },
+          {
+            "x": 206,
+            "z": 414,
+            "lod": "far",
+            "old": 111.20999002456665,
+            "next": 108.9874267578125
+          }
+        ]
+      }
+    },
+    {
+      "name": "near and far x256 sibling seam coverage",
+      "passed": true,
+      "result": {
+        "checked": 492,
+        "maxJump": 0.009173107147205428,
+        "probeSeparation": 0.02,
+        "maxAllowedJump": 0.15
+      }
+    },
+    {
+      "name": "normal and cut siblings share actual z378 upper trace",
+      "passed": false,
+      "error": "Cut trace has a newly introduced discontinuity (2)",
+      "result": [
+        {
+          "k": "near",
+          "x": 288,
+          "a": 98.51574198404948,
+          "b": 98.51573944091797,
+          "oldA": 98.51573944091797,
+          "oldB": 98.40303039550781,
+          "introduced": -0.1127065022786411
+        },
+        {
+          "k": "near",
+          "x": 312,
+          "a": 98.51878102620444,
+          "b": 98.51878356933594,
+          "oldA": 98.51877975463867,
+          "oldB": 98.40607452392578,
+          "introduced": -0.11270777384439157
+        }
+      ]
+    },
+    {
+      "name": "far outer envelope preserves actual old support",
+      "passed": true,
+      "result": {
+        "checked": 308,
+        "maxError": 0.000003814697265625,
+        "tolerance": 0.001
+      }
+    },
+    {
+      "name": "explicit rock facets exist with actual hard face normals",
+      "passed": true,
+      "result": {
+        "facets": 20,
+        "samples": 120,
+        "minNormalDot": 0.9999999999999991,
+        "positionTolerance": 0.0001,
+        "rows": [
+          {
+            "rock": "west-shoulder",
+            "face": 0,
+            "samples": 6
+          },
+          {
+            "rock": "west-shoulder",
+            "face": 1,
+            "samples": 6
+          },
+          {
+            "rock": "west-shoulder",
+            "face": 2,
+            "samples": 6
+          },
+          {
+            "rock": "west-shoulder",
+            "face": 3,
+            "samples": 6
+          },
+          {
+            "rock": "west-shoulder",
+            "face": 4,
+            "samples": 6
+          },
+          {
+            "rock": "stair-east",
+            "face": 0,
+            "samples": 6
+          },
+          {
+            "rock": "stair-east",
+            "face": 1,
+            "samples": 6
+          },
+          {
+            "rock": "stair-east",
+            "face": 2,
+            "samples": 6
+          },
+          {
+            "rock": "stair-east",
+            "face": 3,
+            "samples": 6
+          },
+          {
+            "rock": "stair-east",
+            "face": 4,
+            "samples": 6
+          },
+          {
+            "rock": "lotus-left",
+            "face": 0,
+            "samples": 6
+          },
+          {
+            "rock": "lotus-left",
+            "face": 1,
+            "samples": 6
+          },
+          {
+            "rock": "lotus-left",
+            "face": 2,
+            "samples": 6
+          },
+          {
+            "rock": "lotus-left",
+            "face": 3,
+            "samples": 6
+          },
+          {
+            "rock": "lotus-left",
+            "face": 4,
+            "samples": 6
+          },
+          {
+            "rock": "lotus-right",
+            "face": 0,
+            "samples": 6
+          },
+          {
+            "rock": "lotus-right",
+            "face": 1,
+            "samples": 6
+          },
+          {
+            "rock": "lotus-right",
+            "face": 2,
+            "samples": 6
+          },
+          {
+            "rock": "lotus-right",
+            "face": 3,
+            "samples": 6
+          },
+          {
+            "rock": "lotus-right",
+            "face": 4,
+            "samples": 6
+          }
+        ]
+      }
+    },
+    {
+      "name": "actual rock and earth ring edges share exact Float32 positions",
+      "passed": false,
+      "error": "Rock/earth actual ring has a missing, duplicated or unmatched edge (157)",
+      "result": [
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 402,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 723,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              237,
+              95.80000305175781,
+              372.5
+            ],
+            [
+              239.2413787841797,
+              96.02413940429688,
+              372.75860595703125
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 403,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 770,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              237.1886749267578,
+              96.46981048583984,
+              373.1886901855469
+            ],
+            [
+              237,
+              95.80000305175781,
+              372.5
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 404,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 724,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              239.2413787841797,
+              96.02413940429688,
+              372.75860595703125
+            ],
+            [
+              240,
+              96.0999984741211,
+              372.8461608886719
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 405,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 768,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              237.9589080810547,
+              99.20410919189453,
+              376
+            ],
+            [
+              237.53762817382812,
+              97.70860290527344,
+              374.4623718261719
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 409,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 769,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              237.53762817382812,
+              97.70860290527344,
+              374.4623718261719
+            ],
+            [
+              237.1886749267578,
+              96.46981048583984,
+              373.1886901855469
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 410,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 767,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              238.08973693847656,
+              99.66858673095703,
+              376.4775695800781
+            ],
+            [
+              237.9589080810547,
+              99.20410919189453,
+              376
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 412,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 766,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              238.10293579101562,
+              99.71543884277344,
+              376.5257263183594
+            ],
+            [
+              238.08973693847656,
+              99.66858673095703,
+              376.4775695800781
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 414,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 765,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              238.23287963867188,
+              100.17671203613281,
+              377
+            ],
+            [
+              238.10293579101562,
+              99.71543884277344,
+              376.5257263183594
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 416,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 764,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              238.53408813476562,
+              101.24602508544922,
+              378.09942626953125
+            ],
+            [
+              238.23287963867188,
+              100.17671203613281,
+              377
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 418,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 763,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              238.8103485107422,
+              102.22672271728516,
+              379.1077575683594
+            ],
+            [
+              238.53408813476562,
+              101.24602508544922,
+              378.09942626953125
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 421,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 761,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              239.38095092773438,
+              103.05714416503906,
+              380
+            ],
+            [
+              239,
+              102.9000015258789,
+              379.79998779296875
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 424,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 762,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              239,
+              102.9000015258789,
+              379.79998779296875
+            ],
+            [
+              238.8103485107422,
+              102.22672271728516,
+              379.1077575683594
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 426,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 760,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              239.78688049316406,
+              103.2245864868164,
+              380.2131042480469
+            ],
+            [
+              239.38095092773438,
+              103.05714416503906,
+              380
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 429,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 759,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              240,
+              103.3125,
+              380.32501220703125
+            ],
+            [
+              239.78688049316406,
+              103.2245864868164,
+              380.2131042480469
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 476,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 726,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              240.95652770996094,
+              96.1956558227539,
+              372.9565124511719
+            ],
+            [
+              242.8275909423828,
+              96.38275909423828,
+              373.17242431640625
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 477,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 727,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              242.8275909423828,
+              96.38275909423828,
+              373.17242431640625
+            ],
+            [
+              244,
+              96.5,
+              373.30767822265625
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 478,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 725,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              240,
+              96.0999984741211,
+              372.8461608886719
+            ],
+            [
+              240.95652770996094,
+              96.1956558227539,
+              372.9565124511719
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 479,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 757,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              242.4098358154297,
+              104.30655670166016,
+              381.59014892578125
+            ],
+            [
+              240.6842041015625,
+              103.59473419189453,
+              380.6842041015625
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 481,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 756,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              244,
+              104.9625015258789,
+              382.42498779296875
+            ],
+            [
+              242.4098358154297,
+              104.30655670166016,
+              381.59014892578125
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 483,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 758,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              240.6842041015625,
+              103.59473419189453,
+              380.6842041015625
+            ],
+            [
+              240,
+              103.3125,
+              380.32501220703125
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 530,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 729,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              244.69387817382812,
+              96.56938934326172,
+              373.38775634765625
+            ],
+            [
+              245.27272033691406,
+              96.62727355957031,
+              373.4545593261719
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 531,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 730,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              245.27272033691406,
+              96.62727355957031,
+              373.4545593261719
+            ],
+            [
+              246,
+              96.69999694824219,
+              373.5384521484375
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 532,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 728,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              244,
+              96.5,
+              373.30767822265625
+            ],
+            [
+              244.69387817382812,
+              96.56938934326172,
+              373.38775634765625
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 533,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 753,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              246,
+              105.7874984741211,
+              383.4750061035156
+            ],
+            [
+              245.64407348632812,
+              105.64067840576172,
+              383.28814697265625
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 535,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 754,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              245.64407348632812,
+              105.64067840576172,
+              383.28814697265625
+            ],
+            [
+              244.62376403808594,
+              105.21980285644531,
+              382.7524719238281
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 536,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 755,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              244.62376403808594,
+              105.21980285644531,
+              382.7524719238281
+            ],
+            [
+              244,
+              104.9625015258789,
+              382.42498779296875
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 574,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 732,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              246.8163299560547,
+              96.78163146972656,
+              373.6326599121094
+            ],
+            [
+              247.16363525390625,
+              96.81636047363281,
+              373.6727294921875
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 575,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 733,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              247.16363525390625,
+              96.81636047363281,
+              373.6727294921875
+            ],
+            [
+              248,
+              96.9000015258789,
+              373.76922607421875
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 576,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 731,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              246,
+              96.69999694824219,
+              373.5384521484375
+            ],
+            [
+              246.8163299560547,
+              96.78163146972656,
+              373.6326599121094
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 577,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 749,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              248,
+              105.9625015258789,
+              383.625
+            ],
+            [
+              247.84210205078125,
+              106,
+              383.6842041015625
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 578,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 750,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              247.84210205078125,
+              106,
+              383.6842041015625
+            ],
+            [
+              247,
+              106.19999694824219,
+              384
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 579,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 751,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              247,
+              106.19999694824219,
+              384
+            ],
+            [
+              246.20791625976562,
+              105.8732681274414,
+              383.58416748046875
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 580,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 752,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              246.20791625976562,
+              105.8732681274414,
+              383.58416748046875
+            ],
+            [
+              246,
+              105.7874984741211,
+              383.4750061035156
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 627,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 735,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              250,
+              97.0999984741211,
+              374
+            ],
+            [
+              251.42857360839844,
+              99.15714263916016,
+              376
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 628,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 734,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              248,
+              96.9000015258789,
+              373.76922607421875
+            ],
+            [
+              250,
+              97.0999984741211,
+              374
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 629,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 736,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              251.42857360839844,
+              99.15714263916016,
+              376
+            ],
+            [
+              251.51515197753906,
+              99.28181457519531,
+              376.1212158203125
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 630,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 737,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              251.51515197753906,
+              99.28181457519531,
+              376.1212158203125
+            ],
+            [
+              252,
+              99.9800033569336,
+              376.79998779296875
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 631,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 746,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              252,
+              105.01249694824219,
+              382.125
+            ],
+            [
+              250.63636779785156,
+              105.33636474609375,
+              382.6363525390625
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 633,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 747,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              250.63636779785156,
+              105.33636474609375,
+              382.6363525390625
+            ],
+            [
+              248.60000610351562,
+              105.81999969482422,
+              383.3999938964844
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 634,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 748,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              248.60000610351562,
+              105.81999969482422,
+              383.3999938964844
+            ],
+            [
+              248,
+              105.9625015258789,
+              383.625
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 686,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 739,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              252.1212158203125,
+              100.15454864501953,
+              376.9696960449219
+            ],
+            [
+              252.14285278320312,
+              100.18571472167969,
+              377
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 689,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 738,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              252,
+              99.9800033569336,
+              376.79998779296875
+            ],
+            [
+              252.1212158203125,
+              100.15454864501953,
+              376.9696960449219
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 691,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 740,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              252.14285278320312,
+              100.18571472167969,
+              377
+            ],
+            [
+              252.3076934814453,
+              100.42308044433594,
+              377.23077392578125
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 693,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 742,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              253.48837280273438,
+              102.12325286865234,
+              378.88372802734375
+            ],
+            [
+              254.2857208251953,
+              103.27143096923828,
+              380
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 695,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 741,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              252.3076934814453,
+              100.42308044433594,
+              377.23077392578125
+            ],
+            [
+              253.48837280273438,
+              102.12325286865234,
+              378.88372802734375
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 696,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 743,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              254.2857208251953,
+              103.27143096923828,
+              380
+            ],
+            [
+              255,
+              104.30000305175781,
+              381
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 697,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 744,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              255,
+              104.30000305175781,
+              381
+            ],
+            [
+              253.5454559326172,
+              104.64545440673828,
+              381.5454406738281
+            ]
+          ]
+        },
+        {
+          "rock": "west-shoulder",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 703,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:0:256:myouren-rebuild",
+              "face": 745,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              253.5454559326172,
+              104.64545440673828,
+              381.5454406738281
+            ],
+            [
+              252,
+              105.01249694824219,
+              382.125
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 960,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2117,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              329,
+              97,
+              376
+            ],
+            [
+              331.5,
+              96.55000305175781,
+              376.125
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 961,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2154,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              328.952392578125,
+              97.26190185546875,
+              376.23809814453125
+            ],
+            [
+              329,
+              97,
+              376
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 962,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2118,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              331.5,
+              96.55000305175781,
+              376.125
+            ],
+            [
+              332,
+              96.45999908447266,
+              376.1499938964844
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 963,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2152,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              328.79998779296875,
+              98.0999984741211,
+              377
+            ],
+            [
+              328.84210205078125,
+              97.86842346191406,
+              376.7894592285156
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 965,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2153,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              328.84210205078125,
+              97.86842346191406,
+              376.7894592285156
+            ],
+            [
+              328.952392578125,
+              97.26190185546875,
+              376.23809814453125
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 966,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2151,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              328.6956481933594,
+              98.67391204833984,
+              377.521728515625
+            ],
+            [
+              328.79998779296875,
+              98.0999984741211,
+              377
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 967,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2149,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              328.20001220703125,
+              101.4000015258789,
+              380
+            ],
+            [
+              328.23529052734375,
+              101.20587921142578,
+              379.8235168457031
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 969,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2150,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              328.23529052734375,
+              101.20587921142578,
+              379.8235168457031
+            ],
+            [
+              328.6956481933594,
+              98.67391204833984,
+              377.521728515625
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 970,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2148,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              328.1666564941406,
+              101.58333587646484,
+              380.1666564941406
+            ],
+            [
+              328.20001220703125,
+              101.4000015258789,
+              380
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 971,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2144,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              332,
+              105.63333129882812,
+              383.6666564941406
+            ],
+            [
+              331,
+              104.8499984741211,
+              383
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 973,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2145,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              331,
+              104.8499984741211,
+              383
+            ],
+            [
+              329.79998779296875,
+              103.91000366210938,
+              382.20001220703125
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 974,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2146,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              329.79998779296875,
+              103.91000366210938,
+              382.20001220703125
+            ],
+            [
+              328,
+              102.5,
+              381
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 975,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2147,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              328,
+              102.5,
+              381
+            ],
+            [
+              328.1666564941406,
+              101.58333587646484,
+              380.1666564941406
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1026,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2120,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              332.75,
+              96.32499694824219,
+              376.1875
+            ],
+            [
+              334.8333435058594,
+              95.94999694824219,
+              376.2916564941406
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1027,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2121,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              334.8333435058594,
+              95.94999694824219,
+              376.2916564941406
+            ],
+            [
+              336,
+              95.73999786376953,
+              376.3500061035156
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1028,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2119,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              332,
+              96.45999908447266,
+              376.1499938964844
+            ],
+            [
+              332.75,
+              96.32499694824219,
+              376.1875
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1029,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2142,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              332.5,
+              106.0250015258789,
+              384
+            ],
+            [
+              332.20001220703125,
+              105.79000091552734,
+              383.79998779296875
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1030,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2143,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              332.20001220703125,
+              105.79000091552734,
+              383.79998779296875
+            ],
+            [
+              332,
+              105.63333129882812,
+              383.6666564941406
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1032,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2140,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              335.28570556640625,
+              106.64286041259766,
+              384.71429443359375
+            ],
+            [
+              334,
+              107.19999694824219,
+              385
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1036,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2141,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              334,
+              107.19999694824219,
+              385
+            ],
+            [
+              332.5,
+              106.0250015258789,
+              384
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1038,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2139,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              336,
+              106.33333587646484,
+              384.5555419921875
+            ],
+            [
+              335.28570556640625,
+              106.64286041259766,
+              384.71429443359375
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1087,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2123,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              337.75,
+              95.42500305175781,
+              376.4375
+            ],
+            [
+              338.1666564941406,
+              95.3499984741211,
+              376.4583435058594
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1090,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2124,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              338.1666564941406,
+              95.3499984741211,
+              376.4583435058594
+            ],
+            [
+              339,
+              95.19999694824219,
+              376.5
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1093,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2125,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              339,
+              95.19999694824219,
+              376.5
+            ],
+            [
+              339.18182373046875,
+              95.56818389892578,
+              376.7954406738281
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1094,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2126,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              339.18182373046875,
+              95.56818389892578,
+              376.7954406738281
+            ],
+            [
+              339.30767822265625,
+              95.82307434082031,
+              377
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1095,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2122,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              336,
+              95.73999786376953,
+              376.3500061035156
+            ],
+            [
+              337.75,
+              95.42500305175781,
+              376.4375
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1096,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2127,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              339.30767822265625,
+              95.82307434082031,
+              377
+            ],
+            [
+              339.52630615234375,
+              96.26579284667969,
+              377.3552551269531
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1097,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2128,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              339.52630615234375,
+              96.26579284667969,
+              377.3552551269531
+            ],
+            [
+              340,
+              97.2249984741211,
+              378.125
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1098,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2135,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              340,
+              104.5999984741211,
+              383.6666564941406
+            ],
+            [
+              339.7272644042969,
+              104.71818542480469,
+              383.7272644042969
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1099,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2136,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              339.7272644042969,
+              104.71818542480469,
+              383.7272644042969
+            ],
+            [
+              338.5,
+              105.25,
+              384
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1101,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2137,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              338.5,
+              105.25,
+              384
+            ],
+            [
+              336.4545593261719,
+              106.13636016845703,
+              384.4545593261719
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1104,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2138,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              336.4545593261719,
+              106.13636016845703,
+              384.4545593261719
+            ],
+            [
+              336,
+              106.33333587646484,
+              384.5555419921875
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1157,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2130,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              340.7894592285156,
+              98.82368469238281,
+              379.40789794921875
+            ],
+            [
+              341.1538391113281,
+              99.56153869628906,
+              380
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1160,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2129,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              340,
+              97.2249984741211,
+              378.125
+            ],
+            [
+              340.7894592285156,
+              98.82368469238281,
+              379.40789794921875
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1161,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2131,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              341.1538391113281,
+              99.56153869628906,
+              380
+            ],
+            [
+              342.23809814453125,
+              101.75714111328125,
+              381.76190185546875
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1163,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2132,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              342.23809814453125,
+              101.75714111328125,
+              381.76190185546875
+            ],
+            [
+              343,
+              103.30000305175781,
+              383
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1166,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2133,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              343,
+              103.30000305175781,
+              383
+            ],
+            [
+              340.4285583496094,
+              104.4142837524414,
+              383.5714416503906
+            ]
+          ]
+        },
+        {
+          "rock": "stair-east",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1167,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2134,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              340.4285583496094,
+              104.4142837524414,
+              383.5714416503906
+            ],
+            [
+              340,
+              104.5999984741211,
+              383.6666564941406
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1385,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2157,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              353.2269287109375,
+              92.52922821044922,
+              378.84039306640625
+            ],
+            [
+              354,
+              92.66666412353516,
+              378.8833312988281
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1387,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2156,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              352.7892761230469,
+              92.45143127441406,
+              378.8160705566406
+            ],
+            [
+              353.2269287109375,
+              92.52922821044922,
+              378.84039306640625
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1388,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2189,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              352.5,
+              95.0076904296875,
+              380
+            ],
+            [
+              352.5,
+              93.37788391113281,
+              379.25
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1392,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2155,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              352.5,
+              92.4000015258789,
+              378.79998779296875
+            ],
+            [
+              352.7892761230469,
+              92.45143127441406,
+              378.8160705566406
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1395,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2190,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              352.5,
+              93.37788391113281,
+              379.25
+            ],
+            [
+              352.5,
+              92.4000015258789,
+              378.79998779296875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1396,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2188,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              352.5,
+              97.18077087402344,
+              381
+            ],
+            [
+              352.5,
+              95.0076904296875,
+              380
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1398,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2186,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              352.5,
+              103.69999694824219,
+              384
+            ],
+            [
+              352.5,
+              101.52692413330078,
+              383
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1402,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2187,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              352.5,
+              101.52692413330078,
+              383
+            ],
+            [
+              352.5,
+              97.18077087402344,
+              381
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1403,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2185,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              353.6785583496094,
+              104.62142944335938,
+              384.6428527832031
+            ],
+            [
+              352.5,
+              103.69999694824219,
+              384
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1406,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2184,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              354,
+              104.87272644042969,
+              384.81817626953125
+            ],
+            [
+              353.6785583496094,
+              104.62142944335938,
+              384.6428527832031
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1445,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2160,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              355.3038330078125,
+              92.8984603881836,
+              378.9557800292969
+            ],
+            [
+              356,
+              93.02222442626953,
+              378.99444580078125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1447,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2159,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              354.7178649902344,
+              92.7942886352539,
+              378.9232177734375
+            ],
+            [
+              355.3038330078125,
+              92.8984603881836,
+              378.9557800292969
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1449,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2158,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              354,
+              92.66666412353516,
+              378.8833312988281
+            ],
+            [
+              354.7178649902344,
+              92.7942886352539,
+              378.9232177734375
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1450,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2182,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              355.25,
+              105.8499984741211,
+              385.5
+            ],
+            [
+              354.5625,
+              105.3125,
+              385.125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1454,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2181,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              356,
+              106.43636322021484,
+              385.9090881347656
+            ],
+            [
+              355.25,
+              105.8499984741211,
+              385.5
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1456,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2183,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              354.5625,
+              105.3125,
+              385.125
+            ],
+            [
+              354,
+              104.87272644042969,
+              384.81817626953125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1504,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2163,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              358.87200927734375,
+              93.53279876708984,
+              379.15399169921875
+            ],
+            [
+              360,
+              93.73332977294922,
+              379.2166748046875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1506,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2162,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              357.248291015625,
+              93.244140625,
+              379.06378173828125
+            ],
+            [
+              358.87200927734375,
+              93.53279876708984,
+              379.15399169921875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1508,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2161,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              356,
+              93.02222442626953,
+              378.99444580078125
+            ],
+            [
+              357.248291015625,
+              93.244140625,
+              379.06378173828125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1509,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2177,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              360,
+              106.9749984741211,
+              386.45001220703125
+            ],
+            [
+              358.7843017578125,
+              107.59803771972656,
+              386.7843017578125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1513,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2178,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              358.7843017578125,
+              107.59803771972656,
+              386.7843017578125
+            ],
+            [
+              358,
+              108,
+              387
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1515,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2179,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              358,
+              108,
+              387
+            ],
+            [
+              357.3529357910156,
+              107.4941177368164,
+              386.6470642089844
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1518,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2180,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              357.3529357910156,
+              107.4941177368164,
+              386.6470642089844
+            ],
+            [
+              356,
+              106.43636322021484,
+              385.9090881347656
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1571,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2165,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              360.972412109375,
+              93.90620422363281,
+              379.27069091796875
+            ],
+            [
+              361.5,
+              94,
+              379.29998779296875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1575,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2166,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              361.5,
+              94,
+              379.29998779296875
+            ],
+            [
+              362.0727233886719,
+              95.26000213623047,
+              380
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1577,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2164,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              360,
+              93.73332977294922,
+              379.2166748046875
+            ],
+            [
+              360.972412109375,
+              93.90620422363281,
+              379.27069091796875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1578,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2167,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              362.0727233886719,
+              95.26000213623047,
+              380
+            ],
+            [
+              362.94000244140625,
+              97.16799926757812,
+              381.05999755859375
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1579,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2168,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              362.94000244140625,
+              97.16799926757812,
+              381.05999755859375
+            ],
+            [
+              364,
+              99.5,
+              382.3555603027344
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1580,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2175,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              362.137939453125,
+              105.87931060791016,
+              385.862060546875
+            ],
+            [
+              361.92156982421875,
+              105.99019622802734,
+              385.92156982421875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1582,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2174,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              364,
+              104.92500305175781,
+              385.3500061035156
+            ],
+            [
+              362.137939453125,
+              105.87931060791016,
+              385.862060546875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1584,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2176,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              361.92156982421875,
+              105.99019622802734,
+              385.92156982421875
+            ],
+            [
+              360,
+              106.9749984741211,
+              386.45001220703125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1641,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2170,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              364.739990234375,
+              101.12799835205078,
+              383.260009765625
+            ],
+            [
+              365.345458984375,
+              102.45999908447266,
+              384
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1644,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2169,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              364,
+              99.5,
+              382.3555603027344
+            ],
+            [
+              364.739990234375,
+              101.12799835205078,
+              383.260009765625
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1647,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2171,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              365.345458984375,
+              102.45999908447266,
+              384
+            ],
+            [
+              366,
+              103.9000015258789,
+              384.79998779296875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1650,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2172,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              366,
+              103.9000015258789,
+              384.79998779296875
+            ],
+            [
+              365.058837890625,
+              104.38235473632812,
+              385.058837890625
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-left",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1653,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2173,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              365.058837890625,
+              104.38235473632812,
+              385.058837890625
+            ],
+            [
+              364,
+              104.92500305175781,
+              385.3500061035156
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1766,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2193,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              374.2254638671875,
+              92.52763366699219,
+              378.6690979003906
+            ],
+            [
+              376,
+              92.5952377319336,
+              378.8381042480469
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1768,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2192,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              373.8253479003906,
+              92.51239776611328,
+              378.6309814453125
+            ],
+            [
+              374.2254638671875,
+              92.52763366699219,
+              378.6690979003906
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1769,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2224,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              373.370361328125,
+              94.96295928955078,
+              380
+            ],
+            [
+              373.4726257324219,
+              93.0198974609375,
+              378.8955078125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1773,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2191,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              373.5,
+              92.5,
+              378.6000061035156
+            ],
+            [
+              373.8253479003906,
+              92.51239776611328,
+              378.6309814453125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1776,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2225,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              373.4726257324219,
+              93.0198974609375,
+              378.8955078125
+            ],
+            [
+              373.5,
+              92.5,
+              378.6000061035156
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1777,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2223,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              373.2542419433594,
+              97.16949462890625,
+              381.2542419433594
+            ],
+            [
+              373.370361328125,
+              94.96295928955078,
+              380
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1779,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2221,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              373,
+              102,
+              384
+            ],
+            [
+              373.10205078125,
+              100.06122589111328,
+              382.89794921875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 4,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1783,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2222,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              373.10205078125,
+              100.06122589111328,
+              382.89794921875
+            ],
+            [
+              373.2542419433594,
+              97.16949462890625,
+              381.2542419433594
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1784,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2220,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              374.9148864746094,
+              103.97872161865234,
+              385.0851135253906
+            ],
+            [
+              373,
+              102,
+              384
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1789,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2219,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              376,
+              105.0999984741211,
+              385.70001220703125
+            ],
+            [
+              374.9148864746094,
+              103.97872161865234,
+              385.0851135253906
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1842,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2196,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              378.8072814941406,
+              92.70217895507812,
+              379.10546875
+            ],
+            [
+              380,
+              92.74761962890625,
+              379.21905517578125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1844,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2195,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              377.3746337890625,
+              92.6476058959961,
+              378.9690246582031
+            ],
+            [
+              378.8072814941406,
+              92.70217895507812,
+              379.10546875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1846,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2194,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              376,
+              92.5952377319336,
+              378.8381042480469
+            ],
+            [
+              377.3746337890625,
+              92.6476058959961,
+              378.9690246582031
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1847,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2215,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              380,
+              107.77999877929688,
+              387.260009765625
+            ],
+            [
+              379.35089111328125,
+              108.0526351928711,
+              387.35089111328125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1851,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2216,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              379.35089111328125,
+              108.0526351928711,
+              387.35089111328125
+            ],
+            [
+              379,
+              108.19999694824219,
+              387.3999938964844
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1853,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2217,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              379,
+              108.19999694824219,
+              387.3999938964844
+            ],
+            [
+              377.46807861328125,
+              106.61701965332031,
+              386.53192138671875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 3,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1856,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2218,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              377.46807861328125,
+              106.61701965332031,
+              386.53192138671875
+            ],
+            [
+              376,
+              105.0999984741211,
+              385.70001220703125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1907,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2199,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              383.38909912109375,
+              92.87672424316406,
+              379.54180908203125
+            ],
+            [
+              384,
+              92.9000015258789,
+              379.6000061035156
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1909,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2198,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              380.9239501953125,
+              92.7828140258789,
+              379.3070373535156
+            ],
+            [
+              383.38909912109375,
+              92.87672424316406,
+              379.54180908203125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 0,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1911,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2197,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              380,
+              92.74761962890625,
+              379.21905517578125
+            ],
+            [
+              380.9239501953125,
+              92.7828140258789,
+              379.3070373535156
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1912,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2212,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              384,
+              106.0999984741211,
+              386.70001220703125
+            ],
+            [
+              382.8596496582031,
+              106.57894897460938,
+              386.8596496582031
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1914,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2213,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              382.8596496582031,
+              106.57894897460938,
+              386.8596496582031
+            ],
+            [
+              380.8604736328125,
+              107.4186019897461,
+              387.1395263671875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1915,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2214,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              380.8604736328125,
+              107.4186019897461,
+              387.1395263671875
+            ],
+            [
+              380,
+              107.77999877929688,
+              387.260009765625
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1968,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2201,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              384.1970520019531,
+              93.33744049072266,
+              379.8522033691406
+            ],
+            [
+              384.3125,
+              93.59375,
+              380
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1973,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2200,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              384,
+              92.9000015258789,
+              379.6000061035156
+            ],
+            [
+              384.1970520019531,
+              93.33744049072266,
+              379.8522033691406
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1975,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2202,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              384.3125,
+              93.59375,
+              380
+            ],
+            [
+              385.4285583496094,
+              96.07142639160156,
+              381.4285583496094
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1977,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2204,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              385.9298095703125,
+              97.18421173095703,
+              382.0701904296875
+            ],
+            [
+              387.4375,
+              100.53125,
+              384
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1979,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2203,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              385.4285583496094,
+              96.07142639160156,
+              381.4285583496094
+            ],
+            [
+              385.9298095703125,
+              97.18421173095703,
+              382.0701904296875
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1980,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2205,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              387.4375,
+              100.53125,
+              384
+            ],
+            [
+              387.6842041015625,
+              101.07894897460938,
+              384.3157958984375
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1981,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2206,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              387.6842041015625,
+              101.07894897460938,
+              384.3157958984375
+            ],
+            [
+              388,
+              101.77999877929688,
+              384.7200012207031
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1982,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2209,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              388,
+              104.41999816894531,
+              386.1400146484375
+            ],
+            [
+              386.368408203125,
+              105.10526275634766,
+              386.368408203125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1984,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2210,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              386.368408203125,
+              105.10526275634766,
+              386.368408203125
+            ],
+            [
+              385.5116271972656,
+              105.46511840820312,
+              386.4883728027344
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 1985,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2211,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              385.5116271972656,
+              105.46511840820312,
+              386.4883728027344
+            ],
+            [
+              384,
+              106.0999984741211,
+              386.70001220703125
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 1,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2048,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2207,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              388,
+              101.77999877929688,
+              384.7200012207031
+            ],
+            [
+              389,
+              104,
+              386
+            ]
+          ]
+        },
+        {
+          "rock": "lotus-right",
+          "controlEdge": 2,
+          "uses": [
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2052,
+              "material": "earth"
+            },
+            {
+              "record": "island:terrain:256:256:myouren-rebuild",
+              "face": 2208,
+              "material": "earth"
+            }
+          ],
+          "points": [
+            [
+              389,
+              104,
+              386
+            ],
+            [
+              388,
+              104.41999816894531,
+              386.1400146484375
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "frozen source stayed unchanged throughout preflight",
+      "passed": true,
+      "result": {
+        "sourceSHA": "f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0"
+      }
+    }
+  ],
+  "passed": false,
+  "passedChecks": 14,
+  "totalChecks": 16,
+  "scope": "Bounded decoded public source prepare and independent actual indexed-face sampling. No native/detail build, no WebGL, no full Node regression.",
+  "notRun": [
+    "Independent retained-fragment barycentric attribute proof",
+    "All deleted-face authorized polygon proof",
+    "Native detail shrub clump/source protection",
+    "Navigation/visible floor adapter and actual input",
+    "Renderer draw/tri/residency/reentry and visual acceptance"
+  ],
+  "sourceTriangleDeltas": [
+    {
+      "id": "island:terrain:0:256",
+      "before": 16384,
+      "after": 16775
+    },
+    {
+      "id": "island:terrain:0:256:far",
+      "before": 480,
+      "after": 2137
+    },
+    {
+      "id": "island:terrain:0:256:cut",
+      "before": 14804,
+      "after": 15018
+    },
+    {
+      "id": "island:terrain:0:256:cut:far",
+      "before": 433,
+      "after": 1470
+    },
+    {
+      "id": "island:terrain:256:256",
+      "before": 16384,
+      "after": 17489
+    },
+    {
+      "id": "island:terrain:256:256:far",
+      "before": 480,
+      "after": 4744
+    },
+    {
+      "id": "island:terrain:256:256:cut",
+      "before": 10316,
+      "after": 10847
+    },
+    {
+      "id": "island:terrain:256:256:cut:far",
+      "before": 339,
+      "after": 2593
+    }
+  ]
+}

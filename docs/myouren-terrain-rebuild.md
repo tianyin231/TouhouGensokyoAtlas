@@ -1,36 +1,51 @@
-# 命莲寺原坡局部重建：V1拒收
+# 命莲寺原坡重建：两稿拒收与恢复入口
 
-基于已交付 main `29663c94616067de77657dddd41c01035b8bf58d`，工作分支 `experiment/myouren-terrain-rebuild-20261005`。本稿已由root与Astra独立看过实际同机位图后拒收，只在独立审阅分支保存，禁止合入main。旧 `7656528` 与 `fd08acd` 拒收实现未合并。
+**V1、V2 均未达到画面门槛，本方法已停止，不合入 main、不继续 V3、不跑长回归。** 这是候选隔离记录，不表示命莲寺精修完成，也不表示整体主岛任务结束。运行基线为已交付 `29663c94616067de77657dddd41c01035b8bf58d`；后续main `9905a09` 仅修发布工作流及其严格散列保护；实际HTML与29663c逐字节相同。
 
-实际基线的三个问题是整片灰陡板与重复砖线、锯齿坡脚及阶梯两侧承托不清、原灌木呈贴墙扁片。新稿直接裁除公共两块地形中的局部原面，以绝对高度的弧形土肩、凹沟与四处局部岩露重新组织坡面；保留单独的平台石基，不再把实体罩在旧陡板之外，不新增碎草或石堆。
+原基线的三项明显问题是大块灰陡板与重复砖线、坡脚及阶梯两侧承托不清、原灌木呈贴墙扁片。本方法直接裁除局部原坡面，保留平台独立石基与原建筑；没有合并旧高度场或罩壳候选。V1 真实全景仍呈软灰绿斑与竖褶，四处岩露在规则采样中失去边界；精确源和原失败已隔离于 [`3bfe2a1`](https://github.com/tianyin231/TouhouGensokyoAtlas/commit/3bfe2a1cedb0327fe95d5051de32ceb26aae51e9)。
 
-近景美术范围为 x218–394、z354–391，中央 x288–312、主平台、原中层台地、莲池／桥／侧梯接触域及六处原树根近档小域保留。八个原 terrain 记录的 vertices 对象不改，只有通过全包排他检查的 index 视图压紧；边界相交三角在新增补片中保留原外侧平面。每种不同索引拓扑拥有不同 Float32Array 对象，符合当前 renderer 的 geometryRefs 身份键，不改通用渲染器。
+V2 相对 V1 的岩面边界更清楚，但相对基线仍无可交付的整景提升，两个独立画面审阅均拒收：
 
-原远档两棵根下地面比近档高约 10.83／9.92 米，因此另有经授权的 far-only 支撑与接缝范围 x192–416、z336–416，以宽过渡接回原远档外缘，内部采用同一实际新坡和原近档根部支撑。八补片继承原 tile 的近远、剖切与公共生命周期标记；normal/cut 从同一控制面裁分。z378 检视墙仅重建相关前段到原 -47 米底部，树矩阵、墓地与地下源保持。原灌木仅按四个椭球组成的完整丛刚性平移，本稿没有新植株。原冷总览没有对应灌木记录。
+1. 主坡可见的三枚尖顶多边石形排列近似，像贴在墙上的灰色宝石，没有形成可信露岩。
+2. 岩块之间和坡两端仍是软灰绿垂帘；长直平台下沿、主体陡板感与锯齿坡脚没有得到整体解决。
+3. 阶梯两侧没有可读的宽基脚和连续土肩，原小灌木仍散贴陡面；硬岩面没有解决承托关系。
 
-硬预算保持净增不超过 4 次全通道调用、4,000 提交三角、0.6 MiB 唯一源缓冲、0 新纹理。首次本地 CPU 预检（约 7.2 秒）未发现非有限／退化三角，最小三角面积 0.125；六个根中心的近档实际高度与原版一致，远档五处一致，另一处仅差 0.000233 米。这不是完整树根脚印或视觉验收。公共新增 backing 连同 89,496 B 接触数据和 2,328 B 剖切 trace 为 551,664 B；不等于 GPU 驻留或总堆。近档正常模式源三角净减 3,619，远档正常模式净增 806，提交成本的实际同机位结果见下文。13 个原灌木丛刚性接地，原平台贴砖仅精确移除目标 4,872 三角，详情源由 25,325,892 B 到 24,799,716 B。
+共同根因是控制网仍围绕原长直台地边界做局部起伏，缺少先于材质的整体坡体／坡脚组织。V1 的软场混合把岩石抹成污斑；V2 的同类 ring→单 crest 扇形虽然拓扑真实，却制造了重复尖锥。局部拓扑正确和硬边清晰并不等于自然地形设计成立。未来重新处理本处必须先解决整体剖面、不同宽深的坡肩与真实资产脚印之间的空间关系，不能从本稿继续换色、加草或增加同类石片。
 
-构建入口为 `project.json` 登记的 `src/myouren-terrain-rebuild.js`；公开诊断 API 为 `GA.MYOUREN_TERRAIN_REBUILD`，准备后的有限账目可由 `metadata.get(overviewPack)` 读取。独立工具另由辅助代理维护，不在初稿阶段登记进完整回归。先轻量源保护、净空与一张原生 myouren 全景，通过画面门槛才扩展检查。
+## 已实施的有界内容
 
-**未测／未完成：**首稿真实 WebGL 已看图拒收，独立有限检查原始结果为9/12、CLI1，详见下文；未跑完整 Node、多画质、背面、昼夜、剖切实图或重入。相机 ground／walk 仍查询原分析 `Terrain.height`，实际新坡的相机专用采样尚未接入；发布前必须补齐并验证，不能全局重写该高度函数而重新定位原建筑／树。原固定 meadowWalk 路径不穿本范围，不等于任意 ground 行走已正确。
+近景范围 x218–394、z354–391，中央 x288–312、原平台／台阶、中层台地、莲池／桥／侧梯与六处原树根近档小域保护。远档另有经授权的 x192–416、z336–416 支撑和接缝范围。八个原 terrain 的 vertices 与范围外原属性保持，仅压紧已验证排他的 index；新增拓扑使用独立 vertices 对象，未改 renderer。原树矩阵、墓地及地下保持；原灌木按完整丛刚性接地，没有拉伸冠体或新增草石，V2 详情移动数量尚未独立复核。
 
+V2 将四个岩圈裁入土网格，生成 20 个有意硬面；实际土面与岩面共用 157 条精确 Float32 位置边，土法线只在土面内平滑。剖切按原洞矩形 x208–440、z378–628 裁除，V1 的 25 个 x<208 洞外远档缺面点已恢复。直接详情构建采用同一显式岩面采样；其完整原生保护检查仍未运行。
 
-## 实际首图结论
+## 实测与失败边界
 
-[原版同机位](previews/myouren-terrain-v1/before.png)与[候选V1](previews/myouren-terrain-v1/after.png)均为实际WebGL截图。去掉重复砖线、坡肩有起伏，但大片灰绿竖褶仍像脏墙，四处岩露没有清楚轮廓和折面；平台边缘仍像光滑垂幕。岩石ring/crest只进入标量采样，4米规则扇格抹掉边线，法线和颜色又跨土岩混合，是具体共同原因。不能以源三角减少或技术断言代替画面接受。
+1280×720、DPR1、balanced、同一 myouren 机位与冻结协议，稳定帧结果如下。软件后端计数不代表硬件 FPS 或物理显存。
 
-固定myouren、1280×720、DPR1、FOV49、12.5晴天、balanced：全通道调用278→280，提交三角663,480→659,861，属性驻留29,872,584→29,415,192B，几何201→203，纹理24→24。CLI0，无JS／shader／context错误；仅/favicon.ico 404。云端SwiftShader计数不是硬件FPS、VRAM或CPU交互提速。准确相机／源码／产物／脚本SHA及差值见[精简证据](myouren-terrain-v1-evidence/comparison.json)，[实际取图脚本](myouren-terrain-v1-evidence/capture.py)保持运行版本。
+| 实图 | 全通道 calls | 提交三角 | 驻留属性 B | 几何对象 | 纹理 |
+|---|---:|---:|---:|---:|---:|
+| 基线 | 278 | 663,480 | 29,872,584 | 201 | 24 |
+| V1 | 280 | 659,861 | 29,415,192 | 203 | 24 |
+| V2 | 280 | 660,104 | 29,429,700 | 203 | 24 |
 
-作者7.189秒prepare/detail属于trace类型修正前的源码1dff61ed；141控制点投影属于最终c35。作者轻检归档中的stdout按已观察工具输出补存数值和结构，pretrace源码按已记录的两行补丁重建，不冒称此前已有原始字节文件。最终c35的独立有限检查已实际执行约4.96秒，原始9/12、CLI1完整保留；没有完整Node、多画质、昼夜、背面、剖切实图、原生交互／重入或此候选的CI／部署。
+V2 新唯一源 backing 为 **607,080 B**，包括 contact 98,244 B、cutTrace 2,700 B，未超 0.6 MiB；20 条 rockFaces 为有界普通 JS 元数据，总堆未测。全景脚本 CLI0，无 JS／shader／context 错误，仅 favicon.ico 404。这些数据不构成画面验收。
 
-下一修正必须显式用岩石环边裁空土面，直接生成少量真实岩面，土面与岩面共用精确环边、分别处理法线，不能只改颜色或加密格网。旧样板继续隔离；发布前仍需补相机专用实际面采样。
+- 作者首次短检因边界顶点重复登记产生约 8–15 微米差异，CLI1 原输出保存；修正后约 3.95 秒的短检 CLI0，0 退化三角、157 土岩边精确对应，24 岩控点在原视锥内（不测遮挡）。
+- 独立 V2 原检查 **14／16、CLI1** 保存。157 土岩边被旧固定石色误分类，是检查协议错误；随后按实际位置与硬法线独立确认全部一土一岩接合，未改写原报告。
+- **真实未修硬错：**near-cut 的 x288／312 边界在 z376.5 新开缝约 0.02818 m、z377.5 约 0.08453 m、z378 达 **0.112709 m**；基线同边差为 0。两翼使用 normal 面裁切，而中央保留原 cut 面，不能声称整个剖切地表已连续。局部归因 CLI1 同样保存。
+- 六根共 102 个实际脚印点、非目标源、近档平台、x256 接缝与远档外缘等有界检查通过；完整原生灌木保护、导航、近／远／背面／昼夜／低档／剖切浏览器和重入、完整 Node 均未运行。
+- 相机 ground／walk 仍查询原分析 Terrain.height，实际新坡的 CameraRig 专用高度采样未接入。固定 meadowWalk 不穿范围，不等于任意地面行走正确。
 
-## 独立检查原始失败及有界归因
+## 精确恢复入口
 
-[原始报告](myouren-terrain-v1-evidence/independent-v1.json)与[原CLI](myouren-terrain-v1-evidence/independent-v1-cli.json)保持9/12、退出1；[实际checker](../tools/check-myouren-terrain.mjs) SHA `46308277039638a21e2940faa615025ed292a43b3e6659b1b154de8d32bb42dc` 未覆盖。源码唯一新增typed backing实测551,664B（包括contact及cutTrace）；原1060条公共记录中的1050条非目标记录、原顶点属性、独占索引归属、八个新补片身份与外包络检查通过。
+工作区 `/workspace/myouren-terrain-rebuild`，分支 `experiment/myouren-terrain-rebuild-20261005`；冻结源 `src/myouren-terrain-rebuild.js` SHA `f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0`，project SHA `33d1a8580015f00061eb7d1c68f63104c6dad1561f68ebb950c0bef893e7fa11`。V2 HTML SHA `0723e15ae5c655ce8323803ebca06bfd7916027c0bfd46cc9a0e5ddfa84c5027`；截图协议 SHA `ab81458a203d12549c257063522be766c74a2a885116ada87f774c9a680186cf`。
 
-真实新增缺陷是far-cut的25个测试点缺面：x194／196／200／204／206、z380／382／390／405／414原先在剖切洞外有面，候选因无条件裁到z≤378而全部丢失。后续必须服从实际洞边x208，不能放宽缺面断言。
+`GA.MYOUREN_TERRAIN_REBUILD` 暴露范围、原记录、控制点和构建入口；`metadata.get(pack).rockFaces` 仅供定位实际三角段，不能替代独立验证。阶段证据根为 `/workspace/myouren-terrain-evidence`：`before/v1/v2` 同机位真图与运行报告；`v2-source` 源与精确执行 checker；`astra-v2/run-01`、`run-02` 原样 stdout／stderr、执行时源／脚本／工程；`independent-v2*` 原 14／16 CLI1；`v2-diagnostics*` 材质协议归因和真实开缝；`astra-review-v2.json` 精简图审与散列绑定。源码已冻结并由主代理保存于独立审阅分支 `experiment/myouren-terrain-review-20261005`，不得合入main。下一主空岛工作独立进行，本稿未修开缝及导航欠账不会被标为完成。
 
-另两项经5.94秒[独立有界探针](myouren-terrain-v1-evidence/v1-diagnostics.mjs)归因：[结果](myouren-terrain-v1-evidence/v1-diagnostics.json)表明root17把原树底Y88.263813误当矩阵平移Y88.288872，是检查协议错误；从实际原型与矩阵独立选择六根、102个脚印样点后均有面，near相对原版最大差1.4e−14m，far对near最大差0.000932m。中央z378十四点normal/cut最大差0.075977m原本就存在，candidate−baseline差均0。这些诊断不改写原CLI1，也不消除真实far-cut缺面。
+## 入库的精简审阅入口
 
-作者[轻检归档说明](myouren-terrain-v1-evidence/author-light/README.md)保留重建来源限定。归档manifest中的final-source对应本提交根目录源码与project；pretrace-source可用记录的两行patch反向恢复，未在Git中重复存两份模块。诊断脚本和取图脚本保留执行时路径，需按相同工作区布置或明确调整路径才可重放，不能声称已经重放。
+[基线](previews/myouren-terrain-v1/before.png)、[V1](previews/myouren-terrain-v1/after.png)、[V2](previews/myouren-terrain-v1/after-v2.png)为三张实际同机位图，未进行生成或后期改图。[比较记录](myouren-terrain-v2-evidence/v2-comparison.json)与[Astra独立图审](myouren-terrain-v2-evidence/astra-review-v2.json)绑定原图、源、成品、脚本与实测计数。
+
+[原独立14/16报告](myouren-terrain-v2-evidence/independent-v2.json)、[原CLI](myouren-terrain-v2-evidence/independent-v2-cli.json)、[后续开缝诊断](myouren-terrain-v2-evidence/v2-diagnostics.json)均按原字节保存；执行脚本与日志在相邻路径。[作者两次轻检](myouren-terrain-v2-evidence/author-light/README.md)保留先失败、实际修正后通过的范围。[独立checker协议改正说明](myouren-terrain-v2-evidence/checker-v2-change-note.md)保留旧误判来源，并不改写原失败。
+
+V1的archive-sha.json绑定V1提交3bfe2a1的源码/checker；它不是当前V2源码的清单，未覆盖成新hash。V1诊断的依赖绑定是按冻结文件与实际执行顺序事后补存，限定见其v1-diagnostics-binding.json。所有脚本保留执行时路径，移机重放需按记录布置工作区，不能据此声称已经重放。

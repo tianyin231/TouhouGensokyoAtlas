@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "probeSHA": "1a9a1e15fa79186caf2bcad71568b58dfaf8da2ecc223fad99adfc721a8c8694",
+  "probeRawReportSHA": "a68245ff2d26810b6c2ed22bf5005835503069ce39ad6d620a8d3f88da7685cb",
+  "probeSourceSHA": "c35c9af6051b927c5af2915eaa4090a5d1080d6e877823ec100c8d59c3f51db2",
+  "node": "v22.23.3",
+  "originalCLI1Unchanged": true,
+  "importedCheckerFile": "v1-source/tools/check-myouren-terrain.mjs",
+  "importedCheckerSHA": "46308277039638a21e2940faa615025ed292a43b3e6659b1b154de8d32bb42dc",
+  "bindingRecordedAfterRun": true,
+  "bindingBasis": "The original checker was copied and verified against its startup SHA before the diagnosis run; active checker edits began only after that run completed. The original diagnosis did not itself hash its imported dependency.",
+  "originalDiagnosticCLIExitCode": 0
+}

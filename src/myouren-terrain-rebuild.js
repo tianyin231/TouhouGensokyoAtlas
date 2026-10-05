@@ -3,8 +3,9 @@
  * stairs, platforms, six original trees and the historical underground stay.
  */
 (function(G){'use strict';
-const revision=1,EPS=1e-7;
+const revision=2,EPS=1e-7;
 const scope=Object.freeze({near:[218,354,394,391],far:[192,336,416,416],stair:[288,354,312,391],cutZ:378});
+const inspectionHole=Object.freeze([G.ISLAND.hole.x0,G.ISLAND.hole.z0,G.ISLAND.hole.x1,G.ISLAND.hole.z1]);
 const sourceIds=Object.freeze([0,256].flatMap(x=>['',':far',':cut',':cut:far'].map(s=>'island:terrain:'+x+':256'+s)));
 const wallId='island:inspection-walls',stoneId='overview:myouren:hlod:architecture:myouren:1:1:templeStone';
 const detailStoneId='myouren:laid-stone-terrace-faces',detailShrubId='myouren:slope-shrubs';
@@ -41,15 +42,16 @@ const controlNet=Object.freeze([
  [389,[[354,90],[377,90],[381,92.8],[385,102],[388.6,108.7],[391,112]]],
  [394,[[354,90],[377,90],[381,99],[386,111],[391,112]]]
 ]);
-// Each outcrop is one broad, deliberately oriented crest with four/five faces.
-// Its perimeter joins the earth surface; it has no hidden old slope behind it.
+// These rings and crests are real mesh constraints. Each ring edge and its
+// crest define one hard planar face; soil is removed from the ring interior.
+// This is exposed bedrock in the continuous island surface, not a cover shell.
 const outcrops=Object.freeze([
  {id:'west-shoulder',ring:[[237,95.8,372.5],[250,97.1,374],[255,104.3,381],[247,106.2,384],[239,102.9,379.8]],crest:[245,103.1,376.6]},
  {id:'stair-east',ring:[[329,97,376],[339,95.2,376.5],[343,103.3,383],[334,107.2,385],[328,102.5,381]],crest:[334,103.7,379.2]},
  {id:'lotus-left',ring:[[352.5,92.4,378.8],[361.5,94,379.3],[366,103.9,384.8],[358,108,387],[352.5,103.7,384]],crest:[357.5,104,381.7]},
  {id:'lotus-right',ring:[[373.5,92.5,378.6],[384,92.9,379.6],[389,104,386],[379,108.2,387.4],[373,102,384]],crest:[381,104.1,381.9]}
 ]);
-const earthColor=G.rgb('#7d8661'),rockColor=G.rgb('#909084');
+const earthColor=G.rgb('#87936d'),rockColor=G.rgb('#92968b');
 const clamp=t=>Math.max(0,Math.min(1,t)),smooth=t=>{t=clamp(t);return t*t*(3-2*t);};
 const inside=(x,z,b)=>x>=b[0]-EPS&&x<=b[2]+EPS&&z>=b[1]-EPS&&z<=b[3]+EPS;
 const distRect=(x,z,b)=>Math.hypot(Math.max(b[0]-x,0,x-b[2]),Math.max(b[1]-z,0,z-b[3]));
@@ -79,20 +81,16 @@ function section(points,z){if(z<=points[0][0])return points[0][1];for(let i=1;i<
  return (2*t*t*t-3*t*t+1)*a[1]+(t*t*t-2*t*t+t)*h*m0+(-2*t*t*t+3*t*t)*b[1]+(t*t*t-t*t)*h*m1;
  }return points.at(-1)[1];}
 function earthHeight(x,z){let i=1;while(i<controlNet.length-1&&x>controlNet[i][0])i++;const a=controlNet[i-1],b=controlNet[i],u=smooth((x-a[0])/(b[0]-a[0]));return G.mix(section(a[1],z),section(b[1],z),u);}
-function nearestRing(r,x,z){let best=null;for(let i=0;i<r.ring.length;i++){const a=r.ring[i],b=r.ring[(i+1)%r.ring.length],dx=b[0]-a[0],dz=b[2]-a[2],u=clamp(((x-a[0])*dx+(z-a[2])*dz)/(dx*dx+dz*dz)),p=a.map((v,k)=>G.mix(v,b[k],u)),d=Math.hypot(x-p[0],z-p[2]);if(!best||d<best.d)best={p,d};}return best;}
-function rockAt(x,z){for(const r of outcrops)for(let i=0;i<r.ring.length;i++){const p=[r.crest,r.ring[i],r.ring[(i+1)%r.ring.length]],q=bary(p,x,z);if(q)return {height:q[1],normal:G.norm(cross(...p)),rock:r.id};}return null;}
 function artField(base,x,z){const old=base(x,z);if(!old)throw Error('Missing original near surface '+x+','+z);const wing=wings.find(b=>inside(x,z,b));if(!wing)return {height:old[1],old,weight:0};
  let w=Math.min(smooth(Math.min(x-wing[0],wing[2]-x,z-wing[1])/4),smooth(wing[3]-z));for(const r of protectedRects)w=Math.min(w,smooth(distRect(x,z,r)/(r[1]===389.5?1:3.5)));if(w===0)return {height:old[1],old,weight:0};
- let h=earthHeight(x,z),rock=rockAt(x,z);if(rock)h=rock.height;else{let best=null;for(const r of outcrops){const q=nearestRing(r,x,z);if(!best||q.d<best.d)best=q;}if(best&&best.d<4.5)h=G.mix(h,best.p[1]+earthHeight(x,z)-earthHeight(best.p[0],best.p[2]),1-smooth(best.d/4.5));}
- return {height:G.mix(old[1],h,w),old,weight:w,rock:rock&&w>.999?rock:null};}
-function pointAt(base,x,z){const q=artField(base,x,z),e=.2,n=q.rock?q.rock.normal:G.norm([artField(base,x-e,z).height-artField(base,x+e,z).height,2*e,artField(base,x,z-e).height-artField(base,x,z+e).height]);
- const normal=n[1]<0?G.mul(n,-1):n,color=q.rock?rockColor:earthColor;return [x,q.height,z,...(q.weight===0?q.old.slice(3,6):normal),...G.blend(q.old.slice(6,9),color,q.weight)];}
+ return {height:G.mix(old[1],earthHeight(x,z),w),old,weight:w};}
+function pointAt(base,x,z){const q=artField(base,x,z);return[x,q.height,z,...q.old.slice(3,6),...G.blend(q.old.slice(6,9),earthColor,q.weight)];}
 function axis(a,b,extra=[]){const out=[a,b,...extra.filter(v=>v>a&&v<b)];for(let n=Math.ceil(a/4)*4;n<b;n+=4)out.push(n);return [...new Set(out)].sort((a,b)=>a-b);}
 function edgeBreaks(a,b,tris){const axis=Math.abs(a[0]-b[0])<EPS?2:0,other=axis===0?2:0,values=[a[axis],b[axis]];
  for(const t of tris){const p=t.points||t;for(let i=0;i<3;i++){const A=p[i],B=p[(i+1)%3],d=B[other]-A[other];if(Math.abs(d)<EPS){if(Math.abs(A[other]-a[other])<EPS)values.push(A[axis],B[axis]);continue;}const u=(a[other]-A[other])/d;if(u>=-EPS&&u<=1+EPS)values.push(G.mix(A[axis],B[axis],u));}}
  const lo=Math.min(a[axis],b[axis]),hi=Math.max(a[axis],b[axis]);return [...new Set(values.filter(v=>v>=lo-EPS&&v<=hi+EPS).map(v=>+v.toFixed(7)))].sort((x,y)=>(b[axis]>a[axis]?1:-1)*(x-y)).map(v=>{const q=a.slice();q[axis]=v;return q;});}
 function cutByRects(p,rects){let rest=[p],out=[];for(const b of rects){const next=[];for(const q of rest){const s=splitBox(q,b);if(s.inside.length)out.push(s.inside);next.push(...s.outside);}rest=next;}return {inside:out,outside:rest};}
-function artTriangles(base,nearTris){const out=[];
+function soilTriangles(base,nearTris){const out=[];
  for(const b of wings){const xs=axis(b[0],b[2],[256,...protectedRects.flatMap(r=>[r[0],r[2]])]),zs=axis(b[1],b[3],protectedRects.flatMap(r=>[r[1],r[3]]));
  for(let i=0;i<xs.length-1;i++)for(let j=0;j<zs.length-1;j++){const cell=[xs[i],zs[j],xs[i+1],zs[j+1]],x=(cell[0]+cell[2])/2,z=(cell[1]+cell[3])/2;
  if(protectedRects.some(r=>inside(x,z,r))){for(const t of nearTris){const q=splitBox(t.points,cell).inside;if(q.length)out.push(...triangulate(q));}continue;}
@@ -101,6 +99,35 @@ function artTriangles(base,nearTris){const out=[];
  const ps=boundary?edgeBreaks(a,c,nearTris):[a,c];ring.push(...ps.slice(0,-1).map(p=>pointAt(base,p[0],p[2])));}
  const center=pointAt(base,x,z);for(let k=0;k<ring.length;k++)out.push(...triangulate([center,ring[k],ring[(k+1)%ring.length]]));
  }}return out;}
+function clipRingEdge(poly,a,b,keepInside){const side=p=>(b[0]-a[0])*(p[2]-a[2])-(b[2]-a[2])*(p[0]-a[0]),out=[];
+ for(let i=0;i<poly.length;i++){const p=poly[i],q=poly[(i+1)%poly.length],P=side(p),Q=side(q),A=keepInside?P>=-EPS:P<=EPS,B=keepInside?Q>=-EPS:Q<=EPS;if(A)out.push(p);if(A!==B){const u=P/(P-Q);out.push(p.map((v,k)=>G.mix(v,q[k],u)));}}
+ return out.filter((p,i)=>!i||G.length(G.sub(p.slice(0,3),out[i-1].slice(0,3)))>EPS);}
+function subtractRing(poly,ring){let overlap=poly;for(let i=0;i<ring.length&&overlap.length>=3;i++)overlap=clipRingEdge(overlap,ring[i],ring[(i+1)%ring.length],true);if(overlap.length<3||area(overlap)<=EPS)return [poly];
+ let remaining=poly;const outside=[];for(let i=0;i<ring.length;i++){if(remaining.length<3)break;const a=ring[i],b=ring[(i+1)%ring.length],p=clipRingEdge(remaining,a,b,false);if(p.length>=3&&area(p)>EPS)outside.push(p);remaining=clipRingEdge(remaining,a,b,true);}return outside;}
+function buildArtSurface(base,nearTris){
+ // A boundary registry gives both materials the exact same Float32 positions.
+ // Original grid intersections subdivide the ring edge, never the rock plane.
+ const boundaries=outcrops.map(r=>r.ring.map((a,i)=>{const b=r.ring[(i+1)%r.ring.length];return {a,b,points:new Map([[0,a.map(Math.fround)],[1,b.map(Math.fround)]])};}));
+ let soil=[];for(const tri of soilTriangles(base,nearTris)){let pieces=[tri];for(const r of outcrops)pieces=pieces.flatMap(p=>subtractRing(p,r.ring));for(const p of pieces)soil.push(...triangulate(p));}
+ for(const tri of soil)for(const p of tri)for(const edges of boundaries)for(const edge of edges){const {a,b}=edge,dx=b[0]-a[0],dz=b[2]-a[2],u=((p[0]-a[0])*dx+(p[2]-a[2])*dz)/(dx*dx+dz*dz);if(u< -EPS||u>1+EPS)continue;const v=clamp(u),x=G.mix(a[0],b[0],v),z=G.mix(a[2],b[2],v);if(Math.hypot(p[0]-x,p[2]-z)>5e-5)continue;const key=+v.toFixed(9);let q=[...edge.points.values()].find(q=>Math.hypot(q[0]-x,q[2]-z)<.0001);if(!q){q=a.map((n,k)=>Math.fround(G.mix(n,b[k],key)));edge.points.set(key,q);}for(let k=0;k<3;k++)p[k]=q[k];}
+ // Ring corners can land halfway along a clipped soil edge. Insert every
+ // shared boundary position on both sides before triangulating that edge.
+ const seamPoints=[...new Map(boundaries.flat().flatMap(e=>[...e.points.values()]).map(p=>[posKey(p),p])).values()];
+ soil=soil.flatMap(tri=>{const ring=[];for(let i=0;i<3;i++){const a=tri[i],b=tri[(i+1)%3],dx=b[0]-a[0],dz=b[2]-a[2],L=dx*dx+dz*dz,points=[];ring.push(a);for(const p of seamPoints){const u=((p[0]-a[0])*dx+(p[2]-a[2])*dz)/L;if(u<=1e-5||u>=1-1e-5)continue;if(Math.hypot(p[0]-G.mix(a[0],b[0],u),p[2]-G.mix(a[2],b[2],u))<5e-5)points.push({u,p:[...p,...a.slice(3)]});}ring.push(...points.sort((p,q)=>p.u-q.u).map(p=>p.p));}
+  if(ring.length===3)return [tri];const center=ring[0].map((_,k)=>ring.reduce((s,p)=>s+p[k],0)/ring.length),out=[];for(let i=0;i<ring.length;i++)out.push(...triangulate([center,ring[i],ring[(i+1)%ring.length]]));return out;
+ });
+ // Area-weighted earth normals come from the actual joined surface. They do
+ // not borrow rock normals or carry the old derivative's narrow bright folds.
+ const normals=new Map();for(const tri of soil){const n=cross(...tri);for(const p of tri){const key=posKey(p),old=normals.get(key)||[0,0,0];normals.set(key,G.add(old,n));}}
+ const soilOut=soil.map(tri=>tri.map(p=>{const q=artField(base,p[0],p[2]);if(q.weight===0)return p;const n=G.norm(normals.get(posKey(p))),normal=G.norm(G.blend(q.old.slice(3,6),n,q.weight));return [...p.slice(0,3),...normal,...G.blend(q.old.slice(6,9),earthColor,q.weight)];}));
+ const triangles=soilOut.slice(),rockFaces=[];
+ for(let r=0;r<outcrops.length;r++)for(let i=0;i<boundaries[r].length;i++){const rock=outcrops[r],edge=boundaries[r][i],points=[...edge.points].sort((a,b)=>a[0]-b[0]).map(p=>p[1]),raw=cross(rock.crest,edge.a,edge.b),normal=G.norm(raw[1]<0?G.mul(raw,-1):raw),first=triangles.length;
+  for(let j=1;j<points.length;j++)for(const tri of triangulate([rock.crest,points[j-1],points[j]]))triangles.push(tri.map(p=>[...p.slice(0,3),...normal,...rockColor]));
+  rockFaces.push({outcrop:rock.id,face:i,firstArtTriangle:first,triangles:triangles.length-first,normal});
+ }
+ return {triangles,earthTriangles:soilOut.length,rockFaces};
+}
+function artTriangles(base,nearTris){return buildArtSurface(base,nearTris).triangles;}
 function stripSource(m,boxes){const kept=[],fragments=[],removed=[];for(const t of sourceTriangles(m)){
  const split=cutByRects(t.points,boxes);if(!split.inside.length){kept.push(...m.index.subarray(t.face*3,t.face*3+3));continue;}
  removed.push(t.face);for(const p of split.outside)fragments.push(...triangulate(p));
@@ -124,7 +151,7 @@ function facingKeys(t,quantize){const g=new G.Geometry(),stone=G.rgb('#979f95'),
  const a=new Float32Array(g.a),keys=new Map();for(let i=0;i<a.length/9;i+=3){const key=triangleKey(a,[i,i+1,i+2],quantize);keys.set(key,(keys.get(key)||0)+1);}return keys;}
 function removeFacing(m,t){const a=m.vertices,ix=m.index,keys=facingKeys(t,!!ix),kept=[];let removed=0;for(let i=0;i<(ix?ix.length:a.length/9);i+=3){const ids=ix?[ix[i],ix[i+1],ix[i+2]]:[i,i+1,i+2],key=triangleKey(a,ids),count=keys.get(key)||0;if(count){keys.set(key,count-1);removed++;}else if(ix)kept.push(...ids);else for(const j of ids)kept.push(...a.subarray(j*9,j*9+9));}if(removed!==4872)throw Error('Front facing identity changed '+removed);return {kept,removed};}
 const prepared=new WeakSet(),metadata=new WeakMap();
-function prepare(data,pack){if(prepared.has(pack))return[];const sources=sourceIds.map(id=>{const m=pack.meshes.find(r=>r.id===id);if(!m||m.component!=='island-terrain'||!m.index)throw Error('Missing original terrain '+id);exclusiveIndex(pack,m);return m;}),nearTris=sources.filter(m=>!m.globalFar&&!m.cutOnly).flatMap(m=>sourceTriangles(m,[190,334,418,418])),farTris=sources.filter(m=>m.globalFar&&!m.cutOnly).flatMap(m=>sourceTriangles(m,[190,334,418,418])),base=sampler(nearTris),farBase=sampler(farTris),art=artTriangles(base,nearTris),artSample=sampler(art);
+function prepare(data,pack){if(prepared.has(pack))return[];const sources=sourceIds.map(id=>{const m=pack.meshes.find(r=>r.id===id);if(!m||m.component!=='island-terrain'||!m.index)throw Error('Missing original terrain '+id);exclusiveIndex(pack,m);return m;}),nearTris=sources.filter(m=>!m.globalFar&&!m.cutOnly).flatMap(m=>sourceTriangles(m,[190,334,418,418])),farTris=sources.filter(m=>m.globalFar&&!m.cutOnly).flatMap(m=>sourceTriangles(m,[190,334,418,418])),base=sampler(nearTris),farBase=sampler(farTris),artBuilt=buildArtSurface(base,nearTris),art=artBuilt.triangles,artSample=sampler(art);
  const visible=(x,z)=>artSample(x,z)||base(x,z),normalFar=[];
  // The technical halo follows the existing fine terrain and joins the actual
  // coarse triangles across a broad envelope. It is not a narrow raised skirt.
@@ -133,17 +160,22 @@ function prepare(data,pack){if(prepared.has(pack))return[];const sources=sourceI
  if(inside(x,z,[218,354,394,391]))w=1;const c=a.slice();c[1]=G.mix(old[1],a[1],w);for(let k=3;k<9;k++)c[k]=G.mix(old[k],a[k],w);return c;});normalFar.push(...triangulate(q));}}
  normalFar.push(...art);const additions=[],mutations=[],changes=[];
  for(const m of sources){let boxes=m.globalFar?[scope.far]:wings,strip=stripSource(m,boxes),shape=m.globalFar?normalFar:art,tris=strip.fragments.slice();
- for(const tri of shape){let p=splitBox(tri,[m.tile[0],-1e6,m.tile[0]+256,1e6]).inside;if(m.cutOnly)p=clip(p,2,378,false);if(p.length)tris.push(...triangulate(p));}
+ for(const tri of shape){const p=splitBox(tri,[m.tile[0],-1e6,m.tile[0]+256,1e6]).inside;if(!p.length)continue;const pieces=m.cutOnly?splitBox(p,inspectionHole).outside:[p];for(const q of pieces)tris.push(...triangulate(q));}
  const patch=packedRecord(m,m.id+':myouren-rebuild',tris);additions.push(patch);mutations.push({m,index:strip.kept});changes.push({source:m.id,patch:patch.id,removedFaces:strip.removed,retainedFragmentTriangles:strip.fragments.length,patchTriangles:patch.index.length/3});}
  const t=new G.Terrain(data),stone=pack.meshes.find(m=>m.id===stoneId);if(!stone)throw Error('Missing cold facing');exclusiveIndex(pack,stone);const face=removeFacing(stone,t);mutations.push({m:stone,index:face.kept});
  const wall=pack.meshes.find(m=>m.id===wallId);if(!wall)throw Error('Missing original cut wall');exclusiveIndex(pack,wall);const wallBuilt=rebuiltWall(wall,art,visible),wallNext=wallBuilt.record;
  const contact=Float32Array.from(art.flatMap(tri=>tri.flatMap(p=>p.slice(0,3)))),cutTrace=Float32Array.from(wallBuilt.trace.flat()),buffers=new Set(additions.flatMap(m=>[m.vertices.buffer,m.index.buffer]));buffers.add(wallNext.vertices.buffer);buffers.add(wallNext.index.buffer);buffers.add(contact.buffer);buffers.add(cutTrace.buffer);const extraBytes=[...buffers].reduce((s,b)=>s+b.byteLength,0);if(extraBytes>.6*1048576)throw Error('New terrain backing budget exceeded '+extraBytes);
  for(const {m,index}of mutations){m.index.set(index);m.index=m.index.subarray(0,index.length);}pack.meshes=pack.meshes.map(m=>m===wall?wallNext:m).concat(additions);
  data.myourenTerrainRebuild={revision,contact};
- metadata.set(pack,{revision,changes,sourceBytes:extraBytes,contactBytes:contact.byteLength,removedFacingTriangles:4872,cutTrace,artTriangles:art.length,farTriangles:normalFar.length});prepared.add(pack);return[];
+ metadata.set(pack,{revision,changes,sourceBytes:extraBytes,contactBytes:contact.byteLength,removedFacingTriangles:4872,cutTrace,artTriangles:art.length,earthTriangles:artBuilt.earthTriangles,rockFaces:artBuilt.rockFaces,farTriangles:normalFar.length});prepared.add(pack);return[];
 }
-function analyticReference(t){const cache=new Map();return(x,z)=>{const X=Math.floor(x/4)*4,Z=Math.floor(z/4)*4,key=X+':'+Z;let tris=cache.get(key);if(!tris){const ps=[[X,Z],[X+4,Z],[X+4,Z+4],[X,Z+4],[X+2,Z+2]].map(([a,b])=>{const y=Math.fround(t.height(a,b)),n=t.normal(a,b),c=G.ISLAND.surfaceColor(t,a,b,y,n);return[a,y,b,...n,...c].map(Math.fround);});tris=[0,1,2,3].map(i=>[ps[4],ps[i],ps[(i+1)%4]]);cache.set(key,tris);}for(const tri of tris){const p=bary(tri,x,z);if(p)return p;}throw Error('Missing original local fine support');};}
-function contactSampler(data,t){const a=data.myourenTerrainRebuild?.contact;if(a){const ts=[];for(let i=0;i<a.length;i+=9)ts.push([Array.from(a.subarray(i,i+3)),Array.from(a.subarray(i+3,i+6)),Array.from(a.subarray(i+6,i+9))]);return sampler(ts);}const base=analyticReference(t);return(x,z)=>{if(!wings.some(b=>inside(x,z,b)))return null;const q=artField(base,x,z);return[x,q.height,z];};}
+function analyticReference(t){const cache=new Map(),cell=(X,Z)=>{const key=X+':'+Z;let tris=cache.get(key);if(!tris){const ps=[[X,Z],[X+4,Z],[X+4,Z+4],[X,Z+4],[X+2,Z+2]].map(([a,b])=>{const y=Math.fround(t.height(a,b)),n=t.normal(a,b),c=G.ISLAND.surfaceColor(t,a,b,y,n);return[a,y,b,...n,...c].map(Math.fround);});tris=[0,1,2,3].map(i=>[ps[4],ps[i],ps[(i+1)%4]]);cache.set(key,tris);}return tris;};
+ const sample=(x,z)=>{for(const tri of cell(Math.floor(x/4)*4,Math.floor(z/4)*4)){const p=bary(tri,x,z);if(p)return p;}throw Error('Missing original local fine support');};
+ sample.triangles=b=>{const out=[];for(let x=Math.floor(b[0]/4)*4;x<b[2];x+=4)for(let z=Math.floor(b[1]/4)*4;z<b[3];z+=4)for(const points of cell(x,z))out.push({points});return out;};return sample;}
+function contactSampler(data,t){const a=data.myourenTerrainRebuild?.contact;if(a){const ts=[];for(let i=0;i<a.length;i+=9)ts.push([Array.from(a.subarray(i,i+3)),Array.from(a.subarray(i+3,i+6)),Array.from(a.subarray(i+6,i+9))]);return sampler(ts);}
+ // A direct region build uses the same explicit rock faces as the prepared
+ // overview/Worker path; it must not place shrubs on the old scalar field.
+ const base=analyticReference(t);return sampler(artTriangles(base,base.triangles([214,352,398,395])));}
 function bytes(meshes){const buffers=new Set();for(const m of meshes)for(const k of['vertices','farVertices','instances','instanceColors','index'])if(m[k])buffers.add(m[k].buffer);return [...buffers].reduce((s,b)=>s+b.byteLength,0);}
 function applyDetail(data,pack){if(pack.meta?.myourenTerrainRebuild?.revision===revision)return pack;const t=new G.Terrain(data),contact=contactSampler(data,t),base=analyticReference(t);let moved=0;
  const meshes=pack.meshes.map(m=>{if(m.id===detailStoneId){const r=removeFacing(m,t);return {...m,vertices:Float32Array.from(r.kept)};}if(m.id!==detailShrubId)return m;
@@ -151,6 +183,6 @@ function applyDetail(data,pack){if(pack.meta?.myourenTerrainRebuild?.revision===
  for(let at=0;at<a.length/9;){const count=(at<prefix?168:126)*4;let x=0,z=0;for(let j=0;j<count;j++){x+=a[(at+j)*9];z+=a[(at+j)*9+2];}x/=count;z/=count;const q=contact(x,z),old=base(x,z),dy=q?q[1]-old[1]:0;if(Math.abs(dy)>.00001){for(let j=0;j<count;j++)a[(at+j)*9+1]+=dy;moved++;}at+=count;}
  return {...m,vertices:a};});return {...pack,meshes,bytes:bytes(meshes),meta:{...pack.meta,myourenTerrainRebuild:{revision,movedShrubClumps:moved,removedFacingTriangles:4872}}};}
 const originalBuildRegion=G.buildRegion;G.buildRegion=async function(data,id,legacy){const p=await originalBuildRegion(data,id,legacy);return id==='myouren'?applyDetail(data,p):p;};
-G.MYOUREN_TERRAIN_REBUILD=Object.freeze({revision,scope,wings,sourceIds,wallId,stoneId,detailStoneId,detailShrubId,rootGuards,protectedRects,controlNet,outcrops,sourceTriangles,sampler,artField,artTriangles,prepare,applyDetail,originalBuildRegion,metadata,bytes});
+G.MYOUREN_TERRAIN_REBUILD=Object.freeze({revision,scope,wings,inspectionHole,sourceIds,wallId,stoneId,detailStoneId,detailShrubId,rootGuards,protectedRects,controlNet,outcrops,sourceTriangles,sampler,artField,artTriangles,buildArtSurface,prepare,applyDetail,originalBuildRegion,metadata,bytes});
 G.extraOverviewBuilders=[...(G.extraOverviewBuilders||[]),prepare];
 })(globalThis.GA);

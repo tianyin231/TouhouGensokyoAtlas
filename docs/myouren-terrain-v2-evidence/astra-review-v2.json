@@ -1,0 +1,93 @@
+{
+  "decision": "reject",
+  "sourceSHA": "f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0",
+  "artifactSHA": "0723e15ae5c655ce8323803ebca06bfd7916027c0bfd46cc9a0e5ddfa84c5027",
+  "protocolSHA": "ab81458a203d12549c257063522be766c74a2a885116ada87f774c9a680186cf",
+  "visual_reasons": [
+    "Rock outlines are clearer than V1, but visible pointed polygon rocks form a repeated gemstone pattern attached to the bank.",
+    "Broad gray-green curtains, the long straight platform underside and jagged foot still dominate the slope.",
+    "The stair wings still lack a coherent broad toe and soil shoulder; retained shrubs read as isolated clumps on the cliff."
+  ],
+  "common_diagnosis": "Local surface replacement preserved the long wall-like bank composition. Scalar mixing blurred V1; repeated ring-to-single-crest fans made V2 artificial pointed rocks. Neither established the overall slope/toe form.",
+  "independent_original_result": {
+    "exitCode": 1,
+    "sourceSHA": "f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0",
+    "checkerSHA": "7f6db4939fe52f21bfe944deb111dc5ca37be364d8a0414d64ee981bf481d421",
+    "elapsedCPUms": 5759.683617000001,
+    "passedChecks": 14,
+    "totalChecks": 16,
+    "command": "/tmp/node-v22.23.3-linux-x64/bin/node tools/check-myouren-terrain.mjs --source-sha f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0 --output /workspace/myouren-terrain-evidence/independent-v2.json"
+  },
+  "diagnosed_protocol_error": "The preflight hard-coded the V1 #909084 rock color. V2 uses #92968b, so every rock was falsely labelled earth.",
+  "confirmed_unfixed_defect": {
+    "mode": "near-cut",
+    "x": [
+      288,
+      312
+    ],
+    "z": [
+      376,
+      378
+    ],
+    "maxGapMetres": 0.11270904541015625,
+    "baselineGapMetres": 0,
+    "cause": "Rebuilt wings clip the normal surface while the adjacent central cut surface stays original."
+  },
+  "state": "Method stopped after two rejected images. No V3, no long regression, no source edits after freeze. Parent coordinates isolation/publishing and subsequent overall work.",
+  "notRun": [
+    "camera visible-floor adapter",
+    "full native detail protection",
+    "far/back/night/low/cut browser validation",
+    "input and unload/reentry",
+    "full Node regression",
+    "hardware FPS"
+  ],
+  "evidence": [
+    {
+      "name": "before",
+      "PNG": "/workspace/myouren-terrain-evidence/before/myouren.png",
+      "PNG_SHA": "b3df4e78b6d14f1b6f4f79ba66261c0f4d4bf325f32c41eba936f0bf36ef0a1b",
+      "report_SHA": "26dd6b8df3cc6de01224bfc1bbd0101f5ca9a317e1a2e95e356800f2b4da65b1",
+      "artifact_SHA": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+      "calls": 278,
+      "triangles": 663480,
+      "attributeBytes": 29872584,
+      "geometries": 201,
+      "textures": 24
+    },
+    {
+      "name": "v1",
+      "PNG": "/workspace/myouren-terrain-evidence/v1/myouren.png",
+      "PNG_SHA": "32e44a2e324e910a35961860ae2fe6211f6aa0648ba8af881cecd8accbba2c7d",
+      "report_SHA": "d25f98cbe3c496649e2102bf83b01d459b66c9df4042eb2b27aa1deffc660c93",
+      "artifact_SHA": "c6878f945fafd91002d1fa24ced3377f3102e1dac399dc2a35d86e131b06876d",
+      "calls": 280,
+      "triangles": 659861,
+      "attributeBytes": 29415192,
+      "geometries": 203,
+      "textures": 24
+    },
+    {
+      "name": "v2",
+      "PNG": "/workspace/myouren-terrain-evidence/v2/myouren.png",
+      "PNG_SHA": "d30b372e50f4c1eec9f724f0ec07d6ab7067e1c64d11a0b05405734eeb65497c",
+      "report_SHA": "d4ec8bfbb574bf058d5c0af2b2bb691223ca96bd7044a86f7f807cac9c1fba22",
+      "artifact_SHA": "0723e15ae5c655ce8323803ebca06bfd7916027c0bfd46cc9a0e5ddfa84c5027",
+      "calls": 280,
+      "triangles": 660104,
+      "attributeBytes": 29429700,
+      "geometries": 203,
+      "textures": 24
+    }
+  ],
+  "bindings": {
+    "v2-source/source-sha.json": "58327a750fd0537c4d0e92c02681c0b5549e1d1a56de4c68f57ecd3e9f2917c2",
+    "v2-source/src/myouren-terrain-rebuild.js": "f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0",
+    "v2-source/tools/check-myouren-terrain.mjs": "7f6db4939fe52f21bfe944deb111dc5ca37be364d8a0414d64ee981bf481d421",
+    "independent-v2.json": "d436de78d0c1f7178d54067b44dac158251dbe2bc0a97a069ac8a74d19315d0f",
+    "independent-v2-cli.json": "4f53b623fcc351f2c82b0498f5d8d1d6d49b6fe55aa31bb04bed8f39a46d3dd9",
+    "v2-diagnostics.json": "7d0098b7665ef3b52337e3a53b87d7d45081ed70e3a8200babf1b142ed7423a0",
+    "v2-diagnostics.mjs": "42b3d1a844898b017359b372719856047ae61ed9418d284f23ca69fec62ce180",
+    "astra-v2/manifest.json": "a4037aa903c6709f864238e68dd1e74b936e1492dc58c7d2872732f1879cffdc"
+  }
+}

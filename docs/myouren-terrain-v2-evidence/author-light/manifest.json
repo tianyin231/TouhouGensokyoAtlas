@@ -1,0 +1,34 @@
+{
+  "base_runtime_commit": "29663c94616067de77657dddd41c01035b8bf58d",
+  "runtime": "/tmp/node-v22.23.3-linux-x64/bin/node",
+  "cwd": "/workspace/myouren-terrain-rebuild",
+  "invocation": "node /workspace/myouren-terrain-evidence/astra-v2/prepare.mjs > run-NN/stdout.json 2> run-NN/stderr.txt",
+  "runs": [
+    {
+      "run": "01",
+      "exit_code": 1,
+      "sourceSHA": "29efdc83c050a24a9680d62e4860e58aa6fa275ea7019799c61dab74ce543dad",
+      "projectSHA": "33d1a8580015f00061eb7d1c68f63104c6dad1561f68ebb950c0bef893e7fa11",
+      "scriptSHA": "800cbc66b6a5f930fad721808932641058e707b5616f76d701bc406793511772",
+      "stdoutSHA": "edeadb7f4a8e68e386c4f0da2e6fcb89387f368b016e3e3ce9e0a8e622b15544",
+      "stderrSHA": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": false,
+      "sourceMatchesReport": true,
+      "original_stdout_preserved": true
+    },
+    {
+      "run": "02",
+      "exit_code": 0,
+      "sourceSHA": "f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0",
+      "projectSHA": "33d1a8580015f00061eb7d1c68f63104c6dad1561f68ebb950c0bef893e7fa11",
+      "scriptSHA": "800cbc66b6a5f930fad721808932641058e707b5616f76d701bc406793511772",
+      "stdoutSHA": "48e926184e202ec226b86e02e2bcd966444acb5449ec87fd7ff977f671a6ba4b",
+      "stderrSHA": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": true,
+      "sourceMatchesReport": true,
+      "original_stdout_preserved": true
+    }
+  ],
+  "scope": "Two short author preflights; run 02 followed an actual source fix. No GPU, no long regression, no independent checker execution.",
+  "frozen_sourceSHA": "f1c1c371951d5e3aaa49550c23a5c73b2d4fa7737cf7954328ac21fb7086f5c0"
+}
