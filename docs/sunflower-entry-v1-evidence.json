@@ -1,0 +1,170 @@
+{
+  "schema": 1,
+  "status": "Visible terrain benefit; delivery withheld for hard right-angle road junction. Isolated review only.",
+  "baseCommit": "9905a0918edbfb5708cda05582d5bf5d23d3d448",
+  "modelRoles": {
+    "art": "GPT-6 Astra Max",
+    "independentSourceAndRegression": "GPT-6.1 Sol Max"
+  },
+  "baselineArtifactSHA": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+  "candidateArtifactSHA": "e9f303f2079b125caf124fe995502743a28393b47780ad955ae83185275b6ce4",
+  "runtimeSources": {
+    "src/sunflower-entry.js": "c26055284f5fe1350644bb6f85d87fae7a62006b29af5838305cac227e07a591",
+    "project.json": "382c288ce75ee249e37f39f972a03f68ff9963d4fd1ce748acf87c1eac06ead0"
+  },
+  "allCapturedInputsMatchArchive": true,
+  "capturedInputCount": 200,
+  "captureProtocolSHA": "ab81458a203d12549c257063522be766c74a2a885116ada87f774c9a680186cf",
+  "candidateCLI": {
+    "startedUTC": "2026-10-05T17:38:56.410257+00:00",
+    "finishedUTC": "2026-10-05T17:39:51.305938+00:00",
+    "elapsedSeconds": 54.8901200620021,
+    "exitCode": 0,
+    "inputsUnchanged": true,
+    "artifactUnchanged": true
+  },
+  "view": {
+    "name": "transitionFlowers",
+    "eye": [
+      -245,
+      155,
+      735
+    ],
+    "target": [
+      -490,
+      105,
+      1090
+    ],
+    "fov": 49,
+    "viewport": [
+      1280,
+      720
+    ],
+    "dpr": 1,
+    "clock": 12.5,
+    "quality": "balanced",
+    "lighting": "neutral",
+    "ao": true,
+    "browser": "151.0.7922.173",
+    "driver": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "before": {
+    "stats": {
+      "calls": 504,
+      "triangles": 6257433,
+      "totalCalls": 506,
+      "totalTriangles": 6257437,
+      "reflectionCalls": 0,
+      "reflectionTriangles": 0,
+      "postPasses": 2,
+      "submittedCPUms": 13,
+      "geometries": 92,
+      "textures": 11,
+      "residentObjects": 512,
+      "residentAttributeMiB": 13.761043548583984,
+      "budgetMiB": 160,
+      "proxyDrawObjects": 83,
+      "detailDrawObjects": 429,
+      "evictions": 1130,
+      "uploads": 1642,
+      "renderCount": 5,
+      "hdr": true,
+      "contactOcclusion": true,
+      "renderTargetsEstimateMiB": 12.3046875,
+      "weather": "clear",
+      "skyVisible": true,
+      "surfaceComponents": 1,
+      "localCutaway": false,
+      "rainSegments": 0,
+      "westernFocused": null,
+      "backdoorWindows": {
+        "targets": 0,
+        "buildPasses": 0,
+        "framePasses": 0,
+        "livePortals": false
+      },
+      "surfaceNight": false,
+      "nightLocalLights": 0
+    },
+    "memory": {
+      "geometries": 92,
+      "textures": 11
+    },
+    "residentAttributeBytes": 14429500,
+    "PNG": "4aca53c84165c7d8198b383b79d73104a4d6608351c5b065ba28d72cf2bfb356"
+  },
+  "after": {
+    "stats": {
+      "calls": 504,
+      "triangles": 6257625,
+      "totalCalls": 506,
+      "totalTriangles": 6257629,
+      "reflectionCalls": 0,
+      "reflectionTriangles": 0,
+      "postPasses": 2,
+      "submittedCPUms": 10.200000002980232,
+      "geometries": 92,
+      "textures": 11,
+      "residentObjects": 512,
+      "residentAttributeMiB": 13.783016204833984,
+      "budgetMiB": 160,
+      "proxyDrawObjects": 83,
+      "detailDrawObjects": 429,
+      "evictions": 1130,
+      "uploads": 1642,
+      "renderCount": 5,
+      "hdr": true,
+      "contactOcclusion": true,
+      "renderTargetsEstimateMiB": 12.3046875,
+      "weather": "clear",
+      "skyVisible": true,
+      "surfaceComponents": 1,
+      "localCutaway": false,
+      "rainSegments": 0,
+      "westernFocused": null,
+      "backdoorWindows": {
+        "targets": 0,
+        "buildPasses": 0,
+        "framePasses": 0,
+        "livePortals": false
+      },
+      "surfaceNight": false,
+      "nightLocalLights": 0
+    },
+    "memory": {
+      "geometries": 92,
+      "textures": 11
+    },
+    "residentAttributeBytes": 14452540,
+    "PNG": "0659bd9e50e45dac01cfd7a926fa644f761f1467776a322ca0c92c2427fff82f"
+  },
+  "delta": {
+    "totalCalls": 0,
+    "totalTriangles": 192,
+    "residentAttributeBytes": 23040,
+    "geometries": 0,
+    "textures": 0
+  },
+  "visualReview": {
+    "benefit": "Whole north slope replaces the original steep curtain with a broad shoulder and supported existing trees.",
+    "blocking": "Public approach meets the native internal path at a conspicuous right angle; old roadside vegetation still traces its former route.",
+    "next": "One limited V2: continuous tangent and complete road/shoulder cross-section; move only explicitly attributed original roadside grass/shrubs with their identity and appearance preserved."
+  },
+  "retainedStartupFailure": {
+    "executionPath": "/workspace/sunflower-entry-evidence/v1-capture/execution.json",
+    "exitCode": 1,
+    "zeroFrames": true,
+    "reason": "Overbroad exclusivity target selection included unrelated Hakurei shared wood/leaf instance views. Fixed actual write-target selection; sharing assertion retained."
+  },
+  "notRun": [
+    "Back/near/low/night/cold overview comparisons",
+    "Independent candidate source/native prototype/color/building checks",
+    "Native interaction and unload/reentry",
+    "Complete Node regression",
+    "CI and deployment for this candidate"
+  ],
+  "originalAuthorNativePrototypeColorCheck": "UNTESTED: erroneous summary iteration checked zero records; no protection claim.",
+  "hardwareFPSMeasured": false,
+  "physicalVRAMMeasured": false,
+  "rawEvidenceDirectory": "/workspace/sunflower-entry-evidence"
+}
