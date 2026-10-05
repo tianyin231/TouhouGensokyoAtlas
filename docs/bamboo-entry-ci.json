@@ -113,5 +113,249 @@
       "https://github.com/actions/deploy-pages/blob/v5/action.yml",
       "https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages#linking-separate-build-and-deploy-jobs"
     ]
-  }
+  },
+  "ciFollowups": [
+    {
+      "headSHA": "9905a0918edbfb5708cda05582d5bf5d23d3d448",
+      "checkedAtUTC": "2026-10-05 17:13:51 UTC",
+      "jobCounts": {
+        "success": 20,
+        "cancelled": 1,
+        "failure": 0,
+        "skipped": 0,
+        "pending": 0,
+        "total": 21
+      },
+      "allJobsPassed": false,
+      "runs": [
+        {
+          "kind": "pages",
+          "runID": 37342214932,
+          "url": "https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37342214932",
+          "expectedJobs": 2,
+          "succeeded": 2,
+          "cancelled": [],
+          "failed": [],
+          "skipped": [],
+          "pending": [],
+          "artifactHeadSHAVerified": true,
+          "artifactCount": 1
+        },
+        {
+          "kind": "scene",
+          "runID": 37342215052,
+          "url": "https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37342215052",
+          "expectedJobs": 5,
+          "succeeded": 5,
+          "cancelled": [],
+          "failed": [],
+          "skipped": [],
+          "pending": [],
+          "artifactHeadSHAVerified": true,
+          "artifactCount": 4
+        },
+        {
+          "kind": "targeted",
+          "runID": 37342214915,
+          "url": "https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37342214915",
+          "expectedJobs": 14,
+          "succeeded": 13,
+          "cancelled": [
+            {
+              "id": 111871831951,
+              "name": "wind-cave-webgl",
+              "conclusion": "cancelled"
+            }
+          ],
+          "failed": [],
+          "skipped": [],
+          "pending": [],
+          "artifactHeadSHAVerified": true,
+          "artifactCount": 14
+        }
+      ],
+      "original29663cFieldsPreserved": true,
+      "previousWorkflowCommit": {
+        "headSHA": "ce1774d803b29fb9823dd00c6c690c20d3cf7ae9",
+        "jobCounts": {
+          "success": 16,
+          "failure": 3,
+          "skipped": 2,
+          "pending": 0,
+          "total": 21
+        },
+        "failedJobs": [
+          {
+            "id": 111864521723,
+            "name": "Pages build"
+          },
+          {
+            "id": 111864522573,
+            "name": "scene clean-source"
+          },
+          {
+            "id": 111864522732,
+            "name": "scene check"
+          }
+        ],
+        "skippedJobs": [
+          {
+            "id": 111867627146,
+            "name": "Pages deploy"
+          },
+          {
+            "id": 111867525455,
+            "name": "scene compare-builds"
+          }
+        ],
+        "failure": "Unchanged strict inherited-file guard detected the reviewed Pages workflow SHA; five historical protectedFiles.pages.yml expectations had not yet been explicitly updated.",
+        "actualWorkflowSHA256": "c6331714ab9c8dab49457dc1870bdba3032f486ee7904e640a1144f2a9704d6f",
+        "oldExpectedSHA256": "8c39a09c897807aed15e1408740c12a6bb172e7d00d2b396d7ba6fad9ff7e6e1",
+        "targetedFinalStatus": {
+          "runID": 37340046101,
+          "success": 14,
+          "lifecycleJobID": 111864522517,
+          "lifecycleConclusion": "success",
+          "verifiedBy": "Parent single authorized closing connector read. Earlier pending snapshots preserved."
+        },
+        "rawLocalEvidenceFile": "main-ce1774d-ci.json",
+        "rawEvidenceNote": "The local raw 16:38:59 snapshot retained lifecycle pending; the parent later verified its successful terminal state.",
+        "rerunRequested": false
+      },
+      "workflowGuardReview": {
+        "files": [
+          "tools/backdoor-baseline.json",
+          "tools/kasen-baseline.json",
+          "tools/current-hell-baseline.json",
+          "tools/rainbow-mine-baseline.json",
+          "tools/highland-baseline.json"
+        ],
+        "onlyChangedField": "protectedFiles[.github/workflows/pages.yml]",
+        "beforeSHA256": "8c39a09c897807aed15e1408740c12a6bb172e7d00d2b396d7ba6fad9ff7e6e1",
+        "afterSHA256": "c6331714ab9c8dab49457dc1870bdba3032f486ee7904e640a1144f2a9704d6f",
+        "explicitProtectedFileChecks": 210,
+        "protectedChecksPerFixture": [
+          36,
+          39,
+          42,
+          45,
+          48
+        ],
+        "checkCLI": 0,
+        "geometryNavigationAndOtherExpectedValuesUnchanged": true,
+        "assertionCodeUnchanged": true,
+        "previousWorkflowReviewEntryPreserved": true,
+        "acceptedRuntimeInputs": 199,
+        "changedBuildInputFiles": 5,
+        "HTMLSHA256Unchanged": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+        "checkScriptSHA256": "46a387b7c54e4f203e30beda642d6b92f864207b01a7d098cd056b52aed5337c",
+        "validationReportSHA256": "f54812f9f9fbedc11e04fc1cb3bb4c86bd167560e41fcacb91e57046fbaa7b89",
+        "independentReviewSHA256": "9d6a311dda542cb097a52e98722e9d3b7031141f91b8efe1b067c9888703528b",
+        "fullNodeAndGPURepeatedLocally": false
+      },
+      "pages": {
+        "runID": 37342214932,
+        "buildJobID": 111871831924,
+        "deployJobID": 111878991527,
+        "buildConclusion": "success",
+        "deployConclusion": "success",
+        "artifactID": 11359099137,
+        "artifactName": "github-pages-37342214932-1",
+        "sameNameArtifactCount": 1,
+        "artifactHeadSHA": "9905a0918edbfb5708cda05582d5bf5d23d3d448",
+        "artifactHeadSHAVerified": true,
+        "pagesBuildVersion": "9905a0918edbfb5708cda05582d5bf5d23d3d448",
+        "deploymentReportedSuccessUTC": "2026-10-05T16:54:08.8442804Z",
+        "environmentURL": "https://tianyin231.github.io/TouhouGensokyoAtlas/",
+        "rawDeployLogFile": "main-9905a09-pages-deploy-success.log",
+        "rawDeployLogBytes": 3583,
+        "rawDeployLogSHA256": "a7a42f3978e6fba6aec8ae7b05179bb5c4ba02b5476c183c020d48563b350655",
+        "downloadedDeployedArtifact": {
+          "zipBytes": 23147510,
+          "zipSHA256": "001dc9e95f257e87a8e4c4a2cd2f9471a222cf23a0294384660dccd3c8f32faf",
+          "zipMember": "artifact.tar",
+          "tarSHA256": "79d25a5b47884e0536bfadef10c72ddd206417c61fb42b9c1aa783bd5ba4b689",
+          "HTMLMember": "./index.html",
+          "HTMLBytes": 36326851,
+          "HTMLSHA256": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+          "matchesAcceptedRuntime": true,
+          "reportSHA256": "080b0dae8d1eed7f0d3fe94199eaf8f4e62dbcb4ef16b601bb331e1f1eae10aa",
+          "evidenceType": "Downloaded exact GitHub Pages deployed artifact; not a live URL response."
+        }
+      },
+      "windCave": {
+        "jobID": 111871831951,
+        "runID": 37342214915,
+        "conclusion": "cancelled",
+        "url": "https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37342214915/job/111871831951",
+        "reason": "GitHub annotation confirms the configured 12 minute job maximum was exceeded during browser dependency installation.",
+        "lastProductStep": "Build current source: success",
+        "cancelledStep": "Install optional browser test dependencies",
+        "lastInstallerActivity": "APT downloading fonts-unifont from azure.archive.ubuntu.com",
+        "browserRegression": "skipped; did not execute",
+        "productAssertionFailureObserved": false,
+        "uploadedArtifactID": 11359063831,
+        "uploadedArtifactBytes": 9097,
+        "sameNameArtifactCount": 1,
+        "artifactUploadFileCount": 1,
+        "uploadedArtifactIsNotBrowserPassEvidence": true,
+        "rawLogFile": "main-9905a09-job-111871831951-cancelled.log",
+        "rawLogBytes": 25414,
+        "rawLogSHA256": "3316227d8df70a46c37db83074004b5d0f61f999d1dcce07a2e84e4bda1a7e4f",
+        "inputsByteIdenticalTo29663c": [
+          {
+            "path": ".github/workflows/targeted-webgl.yml",
+            "oldSHA256": "fe499512b9c9fd8947ab8435eebb0b006b4acfe494eb0d660e96d5ac4e3a0ade",
+            "newSHA256": "fe499512b9c9fd8947ab8435eebb0b006b4acfe494eb0d660e96d5ac4e3a0ade",
+            "identical": true,
+            "bytes": 8631
+          },
+          {
+            "path": "tools/check-wind-cave-browser.py",
+            "oldSHA256": "4fd961973ca02a85fe7b9dc4ef13c95278ef0f29b1ad45830660787a0549621b",
+            "newSHA256": "4fd961973ca02a85fe7b9dc4ef13c95278ef0f29b1ad45830660787a0549621b",
+            "identical": true,
+            "bytes": 13111
+          },
+          {
+            "path": "tools/current-coverage.json",
+            "oldSHA256": "cb8038b9b7c1f933ae77456cfc00303997e1fbb95d8deb2c16963886fab59fe8",
+            "newSHA256": "cb8038b9b7c1f933ae77456cfc00303997e1fbb95d8deb2c16963886fab59fe8",
+            "identical": true,
+            "bytes": 245
+          },
+          {
+            "path": "src/wind-cave.js",
+            "oldSHA256": "94ce9aa01c17eb5c1faed009311b3039166879912b96f8a5b3cd5cf22e325737",
+            "newSHA256": "94ce9aa01c17eb5c1faed009311b3039166879912b96f8a5b3cd5cf22e325737",
+            "identical": true,
+            "bytes": 17555
+          }
+        ],
+        "oldActualPassingJob": {
+          "id": 111842188862,
+          "run_id": 37333473669,
+          "conclusion": "success"
+        },
+        "localProductCheckRepeated": false,
+        "retryRequested": false,
+        "recoveryDecision": "Preserve CI cancelled. Do not repeat the unchanged previously passing product check or create a same-name artifact collision; verify the next naturally triggered run."
+      },
+      "liveHTML": {
+        "verified": false,
+        "requestedAtUTC": "2026-10-05T16:55:54.541597+00:00",
+        "URL": "https://tianyin231.github.io/TouhouGensokyoAtlas/?verify=9905a0918edbfb5708cda05582d5bf5d23d3d448",
+        "expectedHTMLSHA256": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+        "error": "URLError(OSError('Tunnel connection failed: 403 Forbidden'))",
+        "reportSHA256": "8d4c23e332a23b50600bc8b6948cda94f0a126caea18692ff016b054805019e5",
+        "scriptSHA256": "212a14e7d38b5b9da004f3d6f7d6b7a5b2f515882349b7258727eb87e13cf35e",
+        "deploymentAndArtifactChecksDoNotProveLiveResponseBytes": true
+      },
+      "fullLocalEvidenceFile": "main-9905a09-ci.json",
+      "fullLocalEvidenceSHA256": "023a550bac9352bf8d81172fd4e8dac2bb02f24e274a67a517a908ca4a5137d5",
+      "newRetriesRequested": false,
+      "oldArtifactsDeleted": false,
+      "permissionsAndBillingChanged": false
+    }
+  ]
 }
