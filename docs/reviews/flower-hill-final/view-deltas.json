@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "kind": "Actual repaired Flower Hill seven-view cost evidence",
+  "generatedUTC": "2026-10-05T22:25:41.234921+00:00",
+  "sourceSHA256": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549",
+  "checkerSHA256": "7f22d62fb6c8816560d5a26bb378d1947afcee1a566e4eaa8eae8427ae77f4ac",
+  "artifactSHA256": "da10025a18749343f6b275ae202ded6db86b4ee2d2d20a2bfb7216d47ba048af",
+  "protocolSHA256": "5f2f4171c07fd2be5e38967a6f41a3948c51ba2d408c532548efb8f1b431e221",
+  "specSHA256": "626215c470b84fd629153eb6df1c03d9a847d9798bfa2dff70edd8b0fe1a68d6",
+  "baselineReportSHA256": "3b140bd5096fa072430500c839b0918d015e5510902bbacedbe783e32fe7fd09",
+  "candidateReportSHA256": "c72ca8db44180c06ba7c572339e92b0730c80877d2ad5b0555943accbdcd4267",
+  "executionSHA256": "4d453e3af71189282ad39e6425c0e0faa308fd3c93e1c750215f989ebc01c0ff",
+  "exitCode": 0,
+  "startUTC": "2026-10-05T22:21:08.369971+00:00",
+  "endUTC": "2026-10-05T22:23:04.138992+00:00",
+  "elapsedWallSeconds": 115.76665108799352,
+  "releaseInputs": 203,
+  "inputsAndArtifactUnchanged": true,
+  "allSevenOriginalBudgetsPassed": true,
+  "frameSelection": "Final of three explicit frames, same original protocol/history/condition; uncontrolled submission CPU samples are not interaction timing/FPS.",
+  "rows": [
+    {
+      "view": "coldOverview",
+      "lastExplicitFrameDelta": {
+        "calls": 0,
+        "triangles": 3775,
+        "attributeBytes": 116256,
+        "geometries": 0,
+        "textures": 0
+      },
+      "candidatePNG": "coldOverview.png",
+      "candidatePNGSHA256": "202303231968b91012cfbf1e9226e35cbbfc33272ed2a6c8164977949386fb73",
+      "baselinePNG": "coldOverview.png",
+      "baselinePNGSHA256": "3f1a8002a7703b7d4ebf759eafc734988ab79c7e256ceec3332cb9bc3c477086"
+    },
+    {
+      "view": "defaultEntry",
+      "lastExplicitFrameDelta": {
+        "calls": 4,
+        "triangles": 1404,
+        "attributeBytes": 60588,
+        "geometries": 1,
+        "textures": 0
+      },
+      "candidatePNG": "defaultEntry.png",
+      "candidatePNGSHA256": "1ecf21604cbadf5a4f82d5f8bf7bad9b0ab47349751ef1cda3c7fc47bce54afb",
+      "baselinePNG": "defaultEntry.png",
+      "baselinePNGSHA256": "2a30a58c93379f7fa05cdf3589dafb923df6c4e93519ff280281e384dcb8aee1"
+    },
+    {
+      "view": "flowerHillSaddle",
+      "lastExplicitFrameDelta": {
+        "calls": 3,
+        "triangles": 0,
+        "attributeBytes": 0,
+        "geometries": 0,
+        "textures": 0
+      },
+      "candidatePNG": "flowerHillSaddle.png",
+      "candidatePNGSHA256": "0f82080b3c0922f587a332114453863664d0da471e10df50d9d6f5c6678db92c",
+      "baselinePNG": "flowerHillSaddle.png",
+      "baselinePNGSHA256": "a7c86fd553fe17e6ed81a3820802a8378316e93498074771ec287673f3d903ae"
+    },
+    {
+      "view": "flowerHillEastLow",
+      "lastExplicitFrameDelta": {
+        "calls": 3,
+        "triangles": 1158,
+        "attributeBytes": 0,
+        "geometries": 0,
+        "textures": 0
+      },
+      "candidatePNG": "flowerHillEastLow.png",
+      "candidatePNGSHA256": "ed1789726dc3c2e99bb3ad7f459174cee235f0c51facd0a0cd755f0bdbfa1657",
+      "baselinePNG": "flowerHillEastLow.png",
+      "baselinePNGSHA256": "819da6e24a56c6b7ee56787004d9caacc74bdc6075c8206cd06c0d03fd850913"
+    },
+    {
+      "view": "flowerHillReverse",
+      "lastExplicitFrameDelta": {
+        "calls": 1,
+        "triangles": 3853,
+        "attributeBytes": 0,
+        "geometries": 0,
+        "textures": 0
+      },
+      "candidatePNG": "flowerHillReverse.png",
+      "candidatePNGSHA256": "dbb7fbb44ce1d7c0345c9380865965777192552f7f4a556eb318fdddac383412",
+      "baselinePNG": "flowerHillReverse.png",
+      "baselinePNGSHA256": "aa72f7acae7534ed92d65fd7ad39f517b6a31121b2725fc3340eff91f27af0d7"
+    },
+    {
+      "view": "low",
+      "lastExplicitFrameDelta": {
+        "calls": 3,
+        "triangles": 0,
+        "attributeBytes": 0,
+        "geometries": 0,
+        "textures": 0
+      },
+      "candidatePNG": "low.png",
+      "candidatePNGSHA256": "aafdf32a1b1e4afd7d20461b3e35bde287fb8101c4f418e23c100e9d629103ab",
+      "baselinePNG": "low.png",
+      "baselinePNGSHA256": "dc68182547d409e4db2bc817538e039580d79b9fd2ac386d0dcee6ef3cb266d1"
+    },
+    {
+      "view": "night",
+      "lastExplicitFrameDelta": {
+        "calls": 3,
+        "triangles": 0,
+        "attributeBytes": 0,
+        "geometries": 0,
+        "textures": 0
+      },
+      "candidatePNG": "night.png",
+      "candidatePNGSHA256": "c84e5dcac3976e0786644de45c308afd4d180d94e7f67f31bbe3fd6f298884cd",
+      "baselinePNG": "night.png",
+      "baselinePNGSHA256": "4994cdd6b7e1c9f8f94b2eb0cf4963e33e9bf10e80e813f5d2240d544cb313f8"
+    }
+  ],
+  "original870ReverseCLI1Preserved": true,
+  "prior870ReverseDeltaTriangles": 8464,
+  "repairedReverseDeltaTriangles": 3853,
+  "rendererOrLODBudgetModified": false,
+  "hardwareFPSClaim": false,
+  "newNativeSourceProbeRerun": false,
+  "baselineBrowserRerun": false,
+  "pending": [
+    "Actual independent art review of repaired PNGs",
+    "Actual Worker lifecycle and input protocol",
+    "Single full integrated Node regression",
+    "Exact remote CI/Pages after any authorized publication"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "kind": "Root actual paired visual review of repaired Flower stage",
+  "reviewedUTC": "2026-10-05T22:26:57.899440+00:00",
+  "sourceSHA256": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549",
+  "artifactSHA256": "da10025a18749343f6b275ae202ded6db86b4ee2d2d20a2bfb7216d47ba048af",
+  "imagesActuallyOpened": [
+    {
+      "view": "coldOverview",
+      "baselineSHA256": "3f1a8002a7703b7d4ebf759eafc734988ab79c7e256ceec3332cb9bc3c477086",
+      "repairedSHA256": "202303231968b91012cfbf1e9226e35cbbfc33272ed2a6c8164977949386fb73",
+      "samePNGAs870": true
+    },
+    {
+      "view": "defaultEntry",
+      "baselineSHA256": "2a30a58c93379f7fa05cdf3589dafb923df6c4e93519ff280281e384dcb8aee1",
+      "repairedSHA256": "1ecf21604cbadf5a4f82d5f8bf7bad9b0ab47349751ef1cda3c7fc47bce54afb",
+      "samePNGAs870": false
+    },
+    {
+      "view": "flowerHillSaddle",
+      "baselineSHA256": "a7c86fd553fe17e6ed81a3820802a8378316e93498074771ec287673f3d903ae",
+      "repairedSHA256": "0f82080b3c0922f587a332114453863664d0da471e10df50d9d6f5c6678db92c",
+      "samePNGAs870": false
+    },
+    {
+      "view": "flowerHillEastLow",
+      "baselineSHA256": "819da6e24a56c6b7ee56787004d9caacc74bdc6075c8206cd06c0d03fd850913",
+      "repairedSHA256": "ed1789726dc3c2e99bb3ad7f459174cee235f0c51facd0a0cd755f0bdbfa1657",
+      "samePNGAs870": false
+    },
+    {
+      "view": "flowerHillReverse",
+      "baselineSHA256": "aa72f7acae7534ed92d65fd7ad39f517b6a31121b2725fc3340eff91f27af0d7",
+      "repairedSHA256": "dbb7fbb44ce1d7c0345c9380865965777192552f7f4a556eb318fdddac383412",
+      "samePNGAs870": false
+    },
+    {
+      "view": "low",
+      "baselineSHA256": "dc68182547d409e4db2bc817538e039580d79b9fd2ac386d0dcee6ef3cb266d1",
+      "repairedSHA256": "aafdf32a1b1e4afd7d20461b3e35bde287fb8101c4f418e23c100e9d629103ab",
+      "samePNGAs870": false
+    },
+    {
+      "view": "night",
+      "baselineSHA256": "4994cdd6b7e1c9f8f94b2eb0cf4963e33e9bf10e80e813f5d2240d544cb313f8",
+      "repairedSHA256": "c84e5dcac3976e0786644de45c308afd4d180d94e7f67f31bbe3fd6f298884cd",
+      "samePNGAs870": false
+    }
+  ],
+  "decision": "Accept the limited broad eastern saddle/toe and supported original path; retain remaining environment deficiencies. The repair preserves that visual result and now meets the original measured budget.",
+  "observations": [
+    "Saddle and default-entry views replace the abrupt narrow hillside junction with a broader supported approach; the original path and summit loop remain readable.",
+    "East-low shows the wider continuous shoulder. Reverse view naturally hides a middle path segment behind the raised shoulder: do not claim every path segment is more visible.",
+    "Cold overview remains a limited coarse representation; low and night preserve the new shoulder without observed new holes or disconnected ground.",
+    "Bare ground, sharp flower-field boundaries, repetitive old crowns, forest density and the distant mountain silhouettes remain unfinished.",
+    "29 sub-0.30m roadside grass/lily corrections and fixed batches show no observed new gap or loss of visible flowers in these declared views."
+  ],
+  "passedVisualGate": true,
+  "lifecyclePassed": false,
+  "fullRegressionPassed": false,
+  "releaseAccepted": false
+}

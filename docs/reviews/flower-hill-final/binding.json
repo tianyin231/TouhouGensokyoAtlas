@@ -1,0 +1,196 @@
+{
+  "schema": 1,
+  "kind": "Flower-only review branch with explicitly separate combined acceptance evidence",
+  "generatedUTC": "2026-10-05T22:46:27.493829+00:00",
+  "standalone": {
+    "baseCommit": "6a27bb46d5bba09115501ea9fed402174c27448e",
+    "branch": "experiment/flower-hill-20261005",
+    "worldBuildersOrder": "Solar -> Flower",
+    "sourceSHA256": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549",
+    "checkerSHA256": "7f22d62fb6c8816560d5a26bb378d1947afcee1a566e4eaa8eae8427ae77f4ac",
+    "projectSHA256": "d9ae63c0be3e3527eb1800924c79702cf03d64ba516ef8e3247d9bdcc28ab574",
+    "screenshotReleaseInputCount": 203,
+    "screenshotArtifactSHA256": "da10025a18749343f6b275ae202ded6db86b4ee2d2d20a2bfb7216d47ba048af",
+    "independentCheckerInScreenshotReleaseInputs": false,
+    "independentCheckerSeparatelyBound": true,
+    "publicPriorRuntimeEvidence": "870 public19/19; public geometry/contact/query unchanged by2fde native-only repair",
+    "nativeActual": "Three actual builds: Nameless10/10; Sunflower original6/7 CLI1 retained, strict derived-normal3/3 followup",
+    "sevenViews": "Original budget checks and limited art review passed, CLI0",
+    "standaloneFullNodeRun": false,
+    "commonBuildCheckFixtureIntegration": "Owned separately by root in combined worktree; this review commit is not a deployment-ready integration."
+  },
+  "combined": {
+    "worldBuildersOrder": "Solar -> Muen -> Flower",
+    "releaseInputCount": 208,
+    "artifactSHA256": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+    "sourceSHA256": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549",
+    "checkerSHA256": "49c73c6da69401346ab64bd3bcfcdc6277bea7f5356e00578b79f5fa3ee3f146",
+    "projectSHA256": "fd2555966bc8b3cc45afc6e076bde296adc948288fbb380dd3ce0db4b2e8e9b5",
+    "nativeLifecycle": {
+      "baseline": [
+        20,
+        20,
+        0
+      ],
+      "combined": [
+        20,
+        20,
+        0
+      ],
+      "protocolSHA256": "d6089e3be79d42751c1e74924bef213b416843cf54f74d408e99ae7cf72649e0"
+    },
+    "actualAggregateAnchorDelta": {
+      "geometries": 2,
+      "textures": 0,
+      "programs": 0,
+      "attributeBytes": 38880,
+      "geometryEntries": 2,
+      "residentObjects": 5,
+      "totalCalls": 5,
+      "totalTriangles": -360,
+      "nativeCPUBytes": 0
+    },
+    "perDrawAttributionCollected": false,
+    "fullNode": "Running under root; no success inferred here",
+    "commitCIPages": "Not yet run for this new stage"
+  },
+  "remaining": [
+    "Bare ground, flower edges, original crowns and understory density remain",
+    "No hardware FPS or physical VRAM measurement",
+    "No long-term leak test",
+    "The independent review branch does not contain root combined fixture/harness integration"
+  ],
+  "originalFailures": {
+    "V1Public": {
+      "checks": [
+        16,
+        19
+      ],
+      "CLI": 1,
+      "reviewCommit": "3cceacb0d5be59d74694849cf099e6b17a3399f9"
+    },
+    "870CostAndNative": {
+      "reverseTrianglesDelta": 8464,
+      "budget": 4000,
+      "nativeChecks": [
+        5,
+        9
+      ],
+      "CLI": 1,
+      "reviewCommit": "e883a332ee75009f2164f5a26cb52a93a701c7af"
+    },
+    "RoadsideOfflineMethods": {
+      "oneMetreMethodCLI": 1,
+      "twoMetreMethodCLI": 1,
+      "finalExplicitMaximumMove": 0.25320175443594384,
+      "hardLimit": 0.3
+    },
+    "FirstNativeProtocol": {
+      "CLI": 1,
+      "wallSeconds": 32.855649,
+      "nativeBuilds": 0,
+      "cause": "Wrong four-record assumption; actual shared east selected records six. Corrected protocol stronger, failure retained."
+    },
+    "ThreeNativeBuilds": {
+      "SunflowerChecks": [
+        6,
+        7
+      ],
+      "CLI": 1,
+      "followupChecks": [
+        3,
+        3
+      ],
+      "followupCLI": 0,
+      "rawCLIUnchanged": true
+    },
+    "AuthorPrepare01To03": "Original failed grades/probes/scripts preserved in evidence and candidate history"
+  },
+  "files": [
+    {
+      "path": "docs/reviews/flower-hill-final/lifecycle-pair.json",
+      "SHA256": "064eed5f6c7ba6e785f980175f1b7f80a822715fa987960cba5d9818dbb8c5c9",
+      "bytes": 109149,
+      "source": "/workspace/flower-hill-evidence/flower-native-comparison.json"
+    },
+    {
+      "path": "docs/reviews/flower-hill-final/native-three-builds.json",
+      "SHA256": "a2226774ca21d0be35ab576e60295e107acda4a94dcdbf5950681d7ea44b0f54",
+      "bytes": 44676,
+      "source": "/workspace/flower-hill-evidence/native-repair-actual-v2.json"
+    },
+    {
+      "path": "docs/reviews/flower-hill-final/derived-normal-guard.json",
+      "SHA256": "0394f8ce56675d1aad1a68ff4b25f66177c1968400f18c14cc042797c585e35c",
+      "bytes": 17954,
+      "source": "/workspace/flower-hill-evidence/sunflower-road-derived-normal-guard.json"
+    },
+    {
+      "path": "docs/reviews/flower-hill-final/check-derived-normal-guard.mjs",
+      "SHA256": "1845c66b6c42fbf4d18007f7e46d8d08529f96915de2741d51bffd7847649aee",
+      "bytes": 9834,
+      "source": "/workspace/flower-hill-evidence/check-sunflower-road-derived-normals.mjs"
+    },
+    {
+      "path": "docs/reviews/flower-hill-final/run-native-three-builds.mjs",
+      "SHA256": "a7a860cedbc7049d53e30ad8423127b8e3706eed1fa06191e4021cddfa565fb1",
+      "bytes": 18303,
+      "source": "/workspace/flower-hill-evidence/run-native-repair-actual-v2.mjs"
+    },
+    {
+      "path": "docs/reviews/flower-hill-final/capture-views.py",
+      "SHA256": "5f2f4171c07fd2be5e38967a6f41a3948c51ba2d408c532548efb8f1b431e221",
+      "bytes": 13138,
+      "source": "/workspace/flower-hill-evidence/capture-views.py"
+    },
+    {
+      "path": "docs/reviews/flower-hill-final/views-spec.json",
+      "SHA256": "626215c470b84fd629153eb6df1c03d9a847d9798bfa2dff70edd8b0fe1a68d6",
+      "bytes": 1187,
+      "source": "/workspace/flower-hill-evidence/views-spec.json"
+    },
+    {
+      "path": "docs/reviews/flower-hill-final/view-deltas.json",
+      "SHA256": "bfe64d0da78f6d10c81ca590ae1aec5622e6129fbfed232e8aaf830762d15e36",
+      "bytes": 5156,
+      "source": "/workspace/flower-hill-evidence/repaired-views-deltas.json"
+    },
+    {
+      "path": "docs/reviews/flower-hill-final/astra-art-review.json",
+      "SHA256": "f73b62473c54ffaf948281b5cb29bc2917391b8e46585b10ae564e22c2d676c8",
+      "bytes": 9399,
+      "source": "/workspace/flower-hill-evidence/art-review-repaired.json"
+    },
+    {
+      "path": "docs/reviews/flower-hill-final/root-art-review.json",
+      "SHA256": "840dedde270d4858c47fe8beebed716ea6a69fe90ee52674ee1397ef8afa4c07",
+      "bytes": 3267,
+      "source": "/workspace/flower-hill-evidence/root-art-review-repaired.json"
+    },
+    {
+      "path": "docs/previews/flower-hill/before-saddle.png",
+      "SHA256": "a7c86fd553fe17e6ed81a3820802a8378316e93498074771ec287673f3d903ae",
+      "bytes": 920312,
+      "source": "/workspace/main-island-next/docs/previews/flower-hill/before-saddle.png"
+    },
+    {
+      "path": "docs/previews/flower-hill/after-saddle.png",
+      "SHA256": "0f82080b3c0922f587a332114453863664d0da471e10df50d9d6f5c6678db92c",
+      "bytes": 909687,
+      "source": "/workspace/main-island-next/docs/previews/flower-hill/after-saddle.png"
+    },
+    {
+      "path": "docs/previews/flower-hill/before-reverse.png",
+      "SHA256": "aa72f7acae7534ed92d65fd7ad39f517b6a31121b2725fc3340eff91f27af0d7",
+      "bytes": 525467,
+      "source": "/workspace/main-island-next/docs/previews/flower-hill/before-reverse.png"
+    },
+    {
+      "path": "docs/previews/flower-hill/after-reverse.png",
+      "SHA256": "dbb7fbb44ce1d7c0345c9380865965777192552f7f4a556eb318fdddac383412",
+      "bytes": 474033,
+      "source": "/workspace/main-island-next/docs/previews/flower-hill/after-reverse.png"
+    }
+  ],
+  "historicalCandidateDocSHA256": "6db3bed1c6dd8ce3c7e1929519bc5cf37bfffd7cf603514321608b60147db462"
+}
