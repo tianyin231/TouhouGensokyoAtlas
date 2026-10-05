@@ -1,3 +1,4 @@
+import {checkBambooEntry} from './check-bamboo-entry.mjs';
 import {checkUIWork} from './check-ui-work.mjs';
 import {checkFrameWork} from './check-frame-work.mjs';
 import {checkRenderDiagnostics} from './check-render-diagnostics.mjs';
@@ -135,6 +136,9 @@ let forestCanopyPublic;
   console.log('雾雨弯道路面接地检查通过：'+JSON.stringify(checkForestCanopyRoad(context.GA,forestCanopyPublic.overviewBefore,forestCanopyPublic.overviewAfter,read)));
 }
 console.log('博丽神社检查通过：'+JSON.stringify(await checkHakurei(context.GA,atlas,read)));
+const bambooEntryCheck=await checkBambooEntry(context.GA,atlas,read);
+assert(bambooEntryCheck.passed,'竹林入口检查失败：'+JSON.stringify(bambooEntryCheck.checks.filter(c=>!c.passed)));
+console.log('竹林入口源数据检查通过：'+JSON.stringify(bambooEntryCheck));
 const pack = context.GA.buildOldHell();
 assert.equal(new Set(pack.meshes.map(mesh => mesh.id)).size, pack.meshes.length, '地下模型 ID 重复');
 let bytes = 0;

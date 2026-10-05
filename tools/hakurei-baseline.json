@@ -8,7 +8,7 @@
     "myouren": "0286d2f49c75e5f6c613c8ef68373cf1f090ee2799245c267427055b403672c6",
     "mausoleum": "a8116e9b215b7711b1903df0c5b976e54edb8b42f1f74512f7fd853e562e4948",
     "senkai": "d4a85ae46a542e92888bd06d82ecf26b9392c44a5908378b6d253014e2574798",
-    "bamboo": "3312677814fc2323303b5453b59d7bc9ad63ad6955afee93e85eb41715c4aa8a",
+    "bamboo": "0a74436f520a43fffd4ef6ff92ed902328923ee13b83e5fc9a95e1756158287d",
     "sunflower": "9071b82b2a121e04808696b96925c720efb70e7bcab49750c75a35e54dc3563a",
     "nameless": "3c3b2ce4e78c02a2128bedefc7bdafcf036e192a80f86a2660550e8bcf5f35c5",
     "mountain": "60c85c21d85ad70b158155458d9b35c66a51e19aa8fc7b2f094dfce8458de521",
@@ -70,6 +70,15 @@
       "evidenceSHA256": "df7b769dfaa0f47dbe7c6fe7ed2fb659c2d7ea912e6310683933e5cc882e27b4",
       "reviewer": "root",
       "automaticRefresh": false
+    },
+    "bambooEntry": {
+      "base": "261d5bfff5388cbf8192dbfd43445daf49183636",
+      "before": "3312677814fc2323303b5453b59d7bc9ad63ad6955afee93e85eb41715c4aa8a",
+      "after": "0a74436f520a43fffd4ef6ff92ed902328923ee13b83e5fc9a95e1756158287d",
+      "reason": "用户授权主岛逐区精修；原生竹林入口四个96米格的807株仅替换侧枝和冠叶。24原记录、实例矩阵/颜色、原主竿前缀、材料、LOD、包围、路径和建筑保持，942非目标记录及900冷代理保持。近档1823/远档111三角，共享源626616B。ff487a源码已由root与Astra用同机位入口、背面、低档、夜景审阅；原V1缩冠与V2远档宽叶片失败留在隔离分支。Sol有界差分16项保护原作者与原型，旧作者摘要在check-bamboo-entry常量独立锁定。其余12区不更新；完整回归/原生重入及路线切换结果另记，不据此预先声明通过。",
+      "reviewer": "root",
+      "automaticRefresh": false,
+      "review": "docs/bamboo-entry-handoff.md"
     }
   },
   "reviewedSourceChanges": {

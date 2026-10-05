@@ -1,0 +1,935 @@
+{
+  "schema": 1,
+  "status": "Local visual, source, full Node, LOD route, native interaction and one-cycle reentry checks passed; exact implementation commit CI and deployment pending",
+  "baseCommit": "261d5bfff5388cbf8192dbfd43445daf49183636",
+  "baselineArtifactSHA": "092c07365756ad61676ced9c1eaad096a12503abc86645980aa8afe6ab4ee06f",
+  "candidateArtifactSHA": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+  "candidateHTMLBytes": 36326851,
+  "runtimeSourceSHA": {
+    "src/bamboo-entry-plants.js": "ff487a6667e53d393523a2607655ae693f5bdcd69775ade31a246899d74948fe",
+    "src/bamboo-entry-upgrade.js": "937f915a583b0e7b14588f95980ff0055f27f54d6c7d1918d301ce0fb6e1cbe1",
+    "project.json": "2e00a31b8610f6e43846008c347d32dbb56ec70c0203b61caff2026fe27ec1f9"
+  },
+  "scope": {
+    "cells": [
+      "3:8",
+      "4:8",
+      "3:9",
+      "4:9"
+    ],
+    "halfOpenBounds": [
+      288,
+      768,
+      480,
+      960
+    ],
+    "nativeCulms": 807,
+    "targetRecords": 24,
+    "unchangedRecords": 942,
+    "coldOverviewProxiesUnchanged": 900,
+    "newSharedSourceBytes": 626616,
+    "newMaterials": 0,
+    "newTextures": 0
+  },
+  "environment": {
+    "node": "22.23.3",
+    "browser": "Chromium 151.0.7922.173",
+    "driver": "ANGLE Vulkan SwiftShader",
+    "hardwareFPSMeasured": false,
+    "physicalVRAMMeasured": false,
+    "imageMethod": "native WebGL PNG, fixed 1280x720 DPR1, FOV49, third explicitly drawn frame",
+    "CPUComparison": "Fixed capture and route CPU timings are not compared. Native lifecycle samples will be reported separately."
+  },
+  "captures": [
+    {
+      "view": "bambooOverview",
+      "sameActualCameraAndSettings": true,
+      "sequence": [
+        "bambooOverview",
+        "bambooEntry",
+        "eienteiGarden"
+      ],
+      "camera": {
+        "eye": [
+          1104,
+          471,
+          1890
+        ],
+        "target": [
+          500,
+          72,
+          1250
+        ],
+        "fov": 49,
+        "quality": "balanced",
+        "lighting": "neutral",
+        "ao": true,
+        "view": "bambooOverview"
+      },
+      "before": {
+        "allChannelDrawCalls": 1637,
+        "allChannelTriangles": 2841711,
+        "residentAttributeBytes": 68086266,
+        "rendererGeometryObjects": 737,
+        "rendererTextures": 11
+      },
+      "after": {
+        "allChannelDrawCalls": 1637,
+        "allChannelTriangles": 2841711,
+        "residentAttributeBytes": 68122230,
+        "rendererGeometryObjects": 743,
+        "rendererTextures": 11
+      },
+      "delta": {
+        "allChannelDrawCalls": 0,
+        "allChannelTriangles": 0,
+        "residentAttributeBytes": 35964,
+        "rendererGeometryObjects": 6,
+        "rendererTextures": 0
+      },
+      "beforeImageSHA": "096afeb95eab1a15447ac11cf8381c133fcc3eebbcd00e5652514c1e7b4bec7f",
+      "afterImageSHA": "bf81c0cd2f2686b6aa2607d0c9574fe8e2983efe55959da3bb38067f9f1f33c0",
+      "reportSHA": {
+        "before": "6ea078eea9e48d003460ac89cf62dd78057bb4719764638adfe3eff4cf3fbc48",
+        "after": "3aaa72f343b7ad586c82ecd38f33ba803a25271a80b418044a5107e0a60b6c00"
+      }
+    },
+    {
+      "view": "bambooEntry",
+      "sameActualCameraAndSettings": true,
+      "sequence": [
+        "bambooOverview",
+        "bambooEntry",
+        "eienteiGarden"
+      ],
+      "camera": {
+        "eye": [
+          457,
+          70.8,
+          754
+        ],
+        "target": [
+          411,
+          73,
+          845
+        ],
+        "fov": 49,
+        "quality": "balanced",
+        "lighting": "neutral",
+        "ao": true,
+        "view": "bambooEntry"
+      },
+      "before": {
+        "allChannelDrawCalls": 541,
+        "allChannelTriangles": 1857369,
+        "residentAttributeBytes": 9800448,
+        "rendererGeometryObjects": 136,
+        "rendererTextures": 11
+      },
+      "after": {
+        "allChannelDrawCalls": 541,
+        "allChannelTriangles": 1830407,
+        "residentAttributeBytes": 10427064,
+        "rendererGeometryObjects": 148,
+        "rendererTextures": 11
+      },
+      "delta": {
+        "allChannelDrawCalls": 0,
+        "allChannelTriangles": -26962,
+        "residentAttributeBytes": 626616,
+        "rendererGeometryObjects": 12,
+        "rendererTextures": 0
+      },
+      "beforeImageSHA": "5419882a3f291cb752276dbb3f77419f46d84ffdcdf636e53095ac63ef614bac",
+      "afterImageSHA": "c5f4680c319fa6765dab643389d1bc6e67a9ed90e786bcc986b5197b247d38e0",
+      "reportSHA": {
+        "before": "6ea078eea9e48d003460ac89cf62dd78057bb4719764638adfe3eff4cf3fbc48",
+        "after": "3aaa72f343b7ad586c82ecd38f33ba803a25271a80b418044a5107e0a60b6c00"
+      }
+    },
+    {
+      "view": "eienteiGarden",
+      "sameActualCameraAndSettings": true,
+      "sequence": [
+        "bambooOverview",
+        "bambooEntry",
+        "eienteiGarden"
+      ],
+      "camera": {
+        "eye": [
+          710,
+          78,
+          1461
+        ],
+        "target": [
+          664,
+          75.6,
+          1416
+        ],
+        "fov": 49,
+        "quality": "balanced",
+        "lighting": "neutral",
+        "ao": true,
+        "view": "eienteiGarden"
+      },
+      "before": {
+        "allChannelDrawCalls": 1384,
+        "allChannelTriangles": 3494732,
+        "residentAttributeBytes": 74059346,
+        "rendererGeometryObjects": 763,
+        "rendererTextures": 11
+      },
+      "after": {
+        "allChannelDrawCalls": 1384,
+        "allChannelTriangles": 3494732,
+        "residentAttributeBytes": 74095310,
+        "rendererGeometryObjects": 769,
+        "rendererTextures": 11
+      },
+      "delta": {
+        "allChannelDrawCalls": 0,
+        "allChannelTriangles": 0,
+        "residentAttributeBytes": 35964,
+        "rendererGeometryObjects": 6,
+        "rendererTextures": 0
+      },
+      "beforeImageSHA": "c7656531566c302bf7ba04df510f073591855d3677c95e3e6655fcf6a5f02e31",
+      "afterImageSHA": "1d203425f6e54ddc3c92ac044853ed52dd6d50b9abc3c4c20e3f95907b17730e",
+      "reportSHA": {
+        "before": "6ea078eea9e48d003460ac89cf62dd78057bb4719764638adfe3eff4cf3fbc48",
+        "after": "3aaa72f343b7ad586c82ecd38f33ba803a25271a80b418044a5107e0a60b6c00"
+      }
+    },
+    {
+      "view": "back",
+      "sameActualCameraAndSettings": true,
+      "sequence": [
+        "back",
+        "low",
+        "night"
+      ],
+      "camera": {
+        "eye": [
+          407.6632,
+          77.9373,
+          918.9006
+        ],
+        "target": [
+          390,
+          74.2,
+          844
+        ],
+        "fov": 49,
+        "quality": "balanced",
+        "lighting": "neutral",
+        "ao": true,
+        "view": "bambooEntry"
+      },
+      "before": {
+        "allChannelDrawCalls": 871,
+        "allChannelTriangles": 2162437,
+        "residentAttributeBytes": 62726728,
+        "rendererGeometryObjects": 616,
+        "rendererTextures": 11
+      },
+      "after": {
+        "allChannelDrawCalls": 871,
+        "allChannelTriangles": 2107171,
+        "residentAttributeBytes": 62723164,
+        "rendererGeometryObjects": 622,
+        "rendererTextures": 11
+      },
+      "delta": {
+        "allChannelDrawCalls": 0,
+        "allChannelTriangles": -55266,
+        "residentAttributeBytes": -3564,
+        "rendererGeometryObjects": 6,
+        "rendererTextures": 0
+      },
+      "beforeImageSHA": "60588d81e202b8f67e188d577f70cc4f2877bcbcd4d9942fd445c503e6e05b7d",
+      "afterImageSHA": "0e67141c3007573fff9936fd6c755359f3f5aa3df614657e3eaf64bf4914720f",
+      "reportSHA": {
+        "before": "6ce08e73127bcddf72b29a9b65ad37e07fbbfe6a47b13b112cef391537abfe7e",
+        "after": "8dc357cbe9ecddd498ee16a81911938e6a67d77e839b5611416c42305bd20efe"
+      }
+    },
+    {
+      "view": "low",
+      "sameActualCameraAndSettings": true,
+      "sequence": [
+        "back",
+        "low",
+        "night"
+      ],
+      "camera": {
+        "eye": [
+          457,
+          70.8,
+          754
+        ],
+        "target": [
+          411,
+          73,
+          845
+        ],
+        "fov": 49,
+        "quality": "low",
+        "lighting": "neutral",
+        "ao": true,
+        "view": "bambooEntry"
+      },
+      "before": {
+        "allChannelDrawCalls": 519,
+        "allChannelTriangles": 1324581,
+        "residentAttributeBytes": 8800016,
+        "rendererGeometryObjects": 109,
+        "rendererTextures": 9
+      },
+      "after": {
+        "allChannelDrawCalls": 519,
+        "allChannelTriangles": 1324581,
+        "residentAttributeBytes": 8835980,
+        "rendererGeometryObjects": 115,
+        "rendererTextures": 9
+      },
+      "delta": {
+        "allChannelDrawCalls": 0,
+        "allChannelTriangles": 0,
+        "residentAttributeBytes": 35964,
+        "rendererGeometryObjects": 6,
+        "rendererTextures": 0
+      },
+      "beforeImageSHA": "8db7f4ed29578dde0b684e72bc56cd10031b2e3efd1d1ae88cf7939f42969c60",
+      "afterImageSHA": "84b98f6f76ae667dea277ca7a505a5406f773790cdaaaa88bd573bbf53349f59",
+      "reportSHA": {
+        "before": "6ce08e73127bcddf72b29a9b65ad37e07fbbfe6a47b13b112cef391537abfe7e",
+        "after": "8dc357cbe9ecddd498ee16a81911938e6a67d77e839b5611416c42305bd20efe"
+      }
+    },
+    {
+      "view": "night",
+      "sameActualCameraAndSettings": true,
+      "sequence": [
+        "back",
+        "low",
+        "night"
+      ],
+      "camera": {
+        "eye": [
+          457,
+          70.8,
+          754
+        ],
+        "target": [
+          411,
+          73,
+          845
+        ],
+        "fov": 49,
+        "quality": "balanced",
+        "lighting": "night",
+        "ao": true,
+        "view": "bambooEntry"
+      },
+      "before": {
+        "allChannelDrawCalls": 541,
+        "allChannelTriangles": 1857369,
+        "residentAttributeBytes": 9800448,
+        "rendererGeometryObjects": 136,
+        "rendererTextures": 11
+      },
+      "after": {
+        "allChannelDrawCalls": 541,
+        "allChannelTriangles": 1830407,
+        "residentAttributeBytes": 10427064,
+        "rendererGeometryObjects": 148,
+        "rendererTextures": 11
+      },
+      "delta": {
+        "allChannelDrawCalls": 0,
+        "allChannelTriangles": -26962,
+        "residentAttributeBytes": 626616,
+        "rendererGeometryObjects": 12,
+        "rendererTextures": 0
+      },
+      "beforeImageSHA": "0da872e1f52d2f683e1a8c9182096c6f818bde0ab98d1c3630150504d48f42d7",
+      "afterImageSHA": "3cbe9b4f92e10a5814fd63e1a4b2d9b0433a7bcb73319358658048a86c38eed8",
+      "reportSHA": {
+        "before": "6ce08e73127bcddf72b29a9b65ad37e07fbbfe6a47b13b112cef391537abfe7e",
+        "after": "8dc357cbe9ecddd498ee16a81911938e6a67d77e839b5611416c42305bd20efe"
+      }
+    }
+  ],
+  "fullNode": {
+    "command": [
+      "/tmp/node-v22.23.3-linux-x64/bin/node",
+      "tools/check.mjs",
+      "/workspace/bamboo-entry-evidence/final-dist"
+    ],
+    "startedUTC": "2026-10-05T14:53:24.638474+00:00",
+    "finishedUTC": "2026-10-05T15:09:58.873576+00:00",
+    "exitCode": 0,
+    "elapsedSeconds": 994.2347899270026,
+    "consoleCheckGroups": 41,
+    "logSHA": "7a3869a1cad62383e44270b6758007fd50b71f6cdb4db8322ed205dbbbc2b80d",
+    "inputCount": 199,
+    "inputsStillMatchAfterRun": true,
+    "releaseStillMatchesAfterRun": true,
+    "reportSHA": "bbb70c2a1b9ccc2b8006a058e1eae292199ae5054627f640115ffac88a596ac1"
+  },
+  "route": {
+    "baselineArtifactSHA": "092c07365756ad61676ced9c1eaad096a12503abc86645980aa8afe6ab4ee06f",
+    "candidateArtifactSHA": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+    "protocolSHA": "e60a2de5c10b1498f5d951a050d024511166a4e64cb68e38628d68a71289ceb1",
+    "routeSHA": "6dd0332f03d236ef1455c654fb02bb3915cedb9a05c69ce58f31a92122c1fae1",
+    "comparedProductionFrames": 57,
+    "sameActualCamerasQualityAndTargetLOD": true,
+    "costBudgetPassed": true,
+    "hardwareFPSMeasured": false,
+    "CPUPerformanceCompared": false,
+    "CPUReason": "Final full Node regression overlapped; route run evaluates view/LOD/counters only.",
+    "actualBaselineSeconds": 373.51400303300034,
+    "actualCandidateSeconds": 431.440686584996,
+    "maxDelta": {
+      "calls": 0,
+      "triangles": 0,
+      "attributeBytes": 626616
+    },
+    "visualReview": {
+      "acceptedForLimitedSample": true,
+      "reviewers": [
+        "root",
+        "Astra"
+      ],
+      "remaining": "Both baseline and candidate visibly gain foliage density at near switch; batch-level density popping is not solved. No new broad disappearance, floating branches or wide-diamond shape transition was identified."
+    },
+    "runs": {
+      "baseline-route": {
+        "passed": true,
+        "checks": 64,
+        "failedChecks": [],
+        "elapsedSeconds": 373.51400303300034,
+        "reportSHA": "9dd85294081972fec7e4f583b84bfab22546ec3a25212b4ce56cf5ea3d7e987a",
+        "errors": [],
+        "contextEvents": [],
+        "externalErrors": [
+          "Failed to load resource: the server responded with a status of 404 (File not found)"
+        ],
+        "httpFailures": [
+          {
+            "path": "/favicon.ico",
+            "status": 404
+          }
+        ]
+      },
+      "final-route": {
+        "passed": true,
+        "checks": 64,
+        "failedChecks": [],
+        "elapsedSeconds": 431.440686584996,
+        "reportSHA": "75d76744532ff5007c306dfc09f21f68e5e1d47c293a6cadca4ba7033bcd78f6",
+        "errors": [],
+        "contextEvents": [],
+        "externalErrors": [
+          "Failed to load resource: the server responded with a status of 404 (File not found)"
+        ],
+        "httpFailures": [
+          {
+            "path": "/favicon.ico",
+            "status": 404
+          }
+        ]
+      }
+    }
+  },
+  "visualReview": {
+    "reviewers": [
+      "root",
+      "GPT-6 Astra Max"
+    ],
+    "acceptedScope": "four native entry cells only",
+    "remaining": [
+      "Uniform whole-grove density and overview proxy appearance",
+      "Bare ground and absent lower vegetation layers",
+      "Adjacent original horizontal leaf shapes",
+      "Existing batch-level density popping at LOD transition"
+    ]
+  },
+  "nativeLifecycle": {
+    "runs": {
+      "baseline-native": {
+        "artifactSHA": "092c07365756ad61676ced9c1eaad096a12503abc86645980aa8afe6ab4ee06f",
+        "protocolSHA": "49ea1c552fdee368ccfe96d7d74e098af0702985f414f0ce7035c3778f119864",
+        "passed": true,
+        "checks": [
+          {
+            "name": "Native application booted",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Mouse orbit and wheel wake the production scheduler",
+            "passed": true,
+            "data": "Native events; CPU values retained in state samples and never converted to hardware FPS"
+          },
+          {
+            "name": "Native Bamboo CPU source and detail are present at comparison anchor",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Owned Bamboo GPU geometry set is nonempty before unload",
+            "passed": true,
+            "data": {
+              "ownedCount": 81
+            }
+          },
+          {
+            "name": "Bamboo CPU source and detail records removed",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "All public records survive native unload",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "All owned Bamboo GPU geometries released",
+            "passed": true,
+            "data": {
+              "ownedCount": 81,
+              "retained": []
+            }
+          },
+          {
+            "name": "Exact source metadata and array hashes restored",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Camera, wanted IDs and selected LOD restored",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Strict comparable resource counters restored",
+            "passed": true,
+            "data": {}
+          },
+          {
+            "name": "Program cache keys and references restored",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Static view draws zero frames and keeps paused clock",
+            "passed": true,
+            "data": null
+          }
+        ],
+        "CLI": {
+          "schema": 1,
+          "status": "completed",
+          "command": [
+            "python3",
+            "tools/check-bamboo-browser.py",
+            "--dist",
+            "/workspace/myouren-evidence/baseline-dist",
+            "--output",
+            "/workspace/bamboo-entry-evidence/baseline-native",
+            "--skip-captures"
+          ],
+          "cwd": "/workspace/bamboo-entry-refinement",
+          "protocolSHARecordedBeforeExecution": "49ea1c552fdee368ccfe96d7d74e098af0702985f414f0ce7035c3778f119864",
+          "exactSnapshot": "executed-browser-check.py",
+          "startedUTC": "2026-10-05T15:13:32.432958+00:00",
+          "singleRun": true,
+          "noAssertionChanges": true,
+          "noParallelHeavyCPUOrGPU": true,
+          "stdoutStderr": "cli.log",
+          "artifactSHA": "092c07365756ad61676ced9c1eaad096a12503abc86645980aa8afe6ab4ee06f",
+          "timingMeaning": "Lifecycle wall time and final-frame CPU submissions only; no input-handler timing or hardware FPS",
+          "exitCode": 0,
+          "elapsedSeconds": 182.68632073100162,
+          "finishedUTC": "2026-10-05T15:16:35.119930+00:00",
+          "protocolStillExact": true,
+          "logSHA": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reportSHA": "357bfb5d2a8af24cdf0674b665afd0ef5a04ca8223ce6eebf68c4b2abc12b03b"
+        },
+        "reportSHA": "357bfb5d2a8af24cdf0674b665afd0ef5a04ca8223ce6eebf68c4b2abc12b03b",
+        "rawSourceRecordCount": 967,
+        "sourceRestoredByteExact": true,
+        "images": {
+          "beforeSHA": "5419882a3f291cb752276dbb3f77419f46d84ffdcdf636e53095ac63ef614bac",
+          "afterSHA": "5419882a3f291cb752276dbb3f77419f46d84ffdcdf636e53095ac63ef614bac",
+          "byteExact": true,
+          "meaning": "Actual screenshots; hash equality is recorded separately from source/resource assertions"
+        },
+        "resourceComparisons": [
+          {
+            "label": "strict resources after one native reentry",
+            "differences": {}
+          }
+        ],
+        "states": [
+          {
+            "label": "before real input",
+            "drawnFrames": 11,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 135,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 9800448,
+              "geometryEntries": 136,
+              "residentObjects": 552
+            },
+            "lastFrameSubmittedCPUms": 10.600000001490116
+          },
+          {
+            "label": "real orbit completed",
+            "drawnFrames": 14,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 133,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 7025624,
+              "geometryEntries": 135,
+              "residentObjects": 539
+            },
+            "lastFrameSubmittedCPUms": 23.19999999552965
+          },
+          {
+            "label": "real wheel completed",
+            "drawnFrames": 15,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 134,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 7002820,
+              "geometryEntries": 134,
+              "residentObjects": 538
+            },
+            "lastFrameSubmittedCPUms": 28.5
+          },
+          {
+            "label": "detail before native unload",
+            "drawnFrames": 26,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 135,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 9800448,
+              "geometryEntries": 136,
+              "residentObjects": 552
+            },
+            "lastFrameSubmittedCPUms": 9.5
+          },
+          {
+            "label": "native cache clear completed",
+            "drawnFrames": 32,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 893,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 75837706,
+              "geometryEntries": 891,
+              "residentObjects": 1198
+            },
+            "lastFrameSubmittedCPUms": 9.5
+          },
+          {
+            "label": "detail after native reentry",
+            "drawnFrames": 36,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 135,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 9800448,
+              "geometryEntries": 136,
+              "residentObjects": 552
+            },
+            "lastFrameSubmittedCPUms": 8.199999995529652
+          },
+          {
+            "label": "one second production idle",
+            "drawnFrames": 36,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 135,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 9800448,
+              "geometryEntries": 136,
+              "residentObjects": 552
+            },
+            "lastFrameSubmittedCPUms": 8.199999995529652
+          }
+        ],
+        "errors": [],
+        "externalErrors": [
+          "Failed to load resource: the server responded with a status of 404 (File not found)"
+        ],
+        "httpFailures": [
+          {
+            "path": "/favicon.ico",
+            "status": 404,
+            "source": "local HTTP server"
+          }
+        ],
+        "contextEvents": []
+      },
+      "final-native": {
+        "artifactSHA": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+        "protocolSHA": "49ea1c552fdee368ccfe96d7d74e098af0702985f414f0ce7035c3778f119864",
+        "passed": true,
+        "checks": [
+          {
+            "name": "Native application booted",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Mouse orbit and wheel wake the production scheduler",
+            "passed": true,
+            "data": "Native events; CPU values retained in state samples and never converted to hardware FPS"
+          },
+          {
+            "name": "Native Bamboo CPU source and detail are present at comparison anchor",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Owned Bamboo GPU geometry set is nonempty before unload",
+            "passed": true,
+            "data": {
+              "ownedCount": 93
+            }
+          },
+          {
+            "name": "Bamboo CPU source and detail records removed",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "All public records survive native unload",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "All owned Bamboo GPU geometries released",
+            "passed": true,
+            "data": {
+              "ownedCount": 93,
+              "retained": []
+            }
+          },
+          {
+            "name": "Exact source metadata and array hashes restored",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Camera, wanted IDs and selected LOD restored",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Strict comparable resource counters restored",
+            "passed": true,
+            "data": {}
+          },
+          {
+            "name": "Program cache keys and references restored",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Static view draws zero frames and keeps paused clock",
+            "passed": true,
+            "data": null
+          }
+        ],
+        "CLI": {
+          "schema": 1,
+          "status": "completed",
+          "command": [
+            "python3",
+            "tools/check-bamboo-browser.py",
+            "--dist",
+            "/workspace/bamboo-entry-evidence/final-dist",
+            "--output",
+            "/workspace/bamboo-entry-evidence/final-native",
+            "--skip-captures"
+          ],
+          "cwd": "/workspace/bamboo-entry-refinement",
+          "protocolSHARecordedBeforeExecution": "49ea1c552fdee368ccfe96d7d74e098af0702985f414f0ce7035c3778f119864",
+          "exactSnapshot": "executed-browser-check.py",
+          "startedUTC": "2026-10-05T15:18:28.966087+00:00",
+          "singleRun": true,
+          "noAssertionChanges": true,
+          "noParallelHeavyCPUOrGPU": true,
+          "stdoutStderr": "cli.log",
+          "artifactSHA": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+          "timingMeaning": "Lifecycle wall time and final-frame CPU submissions only; no input-handler timing or hardware FPS",
+          "exitCode": 0,
+          "elapsedSeconds": 175.22259339699667,
+          "finishedUTC": "2026-10-05T15:21:24.189166+00:00",
+          "protocolStillExact": true,
+          "logSHA": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reportSHA": "4506d998f67f63c5e5b8d7a8282243da802395079c10ca37d280e03bfcbc2bae"
+        },
+        "reportSHA": "4506d998f67f63c5e5b8d7a8282243da802395079c10ca37d280e03bfcbc2bae",
+        "rawSourceRecordCount": 967,
+        "sourceRestoredByteExact": true,
+        "images": {
+          "beforeSHA": "c5f4680c319fa6765dab643389d1bc6e67a9ed90e786bcc986b5197b247d38e0",
+          "afterSHA": "c5f4680c319fa6765dab643389d1bc6e67a9ed90e786bcc986b5197b247d38e0",
+          "byteExact": true,
+          "meaning": "Actual screenshots; hash equality is recorded separately from source/resource assertions"
+        },
+        "resourceComparisons": [
+          {
+            "label": "strict resources after one native reentry",
+            "differences": {}
+          }
+        ],
+        "states": [
+          {
+            "label": "before real input",
+            "drawnFrames": 11,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 147,
+              "textures": 11,
+              "programs": 115,
+              "attributeBytes": 10427064,
+              "geometryEntries": 148,
+              "residentObjects": 552
+            },
+            "lastFrameSubmittedCPUms": 11.299999997019768
+          },
+          {
+            "label": "real orbit completed",
+            "drawnFrames": 14,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 145,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 7652240,
+              "geometryEntries": 147,
+              "residentObjects": 539
+            },
+            "lastFrameSubmittedCPUms": 20.600000001490116
+          },
+          {
+            "label": "real wheel completed",
+            "drawnFrames": 15,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 146,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 7629436,
+              "geometryEntries": 146,
+              "residentObjects": 538
+            },
+            "lastFrameSubmittedCPUms": 11.600000001490116
+          },
+          {
+            "label": "detail before native unload",
+            "drawnFrames": 25,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 147,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 10427064,
+              "geometryEntries": 148,
+              "residentObjects": 552
+            },
+            "lastFrameSubmittedCPUms": 18.899999998509884
+          },
+          {
+            "label": "native cache clear completed",
+            "drawnFrames": 32,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 893,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 75837706,
+              "geometryEntries": 891,
+              "residentObjects": 1198
+            },
+            "lastFrameSubmittedCPUms": 8.899999998509884
+          },
+          {
+            "label": "detail after native reentry",
+            "drawnFrames": 36,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 147,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 10427064,
+              "geometryEntries": 148,
+              "residentObjects": 552
+            },
+            "lastFrameSubmittedCPUms": 7.899999998509884
+          },
+          {
+            "label": "one second production idle",
+            "drawnFrames": 36,
+            "clock": 12.5,
+            "gpu": {
+              "geometries": 147,
+              "textures": 11,
+              "programs": 117,
+              "attributeBytes": 10427064,
+              "geometryEntries": 148,
+              "residentObjects": 552
+            },
+            "lastFrameSubmittedCPUms": 7.899999998509884
+          }
+        ],
+        "errors": [],
+        "externalErrors": [
+          "Failed to load resource: the server responded with a status of 404 (File not found)"
+        ],
+        "httpFailures": [
+          {
+            "path": "/favicon.ico",
+            "status": 404,
+            "source": "local HTTP server"
+          }
+        ],
+        "contextEvents": []
+      }
+    },
+    "productionRAF": true,
+    "manualDraws": false,
+    "GPUFinishDuringInteraction": false,
+    "cyclesPerArtifact": 1,
+    "longTermLeakTest": false,
+    "realInput": "Mouse orbit and wheel",
+    "anchorProtocol": "Real input tested separately; each comparison anchor is overview -> native UI clear -> cold bambooEntry -> three production wakes",
+    "CPUInterpretation": "Single last-frame CPU submission samples, not input-handler latency, hardware FPS, a controlled throughput benchmark or evidence of speedup. The two native runs ran serially without other heavy CPU/GPU work."
+  },
+  "remoteCI": {
+    "status": "not yet run for this implementation commit"
+  },
+  "rebuild": {
+    "repeatedAfterNativeChecks": true,
+    "sameArtifactSHA": true,
+    "same199Inputs": true,
+    "secondReleaseSHA": "cae2bbe71129d9470d9bc69be7bf95d61724bd2c6de4775ecd1c3f57237c1cc0"
+  }
+}

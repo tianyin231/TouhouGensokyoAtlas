@@ -1,0 +1,867 @@
+{
+  "scope": "Read-only route camera proposal; not a rendered or accepted test",
+  "sourceCommit": "261d5bfff5388cbf8192dbfd43445daf49183636",
+  "route": "route-bamboo",
+  "eyeHeight": 8,
+  "quality": "balanced",
+  "threshold": 105,
+  "nearToFar": 117.6,
+  "farToNear": 92.4,
+  "target": [
+    432,
+    80.5,
+    815
+  ],
+  "interpolation": "Traverse every listed original spline point, interpolate consecutive eye values for continuous movement; no scene edits",
+  "keyFrames": {
+    "startNear": 0,
+    "lastMixedOut": 13,
+    "allFar": 14,
+    "stillFarInbound": 20,
+    "allNearInbound": 21,
+    "endNear": 28
+  },
+  "frames": [
+    {
+      "ordinal": 0,
+      "pathSample": 110,
+      "eye": [
+        418.52752596574345,
+        67.50637088406063,
+        751.1944811406705
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 66.4727970962006
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 64.93057643154651
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 65.64193892010272
+        }
+      ]
+    },
+    {
+      "ordinal": 1,
+      "pathSample": 109,
+      "eye": [
+        415.5489249271137,
+        67.13062418848912,
+        748.6967018950437
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 69.56808126563976
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 68.08324730822046
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 68.76915043063744
+        }
+      ]
+    },
+    {
+      "ordinal": 2,
+      "pathSample": 108,
+      "eye": [
+        412.4680553024782,
+        66.74905643008962,
+        746.1235308855686
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 72.84097552023863
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 71.41176125232661
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 72.07272591926193
+        }
+      ]
+    },
+    {
+      "ordinal": 3,
+      "pathSample": 107,
+      "eye": [
+        409.28935860058306,
+        66.36260780431996,
+        743.4766763848396
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 76.28572247349113
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 74.91004919857697
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 75.546744379442
+        }
+      ]
+    },
+    {
+      "ordinal": 4,
+      "pathSample": 106,
+      "eye": [
+        406.017276330175,
+        65.97111910966956,
+        740.7578466654518
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 79.89615334029388
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 78.57174528501702
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 79.18498380273816
+        }
+      ]
+    },
+    {
+      "ordinal": 5,
+      "pathSample": 105,
+      "eye": [
+        402.65625,
+        65.57259117850187,
+        737.96875
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 83.66592634173655
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 82.39042396656438
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 82.98117720726802
+        }
+      ]
+    },
+    {
+      "ordinal": 6,
+      "pathSample": 104,
+      "eye": [
+        399.21072111880466,
+        65.16475772752374,
+        735.1110946610787
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 87.58851411294297
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 86.35953198429664
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 86.92889402866531
+        }
+      ]
+    },
+    {
+      "ordinal": 7,
+      "pathSample": 103,
+      "eye": [
+        395.68513119533526,
+        64.74552681603468,
+        732.1865889212828
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 91.65726401739842
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 90.47242802893668
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 91.02157329104048
+        }
+      ]
+    },
+    {
+      "ordinal": 8,
+      "pathSample": 102,
+      "eye": [
+        392.0839217383381,
+        64.4019567298981,
+        729.196941053207
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 95.85705370985896
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 94.71229607335978
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 95.24014725126219
+        }
+      ]
+    },
+    {
+      "ordinal": 9,
+      "pathSample": 101,
+      "eye": [
+        388.41153425655983,
+        64.2506083557119,
+        726.1438593294462
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 100.17041864005613
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 99.05977675017468
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 99.56264031840715
+        }
+      ]
+    },
+    {
+      "ordinal": 10,
+      "pathSample": 100,
+      "eye": [
+        384.67241025874637,
+        64.29838620020178,
+        723.0290520225947
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 104.59141514859515
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 103.5093699161665
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 103.98396463262667
+        }
+      ]
+    },
+    {
+      "ordinal": 11,
+      "pathSample": 99,
+      "eye": [
+        380.8709912536443,
+        64.56078740379166,
+        719.8542274052478
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 109.11454183555155
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 108.05585072717733
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 108.49905337187532
+        }
+      ]
+    },
+    {
+      "ordinal": 12,
+      "pathSample": 98,
+      "eye": [
+        377.01171875,
+        65.04372192479687,
+        716.62109375
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 113.73631513226476
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 112.69616732393985
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 113.10520375705264
+        }
+      ]
+    },
+    {
+      "ordinal": 13,
+      "pathSample": 97,
+      "eye": [
+        373.0990342565598,
+        65.74717413779595,
+        713.3313593294461
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 118.4546452070539
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 117.42872005387107
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 117.80124299942698
+        }
+      ]
+    },
+    {
+      "ordinal": 14,
+      "pathSample": 96,
+      "eye": [
+        369.13737928206996,
+        66.66553482754088,
+        709.9867324161808
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 123.26842876981445
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 122.25292948658533
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 122.58707457363347
+        }
+      ]
+    },
+    {
+      "ordinal": 15,
+      "pathSample": 97,
+      "eye": [
+        373.0990342565598,
+        65.74717413779595,
+        713.3313593294461
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 118.4546452070539
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 117.42872005387107
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 117.80124299942698
+        }
+      ]
+    },
+    {
+      "ordinal": 16,
+      "pathSample": 98,
+      "eye": [
+        377.01171875,
+        65.04372192479687,
+        716.62109375
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 113.73631513226476
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 112.69616732393985
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 113.10520375705264
+        }
+      ]
+    },
+    {
+      "ordinal": 17,
+      "pathSample": 99,
+      "eye": [
+        380.8709912536443,
+        64.56078740379166,
+        719.8542274052478
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 109.11454183555155
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 108.05585072717733
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 108.49905337187532
+        }
+      ]
+    },
+    {
+      "ordinal": 18,
+      "pathSample": 100,
+      "eye": [
+        384.67241025874637,
+        64.29838620020178,
+        723.0290520225947
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 104.59141514859515
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 103.5093699161665
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 103.98396463262667
+        }
+      ]
+    },
+    {
+      "ordinal": 19,
+      "pathSample": 101,
+      "eye": [
+        388.41153425655983,
+        64.2506083557119,
+        726.1438593294462
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 100.17041864005613
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 99.05977675017468
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 99.56264031840715
+        }
+      ]
+    },
+    {
+      "ordinal": 20,
+      "pathSample": 102,
+      "eye": [
+        392.0839217383381,
+        64.4019567298981,
+        729.196941053207
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 95.85705370985896
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 94.71229607335978
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 95.24014725126219
+        }
+      ]
+    },
+    {
+      "ordinal": 21,
+      "pathSample": 103,
+      "eye": [
+        395.68513119533526,
+        64.74552681603468,
+        732.1865889212828
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 91.65726401739842
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 90.47242802893668
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 91.02157329104048
+        }
+      ]
+    },
+    {
+      "ordinal": 22,
+      "pathSample": 104,
+      "eye": [
+        399.21072111880466,
+        65.16475772752374,
+        735.1110946610787
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 87.58851411294297
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 86.35953198429664
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 86.92889402866531
+        }
+      ]
+    },
+    {
+      "ordinal": 23,
+      "pathSample": 105,
+      "eye": [
+        402.65625,
+        65.57259117850187,
+        737.96875
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 83.66592634173655
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 82.39042396656438
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 82.98117720726802
+        }
+      ]
+    },
+    {
+      "ordinal": 24,
+      "pathSample": 106,
+      "eye": [
+        406.017276330175,
+        65.97111910966956,
+        740.7578466654518
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 79.89615334029388
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 78.57174528501702
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 79.18498380273816
+        }
+      ]
+    },
+    {
+      "ordinal": 25,
+      "pathSample": 107,
+      "eye": [
+        409.28935860058306,
+        66.36260780431996,
+        743.4766763848396
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 76.28572247349113
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 74.91004919857697
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 75.546744379442
+        }
+      ]
+    },
+    {
+      "ordinal": 26,
+      "pathSample": 108,
+      "eye": [
+        412.4680553024782,
+        66.74905643008962,
+        746.1235308855686
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 72.84097552023863
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 71.41176125232661
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 72.07272591926193
+        }
+      ]
+    },
+    {
+      "ordinal": 27,
+      "pathSample": 109,
+      "eye": [
+        415.5489249271137,
+        67.13062418848912,
+        748.6967018950437
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 69.56808126563976
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 68.08324730822046
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 68.76915043063744
+        }
+      ]
+    },
+    {
+      "ordinal": 28,
+      "pathSample": 110,
+      "eye": [
+        418.52752596574345,
+        67.50637088406063,
+        751.1944811406705
+      ],
+      "target": [
+        432,
+        80.5,
+        815
+      ],
+      "fov": 49,
+      "centerDistances": [
+        {
+          "id": "bamboo:stem:0:4:8",
+          "distance": 66.4727970962006
+        },
+        {
+          "id": "bamboo:stem:1:4:8",
+          "distance": 64.93057643154651
+        },
+        {
+          "id": "bamboo:stem:2:4:8",
+          "distance": 65.64193892010272
+        }
+      ]
+    }
+  ]
+}
