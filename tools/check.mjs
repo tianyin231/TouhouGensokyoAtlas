@@ -1,5 +1,7 @@
 import {checkBambooEntry} from './check-bamboo-entry.mjs';
 import {checkSunflowerEntry} from './check-sunflower-entry.mjs';
+import {checkMuenzukaEdge} from './check-muenzuka-edge.mjs';
+import {checkFlowerHillEntry,checkFlowerHillNativeRepair} from './check-flower-hill-entry.mjs';
 import {checkUIWork} from './check-ui-work.mjs';
 import {checkFrameWork} from './check-frame-work.mjs';
 import {checkRenderDiagnostics} from './check-render-diagnostics.mjs';
@@ -37,7 +39,8 @@ import {checkMakai} from './check-makai.mjs';
 import {checkNetherworld} from './check-netherworld.mjs';
 import {checkHeaven} from './check-heaven.mjs';
 import {checkRainbowMine} from './check-rainbow-mine.mjs';
-import {checkHakurei} from './check-hakurei.mjs';
+import {checkHakurei,geometryDigest} from './check-hakurei.mjs';
+import * as T from '../vendor/three/three.module.js';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -136,13 +139,35 @@ let forestCanopyPublic;
   assert(forestCanopyPublic?.overviewAfter,'原生林冠实际总览入口未登记');
   console.log('雾雨弯道路面接地检查通过：'+JSON.stringify(checkForestCanopyRoad(context.GA,forestCanopyPublic.overviewBefore,forestCanopyPublic.overviewAfter,read)));
 }
-console.log('博丽神社检查通过：'+JSON.stringify(await checkHakurei(context.GA,atlas,read)));
+let flowerHillNativeCheck;
+const hakureiCheck=await checkHakurei(context.GA,atlas,read,{onProtectedRegion:async(id,candidate)=>{
+  if(id!=='nameless')return;
+  const G=context.GA,U=G.FLOWER_HILL_ENTRY;
+  assert(U,'无名之丘真实原生包装器缺失');
+  // Reproduce the pre-repair pack from the actual predecessor with the current
+  // shared terrain contact. Its independently fixed 870 digest is checked by
+  // the native checker. No historical V8 file or candidate re-build is needed.
+  const reference=await U.originalBuildRegion(atlas,id),before=geometryDigest(reference);
+  flowerHillNativeCheck=checkFlowerHillNativeRepair(reference,candidate,{G,data:atlas,T,geometryDigest,sourceSHA:info.inputs['src/flower-hill-entry.js']});
+  assert.equal(geometryDigest(reference),before,'无名之丘检查改变了原始参考包');
+  assert(flowerHillNativeCheck.passed,'无名之丘原生保护失败：'+JSON.stringify(flowerHillNativeCheck.checks.filter(c=>!c.passed)));
+  flowerHillNativeCheck.execution={referenceNativeBuilds:1,candidateNativeBuildsReusedFromFixedRegionCheck:1,historicalSnapshotsRequired:false};
+}});
+assert(flowerHillNativeCheck,'无名之丘原生区域检查未执行');
+console.log('博丽神社检查通过：'+JSON.stringify(hakureiCheck));
+console.log('无名之丘原生修复保护通过：'+JSON.stringify(flowerHillNativeCheck));
 const bambooEntryCheck=await checkBambooEntry(context.GA,atlas,read);
 assert(bambooEntryCheck.passed,'竹林入口检查失败：'+JSON.stringify(bambooEntryCheck.checks.filter(c=>!c.passed)));
 console.log('竹林入口源数据检查通过：'+JSON.stringify(bambooEntryCheck));
 const sunflowerEntryCheck=await checkSunflowerEntry(read,{sourceSHA:info.inputs['src/sunflower-entry.js'],native:false});
 assert(sunflowerEntryCheck.passed,'太阳花田入口检查失败：'+JSON.stringify(sunflowerEntryCheck.checks.filter(c=>!c.passed)));
 console.log('太阳花田入口源数据检查通过：'+JSON.stringify(sunflowerEntryCheck));
+const muenzukaEdgeCheck=await checkMuenzukaEdge(read,{sourceSHA:info.inputs['src/muenzuka-edge.js']});
+assert(muenzukaEdgeCheck.passed,'无缘塚西弧冠层检查失败：'+JSON.stringify(muenzukaEdgeCheck.checks.filter(c=>!c.passed)));
+console.log('无缘塚西弧冠层源数据检查通过：'+JSON.stringify(muenzukaEdgeCheck));
+const flowerHillEntryCheck=await checkFlowerHillEntry(read,{sourceSHA:info.inputs['src/flower-hill-entry.js']});
+assert(flowerHillEntryCheck.passed,'无名之丘坡体源数据检查失败：'+JSON.stringify(flowerHillEntryCheck.checks.filter(c=>!c.passed)));
+console.log('无名之丘坡体源数据检查通过：'+JSON.stringify(flowerHillEntryCheck));
 const pack = context.GA.buildOldHell();
 assert.equal(new Set(pack.meshes.map(mesh => mesh.id)).size, pack.meshes.length, '地下模型 ID 重复');
 let bytes = 0;

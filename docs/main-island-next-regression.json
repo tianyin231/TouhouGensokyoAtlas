@@ -1,0 +1,4499 @@
+{
+  "schema": 1,
+  "kind": "Completed combined Muen + Flower regression and release-input binding",
+  "recordedUTC": "2026-10-05T22:48:37.036758+00:00",
+  "execution": {
+    "schema": 1,
+    "kind": "Actual complete combined main-island Node regression",
+    "startedUTC": "2026-10-05T22:29:08.610096+00:00",
+    "command": [
+      "/tmp/node-v22.23.3-linux-x64/bin/node",
+      "tools/check.mjs",
+      "/workspace/main-island-next-evidence/combined-final-dist"
+    ],
+    "cwd": "/workspace/main-island-next",
+    "protocolSHA256": "24f509ef1f65d56de79b499516cd3b652b27ed668f390daefe1cf889abb7065c",
+    "sourceHEAD": "504808ea4d297ba67a8cd435fd52282cde33ad74",
+    "artifactSHA256": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+    "releaseSHA256": "9ca2ffe7710bbcda299d0e5f8ad255b814609cb5e73c8149ca12415daf5b747b",
+    "inputsBefore": {
+      "project.json": "fd2555966bc8b3cc45afc6e076bde296adc948288fbb380dd3ce0db4b2e8e9b5",
+      "data/lunar.json": "92abf8f26344ef31bee7cb197330fe6cb7b4854a590e2687cfc7565dd4827ccc",
+      "data/makai.json": "3d5566dc31dcf696865246ba63f5d9cef7ad45464f5dcccc00e135564f166435",
+      "data/netherworld.json": "dfb60f6170e841f9f034a3b41cb7bea565e2c5cefa5b371099509693e14aa248",
+      "data/heaven.json": "6383792bb7608ff61f52653dafc81eedd2a6155287864a25fc653889c2e3111a",
+      "data/higan.json": "aed41a6af1c6ef21250f4533dd888f0f7610eb81db6907cb0b3219ebaa377bcd",
+      "data/animal.json": "58294cbe1b2c9e3dc28a316d927bbd410b32fb3bd024adce425266b4b0fe176f",
+      "data/backdoor.json": "a174f1344ae3dc8b73e336c130d0d87598b386e35bfc69c7c3336fdc78a3e289",
+      "data/kasen.json": "b03522e4d5f14aa691de7fc2ffcf596fe6c13840d6cc2b5d7c7e391c5d30fdbf",
+      "data/current-hell.json": "4e99e4f519f90d77f7f51267064ac4f408bd5067450be249c1138c4d7b0b2b1a",
+      "data/rainbow-mine.json": "d852d34cfbbcf3ee2a2168fbb9da9e139e33f2b320456bb8588c91ebe29bcc9b",
+      "data/highland.json": "b15892fb6b9a589aa890e4e3f44e7d8d0a57b234b16809f91ec1a58b7bb6775d",
+      "data/asama.json": "72098c152fd80bd90e7f70ab96053a477bb2a5bdd8f73ff72440416e6f67344b",
+      "data/hiten.json": "01c78bd126626d5a36470d0a2f0752ae0a1ae28b53aedf66e7c36d67825d8d26",
+      "data/mayohiga.json": "a9c8bcf0ecf74c54c115914875ecd9542e4fbf9f32e363760d79336add62ae47",
+      "data/peony.json": "67923caf740dc7cecd29f7a54893424d65ffc141a694e3a416f4f817c3448a5c",
+      "data/waterfall-cave.json": "45719d3e91fc6b4d0fba6ff0f350e844e54ba172b809355dfacec58d59fdcdcc",
+      "data/cucumber-farm.json": "4478346595556725f3007e1d1e7ad64b65b454adf67ea281e9ad97ee7cadd5b2",
+      "data/wind-cave.json": "a3c37a35721107173aacafef9d5188146769d32bee6ef57464ce1a143530af6a",
+      "data/geyser.json": "c9384ca594800782eec387af75a22df7c241831bdb27dd6a10405501580671b7",
+      "data/geyser-center.json": "faa4cc8582fef8f76595bcd6ddb6819bfe308c270a8878b8ebd3766942783646",
+      "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
+      "data/characters.json": "b87604e876804b5b9469657adf653451eccd561cddecdbb578f8966745beacc9",
+      "vendor/three/three.core.js": "78b2c4218834ca8670547ed2315bfc21a00ff4dc3403bbffc8c31493d31d14de",
+      "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+      "src/old-hell.js": "fde1ded5cfad70061c9a69b09b000fbd35bab17edcd583ed4d7973d5c9cfa643",
+      "src/kishinjou.js": "a90ac62e8244c71583fa85b007186bd8798454eba406136199f66949024a2899",
+      "src/lunar.js": "b7a870cf111ffa1ad4c68c5a9fed5d7f31ae08e4fb2c85dce1e8c60308243203",
+      "src/makai.js": "00746b16369b07c2ae549da3d8bcd34505f059b276f592cefd4053704b6a294b",
+      "src/netherworld.js": "e74f73aa97eb1fcca45e44abc894465b5279467e274089e0eeec83f6d871485a",
+      "src/landmarks.js": "04b8e640ca0fc597f889625b8a8173a767eced751355e5dbe034f44fadfd7ff9",
+      "src/heaven.js": "3231eef2637ac64cfb7eb257f35ddf1b5e59bd976642db1aa5a55baf93c3010d",
+      "src/higan.js": "deb81b207343b112ed0080d9378693a4bc04f93f82ad0af6cbaa626b623df34c",
+      "src/landscape.js": "4ef7b6f8076842506e8cac09086db4aa8277f92468e08aa0069c326f77ef35dc",
+      "src/animal.js": "055fe408319dd4d2faca1db8b0619c9d3222a2e42c8c575ebfbb7bf0cdfa7241",
+      "src/backdoor.js": "08031b368a145b1a4d774bd8d7e85dfc81c5adde2682515c069af774b882f098",
+      "src/kasen.js": "cf824cc3b34ef32f42bc127ca9d4ff8570876a9b47626ca5c43acfb709493004",
+      "src/current-hell.js": "47b27653fc2df883b38cbb212eca268b122eea8d72c03d047b590b6f8a8dd7f8",
+      "src/rainbow-mine.js": "8d41ee356f7d1323316e866cf96a88e6775edca6ef8784fc9dc812b9856a8d87",
+      "src/highland.js": "8816c040dd6f3c24d42beef3edb7a2c2604131bb41507c8964886ab659cda9d3",
+      "src/hakurei-plants.js": "8d149696fef5fc9a85204bfb3c2c4bd45992652cf9a2c81f498c0440f5e159f1",
+      "src/hakurei-transition.js": "18c8cb5751436fd08b9c92c32459ad5e71084ecde8f18e26ef44354decc47b3d",
+      "src/asama.js": "42fdf7c969a20389ceb7fb35cdfac96115a1501fb4a5483ede80268814176f15",
+      "src/asama-roads.js": "983371f7f2e24ef21b03bee452c1b50bba85747c035725f842ec42ba2a96a49a",
+      "src/surface-contact.js": "719a315917b55fa5025ec32659509b5be8965d8a577cdfc92c63c96db4dedf5e",
+      "src/hiten.js": "b2671674c180a44753bbccd61a994cc4efb3089618c10d586eba97a33696412e",
+      "src/mayohiga.js": "3cbb575944f32ef1f26e3041f9400a2e9259b98aef3d4f9a78d52c5624c8d75e",
+      "src/peony.js": "0116a5ba2d34cc8e05696e00d9d96b358ae2a9fcb1a395ca50e2b8d22821bc9b",
+      "src/waterfall-cave.js": "eb2430945bb41dc7ba2f2977cc93c6953c5611ec3cb4b5098d7f52c9002f8094",
+      "src/cucumber-farm.js": "f5e4b9c53963f81b170fd56371934267d3587e7770dc4210c957c534f7b9e90d",
+      "src/wind-cave.js": "94ce9aa01c17eb5c1faed009311b3039166879912b96f8a5b3cd5cf22e325737",
+      "src/geyser.js": "e6dd521faf5903bd410390e04ab8477f6b7a2b82f7dedbe4bf54f35530de376c",
+      "src/geyser-center.js": "b58dc4782ff80b95811236967864852776a36def8e0c01863ea46b31babd9f86",
+      "src/kourindou-upgrade.js": "e4c7371c745a6a4b69ed618f7fdcb7f44208b092b65f0379cbb752ba9db52599",
+      "src/forest-upgrade.js": "6468c87138443f3599c7cffbfbd0191e0733ad2259f46f87e3a5d302c1845270",
+      "src/village-upgrade.js": "4f56749811034552227f3280c9b34c534484fc1d1e7b631b52d6d2c17242c44f",
+      "src/trail-upgrade.js": "cce321e38e5c9a26d585092029ed415b9b78032c46000ba47b55ed190f21932f",
+      "src/trail-plants.js": "9b27de1ef04d9b309212b198e203890f848bc85a107c3b7dc7fa4818806a2696",
+      "src/trail-landscape.js": "ef50de3407b2f6e31eed41939ec8003c27a16dccf7e907b98bf72fc4a13919a6",
+      "src/forest-entrance-plants.js": "b42c6959cf4005e362954d468bc1130a459c3104aa85316dff752fd99ddc6ca1",
+      "src/forest-entrance-ground.js": "cc603d5a2b8bd24fd24ec78d48a7124e66e79e67a5751b9ef281a5dba2839ecc",
+      "src/forest-entrance.js": "0320d5c1a6a89d75e29ce3728135222c7a6de3b22b572769b9c32b27c16dee5c",
+      "src/forest-canopy-plants.js": "043a18fa90e756686cc5f28ebe82295271fe6e99386d22e5c8661ac578156b66",
+      "src/forest-canopy-ground.js": "fa889105ad3689bddd44538fe5d72e73334c02cca755ec466eb83f9f87995d99",
+      "src/forest-canopy-road.js": "ac7211359b2a4079713788c97329d6a79383da50f1e601d03eac860f10f2c2a8",
+      "src/forest-crown-rollout.js": "133abcaa7bdfaec3ede8617643fa9beb302642c194cb9f2971caa01b8f919820",
+      "src/forest-canopy.js": "6820b51c35b707dccd920a552347b10decaa6e246d81bd81d5745e0db6eaf29a",
+      "src/bamboo-entry-plants.js": "ff487a6667e53d393523a2607655ae693f5bdcd69775ade31a246899d74948fe",
+      "src/bamboo-entry-upgrade.js": "937f915a583b0e7b14588f95980ff0055f27f54d6c7d1918d301ce0fb6e1cbe1",
+      "src/sunflower-entry.js": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+      "src/muenzuka-edge.js": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+      "src/flower-hill-entry.js": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549",
+      "src/styles.css": "b1e9f17efcfb21d3e806e2fc19c74cfbc381e59f6a0b417c81e74b48b77091e7",
+      "data/expansion.json": "0ffb83baa4a828bbc3366b8b49df4602f18ef8db99d22f03e6079c6ee1c274a1",
+      "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+      "assets/packs/legacy.pack.gz": "46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88",
+      "vendor/three/three.module.js": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7",
+      "vendor/three/LICENSE": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "src/camera.js": "0bc9225d4a9b3eff946464b36619b7d17da180d4ca43a6dd31f1e3e160f6d721",
+      "src/renderer.js": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+      "src/old-hell-renderer.js": "fb91047212002fd1f9933189dceed6033c39883bde32f63437967e6b8f594870",
+      "src/kishinjou-renderer.js": "031b0edcbe51d900c4dfc9dd8da72a453c65d33076765109e48b10df46cf4130",
+      "src/lunar-renderer.js": "c472465371e21d441072ac44ffb1cb09195fa26c8d3a22c8225f192461f62360",
+      "src/makai-renderer.js": "ed54303436ef7c53d8dd0d111560a9b2b09393f4a42911475b79178565a8fcdd",
+      "src/netherworld-renderer.js": "7d81bc869fc86297705e972c93a1ade2c4e871663802cc0e78cf5c424b520148",
+      "src/heaven-renderer.js": "4e03583f3ff823520e2159ef77afd6e7ba9db30804e047b0ddb65601b0f4bb49",
+      "src/higan-renderer.js": "8efb15489c3d93135646cb183a85b8a54415f3db2adebdc6538926b98cb3b322",
+      "src/landscape-renderer.js": "0ed0dc2c076ce224f0d9020e7b97f75e269b15e27a13e939e5bbffe6dfccc98e",
+      "src/animal-renderer.js": "c8a5d5164d73b913687c9133a4f7bf556e44272477ddbf906646035f878f35d9",
+      "src/backdoor-renderer.js": "ff9868540c78daeb981a6c8ad977882158881c9d2f2ec329eb268eba3f053e25",
+      "src/kasen-renderer.js": "eb72f106c4bba31d2ea73498393e89a80b67c5ca47262c6e2a01e6e41a7c044d",
+      "src/current-hell-renderer.js": "29458b481da3f2d7dd5ccead903263e5fc46e661f1d9db6be149afad27498d76",
+      "src/rainbow-mine-renderer.js": "f43d1fa1764cc3f8c883d27c2ee75a98240e7bf69112f4cc78d0e06af1a327a8",
+      "src/highland-renderer.js": "b8f18fda335539faf732fa2c16189cd07ac654dd611c052e7a7e0d5983cb3e16",
+      "src/hakurei-renderer.js": "6eb73c24d252dc8c843b1fd62d4626a0a5b74bf3763c5ed8b6dbafb14b12e4fc",
+      "src/night-renderer.js": "785b896192f547ae9b7012fb4efbf52c39361320958a4ef5e02f75f542129b05",
+      "src/asama-renderer.js": "d82d5c1062b270c669648e784490123e656ad1482294eac9f5900db74f4f6110",
+      "src/hiten-renderer.js": "3a307a1de5d454ab7e4ec07cad6cfce91dc8446d5c3c49ed7216570e30b53da3",
+      "src/mayohiga-renderer.js": "79882b326e5732d0d28606b15b0dc03b0a5ab86abbcdc274f6b1395e6428d815",
+      "src/peony-renderer.js": "aa51146ce1cc5c9b0b0a56132fe0eac38e760cae744956239d3671cdc913334a",
+      "src/waterfall-cave-renderer.js": "75e35695e6274501ed2e0a7c8f7d4f3b06e846ce51effee4308eeb99d06247c9",
+      "src/cucumber-farm-renderer.js": "d05a5fefc19c0cf4b656ca573c3ebe655d5999f6e5a9e27e4748e16f884a8ae6",
+      "src/wind-cave-renderer.js": "88d40b8c951460534078740b2d10c3f1878b0477307f43e0ee32be38cb39720a",
+      "src/geyser-renderer.js": "34cc5f6390d60ac2f0b27fc5779532a0ffb60111970e3a5dd2e09ee003d2c9ce",
+      "src/geyser-center-renderer.js": "60f09d73d875820d8278a80072889f76b7daaf66cbf427c59108512d40aa0063",
+      "src/kourindou-renderer.js": "c84bebcc837d7b4ccc9bef90551695cecac67616eed68eb1f24141cfaa26354f",
+      "src/forest-renderer.js": "23dfb91f835803e00bb9208ed5aeb945996ef2460833f076121d88fc91bfe35b",
+      "src/village-renderer.js": "7d48c5f32c0ad59ac0620e9b1b6bce5b88b1905b75ad10248870713afe49ddd4",
+      "src/trail-renderer.js": "8c605fd08809218f513c57da15ac7f5e6499fcd4302478246dc9d6d503b082b5",
+      "src/trail-landscape-renderer.js": "ee70209bbc5316c8b63a25a564f9b1a71ada399ac2c6f470f760446d4a42ac70",
+      "src/forest-path-colors.js": "a91a09b0f347b40379bbaf52342cf36bf4a943e54b334acee9a1ed8050e85eb5",
+      "src/forest-path-renderer.js": "372f3bba7340b01b5649b8525593ada9592786bb4abb577315e17cfb45fe5073",
+      "src/forest-canopy-renderer.js": "e0d70e6acac3c2cd89e3859dd4a67ef93bb1e3c08f18b54764a9a4b32942e6cc",
+      "src/render-recovery.js": "191976863744f357bfae24dd946485b6cf49de0f782abe035f2c7cfdff2778b4",
+      "src/render-diagnostics.js": "ee2c16425f4ec27d03684cc32d9e29f0fd1c7aceb3f96cca954f62f8bc047b93",
+      "src/muenzuka-edge-renderer.js": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4",
+      "src/characters.js": "2efbdff0ffdc569d544331ad15a5456c0d8e8bbf5f7dc7e5ff016cee33320643",
+      "src/streaming.js": "3ae540dd6a1ca4878ca73ef18a628903dcef7b6866c3753a54ac0f11d435a5dd",
+      "src/app.js": "a5810a049c3ff33d4e9a3987acc1827f390e1a0d4ef1f97079dd9f1d7c68b0c3",
+      "src/index.html": "dd636efdc4da9138c7e2d79c270deab0ebf97e2c08f68d952ec20ff9af824257",
+      "tools/build.py": "38063f56e5026edaf3fd8a2a6f56fbea0a31fee6b264a9bd166228dffb09e631",
+      "tools/check.mjs": "297a2728c03f9324b0e6731b1c55035e19fa5e23e435a4cea47fd95eede4ff94",
+      "tools/check-landscape.mjs": "a72e138bdaebaf059b88f203159f989b523b4f674462878d00273bf37961ecf8",
+      "tools/check-kishinjou.mjs": "f0db98fdc9ddcf92eb7693cf6dff39657c500a14cdc863b37e38cf2d5d107ed1",
+      "tools/kishinjou-baseline.json": "126c933c0d2e12b5676f8c9594e6cecdbdc713169ea18af21e9ebba7e9d959ac",
+      "tools/check-lunar.mjs": "7dc97b27d1a87a5107d0f9b9d82742c99edb9f05fb1bba82ad91d35710a792a8",
+      "tools/lunar-baseline.json": "3e4ff4dccee7b1a2a298aa9f851034a88e2e5931ee187abb3c1cc3e3cc3d8940",
+      "tools/check-makai.mjs": "136c722ccfc03f58fb1a9a2b5ffb877f4d44e206c18a0e6cf5996bb1874d0784",
+      "tools/makai-baseline.json": "1734aa17de0071d3420b70ed792d28817f0b7cb8897a51b82077035a666844d4",
+      "tools/check-netherworld.mjs": "2acea0283b1365f2ec115bde84efaacca1fe94887567a0e769f2caf538b3e2d8",
+      "tools/netherworld-baseline.json": "7ffe9d17fdeecbe4047f6d374e4cdfbbc0c52b13ccb944f655f0d96f65d97c69",
+      "tools/audit-landmarks.mjs": "d9101abb321175a5ee8f9acd5343e0e5bb1e3ed09933e454262ab4647583b516",
+      "tools/check-heaven.mjs": "92991b29ee13484febaa83858583adfb9bf62f58d6efa07b01d5b753ded500c9",
+      "tools/heaven-baseline.json": "e799dd1028023bfdd80c3481a50f98eb0da66a9a6bdc9c04026d31c7380b252a",
+      "tools/check-higan.mjs": "9c4c97083229cf3b3b714bb19b9ac4e99402726907f08c8bf39467e1b13fa673",
+      "tools/higan-baseline.json": "b7501f24350121f16e9e654d78c4805ee7e338504bdb59d6494c8d4e20be65fd",
+      "tools/check-animal.mjs": "7a6f6c33f8013e3651943203ee3b1e7d1958995f888ca7ddf750e6430af26190",
+      "tools/animal-baseline.json": "1c7712a395c1d9adc6c801348470d1847b00cb4ee3968cfa94213d79e258b3d6",
+      "tools/check-backdoor.mjs": "3005259c177526da9d1e3340d110e0e015f14493374cc8949c4704d6c506e278",
+      "tools/backdoor-baseline.json": "44a681c946b751d3d613d78ffe9fe2fc8e979809d2559919ae65f5572aef3cae",
+      "tools/check-kasen.mjs": "f7fc4ae9f9af79f872d4cafada6c448e1a21dcd5cdfbd439ca21e6936f842e32",
+      "tools/kasen-baseline.json": "f119c2fcf7f96aac4440c7ee78ef3b23a665e21a3ffbe448c8ed1acce99dfd55",
+      "tools/check-current-hell.mjs": "e78bc169d49f5fb8042c4da46b03dda7927cc4a2a0ccea298497de30a04c937d",
+      "tools/current-hell-baseline.json": "d45d4966ae7eb3b10f428a5984904b78c8597f4ecb149cf141a43a0ba7d7715e",
+      "tools/check-rainbow-mine.mjs": "92c7e64478a74f665d6adb4d7cb2cc2ae5af6be9447d0cfdb6cdd1ac8b1b9de2",
+      "tools/rainbow-mine-baseline.json": "3d793efb1f5a984a3229dea0c710852b09a4b6e6e5294806dd0cfb7a2856bee4",
+      "tools/check-highland.mjs": "1a876fc8cbf29c46b548a2fa17f04c9e9777b3b1750f57a40912b981e7214340",
+      "tools/highland-baseline.json": "1552e5afc72ac453a892a2a9cbc3c5087d42eeb82ba606142840e1db8652463e",
+      "tools/check-asama.mjs": "7d2539b2f98bbae0df472c70e199ae574abc7b58a32d732e0081d2e27411b240",
+      "tools/asama-baseline.json": "ba15fdb0a284f489fa5944bcedd6e0ba9c60359a0fe2fcfceecdee82447c7ee4",
+      "tools/check-evidence-corrections.py": "97bc60805620272d24e2c5911c857e95c90c584f8f6c950895f0a082fe23196b",
+      "tools/current-coverage.json": "cb8038b9b7c1f933ae77456cfc00303997e1fbb95d8deb2c16963886fab59fe8",
+      "tools/check-geyser-center.mjs": "708ef3a9976212c71400ffd56b9d43715e087fd322d7e8c6b774b1f52a41bc9b",
+      "tools/geyser-center-baseline.json": "cf5e0483694884fb593e9b7c00b7378b693a67a2a042d55e6fbbbf71b7a1d5b3",
+      "tools/check-geyser.mjs": "f465a6b8910a2e87b892681375b9e384ba2b2360f055682d72baf141a129648e",
+      "tools/geyser-baseline.json": "cd8106c9c4a6c5ab6b970ac587b0d3f59951b0d2564b3caab5e8451873457df0",
+      "tools/check-wind-cave.mjs": "9a1242dea8d6ee50eef693ae0851f0ad93d61e9292531c543fe279b1a1ae5df3",
+      "tools/wind-cave-baseline.json": "84cb0e7696e2752c08f94f075a7867b076eb021cd597186a34a8f320cee431d8",
+      "tools/check-cucumber-farm.mjs": "715fdd1b6e7b32679d86678c89ee67c225c2812f95cd9e1ab686fd16c6c9d1ed",
+      "tools/cucumber-farm-baseline.json": "5ec3ce0339272685be83c09b526ae4de984aba609e58bf22661a4ab153f09f12",
+      "tools/check-waterfall-cave.mjs": "a828bd5418e4acc1cf82faaf22c5395f6b121166c7a245085678eda89a46cb93",
+      "tools/waterfall-cave-baseline.json": "6a1ef7dc336f90f1b077c365d7c6c73e51f58feb4a7a121c4c5444f9565d9083",
+      "tools/check-peony.mjs": "b88a1347f642d5083478f5eb2bbbc4092358da18960dc96c83a76a340d232340",
+      "tools/peony-baseline.json": "12f795ed975b7bc61d9793a27bd9978eedd48ed37a0d411d2db877d3fa5a691a",
+      "tools/check-mayohiga.mjs": "72cef14478d9230ff1c51fde8c9907c75dab5531a33cc71da7d0881f5ac8ff45",
+      "tools/mayohiga-baseline.json": "70473533bee801c39f0f22cd3368bbc62c2ef1cac5e18595f478e73619277174",
+      "tools/check-hiten.mjs": "4955a316796da56b50419b93285845c5d40817d17c22385d01a8092b533c1a74",
+      "tools/hiten-baseline.json": "7c4d0085dbd8647035ae84d4ecf2c1b37393023eaed821a94df07896179d5b1f",
+      "tools/check-kourindou.mjs": "dd67e34e4c92947b0b75ef1f4b71a954efec2d08d3b328223a13f6b54c0bc700",
+      "tools/kourindou-baseline.json": "1b0c06085b599fbfbc8d3df7575a6cd0027f353e8b7bf24f7ea24ef66c743dd8",
+      "tools/check-kourindou-browser.py": "90bb41467c19c55b74c33ef610450fbc1c2674de8d6df5a2f7d55be1900f59d2",
+      "tools/check-forest.mjs": "5262de1e54f58190096457c81d5fa84533b8072dc4e616cbb4a8d7934ff5fc4d",
+      "tools/forest-baseline.json": "e29ac935dfb20857397cc22b3b1943fb7e51ed318e4f49b92cdd145466ad795b",
+      "tools/check-village.mjs": "7ee33fe598f9f447726df991d12b6a02c12de86605d0c150643ce73d148ecda2",
+      "tools/village-baseline.json": "040073c347617b50a3cd10556ef41f0bfede73eff0b24d4e95acbf9cea6553b9",
+      "tools/check-trail.mjs": "a9e52221c8746f85b2bea15cc21ce6886da77fedbdd2dd72bf3fd961d0800f4a",
+      "tools/trail-baseline.json": "18517e0ba96f413aeed4df29805933f0ae2a8cb7c61234a6f5c1d03f45c3f36a",
+      "tools/check-trail-landscape.mjs": "9cccfbed2ac3275bd0729ff85d4700976bbf8308c42219e1c120178e3a03a191",
+      "tools/trail-landscape-baseline.json": "5d0abe56447f7ef03752071f2e9cf422717c331e99ebb5d5c6a277b71cfe4fe2",
+      "tools/check-trail-landscape-renderer.mjs": "43fa7f01c9842140a83a39e109ab825969be7fdd980fde29336adce32b8c6044",
+      "tools/check-forest-entrance.mjs": "e4170e93fb052f3ca80d1fb9a05a9cc41604ed17b302d7198b132b05683220a5",
+      "tools/check-forest-canopy.mjs": "e6789bf2a4604d11be12a279fbd5b00cc3fbff647c64b2896a388b361973b2d7",
+      "tools/check-forest-canopy-road.mjs": "2952dbe47687c21b2d0193eb60f74e20f6e95960839363ba5de2758b567013e3",
+      "tools/check-bamboo-entry.mjs": "0ad4d633c021299cc2207ad6c5731f94dcf965dc8813ce93f85f6f0b907bf890",
+      "tools/check-bamboo-browser.py": "49ea1c552fdee368ccfe96d7d74e098af0702985f414f0ce7035c3778f119864",
+      "tools/check-bamboo-lod-route.py": "e60a2de5c10b1498f5d951a050d024511166a4e64cb68e38628d68a71289ceb1",
+      "tools/bamboo-entry-route.json": "6dd0332f03d236ef1455c654fb02bb3915cedb9a05c69ce58f31a92122c1fae1",
+      "tools/check-sunflower-entry.mjs": "60ba4e9b4db83fc5ca8f0ce923bc089b498ae3748b699db33fa37844c91cab62",
+      "tools/check-sunflower-browser.py": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+      "tools/check-muenzuka-edge.mjs": "5f0568c0bf37dda0fd1ecebca7899aa8d932fe95b108a23f218845f57f4f8c4a",
+      "tools/check-flower-hill-entry.mjs": "49c73c6da69401346ab64bd3bcfcdc6277bea7f5356e00578b79f5fa3ee3f146",
+      "tools/check-flower-hill-browser.py": "d6089e3be79d42751c1e74924bef213b416843cf54f74d408e99ae7cf72649e0",
+      "tools/check-forest-path-renderer.mjs": "c98a7e20bc30bad262e3f512abaaf7d8d246ce84c67a93ae63192f178548a05d",
+      "tools/check-forest-path-coverage.mjs": "50285847cfffefe171b53fb6c5365dbb413d5766b4233412ebacf7f4e2b72a3e",
+      "tools/generate-forest-path-colors.mjs": "d9f5674c3892d0808ea6c3ee50a412204389f96256dfffcfedbda00d1dfd1f00",
+      "tools/check-foliage-texture-browser.py": "505bcfd6401c95c9ed44538f4145e958ec8275c07a74c1586cdf1b980af1fb58",
+      "tools/check-ui-work.mjs": "84be632770e6fa4ef4c4d42495428c701dd3a43938f63b11b079a731e1362a4f",
+      "tools/check-frame-work.mjs": "2318e76bc1b805abf6892b54d89fc845156bd40717a1e31a20ec6d63246b886e",
+      "tools/check-frame-work-browser.py": "71ae510bd98ad072e694817896253cd932d0122e37fd6566530ba72f6127288b",
+      "tools/frame-work-source-review.json": "15d4e83b852f680ae9b99f68f596151680149b7c4595c0245b1f7011fb451322",
+      "tools/check-render-diagnostics.mjs": "f80d544f4e7a476badfb797f073d28c7e7acbd158bf6c315884136419014b677",
+      "tools/check-render-resources.mjs": "8172b43fab245fa6774c5019770407af76e4af2a9cbde8f35c19b1a6bb224337",
+      "tools/check-render-ownership.mjs": "b8bc5fcb9dd283a2621e387c2fee2bcd856a457cd701f1ace5f81928d06eae17",
+      "tools/render-lifecycle-source-review.json": "2d6283e5f204b7b242b35b3f6ebf7c76be4eeb3065871cf4e78999d8d9b426da",
+      "tools/check-streaming-lifecycle.mjs": "8a2d9443392fd7a037a6e6fbb74f340db0b83f364973450c27ebd6f2b2f251f1",
+      "tools/check-render-lifecycle-browser.py": "5b4c6a2180d329dda3addf1034a1f030f28778b1a14195e534eea1dad81b4999",
+      "tools/check-hakurei.mjs": "fe9a8bdd83fe6b7f2e068a01028fe85ffa169462db69a862a6a75a7404470d74",
+      "tools/hakurei-baseline.json": "0d68e8c1ffec9e9ab19fd546158828c2092069381c8c08617a7be63b196c0774"
+    },
+    "hardwareFPSMeasured": false,
+    "physicalVRAMMeasured": false,
+    "concurrentWork": "Flower baseline/candidate production browser lifecycle may overlap CPU work; no comparative CPU/load speed claim.",
+    "endedUTC": "2026-10-05T22:47:00.905661+00:00",
+    "elapsedSeconds": 1072.2930099229998,
+    "exitCode": 0,
+    "stdoutSHA256": "6fa62904229aa5d5b7fb291b0ac09d67852846cda43289c6bbfac51fb11595fd",
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "artifactUnchanged": true,
+    "inputsUnchanged": true,
+    "passed": true,
+    "inputsAfterExactlyEqualBefore": true
+  },
+  "originalExecutionSHA256": "13cb0c463079ae4a8d23ecfb771dccc7e3025cf117e5c4ba5a16ea061400061c",
+  "groups": [
+    {
+      "name": "隐藏界面工作量检查通过",
+      "lineSHA256": "bb9567f63ee33584140b1f2b79f46959f51089686cd0e7e7e6b551909bfdc0e0"
+    },
+    {
+      "name": "渲染循环工作量检查通过",
+      "lineSHA256": "bbdaad3c01fb631018a6fed4c99238590ed7678895dee8a7523b526cffe696a1"
+    },
+    {
+      "name": "渲染诊断检查通过",
+      "lineSHA256": "323512f8a4c1bea55fdf9ea3ed90ea91a56a363828ff05a7db87a1607a417d50"
+    },
+    {
+      "name": "渲染资源检查通过",
+      "lineSHA256": "0d29588bdfd7337245fe89857a5788c0c8c870c3b47a740d654b8dca58ddd66d"
+    },
+    {
+      "name": "渲染引用检查通过",
+      "lineSHA256": "a5311d6d9ee2c0ad0ed4a22452282c9fd3d5dfb912f6e5005aeba60f6fe86a0c"
+    },
+    {
+      "name": "Worker生命周期检查通过",
+      "lineSHA256": "123776ad946a906059cceba1623d3cbe06a18ea11dda3001ea06c33905fae299"
+    },
+    {
+      "name": "森林路边属性检查通过",
+      "lineSHA256": "f0840280c83f5f03015901ea91cde851fd19d06c54dede80f8f28a692ae9279a"
+    },
+    {
+      "name": "森林公共路覆盖检查通过",
+      "lineSHA256": "8c58744633f67cf03f8e4fc6f4f45ce0be2c1427a19532077f1f50e9ef6e18d9"
+    },
+    {
+      "name": "森林入口源数据检查通过",
+      "lineSHA256": "825f66af8163d180f412a15a90cfc2cf37224fd3a24a9a23c598e62b3e0b4f25"
+    },
+    {
+      "name": "雾雨弯道路面接地检查通过",
+      "lineSHA256": "1e4bd2dc5133ead64a8e0fc66398dde6804dcd5c118145f04c6ac80438ea1aeb"
+    },
+    {
+      "name": "博丽神社检查通过",
+      "lineSHA256": "8f26966c33f338d91da817dc505ad66ddfd5b167689194ac0ac11dfb765966b7"
+    },
+    {
+      "name": "无名之丘原生修复保护通过",
+      "lineSHA256": "976655f7a74a5ff19b0a3ce6e1e10cfed0bcfc91a69512df1e12cfc4352cac64",
+      "passedChecks": 10,
+      "totalChecks": 10
+    },
+    {
+      "name": "竹林入口源数据检查通过",
+      "lineSHA256": "21bf154ef1b9bef44e1d56cad1a84868de25b85272a9ad1dd05739d5850664ae",
+      "passedChecks": 23,
+      "totalChecks": 23
+    },
+    {
+      "name": "太阳花田入口源数据检查通过",
+      "lineSHA256": "d827c230ca6604d93c096c306ce2f60a9f16f4188add466f33bef88e88ed53fb",
+      "passedChecks": 24,
+      "totalChecks": 24
+    },
+    {
+      "name": "无缘塚西弧冠层源数据检查通过",
+      "lineSHA256": "37f3bf93375fb52900691ef062d720d77d38d8ac8471896b08e76746e9a63aea",
+      "passedChecks": 12,
+      "totalChecks": 12
+    },
+    {
+      "name": "无名之丘坡体源数据检查通过",
+      "lineSHA256": "2e539ef8153ec671f43c6f64b95487fc6aa95cb6b985e1cfe0b0dcc027737e50",
+      "passedChecks": 20,
+      "totalChecks": 20
+    },
+    {
+      "name": "辉针城检查通过",
+      "lineSHA256": "8e8aca1a533ddaa215e37c5864e9a0456a59aec65140479a319099d32994c3f7"
+    },
+    {
+      "name": "检查通过",
+      "lineSHA256": "f9425eb89ba691f728498cb5b454e57914760eeae2372b51a054d44fb10f881e"
+    },
+    {
+      "name": "月世界检查通过",
+      "lineSHA256": "8d3385c9a039ae5e9e2d98a8156a27b80c3b461c85cd8197dc4d664d05bb73b1"
+    },
+    {
+      "name": "魔界检查通过",
+      "lineSHA256": "8bf07f3e2024e92ac4c0c8866d41c0e361b248880d4d490c05be67eb11890814"
+    },
+    {
+      "name": "冥界及目录检查通过",
+      "lineSHA256": "e80779c6de1b89075efc97b637c3be7746e463812686f4932b2febd1aff69f0a"
+    },
+    {
+      "name": "天界检查通过",
+      "lineSHA256": "3482b65b76ec5cdf6d65d21f6d2d968d29bacd1e5f85c175d450afdafd86f23c"
+    },
+    {
+      "name": "此岸彼岸检查通过",
+      "lineSHA256": "c250083b0e08ca3d8d6466f4a6ce996d9d8c1a3cafe53ef6305561224da6ee48"
+    },
+    {
+      "name": "林缘样板检查通过",
+      "lineSHA256": "0b07ae2696a95deec36d9c299b2498fd28162053b5380deb2f247041bc32df56"
+    },
+    {
+      "name": "畜生界检查通过",
+      "lineSHA256": "c69e910a8a24eb8358cb74ce02f4ad6f0f9f903eba3d574c8e78a22d62db0492"
+    },
+    {
+      "name": "后户之国检查通过",
+      "lineSHA256": "1b1ec9f74d3c3d8385f64b5f94640ceb8ef2238a57d64af51d64f6c434fe2335"
+    },
+    {
+      "name": "华扇仙界检查通过",
+      "lineSHA256": "bd3ac2b4cb6f91c9029b2e3f173368d92ffee49039411032864b601cb5f72bd8"
+    },
+    {
+      "name": "现行地狱检查通过",
+      "lineSHA256": "4e16cf462f78f85b9a6c8378abdb1c87066fdf515bda7f608ece0fcd7a186c99"
+    },
+    {
+      "name": "虹龙洞检查通过",
+      "lineSHA256": "94e8b2718fc9c01a10113b1c1f7e772d9ec07d6d878929963c79a07055ddd7f2"
+    },
+    {
+      "name": "伪天棚检查通过",
+      "lineSHA256": "0a76415a49067b4105b57d353a0c19d246332275affbef41ab1c562220f70f4c"
+    },
+    {
+      "name": "圣域／浅间净秽山检查通过",
+      "lineSHA256": "e92aab83dc3ab914435dc3e1cb87a805c3a35f2dad3f76e75c7981bad047883d"
+    },
+    {
+      "name": "秘天崖检查通过",
+      "lineSHA256": "0aab5e82955267443c47902a3db15862b4eb48fbb34212391ac5e7773164cf20"
+    },
+    {
+      "name": "迷途之家检查通过",
+      "lineSHA256": "0861be0594db8d4f91116a2cc63bd7df20116939f616dcb514352238d3179348"
+    },
+    {
+      "name": "芍药田检查通过",
+      "lineSHA256": "0ba6a3d93bfd679a4b29fc5dfc14dbb3a2f70f7807b2231c227bdf3536b03880"
+    },
+    {
+      "name": "瀑后洞穴检查通过",
+      "lineSHA256": "bc9f1a235e5daeba20e4b69f1db51674058481abe6533cb510f7ef35f86e7ad8"
+    },
+    {
+      "name": "黄瓜田检查通过",
+      "lineSHA256": "4fe0dcf9002888e022bfe38ff7fa8c406df7545e9b5ebff1a62deadbbfccc27d"
+    },
+    {
+      "name": "幻想风穴检查通过",
+      "lineSHA256": "bb7d2527b0cfded7ef3773afdd7e0e6598105f6623d479a157c6835cf0083d46"
+    },
+    {
+      "name": "山麓间歇泉检查通过",
+      "lineSHA256": "14edd83125d3be57e70a2b873a39be8852bfcf8d1b5aa934e974e188154113c3"
+    },
+    {
+      "name": "间歇泉地下中心检查通过",
+      "lineSHA256": "52695a1493da70717a7bad8a70f547acb13306757878903723b0f5469e1f8c64"
+    },
+    {
+      "name": "香霖堂精修检查通过",
+      "lineSHA256": "ab08701db56e65aa9b7f1aec1607950a2cbe9e8f9e0ea23b9f4e56c6ea88c71d"
+    },
+    {
+      "name": "森林住宅与木板径检查通过",
+      "lineSHA256": "67b5b9f37ecee19cab34b4182dd2201c82400308db2b655c84ae9587037d6551"
+    },
+    {
+      "name": "人里精修检查通过",
+      "lineSHA256": "4bd88185af195d5bcf63410d416d0c5ad81a60ac287bdb52dadaf890d0db4139"
+    },
+    {
+      "name": "兽道桥头与夜雀屋结构检查通过",
+      "lineSHA256": "3d216fbe4e006ff4e0deb03a6d87231801a5cefd5ddbde163f29a6663aa67f71"
+    },
+    {
+      "name": "兽道树林与地表样板检查通过",
+      "lineSHA256": "0681d2e67f7754a0b9db8075bf03692f4abd430e4cf16ed8c861669550301747"
+    },
+    {
+      "name": "兽道样板材质与资源检查通过",
+      "lineSHA256": "c8769a37fe4b4d1f692c1cc0a4862354a96e0e041671773e36f4ea7653bcc503"
+    }
+  ],
+  "groupCount": 45,
+  "independentBuilds": {
+    "count": 2,
+    "identicalReleaseJSON": true,
+    "artifact": "TouhouGensokyoAtlas-v0.29.html",
+    "artifactBytes": 36462327,
+    "artifactSHA256": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+    "inputs": 208
+  },
+  "newStageResults": {
+    "无名之丘原生修复保护通过": {
+      "schema": 1,
+      "kind": "Nameless native repair: explicit roadside whitelist, original-instance mapping and strict zero clearance",
+      "sourceSHA256": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549",
+      "evidenceMode": "actual-native",
+      "nativeBuildsByThisFunction": 0,
+      "noGPU": true,
+      "baselineKnownFailures": {
+        "sourceSHA256": "87096ff308a83880c2332b79a554ec9edc098bd0f534db52a1fc965934c7114b",
+        "reportSHA256": "363615addb579396c2338b1874457c507bef4d022ef1a1c1c56b67b58f383f22",
+        "CLI": 1,
+        "checksPassed": 5,
+        "checksTotal": 9,
+        "baselineNearIntersections": 188,
+        "baselineFarIntersections": 80,
+        "preRepairNearIntersections": 182,
+        "preRepairFarIntersections": 80,
+        "rerun": false
+      },
+      "referenceNativeSHA256": "9d35b100a873fa464c75de4dbab4872a57468d58d5ebaa61a8fd80f601560f06",
+      "checks": [
+        {
+          "name": "independently fixed 870 native checkpoint and exact 29-instance permission list",
+          "passed": true,
+          "result": {
+            "referenceNativeSHA256": "9d35b100a873fa464c75de4dbab4872a57468d58d5ebaa61a8fd80f601560f06",
+            "permittedInstances": 29,
+            "maximumOutwardDistance": 0.3,
+            "originalFailuresRetained": true
+          }
+        },
+        {
+          "name": "native identities and fixed four-child source-index bijection",
+          "passed": true,
+          "result": {
+            "actualRecords": 414,
+            "additionalRecords": 3,
+            "logicalInstances": 67347,
+            "childCounts": [
+              52,
+              59,
+              48,
+              53
+            ],
+            "original212InstancesBijective": true
+          }
+        },
+        {
+          "name": "only exact grass/lily whitelist moves, full prototypes/colors/population and other matrix values stay exact",
+          "passed": true,
+          "result": {
+            "logicalInstances": 67347,
+            "moved": 29,
+            "maximumMove": 0.25320175443594384,
+            "limit": 0.3,
+            "maximumRootOffsetChange": 7.57665284822906e-06,
+            "queryRootOffsetTolerance": 0.00015,
+            "zeroNearRootOffsetClaimed": false,
+            "treesMoved": 0
+          }
+        },
+        {
+          "name": "actual native near plants obey the unchanged zero road/shoulder intrusion assertion",
+          "passed": true,
+          "result": {
+            "transformedInstances": 2807,
+            "testedTriangles": 2417924,
+            "intersections": 0,
+            "roadFaces": 2604,
+            "headroom": 2.4,
+            "scope": "Real near prototype triangles clipped against actual new road triangles. Grass and low shrubs may occupy the shoulder; tree triangles are checked there too. No tree-center radius substitute."
+          }
+        },
+        {
+          "name": "actual native far plants obey the unchanged zero road/shoulder intrusion assertion",
+          "passed": true,
+          "result": {
+            "transformedInstances": 2795,
+            "testedTriangles": 78393,
+            "intersections": 0,
+            "roadFaces": 2604,
+            "headroom": 2.4,
+            "scope": "Real near prototype triangles clipped against actual new road triangles. Grass and low shrubs may occupy the shoulder; tree triangles are checked there too. No tree-center radius substitute."
+          }
+        },
+        {
+          "name": "all moved near/far triangles and every shader phase stay at least 3cm outside actual walking strips",
+          "passed": true,
+          "result": {
+            "movedInstances": 29,
+            "variantsPerInstance": 2,
+            "comparisons": 107,
+            "minimumGap": 0.03121200680277525,
+            "requiredGap": 0.03,
+            "allShaderClockPhasesCovered": true,
+            "proof": "Full local-X/Z shader rectangle per vertex, original instance linear transform, convex hull and separating axes against real triangles; no centre-radius replacement."
+          }
+        },
+        {
+          "name": "every original parent population remains within its unchanged conservative bounds",
+          "passed": true,
+          "result": {
+            "records": 378,
+            "actualInstanceBoundsChecked": 20400,
+            "tolerance": 0.05,
+            "parentCentreRadiusLODUnchanged": true
+          }
+        },
+        {
+          "name": "each actual near/far child sphere contains both LODs and the full wind envelope",
+          "passed": true,
+          "result": {
+            "checks": [
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:0",
+                "cached": "vertices",
+                "selected": "vertices",
+                "maximumAnyShaderPhaseOutside": -0.06987363309420047
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:0",
+                "cached": "vertices",
+                "selected": "farVertices",
+                "maximumAnyShaderPhaseOutside": -0.06987363309420047
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:0",
+                "cached": "farVertices",
+                "selected": "vertices",
+                "maximumAnyShaderPhaseOutside": -0.04684741004031778
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:0",
+                "cached": "farVertices",
+                "selected": "farVertices",
+                "maximumAnyShaderPhaseOutside": -0.04684741004031778
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:1",
+                "cached": "vertices",
+                "selected": "vertices",
+                "maximumAnyShaderPhaseOutside": -0.08053981013854816
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:1",
+                "cached": "vertices",
+                "selected": "farVertices",
+                "maximumAnyShaderPhaseOutside": -0.08053981013854816
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:1",
+                "cached": "farVertices",
+                "selected": "vertices",
+                "maximumAnyShaderPhaseOutside": -0.07829402348687253
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:1",
+                "cached": "farVertices",
+                "selected": "farVertices",
+                "maximumAnyShaderPhaseOutside": -0.07829402348687253
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:2",
+                "cached": "vertices",
+                "selected": "vertices",
+                "maximumAnyShaderPhaseOutside": -0.42780043625370645
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:2",
+                "cached": "vertices",
+                "selected": "farVertices",
+                "maximumAnyShaderPhaseOutside": -0.44918610880367815
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:2",
+                "cached": "farVertices",
+                "selected": "vertices",
+                "maximumAnyShaderPhaseOutside": -0.415325526799176
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:2",
+                "cached": "farVertices",
+                "selected": "farVertices",
+                "maximumAnyShaderPhaseOutside": -0.43687540659760593
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:3",
+                "cached": "vertices",
+                "selected": "vertices",
+                "maximumAnyShaderPhaseOutside": -0.2774355610214574
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:3",
+                "cached": "vertices",
+                "selected": "farVertices",
+                "maximumAnyShaderPhaseOutside": -0.2774355610214574
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:3",
+                "cached": "farVertices",
+                "selected": "vertices",
+                "maximumAnyShaderPhaseOutside": -0.27730086395399134
+              },
+              {
+                "id": "flowerlands:nameless:lily:0:-39:35:spatial:3",
+                "cached": "farVertices",
+                "selected": "farVertices",
+                "maximumAnyShaderPhaseOutside": -0.27730086395399134
+              }
+            ],
+            "minimumSafeMargin": 0.04684741004031778,
+            "noManualSphereEdits": true,
+            "existingRendererLODCacheCompatible": true
+          }
+        },
+        {
+          "name": "native recursive backing accounting and bounded source overhead",
+          "passed": true,
+          "result": {
+            "actualPackBytes": 6672708,
+            "splitMatrixColorBacking": 16112,
+            "publicPreviouslyMeasuredSourceBytes": 484008,
+            "conservativeSourceUpperBound": 500120,
+            "limit": 629145.6,
+            "sourceOwnershipNote": "Actual live native ownership and exact shared prototypes; browser residency still required."
+          }
+        },
+        {
+          "name": "same native pack idempotence retains every actual geometry value",
+          "passed": true,
+          "result": {
+            "samePackUnchanged": true
+          }
+        }
+      ],
+      "passed": true,
+      "candidateNativeSHA256": "d76dc3a609bafd73ce25e51bdbd93ab1cd7defa11f49d0aac65ad5ca1a519ea3",
+      "notRun": [
+        "Public 19 checks (unchanged 870 public evidence retained)",
+        "Sunflower owner paired native protection",
+        "WebGL costs and visual review",
+        "Native input CPU/unload/reentry",
+        "Full Node regression"
+      ],
+      "execution": {
+        "referenceNativeBuilds": 1,
+        "candidateNativeBuildsReusedFromFixedRegionCheck": 1,
+        "historicalSnapshotsRequired": false
+      }
+    },
+    "无缘塚西弧冠层源数据检查通过": {
+      "schema": 1,
+      "kind": "Independent Muenzuka western crown source protection",
+      "sourceSHA256": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+      "checks": [
+        {
+          "name": "exact real project prefix and frozen stage source",
+          "passed": true,
+          "result": {
+            "project": {
+              "version": "0.29.0",
+              "title": "伪天棚 · 残雪高地与驹草旧屋",
+              "threeRevision": "185",
+              "worldBuilders": [
+                "src/world-builder.js",
+                "src/old-hell.js",
+                "src/kishinjou.js",
+                "src/lunar.js",
+                "src/makai.js",
+                "src/netherworld.js",
+                "src/landmarks.js",
+                "src/heaven.js",
+                "src/higan.js",
+                "src/landscape.js",
+                "src/animal.js",
+                "src/backdoor.js",
+                "src/kasen.js",
+                "src/current-hell.js",
+                "src/rainbow-mine.js",
+                "src/highland.js",
+                "src/hakurei-plants.js",
+                "src/hakurei-transition.js",
+                "src/asama.js",
+                "src/asama-roads.js",
+                "src/surface-contact.js",
+                "src/hiten.js",
+                "src/mayohiga.js",
+                "src/peony.js",
+                "src/waterfall-cave.js",
+                "src/cucumber-farm.js",
+                "src/wind-cave.js",
+                "src/geyser.js",
+                "src/geyser-center.js",
+                "src/kourindou-upgrade.js",
+                "src/forest-upgrade.js",
+                "src/village-upgrade.js",
+                "src/trail-upgrade.js",
+                "src/trail-plants.js",
+                "src/trail-landscape.js",
+                "src/forest-entrance-plants.js",
+                "src/forest-entrance-ground.js",
+                "src/forest-entrance.js",
+                "src/forest-canopy-plants.js",
+                "src/forest-canopy-ground.js",
+                "src/forest-canopy-road.js",
+                "src/forest-crown-rollout.js",
+                "src/forest-canopy.js",
+                "src/bamboo-entry-plants.js",
+                "src/bamboo-entry-upgrade.js",
+                "src/sunflower-entry.js",
+                "src/muenzuka-edge.js",
+                "src/flower-hill-entry.js"
+              ],
+              "extensionRenderers": [
+                "src/asama-renderer.js",
+                "src/hiten-renderer.js",
+                "src/mayohiga-renderer.js",
+                "src/peony-renderer.js",
+                "src/waterfall-cave-renderer.js",
+                "src/cucumber-farm-renderer.js",
+                "src/wind-cave-renderer.js",
+                "src/geyser-renderer.js",
+                "src/geyser-center-renderer.js",
+                "src/kourindou-renderer.js",
+                "src/forest-renderer.js",
+                "src/village-renderer.js",
+                "src/trail-renderer.js",
+                "src/trail-landscape-renderer.js",
+                "src/forest-path-colors.js",
+                "src/forest-path-renderer.js",
+                "src/forest-canopy-renderer.js",
+                "src/render-recovery.js",
+                "src/render-diagnostics.js",
+                "src/muenzuka-edge-renderer.js"
+              ],
+              "extensionData": [
+                "data/asama.json",
+                "data/hiten.json",
+                "data/mayohiga.json",
+                "data/peony.json",
+                "data/waterfall-cave.json",
+                "data/cucumber-farm.json",
+                "data/wind-cave.json",
+                "data/geyser.json",
+                "data/geyser-center.json"
+              ]
+            },
+            "predecessors": [
+              "src/world-builder.js",
+              "src/old-hell.js",
+              "src/kishinjou.js",
+              "src/lunar.js",
+              "src/makai.js",
+              "src/netherworld.js",
+              "src/landmarks.js",
+              "src/heaven.js",
+              "src/higan.js",
+              "src/landscape.js",
+              "src/animal.js",
+              "src/backdoor.js",
+              "src/kasen.js",
+              "src/current-hell.js",
+              "src/rainbow-mine.js",
+              "src/highland.js",
+              "src/hakurei-plants.js",
+              "src/hakurei-transition.js",
+              "src/asama.js",
+              "src/asama-roads.js",
+              "src/surface-contact.js",
+              "src/hiten.js",
+              "src/mayohiga.js",
+              "src/peony.js",
+              "src/waterfall-cave.js",
+              "src/cucumber-farm.js",
+              "src/wind-cave.js",
+              "src/geyser.js",
+              "src/geyser-center.js",
+              "src/kourindou-upgrade.js",
+              "src/forest-upgrade.js",
+              "src/village-upgrade.js",
+              "src/trail-upgrade.js",
+              "src/trail-plants.js",
+              "src/trail-landscape.js",
+              "src/forest-entrance-plants.js",
+              "src/forest-entrance-ground.js",
+              "src/forest-entrance.js",
+              "src/forest-canopy-plants.js",
+              "src/forest-canopy-ground.js",
+              "src/forest-canopy-road.js",
+              "src/forest-crown-rollout.js",
+              "src/forest-canopy.js",
+              "src/bamboo-entry-plants.js",
+              "src/bamboo-entry-upgrade.js",
+              "src/sunflower-entry.js"
+            ],
+            "deferredSuffix": [
+              "src/flower-hill-entry.js"
+            ],
+            "projectSHA256": "fd2555966bc8b3cc45afc6e076bde296adc948288fbb380dd3ce0db4b2e8e9b5",
+            "rendererSHA256": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4"
+          }
+        },
+        {
+          "name": "terrain, navigation, predecessors and one real public wrapper retained",
+          "passed": true,
+          "result": {
+            "predecessorHooks": 18,
+            "terrainAndNavigationUnchanged": true
+          }
+        },
+        {
+          "name": "complete actual public boot before the Muenzuka wrapper",
+          "passed": true,
+          "result": {
+            "records": 2154,
+            "predecessorHooks": 18,
+            "SolarContactSHA256": "1e27050b82f74f09165bc9d380566d0630981883b58fe55736a2b29556c94c79"
+          }
+        },
+        {
+          "name": "actual registered cold wrapper publishes only two records",
+          "passed": true,
+          "result": {
+            "records": 2156,
+            "added": 2
+          }
+        },
+        {
+          "name": "all original public records and independent cold instance identities protected",
+          "passed": true,
+          "result": {
+            "untouchedRecords": 2152,
+            "coldTrees": 31,
+            "replacedColdTrees": 10,
+            "addedColdLeafRecords": 2
+          }
+        },
+        {
+          "name": "public wrapper idempotence and complete backing ownership",
+          "passed": true,
+          "result": {
+            "addedBackingBytes": 290068,
+            "includesUnusedPublicNearCache": true,
+            "packBytes": 144304456
+          }
+        },
+        {
+          "name": "independent actual native baseline digest",
+          "passed": true,
+          "result": {
+            "digest": "fce019a1625ad753025841ebb396bf84a5844c9d9284dce9f45250789514a058",
+            "records": 63,
+            "bytes": 4718792
+          }
+        },
+        {
+          "name": "real native wrapper matches the protected replacement and keeps every other source byte",
+          "passed": true,
+          "result": {
+            "records": 63,
+            "replacedLeafRecords": 6,
+            "trees": 25,
+            "allStemsPurpleCherriesPathsMemorialsShedAndFlowersUnchanged": true
+          }
+        },
+        {
+          "name": "complete new source cost across distinct public and native contexts",
+          "passed": true,
+          "result": {
+            "publicBackingBytes": 290068,
+            "nativeBackingBytes": 287712,
+            "totalAddedBackingBytes": 577780,
+            "cap": 629145.6,
+            "textureDelta": 0,
+            "physicalVRAMMeasured": false
+          }
+        },
+        {
+          "name": "near and far crowns are finite closed masses with attached folded sprays",
+          "passed": true,
+          "result": [
+            {
+              "lod": "near",
+              "result": {
+                "triangles": 1152,
+                "closedShells": 9,
+                "openSprays": 108,
+                "minimumArea": 0.0509061804085044,
+                "minimumNormal": 0.9999999620833925
+              }
+            },
+            {
+              "lod": "far",
+              "result": {
+                "triangles": 180,
+                "closedShells": 9,
+                "openSprays": 0,
+                "minimumArea": 3.615468835434732,
+                "minimumNormal": 0.9999999620833925
+              }
+            },
+            {
+              "lod": "near",
+              "result": {
+                "triangles": 1152,
+                "closedShells": 9,
+                "openSprays": 108,
+                "minimumArea": 0.05182354557503326,
+                "minimumNormal": 0.9999999650096758
+              }
+            },
+            {
+              "lod": "far",
+              "result": {
+                "triangles": 180,
+                "closedShells": 9,
+                "openSprays": 0,
+                "minimumArea": 3.7733548826947736,
+                "minimumNormal": 0.9999999753279917
+              }
+            }
+          ]
+        },
+        {
+          "name": "only the six native and two cold records receive complete immutable LOD wind envelopes",
+          "passed": true,
+          "result": {
+            "nativeRecords": 6,
+            "coldRecords": 2,
+            "rows": [
+              {
+                "id": "muenzuka:trees:-23:7:0:leaf",
+                "vertices": 27972,
+                "maximumOutside": -0.056874008701989,
+                "minimumRootClearance": 7.0117025208033965
+              },
+              {
+                "id": "muenzuka:trees:-23:6:1:leaf",
+                "vertices": 19980,
+                "maximumOutside": -1.490673187288749,
+                "minimumRootClearance": 8.570615872731082
+              },
+              {
+                "id": "muenzuka:trees:-23:7:1:leaf",
+                "vertices": 23976,
+                "maximumOutside": -1.0550884431071097,
+                "minimumRootClearance": 7.6731435688719785
+              },
+              {
+                "id": "muenzuka:trees:-23:6:0:leaf",
+                "vertices": 19980,
+                "maximumOutside": -0.7817388621482451,
+                "minimumRootClearance": 6.232847670015872
+              },
+              {
+                "id": "muenzuka:trees:-23:8:0:leaf",
+                "vertices": 3996,
+                "maximumOutside": -0.00032355127149408247,
+                "minimumRootClearance": 10.20594016637267
+              },
+              {
+                "id": "muenzuka:trees:-23:8:1:leaf",
+                "vertices": 3996,
+                "maximumOutside": -0.00031229430606671826,
+                "minimumRootClearance": 10.822857500500504
+              },
+              {
+                "id": "overview016:muenzuka|forestLeaf|vegetation|I7:muenzuka-west-edge",
+                "vertices": 3240,
+                "maximumOutside": -1.4162907949896493,
+                "minimumRootClearance": 6.445378373354288
+              },
+              {
+                "id": "overview016:muenzuka|forestLeaf|vegetation|I9:muenzuka-west-edge",
+                "vertices": 2160,
+                "maximumOutside": -1.4280403020698316,
+                "minimumRootClearance": 8.077225943097801
+              }
+            ],
+            "shaderPhaseEnvelope": "All ±X/±Z vertex envelope corners after each original instance transform",
+            "newGPUArrays": 0
+          }
+        },
+        {
+          "name": "source frozen through execution",
+          "passed": true,
+          "result": {
+            "sourceSHA256": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045"
+          }
+        }
+      ],
+      "passed": true,
+      "nativeBuildCount": 2,
+      "noGPU": true,
+      "fixtureRewriting": false,
+      "publicAddedBackingBytes": 290068,
+      "candidateNativeGeometrySHA256": "c0f2f1378ec19e5e10be8dc5e21240390315e4eddbd616c4eccc4dc8db6123b2",
+      "wallMs": 47527.95230800001,
+      "notRun": [
+        "WebGL visual acceptance",
+        "Submitted draw/triangle and residency comparison",
+        "Production input and unload/reentry",
+        "Complete Node regression"
+      ]
+    },
+    "无名之丘坡体源数据检查通过": {
+      "schema": 1,
+      "kind": "Independent Flower Hill public-source preflight",
+      "sourceSHA256": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549",
+      "unitSolarPrefix": {
+        "length": 46,
+        "orderedSHA256": "ed0a8a18476b9f510bfe7a5199e4e6de19bda9e3ad6cea3e13095c9304ab7f04"
+      },
+      "scope": [
+        -1280,
+        960,
+        -928,
+        1376
+      ],
+      "noGPU": true,
+      "nativeBuildCount": 0,
+      "fixtureRewriting": false,
+      "checks": [
+        {
+          "name": "frozen source and independently fixed accepted prefix",
+          "passed": true,
+          "result": {
+            "version": "0.29.0",
+            "title": "伪天棚 · 残雪高地与驹草旧屋",
+            "threeRevision": "185",
+            "worldBuilders": [
+              "src/world-builder.js",
+              "src/old-hell.js",
+              "src/kishinjou.js",
+              "src/lunar.js",
+              "src/makai.js",
+              "src/netherworld.js",
+              "src/landmarks.js",
+              "src/heaven.js",
+              "src/higan.js",
+              "src/landscape.js",
+              "src/animal.js",
+              "src/backdoor.js",
+              "src/kasen.js",
+              "src/current-hell.js",
+              "src/rainbow-mine.js",
+              "src/highland.js",
+              "src/hakurei-plants.js",
+              "src/hakurei-transition.js",
+              "src/asama.js",
+              "src/asama-roads.js",
+              "src/surface-contact.js",
+              "src/hiten.js",
+              "src/mayohiga.js",
+              "src/peony.js",
+              "src/waterfall-cave.js",
+              "src/cucumber-farm.js",
+              "src/wind-cave.js",
+              "src/geyser.js",
+              "src/geyser-center.js",
+              "src/kourindou-upgrade.js",
+              "src/forest-upgrade.js",
+              "src/village-upgrade.js",
+              "src/trail-upgrade.js",
+              "src/trail-plants.js",
+              "src/trail-landscape.js",
+              "src/forest-entrance-plants.js",
+              "src/forest-entrance-ground.js",
+              "src/forest-entrance.js",
+              "src/forest-canopy-plants.js",
+              "src/forest-canopy-ground.js",
+              "src/forest-canopy-road.js",
+              "src/forest-crown-rollout.js",
+              "src/forest-canopy.js",
+              "src/bamboo-entry-plants.js",
+              "src/bamboo-entry-upgrade.js",
+              "src/sunflower-entry.js",
+              "src/muenzuka-edge.js",
+              "src/flower-hill-entry.js"
+            ],
+            "extensionRenderers": [
+              "src/asama-renderer.js",
+              "src/hiten-renderer.js",
+              "src/mayohiga-renderer.js",
+              "src/peony-renderer.js",
+              "src/waterfall-cave-renderer.js",
+              "src/cucumber-farm-renderer.js",
+              "src/wind-cave-renderer.js",
+              "src/geyser-renderer.js",
+              "src/geyser-center-renderer.js",
+              "src/kourindou-renderer.js",
+              "src/forest-renderer.js",
+              "src/village-renderer.js",
+              "src/trail-renderer.js",
+              "src/trail-landscape-renderer.js",
+              "src/forest-path-colors.js",
+              "src/forest-path-renderer.js",
+              "src/forest-canopy-renderer.js",
+              "src/render-recovery.js",
+              "src/render-diagnostics.js",
+              "src/muenzuka-edge-renderer.js"
+            ],
+            "extensionData": [
+              "data/asama.json",
+              "data/hiten.json",
+              "data/mayohiga.json",
+              "data/peony.json",
+              "data/waterfall-cave.json",
+              "data/cucumber-farm.json",
+              "data/wind-cave.json",
+              "data/geyser.json",
+              "data/geyser-center.json"
+            ]
+          }
+        },
+        {
+          "name": "actual full production predecessors including accepted Solar",
+          "passed": true,
+          "result": {
+            "modules": [
+              "src/world-builder.js",
+              "src/old-hell.js",
+              "src/kishinjou.js",
+              "src/lunar.js",
+              "src/makai.js",
+              "src/netherworld.js",
+              "src/landmarks.js",
+              "src/heaven.js",
+              "src/higan.js",
+              "src/landscape.js",
+              "src/animal.js",
+              "src/backdoor.js",
+              "src/kasen.js",
+              "src/current-hell.js",
+              "src/rainbow-mine.js",
+              "src/highland.js",
+              "src/hakurei-plants.js",
+              "src/hakurei-transition.js",
+              "src/asama.js",
+              "src/asama-roads.js",
+              "src/surface-contact.js",
+              "src/hiten.js",
+              "src/mayohiga.js",
+              "src/peony.js",
+              "src/waterfall-cave.js",
+              "src/cucumber-farm.js",
+              "src/wind-cave.js",
+              "src/geyser.js",
+              "src/geyser-center.js",
+              "src/kourindou-upgrade.js",
+              "src/forest-upgrade.js",
+              "src/village-upgrade.js",
+              "src/trail-upgrade.js",
+              "src/trail-plants.js",
+              "src/trail-landscape.js",
+              "src/forest-entrance-plants.js",
+              "src/forest-entrance-ground.js",
+              "src/forest-entrance.js",
+              "src/forest-canopy-plants.js",
+              "src/forest-canopy-ground.js",
+              "src/forest-canopy-road.js",
+              "src/forest-crown-rollout.js",
+              "src/forest-canopy.js",
+              "src/bamboo-entry-plants.js",
+              "src/bamboo-entry-upgrade.js",
+              "src/sunflower-entry.js",
+              "src/muenzuka-edge.js",
+              "src/flower-hill-entry.js"
+            ],
+            "overviewHooks": 19,
+            "records": 2156,
+            "SolarSourceSHA256": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+            "meaning": "Actual boot additions, LANDSCAPE, highland and every reviewed registered predecessor hook; the new final hook is not yet run."
+          }
+        },
+        {
+          "name": "registered Muenzuka predecessor executes before Flower Hill",
+          "passed": true,
+          "result": {
+            "sourceSHA256": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+            "coldRecords": [
+              "overview016:muenzuka|forestLeaf|vegetation|I7:muenzuka-west-edge",
+              "overview016:muenzuka|forestLeaf|vegetation|I9:muenzuka-west-edge"
+            ],
+            "originalColdPlants": 10
+          }
+        },
+        {
+          "name": "candidate production hook and independent contact publication",
+          "passed": true,
+          "result": {
+            "records": 2156,
+            "metadata": {
+              "revision": 3,
+              "scope": [
+                -1280,
+                960,
+                -928,
+                1376
+              ],
+              "southBoundary": [
+                [
+                  -1280,
+                  1376
+                ],
+                [
+                  -1216,
+                  1376
+                ],
+                [
+                  -1088,
+                  1344
+                ],
+                [
+                  -1024,
+                  1312
+                ],
+                [
+                  -928,
+                  1280
+                ]
+              ],
+              "sections": [
+                {
+                  "x": -1280,
+                  "routeZ": 1102,
+                  "height": 191,
+                  "crestZ": 1030
+                },
+                {
+                  "x": -1216,
+                  "routeZ": 1130,
+                  "height": 181.5,
+                  "crestZ": 1040
+                },
+                {
+                  "x": -1169,
+                  "routeZ": 1137,
+                  "height": 169.05,
+                  "crestZ": 1047
+                },
+                {
+                  "x": -1152,
+                  "routeZ": 1149.5,
+                  "height": 165.25,
+                  "crestZ": 1058
+                },
+                {
+                  "x": -1120,
+                  "routeZ": 1167.5,
+                  "height": 158.3,
+                  "crestZ": 1074
+                },
+                {
+                  "x": -1088,
+                  "routeZ": 1179.2,
+                  "height": 152,
+                  "crestZ": 1088
+                },
+                {
+                  "x": -1056,
+                  "routeZ": 1188.6,
+                  "height": 146,
+                  "crestZ": 1100
+                },
+                {
+                  "x": -1024,
+                  "routeZ": 1199.8,
+                  "height": 140,
+                  "crestZ": 1112
+                },
+                {
+                  "x": -992,
+                  "routeZ": 1212.1,
+                  "height": 134,
+                  "crestZ": 1125
+                },
+                {
+                  "x": -960,
+                  "routeZ": 1222.4,
+                  "height": 129,
+                  "crestZ": 1138
+                },
+                {
+                  "x": -928,
+                  "routeZ": 1226.3,
+                  "height": 128.6,
+                  "crestZ": 1150
+                }
+              ],
+              "protectedPads": [
+                {
+                  "id": "nameless-windrock",
+                  "x": -1251,
+                  "z": 987,
+                  "w": 9,
+                  "d": 10,
+                  "blend": 48
+                }
+              ],
+              "protectedSupport": {
+                "vertices": 11,
+                "cells": [
+                  "-40,30",
+                  "-39,30",
+                  "-40,31",
+                  "-39,31"
+                ]
+              },
+              "nearChanges": [
+                {
+                  "id": "island:terrain:-1280:768",
+                  "changedVertices": 177
+                },
+                {
+                  "id": "island:terrain:-1024:768",
+                  "changedVertices": 78
+                },
+                {
+                  "id": "island:terrain:-1280:1024",
+                  "changedVertices": 672
+                },
+                {
+                  "id": "island:terrain:-1024:1024",
+                  "changedVertices": 282
+                },
+                {
+                  "id": "island:terrain:-1280:1280",
+                  "changedVertices": 208
+                },
+                {
+                  "id": "island:terrain:-1024:1280",
+                  "changedVertices": 39
+                }
+              ],
+              "farChanges": [
+                {
+                  "id": "island:terrain:-1280:768:far",
+                  "removed": 148,
+                  "added": 669
+                },
+                {
+                  "id": "island:terrain:-1024:768:far",
+                  "removed": 59,
+                  "added": 308
+                },
+                {
+                  "id": "island:terrain:-1280:1024:far",
+                  "removed": 480,
+                  "added": 1928
+                },
+                {
+                  "id": "island:terrain:-1024:1024:far",
+                  "removed": 194,
+                  "added": 634
+                },
+                {
+                  "id": "island:terrain:-1280:1280:far",
+                  "removed": 179,
+                  "added": 953
+                },
+                {
+                  "id": "island:terrain:-1024:1280:far",
+                  "removed": 40,
+                  "added": 383
+                }
+              ],
+              "activeCells": [
+                "-40,30",
+                "-39,30",
+                "-38,30",
+                "-37,30",
+                "-36,30",
+                "-35,30",
+                "-34,30",
+                "-33,30",
+                "-40,31",
+                "-39,31",
+                "-38,31",
+                "-37,31",
+                "-36,31",
+                "-35,31",
+                "-34,31",
+                "-33,31",
+                "-32,30",
+                "-31,30",
+                "-30,30",
+                "-32,31",
+                "-31,31",
+                "-30,31",
+                "-40,32",
+                "-39,32",
+                "-38,32",
+                "-37,32",
+                "-36,32",
+                "-35,32",
+                "-34,32",
+                "-33,32",
+                "-40,33",
+                "-39,33",
+                "-38,33",
+                "-37,33",
+                "-36,33",
+                "-35,33",
+                "-34,33",
+                "-33,33",
+                "-40,34",
+                "-39,34",
+                "-38,34",
+                "-37,34",
+                "-36,34",
+                "-35,34",
+                "-34,34",
+                "-33,34",
+                "-40,35",
+                "-39,35",
+                "-38,35",
+                "-37,35",
+                "-36,35",
+                "-35,35",
+                "-34,35",
+                "-33,35",
+                "-40,36",
+                "-39,36",
+                "-38,36",
+                "-37,36",
+                "-36,36",
+                "-35,36",
+                "-34,36",
+                "-33,36",
+                "-40,37",
+                "-39,37",
+                "-38,37",
+                "-37,37",
+                "-36,37",
+                "-35,37",
+                "-34,37",
+                "-33,37",
+                "-40,38",
+                "-39,38",
+                "-38,38",
+                "-37,38",
+                "-36,38",
+                "-35,38",
+                "-34,38",
+                "-33,38",
+                "-40,39",
+                "-39,39",
+                "-38,39",
+                "-37,39",
+                "-36,39",
+                "-35,39",
+                "-34,39",
+                "-33,39",
+                "-32,32",
+                "-31,32",
+                "-30,32",
+                "-32,33",
+                "-31,33",
+                "-30,33",
+                "-32,34",
+                "-31,34",
+                "-30,34",
+                "-32,35",
+                "-31,35",
+                "-30,35",
+                "-32,36",
+                "-31,36",
+                "-30,36",
+                "-32,37",
+                "-31,37",
+                "-30,37",
+                "-32,38",
+                "-31,38",
+                "-30,38",
+                "-32,39",
+                "-31,39",
+                "-30,39",
+                "-40,40",
+                "-39,40",
+                "-38,40",
+                "-37,40",
+                "-36,40",
+                "-35,40",
+                "-34,40",
+                "-33,40",
+                "-40,41",
+                "-39,41",
+                "-38,41",
+                "-37,41",
+                "-36,41",
+                "-35,41",
+                "-34,41",
+                "-33,41",
+                "-40,42",
+                "-39,42",
+                "-38,42",
+                "-37,42",
+                "-36,42",
+                "-35,42",
+                "-32,40",
+                "-31,40",
+                "-30,40"
+              ],
+              "contactCells": [
+                "-40,30",
+                "-39,30",
+                "-38,30",
+                "-37,30",
+                "-36,30",
+                "-35,30",
+                "-34,30",
+                "-33,30",
+                "-40,31",
+                "-39,31",
+                "-38,31",
+                "-37,31",
+                "-36,31",
+                "-35,31",
+                "-34,31",
+                "-33,31",
+                "-32,30",
+                "-31,30",
+                "-30,30",
+                "-32,31",
+                "-31,31",
+                "-30,31",
+                "-40,32",
+                "-39,32",
+                "-38,32",
+                "-37,32",
+                "-36,32",
+                "-35,32",
+                "-34,32",
+                "-33,32",
+                "-40,33",
+                "-39,33",
+                "-38,33",
+                "-37,33",
+                "-36,33",
+                "-35,33",
+                "-34,33",
+                "-33,33",
+                "-40,34",
+                "-39,34",
+                "-38,34",
+                "-37,34",
+                "-36,34",
+                "-35,34",
+                "-34,34",
+                "-33,34",
+                "-40,35",
+                "-39,35",
+                "-38,35",
+                "-37,35",
+                "-36,35",
+                "-35,35",
+                "-34,35",
+                "-33,35",
+                "-40,36",
+                "-39,36",
+                "-38,36",
+                "-37,36",
+                "-36,36",
+                "-35,36",
+                "-34,36",
+                "-33,36",
+                "-40,37",
+                "-39,37",
+                "-38,37",
+                "-37,37",
+                "-36,37",
+                "-35,37",
+                "-34,37",
+                "-33,37",
+                "-40,38",
+                "-39,38",
+                "-38,38",
+                "-37,38",
+                "-36,38",
+                "-35,38",
+                "-34,38",
+                "-33,38",
+                "-40,39",
+                "-39,39",
+                "-38,39",
+                "-37,39",
+                "-36,39",
+                "-35,39",
+                "-34,39",
+                "-33,39",
+                "-32,32",
+                "-31,32",
+                "-30,32",
+                "-32,33",
+                "-31,33",
+                "-30,33",
+                "-32,34",
+                "-31,34",
+                "-30,34",
+                "-32,35",
+                "-31,35",
+                "-30,35",
+                "-32,36",
+                "-31,36",
+                "-30,36",
+                "-32,37",
+                "-31,37",
+                "-30,37",
+                "-32,38",
+                "-31,38",
+                "-30,38",
+                "-32,39",
+                "-31,39",
+                "-30,39",
+                "-40,40",
+                "-39,40",
+                "-38,40",
+                "-37,40",
+                "-36,40",
+                "-35,40",
+                "-34,40",
+                "-33,40",
+                "-40,41",
+                "-39,41",
+                "-38,41",
+                "-37,41",
+                "-36,41",
+                "-35,41",
+                "-34,41",
+                "-33,41",
+                "-40,42",
+                "-39,42",
+                "-38,42",
+                "-37,42",
+                "-36,42",
+                "-35,42",
+                "-32,40",
+                "-31,40",
+                "-30,40",
+                "-41,29",
+                "-41,30",
+                "-41,31",
+                "-40,29",
+                "-39,29",
+                "-38,29",
+                "-37,29",
+                "-36,29",
+                "-35,29",
+                "-34,29",
+                "-33,29",
+                "-32,29",
+                "-41,32",
+                "-31,29",
+                "-30,29",
+                "-29,29",
+                "-29,30",
+                "-29,31",
+                "-29,32",
+                "-41,33",
+                "-41,34",
+                "-41,35",
+                "-41,36",
+                "-41,37",
+                "-41,38",
+                "-41,39",
+                "-41,40",
+                "-29,33",
+                "-29,34",
+                "-29,35",
+                "-29,36",
+                "-29,37",
+                "-29,38",
+                "-29,39",
+                "-29,40",
+                "-41,41",
+                "-32,41",
+                "-41,42",
+                "-34,42",
+                "-33,42",
+                "-32,42",
+                "-41,43",
+                "-40,43",
+                "-39,43",
+                "-38,43",
+                "-37,43",
+                "-36,43",
+                "-35,43",
+                "-34,43",
+                "-31,41",
+                "-30,41",
+                "-29,41"
+              ],
+              "seam": {
+                "width": 32,
+                "edges": [
+                  [
+                    -1280,
+                    960,
+                    -1280,
+                    992
+                  ],
+                  [
+                    -1280,
+                    960,
+                    -1248,
+                    960
+                  ],
+                  [
+                    -1248,
+                    960,
+                    -1216,
+                    960
+                  ],
+                  [
+                    -1216,
+                    960,
+                    -1184,
+                    960
+                  ],
+                  [
+                    -1184,
+                    960,
+                    -1152,
+                    960
+                  ],
+                  [
+                    -1152,
+                    960,
+                    -1120,
+                    960
+                  ],
+                  [
+                    -1120,
+                    960,
+                    -1088,
+                    960
+                  ],
+                  [
+                    -1088,
+                    960,
+                    -1056,
+                    960
+                  ],
+                  [
+                    -1056,
+                    960,
+                    -1024,
+                    960
+                  ],
+                  [
+                    -1280,
+                    992,
+                    -1280,
+                    1024
+                  ],
+                  [
+                    -1024,
+                    960,
+                    -992,
+                    960
+                  ],
+                  [
+                    -992,
+                    960,
+                    -960,
+                    960
+                  ],
+                  [
+                    -928,
+                    960,
+                    -928,
+                    992
+                  ],
+                  [
+                    -960,
+                    960,
+                    -928,
+                    960
+                  ],
+                  [
+                    -928,
+                    992,
+                    -928,
+                    1024
+                  ],
+                  [
+                    -1280,
+                    1024,
+                    -1280,
+                    1056
+                  ],
+                  [
+                    -1280,
+                    1056,
+                    -1280,
+                    1088
+                  ],
+                  [
+                    -1280,
+                    1088,
+                    -1280,
+                    1120
+                  ],
+                  [
+                    -1280,
+                    1120,
+                    -1280,
+                    1152
+                  ],
+                  [
+                    -1280,
+                    1152,
+                    -1280,
+                    1184
+                  ],
+                  [
+                    -1280,
+                    1184,
+                    -1280,
+                    1216
+                  ],
+                  [
+                    -1280,
+                    1216,
+                    -1280,
+                    1248
+                  ],
+                  [
+                    -1280,
+                    1248,
+                    -1280,
+                    1280
+                  ],
+                  [
+                    -928,
+                    1024,
+                    -928,
+                    1056
+                  ],
+                  [
+                    -928,
+                    1056,
+                    -928,
+                    1088
+                  ],
+                  [
+                    -928,
+                    1088,
+                    -928,
+                    1120
+                  ],
+                  [
+                    -928,
+                    1120,
+                    -928,
+                    1152
+                  ],
+                  [
+                    -928,
+                    1152,
+                    -928,
+                    1184
+                  ],
+                  [
+                    -928,
+                    1184,
+                    -928,
+                    1216
+                  ],
+                  [
+                    -928,
+                    1216,
+                    -928,
+                    1248
+                  ],
+                  [
+                    -928,
+                    1248,
+                    -928,
+                    1280
+                  ],
+                  [
+                    -1280,
+                    1280,
+                    -1280,
+                    1312
+                  ],
+                  [
+                    -1280,
+                    1312,
+                    -1280,
+                    1344
+                  ],
+                  [
+                    -1088,
+                    1344,
+                    -1056,
+                    1344
+                  ],
+                  [
+                    -1024,
+                    1312,
+                    -1024,
+                    1344
+                  ],
+                  [
+                    -1056,
+                    1344,
+                    -1024,
+                    1344
+                  ],
+                  [
+                    -1280,
+                    1344,
+                    -1280,
+                    1376
+                  ],
+                  [
+                    -1280,
+                    1376,
+                    -1248,
+                    1376
+                  ],
+                  [
+                    -1248,
+                    1376,
+                    -1216,
+                    1376
+                  ],
+                  [
+                    -1216,
+                    1376,
+                    -1184,
+                    1376
+                  ],
+                  [
+                    -1184,
+                    1376,
+                    -1152,
+                    1376
+                  ],
+                  [
+                    -1152,
+                    1376,
+                    -1120,
+                    1376
+                  ],
+                  [
+                    -1088,
+                    1344,
+                    -1088,
+                    1376
+                  ],
+                  [
+                    -1120,
+                    1376,
+                    -1088,
+                    1376
+                  ],
+                  [
+                    -1024,
+                    1312,
+                    -992,
+                    1312
+                  ],
+                  [
+                    -992,
+                    1312,
+                    -960,
+                    1312
+                  ],
+                  [
+                    -928,
+                    1280,
+                    -928,
+                    1312
+                  ],
+                  [
+                    -960,
+                    1312,
+                    -928,
+                    1312
+                  ]
+                ],
+                "weight": "1-smoothstep(0,32,distance-to-active-boundary), sampled at split-mesh vertices",
+                "height": "newNear + interpolate(vertexWeight * originalLODDelta)",
+                "support": "Faces incident to a positive-weight vertex form the transition band; faces with all zero vertex weights are the interior."
+              },
+              "instances": [
+                {
+                  "id": "overview:nameless:trees",
+                  "moved": 1,
+                  "maxDelta": 28.69271998514887
+                },
+                {
+                  "id": "island:transition:broad:-2:2",
+                  "moved": 12,
+                  "maxDelta": 38.07274601353561
+                },
+                {
+                  "id": "island:transition:shrub:-2:2",
+                  "moved": 6,
+                  "maxDelta": 32.99470922339242
+                },
+                {
+                  "id": "island:transition:broad:-3:2",
+                  "moved": 7,
+                  "maxDelta": 32.54097827186342
+                },
+                {
+                  "id": "island:transition:shrub:-3:2",
+                  "moved": 1,
+                  "maxDelta": 0.6273637085687369
+                },
+                {
+                  "id": "island:transition:rock:-3:1",
+                  "moved": 1,
+                  "maxDelta": 1.403735104802763
+                },
+                {
+                  "id": "island:transition:rock:-2:2",
+                  "moved": 1,
+                  "maxDelta": 8.487273595063016
+                }
+              ],
+              "coldSurfaces": [
+                {
+                  "id": "overview:sunflower:hlod:architecture:sunflower:-4:4:meadowGround",
+                  "changedVertices": 31,
+                  "maxDelta": 5.069856257294305,
+                  "rigid": false
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:meadowGround",
+                  "changedVertices": 319,
+                  "maxDelta": 35.53824492753483,
+                  "rigid": false
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "changedVertices": 1824,
+                  "maxDelta": 32.58456719544483,
+                  "rigid": true
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-6:4:meadowGround",
+                  "changedVertices": 70,
+                  "maxDelta": 1.5482022943906486,
+                  "rigid": false
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-6:4:matte",
+                  "changedVertices": 112,
+                  "maxDelta": 4.65173203474842,
+                  "rigid": true
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-6:3:meadowGround",
+                  "changedVertices": 46,
+                  "maxDelta": 0.04944344875255524,
+                  "rigid": false
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:3:matte",
+                  "changedVertices": 896,
+                  "maxDelta": 4.339861792469804,
+                  "rigid": true
+                },
+                {
+                  "id": "overview:nameless:flowers",
+                  "changedVertices": 2623,
+                  "maxDelta": 9.054463386535645,
+                  "rigid": false
+                }
+              ],
+              "coldRigidParts": [
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1188.4500122070312,
+                    1162.3500366210938
+                  ],
+                  "deltaY": -3.22817860764917,
+                  "originalBounds": [
+                    [
+                      -1188.9000244140625,
+                      170.5500030517578,
+                      1161.9000244140625
+                    ],
+                    [
+                      -1188,
+                      171,
+                      1162.800048828125
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1179.6749877929688,
+                    1223.0999755859375
+                  ],
+                  "deltaY": 8.152143442828674,
+                  "originalBounds": [
+                    [
+                      -1181.699951171875,
+                      136.8000030517578,
+                      1221.75
+                    ],
+                    [
+                      -1177.6500244140625,
+                      138.60000610351562,
+                      1224.449951171875
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93,
+                    94,
+                    95,
+                    96,
+                    97,
+                    98,
+                    99,
+                    100,
+                    101,
+                    102,
+                    103,
+                    104,
+                    105,
+                    106,
+                    107,
+                    108,
+                    109,
+                    110,
+                    111,
+                    112,
+                    113,
+                    114,
+                    115,
+                    116,
+                    117
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1204.875,
+                    1152
+                  ],
+                  "deltaY": -2.196791172027588,
+                  "originalBounds": [
+                    [
+                      -1205.550048828125,
+                      176.39999389648438,
+                      1151.550048828125
+                    ],
+                    [
+                      -1204.199951171875,
+                      176.85000610351562,
+                      1152.449951171875
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    118,
+                    119,
+                    120,
+                    121,
+                    122,
+                    123,
+                    124,
+                    125,
+                    126,
+                    127,
+                    128,
+                    129,
+                    130,
+                    131,
+                    132,
+                    133,
+                    134,
+                    135,
+                    136,
+                    137,
+                    138,
+                    139,
+                    140,
+                    141,
+                    142,
+                    143,
+                    144,
+                    145,
+                    146,
+                    147,
+                    148,
+                    149,
+                    150,
+                    151,
+                    152,
+                    153,
+                    154,
+                    155,
+                    156,
+                    157,
+                    158,
+                    159
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1218.824951171875,
+                    1163.0249633789062
+                  ],
+                  "deltaY": -4.30033915216336,
+                  "originalBounds": [
+                    [
+                      -1219.949951171875,
+                      177.75,
+                      1162.3499755859375
+                    ],
+                    [
+                      -1217.699951171875,
+                      178.64999389648438,
+                      1163.699951171875
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    160,
+                    161,
+                    162,
+                    163,
+                    164,
+                    165,
+                    166,
+                    167,
+                    168,
+                    169,
+                    170,
+                    171,
+                    172,
+                    173,
+                    174,
+                    175,
+                    176,
+                    177,
+                    178,
+                    179,
+                    180,
+                    181,
+                    182,
+                    183,
+                    184,
+                    185,
+                    186,
+                    187,
+                    188,
+                    189,
+                    190,
+                    191,
+                    192,
+                    193,
+                    194,
+                    195,
+                    196,
+                    197,
+                    198,
+                    199,
+                    200,
+                    201
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1096.760009765625,
+                    1165.0800170898438
+                  ],
+                  "deltaY": 30.741481362842023,
+                  "originalBounds": [
+                    [
+                      -1097.5999755859375,
+                      124.5999984741211,
+                      1164.52001953125
+                    ],
+                    [
+                      -1095.9200439453125,
+                      125.44000244140625,
+                      1165.6400146484375
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    202,
+                    203,
+                    204,
+                    205,
+                    206,
+                    207,
+                    208,
+                    209,
+                    210,
+                    211,
+                    212,
+                    213,
+                    214,
+                    215,
+                    216,
+                    217,
+                    218,
+                    219,
+                    220,
+                    221,
+                    222,
+                    223,
+                    224,
+                    225
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1160.7749633789062,
+                    1061.1000366210938
+                  ],
+                  "deltaY": -2.3331252947682515,
+                  "originalBounds": [
+                    [
+                      -1161.449951171875,
+                      174.14999389648438,
+                      1060.6500244140625
+                    ],
+                    [
+                      -1160.0999755859375,
+                      175.0500030517578,
+                      1061.550048828125
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    226,
+                    227,
+                    228,
+                    229,
+                    230,
+                    231,
+                    232,
+                    233,
+                    234,
+                    235,
+                    236,
+                    237,
+                    238,
+                    239,
+                    240,
+                    241,
+                    242,
+                    243,
+                    244,
+                    245,
+                    246,
+                    247,
+                    248,
+                    249,
+                    250,
+                    251,
+                    252,
+                    253,
+                    254,
+                    255,
+                    256,
+                    257,
+                    258,
+                    259,
+                    260,
+                    261,
+                    262,
+                    263
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1203.2999877929688,
+                    1146.6000366210938
+                  ],
+                  "deltaY": -1.5160549668362364,
+                  "originalBounds": [
+                    [
+                      -1204.199951171875,
+                      176.85000610351562,
+                      1146.1500244140625
+                    ],
+                    [
+                      -1202.4000244140625,
+                      177.3000030517578,
+                      1147.050048828125
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    264,
+                    265,
+                    266,
+                    267,
+                    268,
+                    269,
+                    270,
+                    271,
+                    272,
+                    273,
+                    274,
+                    275,
+                    276,
+                    277,
+                    278,
+                    279,
+                    280,
+                    281,
+                    282,
+                    283,
+                    284,
+                    285,
+                    286,
+                    287,
+                    288,
+                    289,
+                    290,
+                    291,
+                    292,
+                    293,
+                    294,
+                    295,
+                    296,
+                    297,
+                    298,
+                    299,
+                    300,
+                    301,
+                    302,
+                    303,
+                    304,
+                    305
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1211.4000244140625,
+                    1120.9500122070312
+                  ],
+                  "deltaY": 0.06390094727976248,
+                  "originalBounds": [
+                    [
+                      -1213.6500244140625,
+                      181.35000610351562,
+                      1119.5999755859375
+                    ],
+                    [
+                      -1209.1500244140625,
+                      183.60000610351562,
+                      1122.300048828125
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    306,
+                    307,
+                    308,
+                    309,
+                    310,
+                    311,
+                    312,
+                    313,
+                    314,
+                    315,
+                    316,
+                    317,
+                    318,
+                    319,
+                    320,
+                    321,
+                    322,
+                    323,
+                    324,
+                    325,
+                    326,
+                    327,
+                    328,
+                    329,
+                    330,
+                    331,
+                    332,
+                    333,
+                    334,
+                    335,
+                    336,
+                    337,
+                    338,
+                    339,
+                    340,
+                    341,
+                    342,
+                    343,
+                    344,
+                    345,
+                    346,
+                    347
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1163.925048828125,
+                    1114.875
+                  ],
+                  "deltaY": 0.7832408738322556,
+                  "originalBounds": [
+                    [
+                      -1165.050048828125,
+                      170.10000610351562,
+                      1114.199951171875
+                    ],
+                    [
+                      -1162.800048828125,
+                      171.4499969482422,
+                      1115.550048828125
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    348,
+                    349,
+                    350,
+                    351,
+                    352,
+                    353,
+                    354,
+                    355,
+                    356,
+                    357,
+                    358,
+                    359,
+                    360,
+                    361,
+                    362,
+                    363,
+                    364,
+                    365,
+                    366,
+                    367,
+                    368,
+                    369,
+                    370,
+                    371,
+                    372,
+                    373,
+                    374,
+                    375,
+                    376,
+                    377,
+                    378,
+                    379,
+                    380,
+                    381,
+                    382,
+                    383,
+                    384,
+                    385,
+                    386,
+                    387,
+                    388,
+                    389
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1179.4500122070312,
+                    1098.9000244140625
+                  ],
+                  "deltaY": -0.5061419833800755,
+                  "originalBounds": [
+                    [
+                      -1181.25,
+                      175.9499969482422,
+                      1097.550048828125
+                    ],
+                    [
+                      -1177.6500244140625,
+                      177.75,
+                      1100.25
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    390,
+                    391,
+                    392,
+                    393,
+                    394,
+                    395,
+                    396,
+                    397,
+                    398,
+                    399,
+                    400,
+                    401,
+                    402,
+                    403,
+                    404,
+                    405,
+                    406,
+                    407,
+                    408,
+                    409,
+                    410,
+                    411,
+                    412,
+                    413,
+                    414,
+                    415,
+                    416,
+                    417,
+                    418,
+                    419,
+                    420,
+                    421,
+                    422,
+                    423,
+                    424,
+                    425,
+                    426,
+                    427,
+                    428,
+                    429,
+                    430,
+                    431
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1074.1499633789062,
+                    1129.9500122070312
+                  ],
+                  "deltaY": 32.58456719544483,
+                  "originalBounds": [
+                    [
+                      -1075.949951171875,
+                      121.05000305175781,
+                      1128.5999755859375
+                    ],
+                    [
+                      -1072.3499755859375,
+                      122.8499984741211,
+                      1131.300048828125
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    432,
+                    433,
+                    434,
+                    435,
+                    436,
+                    437,
+                    438,
+                    439,
+                    440,
+                    441,
+                    442,
+                    443,
+                    444,
+                    445,
+                    446,
+                    447,
+                    448,
+                    449,
+                    450,
+                    451,
+                    452,
+                    453,
+                    454,
+                    455,
+                    456,
+                    457,
+                    458,
+                    459,
+                    460,
+                    461,
+                    462,
+                    463,
+                    464,
+                    465,
+                    466,
+                    467,
+                    468,
+                    469,
+                    470,
+                    471,
+                    472,
+                    473
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1127.0250244140625,
+                    1057.9500122070312
+                  ],
+                  "deltaY": -0.3131834287196398,
+                  "originalBounds": [
+                    [
+                      -1129.050048828125,
+                      164.6999969482422,
+                      1056.5999755859375
+                    ],
+                    [
+                      -1125,
+                      166.5,
+                      1059.300048828125
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    474,
+                    475,
+                    476,
+                    477,
+                    478,
+                    479,
+                    480,
+                    481,
+                    482,
+                    483,
+                    484,
+                    485,
+                    486,
+                    487,
+                    488,
+                    489,
+                    490,
+                    491,
+                    492,
+                    493,
+                    494,
+                    495,
+                    496,
+                    497,
+                    498,
+                    499,
+                    500,
+                    501,
+                    502,
+                    503,
+                    504,
+                    505,
+                    506,
+                    507,
+                    508,
+                    509,
+                    510,
+                    511,
+                    512,
+                    513,
+                    514,
+                    515
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1070.5499877929688,
+                    1096.425048828125
+                  ],
+                  "deltaY": 26.657819379441207,
+                  "originalBounds": [
+                    [
+                      -1072.3499755859375,
+                      126.44999694824219,
+                      1095.300048828125
+                    ],
+                    [
+                      -1068.75,
+                      128.25,
+                      1097.550048828125
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    516,
+                    517,
+                    518,
+                    519,
+                    520,
+                    521,
+                    522,
+                    523,
+                    524,
+                    525,
+                    526,
+                    527,
+                    528,
+                    529,
+                    530,
+                    531,
+                    532,
+                    533,
+                    534,
+                    535,
+                    536,
+                    537,
+                    538,
+                    539,
+                    540,
+                    541,
+                    542,
+                    543,
+                    544,
+                    545,
+                    546,
+                    547,
+                    548,
+                    549,
+                    550,
+                    551,
+                    552,
+                    553,
+                    554,
+                    555,
+                    556,
+                    557
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1110.375,
+                    1093.0499877929688
+                  ],
+                  "deltaY": 5.844347093428951,
+                  "originalBounds": [
+                    [
+                      -1112.4000244140625,
+                      155.25,
+                      1091.699951171875
+                    ],
+                    [
+                      -1108.3499755859375,
+                      157.0500030517578,
+                      1094.4000244140625
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    558,
+                    559,
+                    560,
+                    561,
+                    562,
+                    563,
+                    564,
+                    565,
+                    566,
+                    567,
+                    568,
+                    569,
+                    570,
+                    571,
+                    572,
+                    573,
+                    574,
+                    575,
+                    576,
+                    577,
+                    578,
+                    579,
+                    580,
+                    581,
+                    582,
+                    583,
+                    584,
+                    585,
+                    586,
+                    587,
+                    588,
+                    589,
+                    590,
+                    591,
+                    592,
+                    593,
+                    594,
+                    595,
+                    596,
+                    597
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1096.6500244140625,
+                    1073.25
+                  ],
+                  "deltaY": 7.512221740325913,
+                  "originalBounds": [
+                    [
+                      -1097.550048828125,
+                      151.1999969482422,
+                      1072.800048828125
+                    ],
+                    [
+                      -1095.75,
+                      151.64999389648438,
+                      1073.699951171875
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    598,
+                    599,
+                    600,
+                    601,
+                    602,
+                    603,
+                    604,
+                    605,
+                    606,
+                    607,
+                    608,
+                    609,
+                    610,
+                    611,
+                    612,
+                    613,
+                    614,
+                    615,
+                    616,
+                    617,
+                    618,
+                    619,
+                    620,
+                    621,
+                    622,
+                    623,
+                    624,
+                    625,
+                    626,
+                    627,
+                    628,
+                    629,
+                    630,
+                    631,
+                    632,
+                    633,
+                    634,
+                    635,
+                    636,
+                    637,
+                    638,
+                    639
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1117.3500366210938,
+                    1107.4500122070312
+                  ],
+                  "deltaY": 6.913972353911959,
+                  "originalBounds": [
+                    [
+                      -1119.1500244140625,
+                      155.6999969482422,
+                      1106.0999755859375
+                    ],
+                    [
+                      -1115.550048828125,
+                      157.5,
+                      1108.800048828125
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:4:matte",
+                  "triangles": [
+                    640,
+                    641,
+                    642,
+                    643,
+                    644,
+                    645,
+                    646,
+                    647,
+                    648,
+                    649,
+                    650,
+                    651,
+                    652,
+                    653,
+                    654,
+                    655,
+                    656,
+                    657,
+                    658,
+                    659,
+                    660,
+                    661,
+                    662,
+                    663,
+                    664,
+                    665,
+                    666,
+                    667,
+                    668,
+                    669,
+                    670,
+                    671,
+                    672,
+                    673,
+                    674,
+                    675,
+                    676,
+                    677,
+                    678,
+                    679,
+                    680,
+                    681
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1084.5,
+                    1147.5
+                  ],
+                  "deltaY": 32.29797983169556,
+                  "originalBounds": [
+                    [
+                      -1086.75,
+                      122.8499984741211,
+                      1146.1500244140625
+                    ],
+                    [
+                      -1082.25,
+                      124.6500015258789,
+                      1148.8499755859375
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-6:4:matte",
+                  "triangles": [
+                    1658,
+                    1659,
+                    1660,
+                    1661,
+                    1662,
+                    1663,
+                    1664,
+                    1665,
+                    1666,
+                    1667,
+                    1668,
+                    1669,
+                    1670,
+                    1671,
+                    1672,
+                    1673,
+                    1674,
+                    1675,
+                    1676,
+                    1677,
+                    1678,
+                    1679,
+                    1680,
+                    1681,
+                    1682,
+                    1683,
+                    1684,
+                    1685,
+                    1686,
+                    1687,
+                    1688,
+                    1689,
+                    1690,
+                    1691,
+                    1692,
+                    1693,
+                    1694,
+                    1695,
+                    1696,
+                    1697,
+                    1698,
+                    1699
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1248.300048828125,
+                    1175.625
+                  ],
+                  "deltaY": -4.65173203474842,
+                  "originalBounds": [
+                    [
+                      -1250.550048828125,
+                      181.35000610351562,
+                      1174.050048828125
+                    ],
+                    [
+                      -1246.050048828125,
+                      183.60000610351562,
+                      1177.199951171875
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:3:matte",
+                  "triangles": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1139.1749877929688,
+                    975.6000061035156
+                  ],
+                  "deltaY": 0.3176708571554627,
+                  "originalBounds": [
+                    [
+                      -1141.6500244140625,
+                      167.39999389648438,
+                      973.7999877929688
+                    ],
+                    [
+                      -1136.699951171875,
+                      170.10000610351562,
+                      977.4000244140625
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:3:matte",
+                  "triangles": [
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1077.9749755859375,
+                    1002.8250122070312
+                  ],
+                  "deltaY": 1.8386696909437887,
+                  "originalBounds": [
+                    [
+                      -1080,
+                      134.5500030517578,
+                      1001.25
+                    ],
+                    [
+                      -1075.949951171875,
+                      136.8000030517578,
+                      1004.4000244140625
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:3:matte",
+                  "triangles": [
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93,
+                    94,
+                    95,
+                    96,
+                    97,
+                    98,
+                    99,
+                    100,
+                    101,
+                    102,
+                    103,
+                    104,
+                    105,
+                    106,
+                    107,
+                    108,
+                    109,
+                    110,
+                    111,
+                    112,
+                    113,
+                    114,
+                    115,
+                    116,
+                    117,
+                    118,
+                    119,
+                    120,
+                    121,
+                    122,
+                    123,
+                    124,
+                    125
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1089.2249755859375,
+                    1034.0999755859375
+                  ],
+                  "deltaY": 3.950389055355913,
+                  "originalBounds": [
+                    [
+                      -1091.25,
+                      148.5,
+                      1032.75
+                    ],
+                    [
+                      -1087.199951171875,
+                      150.3000030517578,
+                      1035.449951171875
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:3:matte",
+                  "triangles": [
+                    126,
+                    127,
+                    128,
+                    129,
+                    130,
+                    131,
+                    132,
+                    133,
+                    134,
+                    135,
+                    136,
+                    137,
+                    138,
+                    139,
+                    140,
+                    141,
+                    142,
+                    143,
+                    144,
+                    145,
+                    146,
+                    147,
+                    148,
+                    149,
+                    150,
+                    151,
+                    152,
+                    153,
+                    154,
+                    155,
+                    156,
+                    157,
+                    158,
+                    159,
+                    160,
+                    161,
+                    162,
+                    163,
+                    164,
+                    165,
+                    166,
+                    167
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1090.125,
+                    1038.375
+                  ],
+                  "deltaY": 4.339861792469804,
+                  "originalBounds": [
+                    [
+                      -1091.699951171875,
+                      149.39999389648438,
+                      1037.25
+                    ],
+                    [
+                      -1088.550048828125,
+                      150.75,
+                      1039.5
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:3:matte",
+                  "triangles": [
+                    168,
+                    169,
+                    170,
+                    171,
+                    172,
+                    173,
+                    174,
+                    175,
+                    176,
+                    177,
+                    178,
+                    179,
+                    180,
+                    181,
+                    182,
+                    183,
+                    184,
+                    185,
+                    186,
+                    187,
+                    188,
+                    189,
+                    190,
+                    191,
+                    192,
+                    193,
+                    194,
+                    195,
+                    196,
+                    197,
+                    198,
+                    199,
+                    200,
+                    201,
+                    202,
+                    203,
+                    204,
+                    205,
+                    206,
+                    207,
+                    208,
+                    209
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1112.625,
+                    1019.25
+                  ],
+                  "deltaY": -0.1118886955864582,
+                  "originalBounds": [
+                    [
+                      -1114.6500244140625,
+                      161.5500030517578,
+                      1017.9000244140625
+                    ],
+                    [
+                      -1110.5999755859375,
+                      163.8000030517578,
+                      1020.5999755859375
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:3:matte",
+                  "triangles": [
+                    210,
+                    211,
+                    212,
+                    213,
+                    214,
+                    215,
+                    216,
+                    217,
+                    218,
+                    219,
+                    220,
+                    221,
+                    222,
+                    223,
+                    224,
+                    225,
+                    226,
+                    227,
+                    228,
+                    229,
+                    230,
+                    231,
+                    232,
+                    233,
+                    234,
+                    235,
+                    236,
+                    237,
+                    238,
+                    239,
+                    240,
+                    241,
+                    242,
+                    243,
+                    244,
+                    245,
+                    246,
+                    247,
+                    248,
+                    249,
+                    250,
+                    251
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1120.9500122070312,
+                    1004.1749877929688
+                  ],
+                  "deltaY": 0.21412596944719553,
+                  "originalBounds": [
+                    [
+                      -1122.75,
+                      164.25,
+                      1003.0499877929688
+                    ],
+                    [
+                      -1119.1500244140625,
+                      166.0500030517578,
+                      1005.2999877929688
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:3:matte",
+                  "triangles": [
+                    252,
+                    253,
+                    254,
+                    255,
+                    256,
+                    257,
+                    258,
+                    259,
+                    260,
+                    261,
+                    262,
+                    263,
+                    264,
+                    265,
+                    266,
+                    267,
+                    268,
+                    269,
+                    270,
+                    271,
+                    272,
+                    273,
+                    274,
+                    275,
+                    276,
+                    277,
+                    278,
+                    279,
+                    280,
+                    281,
+                    282,
+                    283,
+                    284,
+                    285,
+                    286,
+                    287,
+                    288,
+                    289,
+                    290,
+                    291,
+                    292,
+                    293
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1172.3599853515625,
+                    983.3600158691406
+                  ],
+                  "deltaY": -0.6157957428949885,
+                  "originalBounds": [
+                    [
+                      -1174.3199462890625,
+                      175.83999633789062,
+                      981.9600219726562
+                    ],
+                    [
+                      -1170.4000244140625,
+                      177.8000030517578,
+                      984.760009765625
+                    ]
+                  ]
+                },
+                {
+                  "id": "overview:nameless:hlod:architecture:nameless:-5:3:matte",
+                  "triangles": [
+                    294,
+                    295,
+                    296,
+                    297,
+                    298,
+                    299,
+                    300,
+                    301,
+                    302,
+                    303,
+                    304,
+                    305,
+                    306,
+                    307,
+                    308,
+                    309,
+                    310,
+                    311,
+                    312,
+                    313,
+                    314,
+                    315,
+                    316,
+                    317,
+                    318,
+                    319,
+                    320,
+                    321,
+                    322,
+                    323,
+                    324,
+                    325,
+                    326,
+                    327,
+                    328,
+                    329,
+                    330,
+                    331,
+                    332,
+                    333,
+                    334,
+                    335
+                  ],
+                  "triangleLayout": "indexed",
+                  "center": [
+                    -1210.1599731445312,
+                    977.3399963378906
+                  ],
+                  "deltaY": -0.02820933412294835,
+                  "originalBounds": [
+                    [
+                      -1211.8399658203125,
+                      183.1199951171875,
+                      976.0800170898438
+                    ],
+                    [
+                      -1208.47998046875,
+                      184.8000030517578,
+                      978.5999755859375
+                    ]
+                  ]
+                }
+              ],
+              "sourceBytes": 484008,
+              "contactBytes": 118728,
+              "originalContactBytes": 118728,
+              "heightRule": "previousHeight + actualNear - originalNear",
+              "farDelta": 3775,
+              "newRecords": 0,
+              "textureDelta": 0
+            },
+            "contactBytes": 118728
+          }
+        },
+        {
+          "name": "record identities, public flags and unrelated byte protection",
+          "passed": true,
+          "result": {
+            "records": 2156,
+            "changed": 27,
+            "unchanged": 2129
+          }
+        },
+        {
+          "name": "near original XY/index/colors, scope and actual active cells",
+          "passed": true,
+          "result": {
+            "records": 6,
+            "changedVertices": 1456,
+            "activeCells": 135,
+            "geometrySanity": [
+              {
+                "id": "island:terrain:-1280:768",
+                "triangles": 1216,
+                "minimumAreaXZ": 9.142822265625
+              },
+              {
+                "id": "island:terrain:-1024:768",
+                "triangles": 1216,
+                "minimumAreaXZ": 9.142822265625
+              },
+              {
+                "id": "island:terrain:-1280:1024",
+                "triangles": 1216,
+                "minimumAreaXZ": 9.142822265625
+              },
+              {
+                "id": "island:terrain:-1024:1024",
+                "triangles": 1216,
+                "minimumAreaXZ": 9.142822265625
+              },
+              {
+                "id": "island:terrain:-1280:1280",
+                "triangles": 1216,
+                "minimumAreaXZ": 9.142822265625
+              },
+              {
+                "id": "island:terrain:-1024:1280",
+                "triangles": 1216,
+                "minimumAreaXZ": 9.142822265625
+              }
+            ]
+          }
+        },
+        {
+          "name": "far original non-active faces and accepted east attributes",
+          "passed": true,
+          "result": {
+            "records": 6,
+            "retainedFaces": 2276,
+            "changedFarRecords": 6,
+            "geometrySanity": [
+              {
+                "id": "island:terrain:-1280:768:far",
+                "triangles": 1001,
+                "minimumAreaXZ": 2.1927058696746826e-05
+              },
+              {
+                "id": "island:terrain:-1024:768:far",
+                "triangles": 1052,
+                "minimumAreaXZ": 7.166340947151184e-05
+              },
+              {
+                "id": "island:terrain:-1280:1024:far",
+                "triangles": 1928,
+                "minimumAreaXZ": 0.002991974353790283
+              },
+              {
+                "id": "island:terrain:-1024:1024:far",
+                "triangles": 1093,
+                "minimumAreaXZ": 0.006892174482345581
+              },
+              {
+                "id": "island:terrain:-1280:1280:far",
+                "triangles": 1254,
+                "minimumAreaXZ": 0.00027988851070404053
+              },
+              {
+                "id": "island:terrain:-1024:1280:far",
+                "triangles": 823,
+                "minimumAreaXZ": 2.1927058696746826e-05
+              }
+            ],
+            "sharedEastMinimumX": -928,
+            "isolationWidth": 32
+          }
+        },
+        {
+          "name": "actual far band never enlarges the old near/far error",
+          "passed": true,
+          "result": {
+            "samples": 14978,
+            "interiorSamples": 7080,
+            "interiorTriangles": 1770,
+            "maximumInteriorError": 1.491699367761612e-05,
+            "maximumOldError": 2.719820855777243,
+            "maximumNewError": 2.463445063214749,
+            "maximumExcess": 4.66341494700373e-05,
+            "tolerance": 0.0003,
+            "note": "Original same-point LOD mismatch remains the comparator. Zero-error core requires all three actual far vertices to have zero band weight; original CLI1 point-distance classification remains separately archived."
+          }
+        },
+        {
+          "name": "actual far/fine interfaces and near tile edges have no new opening",
+          "passed": true,
+          "result": {
+            "samples": 1113,
+            "maximumIncrease": 7.62939453125e-06,
+            "maximumNewGap": 7.62939453125e-06,
+            "tolerance": 0.0003
+          }
+        },
+        {
+          "name": "actual fixed-path ground slopes and thirty-percent link target",
+          "passed": true,
+          "result": {
+            "paths": [
+              {
+                "id": "flower-hill-link",
+                "samples": 105,
+                "maximumOriginalNear": 0.7321860350480871,
+                "maximumCurrentNear": 0.290917173620664,
+                "maximumOriginalQuery": 0.7401620737781444,
+                "maximumCurrentQuery": 0.29159608235437057,
+                "worst": {
+                  "sample": 150,
+                  "a": [
+                    -1167.9003347370694,
+                    1137.7275672173632
+                  ],
+                  "b": [
+                    -1169,
+                    1137
+                  ],
+                  "distance": 1.3185665498099841,
+                  "currentNear": 0.290917173620664,
+                  "currentQuery": 0.29159608235437057
+                }
+              },
+              {
+                "id": "lily-main",
+                "samples": 49,
+                "maximumOriginalNear": 0.2969603346489475,
+                "maximumCurrentNear": 0.28969469766942646,
+                "maximumOriginalQuery": 0.3053722440885044,
+                "maximumCurrentQuery": 0.29351311363541616,
+                "worst": {
+                  "sample": 9,
+                  "a": [
+                    -1184.072,
+                    1135.7119999999998
+                  ],
+                  "b": [
+                    -1186.553375,
+                    1135.495875
+                  ],
+                  "distance": 2.4907693402341007,
+                  "currentNear": 0.2846083323646501,
+                  "currentQuery": 0.29351311363541616
+                }
+              },
+              {
+                "id": "lily-contour",
+                "samples": 3,
+                "maximumOriginalNear": 0.020277697132149577,
+                "maximumCurrentNear": 0.02013625587119226,
+                "maximumOriginalQuery": 0.01857401765976304,
+                "maximumCurrentQuery": 0.018432576398805724,
+                "worst": {
+                  "sample": 3,
+                  "a": [
+                    -1279.9820601851852,
+                    1104.771122685185
+                  ],
+                  "b": [
+                    -1280.443359375,
+                    1106.5400390625
+                  ],
+                  "distance": 1.8280760630939366,
+                  "currentNear": 0.02013625587119226,
+                  "currentQuery": 0.018432576398805724
+                }
+              },
+              {
+                "id": "lily-shelter",
+                "samples": 20,
+                "maximumOriginalNear": 0.12625045795220624,
+                "maximumCurrentNear": 0.12625045795220624,
+                "maximumOriginalQuery": 0.16280167731945036,
+                "maximumCurrentQuery": 0.16280167731945036,
+                "worst": {
+                  "sample": 41,
+                  "a": [
+                    -1257.2592592592591,
+                    997.5185185185185
+                  ],
+                  "b": [
+                    -1255.8075801749271,
+                    995.6209912536443
+                  ],
+                  "distance": 2.389138314294045,
+                  "currentNear": 0.06531220470313025,
+                  "currentQuery": 0.16280167731945036
+                }
+              }
+            ],
+            "linkSamples": 105,
+            "linkMaximum": 0.29159608235437057,
+            "linkTarget": 0.3,
+            "note": "Actual near triangles and query heights on unchanged path samples. Native road/shoulder mesh build and crown clearance remain untested at this public stage."
+          }
+        },
+        {
+          "name": "actual paired contacts preserve the original query/near offset",
+          "passed": true,
+          "result": {
+            "triangles": 3298,
+            "samples": 3298,
+            "querySamples": 2754,
+            "maximumMeshError": 8.526512829121202e-14,
+            "maximumOriginalMeshError": 8.526512829121202e-14,
+            "maximumQueryOffsetChange": 1.4210854715202004e-14,
+            "minimumOriginalOffset": -0.6215732389051425,
+            "maximumOriginalOffset": 0.5116913311668156,
+            "maximumAbsoluteOriginalOffset": 0.6215732389051425,
+            "edgeSamples": 105,
+            "maximumAddedEdgeJump": 7.409815786729723e-05,
+            "maximumAbsoluteEdgeJump": 9.490033198744641e-05,
+            "contactBytes": 118728,
+            "originalContactBytes": 118728,
+            "note": "Root/camera height follows previous query plus actual near displacement. Existing query/near offsets are preserved pointwise, not claimed as zero-error grounding; original CLI1/contact-only protocol remains archived."
+          }
+        },
+        {
+          "name": "accepted Solar contact, queries and manifest are preserved",
+          "passed": true,
+          "result": {
+            "SolarContactSHA256": "1e27050b82f74f09165bc9d380566d0630981883b58fe55736a2b29556c94c79",
+            "SolarContactBytes": 225144,
+            "protectedQuerySamples": 2608,
+            "previousHeightIdentity": true,
+            "meaning": "Own contact is separate, and the real accepted prototype is the unchanged fallback."
+          }
+        },
+        {
+          "name": "original stone seat support and query; existing LOD error is separate",
+          "passed": true,
+          "result": {
+            "supportVertices": 11,
+            "maximumMeshChange": 0,
+            "maximumOldLODGap": 0.6301195834219016,
+            "maximumNewLODGap": 0.1008913516998291,
+            "samples": [
+              {
+                "x": -1255.5,
+                "z": 982,
+                "originalNear": 190.0051498413086,
+                "originalFar": 190.54538132887478,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 190.0051498413086,
+                "candidateFar": 190.1019892692566,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1255.5,
+                "z": 984.5,
+                "originalNear": 189.9442653656006,
+                "originalFar": 190.5743849490225,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.9442653656006,
+                "candidateFar": 190.04272747039795,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1255.5,
+                "z": 987,
+                "originalNear": 190.16817617416382,
+                "originalFar": 190.6033885691702,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 190.16817617416382,
+                "candidateFar": 190.26134658198916,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1255.5,
+                "z": 989.5,
+                "originalNear": 190.39208698272705,
+                "originalFar": 190.60833969361556,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 190.39208698272705,
+                "candidateFar": 190.44164323834644,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1255.5,
+                "z": 992,
+                "originalNear": 190.61599779129028,
+                "originalFar": 190.6084804534912,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 190.61599779129028,
+                "candidateFar": 190.61223554611206,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1253.25,
+                "z": 982,
+                "originalNear": 189.8236050605774,
+                "originalFar": 190.32861999570304,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.8236050605774,
+                "candidateFar": 189.92449641227722,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1253.25,
+                "z": 984.5,
+                "originalNear": 189.8862566947937,
+                "originalFar": 190.35762361585074,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.8862566947937,
+                "candidateFar": 189.97032284736633,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1253.25,
+                "z": 987,
+                "originalNear": 189.9650342464447,
+                "originalFar": 190.38662723599845,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.9650342464447,
+                "candidateFar": 190.03342855010567,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1253.25,
+                "z": 989.5,
+                "originalNear": 190.18894505500793,
+                "originalFar": 190.40745296723617,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 190.18894505500793,
+                "candidateFar": 190.23901799300165,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1253.25,
+                "z": 992,
+                "originalNear": 190.41285586357117,
+                "originalFar": 190.40759372711182,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 190.41285586357117,
+                "candidateFar": 190.4102222919464,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1251,
+                "z": 982,
+                "originalNear": 189.7655963897705,
+                "originalFar": 190.11185866253135,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.7655963897705,
+                "candidateFar": 189.8520917892456,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1251,
+                "z": 984.5,
+                "originalNear": 189.82824802398682,
+                "originalFar": 190.14086228267902,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.82824802398682,
+                "candidateFar": 189.89791822433472,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1251,
+                "z": 987,
+                "originalNear": 189.89089965820312,
+                "originalFar": 190.16986590282673,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.89089965820312,
+                "candidateFar": 189.94374465942383,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1251,
+                "z": 989.5,
+                "originalNear": 189.98580312728882,
+                "originalFar": 190.19886952297443,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.98580312728882,
+                "candidateFar": 190.02412962981336,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1251,
+                "z": 992,
+                "originalNear": 190.20971393585205,
+                "originalFar": 190.20670700073242,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 190.20971393585205,
+                "candidateFar": 190.20820903778076,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1248.75,
+                "z": 982,
+                "originalNear": 189.70758771896362,
+                "originalFar": 189.89509732935966,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.70758771896362,
+                "candidateFar": 189.779687166214,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1248.75,
+                "z": 984.5,
+                "originalNear": 189.77023935317993,
+                "originalFar": 189.92410094950736,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.77023935317993,
+                "candidateFar": 189.8255136013031,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1248.75,
+                "z": 987,
+                "originalNear": 189.83289098739624,
+                "originalFar": 189.95310456965507,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.83289098739624,
+                "candidateFar": 189.8713400363922,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1248.75,
+                "z": 989.5,
+                "originalNear": 189.89554262161255,
+                "originalFar": 189.98210818980277,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.89554262161255,
+                "candidateFar": 189.91716647148132,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1248.75,
+                "z": 992,
+                "originalNear": 190.00657200813293,
+                "originalFar": 190.00582027435303,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 190.00657200813293,
+                "candidateFar": 190.0061957836151,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1246.5,
+                "z": 982,
+                "originalNear": 189.48999404907227,
+                "originalFar": 189.5966911315918,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.48999404907227,
+                "candidateFar": 189.54334680204846,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1246.5,
+                "z": 984.5,
+                "originalNear": 189.55264568328857,
+                "originalFar": 189.6256947517395,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.55264568328857,
+                "candidateFar": 189.58917323713757,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1246.5,
+                "z": 987,
+                "originalNear": 189.61529731750488,
+                "originalFar": 189.6546983718872,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.61529731750488,
+                "candidateFar": 189.63499967222668,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1246.5,
+                "z": 989.5,
+                "originalNear": 189.6779489517212,
+                "originalFar": 189.6837019920349,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.6779489517212,
+                "candidateFar": 189.6808261073158,
+                "candidateQuery": 189.93885595738098
+              },
+              {
+                "x": -1246.5,
+                "z": 992,
+                "originalNear": 189.72636556625366,
+                "originalFar": 189.72062849998474,
+                "originalQuery": 189.93885595738098,
+                "candidateNear": 189.72636556625366,
+                "candidateFar": 189.72636556625366,
+                "candidateQuery": 189.93885595738098
+              }
+            ],
+            "note": "Original near/far/query are different measurements and remain explicit; original native bench build not repeated in this public check."
+          }
+        },
+        {
+          "name": "all public plants keep XY, colors, prototypes and other fifteen matrix components",
+          "passed": true,
+          "result": {
+            "records": 301,
+            "instances": 9796,
+            "moved": 29,
+            "prototypesAndColorsUnchanged": true,
+            "onlyPermittedMatrixComponent": 13
+          }
+        },
+        {
+          "name": "cold actual connected bodies and surfaces are separately protected",
+          "passed": true,
+          "result": {
+            "records": 20,
+            "changedVertices": 5921,
+            "rigidParts": 26,
+            "weldedBodies": 98,
+            "nonYAttributesUnchanged": true,
+            "note": "Cold original connected bodies and surfaces checked directly. No assumption of one-to-one native proxy correspondence."
+          }
+        },
+        {
+          "name": "all original native paths and accepted public roads unchanged",
+          "passed": true,
+          "result": {
+            "publicRoadRecords": 74,
+            "nativePathDefinitions": 8,
+            "nativeGeometry": "not built in this public stage"
+          }
+        },
+        {
+          "name": "renderer cache index ownership and actual public instance bounds",
+          "passed": true,
+          "result": {
+            "vertexIdentities": 1822,
+            "sharedIdentities": 34,
+            "actualInstanceBoundsChecked": 48
+          }
+        },
+        {
+          "name": "all reachable new backing and accurate recursive source accounting",
+          "passed": true,
+          "result": {
+            "addedBackingBytes": 484008,
+            "newBackingCount": 14,
+            "contactBytes": 118728,
+            "packBytes": 144496888,
+            "staticTriangleDelta": 3775,
+            "newRecords": 0,
+            "textureDelta": 0,
+            "note": "Static source accounting. Actual submitted calls/tris and geometry/texture residency still require browser measurements."
+          }
+        },
+        {
+          "name": "same-pack idempotence and fresh-pack guard",
+          "passed": true,
+          "result": {
+            "samePackUnchanged": true,
+            "freshPackRejectedBeforeMutation": true
+          }
+        },
+        {
+          "name": "frozen source retained through execution",
+          "passed": true,
+          "result": {
+            "sourceSHA256": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549"
+          }
+        }
+      ],
+      "notRun": [
+        "Native sunflower and nameless paired builders, road/plant prototypes and stone-seat instance geometry",
+        "WebGL visual acceptance and fixed-camera submitted costs",
+        "Native Worker/cache release and interaction",
+        "Complete Node regression"
+      ],
+      "passed": true,
+      "timingMeaning": "Wall-clock source preparation; no input CPU or FPS measurement",
+      "actualPredecessors": {
+        "modules": [
+          "src/world-builder.js",
+          "src/old-hell.js",
+          "src/kishinjou.js",
+          "src/lunar.js",
+          "src/makai.js",
+          "src/netherworld.js",
+          "src/landmarks.js",
+          "src/heaven.js",
+          "src/higan.js",
+          "src/landscape.js",
+          "src/animal.js",
+          "src/backdoor.js",
+          "src/kasen.js",
+          "src/current-hell.js",
+          "src/rainbow-mine.js",
+          "src/highland.js",
+          "src/hakurei-plants.js",
+          "src/hakurei-transition.js",
+          "src/asama.js",
+          "src/asama-roads.js",
+          "src/surface-contact.js",
+          "src/hiten.js",
+          "src/mayohiga.js",
+          "src/peony.js",
+          "src/waterfall-cave.js",
+          "src/cucumber-farm.js",
+          "src/wind-cave.js",
+          "src/geyser.js",
+          "src/geyser-center.js",
+          "src/kourindou-upgrade.js",
+          "src/forest-upgrade.js",
+          "src/village-upgrade.js",
+          "src/trail-upgrade.js",
+          "src/trail-plants.js",
+          "src/trail-landscape.js",
+          "src/forest-entrance-plants.js",
+          "src/forest-entrance-ground.js",
+          "src/forest-entrance.js",
+          "src/forest-canopy-plants.js",
+          "src/forest-canopy-ground.js",
+          "src/forest-canopy-road.js",
+          "src/forest-crown-rollout.js",
+          "src/forest-canopy.js",
+          "src/bamboo-entry-plants.js",
+          "src/bamboo-entry-upgrade.js",
+          "src/sunflower-entry.js",
+          "src/muenzuka-edge.js"
+        ],
+        "reviewedAfterSolar": [
+          "src/muenzuka-edge.js"
+        ],
+        "prefixSHA256": "98ac8c332722a91f575758494241a4e5e82ab218dba3e08724af6f60ec548acf"
+      },
+      "wallCPUms": 47472.469244999986
+    }
+  },
+  "fixtureReviewSnapshots": [
+    {
+      "kind": "Explicit review of Muenzuka-only fixed native digest update",
+      "reviewedUTC": "2026-10-05T21:47:01.961724+00:00",
+      "sourceSHA256": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+      "checkerSHA256": "5f0568c0bf37dda0fd1ecebca7899aa8d932fe95b108a23f218845f57f4f8c4a",
+      "actualPairedReportSHA256": "7f022b177b7722675204d2d9f45de7ea5bb942b2a6fc15e638f9ea6f2e9fadf7",
+      "nativeBuildCount": 2,
+      "passedChecks": 12,
+      "oldNative": "fce019a1625ad753025841ebb396bf84a5844c9d9284dce9f45250789514a058",
+      "newNative": "c0f2f1378ec19e5e10be8dc5e21240390315e4eddbd616c4eccc4dc8db6123b2",
+      "originalFixtureSHA256": "8a7764b129b21e7e9e72d9061ebcda9a354e6d86c566b1bf0b7cb7a4f19c6128",
+      "candidateFixtureSHA256": "3e9e039dc6deb6659177ed5ca5dd752523f13a46a98f3ac5d910380a175b8cd6",
+      "otherFixtureValuesUnchanged": true,
+      "notAutomaticTestRefresh": true,
+      "releaseAccepted": false,
+      "pending": [
+        "Production interaction/unload/reentry",
+        "Full integrated Node",
+        "CI and deployment"
+      ]
+    },
+    {
+      "schema": 1,
+      "reviewedUTC": "2026-10-05T22:18:50.639202+00:00",
+      "reviewer": "root",
+      "automaticRefresh": false,
+      "oldFixtureSHA256": "3e9e039dc6deb6659177ed5ca5dd752523f13a46a98f3ac5d910380a175b8cd6",
+      "newFixtureSHA256": "0d68e8c1ffec9e9ab19fd546158828c2092069381c8c08617a7be63b196c0774",
+      "expectationChangesThisReview": {
+        "nameless": {
+          "before": "3c3b2ce4e78c02a2128bedefc7bdafcf036e192a80f86a2660550e8bcf5f35c5",
+          "after": "d76dc3a609bafd73ce25e51bdbd93ab1cd7defa11f49d0aac65ad5ca1a519ea3"
+        },
+        "sunflower": {
+          "before": "f0e2d1871500518bedaf20c83d8ee71fb038fc61ee9f6d144428828444fce6ae",
+          "after": "b3904a25cb67cbb24e71592a3ec7755de478b1a38bcba311c2ff94e701cf3319"
+        }
+      },
+      "cumulativeChangedRegionsFrom504808e": [
+        "muenzuka",
+        "sunflower",
+        "nameless"
+      ],
+      "allOtherExpectationValuesExactlyUnchanged": true,
+      "original6of7CLI1Preserved": true,
+      "normalGuardResult": "3/3 CLI0; exact four existing path points, not a blanket exterior-normal exemption",
+      "sourceSHA256": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549",
+      "fullRegressionRun": false,
+      "releaseAccepted": false
+    }
+  ],
+  "fixtureReviewMeaning": "These dated pre-regression review records retain their original pending statuses; the completed execution above is the later status, not a rewrite of the earlier result.",
+  "CIAndDeployment": "Not yet run for this implementation commit; previous 6a27bb4 statuses are not reused.",
+  "hardwareFPSMeasured": false,
+  "physicalVRAMMeasured": false,
+  "fullRawLogsCommitted": false
+}

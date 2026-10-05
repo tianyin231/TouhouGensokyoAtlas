@@ -48,7 +48,9 @@
     "src/forest-canopy.js",
     "src/bamboo-entry-plants.js",
     "src/bamboo-entry-upgrade.js",
-    "src/sunflower-entry.js"
+    "src/sunflower-entry.js",
+    "src/muenzuka-edge.js",
+    "src/flower-hill-entry.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",
@@ -69,7 +71,8 @@
     "src/forest-path-renderer.js",
     "src/forest-canopy-renderer.js",
     "src/render-recovery.js",
-    "src/render-diagnostics.js"
+    "src/render-diagnostics.js",
+    "src/muenzuka-edge-renderer.js"
   ],
   "extensionData": [
     "data/asama.json",

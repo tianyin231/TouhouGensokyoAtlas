@@ -17,6 +17,11 @@ import {geometryDigest} from './check-hakurei.mjs';
 // Retained independently of hakurei-baseline.json, whose accepted sunflower
 // fixture may change only after explicit review. Never read it as an oracle.
 export const ORIGINAL_SUNFLOWER_GEOMETRY_SHA='9071b82b2a121e04808696b96925c720efb70e7bcab49750c75a35e54dc3563a';
+// Exact delivered module sequence through Solar at main 6a27bb46. Later
+// independent stages are tested by their own checks and the full project boot.
+// Resolve this prefix from the real registration; never substitute a fixture
+// project or let a reordered/missing predecessor become a vacuous unit check.
+export const ACCEPTED_SOLAR_PREFIX_SHA='ed0a8a18476b9f510bfe7a5199e4e6de19bda9e3ad6cea3e13095c9304ab7f04';
 const SOURCE='src/sunflower-entry.js',SCOPE=[-896,704,-192,1152];
 // Explicit V2 design authorization, not inferred from candidate declarations.
 const ROADSIDE_TRANSLATIONS=[{recordId:'island:transition:grass:-1:1',first:141,last:252},{recordId:'island:transition:shrub:-1:1',first:31,last:38}];
@@ -30,6 +35,15 @@ const ROADSIDE_CLEARANCE_TRANSLATIONS=new Map([
 ]);
 const FIELDS=['vertices','farVertices','index','instances','instanceColors'];
 const sha=a=>createHash('sha256').update(a).digest('hex');
+export function registeredSunflowerPrefix(project){
+ const all=project.worldBuilders;
+ assert(Array.isArray(all)&&all.every(p=>typeof p==='string'),'Real worldBuilders registration is required');
+ assert.equal(all.filter(p=>p===SOURCE).length,1,'Solar must have one real registration');
+ const index=all.indexOf(SOURCE);assert.equal(index,45,'Solar predecessor count/order changed');
+ const modules=all.slice(0,index+1),prefixSHA256=sha(JSON.stringify(modules));
+ assert.equal(prefixSHA256,ACCEPTED_SOLAR_PREFIX_SHA,'Accepted Solar predecessor sequence changed');
+ return {index,modules,prefixSHA256,deferredSuffix:all.slice(index+1)};
+}
 const arraySHA=a=>sha(Buffer.from(a.buffer,a.byteOffset,a.byteLength));
 const inside=(x,z)=>x>=SCOPE[0]&&x<=SCOPE[2]&&z>=SCOPE[1]&&z<=SCOPE[3];
 const key=(x,z)=>Math.floor(x/32)+','+Math.floor(z/32);
@@ -78,8 +92,8 @@ function bootPredecessors(G,data,pack){
  pack.meshes.push(...G.buildRainbowMineOverview().meshes);
  G.LANDSCAPE.apply(pack,new G.Terrain(data));const t=new G.Terrain(data);G.applyHighlandGround(pack,t);pack.meshes.push(...G.highlandGround(t,pack),...G.buildHighland(t,true).meshes);
  assert((G.extraOverviewBuilders||[]).length>1,'Missing production predecessor hooks');
- // The source module is required to be last in project.worldBuilders. Its
- // registered wrapper is therefore the last hook; call that actual wrapper.
+ // The exact registered prefix ends at Solar. Its actual wrapper is the
+ // last hook in this independent stage context; later modules run elsewhere.
  for(const build of G.extraOverviewBuilders.slice(0,-1))pack.meshes.push(...build(data,pack));
 }
 function surfaceSanity(m){
@@ -169,8 +183,13 @@ export async function checkSunflowerEntry(read,{sourceSHA,native=false,candidate
  const check=async(name,f)=>{try{const result=await f();report.checks.push({name,passed:true,result});return result;}catch(e){report.checks.push({name,passed:false,error:e.stack||String(e)});report.passed=false;return null;}};
  await check('frozen source and approved envelope',()=>{assert(sourceSHA,'An exact --source-sha is required');assert.equal(report.sourceSHA256,sourceSHA,'Candidate changed before preflight');return {sourceSHA256:sourceSHA,scope:SCOPE};});
  if(!report.passed){report.CPUms=performance.now()-started;return report;}
- const project=JSON.parse(read('project.json'));assert.equal(project.worldBuilders.at(-1),SOURCE,'Solar hook registration order changed');
- const context=vm.createContext({performance,TextDecoder,TextEncoder});for(const p of project.worldBuilders)vm.runInContext(String(read(p)),context,{filename:p});
+ const projectBytes=read('project.json'),project=JSON.parse(projectBytes);
+ const registration=await check('actual registered Solar prefix and separately reported suffix',()=>({
+  ...registeredSunflowerPrefix(project),projectSHA256:sha(projectBytes),
+  meaning:'This independent stage check executes the exact registered prefix through Solar. Later modules remain registered and are covered by their own checks and the complete project boot.'
+ }));
+ if(!registration){report.notRun.push('Dependent Solar geometry and native protection');report.CPUms=performance.now()-started;return report;}
+ const context=vm.createContext({performance,TextDecoder,TextEncoder});for(const p of registration.modules)vm.runInContext(String(read(p)),context,{filename:p});
  const G=context.GA,U=G.SUNFLOWER_ENTRY;assert(U,'Missing source API');same(Array.from(U.scope),SCOPE,'Approved scope changed');
  context.inputAtlas=JSON.stringify(mergedAtlas(read,project));const data=vm.runInContext('JSON.parse(inputAtlas)',context);
  const raw=gunzipSync(read('assets/packs/overview.pack.gz')),pack=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength));

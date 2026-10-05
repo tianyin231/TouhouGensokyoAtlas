@@ -1,0 +1,202 @@
+{
+  "schema": 1,
+  "kind": "Astra independent actual Flower Hill repaired seven-view art review",
+  "reviewedUTC": "2026-10-05T22:26:55.175375+00:00",
+  "method": "Opened all fourteen original PNG files as seven baseline/candidate pairs; additionally opened the prior870 reverse and east-low PNGs. No image editing, GPU capture, source reconstruction or new native build in this review.",
+  "sourceSHA256": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549",
+  "HTMLSHA256": "da10025a18749343f6b275ae202ded6db86b4ee2d2d20a2bfb7216d47ba048af",
+  "baselineHTMLSHA256": "402224fe67018c0fc33c6820f09d04cdea33b80914a79e62ca54de0e627bf8f8",
+  "specSHA256": "626215c470b84fd629153eb6df1c03d9a847d9798bfa2dff70edd8b0fe1a68d6",
+  "protocolSHA256": "5f2f4171c07fd2be5e38967a6f41a3948c51ba2d408c532548efb8f1b431e221",
+  "reports": {
+    "baseline": {
+      "path": "/workspace/flower-hill-evidence/baseline-views/report.json",
+      "sha256": "3b140bd5096fa072430500c839b0918d015e5510902bbacedbe783e32fe7fd09"
+    },
+    "repaired": {
+      "path": "/workspace/flower-hill-evidence/repaired-views/report.json",
+      "sha256": "c72ca8db44180c06ba7c572339e92b0730c80877d2ad5b0555943accbdcd4267"
+    }
+  },
+  "overallDecision": "accept_limited_wide_saddle_and_route_candidate_for_remaining_regression",
+  "visualBlockersIntroducedByRepair": [],
+  "views": [
+    {
+      "view": "coldOverview",
+      "actuallyOpenedBothPNGs": true,
+      "decision": "accept_preservation_at_this_scale",
+      "observations": [
+        "整体空岛轮廓、太阳花田与白花丘位置保持；未见新增接缝或局部塌口。",
+        "全岛机位中目标坡鞍很小，只支持总览连续性；不足以验收每块冷岩外形或花群接地。"
+      ],
+      "images": {
+        "baseline": {
+          "path": "/workspace/flower-hill-evidence/baseline-views/coldOverview.png",
+          "sha256": "3f1a8002a7703b7d4ebf759eafc734988ab79c7e256ceec3332cb9bc3c477086",
+          "bytes": 475130
+        },
+        "repaired": {
+          "path": "/workspace/flower-hill-evidence/repaired-views/coldOverview.png",
+          "sha256": "202303231968b91012cfbf1e9226e35cbbfc33272ed2a6c8164977949386fb73",
+          "bytes": 475343
+        }
+      }
+    },
+    {
+      "view": "defaultEntry",
+      "actuallyOpenedBothPNGs": true,
+      "decision": "accept_local_slope_route_gain",
+      "observations": [
+        "原来正面直坠的路段改为随宽坡上行，坡肩与道路一起形成缓转，仍接回顶部回环。",
+        "入口底部旧树仍在，未见此次小幅侧移或分批造成新的断路、露缝或植物大片缺失。",
+        "大片素绿坡与规则白花毯仍明显，不能称整丘构图完成。"
+      ],
+      "images": {
+        "baseline": {
+          "path": "/workspace/flower-hill-evidence/baseline-views/defaultEntry.png",
+          "sha256": "2a30a58c93379f7fa05cdf3589dafb923df6c4e93519ff280281e384dcb8aee1",
+          "bytes": 632646
+        },
+        "repaired": {
+          "path": "/workspace/flower-hill-evidence/repaired-views/defaultEntry.png",
+          "sha256": "1ecf21604cbadf5a4f82d5f8bf7bad9b0ab47349751ef1cda3c7fc47bce54afb",
+          "bytes": 514386
+        }
+      }
+    },
+    {
+      "view": "flowerHillSaddle",
+      "actuallyOpenedBothPNGs": true,
+      "decision": "accept_local_saddle_gain",
+      "observations": [
+        "从右下太阳花田到上方白花丘的道路中段被完整宽鞍承托，原圆丘的直落坡脚变成更长的缓升面。",
+        "右侧凸肩与左侧低部建立了可读高低关系；主路、花田接口与原树群连续。",
+        "树群仍稀散，白花边缘过齐、土面空，属于后续整景欠账。"
+      ],
+      "images": {
+        "baseline": {
+          "path": "/workspace/flower-hill-evidence/baseline-views/flowerHillSaddle.png",
+          "sha256": "a7c86fd553fe17e6ed81a3820802a8378316e93498074771ec287673f3d903ae",
+          "bytes": 920312
+        },
+        "repaired": {
+          "path": "/workspace/flower-hill-evidence/repaired-views/flowerHillSaddle.png",
+          "sha256": "0f82080b3c0922f587a332114453863664d0da471e10df50d9d6f5c6678db92c",
+          "bytes": 909687
+        }
+      }
+    },
+    {
+      "view": "flowerHillEastLow",
+      "actuallyOpenedBothPNGs": true,
+      "decision": "accept_preserved_wide_slope_with_limit",
+      "observations": [
+        "低位能读到贯通的宽坡肩与上行路，原竖坠线已展为横向缓升关系。",
+        "与已看过870同机位相比，主体坡肩、前景旧树与大岩块轮廓保持，修复未造成新增削坡、缩冠或可见断带。",
+        "近地大三角受光与空坡依旧明显；路的局部被坡肩及原树遮挡，不宣称全程可读。"
+      ],
+      "images": {
+        "baseline": {
+          "path": "/workspace/flower-hill-evidence/baseline-views/flowerHillEastLow.png",
+          "sha256": "819da6e24a56c6b7ee56787004d9caacc74bdc6075c8206cd06c0d03fd850913",
+          "bytes": 463903
+        },
+        "repaired": {
+          "path": "/workspace/flower-hill-evidence/repaired-views/flowerHillEastLow.png",
+          "sha256": "ed1789726dc3c2e99bb3ad7f459174cee235f0c51facd0a0cd755f0bdbfa1657",
+          "bytes": 402597
+        }
+      },
+      "alsoOpened870": {
+        "path": "/workspace/flower-hill-evidence/final-views/flowerHillEastLow.png",
+        "sha256": "aa3589b9ccee5e533250df00f4fa9fc95d17aff958e154e19db7987579b982d0"
+      }
+    },
+    {
+      "view": "flowerHillReverse",
+      "actuallyOpenedBothPNGs": true,
+      "decision": "accept_preservation_only_not_route_visibility_improvement",
+      "observations": [
+        "与870原图逐对看，背向肩线、树群冠端和白花坡主体保持；此次212株分批未见整片铃兰消失或新边界。",
+        "相对202原版，中下段路确实被抬起的宽肩遮挡；不能把此背向机位计为路线可读性提升。",
+        "接受的是其他机位已成立的宽鞍局部形态在背向未被技术修复破坏，不把整个山坡视为完成。"
+      ],
+      "images": {
+        "baseline": {
+          "path": "/workspace/flower-hill-evidence/baseline-views/flowerHillReverse.png",
+          "sha256": "aa72f7acae7534ed92d65fd7ad39f517b6a31121b2725fc3340eff91f27af0d7",
+          "bytes": 525467
+        },
+        "repaired": {
+          "path": "/workspace/flower-hill-evidence/repaired-views/flowerHillReverse.png",
+          "sha256": "dbb7fbb44ce1d7c0345c9380865965777192552f7f4a556eb318fdddac383412",
+          "bytes": 474033
+        }
+      },
+      "alsoOpened870": {
+        "path": "/workspace/flower-hill-evidence/final-views/flowerHillReverse.png",
+        "sha256": "c056def1ea4eb9ddfbf34f1af015552bc88388c83e6d4a84205274bce994c564"
+      }
+    },
+    {
+      "view": "low",
+      "actuallyOpenedBothPNGs": true,
+      "decision": "accept_local_gain_preserved_in_low",
+      "observations": [
+        "低档仍保留宽鞍、缓升路段和右下花田接口，没有退回原尖陡坡脚。",
+        "未见新的地面裂口、树群大块缺失或纸片式花群断层；旧简化树冠与疏密问题仍在。"
+      ],
+      "images": {
+        "baseline": {
+          "path": "/workspace/flower-hill-evidence/baseline-views/low.png",
+          "sha256": "dc68182547d409e4db2bc817538e039580d79b9fd2ac386d0dcee6ef3cb266d1",
+          "bytes": 546284
+        },
+        "repaired": {
+          "path": "/workspace/flower-hill-evidence/repaired-views/low.png",
+          "sha256": "aafdf32a1b1e4afd7d20461b3e35bde287fb8101c4f418e23c100e9d629103ab",
+          "bytes": 554164
+        }
+      }
+    },
+    {
+      "view": "night",
+      "actuallyOpenedBothPNGs": true,
+      "decision": "accept_no_new_night_regression",
+      "observations": [
+        "夜间道路与宽坡的明暗关系保持连续，修复未新增明显黑片、接缝或孤立亮块。",
+        "夜景原本偏暗，不能据此图验收细枝、近地小花或林下细节。"
+      ],
+      "images": {
+        "baseline": {
+          "path": "/workspace/flower-hill-evidence/baseline-views/night.png",
+          "sha256": "4994cdd6b7e1c9f8f94b2eb0cf4963e33e9bf10e80e813f5d2240d544cb313f8",
+          "bytes": 797206
+        },
+        "repaired": {
+          "path": "/workspace/flower-hill-evidence/repaired-views/night.png",
+          "sha256": "c84e5dcac3976e0786644de45c308afd4d180d94e7f67f31bbe3fd6f298884cd",
+          "bytes": 816091
+        }
+      }
+    }
+  ],
+  "scopeLimits": [
+    "整座无名之丘、裸坡材料和林下层次未完成。",
+    "铃兰与太阳花海边界仍规则，花毯分布与密度未作为本轮精修成果。",
+    "旧平冠与块状树冠、散点林群未完成。",
+    "背向主路中段被新肩遮挡，未宣称该机位路线可读性提升。",
+    "冷总览缩尺不足以逐块评价冷岩，只检总体连续与无新增可见缺失。"
+  ],
+  "technicalStatusSeparateFromArt": {
+    "captureCLI": 0,
+    "allSevenCostChecksReportedPassed": true,
+    "reportedReverseTriangleDelta": 3853,
+    "reportedDefaultCallDelta": 4,
+    "texturesAdded": 0,
+    "notAnArtAcceptanceReason": true,
+    "old870Reverse8464CLIFailurePreserved": true,
+    "fullNodeAndReleaseStatus": "Not established by this visual review; parent owns remaining regression/CI/deployment."
+  },
+  "productionFilesModified": false
+}

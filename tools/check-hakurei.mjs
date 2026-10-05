@@ -13,11 +13,17 @@ export function geometryDigest(pack){
  return hash.digest('hex');
 }
 
-export async function checkHakurei(G,atlas,read){
+export async function checkHakurei(G,atlas,read,{onProtectedRegion}={}){
  const baseline=JSON.parse(read('tools/hakurei-baseline.json'));
  // 本次允许修改共用建模源文件，但其他主区域的实际输出仍逐字节锁定。
- for(const [id,digest]of Object.entries(baseline.regions))
-  assert.equal(geometryDigest(await G.buildRegion(atlas,id)),digest,`${id} 被神社改造意外改变`);
+ for(const [id,digest]of Object.entries(baseline.regions)){
+  const protectedPack=await G.buildRegion(atlas,id);
+  assert.equal(geometryDigest(protectedPack),digest,`${id} 被神社改造意外改变`);
+  // A regional checker may inspect the already-verified actual build without
+  // constructing the same candidate a second time or changing its fixture.
+  if(onProtectedRegion)await onProtectedRegion(id,protectedPack);
+  assert.equal(geometryDigest(protectedPack),digest,`${id} 检查回调改变了原生几何`);
+ }
  const pack=await G.buildRegion(atlas,'hakurei');
  assert.equal(pack.meta.stairSteps,140,'保留完整登山石阶');
  assert.equal(JSON.stringify(pack.meta.mainHall),'[22,16]','保留拜殿尺度');

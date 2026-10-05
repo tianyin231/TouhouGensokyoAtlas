@@ -9,11 +9,11 @@
     "mausoleum": "a8116e9b215b7711b1903df0c5b976e54edb8b42f1f74512f7fd853e562e4948",
     "senkai": "d4a85ae46a542e92888bd06d82ecf26b9392c44a5908378b6d253014e2574798",
     "bamboo": "0a74436f520a43fffd4ef6ff92ed902328923ee13b83e5fc9a95e1756158287d",
-    "sunflower": "f0e2d1871500518bedaf20c83d8ee71fb038fc61ee9f6d144428828444fce6ae",
-    "nameless": "3c3b2ce4e78c02a2128bedefc7bdafcf036e192a80f86a2660550e8bcf5f35c5",
+    "sunflower": "b3904a25cb67cbb24e71592a3ec7755de478b1a38bcba311c2ff94e701cf3319",
+    "nameless": "d76dc3a609bafd73ce25e51bdbd93ab1cd7defa11f49d0aac65ad5ca1a519ea3",
     "mountain": "60c85c21d85ad70b158155458d9b35c66a51e19aa8fc7b2f094dfce8458de521",
     "forest": "3140bd2856d80b9191ef2e7203d2e128662d34a3ee0fe1b361140fa461c1b710",
-    "muenzuka": "fce019a1625ad753025841ebb396bf84a5844c9d9284dce9f45250789514a058",
+    "muenzuka": "c0f2f1378ec19e5e10be8dc5e21240390315e4eddbd616c4eccc4dc8db6123b2",
     "genbu": "f6a4a51132c512ff3087115e67c5ed1497f51ddde07995eceda55825826ca188"
   },
   "reviewedUpstreamChanges": {
@@ -79,6 +79,36 @@
       "reviewer": "root",
       "automaticRefresh": false,
       "review": "docs/bamboo-entry-handoff.md"
+    },
+    "muenzukaWestEdge": {
+      "base": "504808ea4d297ba67a8cd435fd52282cde33ad74",
+      "before": "fce019a1625ad753025841ebb396bf84a5844c9d9284dce9f45250789514a058",
+      "after": "c0f2f1378ec19e5e10be8dc5e21240390315e4eddbd616c4eccc4dc8db6123b2",
+      "sourceSHA256": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+      "reason": "Only six leaf records of 25 original western trees change prototypes. All 63 native identities, matrices, colors, wood, paths and other records held by the independent 12-check actual paired build. Original bounds CLI1 retained; local two-LOD wind envelope separately checked.",
+      "evidenceSHA256": "7f022b177b7722675204d2d9f45de7ea5bb942b2a6fc15e638f9ea6f2e9fadf7",
+      "review": "docs/muenzuka-edge-handoff.md",
+      "reviewer": "root",
+      "automaticRefresh": false
+    },
+    "flowerHillEntry": {
+      "base": "504808ea4d297ba67a8cd435fd52282cde33ad74",
+      "before": {
+        "nameless": "3c3b2ce4e78c02a2128bedefc7bdafcf036e192a80f86a2660550e8bcf5f35c5",
+        "sunflower": "f0e2d1871500518bedaf20c83d8ee71fb038fc61ee9f6d144428828444fce6ae"
+      },
+      "after": {
+        "nameless": "d76dc3a609bafd73ce25e51bdbd93ab1cd7defa11f49d0aac65ad5ca1a519ea3",
+        "sunflower": "b3904a25cb67cbb24e71592a3ec7755de478b1a38bcba311c2ff94e701cf3319"
+      },
+      "sourceSHA256": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549",
+      "reason": "Approved continuous eastern hill/saddle within x[-1280,-928], z[960,1376], plus only 29 enumerated native grass/lily shifts <=0.30m and exact 212-to-four spatial partition. Actual Nameless ten checks preserve population/prototypes/colors/other geometry and require zero road intrusion. Sunflower paired actual output keeps 132113 instances, all XZ/prototypes/colors; fourteen roots follow the changed contact. Exactly four existing flower-hill-link sample45 road-edge points (18 occurrences) outside the height domain derive changed normals from their existing x-1 sample inside the domain; XYZ/RGB and every other exterior attribute held. Original 6/7 CLI1 remains, with separate three-check bit-exact derivative proof; no new native build or tolerance relaxation.",
+      "nativeEvidenceSHA256": "a2226774ca21d0be35ab576e60295e107acda4a94dcdbf5950681d7ea44b0f54",
+      "retainedNativeCLI": 1,
+      "derivedNormalGuardSHA256": "0394f8ce56675d1aad1a68ff4b25f66177c1968400f18c14cc042797c585e35c",
+      "review": "docs/flower-hill-handoff.md",
+      "reviewer": "root",
+      "automaticRefresh": false
     }
   },
   "reviewedSourceChanges": {
