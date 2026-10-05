@@ -47,7 +47,8 @@
     "src/forest-crown-rollout.js",
     "src/forest-canopy.js",
     "src/bamboo-entry-plants.js",
-    "src/bamboo-entry-upgrade.js"
+    "src/bamboo-entry-upgrade.js",
+    "src/sunflower-entry.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",
