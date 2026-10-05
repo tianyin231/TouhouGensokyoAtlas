@@ -41,5 +41,116 @@
     "checkLogSHA256": "7c9fbbd459ac01f0f4c6f30c93ee34f54eeadaf6e9ac6f4a517a2e443a8070cf",
     "inputHashesUnchanged": true,
     "runtimeHTMLUnchanged": true
-  }
+  },
+  "followupReviews": [
+    {
+      "reviewedUTC": "2026-10-05T16:31:39.732345+00:00",
+      "workflowChangeCommit": "ce1774d803b29fb9823dd00c6c690c20d3cf7ae9",
+      "runtimeSceneCommit": "29663c94616067de77657dddd41c01035b8bf58d",
+      "reason": "The explicitly reviewed split build/deploy workflow uses an attempt-specific artifact name, but ce1774d omitted these five inherited workflow SHA guards. Both check and clean-source failed the unchanged strict assertion. Only the five protected workflow digests are now updated; all check code, geometry, navigation and other source expectations remain exact.",
+      "workflow": ".github/workflows/pages.yml",
+      "beforeSHA256": "8c39a09c897807aed15e1408740c12a6bb172e7d00d2b396d7ba6fad9ff7e6e1",
+      "afterSHA256": "c6331714ab9c8dab49457dc1870bdba3032f486ee7904e640a1144f2a9704d6f",
+      "fixtures": [
+        {
+          "path": "tools/backdoor-baseline.json",
+          "beforeSHA256": "5a70dfc072cea51d0dcdc18a1534185b1e9b739477dee8de8189c5cdf067608c",
+          "afterSHA256": "44a681c946b751d3d613d78ffe9fe2fc8e979809d2559919ae65f5572aef3cae",
+          "onlyChangedJSONPath": [
+            "protectedFiles",
+            ".github/workflows/pages.yml"
+          ]
+        },
+        {
+          "path": "tools/kasen-baseline.json",
+          "beforeSHA256": "5ed6b7968f12106212f9b6aa917fa0bcb0b8fb1347e24fec08f6031c78679b45",
+          "afterSHA256": "f119c2fcf7f96aac4440c7ee78ef3b23a665e21a3ffbe448c8ed1acce99dfd55",
+          "onlyChangedJSONPath": [
+            "protectedFiles",
+            ".github/workflows/pages.yml"
+          ]
+        },
+        {
+          "path": "tools/current-hell-baseline.json",
+          "beforeSHA256": "0f26fb7a3b24f989386344f2cdde2fba31edb55bb03afe38e8c3f3226bd9f3fc",
+          "afterSHA256": "d45d4966ae7eb3b10f428a5984904b78c8597f4ecb149cf141a43a0ba7d7715e",
+          "onlyChangedJSONPath": [
+            "protectedFiles",
+            ".github/workflows/pages.yml"
+          ]
+        },
+        {
+          "path": "tools/rainbow-mine-baseline.json",
+          "beforeSHA256": "ea3e5f3032d37902790f3dc88ff8d139465a9f8934596db3d6bf8ea915f43ad3",
+          "afterSHA256": "3d793efb1f5a984a3229dea0c710852b09a4b6e6e5294806dd0cfb7a2856bee4",
+          "onlyChangedJSONPath": [
+            "protectedFiles",
+            ".github/workflows/pages.yml"
+          ]
+        },
+        {
+          "path": "tools/highland-baseline.json",
+          "beforeSHA256": "6644341104d1188622090b4e646c38a11e06e3254a89e63d2b2391f97658e5f7",
+          "afterSHA256": "1552e5afc72ac453a892a2a9cbc3c5087d42eeb82ba606142840e1db8652463e",
+          "onlyChangedJSONPath": [
+            "protectedFiles",
+            ".github/workflows/pages.yml"
+          ]
+        }
+      ],
+      "testAutoRefresh": false,
+      "inheritedFixtureSHAReferencesFound": 0,
+      "originalFailureEvidence": [
+        "https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37340046067/job/111864522732",
+        "https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37340046067/job/111864522573"
+      ],
+      "validation": {
+        "passed": true,
+        "node": "v22.23.3",
+        "checkerSHA256": "46a387b7c54e4f203e30beda642d6b92f864207b01a7d098cd056b52aed5337c",
+        "rows": [
+          {
+            "file": "tools/backdoor-baseline.json",
+            "protectedChecks": 36,
+            "onlyWorkflowDigestChanged": true
+          },
+          {
+            "file": "tools/kasen-baseline.json",
+            "protectedChecks": 39,
+            "onlyWorkflowDigestChanged": true
+          },
+          {
+            "file": "tools/current-hell-baseline.json",
+            "protectedChecks": 42,
+            "onlyWorkflowDigestChanged": true
+          },
+          {
+            "file": "tools/rainbow-mine-baseline.json",
+            "protectedChecks": 45,
+            "onlyWorkflowDigestChanged": true
+          },
+          {
+            "file": "tools/highland-baseline.json",
+            "protectedChecks": 48,
+            "onlyWorkflowDigestChanged": true
+          }
+        ],
+        "protectedChecks": 210,
+        "allGeometryAndOtherExpectationsUnchanged": true,
+        "changedBuildInputs": [
+          "tools/backdoor-baseline.json",
+          "tools/kasen-baseline.json",
+          "tools/current-hell-baseline.json",
+          "tools/rainbow-mine-baseline.json",
+          "tools/highland-baseline.json"
+        ],
+        "inputCount": 199,
+        "htmlSHA256": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+        "fullSceneOrGPURepeated": false,
+        "status": "bounded checks passed; new remote full CI/deployment pending",
+        "exitCode": 0,
+        "reportSHA256": "f54812f9f9fbedc11e04fc1cb3bb4c86bd167560e41fcacb91e57046fbaa7b89"
+      }
+    }
+  ]
 }

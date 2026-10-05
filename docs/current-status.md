@@ -2,6 +2,12 @@
 
 > 2026-10-05继续执行：竹林入口四格807株原竹的枝叶样板已通过最终产物视觉、41组Node、真实LOD往返及原生交互／重入。命莲寺旧高度场及闭合罩壳均拒收隔离；下一稿直接重建局部原坡面。整体任务继续，不等待逐步人工验收。
 
+## 2026-10-05：发布修复的历史工作流保护补齐
+
+工作流修复提交 `ce1774d803b29fb9823dd00c6c690c20d3cf7ae9` 已推main，但遗漏五份历史基线的 `.github/workflows/pages.yml` SHA期望；其公共check与clean-source因此失败，compare-builds因依赖失败跳过，不是取消。199项构建输入相同未覆盖这个额外文件依赖，不能据此声称新提交完整回归通过。原失败链接及准确旧／新SHA保留于[工作流审阅](../tools/pages-workflow-review.json)的followupReviews，旧2026-10-04审阅不覆盖。
+
+本次经明确源审阅，仅将backdoor、kasen、current-hell、rainbow-mine、highland五个protectedFiles工作流值从8c39a09c更新为c6331714；断言代码、所有几何／导航／人物及其他文件期望保持。运行场景源码不改；Node22有限检查实际通过210条受影响文件保护，五份JSON其余字段逐项不变；重建HTML仍为36,326,851B／edd40a2e，199项输入中仅这五份期望文件改变。没有本地重复完整场景／GPU实验；修复提交的远端完整CI与部署尚待运行，不复用旧通过掩盖此失败。
+
 ## 2026-10-05：竹林远端回归与发布修复
 
 已交付实现为main `29663c94616067de77657dddd41c01035b8bf58d`；该提交[公共回归5项](https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37333473399)与[专项14项](https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37333473669)全部成功，包含完整生命周期。Pages的[同一次运行](https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37333473347)两次都完成构建、检查、准备和上传，但发布步骤失败：第一次刚上传后查询到0个包；一次限定重试后查到2个同名github-pages包。前者可能是元数据传播延迟，尚未证实；后者确定是同名包碰撞。原始失败与准确日志摘要见[提交CI证据](bamboo-entry-ci.json)，没有第三次重试或删除旧包。线上HTML散列仍未重新核取，不能把19项通过称作已部署。
