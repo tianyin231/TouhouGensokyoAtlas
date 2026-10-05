@@ -1,6 +1,6 @@
 # 无名之丘东坡与宽鞍部
 
-本阶段直接调整东坡完整截面，使原来狭窄、陡升的路口具有连续坡脚和更宽的鞍部。范围仅x[-1280,-928]、z[960,1376]中的不规则东坡，保留山顶回环、原路线XY、风岩石座、原树身份与XY、人物导航及已交付太阳花田。七机位实图、原预算与组合生产生命周期已通过；完整组合Node45组也已通过，本次提交CI／部署待核。基线main为`504808e`，基线运行HTML为`402224fe…`。
+本阶段直接调整东坡完整截面，使原来狭窄、陡升的路口具有连续坡脚和更宽的鞍部。范围仅x[-1280,-928]、z[960,1376]中的不规则东坡，保留山顶回环、原路线XY、风岩石座、原树身份与XY、人物导航及已交付太阳花田。七机位实图、原预算与组合生产生命周期已通过；完整组合Node45组通过，已随main b9ff4a3部署。基线main为`504808e`，基线运行HTML为`402224fe…`。
 
 | 原始鞍部 | 本次鞍部 |
 | --- | --- |
@@ -50,4 +50,4 @@ GPT-6.1 Sol Max实际执行三次完整原生构造，Nameless最终10／10通�
 
 208组合锚点同时包含Muen和Flower，相对202基线实际+5调用、-360提交三角、+38880属性字节、+2几何、0纹理。它不是上表203单区七图的成本，不能声称组合总增≤4；原协议没有每次draw的对象清单，额外调用与Muen冷批拆分相符但尚非逐批证实。CPU样本与完整Node可能争用，只记录实际观测，不声称交互执行耗时或提速。[精简配对记录](reviews/flower-hill-stage/flower-native-comparison.json)保留两边完整输入、原检查与报告SHA。
 
-精简数值、原始检查状态、完整输入、协议、图片散列及独立美术意见见[阶段证据](flower-hill-evidence.json)和[审阅文件](reviews/flower-hill-stage/README.md)。原始大报告、构建和V8位于`/workspace/flower-hill-evidence`，不进入Git。最终208输入组合完整Node22实际45组通过，CLI0、1072.293秒，输入和HTML前后不变，见[组合回归](main-island-next-regression.json)。本次提交CI／部署仍待核。
+精简数值、原始检查状态、完整输入、协议、图片散列及独立美术意见见[阶段证据](flower-hill-evidence.json)和[审阅文件](reviews/flower-hill-stage/README.md)。原始大报告、构建和V8位于`/workspace/flower-hill-evidence`，不进入Git。最终208输入组合完整Node22实际45组通过，CLI0、1072.293秒，输入和HTML前后不变，见[组合回归](main-island-next-regression.json)。运行提交b9ff4a3的两组专项各14项通过、第二组场景五项通过；第一组check取消及依赖跳过保留。两次Pages成功，最后发布包与验收c5327ca0逐字节一致，线上正文仍未取得，见[CI证据](main-island-next-ci.json)。

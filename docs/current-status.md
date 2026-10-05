@@ -1,6 +1,16 @@
 # 当前状态与实现覆盖
 
-> 2026-10-05继续执行：无缘塚西弧25棵原树冠与无名之丘东坡宽鞍部已通过限定范围的实图审阅、独立源保护及生产卸载重入。208输入组合成品`c5327ca0…`完整Node45组已通过，本次提交的CI／部署仍待核。提交前远端main核为`504808e`；已部署运行基线仍为6a27bb4。两项范围、实际成本与原失败见下文，整岛地形、林分和林下仍未完成。
+> 2026-10-05继续执行：无缘塚西弧25棵原树冠与无名之丘东坡宽鞍部已随main `b9ff4a3`部署，208输入成品`c5327ca0…`完整Node45组通过。该提交远端六个工作流终态为五成功、一取消；两次部署包均与验收成品逐字节一致。下一项为玄武涧南口，正在独立候选实施，尚未视觉验收。整岛地形、林分和林下仍未完成。
+
+## 2026-10-05：b9ff4a3发布核验与玄武涧恢复入口
+
+运行源码提交为`b9ff4a369080e861027966c13d071d08716a1348`。一次push自动出现两组相同提交、attempt 1的工作流，原因未明；本轮没有发起重跑或取消。23:22 UTC核得42个作业终态：40成功、1取消、1因依赖跳过。[第二组场景检查](https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37384885480)含源码、干净重建、公共／高地浏览器及构建一致性五项全过；[专项第一组](https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37384884699)与[第二组](https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37384885550)均14项全过，包含生产生命周期。
+
+[第一组场景检查](https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37384884887)的check作业日志有全部45组成功记录，但23:09:32在20分钟边界报告取消，compare-builds跳过；没有确认该作业CLI0，不能把它改写为成功。原取消、步骤和已完成组名保留于[该提交CI证据](main-island-next-ci.json)。未调整时限或断言，也未因重复工作流再做昂贵实验。
+
+[第一次Pages](https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37384884655)与[最后一次Pages](https://github.com/tianyin231/TouhouGensokyoAtlas/actions/runs/37384885484)均构建／部署成功。已实际下载两个唯一发布包，最后包`github-pages-37384885484-1`／artifact11379447043于23:16:33报告发布成功，内含index.html为36,462,327B、SHA`c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a`，与本地验收成品逐字节相同。23:10的线上URL读取仍遇代理Tunnel403，未取得线上响应正文；发布包核验不代替线上响应散列核验。本次仅更新文档，以`[skip ci]`避免重复未变源码的回归；上述结论绑定b9ff4a3。
+
+下一独立工作树为`/workspace/genbu-entry-refinement`、分支`experiment/genbu-entry-20261005`，从b9ff4a3建立；实际GPT-6 Astra Max负责美术、GPT-6.1 Sol Max负责独立源与性能诊断。已看同一成品的真实`genbuOverview`：南端柱墙突兀、矩形水尾外露、来路与木板／桥头缺少连续落脚面。首稿范围仅x[-1024,-912]、z[-584,-480]，保留上游设施、桥及木板XY、原树与公共连接，以柱墙末端递降、完整岸坡和水尾衔接处理；预算仍≤4调用、≤4000提交三角、≤0.6MiB唯一新增常驻源、0新纹理。原生与冷层柱体独立映射，实际原桥／木板有通行体侵入，原CLI1保留；候选先净空及一张同机位全景，有视觉收益后才长回归。目前尚无合格候选图，不计入已交付。
 
 ## 2026-10-05：无缘塚西弧与无名之丘东坡
 
@@ -12,7 +22,7 @@
 
 生产生命周期各按同一声明协议实际配对：Muen基线22／22、候选24／24；Flower基线20／20、最终208组合20／20，全部CLI0。真实输入可唤醒绘制，两原生bank卸载后CPU/cache/required/renderer映射清空；各自独占GPU几何释放，公共记录保留，源、相机、wanted／LOD、资源六字段、程序键／引用及PNG严格恢复，一秒静止0绘制。Flower组合锚点相对202基线实际+5调用、-360提交三角、+38880属性字节、+2几何、0纹理；这是两阶段同时存在的总成本，不声称组合≤4调用，也没有逐批draw-ledger归因。CPU与完整Node可能重叠，只保留原始观测，不作提速或硬件FPS结论。
 
-组合`/workspace/main-island-next`从main504808e选择性整合，208输入、HTML36,462,327B／`c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a`两次独立构建一致。完整Node22于22:47:00 UTC完成45组、CLI0，1072.293秒，208输入与HTML前后不变，见[组合回归记录](main-island-next-regression.json)。本次提交CI／部署尚待核，旧6a27bb4结果不能代替。进度与下一入口见[主岛清单](main-island-upgrade.md)，不合并旧拒收祖先链；不因环境断连通知重复已经完成且源码未变的重型实验。
+组合`/workspace/main-island-next`从main504808e选择性整合，208输入、HTML36,462,327B／`c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a`两次独立构建一致。完整Node22于22:47:00 UTC完成45组、CLI0，1072.293秒，208输入与HTML前后不变，见[组合回归记录](main-island-next-regression.json)。已随b9ff4a3部署，该提交CI终态及准确发布包见上节和[CI证据](main-island-next-ci.json)。进度与下一入口见[主岛清单](main-island-upgrade.md)，不合并旧拒收祖先链；不因环境断连通知重复已经完成且源码未变的重型实验。
 
 ## 2026-10-05：已部署提交核验与无名之丘候选
 
