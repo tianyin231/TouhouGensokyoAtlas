@@ -1,0 +1,993 @@
+{
+  "scope": "Actual prototype leaf-root to actual stem triangles, variant0; independent CPU risk probe, not complete candidate checker",
+  "sourceSHA": "0622a50f8f738bfcde5a1be8852e6d6294ecad6e4c38d41bf6e9a5734c927fbf",
+  "near": [
+    {
+      "leaf": 0,
+      "branch": 0,
+      "terminal": false,
+      "distance": 1.0286447175908187e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 1,
+      "branch": 0,
+      "terminal": false,
+      "distance": 1.0286447175908187e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 2,
+      "branch": 0,
+      "terminal": false,
+      "distance": 1.0286447175908187e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 3,
+      "branch": 0,
+      "terminal": false,
+      "distance": 1.0286447175908187e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 4,
+      "branch": 0,
+      "terminal": false,
+      "distance": 1.0286447175908187e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 5,
+      "branch": 0,
+      "terminal": false,
+      "distance": 5.615477709103326e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 6,
+      "branch": 0,
+      "terminal": false,
+      "distance": 5.615477709103326e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 7,
+      "branch": 0,
+      "terminal": false,
+      "distance": 5.615477709103326e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 8,
+      "branch": 0,
+      "terminal": false,
+      "distance": 5.615477709103326e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 9,
+      "branch": 0,
+      "terminal": false,
+      "distance": 5.615477709103326e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 10,
+      "branch": 0,
+      "terminal": false,
+      "distance": 3.620196255085036e-10,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 11,
+      "branch": 0,
+      "terminal": false,
+      "distance": 3.620196255085036e-10,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 12,
+      "branch": 0,
+      "terminal": false,
+      "distance": 3.620196255085036e-10,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 13,
+      "branch": 0,
+      "terminal": false,
+      "distance": 3.620196255085036e-10,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 14,
+      "branch": 0,
+      "terminal": false,
+      "distance": 3.620196255085036e-10,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 15,
+      "branch": 1,
+      "terminal": false,
+      "distance": 3.3414269596700354e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 16,
+      "branch": 1,
+      "terminal": false,
+      "distance": 3.3414269596700354e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 17,
+      "branch": 1,
+      "terminal": false,
+      "distance": 3.3414269596700354e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 18,
+      "branch": 1,
+      "terminal": false,
+      "distance": 3.3414269596700354e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 19,
+      "branch": 1,
+      "terminal": false,
+      "distance": 3.3414269596700354e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 20,
+      "branch": 1,
+      "terminal": false,
+      "distance": 2.5146366516620935e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 21,
+      "branch": 1,
+      "terminal": false,
+      "distance": 2.5146366516620935e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 22,
+      "branch": 1,
+      "terminal": false,
+      "distance": 2.5146366516620935e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 23,
+      "branch": 1,
+      "terminal": false,
+      "distance": 2.5146366516620935e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 24,
+      "branch": 1,
+      "terminal": false,
+      "distance": 2.5146366516620935e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 25,
+      "branch": 1,
+      "terminal": false,
+      "distance": 8.579068288880319e-9,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 26,
+      "branch": 1,
+      "terminal": false,
+      "distance": 8.579068288880319e-9,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 27,
+      "branch": 1,
+      "terminal": false,
+      "distance": 8.579068288880319e-9,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 28,
+      "branch": 1,
+      "terminal": false,
+      "distance": 8.579068288880319e-9,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 29,
+      "branch": 1,
+      "terminal": false,
+      "distance": 8.579068288880319e-9,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 30,
+      "branch": 2,
+      "terminal": false,
+      "distance": 4.080844356734819e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 31,
+      "branch": 2,
+      "terminal": false,
+      "distance": 4.080844356734819e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 32,
+      "branch": 2,
+      "terminal": false,
+      "distance": 4.080844356734819e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 33,
+      "branch": 2,
+      "terminal": false,
+      "distance": 4.080844356734819e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 34,
+      "branch": 2,
+      "terminal": false,
+      "distance": 4.080844356734819e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 35,
+      "branch": 2,
+      "terminal": false,
+      "distance": 1.0847284325547544e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 36,
+      "branch": 2,
+      "terminal": false,
+      "distance": 1.0847284325547544e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 37,
+      "branch": 2,
+      "terminal": false,
+      "distance": 1.0847284325547544e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 38,
+      "branch": 2,
+      "terminal": false,
+      "distance": 1.0847284325547544e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 39,
+      "branch": 2,
+      "terminal": false,
+      "distance": 1.0847284325547544e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 40,
+      "branch": 2,
+      "terminal": false,
+      "distance": 3.3572696032710537e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 41,
+      "branch": 2,
+      "terminal": false,
+      "distance": 3.3572696032710537e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 42,
+      "branch": 2,
+      "terminal": false,
+      "distance": 3.3572696032710537e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 43,
+      "branch": 2,
+      "terminal": false,
+      "distance": 3.3572696032710537e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 44,
+      "branch": 2,
+      "terminal": false,
+      "distance": 3.3572696032710537e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 45,
+      "branch": 3,
+      "terminal": false,
+      "distance": 2.049092474211654e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 46,
+      "branch": 3,
+      "terminal": false,
+      "distance": 2.049092474211654e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 47,
+      "branch": 3,
+      "terminal": false,
+      "distance": 2.049092474211654e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 48,
+      "branch": 3,
+      "terminal": false,
+      "distance": 2.049092474211654e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 49,
+      "branch": 3,
+      "terminal": false,
+      "distance": 2.049092474211654e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 50,
+      "branch": 3,
+      "terminal": false,
+      "distance": 3.44658396843601e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 51,
+      "branch": 3,
+      "terminal": false,
+      "distance": 3.44658396843601e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 52,
+      "branch": 3,
+      "terminal": false,
+      "distance": 3.44658396843601e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 53,
+      "branch": 3,
+      "terminal": false,
+      "distance": 3.44658396843601e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 54,
+      "branch": 3,
+      "terminal": false,
+      "distance": 3.44658396843601e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 55,
+      "branch": 3,
+      "terminal": false,
+      "distance": 4.7761339703837507e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 56,
+      "branch": 3,
+      "terminal": false,
+      "distance": 4.7761339703837507e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 57,
+      "branch": 3,
+      "terminal": false,
+      "distance": 4.7761339703837507e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 58,
+      "branch": 3,
+      "terminal": false,
+      "distance": 4.7761339703837507e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 59,
+      "branch": 3,
+      "terminal": false,
+      "distance": 4.7761339703837507e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 60,
+      "branch": 4,
+      "terminal": false,
+      "distance": 4.119527321476291e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 61,
+      "branch": 4,
+      "terminal": false,
+      "distance": 4.119527321476291e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 62,
+      "branch": 4,
+      "terminal": false,
+      "distance": 4.119527321476291e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 63,
+      "branch": 4,
+      "terminal": false,
+      "distance": 4.119527321476291e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 64,
+      "branch": 4,
+      "terminal": false,
+      "distance": 4.119527321476291e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 65,
+      "branch": 4,
+      "terminal": false,
+      "distance": 4.374831639351217e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 66,
+      "branch": 4,
+      "terminal": false,
+      "distance": 4.374831639351217e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 67,
+      "branch": 4,
+      "terminal": false,
+      "distance": 4.374831639351217e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 68,
+      "branch": 4,
+      "terminal": false,
+      "distance": 4.374831639351217e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 69,
+      "branch": 4,
+      "terminal": false,
+      "distance": 4.374831639351217e-8,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 70,
+      "branch": 4,
+      "terminal": false,
+      "distance": 2.56369408799352e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 71,
+      "branch": 4,
+      "terminal": false,
+      "distance": 2.56369408799352e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 72,
+      "branch": 4,
+      "terminal": false,
+      "distance": 2.56369408799352e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 73,
+      "branch": 4,
+      "terminal": false,
+      "distance": 2.56369408799352e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 74,
+      "branch": 4,
+      "terminal": false,
+      "distance": 2.56369408799352e-7,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 75,
+      "branch": "tip",
+      "terminal": true,
+      "distance": 0.005076366277022545,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 76,
+      "branch": "tip",
+      "terminal": true,
+      "distance": 0.005076366277022545,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 77,
+      "branch": "tip",
+      "terminal": true,
+      "distance": 0.005076366277022545,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 78,
+      "branch": "tip",
+      "terminal": true,
+      "distance": 0.005076366277022545,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 79,
+      "branch": "tip",
+      "terminal": true,
+      "distance": 0.005076366277022545,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    }
+  ],
+  "far": [
+    {
+      "leaf": 0,
+      "branch": 0,
+      "terminal": false,
+      "distance": 1.134288603674863,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 4,
+      "branch": 0,
+      "terminal": false,
+      "distance": 1.134288603674863,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 5,
+      "branch": 0,
+      "terminal": false,
+      "distance": 2.0112948760134977,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 7,
+      "branch": 0,
+      "terminal": false,
+      "distance": 2.0112948760134977,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 9,
+      "branch": 0,
+      "terminal": false,
+      "distance": 2.0112948760134977,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 10,
+      "branch": 0,
+      "terminal": false,
+      "distance": 2.6904540411205646,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 12,
+      "branch": 0,
+      "terminal": false,
+      "distance": 2.6904540411205646,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 14,
+      "branch": 0,
+      "terminal": false,
+      "distance": 2.6904540411205646,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 15,
+      "branch": 1,
+      "terminal": false,
+      "distance": 1.2675808592950706,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 19,
+      "branch": 1,
+      "terminal": false,
+      "distance": 1.2675808592950706,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 20,
+      "branch": 1,
+      "terminal": false,
+      "distance": 2.216347169981538,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 22,
+      "branch": 1,
+      "terminal": false,
+      "distance": 2.216347169981538,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 24,
+      "branch": 1,
+      "terminal": false,
+      "distance": 2.216347169981538,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 25,
+      "branch": 1,
+      "terminal": false,
+      "distance": 2.9469159077387617,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 27,
+      "branch": 1,
+      "terminal": false,
+      "distance": 2.9469159077387617,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 29,
+      "branch": 1,
+      "terminal": false,
+      "distance": 2.9469159077387617,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 30,
+      "branch": 2,
+      "terminal": false,
+      "distance": 1.076981633702984,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 34,
+      "branch": 2,
+      "terminal": false,
+      "distance": 1.076981633702984,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 35,
+      "branch": 2,
+      "terminal": false,
+      "distance": 1.9139738161129243,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 37,
+      "branch": 2,
+      "terminal": false,
+      "distance": 1.9139738161129243,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 39,
+      "branch": 2,
+      "terminal": false,
+      "distance": 1.9139738161129243,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 40,
+      "branch": 2,
+      "terminal": false,
+      "distance": 2.5193583098210452,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 42,
+      "branch": 2,
+      "terminal": false,
+      "distance": 2.5193583098210452,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 44,
+      "branch": 2,
+      "terminal": false,
+      "distance": 2.5193583098210452,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 45,
+      "branch": 3,
+      "terminal": false,
+      "distance": 1.0051133317891852,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 49,
+      "branch": 3,
+      "terminal": false,
+      "distance": 1.0051133317891852,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 50,
+      "branch": 3,
+      "terminal": false,
+      "distance": 1.7407104161166156,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 52,
+      "branch": 3,
+      "terminal": false,
+      "distance": 1.7407104161166156,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 54,
+      "branch": 3,
+      "terminal": false,
+      "distance": 1.7407104161166156,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 55,
+      "branch": 3,
+      "terminal": false,
+      "distance": 2.264931115742741,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 57,
+      "branch": 3,
+      "terminal": false,
+      "distance": 2.264931115742741,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 59,
+      "branch": 3,
+      "terminal": false,
+      "distance": 2.264931115742741,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 60,
+      "branch": 4,
+      "terminal": false,
+      "distance": 0.8116351886596893,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 64,
+      "branch": 4,
+      "terminal": false,
+      "distance": 0.8116351886596893,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 65,
+      "branch": 4,
+      "terminal": false,
+      "distance": 1.3735430528374024,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 67,
+      "branch": 4,
+      "terminal": false,
+      "distance": 1.3735430528374024,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 69,
+      "branch": 4,
+      "terminal": false,
+      "distance": 1.3735430528374024,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 70,
+      "branch": 4,
+      "terminal": false,
+      "distance": 1.700822731453001,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 72,
+      "branch": 4,
+      "terminal": false,
+      "distance": 1.700822731453001,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 74,
+      "branch": 4,
+      "terminal": false,
+      "distance": 1.700822731453001,
+      "connectedAtTolerance": 0.05,
+      "passed": false
+    },
+    {
+      "leaf": 75,
+      "branch": "tip",
+      "terminal": true,
+      "distance": 0.0020709967324181117,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 77,
+      "branch": "tip",
+      "terminal": true,
+      "distance": 0.0020709967324181117,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    },
+    {
+      "leaf": 79,
+      "branch": "tip",
+      "terminal": true,
+      "distance": 0.0020709967324181117,
+      "connectedAtTolerance": 0.05,
+      "passed": true
+    }
+  ],
+  "passed": false
+}

@@ -1,0 +1,467 @@
+{
+  "schema": 1,
+  "scope": "Bounded CPU native identity, geometry connection, instances, path headroom and unchanged cold asset; no visual/GPU/FPS acceptance",
+  "passed": false,
+  "checks": [
+    {
+      "name": "original region geometry fixture",
+      "passed": true,
+      "result": {
+        "originalGeometrySHA": "3312677814fc2323303b5453b59d7bc9ad63ad6955afee93e85eb41715c4aa8a"
+      }
+    },
+    {
+      "name": "exact target population and unchanged original identity",
+      "passed": true,
+      "result": {
+        "targetRecords": 24,
+        "culms": 807,
+        "unchangedRecords": 942,
+        "originalMatricesColorsIdsMaterialsLodBoundsPathsBuildingsPreserved": true,
+        "newGeometrySHA": "f1d0746d7f7043eb059be42ba61bbfc199c7479f440dfecbbff2989bb3639e17"
+      }
+    },
+    {
+      "name": "prototype 0 original culm and triangle budget",
+      "passed": true,
+      "result": {
+        "near": 1292,
+        "far": 110,
+        "retainedNearCulmTriangles": 504,
+        "retainedFarCulmTriangles": 15
+      }
+    },
+    {
+      "name": "prototype 0 near source geometry",
+      "passed": true,
+      "result": {
+        "stem": {
+          "triangles": 972,
+          "minimumArea": 0.00000270624493944831
+        },
+        "leaf": {
+          "triangles": 320,
+          "minimumArea": 0.012851233597154562
+        }
+      }
+    },
+    {
+      "name": "prototype 0 near leaf connection",
+      "passed": true,
+      "result": {
+        "leaves": 80,
+        "maximumActualStemDistance": 0.0050763195506587375,
+        "tolerance": 0.05,
+        "actualRootVertices": true
+      }
+    },
+    {
+      "name": "prototype 0 far source geometry",
+      "passed": true,
+      "result": {
+        "stem": {
+          "triangles": 24,
+          "minimumArea": 0.000003897070877354903
+        },
+        "leaf": {
+          "triangles": 86,
+          "minimumArea": 0.07390802217626483
+        }
+      }
+    },
+    {
+      "name": "prototype 0 far leaf connection",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Floating far leaf roots: [{\"leaf\":0,\"branch\":0,\"distance\":1.1342886411409867},{\"leaf\":4,\"branch\":0,\"distance\":1.1342886411409867},{\"leaf\":5,\"branch\":0,\"distance\":2.0112948924131837},{\"leaf\":7,\"branch\":0,\"distance\":2.0112948924131837},{\"leaf\":9,\"branch\":0,\"distance\":2.0112948924131837}]\n\n40 !== 0\n\n    at leafConnections (file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:49:53)\n    at file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:67:887\n    at check (file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:63:85)\n    at checkBambooEntry (file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:67:835)\n    at async file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:77:15"
+    },
+    {
+      "name": "prototype 0 near branch to retained culm",
+      "passed": true,
+      "result": {
+        "branches": 5,
+        "maximumDistance": 0.09009663128267355,
+        "tolerance": 0.2
+      }
+    },
+    {
+      "name": "prototype 1 original culm and triangle budget",
+      "passed": true,
+      "result": {
+        "near": 1292,
+        "far": 110,
+        "retainedNearCulmTriangles": 504,
+        "retainedFarCulmTriangles": 15
+      }
+    },
+    {
+      "name": "prototype 1 near source geometry",
+      "passed": true,
+      "result": {
+        "stem": {
+          "triangles": 972,
+          "minimumArea": 0.000002706207456846147
+        },
+        "leaf": {
+          "triangles": 320,
+          "minimumArea": 0.013139867610091973
+        }
+      }
+    },
+    {
+      "name": "prototype 1 near leaf connection",
+      "passed": true,
+      "result": {
+        "leaves": 80,
+        "maximumActualStemDistance": 0.00490409187903233,
+        "tolerance": 0.05,
+        "actualRootVertices": true
+      }
+    },
+    {
+      "name": "prototype 1 far source geometry",
+      "passed": true,
+      "result": {
+        "stem": {
+          "triangles": 24,
+          "minimumArea": 0.0000038967903753848545
+        },
+        "leaf": {
+          "triangles": 86,
+          "minimumArea": 0.06846531287030456
+        }
+      }
+    },
+    {
+      "name": "prototype 1 far leaf connection",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Floating far leaf roots: [{\"leaf\":0,\"branch\":0,\"distance\":0.849090828486941},{\"leaf\":4,\"branch\":0,\"distance\":0.849090828486941},{\"leaf\":5,\"branch\":0,\"distance\":1.7909871150731995},{\"leaf\":7,\"branch\":0,\"distance\":1.7909871150731995},{\"leaf\":9,\"branch\":0,\"distance\":1.7909871150731995}]\n\n40 !== 0\n\n    at leafConnections (file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:49:53)\n    at file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:67:887\n    at check (file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:63:85)\n    at checkBambooEntry (file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:67:835)\n    at async file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:77:15"
+    },
+    {
+      "name": "prototype 1 near branch to retained culm",
+      "passed": true,
+      "result": {
+        "branches": 5,
+        "maximumDistance": 0.10018745802530367,
+        "tolerance": 0.2
+      }
+    },
+    {
+      "name": "prototype 2 original culm and triangle budget",
+      "passed": true,
+      "result": {
+        "near": 1292,
+        "far": 110,
+        "retainedNearCulmTriangles": 504,
+        "retainedFarCulmTriangles": 15
+      }
+    },
+    {
+      "name": "prototype 2 near source geometry",
+      "passed": true,
+      "result": {
+        "stem": {
+          "triangles": 972,
+          "minimumArea": 0.0000027060522862735617
+        },
+        "leaf": {
+          "triangles": 320,
+          "minimumArea": 0.014232003706867844
+        }
+      }
+    },
+    {
+      "name": "prototype 2 near leaf connection",
+      "passed": true,
+      "result": {
+        "leaves": 80,
+        "maximumActualStemDistance": 0.0050332059922784805,
+        "tolerance": 0.05,
+        "actualRootVertices": true
+      }
+    },
+    {
+      "name": "prototype 2 far source geometry",
+      "passed": true,
+      "result": {
+        "stem": {
+          "triangles": 24,
+          "minimumArea": 0.000003897234036590754
+        },
+        "leaf": {
+          "triangles": 86,
+          "minimumArea": 0.07594894226183742
+        }
+      }
+    },
+    {
+      "name": "prototype 2 far leaf connection",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Floating far leaf roots: [{\"leaf\":0,\"branch\":0,\"distance\":1.0946069696645604},{\"leaf\":4,\"branch\":0,\"distance\":1.0946069696645604},{\"leaf\":5,\"branch\":0,\"distance\":1.8907168568140864},{\"leaf\":7,\"branch\":0,\"distance\":1.8907168568140864},{\"leaf\":9,\"branch\":0,\"distance\":1.8907168568140864}]\n\n40 !== 0\n\n    at leafConnections (file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:49:53)\n    at file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:67:887\n    at check (file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:63:85)\n    at checkBambooEntry (file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:67:835)\n    at async file:///workspace/bamboo-entry-refinement/tools/check-bamboo-entry.mjs:77:15"
+    },
+    {
+      "name": "prototype 2 near branch to retained culm",
+      "passed": true,
+      "result": {
+        "branches": 5,
+        "maximumDistance": 0.11027829061018178,
+        "tolerance": 0.2
+      }
+    },
+    {
+      "name": "actual transformed instance bounds and walking clearance",
+      "passed": true,
+      "result": {
+        "records": [
+          {
+            "record": "bamboo:stem:0:3:8",
+            "instances": 43,
+            "maximumActualVertexRadius": 62.534100706558824,
+            "declaredRadius": 68.83761786970557,
+            "minimumAddedHeightAboveOriginalRoot": 4.694676286429228,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:leaf:0:3:8",
+            "instances": 43,
+            "maximumActualVertexRadius": 63.16165083450781,
+            "declaredRadius": 68.83761786970557,
+            "minimumAddedHeightAboveOriginalRoot": 4.518125158819373,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:stem:1:3:8",
+            "instances": 45,
+            "maximumActualVertexRadius": 61.70413073753745,
+            "declaredRadius": 68.80152934361492,
+            "minimumAddedHeightAboveOriginalRoot": 5.060537523467531,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:leaf:1:3:8",
+            "instances": 45,
+            "maximumActualVertexRadius": 62.7650862396493,
+            "declaredRadius": 68.80152934361492,
+            "minimumAddedHeightAboveOriginalRoot": 4.887019526804693,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:stem:2:3:8",
+            "instances": 45,
+            "maximumActualVertexRadius": 62.57812526213403,
+            "declaredRadius": 71.01175816862326,
+            "minimumAddedHeightAboveOriginalRoot": 5.9801412168263255,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:leaf:2:3:8",
+            "instances": 45,
+            "maximumActualVertexRadius": 63.23199012960658,
+            "declaredRadius": 71.01175816862326,
+            "minimumAddedHeightAboveOriginalRoot": 5.808938638044367,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:stem:0:4:8",
+            "instances": 74,
+            "maximumActualVertexRadius": 63.31389919603178,
+            "declaredRadius": 73.68370463581205,
+            "minimumAddedHeightAboveOriginalRoot": 4.516760005725416,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:leaf:0:4:8",
+            "instances": 74,
+            "maximumActualVertexRadius": 64.13878831758021,
+            "declaredRadius": 73.68370463581205,
+            "minimumAddedHeightAboveOriginalRoot": 4.346899716431551,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:stem:1:4:8",
+            "instances": 72,
+            "maximumActualVertexRadius": 61.58659406121901,
+            "declaredRadius": 72.59968159539032,
+            "minimumAddedHeightAboveOriginalRoot": 5.005208944587508,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:leaf:1:4:8",
+            "instances": 72,
+            "maximumActualVertexRadius": 62.73615650009283,
+            "declaredRadius": 72.59968159539032,
+            "minimumAddedHeightAboveOriginalRoot": 4.833588079231561,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:stem:2:4:8",
+            "instances": 75,
+            "maximumActualVertexRadius": 63.99228030386094,
+            "declaredRadius": 72.62743284119053,
+            "minimumAddedHeightAboveOriginalRoot": 5.821981305415989,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:leaf:2:4:8",
+            "instances": 75,
+            "maximumActualVertexRadius": 64.90040013259663,
+            "declaredRadius": 72.62743284119053,
+            "minimumAddedHeightAboveOriginalRoot": 5.655306610460116,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:stem:0:3:9",
+            "instances": 45,
+            "maximumActualVertexRadius": 66.61306741472244,
+            "declaredRadius": 71.49380733821155,
+            "minimumAddedHeightAboveOriginalRoot": 4.238210151015323,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:leaf:0:3:9",
+            "instances": 45,
+            "maximumActualVertexRadius": 67.50156879017098,
+            "declaredRadius": 71.49380733821155,
+            "minimumAddedHeightAboveOriginalRoot": 4.078825193340549,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:stem:1:3:9",
+            "instances": 47,
+            "maximumActualVertexRadius": 67.48712153529115,
+            "declaredRadius": 73.45515191332399,
+            "minimumAddedHeightAboveOriginalRoot": 5.007557489371351,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:leaf:1:3:9",
+            "instances": 47,
+            "maximumActualVertexRadius": 68.38698007085841,
+            "declaredRadius": 73.45515191332399,
+            "minimumAddedHeightAboveOriginalRoot": 4.835856096050918,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:stem:2:3:9",
+            "instances": 45,
+            "maximumActualVertexRadius": 67.28073666930443,
+            "declaredRadius": 72.92709676998412,
+            "minimumAddedHeightAboveOriginalRoot": 5.744691945353338,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:leaf:2:3:9",
+            "instances": 45,
+            "maximumActualVertexRadius": 68.13417968486033,
+            "declaredRadius": 72.92709676998412,
+            "minimumAddedHeightAboveOriginalRoot": 5.580229930211431,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:stem:0:4:9",
+            "instances": 105,
+            "maximumActualVertexRadius": 65.82280840665973,
+            "declaredRadius": 72.79451496036346,
+            "minimumAddedHeightAboveOriginalRoot": 4.682467257058306,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:leaf:0:4:9",
+            "instances": 105,
+            "maximumActualVertexRadius": 66.51848526669168,
+            "declaredRadius": 72.79451496036346,
+            "minimumAddedHeightAboveOriginalRoot": 4.506375270349963,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:stem:1:4:9",
+            "instances": 109,
+            "maximumActualVertexRadius": 68.2607535892997,
+            "declaredRadius": 72.94134069025397,
+            "minimumAddedHeightAboveOriginalRoot": 5.274773120157278,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:leaf:1:4:9",
+            "instances": 109,
+            "maximumActualVertexRadius": 69.32498790063414,
+            "declaredRadius": 72.94134069025397,
+            "minimumAddedHeightAboveOriginalRoot": 5.093909316575889,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:stem:2:4:9",
+            "instances": 102,
+            "maximumActualVertexRadius": 64.35768683995403,
+            "declaredRadius": 74.93444751433333,
+            "minimumAddedHeightAboveOriginalRoot": 5.987795671481365,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          },
+          {
+            "record": "bamboo:leaf:2:4:9",
+            "instances": 102,
+            "maximumActualVertexRadius": 65.28636424368091,
+            "declaredRadius": 74.93444751433333,
+            "minimumAddedHeightAboveOriginalRoot": 5.816373957008693,
+            "belowHeadroomVertices": 0,
+            "headroom": 2.4
+          }
+        ],
+        "scope": "Every actual near/far source vertex transformed by every target matrix; added geometry below 2.4m tested against original path samples"
+      }
+    },
+    {
+      "name": "source accounting, three shared prototypes and repeat apply",
+      "passed": true,
+      "result": {
+        "originalPackBytes": 17651376,
+        "candidatePackBytes": 18105624,
+        "additionalRetainedSourceBackingBytes": 454248,
+        "targetRecordDelta": 0,
+        "newTextures": 0,
+        "sourceAccountingIsNotGpuMeasurement": true
+      }
+    },
+    {
+      "name": "original cold overview preserved and separately identified",
+      "passed": true,
+      "result": {
+        "assetSHA": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+        "record": "overview:bamboo:trees",
+        "instances": 900,
+        "triangles": 48,
+        "coldUpdated": false,
+        "coldIsNotNativeSubset": true
+      }
+    }
+  ],
+  "sourceSHA": {
+    "src/bamboo-entry-plants.js": "0622a50f8f738bfcde5a1be8852e6d6294ecad6e4c38d41bf6e9a5734c927fbf",
+    "src/bamboo-entry-upgrade.js": "cc94430145f8fb8c27752e8b926087f2f5ebac13e4541a28a4a8cb6d7cb08fcf",
+    "project.json": "2e00a31b8610f6e43846008c347d32dbb56ec70c0203b61caff2026fe27ec1f9"
+  },
+  "checkerSHA": "ca02be885b9b8d0e8126b339e3d64fa09120e15f9daa1f64a7f0a3662ff8773e",
+  "CPUms": 5811.379207000001
+}

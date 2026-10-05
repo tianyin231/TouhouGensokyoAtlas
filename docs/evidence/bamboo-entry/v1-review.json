@@ -1,0 +1,38 @@
+{
+  "status": "rejected",
+  "scope": "Four native bamboo cells, 807 culms; no cold overview replacement",
+  "sourceSHA": {
+    "src/bamboo-entry-plants.js": "0622a50f8f738bfcde5a1be8852e6d6294ecad6e4c38d41bf6e9a5734c927fbf",
+    "src/bamboo-entry-upgrade.js": "cc94430145f8fb8c27752e8b926087f2f5ebac13e4541a28a4a8cb6d7cb08fcf",
+    "project.json": "2e00a31b8610f6e43846008c347d32dbb56ec70c0203b61caff2026fe27ec1f9",
+    "tools/check-bamboo-entry.mjs": "ca02be885b9b8d0e8126b339e3d64fa09120e15f9daa1f64a7f0a3662ff8773e"
+  },
+  "artifactSHA": "c804298bfef2b41302ba39837f324da4f494760a0a2ad6bae06ba9e22461d35c",
+  "observations": [
+    "Near crowns lose most foliage area, leaving thin poles and small umbrella-like tufts.",
+    "Transition to unchanged feather-row crowns is visible.",
+    "Far leaf roots lack real branch support in independent CPU probe; strict failure retained."
+  ],
+  "measurements": {
+    "nearLeafSurfaceAreaRelativeToBaselineRange": [
+      0.263,
+      0.268
+    ],
+    "projectedTriangleAreaSumRelativeToBaseline": 0.5127,
+    "projectedMetricIsActualCoverage": false
+  },
+  "acceptance": false,
+  "longRegressionRun": false,
+  "hardwareFPSMeasured": false,
+  "cameraSequence": [
+    "bambooOverview",
+    "bambooEntry"
+  ],
+  "boundedChecker": {
+    "checks": 23,
+    "passedChecks": 20,
+    "exitCode": 1,
+    "failure": "three far leaf connection assertions",
+    "checkerSHA": "ca02be885b9b8d0e8126b339e3d64fa09120e15f9daa1f64a7f0a3662ff8773e"
+  }
+}
