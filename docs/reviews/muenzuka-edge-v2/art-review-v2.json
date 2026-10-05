@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "reviewer": "Astra art lead; direct inspection of original PNG pairs",
+  "reviewedUTC": "2026-10-05T21:30:47.096339+00:00",
+  "sourceSHA256": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+  "projectSHA256": "cb3a1e00e41b9eff57816a4661eedb06de6df7962b21e0ad29564e8c6df663e3",
+  "artifactSHA256": "ec19fa9107f1f947cc0d1ec6aa9a1ecf158162147fd0cf99130ad2fa62ca23a3",
+  "overview": {
+    "decision": "limited western crown sample passes visual gate; parent separately confirmed",
+    "benefits": [
+      "Continuous north-to-south crown volume after the two original southern trees join the same representation.",
+      "Repeated horizontal disks replaced by irregular deep bough lobes, with original roots, branches and ring route still readable."
+    ],
+    "remaining": [
+      "Eastern original crown forms and thin forest-floor/clearing depth remain unfinished.",
+      "No claim of completing Muenzuka or main-island terrain."
+    ]
+  },
+  "A": {
+    "decision": "back view supports the limited sample; near view is occluded and cannot certify complete near-detail coverage",
+    "back": [
+      "All six selected leaf records are near LOD. Direct view shows canopy thickness, bough-to-crown contact and varied outline.",
+      "Broad rounded lobes remain stylized; no new geometry edits authorized by this review."
+    ],
+    "near": [
+      "Unchanged eastern foreground trees hide most selected western crowns. Renderer wanted/visible flags alone do not prove unobstructed visibility."
+    ],
+    "costResult": "Both actual same-view comparisons passed original +4 calls / +4000 triangles / 0 textures limits."
+  },
+  "blocking": [
+    "Independent actual cached LOD-sphere/all-phase wind check is CLI1, including a newly overflowing -23:7:0 case. Source remains frozen; no shrinkage or assertion relaxation.",
+    "B cold/low/night and long regressions paused by parent until local bounds repair."
+  ],
+  "images": {
+    "baseline/muenzukaOverview.png": "a0ad579059f20e48bc708f75532b4328ec0231cefed92aec71816cc8408fb9cb",
+    "v1/muenzukaOverview.png": "b84141dc95510148c10d2fa34f2fc5b69726626f73a1ebb2b31c058bec64320a",
+    "v2/muenzukaOverview.png": "d6996022734954334f22adcbad6f18bc9f7997ab01640e2d3344910d19f47145",
+    "baseline-A/near.png": "c2d257ffdb3bf1f169f2654d09546a81bff38ea8113bb696ae2caa45d445e222",
+    "v2-A/near.png": "e9c8c5aa4aedb3d24275509cc320be42b6f4f7dc7021f418eafa44dad109e82e",
+    "baseline-A/back.png": "3a1fec968c7b4e6615035693b5b1ed521937d684ad8eeaa1a1741822271fdadf",
+    "v2-A/back.png": "d4103edf60d44bf576391ef755dc7ba0becdcd3aeb615f0981bca8b60e0984c5"
+  },
+  "reports": {
+    "v2/report.json": "2696dbe5f4c4e44523c60d41ee74c544a1102a81617ecd66c1efda49e3be6b78",
+    "baseline-A/report.json": "20c4789161813d46b0693a2023c845cf82891324ced16e00625787721814af45",
+    "v2-A/report.json": "476949446e51338770132c21f0c77095b6ef6c4fd60d6148b8513a5162f44fd2",
+    "author-preflight-02.json": "9aee3172696b28af5648ceb5189e37b81782bf4f673b99ff9d42881db632aefb",
+    "independent-bounds-v2.json": "1135c0a9092057bd4f793a6393d128acd69c3cc4a5310d2eaa8de0738ff2c2cf"
+  },
+  "notRun": [
+    "B cold/low/night",
+    "complete independent source protection",
+    "native interaction/unload/reentry",
+    "full Node regression",
+    "candidate CI/deployment"
+  ],
+  "hardwareFPSMeasured": false
+}

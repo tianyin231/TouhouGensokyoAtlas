@@ -48,7 +48,8 @@
     "src/forest-canopy.js",
     "src/bamboo-entry-plants.js",
     "src/bamboo-entry-upgrade.js",
-    "src/sunflower-entry.js"
+    "src/sunflower-entry.js",
+    "src/muenzuka-edge.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",

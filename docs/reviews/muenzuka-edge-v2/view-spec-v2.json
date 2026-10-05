@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "candidateSourceSHA256": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+  "baselineArtifactSHA256": "402224fe67018c0fc33c6820f09d04cdea33b80914a79e62ca54de0e627bf8f8",
+  "baselineInputCount": 202,
+  "viewport": [
+    1280,
+    720
+  ],
+  "dpr": 1,
+  "fov": 49,
+  "clock": 12.5,
+  "weather": "clear",
+  "ao": true,
+  "motion": false,
+  "characters": false,
+  "labels": false,
+  "bloom": false,
+  "reflections": false,
+  "captureOrderRule": "After overview gate, collect baseline A then candidate A. Only if A is acceptable, collect baseline B then candidate B. Fresh browser per group and artifact, production native Worker once per group.",
+  "groups": {
+    "A": [
+      {
+        "id": "near",
+        "native": true,
+        "quality": "balanced",
+        "lighting": "neutral",
+        "eye": [
+          -1720,
+          90,
+          690
+        ],
+        "target": [
+          -1790,
+          80,
+          623
+        ]
+      },
+      {
+        "id": "back",
+        "native": true,
+        "quality": "balanced",
+        "lighting": "neutral",
+        "eye": [
+          -1898,
+          106,
+          565
+        ],
+        "target": [
+          -1775,
+          82,
+          583
+        ]
+      }
+    ],
+    "B": [
+      {
+        "id": "cold",
+        "native": false,
+        "displayMode": "atlas",
+        "quality": "balanced",
+        "lighting": "neutral",
+        "eye": [
+          -1533,
+          221,
+          789
+        ],
+        "target": [
+          -1710,
+          79,
+          565
+        ]
+      },
+      {
+        "id": "low",
+        "native": true,
+        "quality": "low",
+        "lighting": "neutral",
+        "eye": [
+          -1533,
+          221,
+          789
+        ],
+        "target": [
+          -1710,
+          79,
+          565
+        ]
+      },
+      {
+        "id": "night",
+        "native": true,
+        "quality": "balanced",
+        "lighting": "night",
+        "eye": [
+          -1720,
+          90,
+          690
+        ],
+        "target": [
+          -1790,
+          80,
+          623
+        ]
+      }
+    ]
+  },
+  "costBudget": {
+    "additionalAllPassCalls": 4,
+    "additionalSubmittedTriangles": 4000,
+    "additionalUniqueSourceBytes": 629145.6,
+    "newTextures": 0
+  },
+  "limitations": "Proposed cameras need actual image review. CPU projection is not visual acceptance. Baseline and candidate have the exact same group order; timings may overlap separate bounded CPU work and are not FPS evidence."
+}
