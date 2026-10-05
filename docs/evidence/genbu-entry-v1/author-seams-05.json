@@ -1,0 +1,99 @@
+{
+  "kind": "Author bounded actual-face/entry seam check, saved candidate05 only",
+  "protocolSHA": "eae610cbd79fa7e5eb8b4c6d5075d0239c337a59b73b383a259a65a526b7781c",
+  "sourceSHA": "519dc52242b35f7d1f8e03a92ea918b95dd3f2bd6bcec97d0e942b3662e6fabb",
+  "checks": [
+    {
+      "name": "Actual terrain exterior and both old LOD edges remain the same planes",
+      "passed": true,
+      "result": {
+        "samples": 2232,
+        "near": 0,
+        "far": 0.000001573271489974104
+      }
+    },
+    {
+      "name": "Actual original native-root footprint triangle support is retained",
+      "passed": true,
+      "result": {
+        "footprintSamples": 502,
+        "max": 0
+      }
+    },
+    {
+      "name": "Actual LOD height residual is preserved through every 2m ROI sample",
+      "passed": true,
+      "result": {
+        "samples": 3021,
+        "max": 0.000012500643258306354,
+        "oldMax": 1.1650066375732422
+      }
+    },
+    {
+      "name": "Actual unchanged first board front corners meet complete public road edge",
+      "passed": true,
+      "result": {
+        "corners": [
+          [
+            -948.0928344726562,
+            41.13199996948242,
+            -525.3493041992188
+          ],
+          [
+            -945.7454833984375,
+            41.13199996948242,
+            -526.2094116210938
+          ]
+        ],
+        "distances": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "Water override is local; original two-metre query gap is explicitly retained",
+      "passed": true,
+      "result": {
+        "outsideSamples": 3998,
+        "inheritedGap": [
+          {
+            "x": -974.4123017416629,
+            "z": -526,
+            "previous": false,
+            "candidate": false
+          },
+          {
+            "x": -974.5878127584799,
+            "z": -525.5,
+            "previous": false,
+            "candidate": false
+          },
+          {
+            "x": -974.7627007242678,
+            "z": -525,
+            "previous": false,
+            "candidate": false
+          },
+          {
+            "x": -974.936886265315,
+            "z": -524.5,
+            "previous": false,
+            "candidate": false
+          }
+        ],
+        "note": "Only the new tail z>=-524 is matched to the shared actual tail surface; the pre-existing original water/query gap is unchanged."
+      }
+    }
+  ],
+  "passed": true,
+  "nativeBuilds": 0,
+  "overviewHooks": 0,
+  "GPUFrames": 0,
+  "notMeasured": [
+    "Full native/cold actual passage prism test for columns not in original conflicts",
+    "Actual WebGL visual acceptance and culling cost",
+    "Transient Worker clone and unload/re-entry",
+    "FullNode regression"
+  ]
+}

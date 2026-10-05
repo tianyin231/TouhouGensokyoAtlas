@@ -1,0 +1,23 @@
+{
+  "startedUTC": "2026-10-05T23:32:25.716472+00:00",
+  "command": [
+    "python",
+    "/workspace/genbu-entry-evidence/capture-overview.py",
+    "--repo",
+    "/workspace/genbu-entry-refinement",
+    "--dist",
+    "/workspace/genbu-entry-evidence/v1-dist",
+    "--output",
+    "/workspace/genbu-entry-evidence/v1-capture",
+    "--expected-sha",
+    "339cb490862c41b98d442a18c5d921ed0a11440efe0bc54b9313d6f29b860f83",
+    "--label",
+    "Genbu southern mouth V1; source519dc522, author05 only"
+  ],
+  "protocolSHA256": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc",
+  "CPUConcurrency": "No heavy native/fullNode scheduled; another agent may inspect saved CPU data. Timings are not speed claims.",
+  "exitCode": 0,
+  "elapsedSeconds": 31.053691353998147,
+  "endedUTC": "2026-10-05T23:32:56.770165+00:00",
+  "protocolAfterSHA256": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc"
+}

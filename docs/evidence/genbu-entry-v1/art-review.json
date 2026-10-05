@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "reviewer": "Astra art lead; actually viewed both original full PNGs",
+  "decision": "reject V1; one targeted V2 authorized",
+  "reviewUTC": "2026-10-05T23:37:13.978151+00:00",
+  "sourceSHA": "519dc52242b35f7d1f8e03a92ea918b95dd3f2bd6bcec97d0e942b3662e6fabb",
+  "projectSHA": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "HTMLSHA": "339cb490862c41b98d442a18c5d921ed0a11440efe0bc54b9313d6f29b860f83",
+  "protocolSHA": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc",
+  "baselinePNG": {
+    "path": "/workspace/genbu-entry-evidence/baseline/genbuOverview.png",
+    "SHA256": "d25394ef427ab708a5bfd97a149aecec398c746f552093ce8f9942403876684d"
+  },
+  "candidatePNG": {
+    "path": "/workspace/genbu-entry-evidence/v1-capture/genbuOverview.png",
+    "SHA256": "73cf6edbf83611bf3bfcad8d35813dccca148b822c6025c46fde6990ff3ba77f"
+  },
+  "reportSHA": "d713dd85b05fb1bd7dad53df120ed2d089b9c3ed6744ce2347c98dc72e4c0d62",
+  "gain": "Lower original terminal columns open the bridge and creek; retain this part of the direction.",
+  "blockingVisualProblems": [
+    "New continuous black cliff/edge along the public approach left side; absent from baseline.",
+    "Water tail reads as a flat leaf-shaped sheet; bank/bed transition is insufficient.",
+    "A solitary low column beside the west bridgehead breaks the intended grouped cliff-to-bank transition."
+  ],
+  "actualCost": {
+    "totalCalls": {
+      "baseline": 333,
+      "candidate": 333,
+      "delta": 0
+    },
+    "totalTriangles": {
+      "baseline": 473175,
+      "candidate": 473685,
+      "delta": 510
+    },
+    "geometries": {
+      "baseline": 222,
+      "candidate": 222,
+      "delta": 0
+    },
+    "textures": {
+      "baseline": 11,
+      "candidate": 11,
+      "delta": 0
+    }
+  },
+  "residentAttributeBytes": {
+    "baseline": 23158184,
+    "candidate": 23225264,
+    "delta": 67080
+  },
+  "notRun": [
+    "Independent candidate source regression",
+    "Near/back/low/night/cold gates",
+    "Native lifecycle",
+    "FullNode",
+    "Candidate CI/deployment"
+  ],
+  "retainedFailures": [
+    "author-prepare-01",
+    "author-prepare-02-interrupted",
+    "author-seams-03",
+    "author-prepare-04",
+    "Original native/cold passage conflicts"
+  ],
+  "next": "One scoped V2, actual black-edge attribution first; no extra decorations or new area."
+}
