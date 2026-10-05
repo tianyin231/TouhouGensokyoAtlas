@@ -4,7 +4,7 @@
  * color is intentional: this pass is for judging actual mass and silhouette.
  */
 (function(G){'use strict';
-const revision=1,cutZ=378,color=G.rgb('#999789');
+const revision=2,cutZ=378,color=G.rgb('#999789');
 const scope=Object.freeze({x0:218,x1:394,z0:354,z1:391,stairBand:[288,312],cutZ});
 const treeSites=Object.freeze([
  [230.314453125,81.8342437744,359.1158752441406],
@@ -15,38 +15,27 @@ const treeSites=Object.freeze([
  [321.1407165527344,88.2888717651,371.2571105957031]
 ]);
 const stoneSources=Object.freeze({overview:'overview:myouren:hlod:architecture:myouren:1:1:templeStone',detail:'myouren:laid-stone-terrace-faces',removedTriangles:4872});
-// x, buried toe z, ledge rise above the toe's ground, ledge depth, upper nose z.
-// Close station pairs form two broad faults, rather than a pile of small rocks.
+// Each wing is a single connected rock mass with broad unequal projections.
+// Sections are homothetic about the buried back ridge: every corresponding
+// edge remains parallel, so each cross-station quad is an intentional plane.
+// There is no horizontal middle shelf or triangulation-induced folded panel.
 const bodies=Object.freeze([
- {bodyId:'west',floor:77,stations:[
-  [218.4,376.2,7.3,4.2,384.5], [226,374.3,8.8,4.1,383.4],
-  [237.2,363.8,12.8,5.8,380.4], [246.5,365.3,13.5,5.2,380.9],
-  [249.1,370.6,10.8,4.4,383.5], [258.2,375.3,9.8,4.0,383.9],
-  [273.5,377.6,7.3,3.8,384.5], [281.6,375.8,10.1,4.3,383.0],
-  [286.5,382.6,4.2,2.4,386.5]
+ {bodyId:'west',floor:77,section:[[362,80.0],[365.0,86.6],[373.1,103.8],[382.7,110.8],[389.45,111.72]],stations:[
+  [218.4,376.2], [225.7,374.1], [236.5,364.1], [245.6,364.9],
+  [251.2,372.2], [263.5,377.0], [272.6,377.8], [279.7,370.1], [286.5,370.7]
  ]},
- {bodyId:'east',floor:77,stations:[
-  [313.5,382.3,4.4,2.6,386.3], [321.8,378.1,7.8,3.7,384.3],
-  [334.2,365.8,13.7,5.7,380.8], [343.5,368.4,12.8,5.0,381.3],
-  [346.1,374.1,9.7,4.1,384.1], [358.7,374.0,11.3,4.3,381.7],
-  [373.9,374.6,12.7,4.0,382.0], [383.6,375.2,10.5,4.4,382.9],
-  [391.7,379.0,9.1,3.5,384.0], [393.6,382.7,5.4,2.4,386.4]
+ {bodyId:'east',floor:77,section:[[362,80.0],[364.7,86.7],[371.5,104.7],[381.5,110.4],[389.45,111.72]],stations:[
+  [313.5,371.3], [316.1,372.7], [322.5,377.8], [333.2,366.8],
+  [343.3,368.3], [348.3,375.7], [358.3,375.1], [373.3,374.4],
+  [383.7,376.4], [393.6,382.4]
  ]}
 ]);
 const f32=p=>p.map(Math.fround),key=p=>p.join(','),cross=(a,b,c)=>G.cross(G.sub(b,a),G.sub(c,a));
 function columnsFor(body,t){
- return body.stations.map(([x,z,rise,depth,nose],i)=>{
-  const ground=t.height(x,z),ledge=Math.min(108.4,ground+rise);
-  const profile=[
-   [z,ground-1.5], [z+.9,Math.min(109.1,ground+2.5)],
-   [z+2.0,ledge], [z+depth,Math.min(109.1,ledge+.5)],
-   [Math.max(nose,z+depth+1.0),111.45], [389.45,111.72]
-  ];
-  // End caps meet the retained hillside below its surface, so the large form
-  // reads as an outcrop rather than an isolated object planted on top of it.
-  if(i===0||i===body.stations.length-1)
-   for(const p of profile)p[1]=Math.min(p[1],t.height(x,p[0])-.35);
-  return {x,top:profile.map(([zz,y])=>f32([x,y,zz])),bottom:profile.map(([zz])=>f32([x,body.floor,zz]))};
+ const [backZ,backY]=body.section.at(-1),frontZ=body.section[0][0];
+ return body.stations.map(([x,toe])=>{
+  const scale=(backZ-toe)/(backZ-frontZ),profile=body.section.map(([z,y])=>[backZ+(z-backZ)*scale,backY+(y-backY)*scale]);
+  return {x,scale,top:profile.map(([z,y])=>f32([x,y,z])),bottom:profile.map(([z])=>f32([x,body.floor,z]))};
  });
 }
 function solidFaces(columns){
@@ -164,7 +153,9 @@ function applyDetail(data,pack){
  if(pack.meta?.myourenRockForm===revision)return pack;
  const stone=pack.meshes.find(m=>m.id===stoneSources.detail);if(!stone)throw Error('Missing Myouren detail stone source');
  const next=removeFacing(stone,new G.Terrain(data));
- return {...pack,meshes:pack.meshes.map(m=>m===stone?next:m),meta:{...pack.meta,myourenRockForm:revision}};
+ const meshes=pack.meshes.map(m=>m===stone?next:m),seen=new Set();let bytes=0;
+ for(const m of meshes)for(const name of ['vertices','farVertices','instances','instanceColors','index']){const a=m[name];if(a&&!seen.has(a.buffer)){seen.add(a.buffer);bytes+=a.buffer.byteLength;}}
+ return {...pack,meshes,bytes,meta:{...pack.meta,myourenRockForm:revision}};
 }
 const originalBuildRegion=G.buildRegion;
 G.buildRegion=async function(data,id,legacy){

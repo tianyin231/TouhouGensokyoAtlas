@@ -145,15 +145,15 @@ function triangleDifference(before,after){
  assert([...retained.values()].every(n=>n===0),'Facing removal added or rewrote retained original triangles: '+after.id);
  return removed;
 }
-function sourceRoots(records){
+export function sourceRoots(records){
  const found=new Map();
- for(const m of records){if(!m.instances||!m.instanceColors||!m.vertices||!m.id.includes('myouren'))continue;
+ for(const m of records){if(!m.instances||!m.instanceColors||!m.vertices||!(m.component==='trees'||m.id.includes(':legacy:plants:')))continue;
   let minY=Infinity;for(let i=1;i<m.vertices.length;i+=9)minY=Math.min(minY,m.vertices[i]);
   const low=[];for(let i=0;i<m.vertices.length;i+=9)if(m.vertices[i+1]<=minY+.2)low.push(Array.from(m.vertices.subarray(i,i+3)));
   assert(low.length,'No actual root-prototype vertices: '+m.id);
   for(let i=0;i<m.instances.length;i+=16){const a=m.instances.subarray(i,i+16),x=a[12],y=a[13]+minY*a[5],z=a[14];if(x<PROTECTED.roi[0]-2||x>PROTECTED.roi[2]+2||z<PROTECTED.roi[1]-2||z>PROTECTED.roi[3]+2)continue;
-   const radius=Math.max(...low.map(p=>Math.hypot(a[0]*p[0]+a[8]*p[2],a[2]*p[0]+a[10]*p[2]))),id=[x,y,z].join(',');
-   const previous=found.get(id);if(!previous||radius>previous.radius)found.set(id,{record:m.id,instance:i/16,x,y,z,radius,matrixSHA:hash(a)});
+   const radius=Math.max(...low.map(p=>Math.hypot(a[0]*p[0]+a[8]*p[2],a[2]*p[0]+a[10]*p[2]))),id=[x,a[13],z].join(',');
+   const previous=found.get(id);if(!previous)found.set(id,{record:m.id,instance:i/16,x,y,z,radius,matrixSHA:hash(a)});else{previous.y=Math.min(previous.y,y);previous.radius=Math.max(previous.radius,radius);}
   }
  }
  assert(found.size>0,'No original roots were independently selected around the authorized footprint');
@@ -166,13 +166,18 @@ function topAt(tris,x,z){
  }
  return y;
 }
+function planDistance(point,tri){
+ const p=tri.points.map(p=>[p[0],p[2]]),[a,b,c]=p,u=sub(b,a),v=sub(c,a),w=sub(point,a),den=u[0]*v[1]-u[1]*v[0];
+ if(Math.abs(den)>1e-10){const s=(w[0]*v[1]-w[1]*v[0])/den,t=(u[0]*w[1]-u[1]*w[0])/den;if(s>=0&&t>=0&&s+t<=1)return 0;}
+ return Math.min(...p.map((a,i)=>{const b=p[(i+1)%3],u=sub(b,a),w=sub(point,a),length=dot(u,u),t=length?Math.max(0,Math.min(1,dot(w,u)/length)):0;return Math.hypot(w[0]-t*u[0],w[1]-t*u[1]);}));
+}
 export function checkRootClearance(roots,normalRecords){
  const tris=normalRecords.flatMap(actualTriangles),rows=[];
- for(const root of roots){let maximumNewSurface=null,coveredSamples=0;const offsets=[[0,0],...Array.from({length:16},(_,i)=>[root.radius*Math.cos(i*Math.PI/8),root.radius*Math.sin(i*Math.PI/8)])];
+ for(const root of roots){let maximumNewSurface=null,coveredSamples=0;const minimumPlanarDistance=Math.min(...tris.map(t=>planDistance([root.x,root.z],t))),minimumPlanarClearance=minimumPlanarDistance-root.radius;assert(minimumPlanarClearance>=-.00005,'New closed mass overlaps actual old root footprint in plan: '+root.record+'/'+root.instance+' clearance='+minimumPlanarClearance);const offsets=[[0,0],...Array.from({length:16},(_,i)=>[root.radius*Math.cos(i*Math.PI/8),root.radius*Math.sin(i*Math.PI/8)])];
   for(const [dx,dz] of offsets){const y=topAt(tris,root.x+dx,root.z+dz);if(y===null)continue;coveredSamples++;maximumNewSurface=maximumNewSurface===null?y:Math.max(maximumNewSurface,y);assert(y<=root.y+.02,'New closed mass buries original root footprint: '+root.record+'/'+root.instance+' rootY='+root.y+' bodyY='+y);}
-  rows.push({...root,coveredSamples,maximumNewSurface,minimumVerticalClearance:maximumNewSurface===null?null:root.y-maximumNewSurface});
+  rows.push({...root,minimumPlanarDistance,minimumPlanarClearance,coveredSamples,maximumNewSurface,minimumVerticalClearance:maximumNewSurface===null?null:root.y-maximumNewSurface});
  }
- return {roots:rows,actualPrototypeFootprint:true,samplesPerRoot:17,maximumPermittedBurial:.02,scope:'Actual old instance matrices and prototype base vertices; finite radial surface probes, not a full solid collision proof'};
+ return {roots:rows,actualPrototypeFootprint:true,samplesPerRoot:17,maximumPermittedBurial:.02,planTolerance:.00005,scope:'Exact distance to every projected body triangle against a conservative disc from actual native/public prototype base vertices, plus bounded vertical probes; not a full above-ground canopy collision proof'};
 }
 
 export async function checkMyourenRockForm(G,atlas,read){
@@ -183,7 +188,7 @@ export async function checkMyourenRockForm(G,atlas,read){
  const form=U.buildBodies(new G.Terrain(atlas));
  for(const b of form.bodies){for(const variant of ['normal','cut']){await check(b.bodyId+'/'+variant+'/closed',()=>checkClosedBody([b[variant]],b.bodyId+'/'+variant));await check(b.bodyId+'/'+variant+'/protected',()=>checkProtectedBodySpace(b[variant]));}await check(b.bodyId+'/cut-matches-normal',()=>checkCutMatchesNormal([b.normal],[b.cut],b.bodyId));}
  await check('public ownership and shared near/far dispatch',()=>{assert.equal(form.meshes.length,4);assert.equal(new Set(form.meshes.map(m=>m.id)).size,4);for(const m of form.meshes){assert.equal(m.owner,'island');assert.equal(m.region,'island');assert.equal(m.space,'surface');assert.equal(m.overview,true);assert.equal(m.globalSurface,true);assert(!m.globalNear&&!m.globalFar&&!m.farVertices,'New body has a divergent near/far sibling');assert.equal(m.lodPolicy,'shared-near-far');assert.equal(m.material,'cave');assert.equal(!!m.cutReplace,m.variant==='normal');assert.equal(!!m.cutOnly,m.variant==='cut');}return {records:4,activeNormal:2,activeCut:2,materials:['cave'],sharedNearFar:true,submittedCallsStillRequireBrowserMeasurement:true};});
- const unpack=p=>{const a=gunzipSync(read(p));return G.decodePack(a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength));},overview=unpack('assets/packs/overview.pack.gz'),before=overview.meshes.map(snapshot),oldIds=new Set(before.map(s=>s.record.id)),oldStone=overview.meshes.find(m=>m.id===U.stoneSources.overview),legacy=unpack('assets/packs/legacy.pack.gz'),roots=sourceRoots(G.plantSubset(legacy,'myouren'));
+ const unpack=p=>{const a=gunzipSync(read(p));return G.decodePack(a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength));},overview=unpack('assets/packs/overview.pack.gz'),before=overview.meshes.map(snapshot),oldIds=new Set(before.map(s=>s.record.id)),oldStone=overview.meshes.find(m=>m.id===U.stoneSources.overview),legacy=unpack('assets/packs/legacy.pack.gz'),roots=sourceRoots([...overview.meshes,...G.plantSubset(legacy,'myouren')]);
  await check('native root clearance',()=>checkRootClearance(roots,form.bodies.map(b=>b.normal)));
  const detail=await U.originalBuildRegion(atlas,'myouren'),beforeDetail=detail.meshes.map(snapshot),oldDetailStone=detail.meshes.find(m=>m.id===U.stoneSources.detail),expected=JSON.parse(read('tools/hakurei-baseline.json')).regions.myouren;
  await check('original author geometry fixture',()=>{assert.equal(geometryDigest(detail),expected);return {geometrySHA:geometryDigest(detail)};});

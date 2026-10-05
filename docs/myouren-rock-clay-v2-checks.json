@@ -1,0 +1,395 @@
+{
+  "schema": 1,
+  "scope": "Bounded CPU geometry, source identity and public ownership; no WebGL, lifecycle, hardware FPS or visual acceptance",
+  "passed": true,
+  "checks": [
+    {
+      "name": "protected native inputs",
+      "passed": true,
+      "result": {
+        "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+        "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+        "assets/packs/legacy.pack.gz": "46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88",
+        "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a"
+      }
+    },
+    {
+      "name": "west/normal/closed",
+      "passed": true,
+      "result": {
+        "label": "west/normal",
+        "records": [
+          "island:myouren-rock-form:west:normal"
+        ],
+        "triangles": 176,
+        "weldedPositions": 90,
+        "edges": 264,
+        "components": 1,
+        "signedVolume": 33781.76406185976,
+        "minimumTriangleArea": 4.519948648754507,
+        "minimumNormalDot": 0.9999999623110916,
+        "sourceHashes": [
+          {
+            "id": "island:myouren-rock-form:west:normal",
+            "vertices": "9a5bc93e9446fc89f0962377e06f6a3e66c326d65a25ccca5447dd6e28e12090",
+            "index": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "west/normal/protected",
+      "passed": true,
+      "result": {
+        "record": "island:myouren-rock-form:west:normal",
+        "triangles": 176,
+        "roi": [
+          218,
+          354,
+          394,
+          391
+        ],
+        "stairBand": [
+          288,
+          354,
+          312,
+          391
+        ],
+        "float32Tolerance": 0.00005
+      }
+    },
+    {
+      "name": "west/cut/closed",
+      "passed": true,
+      "result": {
+        "label": "west/cut",
+        "records": [
+          "island:myouren-rock-form:west:cut"
+        ],
+        "triangles": 176,
+        "weldedPositions": 90,
+        "edges": 264,
+        "components": 1,
+        "signedVolume": 8626.6213220167,
+        "minimumTriangleArea": 0.0027960771694779396,
+        "minimumNormalDot": 0.9999999657774752,
+        "sourceHashes": [
+          {
+            "id": "island:myouren-rock-form:west:cut",
+            "vertices": "680e6aec777d88b8f1ab36141cb4f7688a9d1c65447c31d6e2d66a1dc9b2cffd",
+            "index": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "west/cut/protected",
+      "passed": true,
+      "result": {
+        "record": "island:myouren-rock-form:west:cut",
+        "triangles": 176,
+        "roi": [
+          218,
+          354,
+          394,
+          391
+        ],
+        "stairBand": [
+          288,
+          354,
+          312,
+          391
+        ],
+        "float32Tolerance": 0.00005
+      }
+    },
+    {
+      "name": "west/cut-matches-normal",
+      "passed": true,
+      "result": {
+        "label": "west",
+        "cutZ": 378,
+        "capTriangles": 50,
+        "capInteriorSamples": 350,
+        "cutSurfaceSamples": 882,
+        "normalSurfaceSamples": 752,
+        "positionTolerance": 0.0001
+      }
+    },
+    {
+      "name": "east/normal/closed",
+      "passed": true,
+      "result": {
+        "label": "east/normal",
+        "records": [
+          "island:myouren-rock-form:east:normal"
+        ],
+        "triangles": 196,
+        "weldedPositions": 100,
+        "edges": 294,
+        "components": 1,
+        "signedVolume": 36688.010284371994,
+        "minimumTriangleArea": 2.1417835922911763,
+        "minimumNormalDot": 0.9999999616061297,
+        "sourceHashes": [
+          {
+            "id": "island:myouren-rock-form:east:normal",
+            "vertices": "cc1d1be09692e83bed51a24146321c53409f403eeb58fbbe26a2873cadd9d9a4",
+            "index": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "east/normal/protected",
+      "passed": true,
+      "result": {
+        "record": "island:myouren-rock-form:east:normal",
+        "triangles": 196,
+        "roi": [
+          218,
+          354,
+          394,
+          391
+        ],
+        "stairBand": [
+          288,
+          354,
+          312,
+          391
+        ],
+        "float32Tolerance": 0.00005
+      }
+    },
+    {
+      "name": "east/cut/closed",
+      "passed": true,
+      "result": {
+        "label": "east/cut",
+        "records": [
+          "island:myouren-rock-form:east:cut"
+        ],
+        "triangles": 196,
+        "weldedPositions": 100,
+        "edges": 294,
+        "components": 1,
+        "signedVolume": 7348.076940764684,
+        "minimumTriangleArea": 0.000019478611648082733,
+        "minimumNormalDot": 0.9999999616061297,
+        "sourceHashes": [
+          {
+            "id": "island:myouren-rock-form:east:cut",
+            "vertices": "74ab003d734162c8f79087a2518b1cf4a50fb080c628dc003e127179775e223f",
+            "index": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "east/cut/protected",
+      "passed": true,
+      "result": {
+        "record": "island:myouren-rock-form:east:cut",
+        "triangles": 196,
+        "roi": [
+          218,
+          354,
+          394,
+          391
+        ],
+        "stairBand": [
+          288,
+          354,
+          312,
+          391
+        ],
+        "float32Tolerance": 0.00005
+      }
+    },
+    {
+      "name": "east/cut-matches-normal",
+      "passed": true,
+      "result": {
+        "label": "east",
+        "cutZ": 378,
+        "capTriangles": 58,
+        "capInteriorSamples": 406,
+        "cutSurfaceSamples": 966,
+        "normalSurfaceSamples": 826,
+        "positionTolerance": 0.0001
+      }
+    },
+    {
+      "name": "public ownership and shared near/far dispatch",
+      "passed": true,
+      "result": {
+        "records": 4,
+        "activeNormal": 2,
+        "activeCut": 2,
+        "materials": [
+          "cave"
+        ],
+        "sharedNearFar": true,
+        "submittedCallsStillRequireBrowserMeasurement": true
+      }
+    },
+    {
+      "name": "native root clearance",
+      "passed": true,
+      "result": {
+        "roots": [
+          {
+            "record": "overview:village:trees",
+            "instance": 271,
+            "x": 230.314453125,
+            "y": 81.83424377441406,
+            "z": 359.1158752441406,
+            "radius": 0.5196528687094574,
+            "matrixSHA": "95f6aa89111ea95d5c5c33bd2407b6136ada3d49a6374fc6696b6638e4f93c5d",
+            "minimumPlanarDistance": 7.859669282510613,
+            "minimumPlanarClearance": 7.340016413801156,
+            "coveredSamples": 0,
+            "maximumNewSurface": null,
+            "minimumVerticalClearance": null
+          },
+          {
+            "record": "overview:village:trees",
+            "instance": 285,
+            "x": 217.8450927734375,
+            "y": 81.88619232177734,
+            "z": 356.60345458984375,
+            "radius": 0.46699707267185503,
+            "matrixSHA": "00ea226aed2ec02d1a27cf49b61b383fc5dd02606273902c9ead9bf7b3ccee87",
+            "minimumPlanarDistance": 18.174967277305456,
+            "minimumPlanarClearance": 17.7079702046336,
+            "coveredSamples": 0,
+            "maximumNewSurface": null,
+            "minimumVerticalClearance": null
+          },
+          {
+            "record": "overview:village:trees",
+            "instance": 286,
+            "x": 222.86842346191406,
+            "y": 83.4708480834961,
+            "z": 366.99566650390625,
+            "radius": 0.31704078700399263,
+            "matrixSHA": "36b7391ff0d6dd0d037a12c194e2e7b35f8cdbd84e8412542cbbae724e4079b7",
+            "minimumPlanarDistance": 7.13667916870428,
+            "minimumPlanarClearance": 6.819638381700287,
+            "coveredSamples": 0,
+            "maximumNewSurface": null,
+            "minimumVerticalClearance": null
+          },
+          {
+            "record": "overview:myouren:trees",
+            "instance": 12,
+            "x": 262.4426574707031,
+            "y": 87.17833709716797,
+            "z": 370.53851318359375,
+            "radius": 0.5049736096097576,
+            "matrixSHA": "59570c0714bd505f3fff1e9a5f8ec52cfaa9f5b88294830931118d2e6850b6eb",
+            "minimumPlanarDistance": 5.634990727138206,
+            "minimumPlanarClearance": 5.130017117528448,
+            "coveredSamples": 0,
+            "maximumNewSurface": null,
+            "minimumVerticalClearance": null
+          },
+          {
+            "record": "overview:myouren:trees",
+            "instance": 13,
+            "x": 272.57977294921875,
+            "y": 89.94184875488281,
+            "z": 372.4967041015625,
+            "radius": 0.5252681300147442,
+            "matrixSHA": "44bb500a2265bee3d784f8d1e6434921375b27506c93bbe902a59d0e2ae55427",
+            "minimumPlanarDistance": 3.6098893411605935,
+            "minimumPlanarClearance": 3.0846212111458495,
+            "coveredSamples": 0,
+            "maximumNewSurface": null,
+            "minimumVerticalClearance": null
+          },
+          {
+            "record": "overview:myouren:trees",
+            "instance": 17,
+            "x": 321.1407165527344,
+            "y": 88.26381341854308,
+            "z": 371.2571105957031,
+            "radius": 0.35195803272422965,
+            "matrixSHA": "b348eed41a24c7a1916c2451ca9f60f173d3966b4c056a5af7a9c779c3b5fb84",
+            "minimumPlanarDistance": 4.2698187298127275,
+            "minimumPlanarClearance": 3.9178606970884977,
+            "coveredSamples": 0,
+            "maximumNewSurface": null,
+            "minimumVerticalClearance": null
+          }
+        ],
+        "actualPrototypeFootprint": true,
+        "samplesPerRoot": 17,
+        "maximumPermittedBurial": 0.02,
+        "planTolerance": 0.00005,
+        "scope": "Exact distance to every projected body triangle against a conservative disc from actual native/public prototype base vertices, plus bounded vertical probes; not a full above-ground canopy collision proof"
+      }
+    },
+    {
+      "name": "original author geometry fixture",
+      "passed": true,
+      "result": {
+        "geometrySHA": "0286d2f49c75e5f6c613c8ef68373cf1f090ee2799245c267427055b403672c6"
+      }
+    },
+    {
+      "name": "detail brick identity and platform/stair/cemetery preservation",
+      "passed": true,
+      "result": {
+        "removedTriangles": 4872,
+        "retainedRecords": 33,
+        "oldGeometrySHA": "0286d2f49c75e5f6c613c8ef68373cf1f090ee2799245c267427055b403672c6",
+        "newGeometrySHA": "cca28e92d9f5635b004f51c948d797783f9f008d0d90c344fe9620265a594d3e",
+        "originalPlatformStairsShrubsTreesCemeteryPreserved": true
+      }
+    },
+    {
+      "name": "detail source byte accounting",
+      "passed": true,
+      "result": {
+        "reported": 24799716,
+        "actual": 24799716
+      }
+    },
+    {
+      "name": "public original records and exact cold facing identity",
+      "passed": true,
+      "result": {
+        "removedTriangles": 4872,
+        "unchangedPublicRecords": 1059,
+        "terrainAndInspectionWallUnchanged": true,
+        "allOriginalTreeInstancesUnchanged": true,
+        "coldDeletionMatchesRealDetailTriangles": true
+      }
+    },
+    {
+      "name": "new public source backing budget and repeat prepare",
+      "passed": true,
+      "result": {
+        "newBodyBackingBytes": 80352,
+        "replacementIndexBackingBytes": 277224,
+        "additionalRetainedSourceBackingBytes": 357576,
+        "normalBodyTriangles": 372,
+        "cutBodyTriangles": 372,
+        "newTextureRequests": 0,
+        "sourceBytesAreNotGpuResidency": true
+      }
+    }
+  ],
+  "sourceSHA": "4e6184ae1b75c284b1f601ddcc5e2467b5f8ecc7bfe347a4623a2afc01291e9d",
+  "checkerSHA": "a9b88effc17ad645f12933bec1b448813ade2be8868c36ae3cb22bbd93bd2ef0",
+  "budget": {
+    "calls": 4,
+    "triangles": 4000,
+    "attributeBytes": 629145.6,
+    "newTextures": 0
+  },
+  "CPUms": 4791.398383,
+  "projectSHA": "403664ba43f21243aea9b93e71d6023d27acbb80bee92634e7db6ca9fabd0e13",
+  "sourceOverride": "/workspace/myouren-rock-evidence/sol-clay-v2-source/src/myouren-rock-form.js"
+}

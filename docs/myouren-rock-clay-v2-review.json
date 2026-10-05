@@ -1,0 +1,35 @@
+{
+  "status": "visually_rejected_after_independent_reviews",
+  "artifactSHA256": "9dc3b8f74afb22ebabfe82a65edc991bb717ba0341db17aaca9bbbc75132a32a",
+  "sourceSHA256": "4e6184ae1b75c284b1f601ddcc5e2467b5f8ecc7bfe347a4623a2afc01291e9d",
+  "checkerSHA256": "a9b88effc17ad645f12933bec1b448813ade2be8868c36ae3cb22bbd93bd2ef0",
+  "reviewers": [
+    "root",
+    "gpt-6-astra / max art lead"
+  ],
+  "improvement": "连续腰线与偶然三角折面消失，阶梯侧基脚变宽。",
+  "remainingProblems": [
+    "大面仍像一排浇筑挡墙",
+    "两翼直立扶壁与原坡交叉",
+    "固定背脊的连续罩体无法形成真正凹入岩缝与土坡谷口"
+  ],
+  "technicalChecks": {
+    "passed": true,
+    "exitCode": 0,
+    "limitations": "CPU source/topology/clearance checks only; no visual acceptance, no lifecycle/full regression"
+  },
+  "metrics": {
+    "totalCalls": 280,
+    "totalTriangles": 658980,
+    "residentAttributeBytes": 29386584,
+    "textures": 24
+  },
+  "hardwareFPSMeasured": false,
+  "nextAction": "停止此覆盖式控制网方法，不做V3；整体任务继续竹林入口既有冠叶/枝叶轮廓。命莲寺下次允许局部重建原坡面，保护原树支撑、台阶和连通性而非冻结陡板。",
+  "notRun": [
+    "candidate front/night/low/rear/cutaway visual acceptance",
+    "candidate native interaction and lifecycle",
+    "full Node regression",
+    "candidate deployment"
+  ]
+}
