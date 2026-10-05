@@ -1,0 +1,89 @@
+{
+  "stage": "V1 isolated candidate; not accepted or published",
+  "baseCommit": "29663c94616067de77657dddd41c01035b8bf58d",
+  "sourceSHA": "c35c9af6051b927c5af2915eaa4090a5d1080d6e877823ec100c8d59c3f51db2",
+  "beforeArtifactSHA": "edd40a2e941aa4d65b958e9f2e8075b1aa2eba79665f50e90ec42df3b12dc91b",
+  "candidateArtifactSHA": "c6878f945fafd91002d1fa24ced3377f3102e1dac399dc2a35d86e131b06876d",
+  "protocolSHA": "ab81458a203d12549c257063522be766c74a2a885116ada87f774c9a680186cf",
+  "sameActualCameraAndSettings": true,
+  "CLIExitCode": 0,
+  "camera": {
+    "eye": [
+      503,
+      226,
+      167
+    ],
+    "target": [
+      305,
+      86,
+      419
+    ],
+    "fov": 49,
+    "quality": "balanced",
+    "lighting": "neutral",
+    "ao": true
+  },
+  "before": {
+    "totalCalls": 278,
+    "totalTriangles": 663480,
+    "geometries": 201,
+    "textures": 24,
+    "residentAttributeBytes": 29872584
+  },
+  "after": {
+    "totalCalls": 280,
+    "totalTriangles": 659861,
+    "geometries": 203,
+    "textures": 24,
+    "residentAttributeBytes": 29415192
+  },
+  "delta": {
+    "totalCalls": 2,
+    "totalTriangles": -3619,
+    "geometries": 2,
+    "textures": 0,
+    "residentAttributeBytes": -457392
+  },
+  "errors": [],
+  "contextEvents": [],
+  "httpFailures": [
+    {
+      "path": "/favicon.ico",
+      "status": 404,
+      "source": "local HTTP server"
+    }
+  ],
+  "hardwareFPSMeasured": false,
+  "CPUPerformanceCompared": false,
+  "rootVisualReview": {
+    "accepted": false,
+    "limitedGain": "Repeated brick lines removed; some bank relief is present",
+    "failures": [
+      "Broad blurred gray-green patches read as a stained wall",
+      "The four outcrops do not have legible rock planes and boundaries",
+      "Regular grid sampling and scalar height/color blending smear the intended polygonal rock forms"
+    ]
+  },
+  "independentGeometryChecks": "pending Sol final-source check",
+  "longRegression": "not run",
+  "navigationSurfaceSampler": "not implemented",
+  "independentVisualReview": {
+    "reviewer": "GPT-6 Astra Max",
+    "accepted": false,
+    "sameObservedCause": true
+  },
+  "independentPreflight": {
+    "sourceSHA": "c35c9af6051b927c5af2915eaa4090a5d1080d6e877823ec100c8d59c3f51db2",
+    "checkerSHA": "46308277039638a21e2940faa615025ed292a43b3e6659b1b154de8d32bb42dc",
+    "originalExitCode": 1,
+    "originalPassed": 9,
+    "originalTotal": 12,
+    "rawReport": "independent-v1.json",
+    "rawLog": "independent-v1.log",
+    "boundedDiagnosis": "v1-diagnostics.json",
+    "confirmedRegression": "25 samples outside the actual inspection cut at x194..206,z380..414 lose far-cut surface because the entire patch is clipped to z<=378.",
+    "protocolCorrections": "Root17 base Y versus matrix translation mismatch; unchanged central normal/cut difference up to .075977m. Original CLI1 retained.",
+    "newUniqueTypedBackingBytes": 551664,
+    "nonTargetPublicRecordsPreserved": 1050
+  }
+}

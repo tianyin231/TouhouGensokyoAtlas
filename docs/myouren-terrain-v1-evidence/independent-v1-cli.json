@@ -1,0 +1,11 @@
+{
+  "exitCode": 1,
+  "command": "/tmp/node-v22.23.3-linux-x64/bin/node tools/check-myouren-terrain.mjs --output /workspace/myouren-terrain-evidence/independent-v1.json",
+  "node": "v22.23.3",
+  "checkerSHA": "46308277039638a21e2940faa615025ed292a43b3e6659b1b154de8d32bb42dc",
+  "sourceSHA": "c35c9af6051b927c5af2915eaa4090a5d1080d6e877823ec100c8d59c3f51db2",
+  "elapsedCPUms": 4956.555771,
+  "prepareCPUms": 3899.457091,
+  "passedChecks": 9,
+  "totalChecks": 12
+}

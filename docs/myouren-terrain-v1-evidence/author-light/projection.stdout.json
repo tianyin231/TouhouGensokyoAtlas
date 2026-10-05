@@ -1,0 +1,25 @@
+{
+  "scope": "CPU control-point frustum only; no visibility/occlusion or visual acceptance",
+  "camera": {
+    "label": "命莲寺 · 山寺全景",
+    "region": "myouren",
+    "eye": [
+      503,
+      226,
+      167
+    ],
+    "target": [
+      305,
+      86,
+      419
+    ]
+  },
+  "points": 141,
+  "inFrame": 141,
+  "pixelBounds": [
+    485.1478198479072,
+    281.67104667120225,
+    882.4427939326049,
+    482.18080571860776
+  ]
+}

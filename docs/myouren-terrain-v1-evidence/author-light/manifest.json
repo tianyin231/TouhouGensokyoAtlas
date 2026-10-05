@@ -1,0 +1,70 @@
+{
+  "stage": "myouren terrain rebuild first candidate",
+  "base_commit": "29663c94616067de77657dddd41c01035b8bf58d",
+  "working_directory": "/workspace/myouren-terrain-rebuild",
+  "runtime": "/tmp/node-v22.23.3-linux-x64/bin/node",
+  "invocation": "node --input-type=module via inline heredoc",
+  "provenance": {
+    "scripts": "Exact inline JavaScript bodies preserved from the executed tool requests. The .mjs files were saved after execution and were not run again.",
+    "stdout": "JSON values transcribed from observed tool stdout; whitespace normalized while archiving. No byte-original stdout file was retained at the time of execution.",
+    "pretrace_source": "Reconstructed from frozen c35 source by reversing only the two recorded lines in trace-accounting-only.patch. This is an after-the-fact reconstruction, not an execution-time saved file.",
+    "final_source": "Byte-for-byte copy of frozen working source; verified SHA before copying.",
+    "no_rerun": "This archive step performed no geometry preparation, detail building, browser rendering or regression."
+  },
+  "executions": [
+    {
+      "name": "prepare-detail",
+      "script": "prepare-detail.executed.mjs",
+      "stdout": "prepare-detail.stdout.json",
+      "source_sha256": "1dff61edcf7e5b74940c9db1e1b79c8acfed74e3f77ba17ad435a724e25d5e31",
+      "project_sha256": "33d1a8580015f00061eb7d1c68f63104c6dad1561f68ebb950c0bef893e7fa11",
+      "source_state": "before typed cutTrace accounting revision",
+      "tool_exit_code": 0,
+      "elapsed_inside_script_ms": 7189.222595,
+      "sourceBytes_observed": 549336,
+      "cutTrace_storage_observed": "ordinary JavaScript array; 194 xyz points, excluded from typed buffer subtotal",
+      "limits": [
+        "self-check, not independent validation",
+        "six root centers only, not complete footprints",
+        "navigation sampler not integrated",
+        "GPU and visual not exercised"
+      ]
+    },
+    {
+      "name": "control-point-projection",
+      "script": "projection.executed.mjs",
+      "stdout": "projection.stdout.json",
+      "source_sha256": "c35c9af6051b927c5af2915eaa4090a5d1080d6e877823ec100c8d59c3f51db2",
+      "project_sha256": "33d1a8580015f00061eb7d1c68f63104c6dad1561f68ebb950c0bef893e7fa11",
+      "source_state": "final c35 frozen candidate",
+      "tool_exit_code": 0,
+      "points": 141,
+      "in_frame": 141,
+      "limits": [
+        "CPU clip-frustum projection only",
+        "no occlusion or actual mesh/silhouette validation",
+        "no GPU execution"
+      ]
+    }
+  ],
+  "final_state": {
+    "source_sha256": "c35c9af6051b927c5af2915eaa4090a5d1080d6e877823ec100c8d59c3f51db2",
+    "project_sha256": "33d1a8580015f00061eb7d1c68f63104c6dad1561f68ebb950c0bef893e7fa11",
+    "delta_from_prepare_run": "cutTrace converted to Float32Array; its backing included in sourceBytes. No authored geometry changes.",
+    "expected_final_sourceBytes_by_accounting": 551664,
+    "prepare_detail_reexecuted_on_final_source": false,
+    "independent_final_source_validation": "owned by Sol; not implied by this archive",
+    "visual_status": "Root captured same-camera v1 and both art reviewers rejected it; see ../v1/myouren.png. Archived CPU success is not visual acceptance."
+  },
+  "files": {
+    "final-source/project.json": "33d1a8580015f00061eb7d1c68f63104c6dad1561f68ebb950c0bef893e7fa11",
+    "final-source/src/myouren-terrain-rebuild.js": "c35c9af6051b927c5af2915eaa4090a5d1080d6e877823ec100c8d59c3f51db2",
+    "prepare-detail.executed.mjs": "f1a6c5b4b85a3e89d1dfa133568afeb5722bdf98bdefbedae7f90323d2ee95b4",
+    "prepare-detail.stdout.json": "f0e3963a23cbefdd90f08ddb722041cba0598b24977cef3e2484d631989c06c6",
+    "pretrace-source/project.json": "33d1a8580015f00061eb7d1c68f63104c6dad1561f68ebb950c0bef893e7fa11",
+    "pretrace-source/src/myouren-terrain-rebuild.js": "1dff61edcf7e5b74940c9db1e1b79c8acfed74e3f77ba17ad435a724e25d5e31",
+    "projection.executed.mjs": "1aae145af1c6128c13b730908741e20243c7325fbbf3aa82eb2c6f2535855402",
+    "projection.stdout.json": "fd1eac6f4fc7456779e9781c8d0ff3a4bae87edcace74d01c71f1057e5f40d6f",
+    "trace-accounting-only.patch": "e564e1651a8e74eef6c6be3a1f47ba6752e55edde7ee7d7f30131205389e85f1"
+  }
+}

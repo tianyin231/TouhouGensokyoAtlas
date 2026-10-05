@@ -1,0 +1,144 @@
+{
+  "ms": 7189.222595,
+  "bad": 0,
+  "minArea": 0.125,
+  "roots": [
+    {
+      "p": [
+        230.314453125,
+        81.83424377441406,
+        359.1158752441406
+      ],
+      "old": 81.93444893928245,
+      "near": 81.93444893928245,
+      "far": 81.93444893928245
+    },
+    {
+      "p": [
+        217.8450927734375,
+        81.88619232177734,
+        356.60345458984375
+      ],
+      "old": 81.98632471566088,
+      "near": 81.98632471566088,
+      "far": 81.98655694886111
+    },
+    {
+      "p": [
+        222.86842346191406,
+        83.4708480834961,
+        366.99566650390625
+      ],
+      "old": 83.65304878048482,
+      "near": 83.65304878048482,
+      "far": 83.65304878048482
+    },
+    {
+      "p": [
+        262.4426574707031,
+        87.17833709716797,
+        370.53851318359375
+      ],
+      "old": 87.22282391303452,
+      "near": 87.22282391303452,
+      "far": 87.22282391303452
+    },
+    {
+      "p": [
+        272.57977294921875,
+        89.94184875488281,
+        372.4967041015625
+      ],
+      "old": 90.06729358329903,
+      "near": 90.06729358329903,
+      "far": 90.06729358329903
+    },
+    {
+      "p": [
+        321.1407165527344,
+        88.26381341854308,
+        371.2571105957031
+      ],
+      "old": 88.35754237766378,
+      "near": 88.35754237766378,
+      "far": 88.35754237766378
+    }
+  ],
+  "meta": {
+    "revision": 1,
+    "changes": [
+      {
+        "source": "island:terrain:0:256",
+        "patch": "island:terrain:0:256:myouren-rebuild",
+        "removedFaces": 380,
+        "retainedFragmentTriangles": 77,
+        "patchTriangles": 721
+      },
+      {
+        "source": "island:terrain:0:256:far",
+        "patch": "island:terrain:0:256:far:myouren-rebuild",
+        "removedFaces": 39,
+        "retainedFragmentTriangles": 3,
+        "patchTriangles": 1646
+      },
+      {
+        "source": "island:terrain:0:256:cut",
+        "patch": "island:terrain:0:256:cut:myouren-rebuild",
+        "removedFaces": 263,
+        "retainedFragmentTriangles": 32,
+        "patchTriangles": 443
+      },
+      {
+        "source": "island:terrain:0:256:cut:far",
+        "patch": "island:terrain:0:256:cut:far:myouren-rebuild",
+        "removedFaces": 35,
+        "retainedFragmentTriangles": 3,
+        "patchTriangles": 890
+      },
+      {
+        "source": "island:terrain:256:256",
+        "patch": "island:terrain:256:256:myouren-rebuild",
+        "removedFaces": 1121,
+        "retainedFragmentTriangles": 191,
+        "patchTriangles": 2033
+      },
+      {
+        "source": "island:terrain:256:256:far",
+        "patch": "island:terrain:256:256:far:myouren-rebuild",
+        "removedFaces": 72,
+        "retainedFragmentTriangles": 9,
+        "patchTriangles": 4143
+      },
+      {
+        "source": "island:terrain:256:256:cut",
+        "patch": "island:terrain:256:256:cut:myouren-rebuild",
+        "removedFaces": 776,
+        "retainedFragmentTriangles": 70,
+        "patchTriangles": 1269
+      },
+      {
+        "source": "island:terrain:256:256:cut:far",
+        "patch": "island:terrain:256:256:cut:far:myouren-rebuild",
+        "removedFaces": 44,
+        "retainedFragmentTriangles": 9,
+        "patchTriangles": 2260
+      }
+    ],
+    "sourceBytes": 549336,
+    "contactBytes": 89496,
+    "removedFacingTriangles": 4872,
+    "artTriangles": 2486,
+    "farTriangles": 5777,
+    "cutTracePoints": 194
+  },
+  "detail": {
+    "beforeBytes": 25325892,
+    "afterBytes": 24799716,
+    "meta": {
+      "revision": 1,
+      "movedShrubClumps": 13,
+      "removedFacingTriangles": 4872
+    }
+  },
+  "nav": "not integrated; camera retains original analytic height"
+}
