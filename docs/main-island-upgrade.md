@@ -1,6 +1,6 @@
 # 主空岛逐区精修与贴图对照
 
-> 2026-10-05继续执行：无缘塚西弧25原树冠和无名之丘东坡宽鞍部已随main b9ff4a3部署，208输入组合`c5327ca0…`完整45组Node通过；该提交CI六工作流五成功、一取消，两个发布包均与验收成品逐字节一致。下一项玄武涧南口独立候选尚未视觉验收。见[无缘塚交接](muenzuka-edge-handoff.md)、[花丘交接](flower-hill-handoff.md)、[CI证据](main-island-next-ci.json)及[当前状态](current-status.md)。旧拒收候选保持隔离，整体地形／林分／林下仍待逐区完成。
+> 2026-10-06继续执行：无缘塚西弧25原树冠和无名之丘东坡宽鞍部已随main b9ff4a3部署，208输入组合`c5327ca0…`未变。玄武涧V2全景有收益，但低位／背向岸坡折皱、水尾平片感未过美术门，停止重型回归并隔离，不开同类V3或转新区回避。见[无缘塚交接](muenzuka-edge-handoff.md)、[花丘交接](flower-hill-handoff.md)、[CI证据](main-island-next-ci.json)及[当前状态](current-status.md)。整体地形／林分／林下仍待逐区完成。
 
 本轮授权记录于2026-10-03（UTC）。基线为 `1f09b002b29ef56e5262633152fe527e086eb0c2`，版本仍0.29.0。先比较贴图候选与原方案，画质和实际运行收益符合要求才采用；每完成一个区域，验证后单独上传Git。未验收的候选不能作为已完成区域发布。
 
@@ -74,7 +74,7 @@ v6已完成47棵原冠形、114处林下候选及局部弯道接地。正常档�
 | 7 | 太阳花田与草坡 | 北坡与公共来路7110e70d已通过七组图审、27项独立源检查、原生12项交互／重入和42组Node；main6a27bb4部署成功、CI19成功／2取消；V1硬角与V2四项技术失败保留；花缘规则、裸坡空白、树群疏密和林下仍待精修 |
 | 8 | 无名之丘与步道 | 东坡宽鞍部2fde1ae2七组图审及原预算通过；只修29旧草／铃兰避路与212株固定四分，原生10／10，组合生命周期20／20；完整45组Node通过，已随b9ff4a3部署，CI终态见本页首部。V1原16／19、870超预算及原5／9、Solar原6／7都保留；四角点法线后续严格归因3／3。裸坡、花缘、旧树冠和林下仍待精修 |
 | 9 | 无缘塚及西侧林缘 | 西弧25原树冠、冷层独立10代理的限定样板通过六组图审、独立源12项及真实配对生命周期22／24项；577780B新源、0新纹理。完整45组组合Node通过，已随b9ff4a3部署；其余37普通树、林分疏密、地形和林下仍待处理，旧bounds失败保留 |
-| 10 | 玄武涧（genbu）、水岸与桥头 | b9ff4a3真实全景基线已核，独立首稿处理南口x[-1024,-912]、z[-584,-480]末端柱墙、岸坡、水尾与来路／木板／桥头净空；保留原树、桥与路径XY及上游设施，尚未候选图审／长回归，不计交付 |
+| 10 | 玄武涧（genbu）、水岸与桥头 | 南口x[-1024,-912]、z[-584,-480]的V1拒收隔离6234425；V2 dd991fad的首图桥溪／来路有收益，但真实低位／背向出现新岸坡折皱、水尾平片感，拒收隔离b9fdb69，不开同类V3。三图均+0调用／+612三角／0纹理；未跑冷低夜、切档、重入、完整Node及候选CI，不计交付。原树、桥与路径XY及上游设施保护，下一方法先解决岸肩—坡脚—水床控制 |
 | 11 | 妖怪之山：山麓连接、主山道与索道、守矢神社及风神之湖、高地 | 待处理 |
 
 已经属于连续地表的伪天棚、圣域（`seiki`）、秘天崖、迷途之家、芍药田、黄瓜田和山麓间歇泉随相邻区域检查；它们不是本轮新增大区。以实际区域ID和源码为准，不按目录条目数量重复造景。地下、月面、魔界、天界等独立空间保持既有内容，仅检查其已经存在的地表入口接合。
@@ -104,7 +104,7 @@ v6已完成47棵原冠形、114处林下候选及局部弯道接地。正常档�
 
 当前组合工作树`/workspace/main-island-next`从main504808e建立，运行源码已作为b9ff4a3推main：Muen`b2ef1b7c`、局部renderer`49edfb8f`、Flower`2fde1ae2`，208输入与HTML`c5327ca0…`冻结。源码、美术、成本和生产生命周期已完成，完整Node22实际45组通过，1072.293秒、208输入与HTML不变；见[组合回归](main-island-next-regression.json)。该提交40作业成功、1取消、1依赖跳过；两次Pages发布成功，最后发布包与验收HTML逐字节一致，线上正文仍因Tunnel403未核，见[CI证据](main-island-next-ci.json)。两阶段原始材料分别在`/workspace/muenzuka-evidence`及`/workspace/flower-hill-evidence`；Muen审阅b95f519及Flower旧3cceacb／e883a33只作恢复证据，不合并其候选祖先。下面的870未解决状态为较早阶段记录，当前已由2fde方案按原预算修复。
 
-正在实施的玄武涧独立树为`/workspace/genbu-entry-refinement`／`experiment/genbu-entry-20261005`，基于b9ff4a3；证据位于`/workspace/genbu-entry-evidence`。先使用已有真实baseline/genbuOverview.png及实际原生／冷层源身份，完成有界净空和新增数组归属，再采同机位一张全景；未通过视觉门槛不进行长回归。范围、三项问题、预算和保护见[当前状态](current-status.md)首节，当前没有玄武涧已验收成果。
+玄武涧独立树`/workspace/genbu-entry-refinement`／`experiment/genbu-entry-20261005`基于b9ff4a3，现冻结拒收V2 dd991fad；证据位于`/workspace/genbu-entry-evidence`，V1远端审阅6234425保持。V2准确恢复提交为[独立审阅b9fdb69](https://github.com/tianyin231/TouhouGensokyoAtlas/blob/b9fdb693bf9b94eb9c180c1727498827e8293d62/docs/genbu-entry-v2-evidence/README.md)，工作树`/workspace/genbu-entry-v2-review`、分支`experiment/genbu-entry-v2-review-20261006`；其中Flower登记适配未合main、未执行完整Flower或Node，仅作为未验收patch保留。全景通过与近岸拒收分别记录，后续重型回归停止；范围、原失败和未测项见[当前状态](current-status.md)首节。下一方法从已验收main重新开始，同一南口用语义截面控制完整岸形，不默认转妖怪之山，也不恢复同方法V3。
 
 太阳花田源码7110e70d、HTML402224fe及202项输入已随main6a27bb4部署；CI与线上响应核验边界见[当前状态](current-status.md)和[太阳花田CI](sunflower-entry-ci.json)。原9905a09的HTML edd40a2e、线上403与专项取消仍保留于[竹林CI](bamboo-entry-ci.json)。太阳花田独立工作树 `/workspace/sunflower-entry-refinement`冻结451c8b5；V1审阅1e7874e与V2技术失败审阅c5d8268不作为合并祖先。无名之丘工作树 `/workspace/flower-hill-refinement`／`experiment/flower-hill-20261005`基于6a27bb4，原始证据在 `/workspace/flower-hill-evidence`；当前87096ff3待解决背向成本门槛。审阅分支 `experiment/flower-hill-v1-review-20261005`冻结3cceacb，换环境可取准确V1源码、两张原图和失败记录；不将该审阅祖先合入main。
 
