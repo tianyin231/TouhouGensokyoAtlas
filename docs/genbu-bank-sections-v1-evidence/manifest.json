@@ -302,6 +302,10 @@
     "candidate-report.json": {
       "bytes": 105159,
       "sha256": "83188c3105baa2263790b6d118218b7861eefeb7c29a121479445e40b97a34a4"
+    },
+    "root-art-review.json": {
+      "bytes": 2549,
+      "sha256": "d4501b7fd1c35015a2ac70ff4a2fe3d38d356eab2b8138635a7cde5576c202f2"
     }
   }
 }

@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "reviewUTC": "2026-10-06T00:49:13.513244+00:00",
+  "sourceSHA256": "803b575f7522fd2927b7d7453c9f4903a3f1b990138cc495e0b79b01c59aff93",
+  "projectSHA256": "fc4a4914d2017d43b72f862580226f11b8d1c001845c5fe717f247cfb0084c7b",
+  "contractSHA256": "a13e293577db9741a70256822c3d9f30fa6d293311770096ad6c715dd14464f7",
+  "baselineRuntimeCommit": "b9ff4a369080e861027966c13d071d08716a1348",
+  "baselineHTMLSHA256": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+  "candidateHTMLSHA256": "c82f56c2d821b656b493104d11bc808f9b84ba7aaed068772610c8d74bdeccaa",
+  "protocolSHA256": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc",
+  "actualImagesOpened": [
+    {
+      "kind": "baseline",
+      "path": "/workspace/genbu-entry-evidence/baseline/genbuOverview.png",
+      "sha256": "d25394ef427ab708a5bfd97a149aecec398c746f552093ce8f9942403876684d"
+    },
+    {
+      "kind": "candidate",
+      "path": "/workspace/genbu-bank-evidence/v1-capture/genbuOverview.png",
+      "sha256": "9d2d047521b13f3bef4b37c7c2d4826b5fe7ee56433af49d020ad7e4bcae7174"
+    }
+  ],
+  "generatedOrEditedImages": false,
+  "decision": "reject-overview-art-gate; preserve V1 then allow only one revision of this section method",
+  "retainedGains": [
+    "The terminal columns reveal the bridge and southern creek.",
+    "The new bank is visually cleaner than the rejected height-blend V2 and the road reaches the first plank."
+  ],
+  "blockingObservations": [
+    "The water tail remains a conspicuously long pointed blue sheet in the original overview.",
+    "The bank shoulder and bed do not yet read as a complete supporting basin at this view. A small source cost and smoother shading do not establish art acceptance."
+  ],
+  "sameViewMeasuredDelta": {
+    "allPassCalls": 2,
+    "submittedTriangles": 253,
+    "residentGeometryAttributeBytes": 32532,
+    "geometries": 2,
+    "textures": 0
+  },
+  "captureCLI": 0,
+  "reportSHA256": "83188c3105baa2263790b6d118218b7861eefeb7c29a121479445e40b97a34a4",
+  "AOrFurtherGPUExecuted": false,
+  "fullNodeOrProductionLifecycleRun": false,
+  "hardwareFPSMeasured": false,
+  "publishedToMain": false,
+  "nextStep": "Preserve exact source/artifact binding and raw evidence on isolated review commit. One revised short and broad shallow basin may be attempted inside the original scope and budget, then reuse the original overview and A cameras. If basin/shore art still fails, stop this common landform task and deliver diagnosis instead of moving to another region."
+}

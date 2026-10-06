@@ -6,7 +6,7 @@ V1 源 `803b575f7522fd2927b7d7453c9f4903a3f1b990138cc495e0b79b01c59aff93`，proj
 
 新控制面 x[-1008,-928], z[-544,-484]，原桥及 39 树保持；37 native／14 cold 终柱按已核身份降高。核心 near/far 同形，外带各回旧 LOD；新旧真实 indexed 面分别查询，保留旧 query/near 偏移。四个 patch 各自沿用原父块 center/radius，法线先跨 tile 累计。没有新增纹理、草石或树身份。
 
-[同机位原图](genbu-bank-sections-v1-evidence/before.png) → [V1 原图](genbu-bank-sections-v1-evidence/after.png)。Astra 与 root 均实际审阅并拒收：柱口和桥路开放、南岸平顺有收益；水尾仍呈长蓝片，岸肩与浅床厚度未读出。[美术判定](genbu-bank-sections-v1-evidence/art-review.json) 与技术结果分开。仅允许本方法一次 V2 短宽浅盆修正；若仍平片／缺岸脚则停止共同地形任务，交诊断，不扩山区。
+[同机位原图](genbu-bank-sections-v1-evidence/before.png) → [V1 原图](genbu-bank-sections-v1-evidence/after.png)。Astra 与 root 均实际审阅并拒收：柱口和桥路开放、南岸平顺有收益；水尾仍呈长蓝片，岸肩与浅床厚度未读出。[Astra 美术判定](genbu-bank-sections-v1-evidence/art-review.json)及[root 独立拒收](genbu-bank-sections-v1-evidence/root-art-review.json)与技术结果分开。仅允许本方法一次 V2 短宽浅盆修正；若仍平片／缺岸脚则停止共同地形任务，交诊断，不扩山区。
 
 ## 已测与原失败
 
