@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "purpose": "Restore same Node22.23.3 after temporary /tmp tool disappeared; no account/permission/environment reset",
+  "toolVersion": "v22.23.3",
+  "installedPath": "/workspace/toolchains/node-v22.23.3-linux-x64/bin/node",
+  "archiveOfficialURL": "https://nodejs.org/dist/v22.23.3/node-v22.23.3-linux-x64.tar.xz",
+  "officialChecksumURL": "https://nodejs.org/dist/v22.23.3/SHASUMS256.txt",
+  "archiveSHA256": "df450af89261115ef9f9e3830c3eeb2cc9213b63c720b1af623cb5dcbe2e02de",
+  "checksumFileSHA256": "4fe99a2ba9d552a6f51c13ed68fb11104cfa5df601aec616be689253a8139e7a",
+  "projectNodeVersionNotChanged": true,
+  "Node24CandidateRuns": 0
+}

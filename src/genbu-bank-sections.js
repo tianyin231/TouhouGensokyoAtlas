@@ -3,7 +3,7 @@
  * Original asset identities are transformed only where independently matched.
  */
 (function(G){'use strict';
-const revision=1,scope=Object.freeze([-1024,-584,-912,-480]),domain=Object.freeze([-1008,-544,-928,-484]),W=G.WEST;
+const revision=2,scope=Object.freeze([-1024,-584,-912,-480]),domain=Object.freeze([-1008,-544,-928,-484]),W=G.WEST;
 const previousHeight=G.Terrain.prototype.height,previousWater=G.Terrain.prototype.water,originalBuildRegion=G.buildRegion;
 const metadata=new WeakMap(),nativeMetadata=new WeakMap(),samplers=new WeakMap();
 // Exact low-trunk footprints from the bound b9ff native snapshot. Include
@@ -94,21 +94,21 @@ function floatPoint(x,z){return[Math.fround(x),0,Math.fround(z)];}
 // measured original face; inner rows carry a broad bank, wet edge and bed.
 const stationDefs=Object.freeze([
  [-544,null,null,null,null,null],[-536,null,null,43.25,41.2,null],[-530,null,null,42.45,41.07,null],
- [-524,null,null,41.95,40.96,38.66],[-520,-975.8,6.0,41.65,41.0,38.56],[-516,-976.5,6.3,41.35,40.9,38.46],
- [-512,-976.9,6.35,41.12,40.78,38.46],[-508,-977.1,5.85,40.95,40.6,38.52],[-504,-977.0,4.8,40.8,40.4,38.65],
- [-500,-976.8,2.8,40.6,40.15,38.92],[-496,-976.4,2.6,40.4,39.95,39.98],[-492,-976,3,40.6,39.5,39.95],[-484,null,null,null,null,null]
+ [-524,null,null,42.05,40.96,38.66],[-520,-975.3,8.25,42.05,41.0,38.56],[-516,-975.5,9.4,41.9,40.9,38.52],
+ [-512,-975.5,8.7,41.78,40.78,38.57],[-508,-975.3,6.4,41.62,40.6,38.72],[-504,-975.0,4.5,41.35,40.4,40.06],
+ [-500,-975.0,4.1,40.85,40.15,40.04],[-496,-975.0,3.7,40.6,39.95,40.02],[-492,-976,3,40.6,39.5,39.95],[-484,null,null,null,null,null]
 ].map(Object.freeze));
 function buildSections(oldNear){const rows=[],dry=G.rgb('#758664'),shoulder=G.rgb('#7a8766'),wet=G.rgb('#7f866e'),bed=G.rgb('#68796e');
  for(let r=0;r<stationDefs.length;r++){const [z,c0,w0,wy,ey,by]=stationDefs[r],c=c0??W.waterX(z),half=w0??W.waterHalf(z),water=z<tailStart?W.waterY(z):tailY;
   const xs=[-1008,-1000,c-half-7,c-half-2.4,c-half,c-half*.48,c+half*.48,c+half,c+half+3.5,-948,-936,-928];
-  const rim=r===0||r===stationDefs.length-1,closed=z>=-496,wetY=closed?39.99:water,bedY=by??water-.74;
-  const h=[null,null,wy,closed?40.1:water+.68,wetY,bedY,bedY,wetY,closed?40.1:water+.78,ey,ey===null?null:ey-.52,null],cols=[null,dry,shoulder,shoulder,wet,bed,bed,wet,shoulder,dry,dry,null];
+  const rim=r===0||r===stationDefs.length-1,closed=z>=-504,wetY=closed?39.99:water,bedY=by??water-.74;
+  const h=[null,null,wy,closed?40.1:water+.68,wetY,bedY,bedY,wetY,closed?40.3:water+1.48,ey,ey===null?null:ey-.52,null],cols=[null,dry,shoulder,shoulder,wet,bed,bed,wet,shoulder,dry,dry,null];
   rows.push(xs.map((x,i)=>{const old=oldNear(x,z);if(!old)throw Error('Missing original section boundary');return{p:[Math.fround(x),Math.fround(rim||h[i]===null?old[1]:h[i]),Math.fround(z)],old:old.slice(0,3),color:rim||cols[i]===null?old.slice(6,9):cols[i],rim:rim||i===0||i===xs.length-1};}));
  }
  const out=[],bands=[],core=[];for(let r=0;r<rows.length-1;r++)for(let j=0;j<rows[r].length-1;j++){const corners=[rows[r][j],rows[r+1][j],rows[r+1][j+1],rows[r][j+1]],isBand=r===0||r===rows.length-2||j===0||j===rows[r].length-2;
   // The broad shore diagonals follow the smaller actual planar fold.
   const options=[[[0,1,2],[0,2,3]],[[0,1,3],[1,2,3]]],normal=t=>G.norm(G.cross(G.sub(t[1],t[0]),G.sub(t[2],t[0]))),score=o=>1-G.dot(normal(o[0].map(i=>corners[i].p)),normal(o[1].map(i=>corners[i].p))),split=score(options[0])<=score(options[1])?options[0]:options[1];
-  for(const ids of split){const q={p:ids.map(i=>corners[i].p),old:ids.map(i=>corners[i].old),color:ids.map(i=>corners[i].color),weights:ids.map(i=>corners[i].rim?1:0),band:isBand,row:r,lane:j,wet:r>=3&&r<=9&&j>=4&&j<=6};out.push(q);(isBand?bands:core).push(q.p.map(p=>p.slice()));}
+  for(const ids of split){const q={p:ids.map(i=>corners[i].p),old:ids.map(i=>corners[i].old),color:ids.map(i=>corners[i].color),weights:ids.map(i=>corners[i].rim?1:0),band:isBand,row:r,lane:j,wet:r>=3&&r<=7&&j>=4&&j<=6};out.push(q);(isBand?bands:core).push(q.p.map(p=>p.slice()));}
  }
  return{rows,out,bands,core};
 }

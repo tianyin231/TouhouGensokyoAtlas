@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "sourceSHA": "d4143f18a7e5a102ac90f3cf1f9f86cb9a904846850fb77606d3f307f80e7cba",
+  "scriptSHA": "c21843d6ec5acd351d06ff28861ebd2fa665311571b3ee7ca5e50659e666de90",
+  "hooks": 0,
+  "nativeBuilds": 0,
+  "GPUFrames": 0,
+  "checks": [
+    {
+      "name": "outer own LOD boundary",
+      "passed": true,
+      "result": {
+        "samples": 3208,
+        "missing": 0,
+        "maxNear": 0.0000019073486399179274,
+        "maxFar": 0.0000033069000551222416
+      }
+    },
+    {
+      "name": "all final patch faces and vertex normals",
+      "passed": true,
+      "result": {
+        "zero": 0,
+        "minDot": 0.855763584136148,
+        "worst": {
+          "id": "genbu:bank-sections:-768:near",
+          "i": 161,
+          "dot": 0.855763584136148,
+          "p": [
+            -972,
+            39.08255386352539,
+            -544,
+            -0.0007495991885662079,
+            0.9994115233421326,
+            0.03429415822029114,
+            0.1474955976009369,
+            0.21181654930114746,
+            0.12514758110046387
+          ]
+        }
+      }
+    },
+    {
+      "name": "first board actual two-corner terrain clearance",
+      "passed": true,
+      "result": [
+        {
+          "p": [
+            -948.09283447,
+            41.13199997,
+            -525.3493042
+          ],
+          "near": 40.98481981663205,
+          "far": 40.98481981663205,
+          "nearGap": 0.1471801533679553,
+          "farGap": 0.1471801533679553
+        },
+        {
+          "p": [
+            -945.7454834,
+            41.13199997,
+            -526.2094116
+          ],
+          "near": 40.902809383222646,
+          "far": 40.902809383222646,
+          "nearGap": 0.2291905867773565,
+          "farGap": 0.2291905867773565
+        }
+      ]
+    },
+    {
+      "name": "single actual wet-line soil intersection",
+      "passed": true,
+      "result": {
+        "wetPoints": 70,
+        "wetMax": 0.0000043514883145689964
+      }
+    }
+  ],
+  "passed": true,
+  "elapsedMs": 2693.630505
+}

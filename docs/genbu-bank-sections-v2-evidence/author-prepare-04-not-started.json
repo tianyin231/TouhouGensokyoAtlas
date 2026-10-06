@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "exitCode": 127,
+  "executedJS": false,
+  "hooks": 0,
+  "nativeBuilds": 0,
+  "GPUFrames": 0,
+  "reason": "After exec-server transport recovery, original /tmp/node-v22.23.3-linux-x64/bin/node was absent. System Node24 was not used.",
+  "sourceSHA": "d4143f18a7e5a102ac90f3cf1f9f86cb9a904846850fb77606d3f307f80e7cba",
+  "stderrSHA": "2491a08663598b00900396c25e707d81178710c85fb1b0c98fa8df6e2aa70387"
+}

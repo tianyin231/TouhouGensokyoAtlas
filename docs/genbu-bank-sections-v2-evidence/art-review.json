@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "kind": "Astra actual V2 art review; root independently rejected the same original PNG",
+  "sourceSHA": "d4143f18a7e5a102ac90f3cf1f9f86cb9a904846850fb77606d3f307f80e7cba",
+  "artifactSHA": "131a167f3d118622c8fd972119e7530859bac7e8bd471555baa36a8e9ec32a2a",
+  "protocolSHA": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc",
+  "baselinePNG": "d25394ef427ab708a5bfd97a149aecec398c746f552093ce8f9942403876684d",
+  "candidatePNG": "b5b2f06a43019230e10e371e25de36b3ef74a1d3207a8f1afdf850911037b291",
+  "observations": [
+    "终柱递降保留桥溪开放及来路落脚的局部收益。",
+    "水尾确已由长尖片收短、加宽、圆收，但在固定全景仍像直接铺在绿地上的圆蓝片。",
+    "水床—湿坡—岸肩没有形成可读的完整承托；改变平面轮廓不足以达到整景收益。"
+  ],
+  "decision": "Rejected. 两稿停止该共同地形任务；不A、不V3、不长回归、不转新区。",
+  "capture": {
+    "passed": true,
+    "exitCode": 0,
+    "elapsedSeconds": 28.578304858999957,
+    "inputsUnchanged": true,
+    "artifactUnchanged": true,
+    "errors": [],
+    "httpFailures": [
+      {
+        "path": "/favicon.ico",
+        "status": 404
+      }
+    ],
+    "contextEvents": [],
+    "delta": {
+      "allCalls": 2,
+      "allTriangles": 242,
+      "attributeBytes": 31212,
+      "geometry": 2,
+      "texture": 0
+    }
+  },
+  "notRun": [
+    "A近/背",
+    "cold/low/night",
+    "continuous LOD",
+    "独立完整源检查",
+    "生产交互/卸载重入",
+    "完整Node",
+    "CI/部署"
+  ],
+  "costDoesNotImplyArtAcceptance": true,
+  "wallTimeNotSpeedComparison": true
+}

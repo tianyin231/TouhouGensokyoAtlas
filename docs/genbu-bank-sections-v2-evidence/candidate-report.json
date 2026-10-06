@@ -1,0 +1,3249 @@
+{
+  "schema": 1,
+  "purpose": "Single-view Genbu baseline or candidate",
+  "candidateLabel": "bank-sections-v2",
+  "startedUTC": "2026-10-06T00:55:15.020636+00:00",
+  "sourceHEADBefore": "1cccb6c1a74f4479e7d79c19eb3644ff797f87c1",
+  "artifactSHA256": "131a167f3d118622c8fd972119e7530859bac7e8bd471555baa36a8e9ec32a2a",
+  "releaseSHA256": "d448a412047d9165e212ec874903a1818d5742fae04a3cc020040ed324c91d9d",
+  "protocolSHA256": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc",
+  "inputsBefore": {
+    "project.json": "fc4a4914d2017d43b72f862580226f11b8d1c001845c5fe717f247cfb0084c7b",
+    "data/lunar.json": "92abf8f26344ef31bee7cb197330fe6cb7b4854a590e2687cfc7565dd4827ccc",
+    "data/makai.json": "3d5566dc31dcf696865246ba63f5d9cef7ad45464f5dcccc00e135564f166435",
+    "data/netherworld.json": "dfb60f6170e841f9f034a3b41cb7bea565e2c5cefa5b371099509693e14aa248",
+    "data/heaven.json": "6383792bb7608ff61f52653dafc81eedd2a6155287864a25fc653889c2e3111a",
+    "data/higan.json": "aed41a6af1c6ef21250f4533dd888f0f7610eb81db6907cb0b3219ebaa377bcd",
+    "data/animal.json": "58294cbe1b2c9e3dc28a316d927bbd410b32fb3bd024adce425266b4b0fe176f",
+    "data/backdoor.json": "a174f1344ae3dc8b73e336c130d0d87598b386e35bfc69c7c3336fdc78a3e289",
+    "data/kasen.json": "b03522e4d5f14aa691de7fc2ffcf596fe6c13840d6cc2b5d7c7e391c5d30fdbf",
+    "data/current-hell.json": "4e99e4f519f90d77f7f51267064ac4f408bd5067450be249c1138c4d7b0b2b1a",
+    "data/rainbow-mine.json": "d852d34cfbbcf3ee2a2168fbb9da9e139e33f2b320456bb8588c91ebe29bcc9b",
+    "data/highland.json": "b15892fb6b9a589aa890e4e3f44e7d8d0a57b234b16809f91ec1a58b7bb6775d",
+    "data/asama.json": "72098c152fd80bd90e7f70ab96053a477bb2a5bdd8f73ff72440416e6f67344b",
+    "data/hiten.json": "01c78bd126626d5a36470d0a2f0752ae0a1ae28b53aedf66e7c36d67825d8d26",
+    "data/mayohiga.json": "a9c8bcf0ecf74c54c115914875ecd9542e4fbf9f32e363760d79336add62ae47",
+    "data/peony.json": "67923caf740dc7cecd29f7a54893424d65ffc141a694e3a416f4f817c3448a5c",
+    "data/waterfall-cave.json": "45719d3e91fc6b4d0fba6ff0f350e844e54ba172b809355dfacec58d59fdcdcc",
+    "data/cucumber-farm.json": "4478346595556725f3007e1d1e7ad64b65b454adf67ea281e9ad97ee7cadd5b2",
+    "data/wind-cave.json": "a3c37a35721107173aacafef9d5188146769d32bee6ef57464ce1a143530af6a",
+    "data/geyser.json": "c9384ca594800782eec387af75a22df7c241831bdb27dd6a10405501580671b7",
+    "data/geyser-center.json": "faa4cc8582fef8f76595bcd6ddb6819bfe308c270a8878b8ebd3766942783646",
+    "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
+    "data/characters.json": "b87604e876804b5b9469657adf653451eccd561cddecdbb578f8966745beacc9",
+    "vendor/three/three.core.js": "78b2c4218834ca8670547ed2315bfc21a00ff4dc3403bbffc8c31493d31d14de",
+    "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+    "src/old-hell.js": "fde1ded5cfad70061c9a69b09b000fbd35bab17edcd583ed4d7973d5c9cfa643",
+    "src/kishinjou.js": "a90ac62e8244c71583fa85b007186bd8798454eba406136199f66949024a2899",
+    "src/lunar.js": "b7a870cf111ffa1ad4c68c5a9fed5d7f31ae08e4fb2c85dce1e8c60308243203",
+    "src/makai.js": "00746b16369b07c2ae549da3d8bcd34505f059b276f592cefd4053704b6a294b",
+    "src/netherworld.js": "e74f73aa97eb1fcca45e44abc894465b5279467e274089e0eeec83f6d871485a",
+    "src/landmarks.js": "04b8e640ca0fc597f889625b8a8173a767eced751355e5dbe034f44fadfd7ff9",
+    "src/heaven.js": "3231eef2637ac64cfb7eb257f35ddf1b5e59bd976642db1aa5a55baf93c3010d",
+    "src/higan.js": "deb81b207343b112ed0080d9378693a4bc04f93f82ad0af6cbaa626b623df34c",
+    "src/landscape.js": "4ef7b6f8076842506e8cac09086db4aa8277f92468e08aa0069c326f77ef35dc",
+    "src/animal.js": "055fe408319dd4d2faca1db8b0619c9d3222a2e42c8c575ebfbb7bf0cdfa7241",
+    "src/backdoor.js": "08031b368a145b1a4d774bd8d7e85dfc81c5adde2682515c069af774b882f098",
+    "src/kasen.js": "cf824cc3b34ef32f42bc127ca9d4ff8570876a9b47626ca5c43acfb709493004",
+    "src/current-hell.js": "47b27653fc2df883b38cbb212eca268b122eea8d72c03d047b590b6f8a8dd7f8",
+    "src/rainbow-mine.js": "8d41ee356f7d1323316e866cf96a88e6775edca6ef8784fc9dc812b9856a8d87",
+    "src/highland.js": "8816c040dd6f3c24d42beef3edb7a2c2604131bb41507c8964886ab659cda9d3",
+    "src/hakurei-plants.js": "8d149696fef5fc9a85204bfb3c2c4bd45992652cf9a2c81f498c0440f5e159f1",
+    "src/hakurei-transition.js": "18c8cb5751436fd08b9c92c32459ad5e71084ecde8f18e26ef44354decc47b3d",
+    "src/asama.js": "42fdf7c969a20389ceb7fb35cdfac96115a1501fb4a5483ede80268814176f15",
+    "src/asama-roads.js": "983371f7f2e24ef21b03bee452c1b50bba85747c035725f842ec42ba2a96a49a",
+    "src/surface-contact.js": "719a315917b55fa5025ec32659509b5be8965d8a577cdfc92c63c96db4dedf5e",
+    "src/hiten.js": "b2671674c180a44753bbccd61a994cc4efb3089618c10d586eba97a33696412e",
+    "src/mayohiga.js": "3cbb575944f32ef1f26e3041f9400a2e9259b98aef3d4f9a78d52c5624c8d75e",
+    "src/peony.js": "0116a5ba2d34cc8e05696e00d9d96b358ae2a9fcb1a395ca50e2b8d22821bc9b",
+    "src/waterfall-cave.js": "eb2430945bb41dc7ba2f2977cc93c6953c5611ec3cb4b5098d7f52c9002f8094",
+    "src/cucumber-farm.js": "f5e4b9c53963f81b170fd56371934267d3587e7770dc4210c957c534f7b9e90d",
+    "src/wind-cave.js": "94ce9aa01c17eb5c1faed009311b3039166879912b96f8a5b3cd5cf22e325737",
+    "src/geyser.js": "e6dd521faf5903bd410390e04ab8477f6b7a2b82f7dedbe4bf54f35530de376c",
+    "src/geyser-center.js": "b58dc4782ff80b95811236967864852776a36def8e0c01863ea46b31babd9f86",
+    "src/kourindou-upgrade.js": "e4c7371c745a6a4b69ed618f7fdcb7f44208b092b65f0379cbb752ba9db52599",
+    "src/forest-upgrade.js": "6468c87138443f3599c7cffbfbd0191e0733ad2259f46f87e3a5d302c1845270",
+    "src/village-upgrade.js": "4f56749811034552227f3280c9b34c534484fc1d1e7b631b52d6d2c17242c44f",
+    "src/trail-upgrade.js": "cce321e38e5c9a26d585092029ed415b9b78032c46000ba47b55ed190f21932f",
+    "src/trail-plants.js": "9b27de1ef04d9b309212b198e203890f848bc85a107c3b7dc7fa4818806a2696",
+    "src/trail-landscape.js": "ef50de3407b2f6e31eed41939ec8003c27a16dccf7e907b98bf72fc4a13919a6",
+    "src/forest-entrance-plants.js": "b42c6959cf4005e362954d468bc1130a459c3104aa85316dff752fd99ddc6ca1",
+    "src/forest-entrance-ground.js": "cc603d5a2b8bd24fd24ec78d48a7124e66e79e67a5751b9ef281a5dba2839ecc",
+    "src/forest-entrance.js": "0320d5c1a6a89d75e29ce3728135222c7a6de3b22b572769b9c32b27c16dee5c",
+    "src/forest-canopy-plants.js": "043a18fa90e756686cc5f28ebe82295271fe6e99386d22e5c8661ac578156b66",
+    "src/forest-canopy-ground.js": "fa889105ad3689bddd44538fe5d72e73334c02cca755ec466eb83f9f87995d99",
+    "src/forest-canopy-road.js": "ac7211359b2a4079713788c97329d6a79383da50f1e601d03eac860f10f2c2a8",
+    "src/forest-crown-rollout.js": "133abcaa7bdfaec3ede8617643fa9beb302642c194cb9f2971caa01b8f919820",
+    "src/forest-canopy.js": "6820b51c35b707dccd920a552347b10decaa6e246d81bd81d5745e0db6eaf29a",
+    "src/bamboo-entry-plants.js": "ff487a6667e53d393523a2607655ae693f5bdcd69775ade31a246899d74948fe",
+    "src/bamboo-entry-upgrade.js": "937f915a583b0e7b14588f95980ff0055f27f54d6c7d1918d301ce0fb6e1cbe1",
+    "src/sunflower-entry.js": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+    "src/muenzuka-edge.js": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+    "src/flower-hill-entry.js": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549",
+    "src/genbu-bank-sections.js": "d4143f18a7e5a102ac90f3cf1f9f86cb9a904846850fb77606d3f307f80e7cba",
+    "src/styles.css": "b1e9f17efcfb21d3e806e2fc19c74cfbc381e59f6a0b417c81e74b48b77091e7",
+    "data/expansion.json": "0ffb83baa4a828bbc3366b8b49df4602f18ef8db99d22f03e6079c6ee1c274a1",
+    "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+    "assets/packs/legacy.pack.gz": "46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88",
+    "vendor/three/three.module.js": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7",
+    "vendor/three/LICENSE": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+    "src/camera.js": "0bc9225d4a9b3eff946464b36619b7d17da180d4ca43a6dd31f1e3e160f6d721",
+    "src/renderer.js": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+    "src/old-hell-renderer.js": "fb91047212002fd1f9933189dceed6033c39883bde32f63437967e6b8f594870",
+    "src/kishinjou-renderer.js": "031b0edcbe51d900c4dfc9dd8da72a453c65d33076765109e48b10df46cf4130",
+    "src/lunar-renderer.js": "c472465371e21d441072ac44ffb1cb09195fa26c8d3a22c8225f192461f62360",
+    "src/makai-renderer.js": "ed54303436ef7c53d8dd0d111560a9b2b09393f4a42911475b79178565a8fcdd",
+    "src/netherworld-renderer.js": "7d81bc869fc86297705e972c93a1ade2c4e871663802cc0e78cf5c424b520148",
+    "src/heaven-renderer.js": "4e03583f3ff823520e2159ef77afd6e7ba9db30804e047b0ddb65601b0f4bb49",
+    "src/higan-renderer.js": "8efb15489c3d93135646cb183a85b8a54415f3db2adebdc6538926b98cb3b322",
+    "src/landscape-renderer.js": "0ed0dc2c076ce224f0d9020e7b97f75e269b15e27a13e939e5bbffe6dfccc98e",
+    "src/animal-renderer.js": "c8a5d5164d73b913687c9133a4f7bf556e44272477ddbf906646035f878f35d9",
+    "src/backdoor-renderer.js": "ff9868540c78daeb981a6c8ad977882158881c9d2f2ec329eb268eba3f053e25",
+    "src/kasen-renderer.js": "eb72f106c4bba31d2ea73498393e89a80b67c5ca47262c6e2a01e6e41a7c044d",
+    "src/current-hell-renderer.js": "29458b481da3f2d7dd5ccead903263e5fc46e661f1d9db6be149afad27498d76",
+    "src/rainbow-mine-renderer.js": "f43d1fa1764cc3f8c883d27c2ee75a98240e7bf69112f4cc78d0e06af1a327a8",
+    "src/highland-renderer.js": "b8f18fda335539faf732fa2c16189cd07ac654dd611c052e7a7e0d5983cb3e16",
+    "src/hakurei-renderer.js": "6eb73c24d252dc8c843b1fd62d4626a0a5b74bf3763c5ed8b6dbafb14b12e4fc",
+    "src/night-renderer.js": "785b896192f547ae9b7012fb4efbf52c39361320958a4ef5e02f75f542129b05",
+    "src/asama-renderer.js": "d82d5c1062b270c669648e784490123e656ad1482294eac9f5900db74f4f6110",
+    "src/hiten-renderer.js": "3a307a1de5d454ab7e4ec07cad6cfce91dc8446d5c3c49ed7216570e30b53da3",
+    "src/mayohiga-renderer.js": "79882b326e5732d0d28606b15b0dc03b0a5ab86abbcdc274f6b1395e6428d815",
+    "src/peony-renderer.js": "aa51146ce1cc5c9b0b0a56132fe0eac38e760cae744956239d3671cdc913334a",
+    "src/waterfall-cave-renderer.js": "75e35695e6274501ed2e0a7c8f7d4f3b06e846ce51effee4308eeb99d06247c9",
+    "src/cucumber-farm-renderer.js": "d05a5fefc19c0cf4b656ca573c3ebe655d5999f6e5a9e27e4748e16f884a8ae6",
+    "src/wind-cave-renderer.js": "88d40b8c951460534078740b2d10c3f1878b0477307f43e0ee32be38cb39720a",
+    "src/geyser-renderer.js": "34cc5f6390d60ac2f0b27fc5779532a0ffb60111970e3a5dd2e09ee003d2c9ce",
+    "src/geyser-center-renderer.js": "60f09d73d875820d8278a80072889f76b7daaf66cbf427c59108512d40aa0063",
+    "src/kourindou-renderer.js": "c84bebcc837d7b4ccc9bef90551695cecac67616eed68eb1f24141cfaa26354f",
+    "src/forest-renderer.js": "23dfb91f835803e00bb9208ed5aeb945996ef2460833f076121d88fc91bfe35b",
+    "src/village-renderer.js": "7d48c5f32c0ad59ac0620e9b1b6bce5b88b1905b75ad10248870713afe49ddd4",
+    "src/trail-renderer.js": "8c605fd08809218f513c57da15ac7f5e6499fcd4302478246dc9d6d503b082b5",
+    "src/trail-landscape-renderer.js": "ee70209bbc5316c8b63a25a564f9b1a71ada399ac2c6f470f760446d4a42ac70",
+    "src/forest-path-colors.js": "a91a09b0f347b40379bbaf52342cf36bf4a943e54b334acee9a1ed8050e85eb5",
+    "src/forest-path-renderer.js": "372f3bba7340b01b5649b8525593ada9592786bb4abb577315e17cfb45fe5073",
+    "src/forest-canopy-renderer.js": "e0d70e6acac3c2cd89e3859dd4a67ef93bb1e3c08f18b54764a9a4b32942e6cc",
+    "src/render-recovery.js": "191976863744f357bfae24dd946485b6cf49de0f782abe035f2c7cfdff2778b4",
+    "src/render-diagnostics.js": "ee2c16425f4ec27d03684cc32d9e29f0fd1c7aceb3f96cca954f62f8bc047b93",
+    "src/muenzuka-edge-renderer.js": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4",
+    "src/characters.js": "2efbdff0ffdc569d544331ad15a5456c0d8e8bbf5f7dc7e5ff016cee33320643",
+    "src/streaming.js": "3ae540dd6a1ca4878ca73ef18a628903dcef7b6866c3753a54ac0f11d435a5dd",
+    "src/app.js": "a5810a049c3ff33d4e9a3987acc1827f390e1a0d4ef1f97079dd9f1d7c68b0c3",
+    "src/index.html": "dd636efdc4da9138c7e2d79c270deab0ebf97e2c08f68d952ec20ff9af824257",
+    "tools/build.py": "38063f56e5026edaf3fd8a2a6f56fbea0a31fee6b264a9bd166228dffb09e631",
+    "tools/check.mjs": "297a2728c03f9324b0e6731b1c55035e19fa5e23e435a4cea47fd95eede4ff94",
+    "tools/check-landscape.mjs": "a72e138bdaebaf059b88f203159f989b523b4f674462878d00273bf37961ecf8",
+    "tools/check-kishinjou.mjs": "f0db98fdc9ddcf92eb7693cf6dff39657c500a14cdc863b37e38cf2d5d107ed1",
+    "tools/kishinjou-baseline.json": "126c933c0d2e12b5676f8c9594e6cecdbdc713169ea18af21e9ebba7e9d959ac",
+    "tools/check-lunar.mjs": "7dc97b27d1a87a5107d0f9b9d82742c99edb9f05fb1bba82ad91d35710a792a8",
+    "tools/lunar-baseline.json": "3e4ff4dccee7b1a2a298aa9f851034a88e2e5931ee187abb3c1cc3e3cc3d8940",
+    "tools/check-makai.mjs": "136c722ccfc03f58fb1a9a2b5ffb877f4d44e206c18a0e6cf5996bb1874d0784",
+    "tools/makai-baseline.json": "1734aa17de0071d3420b70ed792d28817f0b7cb8897a51b82077035a666844d4",
+    "tools/check-netherworld.mjs": "2acea0283b1365f2ec115bde84efaacca1fe94887567a0e769f2caf538b3e2d8",
+    "tools/netherworld-baseline.json": "7ffe9d17fdeecbe4047f6d374e4cdfbbc0c52b13ccb944f655f0d96f65d97c69",
+    "tools/audit-landmarks.mjs": "d9101abb321175a5ee8f9acd5343e0e5bb1e3ed09933e454262ab4647583b516",
+    "tools/check-heaven.mjs": "92991b29ee13484febaa83858583adfb9bf62f58d6efa07b01d5b753ded500c9",
+    "tools/heaven-baseline.json": "e799dd1028023bfdd80c3481a50f98eb0da66a9a6bdc9c04026d31c7380b252a",
+    "tools/check-higan.mjs": "9c4c97083229cf3b3b714bb19b9ac4e99402726907f08c8bf39467e1b13fa673",
+    "tools/higan-baseline.json": "b7501f24350121f16e9e654d78c4805ee7e338504bdb59d6494c8d4e20be65fd",
+    "tools/check-animal.mjs": "7a6f6c33f8013e3651943203ee3b1e7d1958995f888ca7ddf750e6430af26190",
+    "tools/animal-baseline.json": "1c7712a395c1d9adc6c801348470d1847b00cb4ee3968cfa94213d79e258b3d6",
+    "tools/check-backdoor.mjs": "3005259c177526da9d1e3340d110e0e015f14493374cc8949c4704d6c506e278",
+    "tools/backdoor-baseline.json": "44a681c946b751d3d613d78ffe9fe2fc8e979809d2559919ae65f5572aef3cae",
+    "tools/check-kasen.mjs": "f7fc4ae9f9af79f872d4cafada6c448e1a21dcd5cdfbd439ca21e6936f842e32",
+    "tools/kasen-baseline.json": "f119c2fcf7f96aac4440c7ee78ef3b23a665e21a3ffbe448c8ed1acce99dfd55",
+    "tools/check-current-hell.mjs": "e78bc169d49f5fb8042c4da46b03dda7927cc4a2a0ccea298497de30a04c937d",
+    "tools/current-hell-baseline.json": "d45d4966ae7eb3b10f428a5984904b78c8597f4ecb149cf141a43a0ba7d7715e",
+    "tools/check-rainbow-mine.mjs": "92c7e64478a74f665d6adb4d7cb2cc2ae5af6be9447d0cfdb6cdd1ac8b1b9de2",
+    "tools/rainbow-mine-baseline.json": "3d793efb1f5a984a3229dea0c710852b09a4b6e6e5294806dd0cfb7a2856bee4",
+    "tools/check-highland.mjs": "1a876fc8cbf29c46b548a2fa17f04c9e9777b3b1750f57a40912b981e7214340",
+    "tools/highland-baseline.json": "1552e5afc72ac453a892a2a9cbc3c5087d42eeb82ba606142840e1db8652463e",
+    "tools/check-asama.mjs": "7d2539b2f98bbae0df472c70e199ae574abc7b58a32d732e0081d2e27411b240",
+    "tools/asama-baseline.json": "ba15fdb0a284f489fa5944bcedd6e0ba9c60359a0fe2fcfceecdee82447c7ee4",
+    "tools/check-evidence-corrections.py": "97bc60805620272d24e2c5911c857e95c90c584f8f6c950895f0a082fe23196b",
+    "tools/current-coverage.json": "cb8038b9b7c1f933ae77456cfc00303997e1fbb95d8deb2c16963886fab59fe8",
+    "tools/check-geyser-center.mjs": "708ef3a9976212c71400ffd56b9d43715e087fd322d7e8c6b774b1f52a41bc9b",
+    "tools/geyser-center-baseline.json": "cf5e0483694884fb593e9b7c00b7378b693a67a2a042d55e6fbbbf71b7a1d5b3",
+    "tools/check-geyser.mjs": "f465a6b8910a2e87b892681375b9e384ba2b2360f055682d72baf141a129648e",
+    "tools/geyser-baseline.json": "cd8106c9c4a6c5ab6b970ac587b0d3f59951b0d2564b3caab5e8451873457df0",
+    "tools/check-wind-cave.mjs": "9a1242dea8d6ee50eef693ae0851f0ad93d61e9292531c543fe279b1a1ae5df3",
+    "tools/wind-cave-baseline.json": "84cb0e7696e2752c08f94f075a7867b076eb021cd597186a34a8f320cee431d8",
+    "tools/check-cucumber-farm.mjs": "715fdd1b6e7b32679d86678c89ee67c225c2812f95cd9e1ab686fd16c6c9d1ed",
+    "tools/cucumber-farm-baseline.json": "5ec3ce0339272685be83c09b526ae4de984aba609e58bf22661a4ab153f09f12",
+    "tools/check-waterfall-cave.mjs": "a828bd5418e4acc1cf82faaf22c5395f6b121166c7a245085678eda89a46cb93",
+    "tools/waterfall-cave-baseline.json": "6a1ef7dc336f90f1b077c365d7c6c73e51f58feb4a7a121c4c5444f9565d9083",
+    "tools/check-peony.mjs": "b88a1347f642d5083478f5eb2bbbc4092358da18960dc96c83a76a340d232340",
+    "tools/peony-baseline.json": "12f795ed975b7bc61d9793a27bd9978eedd48ed37a0d411d2db877d3fa5a691a",
+    "tools/check-mayohiga.mjs": "72cef14478d9230ff1c51fde8c9907c75dab5531a33cc71da7d0881f5ac8ff45",
+    "tools/mayohiga-baseline.json": "70473533bee801c39f0f22cd3368bbc62c2ef1cac5e18595f478e73619277174",
+    "tools/check-hiten.mjs": "4955a316796da56b50419b93285845c5d40817d17c22385d01a8092b533c1a74",
+    "tools/hiten-baseline.json": "7c4d0085dbd8647035ae84d4ecf2c1b37393023eaed821a94df07896179d5b1f",
+    "tools/check-kourindou.mjs": "dd67e34e4c92947b0b75ef1f4b71a954efec2d08d3b328223a13f6b54c0bc700",
+    "tools/kourindou-baseline.json": "1b0c06085b599fbfbc8d3df7575a6cd0027f353e8b7bf24f7ea24ef66c743dd8",
+    "tools/check-kourindou-browser.py": "90bb41467c19c55b74c33ef610450fbc1c2674de8d6df5a2f7d55be1900f59d2",
+    "tools/check-forest.mjs": "5262de1e54f58190096457c81d5fa84533b8072dc4e616cbb4a8d7934ff5fc4d",
+    "tools/forest-baseline.json": "e29ac935dfb20857397cc22b3b1943fb7e51ed318e4f49b92cdd145466ad795b",
+    "tools/check-village.mjs": "7ee33fe598f9f447726df991d12b6a02c12de86605d0c150643ce73d148ecda2",
+    "tools/village-baseline.json": "040073c347617b50a3cd10556ef41f0bfede73eff0b24d4e95acbf9cea6553b9",
+    "tools/check-trail.mjs": "a9e52221c8746f85b2bea15cc21ce6886da77fedbdd2dd72bf3fd961d0800f4a",
+    "tools/trail-baseline.json": "18517e0ba96f413aeed4df29805933f0ae2a8cb7c61234a6f5c1d03f45c3f36a",
+    "tools/check-trail-landscape.mjs": "9cccfbed2ac3275bd0729ff85d4700976bbf8308c42219e1c120178e3a03a191",
+    "tools/trail-landscape-baseline.json": "5d0abe56447f7ef03752071f2e9cf422717c331e99ebb5d5c6a277b71cfe4fe2",
+    "tools/check-trail-landscape-renderer.mjs": "43fa7f01c9842140a83a39e109ab825969be7fdd980fde29336adce32b8c6044",
+    "tools/check-forest-entrance.mjs": "e4170e93fb052f3ca80d1fb9a05a9cc41604ed17b302d7198b132b05683220a5",
+    "tools/check-forest-canopy.mjs": "e6789bf2a4604d11be12a279fbd5b00cc3fbff647c64b2896a388b361973b2d7",
+    "tools/check-forest-canopy-road.mjs": "2952dbe47687c21b2d0193eb60f74e20f6e95960839363ba5de2758b567013e3",
+    "tools/check-bamboo-entry.mjs": "0ad4d633c021299cc2207ad6c5731f94dcf965dc8813ce93f85f6f0b907bf890",
+    "tools/check-bamboo-browser.py": "49ea1c552fdee368ccfe96d7d74e098af0702985f414f0ce7035c3778f119864",
+    "tools/check-bamboo-lod-route.py": "e60a2de5c10b1498f5d951a050d024511166a4e64cb68e38628d68a71289ceb1",
+    "tools/bamboo-entry-route.json": "6dd0332f03d236ef1455c654fb02bb3915cedb9a05c69ce58f31a92122c1fae1",
+    "tools/check-sunflower-entry.mjs": "60ba4e9b4db83fc5ca8f0ce923bc089b498ae3748b699db33fa37844c91cab62",
+    "tools/check-sunflower-browser.py": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+    "tools/check-muenzuka-edge.mjs": "5f0568c0bf37dda0fd1ecebca7899aa8d932fe95b108a23f218845f57f4f8c4a",
+    "tools/check-flower-hill-entry.mjs": "49c73c6da69401346ab64bd3bcfcdc6277bea7f5356e00578b79f5fa3ee3f146",
+    "tools/check-flower-hill-browser.py": "d6089e3be79d42751c1e74924bef213b416843cf54f74d408e99ae7cf72649e0",
+    "tools/check-forest-path-renderer.mjs": "c98a7e20bc30bad262e3f512abaaf7d8d246ce84c67a93ae63192f178548a05d",
+    "tools/check-forest-path-coverage.mjs": "50285847cfffefe171b53fb6c5365dbb413d5766b4233412ebacf7f4e2b72a3e",
+    "tools/generate-forest-path-colors.mjs": "d9f5674c3892d0808ea6c3ee50a412204389f96256dfffcfedbda00d1dfd1f00",
+    "tools/check-foliage-texture-browser.py": "505bcfd6401c95c9ed44538f4145e958ec8275c07a74c1586cdf1b980af1fb58",
+    "tools/check-ui-work.mjs": "84be632770e6fa4ef4c4d42495428c701dd3a43938f63b11b079a731e1362a4f",
+    "tools/check-frame-work.mjs": "2318e76bc1b805abf6892b54d89fc845156bd40717a1e31a20ec6d63246b886e",
+    "tools/check-frame-work-browser.py": "71ae510bd98ad072e694817896253cd932d0122e37fd6566530ba72f6127288b",
+    "tools/frame-work-source-review.json": "15d4e83b852f680ae9b99f68f596151680149b7c4595c0245b1f7011fb451322",
+    "tools/check-render-diagnostics.mjs": "f80d544f4e7a476badfb797f073d28c7e7acbd158bf6c315884136419014b677",
+    "tools/check-render-resources.mjs": "8172b43fab245fa6774c5019770407af76e4af2a9cbde8f35c19b1a6bb224337",
+    "tools/check-render-ownership.mjs": "b8bc5fcb9dd283a2621e387c2fee2bcd856a457cd701f1ace5f81928d06eae17",
+    "tools/render-lifecycle-source-review.json": "2d6283e5f204b7b242b35b3f6ebf7c76be4eeb3065871cf4e78999d8d9b426da",
+    "tools/check-streaming-lifecycle.mjs": "8a2d9443392fd7a037a6e6fbb74f340db0b83f364973450c27ebd6f2b2f251f1",
+    "tools/check-render-lifecycle-browser.py": "5b4c6a2180d329dda3addf1034a1f030f28778b1a14195e534eea1dad81b4999",
+    "tools/check-hakurei.mjs": "fe9a8bdd83fe6b7f2e068a01028fe85ffa169462db69a862a6a75a7404470d74",
+    "tools/hakurei-baseline.json": "0d68e8c1ffec9e9ab19fd546158828c2092069381c8c08617a7be63b196c0774"
+  },
+  "view": "genbuOverview",
+  "initialPreset": "genbuOverview",
+  "pose": {
+    "space": "surface",
+    "eye": [
+      -758,
+      240,
+      -387
+    ],
+    "target": [
+      -980,
+      65,
+      -604
+    ]
+  },
+  "viewport": [
+    1280,
+    720
+  ],
+  "dpr": 1,
+  "fov": 49,
+  "clock": 12.5,
+  "quality": "balanced",
+  "lighting": "neutral",
+  "ao": true,
+  "productionRegionOrder": [
+    "genbu"
+  ],
+  "cpuLoadOverlap": "Not controlled for concurrent execution; do not use timings as performance evidence.",
+  "hardwareFPSMeasured": false,
+  "errors": [],
+  "httpFailures": [
+    {
+      "path": "/favicon.ico",
+      "status": 404
+    }
+  ],
+  "contextEvents": [],
+  "browser": "151.0.7922.173",
+  "driver": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "samples": [
+    {
+      "stats": {
+        "calls": 387,
+        "triangles": 643547,
+        "totalCalls": 389,
+        "totalTriangles": 643551,
+        "reflectionCalls": 0,
+        "reflectionTriangles": 0,
+        "postPasses": 2,
+        "submittedCPUms": 30.699999999953434,
+        "geometries": 224,
+        "textures": 11,
+        "residentObjects": 352,
+        "residentAttributeMiB": 22.115131378173828,
+        "budgetMiB": 160,
+        "proxyDrawObjects": 320,
+        "detailDrawObjects": 32,
+        "evictions": 908,
+        "uploads": 1260,
+        "renderCount": 3,
+        "hdr": true,
+        "contactOcclusion": true,
+        "renderTargetsEstimateMiB": 12.3046875,
+        "weather": "clear",
+        "skyVisible": true,
+        "surfaceComponents": 1,
+        "localCutaway": false,
+        "rainSegments": 0,
+        "westernFocused": "genbu",
+        "backdoorWindows": {
+          "targets": 0,
+          "buildPasses": 0,
+          "framePasses": 0,
+          "livePortals": false
+        },
+        "surfaceNight": false,
+        "nightLocalLights": 0
+      },
+      "memory": {
+        "geometries": 224,
+        "textures": 11
+      },
+      "residentAttributeBytes": 23189396,
+      "eye": [
+        -758,
+        240,
+        -387
+      ],
+      "target": [
+        -980,
+        65,
+        -604
+      ],
+      "fov": 49,
+      "quality": "balanced",
+      "rendererQuality": "balanced",
+      "lighting": "neutral",
+      "ao": true,
+      "view": "genbuOverview",
+      "focus": "genbu",
+      "detailNeighbors": [],
+      "stream": {
+        "requests": 1,
+        "builds": 1,
+        "cancelled": 0,
+        "evictions": 0,
+        "cacheHits": 0,
+        "staleDropped": 0,
+        "cached": [
+          "genbu"
+        ],
+        "building": null,
+        "required": [
+          "genbu"
+        ],
+        "detailSourceMiB": 5.992561340332031,
+        "softBudgetMiB": 220,
+        "log": [
+          {
+            "region": "genbu",
+            "buildMs": 380.0999999999767,
+            "sourceBytes": 6283656,
+            "epoch": 1
+          }
+        ]
+      },
+      "visibleNativePacks": [
+        "genbu"
+      ]
+    },
+    {
+      "stats": {
+        "calls": 333,
+        "triangles": 473413,
+        "totalCalls": 335,
+        "totalTriangles": 473417,
+        "reflectionCalls": 0,
+        "reflectionTriangles": 0,
+        "postPasses": 2,
+        "submittedCPUms": 17.70000000001164,
+        "geometries": 224,
+        "textures": 11,
+        "residentObjects": 352,
+        "residentAttributeMiB": 22.115131378173828,
+        "budgetMiB": 160,
+        "proxyDrawObjects": 320,
+        "detailDrawObjects": 32,
+        "evictions": 908,
+        "uploads": 1260,
+        "renderCount": 4,
+        "hdr": true,
+        "contactOcclusion": true,
+        "renderTargetsEstimateMiB": 12.3046875,
+        "weather": "clear",
+        "skyVisible": true,
+        "surfaceComponents": 1,
+        "localCutaway": false,
+        "rainSegments": 0,
+        "westernFocused": "genbu",
+        "backdoorWindows": {
+          "targets": 0,
+          "buildPasses": 0,
+          "framePasses": 0,
+          "livePortals": false
+        },
+        "surfaceNight": false,
+        "nightLocalLights": 0
+      },
+      "memory": {
+        "geometries": 224,
+        "textures": 11
+      },
+      "residentAttributeBytes": 23189396,
+      "eye": [
+        -758,
+        240,
+        -387
+      ],
+      "target": [
+        -980,
+        65,
+        -604
+      ],
+      "fov": 49,
+      "quality": "balanced",
+      "rendererQuality": "balanced",
+      "lighting": "neutral",
+      "ao": true,
+      "view": "genbuOverview",
+      "focus": "genbu",
+      "detailNeighbors": [],
+      "stream": {
+        "requests": 1,
+        "builds": 1,
+        "cancelled": 0,
+        "evictions": 0,
+        "cacheHits": 0,
+        "staleDropped": 0,
+        "cached": [
+          "genbu"
+        ],
+        "building": null,
+        "required": [
+          "genbu"
+        ],
+        "detailSourceMiB": 5.992561340332031,
+        "softBudgetMiB": 220,
+        "log": [
+          {
+            "region": "genbu",
+            "buildMs": 380.0999999999767,
+            "sourceBytes": 6283656,
+            "epoch": 1
+          }
+        ]
+      },
+      "visibleNativePacks": [
+        "genbu"
+      ]
+    },
+    {
+      "stats": {
+        "calls": 333,
+        "triangles": 473413,
+        "totalCalls": 335,
+        "totalTriangles": 473417,
+        "reflectionCalls": 0,
+        "reflectionTriangles": 0,
+        "postPasses": 2,
+        "submittedCPUms": 7.900000000023283,
+        "geometries": 224,
+        "textures": 11,
+        "residentObjects": 352,
+        "residentAttributeMiB": 22.115131378173828,
+        "budgetMiB": 160,
+        "proxyDrawObjects": 320,
+        "detailDrawObjects": 32,
+        "evictions": 908,
+        "uploads": 1260,
+        "renderCount": 5,
+        "hdr": true,
+        "contactOcclusion": true,
+        "renderTargetsEstimateMiB": 12.3046875,
+        "weather": "clear",
+        "skyVisible": true,
+        "surfaceComponents": 1,
+        "localCutaway": false,
+        "rainSegments": 0,
+        "westernFocused": "genbu",
+        "backdoorWindows": {
+          "targets": 0,
+          "buildPasses": 0,
+          "framePasses": 0,
+          "livePortals": false
+        },
+        "surfaceNight": false,
+        "nightLocalLights": 0
+      },
+      "memory": {
+        "geometries": 224,
+        "textures": 11
+      },
+      "residentAttributeBytes": 23189396,
+      "eye": [
+        -758,
+        240,
+        -387
+      ],
+      "target": [
+        -980,
+        65,
+        -604
+      ],
+      "fov": 49,
+      "quality": "balanced",
+      "rendererQuality": "balanced",
+      "lighting": "neutral",
+      "ao": true,
+      "view": "genbuOverview",
+      "focus": "genbu",
+      "detailNeighbors": [],
+      "stream": {
+        "requests": 1,
+        "builds": 1,
+        "cancelled": 0,
+        "evictions": 0,
+        "cacheHits": 0,
+        "staleDropped": 0,
+        "cached": [
+          "genbu"
+        ],
+        "building": null,
+        "required": [
+          "genbu"
+        ],
+        "detailSourceMiB": 5.992561340332031,
+        "softBudgetMiB": 220,
+        "log": [
+          {
+            "region": "genbu",
+            "buildMs": 380.0999999999767,
+            "sourceBytes": 6283656,
+            "epoch": 1
+          }
+        ]
+      },
+      "visibleNativePacks": [
+        "genbu"
+      ]
+    }
+  ],
+  "lastTwoCostsStable": true,
+  "sourceContext": {
+    "paths": [
+      {
+        "id": "genbu-bank-path",
+        "width": 2.5,
+        "points": [
+          [
+            -947,
+            -526
+          ],
+          [
+            -951,
+            -538
+          ],
+          [
+            -952,
+            -552
+          ],
+          [
+            -951,
+            -573
+          ],
+          [
+            -951,
+            -591
+          ],
+          [
+            -951,
+            -604
+          ]
+        ],
+        "samples": [
+          [
+            -947,
+            -526
+          ],
+          [
+            -947.4699074074075,
+            -527.2824074074074
+          ],
+          [
+            -948.148148148148,
+            -529.037037037037
+          ],
+          [
+            -948.9375,
+            -531.125
+          ],
+          [
+            -949.7407407407408,
+            -533.4074074074074
+          ],
+          [
+            -950.4606481481482,
+            -535.7453703703704
+          ],
+          [
+            -951,
+            -538
+          ],
+          [
+            -951.3177842565598,
+            -539.8338192419825
+          ],
+          [
+            -951.5626822157434,
+            -541.6501457725948
+          ],
+          [
+            -951.7434402332361,
+            -543.4927113702623
+          ],
+          [
+            -951.868804664723,
+            -545.405247813411
+          ],
+          [
+            -951.9475218658893,
+            -547.4314868804664
+          ],
+          [
+            -951.9883381924197,
+            -549.6151603498542
+          ],
+          [
+            -952,
+            -552
+          ],
+          [
+            -951.9765,
+            -553.83
+          ],
+          [
+            -951.9119999999999,
+            -555.8000000000001
+          ],
+          [
+            -951.8154999999999,
+            -557.88
+          ],
+          [
+            -951.696,
+            -560.04
+          ],
+          [
+            -951.5625,
+            -562.25
+          ],
+          [
+            -951.424,
+            -564.4799999999999
+          ],
+          [
+            -951.2895,
+            -566.6999999999999
+          ],
+          [
+            -951.168,
+            -568.8800000000001
+          ],
+          [
+            -951.0685,
+            -570.99
+          ],
+          [
+            -951,
+            -573
+          ],
+          [
+            -950.9561042524006,
+            -575.159122085048
+          ],
+          [
+            -950.9327846364883,
+            -577.2976680384088
+          ],
+          [
+            -950.925925925926,
+            -579.4074074074074
+          ],
+          [
+            -950.931412894376,
+            -581.480109739369
+          ],
+          [
+            -950.9451303155007,
+            -583.5075445816187
+          ],
+          [
+            -950.9629629629629,
+            -585.4814814814815
+          ],
+          [
+            -950.9807956104253,
+            -587.3936899862825
+          ],
+          [
+            -950.99451303155,
+            -589.2359396433471
+          ],
+          [
+            -951,
+            -591
+          ],
+          [
+            -951,
+            -593.6064814814815
+          ],
+          [
+            -951,
+            -596.1851851851851
+          ],
+          [
+            -951,
+            -598.625
+          ],
+          [
+            -951,
+            -600.8148148148148
+          ],
+          [
+            -951,
+            -602.6435185185185
+          ],
+          [
+            -951,
+            -604
+          ]
+        ]
+      },
+      {
+        "id": "genbu-opposite-bank",
+        "width": 2.2,
+        "points": [
+          [
+            -993,
+            -548
+          ],
+          [
+            -995,
+            -561
+          ],
+          [
+            -1003,
+            -590
+          ],
+          [
+            -1000,
+            -612
+          ],
+          [
+            -1002,
+            -626
+          ]
+        ],
+        "samples": [
+          [
+            -993,
+            -548
+          ],
+          [
+            -993.148148148148,
+            -549.2291666666667
+          ],
+          [
+            -993.2962962962963,
+            -550.7777777777777
+          ],
+          [
+            -993.5,
+            -552.6875
+          ],
+          [
+            -993.8148148148148,
+            -555
+          ],
+          [
+            -994.2962962962963,
+            -557.7569444444443
+          ],
+          [
+            -995,
+            -561
+          ],
+          [
+            -995.4127186588921,
+            -562.5952988338192
+          ],
+          [
+            -995.9241982507288,
+            -564.3644314868804
+          ],
+          [
+            -996.5158527696792,
+            -566.282252186589
+          ],
+          [
+            -997.1690962099126,
+            -568.3236151603498
+          ],
+          [
+            -997.8653425655976,
+            -570.4633746355685
+          ],
+          [
+            -998.5860058309038,
+            -572.6763848396502
+          ],
+          [
+            -999.3125,
+            -574.9375
+          ],
+          [
+            -1000.0262390670555,
+            -577.2215743440233
+          ],
+          [
+            -1000.708637026239,
+            -579.5034620991253
+          ],
+          [
+            -1001.3411078717202,
+            -581.7580174927114
+          ],
+          [
+            -1001.9050655976677,
+            -583.9600947521866
+          ],
+          [
+            -1002.3819241982508,
+            -586.0845481049563
+          ],
+          [
+            -1002.7530976676385,
+            -588.1062317784257
+          ],
+          [
+            -1003,
+            -590
+          ],
+          [
+            -1003.1217129977462,
+            -592.2930127723516
+          ],
+          [
+            -1003.0563486100676,
+            -594.534184823441
+          ],
+          [
+            -1002.8399699474079,
+            -596.7212622088655
+          ],
+          [
+            -1002.5086401202103,
+            -598.8519909842224
+          ],
+          [
+            -1002.0984222389181,
+            -600.9241172051089
+          ],
+          [
+            -1001.6453794139745,
+            -602.9353869271224
+          ],
+          [
+            -1001.1855747558227,
+            -604.8835462058603
+          ],
+          [
+            -1000.7550713749062,
+            -606.7663410969196
+          ],
+          [
+            -1000.3899323816679,
+            -608.5815176558978
+          ],
+          [
+            -1000.1262208865514,
+            -610.3268219383922
+          ],
+          [
+            -1000,
+            -612
+          ],
+          [
+            -1000.0408163265306,
+            -614.5422740524781
+          ],
+          [
+            -1000.265306122449,
+            -616.9912536443148
+          ],
+          [
+            -1000.6122448979592,
+            -619.2944606413994
+          ],
+          [
+            -1001.0204081632653,
+            -621.399416909621
+          ],
+          [
+            -1001.4285714285713,
+            -623.2536443148689
+          ],
+          [
+            -1001.7755102040817,
+            -624.8046647230321
+          ],
+          [
+            -1002,
+            -626
+          ]
+        ]
+      }
+    ],
+    "publicRoute": {
+      "id": "route-genbu-link",
+      "width": 3.1,
+      "points": [
+        [
+          -370,
+          -170
+        ],
+        [
+          -482,
+          -325
+        ],
+        [
+          -699,
+          -433
+        ],
+        [
+          -836,
+          -483
+        ],
+        [
+          -907,
+          -505
+        ],
+        [
+          -947,
+          -526
+        ]
+      ],
+      "samples": [
+        [
+          -370,
+          -170
+        ],
+        [
+          -371.19245967158565,
+          -171.69114402488427
+        ],
+        [
+          -372.436378761574,
+          -173.53175636574073
+        ],
+        [
+          -373.7315673828125,
+          -175.516357421875
+        ],
+        [
+          -375.07783564814815,
+          -177.6394675925926
+        ],
+        [
+          -376.47499367042826,
+          -179.89560727719908
+        ],
+        [
+          -377.9228515625,
+          -182.279296875
+        ],
+        [
+          -379.42121943721065,
+          -184.78505678530095
+        ],
+        [
+          -380.9699074074074,
+          -187.40740740740742
+        ],
+        [
+          -382.5687255859375,
+          -190.140869140625
+        ],
+        [
+          -384.21748408564815,
+          -192.97996238425927
+        ],
+        [
+          -385.9159930193865,
+          -195.91920753761573
+        ],
+        [
+          -387.6640625,
+          -198.953125
+        ],
+        [
+          -389.46150264033565,
+          -202.0762351707176
+        ],
+        [
+          -391.30812355324076,
+          -205.28305844907408
+        ],
+        [
+          -393.2037353515625,
+          -208.568115234375
+        ],
+        [
+          -395.14814814814815,
+          -211.92592592592595
+        ],
+        [
+          -397.1411720558449,
+          -215.35101092303242
+        ],
+        [
+          -399.1826171875,
+          -218.837890625
+        ],
+        [
+          -401.27229365596065,
+          -222.38108543113427
+        ],
+        [
+          -403.410011574074,
+          -225.97511574074076
+        ],
+        [
+          -405.5955810546875,
+          -229.614501953125
+        ],
+        [
+          -407.82881221064815,
+          -233.29376446759255
+        ],
+        [
+          -410.10951515480326,
+          -237.0074236834491
+        ],
+        [
+          -412.4375,
+          -240.75
+        ],
+        [
+          -414.8125768590857,
+          -244.51601381655095
+        ],
+        [
+          -417.2345558449074,
+          -248.29998553240742
+        ],
+        [
+          -419.7032470703125,
+          -252.096435546875
+        ],
+        [
+          -422.21846064814815,
+          -255.89988425925927
+        ],
+        [
+          -424.7800066912615,
+          -259.70485206886576
+        ],
+        [
+          -427.3876953125,
+          -263.505859375
+        ],
+        [
+          -430.04133662471065,
+          -267.2974265769676
+        ],
+        [
+          -432.74074074074076,
+          -271.0740740740741
+        ],
+        [
+          -435.4857177734375,
+          -274.830322265625
+        ],
+        [
+          -438.2760778356482,
+          -278.5606915509259
+        ],
+        [
+          -441.1116310402199,
+          -282.2597023292824
+        ],
+        [
+          -443.9921875,
+          -285.921875
+        ],
+        [
+          -446.91755732783565,
+          -289.5417299623843
+        ],
+        [
+          -449.887550636574,
+          -293.11378761574076
+        ],
+        [
+          -452.9019775390625,
+          -296.632568359375
+        ],
+        [
+          -455.96064814814815,
+          -300.0925925925926
+        ],
+        [
+          -459.06337257667826,
+          -303.4883807146991
+        ],
+        [
+          -462.2099609375,
+          -306.814453125
+        ],
+        [
+          -465.4002233434607,
+          -310.0653302228009
+        ],
+        [
+          -468.6339699074074,
+          -313.2355324074074
+        ],
+        [
+          -471.9110107421875,
+          -316.319580078125
+        ],
+        [
+          -475.23115596064815,
+          -319.31199363425924
+        ],
+        [
+          -478.5942156756365,
+          -322.20729347511576
+        ],
+        [
+          -482,
+          -325
+        ],
+        [
+          -484.73528180772837,
+          -327.15087606451635
+        ],
+        [
+          -487.5460545155762,
+          -329.29193192381746
+        ],
+        [
+          -490.42987298496354,
+          -331.4230221912847
+        ],
+        [
+          -493.3842920773105,
+          -333.54400148030015
+        ],
+        [
+          -496.4068666540372,
+          -335.6547244042453
+        ],
+        [
+          -499.4951515765637,
+          -337.75504557650197
+        ],
+        [
+          -502.6467017063102,
+          -339.84481961045196
+        ],
+        [
+          -505.85907190469686,
+          -341.92390111947697
+        ],
+        [
+          -509.12981703314375,
+          -343.9921447169587
+        ],
+        [
+          -512.456491953071,
+          -346.0494050162789
+        ],
+        [
+          -515.8366515258987,
+          -348.0955366308193
+        ],
+        [
+          -519.267850613047,
+          -350.13039417396175
+        ],
+        [
+          -522.7476440759359,
+          -352.1538322590877
+        ],
+        [
+          -526.2735867759857,
+          -354.1657054995793
+        ],
+        [
+          -529.8432335746163,
+          -356.16586850881794
+        ],
+        [
+          -533.4541393332481,
+          -358.15417590018546
+        ],
+        [
+          -537.1038589133011,
+          -360.1304822870637
+        ],
+        [
+          -540.7899471761954,
+          -362.09464228283423
+        ],
+        [
+          -544.509958983351,
+          -364.0465105008789
+        ],
+        [
+          -548.2614491961882,
+          -365.9859415545795
+        ],
+        [
+          -552.0419726761271,
+          -367.9127900573176
+        ],
+        [
+          -555.8490842845877,
+          -369.826910622475
+        ],
+        [
+          -559.6803388829902,
+          -371.72815786343347
+        ],
+        [
+          -563.5332913327546,
+          -373.61638639357477
+        ],
+        [
+          -567.4054964953013,
+          -375.4914508262806
+        ],
+        [
+          -571.2945092320502,
+          -377.3532057749327
+        ],
+        [
+          -575.1978844044215,
+          -379.2015058529128
+        ],
+        [
+          -579.1131768738352,
+          -381.03620567360264
+        ],
+        [
+          -583.0379415017115,
+          -382.85715985038394
+        ],
+        [
+          -586.9697331494707,
+          -384.6642229966385
+        ],
+        [
+          -590.9061066785325,
+          -386.45724972574794
+        ],
+        [
+          -594.8446169503175,
+          -388.23609465109416
+        ],
+        [
+          -598.7828188262453,
+          -390.0006123860587
+        ],
+        [
+          -602.7182671677365,
+          -391.75065754402345
+        ],
+        [
+          -606.6485168362109,
+          -393.4860847383702
+        ],
+        [
+          -610.5711226930888,
+          -395.20674858248043
+        ],
+        [
+          -614.4836395997903,
+          -396.91250368973607
+        ],
+        [
+          -618.3836224177355,
+          -398.603204673519
+        ],
+        [
+          -622.2686260083443,
+          -400.27870614721064
+        ],
+        [
+          -626.1362052330371,
+          -401.9388627241928
+        ],
+        [
+          -629.9839149532339,
+          -403.5835290178473
+        ],
+        [
+          -633.8093100303549,
+          -405.2125596415559
+        ],
+        [
+          -637.6099453258203,
+          -406.8258092087003
+        ],
+        [
+          -641.3833757010498,
+          -408.42313233266214
+        ],
+        [
+          -645.127156017464,
+          -410.00438362682337
+        ],
+        [
+          -648.8388411364828,
+          -411.5694177045656
+        ],
+        [
+          -652.5159859195264,
+          -413.1180891792705
+        ],
+        [
+          -656.1561452280148,
+          -414.6502526643199
+        ],
+        [
+          -659.7568739233681,
+          -416.16576277309554
+        ],
+        [
+          -663.3157268670064,
+          -417.6644741189791
+        ],
+        [
+          -666.8302589203503,
+          -419.14624131535237
+        ],
+        [
+          -670.2980249448192,
+          -420.6109189755971
+        ],
+        [
+          -673.7165798018336,
+          -422.05836171309494
+        ],
+        [
+          -677.0834783528137,
+          -423.48842414122765
+        ],
+        [
+          -680.3962754591794,
+          -424.9009608733771
+        ],
+        [
+          -683.652525982351,
+          -426.29582652292487
+        ],
+        [
+          -686.8497847837484,
+          -427.67287570325266
+        ],
+        [
+          -689.9856067247919,
+          -429.03196302774245
+        ],
+        [
+          -693.0575466669015,
+          -430.3729431097757
+        ],
+        [
+          -696.0631594714977,
+          -431.69567056273434
+        ],
+        [
+          -699,
+          -433
+        ],
+        [
+          -703.7495903500286,
+          -435.1032910192881
+        ],
+        [
+          -708.4313466132312,
+          -437.1440783369198
+        ],
+        [
+          -713.0460979606341,
+          -439.12413874795175
+        ],
+        [
+          -717.5946735632638,
+          -441.0452490474404
+        ],
+        [
+          -722.0779025921465,
+          -442.9091860304424
+        ],
+        [
+          -726.4966142183089,
+          -444.7177264920143
+        ],
+        [
+          -730.8516376127772,
+          -446.47264722721263
+        ],
+        [
+          -735.1438019465778,
+          -448.1757250310939
+        ],
+        [
+          -739.373936390737,
+          -449.8287366987148
+        ],
+        [
+          -743.5428701162813,
+          -451.4334590251318
+        ],
+        [
+          -747.6514322942372,
+          -452.9916688054015
+        ],
+        [
+          -751.7004520956311,
+          -454.5051428345804
+        ],
+        [
+          -755.6907586914891,
+          -455.9756579077251
+        ],
+        [
+          -759.623181252838,
+          -457.4049908198922
+        ],
+        [
+          -763.4985489507038,
+          -458.79491836613823
+        ],
+        [
+          -767.3176909561132,
+          -460.14721734151976
+        ],
+        [
+          -771.0814364400924,
+          -461.4636645410933
+        ],
+        [
+          -774.790614573668,
+          -462.7460367599155
+        ],
+        [
+          -778.4460545278661,
+          -463.9961107930429
+        ],
+        [
+          -782.0485854737132,
+          -465.21566343553195
+        ],
+        [
+          -785.5990365822361,
+          -466.4064714824393
+        ],
+        [
+          -789.0982370244604,
+          -467.57031172882154
+        ],
+        [
+          -792.5470159714133,
+          -468.7089609697353
+        ],
+        [
+          -795.9462025941208,
+          -469.8241960002369
+        ],
+        [
+          -799.2966260636093,
+          -470.91779361538306
+        ],
+        [
+          -802.5991155509051,
+          -471.9915306102304
+        ],
+        [
+          -805.8545002270349,
+          -473.0471837798354
+        ],
+        [
+          -809.0636092630249,
+          -474.08652991925453
+        ],
+        [
+          -812.2272718299015,
+          -475.1113458235445
+        ],
+        [
+          -815.3463170986911,
+          -476.12340828776183
+        ],
+        [
+          -818.4215742404201,
+          -477.124494106963
+        ],
+        [
+          -821.4538724261149,
+          -478.1163800762048
+        ],
+        [
+          -824.444040826802,
+          -479.1008429905435
+        ],
+        [
+          -827.3929086135076,
+          -480.07965964503586
+        ],
+        [
+          -830.3013049572581,
+          -481.0546068347383
+        ],
+        [
+          -833.1700590290802,
+          -482.02746135470755
+        ],
+        [
+          -836,
+          -483
+        ],
+        [
+          -841.3363464061817,
+          -484.8205277737279
+        ],
+        [
+          -846.4082227729989,
+          -486.5005102784662
+        ],
+        [
+          -851.2309374544394,
+          -488.05175681586235
+        ],
+        [
+          -855.8197988044903,
+          -489.48607668756375
+        ],
+        [
+          -860.1901151771395,
+          -490.81527919521795
+        ],
+        [
+          -864.3571949263742,
+          -492.0511736404723
+        ],
+        [
+          -868.3363464061816,
+          -493.2055693249745
+        ],
+        [
+          -872.1428779705496,
+          -494.29027555037175
+        ],
+        [
+          -875.7920979734655,
+          -495.3171016183117
+        ],
+        [
+          -879.2993147689167,
+          -496.29785683044173
+        ],
+        [
+          -882.6798367108909,
+          -497.2443504884094
+        ],
+        [
+          -885.9489721533752,
+          -498.1683918938621
+        ],
+        [
+          -889.1220294503571,
+          -499.0817903484473
+        ],
+        [
+          -892.2143169558245,
+          -499.99635515381254
+        ],
+        [
+          -895.2411430237645,
+          -500.92389561160525
+        ],
+        [
+          -898.2178160081645,
+          -501.87622102347274
+        ],
+        [
+          -901.1596442630121,
+          -502.86514069106283
+        ],
+        [
+          -904.0819361422947,
+          -503.90246391602267
+        ],
+        [
+          -907,
+          -505
+        ],
+        [
+          -911.5460069444445,
+          -506.8518518518519
+        ],
+        [
+          -915.9236111111111,
+          -508.8009259259259
+        ],
+        [
+          -920.1171875,
+          -510.8125
+        ],
+        [
+          -924.1111111111112,
+          -512.8518518518518
+        ],
+        [
+          -927.8897569444445,
+          -514.8842592592592
+        ],
+        [
+          -931.4375,
+          -516.875
+        ],
+        [
+          -934.7387152777778,
+          -518.7893518518518
+        ],
+        [
+          -937.7777777777777,
+          -520.5925925925926
+        ],
+        [
+          -940.5390625,
+          -522.25
+        ],
+        [
+          -943.0069444444445,
+          -523.7268518518517
+        ],
+        [
+          -945.1657986111111,
+          -524.988425925926
+        ],
+        [
+          -947,
+          -526
+        ]
+      ]
+    },
+    "nativeRecords": [
+      {
+        "id": "genbu:basalt:columnar-cliffs",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "columnar-cliffs",
+        "material": "basalt",
+        "group": "architecture",
+        "center": [
+          -973.2675476074219,
+          61.94963073730469,
+          -593.36767578125
+        ],
+        "radius": 81.27805397303328,
+        "level": 0,
+        "wanted": true,
+        "visible": true,
+        "instances": 0,
+        "nearTriangles": 35256,
+        "farTriangles": null
+      },
+      {
+        "id": "genbu:mossRock:wet-ledge-moss",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "wet-ledge-moss",
+        "material": "mossRock",
+        "group": "architecture",
+        "center": [
+          -973.0953979492188,
+          62.49749946594238,
+          -596.4499816894531
+        ],
+        "radius": 75.25881002633353,
+        "level": 0,
+        "wanted": true,
+        "visible": true,
+        "instances": 0,
+        "nearTriangles": 2786,
+        "farTriangles": null
+      },
+      {
+        "id": "genbu:timber:bank-boardwalk",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "bank-boardwalk",
+        "material": "timber",
+        "group": "architecture",
+        "center": [
+          -966.3517456054688,
+          43.51783752441406,
+          -575.6548156738281
+        ],
+        "radius": 63.43997265485494,
+        "level": 0,
+        "wanted": true,
+        "visible": true,
+        "instances": 0,
+        "nearTriangles": 7602,
+        "farTriangles": null
+      },
+      {
+        "id": "genbu:relicMetal:kappa-pipework",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "kappa-pipework",
+        "material": "relicMetal",
+        "group": "architecture",
+        "center": [
+          -940.5,
+          55.73394012451172,
+          -604.18505859375
+        ],
+        "radius": 22.464169928684832,
+        "level": 0,
+        "wanted": true,
+        "visible": true,
+        "instances": 0,
+        "nearTriangles": 5334,
+        "farTriangles": null
+      },
+      {
+        "id": "genbu:basalt:cave-shell",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "cave-shell",
+        "material": "basalt",
+        "group": "architecture",
+        "center": [
+          -929.75,
+          52.29999923706055,
+          -604
+        ],
+        "radius": 16.02545609085966,
+        "level": 0,
+        "wanted": true,
+        "visible": true,
+        "instances": 0,
+        "nearTriangles": 400,
+        "farTriangles": null
+      },
+      {
+        "id": "genbu:flowing-creek",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "flowing-creek",
+        "material": "genbuFlow",
+        "group": "water",
+        "center": [
+          -971.6908874511719,
+          48.65800094604492,
+          -569.7070770263672
+        ],
+        "radius": 65.89563955267748,
+        "level": 0,
+        "wanted": true,
+        "visible": true,
+        "instances": 0,
+        "nearTriangles": 163,
+        "farTriangles": null
+      },
+      {
+        "id": "genbu:foam-ribbons",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "current-foam",
+        "material": "genbuFoam",
+        "group": "effects",
+        "center": [
+          -971.9767761230469,
+          41.44099998474121,
+          -575.25
+        ],
+        "radius": 54.02697586250299,
+        "level": 0,
+        "wanted": true,
+        "visible": true,
+        "instances": 0,
+        "nearTriangles": 654,
+        "farTriangles": null
+      },
+      {
+        "id": "genbu:tributary-fall",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "tributary-cascade",
+        "material": "genbuFall",
+        "group": "effects",
+        "center": [
+          -970.9197082519531,
+          49.81999969482422,
+          -612.6000061035156
+        ],
+        "radius": 20.638887764520298,
+        "level": 0,
+        "wanted": true,
+        "visible": true,
+        "instances": 0,
+        "nearTriangles": 42,
+        "farTriangles": null
+      },
+      {
+        "id": "genbu:trees:-13:-8:0:wood",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -1028.49920395521,
+          69.94808452261553,
+          -605.6188419498502
+        ],
+        "radius": 76.08791071294459,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 9,
+        "nearTriangles": 411,
+        "farTriangles": 75
+      },
+      {
+        "id": "genbu:trees:-13:-8:0:leaf",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -1028.49920395521,
+          69.94808452261553,
+          -605.6188419498502
+        ],
+        "radius": 76.08791071294459,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 9,
+        "nearTriangles": 2234,
+        "farTriangles": 216
+      },
+      {
+        "id": "genbu:trees:-12:-8:1:wood",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -914.8114527566595,
+          72.95449780166946,
+          -602.4617141652852
+        ],
+        "radius": 79.10680592538539,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 6,
+        "nearTriangles": 411,
+        "farTriangles": 75
+      },
+      {
+        "id": "genbu:trees:-12:-8:1:leaf",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -914.8114527566595,
+          72.95449780166946,
+          -602.4617141652852
+        ],
+        "radius": 79.10680592538539,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 6,
+        "nearTriangles": 2234,
+        "farTriangles": 216
+      },
+      {
+        "id": "genbu:trees:-12:-7:0:wood",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -910.8631381470168,
+          59.90363060586099,
+          -551.5870526302606
+        ],
+        "radius": 51.03055401867411,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 4,
+        "nearTriangles": 411,
+        "farTriangles": 75
+      },
+      {
+        "id": "genbu:trees:-12:-7:0:leaf",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -910.8631381470168,
+          59.90363060586099,
+          -551.5870526302606
+        ],
+        "radius": 51.03055401867411,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 4,
+        "nearTriangles": 2234,
+        "farTriangles": 216
+      },
+      {
+        "id": "genbu:trees:-13:-9:1:wood",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -1033.1667291668748,
+          91.45913954318505,
+          -655.1448569502681
+        ],
+        "radius": 64.76640541692751,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 4,
+        "nearTriangles": 411,
+        "farTriangles": 75
+      },
+      {
+        "id": "genbu:trees:-13:-9:1:leaf",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -1033.1667291668748,
+          91.45913954318505,
+          -655.1448569502681
+        ],
+        "radius": 64.76640541692751,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 4,
+        "nearTriangles": 2234,
+        "farTriangles": 216
+      },
+      {
+        "id": "genbu:trees:-13:-9:0:wood",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -1029.6485151460786,
+          83.74791867114615,
+          -653.465302458033
+        ],
+        "radius": 41.134315552396416,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 2,
+        "nearTriangles": 411,
+        "farTriangles": 75
+      },
+      {
+        "id": "genbu:trees:-13:-9:0:leaf",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -1029.6485151460786,
+          83.74791867114615,
+          -653.465302458033
+        ],
+        "radius": 41.134315552396416,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 2,
+        "nearTriangles": 2234,
+        "farTriangles": 216
+      },
+      {
+        "id": "genbu:trees:-12:-7:1:wood",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -904.6664888709831,
+          56.236051044752884,
+          -542.3196737244725
+        ],
+        "radius": 42.214530767641826,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 2,
+        "nearTriangles": 411,
+        "farTriangles": 75
+      },
+      {
+        "id": "genbu:trees:-12:-7:1:leaf",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -904.6664888709831,
+          56.236051044752884,
+          -542.3196737244725
+        ],
+        "radius": 42.214530767641826,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 2,
+        "nearTriangles": 2234,
+        "farTriangles": 216
+      },
+      {
+        "id": "genbu:trees:-13:-7:0:wood",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -1027.2962476190512,
+          70.5898724899703,
+          -553.6861836537719
+        ],
+        "radius": 39.24621126397761,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 2,
+        "nearTriangles": 411,
+        "farTriangles": 75
+      },
+      {
+        "id": "genbu:trees:-13:-7:0:leaf",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -1027.2962476190512,
+          70.5898724899703,
+          -553.6861836537719
+        ],
+        "radius": 39.24621126397761,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 2,
+        "nearTriangles": 2234,
+        "farTriangles": 216
+      },
+      {
+        "id": "genbu:trees:-12:-8:0:wood",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -914.1344321209897,
+          90.34750855543444,
+          -632.4932679012418
+        ],
+        "radius": 36,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 1,
+        "nearTriangles": 411,
+        "farTriangles": 75
+      },
+      {
+        "id": "genbu:trees:-12:-8:0:leaf",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -914.1344321209897,
+          90.34750855543444,
+          -632.4932679012418
+        ],
+        "radius": 36,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 1,
+        "nearTriangles": 2234,
+        "farTriangles": 216
+      },
+      {
+        "id": "genbu:trees:-13:-8:1:wood",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -1023.1340001371326,
+          65.71239396107126,
+          -602.59694949314
+        ],
+        "radius": 65.35738275482439,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 5,
+        "nearTriangles": 411,
+        "farTriangles": 75
+      },
+      {
+        "id": "genbu:trees:-13:-8:1:leaf",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -1023.1340001371326,
+          65.71239396107126,
+          -602.59694949314
+        ],
+        "radius": 65.35738275482439,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 5,
+        "nearTriangles": 2234,
+        "farTriangles": 216
+      },
+      {
+        "id": "genbu:trees:-12:-9:1:wood",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -930.9775325189107,
+          78.82188597736136,
+          -648.5472814571112
+        ],
+        "radius": 38.842121877686786,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 2,
+        "nearTriangles": 411,
+        "farTriangles": 75
+      },
+      {
+        "id": "genbu:trees:-12:-9:1:leaf",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -930.9775325189107,
+          78.82188597736136,
+          -648.5472814571112
+        ],
+        "radius": 38.842121877686786,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 2,
+        "nearTriangles": 2234,
+        "farTriangles": 216
+      },
+      {
+        "id": "genbu:trees:-12:-9:0:wood",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -914.3562373483488,
+          127.31768865559609,
+          -663.291468013078
+        ],
+        "radius": 36,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 1,
+        "nearTriangles": 411,
+        "farTriangles": 75
+      },
+      {
+        "id": "genbu:trees:-12:-9:0:leaf",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -914.3562373483488,
+          127.31768865559609,
+          -663.291468013078
+        ],
+        "radius": 36,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 1,
+        "nearTriangles": 2234,
+        "farTriangles": 216
+      },
+      {
+        "id": "genbu:trees:-14:-9:0:wood",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -1040.785860272821,
+          114.67557812158262,
+          -668.222877997905
+        ],
+        "radius": 36,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 1,
+        "nearTriangles": 411,
+        "farTriangles": 75
+      },
+      {
+        "id": "genbu:trees:-14:-9:0:leaf",
+        "pack": "genbu",
+        "owner": "genbu",
+        "component": "woodland",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -1040.785860272821,
+          114.67557812158262,
+          -668.222877997905
+        ],
+        "radius": 36,
+        "level": 1,
+        "wanted": true,
+        "visible": true,
+        "instances": 1,
+        "nearTriangles": 2234,
+        "farTriangles": 216
+      }
+    ],
+    "publicRecords": [
+      {
+        "id": "island:terrain:-1024:-768",
+        "pack": "overview",
+        "owner": "island",
+        "component": "island-terrain",
+        "material": "ground",
+        "group": "terrain",
+        "center": [
+          -896,
+          116.50360488891602,
+          -640
+        ],
+        "radius": 197.58274186289668,
+        "level": 0,
+        "wanted": true,
+        "visible": true,
+        "instances": 0,
+        "nearTriangles": 15744,
+        "farTriangles": null
+      },
+      {
+        "id": "island:terrain:-1024:-768:far",
+        "pack": "overview",
+        "owner": "island",
+        "component": "island-terrain",
+        "material": "ground",
+        "group": "terrain",
+        "center": [
+          -896,
+          116.52138710021973,
+          -640
+        ],
+        "radius": 197.57561559498635,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 0,
+        "nearTriangles": 4054,
+        "farTriangles": null
+      },
+      {
+        "id": "island:terrain:-1024:-512",
+        "pack": "overview",
+        "owner": "island",
+        "component": "island-terrain",
+        "material": "ground",
+        "group": "terrain",
+        "center": [
+          -896,
+          47.5910758972168,
+          -384
+        ],
+        "radius": 181.88832135870874,
+        "level": 0,
+        "wanted": true,
+        "visible": true,
+        "instances": 0,
+        "nearTriangles": 1161,
+        "farTriangles": null
+      },
+      {
+        "id": "island:terrain:-1024:-512:far",
+        "pack": "overview",
+        "owner": "island",
+        "component": "island-terrain",
+        "material": "ground",
+        "group": "terrain",
+        "center": [
+          -896,
+          47.631948471069336,
+          -384
+        ],
+        "radius": 181.88433536912686,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 0,
+        "nearTriangles": 452,
+        "farTriangles": null
+      },
+      {
+        "id": "overview016:genbu|basalt|architecture|S",
+        "pack": "overview",
+        "owner": "genbu",
+        "component": "western-region-preview",
+        "material": "basalt",
+        "group": "architecture",
+        "center": [
+          -965.2998657226562,
+          61.03427314758301,
+          -594.1000061035156
+        ],
+        "radius": 83.92150186596547,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 0,
+        "nearTriangles": 6616,
+        "farTriangles": null
+      },
+      {
+        "id": "overview016:genbu|mossRock|architecture|S",
+        "pack": "overview",
+        "owner": "genbu",
+        "component": "western-region-preview",
+        "material": "mossRock",
+        "group": "architecture",
+        "center": [
+          -973.1817016601562,
+          64.34017372131348,
+          -599.1499938964844
+        ],
+        "radius": 71.6295939122486,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 0,
+        "nearTriangles": 1050,
+        "farTriangles": null
+      },
+      {
+        "id": "overview016:genbu|timber|architecture|S",
+        "pack": "overview",
+        "owner": "genbu",
+        "component": "western-region-preview",
+        "material": "timber",
+        "group": "architecture",
+        "center": [
+          -966.3517456054688,
+          43.51783752441406,
+          -575.6548156738281
+        ],
+        "radius": 109.88125586898902,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 0,
+        "nearTriangles": 7602,
+        "farTriangles": null
+      },
+      {
+        "id": "overview016:genbu|relicMetal|architecture|S",
+        "pack": "overview",
+        "owner": "genbu",
+        "component": "western-region-preview",
+        "material": "relicMetal",
+        "group": "architecture",
+        "center": [
+          -940.5,
+          55.73394012451172,
+          -604.18505859375
+        ],
+        "radius": 38.909083666342994,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 0,
+        "nearTriangles": 5334,
+        "farTriangles": null
+      },
+      {
+        "id": "overview016:genbu|genbuFlow|water|S",
+        "pack": "overview",
+        "owner": "genbu",
+        "component": "western-region-preview",
+        "material": "genbuFlow",
+        "group": "water",
+        "center": [
+          -971.6927795410156,
+          48.65800094604492,
+          -569.7070770263672
+        ],
+        "radius": 65.89526029911873,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 0,
+        "nearTriangles": 85,
+        "farTriangles": null
+      },
+      {
+        "id": "overview016:genbu|genbuFoam|effects|S",
+        "pack": "overview",
+        "owner": "genbu",
+        "component": "western-region-preview",
+        "material": "genbuFoam",
+        "group": "effects",
+        "center": [
+          -979.7526245117188,
+          43.2402400970459,
+          -622.9936218261719
+        ],
+        "radius": 7.701238070350892,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 0,
+        "nearTriangles": 120,
+        "farTriangles": null
+      },
+      {
+        "id": "overview016:genbu|genbuFall|effects|S",
+        "pack": "overview",
+        "owner": "genbu",
+        "component": "western-region-preview",
+        "material": "genbuFall",
+        "group": "effects",
+        "center": [
+          -970.9197082519531,
+          49.81999969482422,
+          -612.6000061035156
+        ],
+        "radius": 35.74760221986079,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 0,
+        "nearTriangles": 42,
+        "farTriangles": null
+      },
+      {
+        "id": "overview016:genbu|timber|vegetation|I8",
+        "pack": "overview",
+        "owner": "genbu",
+        "component": "western-region-preview",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -981.7047750366,
+          85.29669593480175,
+          -606.2963913460403
+        ],
+        "radius": 167.52195776061507,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 9,
+        "nearTriangles": 75,
+        "farTriangles": null
+      },
+      {
+        "id": "overview016:genbu|forestLeaf|vegetation|I9",
+        "pack": "overview",
+        "owner": "genbu",
+        "component": "western-region-preview",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -981.7047750366,
+          85.29669593480175,
+          -606.2963913460403
+        ],
+        "radius": 167.52195776061507,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 9,
+        "nearTriangles": 216,
+        "farTriangles": null
+      },
+      {
+        "id": "overview016:genbu|timber|vegetation|I10",
+        "pack": "overview",
+        "owner": "genbu",
+        "component": "western-region-preview",
+        "material": "timber",
+        "group": "vegetation",
+        "center": [
+          -979.6726848589146,
+          91.13839257597999,
+          -612.1393603174574
+        ],
+        "radius": 174.70415960548445,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 8,
+        "nearTriangles": 75,
+        "farTriangles": null
+      },
+      {
+        "id": "overview016:genbu|forestLeaf|vegetation|I11",
+        "pack": "overview",
+        "owner": "genbu",
+        "component": "western-region-preview",
+        "material": "forestLeaf",
+        "group": "vegetation",
+        "center": [
+          -979.6726848589146,
+          91.13839257597999,
+          -612.1393603174574
+        ],
+        "radius": 174.70415960548445,
+        "level": -1,
+        "wanted": false,
+        "visible": false,
+        "instances": 8,
+        "nearTriangles": 216,
+        "farTriangles": null
+      }
+    ],
+    "regionMeta": null,
+    "queryProfile": [
+      {
+        "xz": [
+          -841.3363464061817,
+          -484.8205277737279
+        ],
+        "y": 38.918133578914215,
+        "screen": {
+          "x": 0.5343475126736386,
+          "y": 1.0862148087654258,
+          "visible": false
+        }
+      },
+      {
+        "xz": [
+          -846.4082227729989,
+          -486.5005102784662
+        ],
+        "y": 38.959270832961224,
+        "screen": {
+          "x": 0.5269333408476478,
+          "y": 1.062583960455302,
+          "visible": false
+        }
+      },
+      {
+        "xz": [
+          -851.2309374544394,
+          -488.05175681586235
+        ],
+        "y": 38.97772288950175,
+        "screen": {
+          "x": 0.52005384352326,
+          "y": 1.0411643855937152,
+          "visible": false
+        }
+      },
+      {
+        "xz": [
+          -855.8197988044903,
+          -489.48607668756375
+        ],
+        "y": 38.96595787406541,
+        "screen": {
+          "x": 0.5136523565683556,
+          "y": 1.0217118303445003,
+          "visible": false
+        }
+      },
+      {
+        "xz": [
+          -860.1901151771395,
+          -490.81527919521795
+        ],
+        "y": 38.92157551951653,
+        "screen": {
+          "x": 0.5076811413953274,
+          "y": 1.004000568868828,
+          "visible": false
+        }
+      },
+      {
+        "xz": [
+          -864.3571949263742,
+          -492.0511736404723
+        ],
+        "y": 38.85749556258564,
+        "screen": {
+          "x": 0.5020995864719671,
+          "y": 0.9877855835337529,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -868.3363464061816,
+          -493.2055693249745
+        ],
+        "y": 38.78311184766563,
+        "screen": {
+          "x": 0.4968723148816851,
+          "y": 0.9728572478673378,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -872.1428779705496,
+          -494.29027555037175
+        ],
+        "y": 38.70508989358879,
+        "screen": {
+          "x": 0.49196855664015376,
+          "y": 0.9590346936299949,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -875.7920979734655,
+          -495.3171016183117
+        ],
+        "y": 38.62798090654363,
+        "screen": {
+          "x": 0.4873615765797587,
+          "y": 0.9461605345747204,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -879.2993147689167,
+          -496.29785683044173
+        ],
+        "y": 38.55502921377,
+        "screen": {
+          "x": 0.4830281516597106,
+          "y": 0.9340956397849769,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -882.6798367108909,
+          -497.2443504884094
+        ],
+        "y": 38.488365261889264,
+        "screen": {
+          "x": 0.47894811388520186,
+          "y": 0.9227163418367005,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -885.9489721533752,
+          -498.1683918938621
+        ],
+        "y": 38.429225934285085,
+        "screen": {
+          "x": 0.47510395371454894,
+          "y": 0.9119119777241202,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -889.1220294503571,
+          -499.0817903484473
+        ],
+        "y": 38.37814909094677,
+        "screen": {
+          "x": 0.4714804743020874,
+          "y": 0.901582854387867,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -892.2143169558245,
+          -499.99635515381254
+        ],
+        "y": 38.33511859451835,
+        "screen": {
+          "x": 0.4680644902509573,
+          "y": 0.8916386507897687,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -895.2411430237645,
+          -500.92389561160525
+        ],
+        "y": 38.299650827849355,
+        "screen": {
+          "x": 0.464844565972789,
+          "y": 0.8819972330932716,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -898.2178160081645,
+          -501.87622102347274
+        ],
+        "y": 38.26933855068133,
+        "screen": {
+          "x": 0.4618108978723872,
+          "y": 0.8725883144418742,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -901.1596442630121,
+          -502.86514069106283
+        ],
+        "y": 38.230796881600405,
+        "screen": {
+          "x": 0.458955857265728,
+          "y": 0.863379995615751,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -904.0819361422947,
+          -503.90246391602267
+        ],
+        "y": 38.18432979951074,
+        "screen": {
+          "x": 0.45627200942795365,
+          "y": 0.8543039240346872,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -907,
+          -505
+        ],
+        "y": 38.12592146839655,
+        "screen": {
+          "x": 0.4537531838802396,
+          "y": 0.8453094178886243,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -911.5460069444445,
+          -506.8518518518519
+        ],
+        "y": 38.01646960598266,
+        "screen": {
+          "x": 0.450175316528505,
+          "y": 0.831381551139152,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -915.9236111111111,
+          -508.8009259259259
+        ],
+        "y": 37.89573613670394,
+        "screen": {
+          "x": 0.4471203766666542,
+          "y": 0.8180555985856737,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -920.1171875,
+          -510.8125
+        ],
+        "y": 37.76538808079032,
+        "screen": {
+          "x": 0.4445269159748872,
+          "y": 0.8053983036387689,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -924.1111111111112,
+          -512.8518518518518
+        ],
+        "y": 37.634865674102016,
+        "screen": {
+          "x": 0.44233557798157846,
+          "y": 0.7934452286737371,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -927.8897569444445,
+          -514.8842592592592
+        ],
+        "y": 37.5973203759072,
+        "screen": {
+          "x": 0.4404812911837162,
+          "y": 0.7819838085602447,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -931.4375,
+          -516.875
+        ],
+        "y": 38.84934552582199,
+        "screen": {
+          "x": 0.4387856505979187,
+          "y": 0.7676262643531704,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -934.7387152777778,
+          -518.7893518518518
+        ],
+        "y": 40.02867200487812,
+        "screen": {
+          "x": 0.43733889768039325,
+          "y": 0.7543620720037154,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -937.7777777777777,
+          -520.5925925925926
+        ],
+        "y": 40.54489641946388,
+        "screen": {
+          "x": 0.4361591322063029,
+          "y": 0.7439263835890804,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -940.5390625,
+          -522.25
+        ],
+        "y": 40.63591248162418,
+        "screen": {
+          "x": 0.4351783022250236,
+          "y": 0.7356605133221118,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -943.0069444444445,
+          -523.7268518518517
+        ],
+        "y": 40.74275682304402,
+        "screen": {
+          "x": 0.4343067324053019,
+          "y": 0.728334822801638,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -945.1657986111111,
+          -524.988425925926
+        ],
+        "y": 40.79603117793826,
+        "screen": {
+          "x": 0.43351112354155086,
+          "y": 0.7221885037596121,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -947,
+          -526
+        ],
+        "y": 40.89315894717326,
+        "screen": {
+          "x": 0.43274130392927046,
+          "y": 0.7169890674090285,
+          "visible": true
+        }
+      }
+    ],
+    "scopeProjection": [
+      {
+        "xz": [
+          -1024,
+          -584
+        ],
+        "y": 54.93878180520731,
+        "screen": {
+          "x": 0.4261492095671709,
+          "y": 0.5005196400247582,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -912,
+          -584
+        ],
+        "y": 58.917952782398,
+        "screen": {
+          "x": 0.5672799320014452,
+          "y": 0.6297321931100907,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -912,
+          -480
+        ],
+        "y": 37.887893306384676,
+        "screen": {
+          "x": 0.3991702805900608,
+          "y": 0.8923955386928342,
+          "visible": true
+        }
+      },
+      {
+        "xz": [
+          -1024,
+          -480
+        ],
+        "y": 53.021698729173245,
+        "screen": {
+          "x": 0.2653818443085747,
+          "y": 0.6311300718010966,
+          "visible": true
+        }
+      }
+    ],
+    "bridge": {
+      "xz": [
+        -967.3201563044388,
+        -548
+      ],
+      "waterY": 40.288
+    }
+  },
+  "pngSHA256": "b5b2f06a43019230e10e371e25de36b3ef74a1d3207a8f1afdf850911037b291",
+  "passed": true,
+  "exitCode": 0,
+  "endedUTC": "2026-10-06T00:55:43.601068+00:00",
+  "elapsedSeconds": 28.578304858999957,
+  "inputsAfter": {
+    "project.json": "fc4a4914d2017d43b72f862580226f11b8d1c001845c5fe717f247cfb0084c7b",
+    "data/lunar.json": "92abf8f26344ef31bee7cb197330fe6cb7b4854a590e2687cfc7565dd4827ccc",
+    "data/makai.json": "3d5566dc31dcf696865246ba63f5d9cef7ad45464f5dcccc00e135564f166435",
+    "data/netherworld.json": "dfb60f6170e841f9f034a3b41cb7bea565e2c5cefa5b371099509693e14aa248",
+    "data/heaven.json": "6383792bb7608ff61f52653dafc81eedd2a6155287864a25fc653889c2e3111a",
+    "data/higan.json": "aed41a6af1c6ef21250f4533dd888f0f7610eb81db6907cb0b3219ebaa377bcd",
+    "data/animal.json": "58294cbe1b2c9e3dc28a316d927bbd410b32fb3bd024adce425266b4b0fe176f",
+    "data/backdoor.json": "a174f1344ae3dc8b73e336c130d0d87598b386e35bfc69c7c3336fdc78a3e289",
+    "data/kasen.json": "b03522e4d5f14aa691de7fc2ffcf596fe6c13840d6cc2b5d7c7e391c5d30fdbf",
+    "data/current-hell.json": "4e99e4f519f90d77f7f51267064ac4f408bd5067450be249c1138c4d7b0b2b1a",
+    "data/rainbow-mine.json": "d852d34cfbbcf3ee2a2168fbb9da9e139e33f2b320456bb8588c91ebe29bcc9b",
+    "data/highland.json": "b15892fb6b9a589aa890e4e3f44e7d8d0a57b234b16809f91ec1a58b7bb6775d",
+    "data/asama.json": "72098c152fd80bd90e7f70ab96053a477bb2a5bdd8f73ff72440416e6f67344b",
+    "data/hiten.json": "01c78bd126626d5a36470d0a2f0752ae0a1ae28b53aedf66e7c36d67825d8d26",
+    "data/mayohiga.json": "a9c8bcf0ecf74c54c115914875ecd9542e4fbf9f32e363760d79336add62ae47",
+    "data/peony.json": "67923caf740dc7cecd29f7a54893424d65ffc141a694e3a416f4f817c3448a5c",
+    "data/waterfall-cave.json": "45719d3e91fc6b4d0fba6ff0f350e844e54ba172b809355dfacec58d59fdcdcc",
+    "data/cucumber-farm.json": "4478346595556725f3007e1d1e7ad64b65b454adf67ea281e9ad97ee7cadd5b2",
+    "data/wind-cave.json": "a3c37a35721107173aacafef9d5188146769d32bee6ef57464ce1a143530af6a",
+    "data/geyser.json": "c9384ca594800782eec387af75a22df7c241831bdb27dd6a10405501580671b7",
+    "data/geyser-center.json": "faa4cc8582fef8f76595bcd6ddb6819bfe308c270a8878b8ebd3766942783646",
+    "data/atlas.json": "74b17d519eb23f9d6d26f7ca76e2d02a87978a7c0761b4bd22719d286c73e37a",
+    "data/characters.json": "b87604e876804b5b9469657adf653451eccd561cddecdbb578f8966745beacc9",
+    "vendor/three/three.core.js": "78b2c4218834ca8670547ed2315bfc21a00ff4dc3403bbffc8c31493d31d14de",
+    "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+    "src/old-hell.js": "fde1ded5cfad70061c9a69b09b000fbd35bab17edcd583ed4d7973d5c9cfa643",
+    "src/kishinjou.js": "a90ac62e8244c71583fa85b007186bd8798454eba406136199f66949024a2899",
+    "src/lunar.js": "b7a870cf111ffa1ad4c68c5a9fed5d7f31ae08e4fb2c85dce1e8c60308243203",
+    "src/makai.js": "00746b16369b07c2ae549da3d8bcd34505f059b276f592cefd4053704b6a294b",
+    "src/netherworld.js": "e74f73aa97eb1fcca45e44abc894465b5279467e274089e0eeec83f6d871485a",
+    "src/landmarks.js": "04b8e640ca0fc597f889625b8a8173a767eced751355e5dbe034f44fadfd7ff9",
+    "src/heaven.js": "3231eef2637ac64cfb7eb257f35ddf1b5e59bd976642db1aa5a55baf93c3010d",
+    "src/higan.js": "deb81b207343b112ed0080d9378693a4bc04f93f82ad0af6cbaa626b623df34c",
+    "src/landscape.js": "4ef7b6f8076842506e8cac09086db4aa8277f92468e08aa0069c326f77ef35dc",
+    "src/animal.js": "055fe408319dd4d2faca1db8b0619c9d3222a2e42c8c575ebfbb7bf0cdfa7241",
+    "src/backdoor.js": "08031b368a145b1a4d774bd8d7e85dfc81c5adde2682515c069af774b882f098",
+    "src/kasen.js": "cf824cc3b34ef32f42bc127ca9d4ff8570876a9b47626ca5c43acfb709493004",
+    "src/current-hell.js": "47b27653fc2df883b38cbb212eca268b122eea8d72c03d047b590b6f8a8dd7f8",
+    "src/rainbow-mine.js": "8d41ee356f7d1323316e866cf96a88e6775edca6ef8784fc9dc812b9856a8d87",
+    "src/highland.js": "8816c040dd6f3c24d42beef3edb7a2c2604131bb41507c8964886ab659cda9d3",
+    "src/hakurei-plants.js": "8d149696fef5fc9a85204bfb3c2c4bd45992652cf9a2c81f498c0440f5e159f1",
+    "src/hakurei-transition.js": "18c8cb5751436fd08b9c92c32459ad5e71084ecde8f18e26ef44354decc47b3d",
+    "src/asama.js": "42fdf7c969a20389ceb7fb35cdfac96115a1501fb4a5483ede80268814176f15",
+    "src/asama-roads.js": "983371f7f2e24ef21b03bee452c1b50bba85747c035725f842ec42ba2a96a49a",
+    "src/surface-contact.js": "719a315917b55fa5025ec32659509b5be8965d8a577cdfc92c63c96db4dedf5e",
+    "src/hiten.js": "b2671674c180a44753bbccd61a994cc4efb3089618c10d586eba97a33696412e",
+    "src/mayohiga.js": "3cbb575944f32ef1f26e3041f9400a2e9259b98aef3d4f9a78d52c5624c8d75e",
+    "src/peony.js": "0116a5ba2d34cc8e05696e00d9d96b358ae2a9fcb1a395ca50e2b8d22821bc9b",
+    "src/waterfall-cave.js": "eb2430945bb41dc7ba2f2977cc93c6953c5611ec3cb4b5098d7f52c9002f8094",
+    "src/cucumber-farm.js": "f5e4b9c53963f81b170fd56371934267d3587e7770dc4210c957c534f7b9e90d",
+    "src/wind-cave.js": "94ce9aa01c17eb5c1faed009311b3039166879912b96f8a5b3cd5cf22e325737",
+    "src/geyser.js": "e6dd521faf5903bd410390e04ab8477f6b7a2b82f7dedbe4bf54f35530de376c",
+    "src/geyser-center.js": "b58dc4782ff80b95811236967864852776a36def8e0c01863ea46b31babd9f86",
+    "src/kourindou-upgrade.js": "e4c7371c745a6a4b69ed618f7fdcb7f44208b092b65f0379cbb752ba9db52599",
+    "src/forest-upgrade.js": "6468c87138443f3599c7cffbfbd0191e0733ad2259f46f87e3a5d302c1845270",
+    "src/village-upgrade.js": "4f56749811034552227f3280c9b34c534484fc1d1e7b631b52d6d2c17242c44f",
+    "src/trail-upgrade.js": "cce321e38e5c9a26d585092029ed415b9b78032c46000ba47b55ed190f21932f",
+    "src/trail-plants.js": "9b27de1ef04d9b309212b198e203890f848bc85a107c3b7dc7fa4818806a2696",
+    "src/trail-landscape.js": "ef50de3407b2f6e31eed41939ec8003c27a16dccf7e907b98bf72fc4a13919a6",
+    "src/forest-entrance-plants.js": "b42c6959cf4005e362954d468bc1130a459c3104aa85316dff752fd99ddc6ca1",
+    "src/forest-entrance-ground.js": "cc603d5a2b8bd24fd24ec78d48a7124e66e79e67a5751b9ef281a5dba2839ecc",
+    "src/forest-entrance.js": "0320d5c1a6a89d75e29ce3728135222c7a6de3b22b572769b9c32b27c16dee5c",
+    "src/forest-canopy-plants.js": "043a18fa90e756686cc5f28ebe82295271fe6e99386d22e5c8661ac578156b66",
+    "src/forest-canopy-ground.js": "fa889105ad3689bddd44538fe5d72e73334c02cca755ec466eb83f9f87995d99",
+    "src/forest-canopy-road.js": "ac7211359b2a4079713788c97329d6a79383da50f1e601d03eac860f10f2c2a8",
+    "src/forest-crown-rollout.js": "133abcaa7bdfaec3ede8617643fa9beb302642c194cb9f2971caa01b8f919820",
+    "src/forest-canopy.js": "6820b51c35b707dccd920a552347b10decaa6e246d81bd81d5745e0db6eaf29a",
+    "src/bamboo-entry-plants.js": "ff487a6667e53d393523a2607655ae693f5bdcd69775ade31a246899d74948fe",
+    "src/bamboo-entry-upgrade.js": "937f915a583b0e7b14588f95980ff0055f27f54d6c7d1918d301ce0fb6e1cbe1",
+    "src/sunflower-entry.js": "7110e70da5feb19c8e163470c1d266e37ca40e8507e682915b188732be58984d",
+    "src/muenzuka-edge.js": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+    "src/flower-hill-entry.js": "2fde1ae2fa094decaf57facaf07fd895fe0a13fcb962480510f7a76ccc2ad549",
+    "src/genbu-bank-sections.js": "d4143f18a7e5a102ac90f3cf1f9f86cb9a904846850fb77606d3f307f80e7cba",
+    "src/styles.css": "b1e9f17efcfb21d3e806e2fc19c74cfbc381e59f6a0b417c81e74b48b77091e7",
+    "data/expansion.json": "0ffb83baa4a828bbc3366b8b49df4602f18ef8db99d22f03e6079c6ee1c274a1",
+    "assets/packs/overview.pack.gz": "7398a263bf02d560fd0c9265d9e297ec3b22357f2429c4732ee3488f2d097742",
+    "assets/packs/legacy.pack.gz": "46e874f6bcdff56d4772e531fd19bf8a71ba5f272aa39b14a91e5ed65082ab88",
+    "vendor/three/three.module.js": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7",
+    "vendor/three/LICENSE": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+    "src/camera.js": "0bc9225d4a9b3eff946464b36619b7d17da180d4ca43a6dd31f1e3e160f6d721",
+    "src/renderer.js": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+    "src/old-hell-renderer.js": "fb91047212002fd1f9933189dceed6033c39883bde32f63437967e6b8f594870",
+    "src/kishinjou-renderer.js": "031b0edcbe51d900c4dfc9dd8da72a453c65d33076765109e48b10df46cf4130",
+    "src/lunar-renderer.js": "c472465371e21d441072ac44ffb1cb09195fa26c8d3a22c8225f192461f62360",
+    "src/makai-renderer.js": "ed54303436ef7c53d8dd0d111560a9b2b09393f4a42911475b79178565a8fcdd",
+    "src/netherworld-renderer.js": "7d81bc869fc86297705e972c93a1ade2c4e871663802cc0e78cf5c424b520148",
+    "src/heaven-renderer.js": "4e03583f3ff823520e2159ef77afd6e7ba9db30804e047b0ddb65601b0f4bb49",
+    "src/higan-renderer.js": "8efb15489c3d93135646cb183a85b8a54415f3db2adebdc6538926b98cb3b322",
+    "src/landscape-renderer.js": "0ed0dc2c076ce224f0d9020e7b97f75e269b15e27a13e939e5bbffe6dfccc98e",
+    "src/animal-renderer.js": "c8a5d5164d73b913687c9133a4f7bf556e44272477ddbf906646035f878f35d9",
+    "src/backdoor-renderer.js": "ff9868540c78daeb981a6c8ad977882158881c9d2f2ec329eb268eba3f053e25",
+    "src/kasen-renderer.js": "eb72f106c4bba31d2ea73498393e89a80b67c5ca47262c6e2a01e6e41a7c044d",
+    "src/current-hell-renderer.js": "29458b481da3f2d7dd5ccead903263e5fc46e661f1d9db6be149afad27498d76",
+    "src/rainbow-mine-renderer.js": "f43d1fa1764cc3f8c883d27c2ee75a98240e7bf69112f4cc78d0e06af1a327a8",
+    "src/highland-renderer.js": "b8f18fda335539faf732fa2c16189cd07ac654dd611c052e7a7e0d5983cb3e16",
+    "src/hakurei-renderer.js": "6eb73c24d252dc8c843b1fd62d4626a0a5b74bf3763c5ed8b6dbafb14b12e4fc",
+    "src/night-renderer.js": "785b896192f547ae9b7012fb4efbf52c39361320958a4ef5e02f75f542129b05",
+    "src/asama-renderer.js": "d82d5c1062b270c669648e784490123e656ad1482294eac9f5900db74f4f6110",
+    "src/hiten-renderer.js": "3a307a1de5d454ab7e4ec07cad6cfce91dc8446d5c3c49ed7216570e30b53da3",
+    "src/mayohiga-renderer.js": "79882b326e5732d0d28606b15b0dc03b0a5ab86abbcdc274f6b1395e6428d815",
+    "src/peony-renderer.js": "aa51146ce1cc5c9b0b0a56132fe0eac38e760cae744956239d3671cdc913334a",
+    "src/waterfall-cave-renderer.js": "75e35695e6274501ed2e0a7c8f7d4f3b06e846ce51effee4308eeb99d06247c9",
+    "src/cucumber-farm-renderer.js": "d05a5fefc19c0cf4b656ca573c3ebe655d5999f6e5a9e27e4748e16f884a8ae6",
+    "src/wind-cave-renderer.js": "88d40b8c951460534078740b2d10c3f1878b0477307f43e0ee32be38cb39720a",
+    "src/geyser-renderer.js": "34cc5f6390d60ac2f0b27fc5779532a0ffb60111970e3a5dd2e09ee003d2c9ce",
+    "src/geyser-center-renderer.js": "60f09d73d875820d8278a80072889f76b7daaf66cbf427c59108512d40aa0063",
+    "src/kourindou-renderer.js": "c84bebcc837d7b4ccc9bef90551695cecac67616eed68eb1f24141cfaa26354f",
+    "src/forest-renderer.js": "23dfb91f835803e00bb9208ed5aeb945996ef2460833f076121d88fc91bfe35b",
+    "src/village-renderer.js": "7d48c5f32c0ad59ac0620e9b1b6bce5b88b1905b75ad10248870713afe49ddd4",
+    "src/trail-renderer.js": "8c605fd08809218f513c57da15ac7f5e6499fcd4302478246dc9d6d503b082b5",
+    "src/trail-landscape-renderer.js": "ee70209bbc5316c8b63a25a564f9b1a71ada399ac2c6f470f760446d4a42ac70",
+    "src/forest-path-colors.js": "a91a09b0f347b40379bbaf52342cf36bf4a943e54b334acee9a1ed8050e85eb5",
+    "src/forest-path-renderer.js": "372f3bba7340b01b5649b8525593ada9592786bb4abb577315e17cfb45fe5073",
+    "src/forest-canopy-renderer.js": "e0d70e6acac3c2cd89e3859dd4a67ef93bb1e3c08f18b54764a9a4b32942e6cc",
+    "src/render-recovery.js": "191976863744f357bfae24dd946485b6cf49de0f782abe035f2c7cfdff2778b4",
+    "src/render-diagnostics.js": "ee2c16425f4ec27d03684cc32d9e29f0fd1c7aceb3f96cca954f62f8bc047b93",
+    "src/muenzuka-edge-renderer.js": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4",
+    "src/characters.js": "2efbdff0ffdc569d544331ad15a5456c0d8e8bbf5f7dc7e5ff016cee33320643",
+    "src/streaming.js": "3ae540dd6a1ca4878ca73ef18a628903dcef7b6866c3753a54ac0f11d435a5dd",
+    "src/app.js": "a5810a049c3ff33d4e9a3987acc1827f390e1a0d4ef1f97079dd9f1d7c68b0c3",
+    "src/index.html": "dd636efdc4da9138c7e2d79c270deab0ebf97e2c08f68d952ec20ff9af824257",
+    "tools/build.py": "38063f56e5026edaf3fd8a2a6f56fbea0a31fee6b264a9bd166228dffb09e631",
+    "tools/check.mjs": "297a2728c03f9324b0e6731b1c55035e19fa5e23e435a4cea47fd95eede4ff94",
+    "tools/check-landscape.mjs": "a72e138bdaebaf059b88f203159f989b523b4f674462878d00273bf37961ecf8",
+    "tools/check-kishinjou.mjs": "f0db98fdc9ddcf92eb7693cf6dff39657c500a14cdc863b37e38cf2d5d107ed1",
+    "tools/kishinjou-baseline.json": "126c933c0d2e12b5676f8c9594e6cecdbdc713169ea18af21e9ebba7e9d959ac",
+    "tools/check-lunar.mjs": "7dc97b27d1a87a5107d0f9b9d82742c99edb9f05fb1bba82ad91d35710a792a8",
+    "tools/lunar-baseline.json": "3e4ff4dccee7b1a2a298aa9f851034a88e2e5931ee187abb3c1cc3e3cc3d8940",
+    "tools/check-makai.mjs": "136c722ccfc03f58fb1a9a2b5ffb877f4d44e206c18a0e6cf5996bb1874d0784",
+    "tools/makai-baseline.json": "1734aa17de0071d3420b70ed792d28817f0b7cb8897a51b82077035a666844d4",
+    "tools/check-netherworld.mjs": "2acea0283b1365f2ec115bde84efaacca1fe94887567a0e769f2caf538b3e2d8",
+    "tools/netherworld-baseline.json": "7ffe9d17fdeecbe4047f6d374e4cdfbbc0c52b13ccb944f655f0d96f65d97c69",
+    "tools/audit-landmarks.mjs": "d9101abb321175a5ee8f9acd5343e0e5bb1e3ed09933e454262ab4647583b516",
+    "tools/check-heaven.mjs": "92991b29ee13484febaa83858583adfb9bf62f58d6efa07b01d5b753ded500c9",
+    "tools/heaven-baseline.json": "e799dd1028023bfdd80c3481a50f98eb0da66a9a6bdc9c04026d31c7380b252a",
+    "tools/check-higan.mjs": "9c4c97083229cf3b3b714bb19b9ac4e99402726907f08c8bf39467e1b13fa673",
+    "tools/higan-baseline.json": "b7501f24350121f16e9e654d78c4805ee7e338504bdb59d6494c8d4e20be65fd",
+    "tools/check-animal.mjs": "7a6f6c33f8013e3651943203ee3b1e7d1958995f888ca7ddf750e6430af26190",
+    "tools/animal-baseline.json": "1c7712a395c1d9adc6c801348470d1847b00cb4ee3968cfa94213d79e258b3d6",
+    "tools/check-backdoor.mjs": "3005259c177526da9d1e3340d110e0e015f14493374cc8949c4704d6c506e278",
+    "tools/backdoor-baseline.json": "44a681c946b751d3d613d78ffe9fe2fc8e979809d2559919ae65f5572aef3cae",
+    "tools/check-kasen.mjs": "f7fc4ae9f9af79f872d4cafada6c448e1a21dcd5cdfbd439ca21e6936f842e32",
+    "tools/kasen-baseline.json": "f119c2fcf7f96aac4440c7ee78ef3b23a665e21a3ffbe448c8ed1acce99dfd55",
+    "tools/check-current-hell.mjs": "e78bc169d49f5fb8042c4da46b03dda7927cc4a2a0ccea298497de30a04c937d",
+    "tools/current-hell-baseline.json": "d45d4966ae7eb3b10f428a5984904b78c8597f4ecb149cf141a43a0ba7d7715e",
+    "tools/check-rainbow-mine.mjs": "92c7e64478a74f665d6adb4d7cb2cc2ae5af6be9447d0cfdb6cdd1ac8b1b9de2",
+    "tools/rainbow-mine-baseline.json": "3d793efb1f5a984a3229dea0c710852b09a4b6e6e5294806dd0cfb7a2856bee4",
+    "tools/check-highland.mjs": "1a876fc8cbf29c46b548a2fa17f04c9e9777b3b1750f57a40912b981e7214340",
+    "tools/highland-baseline.json": "1552e5afc72ac453a892a2a9cbc3c5087d42eeb82ba606142840e1db8652463e",
+    "tools/check-asama.mjs": "7d2539b2f98bbae0df472c70e199ae574abc7b58a32d732e0081d2e27411b240",
+    "tools/asama-baseline.json": "ba15fdb0a284f489fa5944bcedd6e0ba9c60359a0fe2fcfceecdee82447c7ee4",
+    "tools/check-evidence-corrections.py": "97bc60805620272d24e2c5911c857e95c90c584f8f6c950895f0a082fe23196b",
+    "tools/current-coverage.json": "cb8038b9b7c1f933ae77456cfc00303997e1fbb95d8deb2c16963886fab59fe8",
+    "tools/check-geyser-center.mjs": "708ef3a9976212c71400ffd56b9d43715e087fd322d7e8c6b774b1f52a41bc9b",
+    "tools/geyser-center-baseline.json": "cf5e0483694884fb593e9b7c00b7378b693a67a2a042d55e6fbbbf71b7a1d5b3",
+    "tools/check-geyser.mjs": "f465a6b8910a2e87b892681375b9e384ba2b2360f055682d72baf141a129648e",
+    "tools/geyser-baseline.json": "cd8106c9c4a6c5ab6b970ac587b0d3f59951b0d2564b3caab5e8451873457df0",
+    "tools/check-wind-cave.mjs": "9a1242dea8d6ee50eef693ae0851f0ad93d61e9292531c543fe279b1a1ae5df3",
+    "tools/wind-cave-baseline.json": "84cb0e7696e2752c08f94f075a7867b076eb021cd597186a34a8f320cee431d8",
+    "tools/check-cucumber-farm.mjs": "715fdd1b6e7b32679d86678c89ee67c225c2812f95cd9e1ab686fd16c6c9d1ed",
+    "tools/cucumber-farm-baseline.json": "5ec3ce0339272685be83c09b526ae4de984aba609e58bf22661a4ab153f09f12",
+    "tools/check-waterfall-cave.mjs": "a828bd5418e4acc1cf82faaf22c5395f6b121166c7a245085678eda89a46cb93",
+    "tools/waterfall-cave-baseline.json": "6a1ef7dc336f90f1b077c365d7c6c73e51f58feb4a7a121c4c5444f9565d9083",
+    "tools/check-peony.mjs": "b88a1347f642d5083478f5eb2bbbc4092358da18960dc96c83a76a340d232340",
+    "tools/peony-baseline.json": "12f795ed975b7bc61d9793a27bd9978eedd48ed37a0d411d2db877d3fa5a691a",
+    "tools/check-mayohiga.mjs": "72cef14478d9230ff1c51fde8c9907c75dab5531a33cc71da7d0881f5ac8ff45",
+    "tools/mayohiga-baseline.json": "70473533bee801c39f0f22cd3368bbc62c2ef1cac5e18595f478e73619277174",
+    "tools/check-hiten.mjs": "4955a316796da56b50419b93285845c5d40817d17c22385d01a8092b533c1a74",
+    "tools/hiten-baseline.json": "7c4d0085dbd8647035ae84d4ecf2c1b37393023eaed821a94df07896179d5b1f",
+    "tools/check-kourindou.mjs": "dd67e34e4c92947b0b75ef1f4b71a954efec2d08d3b328223a13f6b54c0bc700",
+    "tools/kourindou-baseline.json": "1b0c06085b599fbfbc8d3df7575a6cd0027f353e8b7bf24f7ea24ef66c743dd8",
+    "tools/check-kourindou-browser.py": "90bb41467c19c55b74c33ef610450fbc1c2674de8d6df5a2f7d55be1900f59d2",
+    "tools/check-forest.mjs": "5262de1e54f58190096457c81d5fa84533b8072dc4e616cbb4a8d7934ff5fc4d",
+    "tools/forest-baseline.json": "e29ac935dfb20857397cc22b3b1943fb7e51ed318e4f49b92cdd145466ad795b",
+    "tools/check-village.mjs": "7ee33fe598f9f447726df991d12b6a02c12de86605d0c150643ce73d148ecda2",
+    "tools/village-baseline.json": "040073c347617b50a3cd10556ef41f0bfede73eff0b24d4e95acbf9cea6553b9",
+    "tools/check-trail.mjs": "a9e52221c8746f85b2bea15cc21ce6886da77fedbdd2dd72bf3fd961d0800f4a",
+    "tools/trail-baseline.json": "18517e0ba96f413aeed4df29805933f0ae2a8cb7c61234a6f5c1d03f45c3f36a",
+    "tools/check-trail-landscape.mjs": "9cccfbed2ac3275bd0729ff85d4700976bbf8308c42219e1c120178e3a03a191",
+    "tools/trail-landscape-baseline.json": "5d0abe56447f7ef03752071f2e9cf422717c331e99ebb5d5c6a277b71cfe4fe2",
+    "tools/check-trail-landscape-renderer.mjs": "43fa7f01c9842140a83a39e109ab825969be7fdd980fde29336adce32b8c6044",
+    "tools/check-forest-entrance.mjs": "e4170e93fb052f3ca80d1fb9a05a9cc41604ed17b302d7198b132b05683220a5",
+    "tools/check-forest-canopy.mjs": "e6789bf2a4604d11be12a279fbd5b00cc3fbff647c64b2896a388b361973b2d7",
+    "tools/check-forest-canopy-road.mjs": "2952dbe47687c21b2d0193eb60f74e20f6e95960839363ba5de2758b567013e3",
+    "tools/check-bamboo-entry.mjs": "0ad4d633c021299cc2207ad6c5731f94dcf965dc8813ce93f85f6f0b907bf890",
+    "tools/check-bamboo-browser.py": "49ea1c552fdee368ccfe96d7d74e098af0702985f414f0ce7035c3778f119864",
+    "tools/check-bamboo-lod-route.py": "e60a2de5c10b1498f5d951a050d024511166a4e64cb68e38628d68a71289ceb1",
+    "tools/bamboo-entry-route.json": "6dd0332f03d236ef1455c654fb02bb3915cedb9a05c69ce58f31a92122c1fae1",
+    "tools/check-sunflower-entry.mjs": "60ba4e9b4db83fc5ca8f0ce923bc089b498ae3748b699db33fa37844c91cab62",
+    "tools/check-sunflower-browser.py": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+    "tools/check-muenzuka-edge.mjs": "5f0568c0bf37dda0fd1ecebca7899aa8d932fe95b108a23f218845f57f4f8c4a",
+    "tools/check-flower-hill-entry.mjs": "49c73c6da69401346ab64bd3bcfcdc6277bea7f5356e00578b79f5fa3ee3f146",
+    "tools/check-flower-hill-browser.py": "d6089e3be79d42751c1e74924bef213b416843cf54f74d408e99ae7cf72649e0",
+    "tools/check-forest-path-renderer.mjs": "c98a7e20bc30bad262e3f512abaaf7d8d246ce84c67a93ae63192f178548a05d",
+    "tools/check-forest-path-coverage.mjs": "50285847cfffefe171b53fb6c5365dbb413d5766b4233412ebacf7f4e2b72a3e",
+    "tools/generate-forest-path-colors.mjs": "d9f5674c3892d0808ea6c3ee50a412204389f96256dfffcfedbda00d1dfd1f00",
+    "tools/check-foliage-texture-browser.py": "505bcfd6401c95c9ed44538f4145e958ec8275c07a74c1586cdf1b980af1fb58",
+    "tools/check-ui-work.mjs": "84be632770e6fa4ef4c4d42495428c701dd3a43938f63b11b079a731e1362a4f",
+    "tools/check-frame-work.mjs": "2318e76bc1b805abf6892b54d89fc845156bd40717a1e31a20ec6d63246b886e",
+    "tools/check-frame-work-browser.py": "71ae510bd98ad072e694817896253cd932d0122e37fd6566530ba72f6127288b",
+    "tools/frame-work-source-review.json": "15d4e83b852f680ae9b99f68f596151680149b7c4595c0245b1f7011fb451322",
+    "tools/check-render-diagnostics.mjs": "f80d544f4e7a476badfb797f073d28c7e7acbd158bf6c315884136419014b677",
+    "tools/check-render-resources.mjs": "8172b43fab245fa6774c5019770407af76e4af2a9cbde8f35c19b1a6bb224337",
+    "tools/check-render-ownership.mjs": "b8bc5fcb9dd283a2621e387c2fee2bcd856a457cd701f1ace5f81928d06eae17",
+    "tools/render-lifecycle-source-review.json": "2d6283e5f204b7b242b35b3f6ebf7c76be4eeb3065871cf4e78999d8d9b426da",
+    "tools/check-streaming-lifecycle.mjs": "8a2d9443392fd7a037a6e6fbb74f340db0b83f364973450c27ebd6f2b2f251f1",
+    "tools/check-render-lifecycle-browser.py": "5b4c6a2180d329dda3addf1034a1f030f28778b1a14195e534eea1dad81b4999",
+    "tools/check-hakurei.mjs": "fe9a8bdd83fe6b7f2e068a01028fe85ffa169462db69a862a6a75a7404470d74",
+    "tools/hakurei-baseline.json": "0d68e8c1ffec9e9ab19fd546158828c2092069381c8c08617a7be63b196c0774"
+  },
+  "inputsUnchanged": true,
+  "artifactUnchanged": true,
+  "sourceHEADAfter": "1cccb6c1a74f4479e7d79c19eb3644ff797f87c1"
+}
