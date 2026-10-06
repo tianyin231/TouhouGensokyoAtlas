@@ -285,6 +285,10 @@
     "node22-recovery.json": {
       "bytes": 658,
       "sha256": "9cdf5b6865e4f92ac36221be3fee23d8d62c4aaa2da623fb78f3d84064166534"
+    },
+    "independent-evidence-audit.json": {
+      "bytes": 79927,
+      "sha256": "146954b1b90fe0392cb15bceb60c40986148ad754d54ecaafbcad7f085c76ff0"
     }
   }
 }
