@@ -1,6 +1,7 @@
 import {checkBambooEntry} from './check-bamboo-entry.mjs';
 import {checkSunflowerEntry} from './check-sunflower-entry.mjs';
 import {checkMuenzukaEdge} from './check-muenzuka-edge.mjs';
+import {beforeWoodlandPublic,afterWoodlandPublic,checkWoodlandNative} from './check-muenzuka-woodland.mjs';
 import {checkFlowerHillEntry,checkFlowerHillNativeRepair} from './check-flower-hill-entry.mjs';
 import {checkUIWork} from './check-ui-work.mjs';
 import {checkFrameWork} from './check-frame-work.mjs';
@@ -112,7 +113,7 @@ for (const [id, file] of [
 }
 const context = vm.createContext({ performance, TextDecoder, TextEncoder });
 vm.runInContext(builder, context);
-let forestCanopyPublic;
+let forestCanopyPublic,woodlandPublicCheck;
 // Reuse one public package, in production hook order. Kourindou transfers
 // nearby public trees before the entrance sees its retained source instances;
 // contact-only preparation cannot stand in for those predecessor hooks.
@@ -132,15 +133,18 @@ let forestCanopyPublic;
   // terrain contacts as the browser and Worker.
   for (const build of builders.slice(entranceIndex)) {
     const canopy = build === context.GA.FOREST_CANOPY.prepare;
+    const woodlandBefore = build === builders.at(-1) ? beforeWoodlandPublic(context.GA,atlas,overview,read) : null;
     if (canopy) forestCanopyPublic = {overviewBefore:{...overview,meshes:overview.meshes.slice()}};
     overview.meshes.push(...build(atlas, overview));
     if (canopy) forestCanopyPublic.overviewAfter = {...overview,meshes:overview.meshes.slice()};
+    if (woodlandBefore) woodlandPublicCheck=afterWoodlandPublic(context.GA,atlas,overview,woodlandBefore);
   }
   assert(forestCanopyPublic?.overviewAfter,'原生林冠实际总览入口未登记');
   console.log('雾雨弯道路面接地检查通过：'+JSON.stringify(checkForestCanopyRoad(context.GA,forestCanopyPublic.overviewBefore,forestCanopyPublic.overviewAfter,read)));
 }
-let flowerHillNativeCheck;
+let flowerHillNativeCheck,woodlandNativeCheck;
 const hakureiCheck=await checkHakurei(context.GA,atlas,read,{onProtectedRegion:async(id,candidate)=>{
+  if(id==='muenzuka')woodlandNativeCheck=checkWoodlandNative(context.GA,candidate);
   if(id!=='nameless')return;
   const G=context.GA,U=G.FLOWER_HILL_ENTRY;
   assert(U,'无名之丘真实原生包装器缺失');
@@ -156,6 +160,8 @@ const hakureiCheck=await checkHakurei(context.GA,atlas,read,{onProtectedRegion:a
 assert(flowerHillNativeCheck,'无名之丘原生区域检查未执行');
 console.log('博丽神社检查通过：'+JSON.stringify(hakureiCheck));
 console.log('无名之丘原生修复保护通过：'+JSON.stringify(flowerHillNativeCheck));
+assert(woodlandPublicCheck&&woodlandNativeCheck,'无缘塚剩余冠层实际检查未执行');
+console.log('无缘塚剩余冠层缓存与身份检查通过：'+JSON.stringify({public:woodlandPublicCheck,native:woodlandNativeCheck}));
 const bambooEntryCheck=await checkBambooEntry(context.GA,atlas,read);
 assert(bambooEntryCheck.passed,'竹林入口检查失败：'+JSON.stringify(bambooEntryCheck.checks.filter(c=>!c.passed)));
 console.log('竹林入口源数据检查通过：'+JSON.stringify(bambooEntryCheck));

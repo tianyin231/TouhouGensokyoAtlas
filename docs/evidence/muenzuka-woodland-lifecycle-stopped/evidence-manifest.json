@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-10-06T02:39:53.124517+00:00",
+  "purpose": "Preservation only after upstream 503 interruptions; no development, capture, test, build or failed-download retry",
+  "baselineLifecycleCLI": 1,
+  "baselineWrapperSeconds": 44.55724582499988,
+  "candidateStarted": false,
+  "fullyAccepted": false,
+  "mainUpdated": false,
+  "files": {
+    "native-lifecycle-preparation.json": "a24cbc9ed787f1259f96dc5a430c2f4077b1a957ac1117617a4d1d8cd295f9df",
+    "native-lifecycle-spec.json": "6bd4f3806a042298c3918050a8665396ed4b608df8f5d055f615bc37be80cd24",
+    "native-lifecycle-protocol.diff": "74cbab7d07b362e57cd7bd770e2e42966a6e0fd949afb252be488d66118c7643",
+    "native-lifecycle-reviewed-draft-correction.diff": "ec6216466e287a4624e8f18eef5e7482b4db5ffe6ca2f2f984aa5ff09568df19",
+    "native-lifecycle-source-probe.diff": "9f4b772d5b7735256560a950ebf15ece82dc7ed815f71885d5fad7481cf981a0",
+    "native-lifecycle-js-parse-input.json": "e409f968427a9f3529cf0d8b21091ea38cab1f536d495e3f89727fb81af9d893",
+    "native-lifecycle-preparation-audit-01.json": "00873618098a0e8537d51f5c2ea0a5ca67e2c4df7342dfe974382aa1ffe3b69f",
+    "native-lifecycle-syntax.json": "d1e9812914c5cdc2b5807e42361cf54061c6227f63685418677e48d71a9c9831",
+    "check-native-woodland.py": "9167eec1fa2afc5d560d50ca643be911202351c99073cd2c2062972032fd902a",
+    "woodland-native-source-probe.js": "cfd59c41d0c36e4d8859ef7e5ab813748554ac37e607d59f7b228692a486cc83",
+    "resident-source-inventory.js": "07f43bd6c2caa90efc22ad6dd8a562711c0332ff20182d809471b1c2d16c8c4e",
+    "lod-route-observer.js": "ab2f2d4c2cc5b73c1452ed0867c927f1d71ef8e986ebd857d70c32a792ba5465",
+    "baseline-native/execution.json": "6492ba2f2437d3e33c126b1e747537f6ac75f39d1600d863e02e54f04fcbd2ae",
+    "baseline-native/report.json": "bf26c658291b66142df38a00721f36654dcfeea40a052f7f63402f04be7ad633",
+    "baseline-native/stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline-native/stderr.log": "5b3c21a84cc683121af9e537b7e015d6ccb3c2961ada3a3855f63cc5173cb252",
+    "baseline-native-pose-diagnosis.json": "4dd79fdf8d267f58de865b14eb678793e66c9ced8d477337569e2235e743289a",
+    "diagnose-baseline-native-pose.mjs": "247898006610a123473393d9f02a5bec3951f7d0bb347ea7e02d5ca3695909c0",
+    "preservation-process-state.json": "bfa5df24905fd2ac651d6d4e686c4efebf2d8703c528a10079c807b6138e21e7",
+    "run-native-lifecycle.py": "f6754d397ee6923d3514ac07a9a3e1961cceef853f7aba19dc5a870d6b5aae5c",
+    "native-protocol-reviewed-01/woodland-native-source-probe.js": "cfd59c41d0c36e4d8859ef7e5ab813748554ac37e607d59f7b228692a486cc83",
+    "native-protocol-reviewed-01/native-lifecycle-spec.json": "441e9976a40e2d8ee8147d0c081e6877170edfe87bde78071ade54ebcfcdcf22",
+    "native-protocol-reviewed-01/check-native-woodland.py": "64b55249583f379d5d9377e5e7db1d365003c5131e34e86c5fb4999aa8a8ce0b",
+    "native-protocol-reviewed-01/native-lifecycle-syntax.json": "72bb89e034fa8aa2a7f264666b276ea8cbd95bfcf4ff5e9c7aeb2be92a6c643f",
+    "native-protocol-reviewed-01/native-lifecycle-js-parse-input.json": "bc8312098f3b6bbe82ce3dc11f43ccb89cd43dfedffb52da50151387781dc2cb",
+    "native-protocol-reviewed-01/native-lifecycle-source-probe.diff": "9f4b772d5b7735256560a950ebf15ece82dc7ed815f71885d5fad7481cf981a0",
+    "native-protocol-reviewed-01/native-lifecycle-preparation.json": "c005ee2a133fcc86b13ff2a7928128fb65d0cbe09d324e2aa37e8ba95c3b5cc4",
+    "native-protocol-reviewed-01/manifest.json": "9cd758dc1bd703835672e534477fa77c7bc3cc63fd6c191a581dbdf607934dc6",
+    "native-protocol-reviewed-01/resident-source-inventory.js": "07f43bd6c2caa90efc22ad6dd8a562711c0332ff20182d809471b1c2d16c8c4e",
+    "native-protocol-reviewed-01/native-lifecycle-protocol.diff": "b1e92208b8a1aca304899a2ae1b571f0c3933d83b1e76df66540f249a660f6c0",
+    "native-protocol-reviewed-01/lod-route-observer.js": "ab2f2d4c2cc5b73c1452ed0867c927f1d71ef8e986ebd857d70c32a792ba5465"
+  },
+  "wrapperFiles": [
+    "run-native-lifecycle.py"
+  ],
+  "failureScreenshot": {
+    "originalLocalPath": "/workspace/muenzuka-woodland-evidence/baseline-native/failure.png",
+    "sha256": "2ef9d378e1947e8be76b7e4000515531049aa6fe33b20fff74090f4d1f4f683f",
+    "bytes": 558866,
+    "alreadySavedIdenticalImage": "docs/evidence/muenzuka-woodland-validation/baseline-A/southEast.png"
+  },
+  "notExecuted": [
+    "continuous LOD route",
+    "actual mouse/wheel lifecycle block",
+    "natural-retention follow-up inventory",
+    "native unload/reentry comparison",
+    "candidate lifecycle",
+    "new commit CI/deployment"
+  ],
+  "retainedOpenResourceObservations": {
+    "A_southEast": {
+      "attributeBytesDelta": 6852944,
+      "geometryDelta": 99
+    },
+    "B_night": {
+      "attributeBytesDelta": 1253084,
+      "geometryDelta": 26
+    }
+  },
+  "historicalAttribution": "Original A/B lacks complete per-object inventories. The stopped baseline session contains only two prospective inventories; it does not resolve the original anomalies or verify unloading.",
+  "preservationNote": "First copy attempt used an incorrect diagnostic filename and stopped with FileNotFoundError; no product/test executed. The exact path from the original diagnosis bindings is now used."
+}

@@ -1,0 +1,171 @@
+[
+  {
+    "kind": "add_init_script",
+    "line": 132,
+    "source": "globalThis.ATLAS_TEST_PAUSE=true"
+  },
+  {
+    "kind": "wait_for_function",
+    "line": 135,
+    "source": "globalThis.ATLAS||globalThis.ATLAS_BOOT_ERROR"
+  },
+  {
+    "kind": "evaluate",
+    "line": 137,
+    "source": "()=>{Object.assign(ATLAS.state,{motion:false,clock:12.5,labels:false,characters:false,weather:'clear',lighting:'neutral',ao:true,bloom:false,reflections:false,uiHidden:true});\n                  document.body.classList.add('ui-hidden');globalThis.__muenNativeEvents=[];\n                  for(const e of ['webglcontextlost','webglcontextrestored'])document.querySelector('#scene').addEventListener(e,()=>__muenNativeEvents.push(e));\n                  const q=document.querySelector('#quality');q.value='balanced';q.dispatchEvent(new Event('change',{bubbles:true}));\n                  globalThis.ATLAS_TEST_PAUSE=false;ATLAS.wake();}"
+  },
+  {
+    "kind": "evaluate",
+    "line": 143,
+    "source": "ATLAS.renderer.info().driver"
+  },
+  {
+    "kind": "evaluate",
+    "line": 144,
+    "source": "p=>{if(GA.PRESETS.muenzukaNativeCheck)throw Error('Camera fixture collision');GA.PRESETS.muenzukaNativeCheck={...p,label:'Muenzuka native check',region:'muenzuka',detailNeighbors:[],requiredRegions:['muenzuka'],fov:49};}"
+  },
+  {
+    "kind": "evaluate",
+    "line": 145,
+    "source": "p=>{for(const [id,pose]of Object.entries(p)){if(GA.PRESETS[id])throw Error('Residency camera fixture collision');GA.PRESETS[id]={...pose,label:id,region:'muenzuka',detailNeighbors:[],requiredRegions:['muenzuka'],fov:49};}}"
+  },
+  {
+    "kind": "evaluate",
+    "line": 146,
+    "source": "p=>{for(const [id,pose]of Object.entries(p)){if(GA.PRESETS[id])throw Error('LOD camera fixture collision');GA.PRESETS[id]={...pose,label:id,region:'muenzuka',detailNeighbors:[],requiredRegions:['muenzuka'],fov:49};}}"
+  },
+  {
+    "kind": "evaluate",
+    "line": 148,
+    "source": "ATLAS.renderer.graceSeconds"
+  },
+  {
+    "kind": "wait_for_function",
+    "line": 268,
+    "source": "p=>ATLAS.state.drawnFrames>p.drawnFrames&&ATLAS.rig.eye.some((v,i)=>Math.abs(v-p.rig.eye[i])>1e-6)"
+  },
+  {
+    "kind": "wait_for_function",
+    "line": 271,
+    "source": "p=>ATLAS.state.drawnFrames>p.drawnFrames&&ATLAS.rig.eye.some((v,i)=>Math.abs(v-p.rig.eye[i])>1e-6)"
+  },
+  {
+    "kind": "evaluate",
+    "line": 363,
+    "source": "({frames:ATLAS.state.drawnFrames,clock:ATLAS.state.clock})"
+  },
+  {
+    "kind": "evaluate",
+    "line": 147,
+    "source": "ATLAS.state.quality==='balanced'&&ATLAS.renderer.quality==='balanced'&&ATLAS.renderer.attributeBudget===160*1048576&&ATLAS.stream.budget===220*1048576"
+  },
+  {
+    "kind": "evaluate",
+    "line": 153,
+    "source": "__muenNativeEvents.slice()"
+  },
+  {
+    "kind": "evaluate",
+    "line": 164,
+    "source": "v=>{const n=ATLAS.state.drawnFrames;ATLAS.setView(v,false);ATLAS.state.labels=false;ATLAS.state.characters=false;return n}"
+  },
+  {
+    "kind": "wait_for_function",
+    "line": 165,
+    "source": "p=>ATLAS.state.drawnFrames>p.frames&&ATLAS.renderer.currentOptions.view===p.view&&!ATLAS.rig.transition&&!ATLAS.stream.pending&&[...ATLAS.stream.required].every(id=>ATLAS.stream.cache.has(id))"
+  },
+  {
+    "kind": "evaluate",
+    "line": 177,
+    "source": "()=>{ATLAS.state.uiHidden=false;document.body.classList.remove('ui-hidden');ATLAS.wake()}"
+  },
+  {
+    "kind": "evaluate",
+    "line": 179,
+    "source": "ATLAS.state.drawnFrames"
+  },
+  {
+    "kind": "wait_for_function",
+    "line": 182,
+    "source": "n=>ATLAS.state.drawnFrames>n&&!ATLAS.stream.pending&&ATLAS.stream.cache.size===0&&ATLAS.renderer.packs.size===0"
+  },
+  {
+    "kind": "evaluate",
+    "line": 183,
+    "source": "()=>{ATLAS.state.uiHidden=true;document.body.classList.add('ui-hidden');ATLAS.wake()}"
+  },
+  {
+    "kind": "evaluate",
+    "line": 230,
+    "source": "()=>__muenWoodlandLOD.capture('initial far endpoint')"
+  },
+  {
+    "kind": "evaluate",
+    "line": 239,
+    "source": "()=>__muenWoodlandLOD.result()"
+  },
+  {
+    "kind": "evaluate",
+    "line": 241,
+    "source": "()=>{const q=__muenWoodlandLOD.cleanup();delete globalThis.__muenWoodlandLOD;return{...q,globalObserverRemoved:!('__muenWoodlandLOD'in globalThis)}}"
+  },
+  {
+    "kind": "evaluate",
+    "line": 136,
+    "source": "globalThis.ATLAS_BOOT_ERROR||null"
+  },
+  {
+    "kind": "evaluate",
+    "line": 155,
+    "source": "ATLAS.renderer.engine.getContext().isContextLost()"
+  },
+  {
+    "kind": "evaluate",
+    "line": 159,
+    "source": "()=>{const n=ATLAS.state.drawnFrames;ATLAS.wake();return n}"
+  },
+  {
+    "kind": "wait_for_function",
+    "line": 160,
+    "source": "n=>ATLAS.state.drawnFrames>n"
+  },
+  {
+    "kind": "evaluate",
+    "line": 212,
+    "source": "[...ATLAS.stream.required].join('|')==='muenzuka'"
+  },
+  {
+    "kind": "evaluate",
+    "line": 234,
+    "source": "p=>{const n=ATLAS.state.drawnFrames;ATLAS.setView(p.destination,true);ATLAS.state.labels=false;ATLAS.state.characters=false;\n                          if(!ATLAS.rig.transition)throw Error('Production animated route did not start');__muenWoodlandLOD.begin(p.label);return n;}"
+  },
+  {
+    "kind": "wait_for_function",
+    "line": 236,
+    "source": "n=>ATLAS.state.drawnFrames>n&&!ATLAS.rig.transition&&!__muenWoodlandLOD.active"
+  },
+  {
+    "kind": "evaluate",
+    "line": 238,
+    "source": "v=>__muenWoodlandLOD.capture(v+' endpoint')"
+  },
+  {
+    "kind": "external probe",
+    "path": "/workspace/muenzuka-woodland-evidence/woodland-native-source-probe.js",
+    "source": "// Read-only lifecycle inventory. Hashes and scalar tokens never retain source\n// arrays or GPU objects; token tables use weak keys. No render/ensure/envelope.\nasync () => {\n const A=ATLAS,R=A.renderer,G=GA,MAX_RECORDS=2300,MAX_VIEWS=20000;\n if(R.records.length>MAX_RECORDS)throw Error('Source inventory record bound exceeded');\n const tokens=globalThis.__muenSourceTokens||(globalThis.__muenSourceTokens={views:new WeakMap(),buffers:new WeakMap(),nextView:1,nextBuffer:1});\n const token=(map,key,counter)=>{if(!map.has(key))map.set(key,tokens[counter]++);return map.get(key);};\n const cache=new WeakMap(),ledger=new Map(),views=new Set();\n const hex=b=>Array.from(new Uint8Array(b),v=>v.toString(16).padStart(2,'0')).join('');\n const hash=async a=>{if(!cache.has(a))cache.set(a,crypto.subtle.digest('SHA-256',new Uint8Array(a.buffer,a.byteOffset,a.byteLength)).then(hex));return await cache.get(a);};\n async function descriptor(a,owner,identity){\n  views.add(a);if(views.size>MAX_VIEWS)throw Error('Source inventory typed-view bound exceeded');\n  if(!ledger.has(a.buffer))ledger.set(a.buffer,{bytes:a.buffer.byteLength,owners:new Set()});\n  ledger.get(a.buffer).owners.add(owner);\n  const d={type:a.constructor.name,length:a.length,bytes:a.byteLength,sha256:await hash(a)};\n  if(identity){d.viewToken=token(tokens.views,a,'nextView');d.bufferToken=token(tokens.buffers,a.buffer,'nextBuffer');d.byteOffset=a.byteOffset;}\n  return d;\n }\n async function metadata(v,path,arrays,identity,ancestors){\n  if(ArrayBuffer.isView(v)){arrays[path]=await descriptor(v,path,identity);return{typedArray:path};}\n  if(v===null||typeof v!=='object')return typeof v==='function'||v===undefined?null:v;\n  if(v instanceof ArrayBuffer)throw Error('Unclassified raw source backing at '+path);\n  if(ancestors.has(v))throw Error('Unexpected cyclic source metadata at '+path);\n  ancestors.add(v);let out;\n  if(Array.isArray(v)){out=[];for(let i=0;i<v.length;i++)out.push(await metadata(v[i],path+'/'+i,arrays,identity,ancestors));}\n  else if(v instanceof Map||v instanceof Set)throw Error('Source metadata collection needs explicit review: '+path);\n  else{out={};for(const k of Object.keys(v).sort())if(v[k]!==undefined&&typeof v[k]!=='function')out[k]=await metadata(v[k],path+'/'+k,arrays,identity,ancestors);}\n  ancestors.delete(v);return out;\n }\n const records=[];\n for(const r of R.records){\n  if(!['overview','muenzuka'].includes(r.pack))throw Error('Unexpected native owner '+r.pack);\n  const row={id:r.data.id,pack:r.pack,arrays:{}};\n  row.metadata=await metadata(r.data,r.pack+':'+r.data.id,row.arrays,r.pack==='overview',new WeakSet());records.push(row);\n }\n records.sort((a,b)=>a.pack.localeCompare(b.pack)||a.id.localeCompare(b.id));\n const dataArrays={},seen=new WeakSet();\n async function dataViews(v,path){\n  if(ArrayBuffer.isView(v)){dataArrays[path]=await descriptor(v,path,true);return;}\n  if(!v||typeof v!=='object'||seen.has(v))return;seen.add(v);\n  if(v instanceof ArrayBuffer)throw Error('Unclassified raw data backing at '+path);\n  if(v instanceof Map){for(const [k,x]of v)await dataViews(x,path+'/map:'+String(k));return;}\n  if(v instanceof Set){let i=0;for(const x of v)await dataViews(x,path+'/set:'+i++);return;}\n  for(const k of Object.keys(v).sort())await dataViews(v[k],path+'/'+k);\n }\n await dataViews(A.data,'data');\n const privatePrototypes=[],prototypeResidency=[];\n const edge=G.MUENZUKA_EDGE,culling=G.MUENZUKA_EDGE_CULLING;\n if(!!edge!==!!culling)throw Error('Partial Muenzuka extension installation');\n if(edge){\n  for(const variant of [0,1]){\n   const id='overview016:muenzuka|forestLeaf|vegetation|I'+(variant?9:7)+':muenzuka-west-edge';\n   const cold=R.records.find(r=>r.pack==='overview'&&r.data.id===id),p=edge.prototype(variant),again=edge.prototype(variant);\n   // The boot's cold record already owns this exact far view. A getter that\n   // newly created a missing prototype would fail instead of filling a gap.\n   if(!cold||cold.data.vertices!==p.far||p!==again)throw Error('Main-thread prototype was not already retained by public boot');\n   for(const lod of ['near','far']){\n    const a=p[lod],key='privateMuenzuka:'+variant+':'+lod;\n    privatePrototypes.push({id:key,variant,lod,array:await descriptor(a,key,true)});\n    prototypeResidency.push({id:key,residentInGPU:R.geometryRefs.has(a),publicArrayOwners:R.records.filter(r=>r.pack==='overview'&&[r.data.vertices,r.data.farVertices].includes(a)).map(r=>r.data.id).sort()});\n   }\n  }\n }\n const remaining=G.MUENZUKA_WOODLAND,remainingCulling=G.MUENZUKA_WOODLAND_CULLING;\n if(!!remaining!==!!remainingCulling)throw Error('Partial remaining Muenzuka extension installation');\n const remainingNativeIDs=new Set(['-22:6:1','-22:7:0','-21:6:1','-22:8:0','-21:7:0',\n  '-22:6:0','-22:7:1','-22:8:1','-21:7:1','-21:6:0'].map(k=>'muenzuka:trees:'+k+':leaf'));\n const remainingColdIDs=new Set(['overview016:muenzuka|forestLeaf|vegetation|I7','overview016:muenzuka|forestLeaf|vegetation|I9']);\n const targetNative=/^muenzuka:trees:-23:[678]:[01]:leaf$/;\n const targetCold=/^overview016:muenzuka\\|forestLeaf\\|vegetation\\|I[79]:muenzuka-west-edge$/;\n function actualOutside(m,s){\n  let maximum=-Infinity,points=0;const b=m.instances,c=s.center;\n  const arrays=m.farVertices&&m.farVertices!==m.vertices?[m.vertices,m.farVertices]:[m.vertices];\n  for(const a of arrays)for(let j=0;j<a.length;j+=9){\n   const x=a[j],y=a[j+1],z=a[j+2],t=Math.max(0,Math.min(1,(y-4)/18)),w=t*t*(3-2*t)*.16;\n   for(let i=0;i<b.length;i+=16)for(const sx of[-1,1])for(const sz of[-1,1]){\n    const X=x+sx*w,Z=z+sz*w*.5;\n    maximum=Math.max(maximum,Math.hypot(b[i]*X+b[i+4]*y+b[i+8]*Z+b[i+12]-c.x,\n     b[i+1]*X+b[i+5]*y+b[i+9]*Z+b[i+13]-c.y,b[i+2]*X+b[i+6]*y+b[i+10]*Z+b[i+14]-c.z)-s.radius);points++;\n   }\n  }\n  return{maximumOutside:maximum,points,tolerance:1e-7};\n }\n const spheres=[];\n for(const r of R.records){\n  const western=targetNative.test(r.data.id)||targetCold.test(r.data.id);\n  const rest=remainingNativeIDs.has(r.data.id)||remainingColdIDs.has(r.data.id);\n  const oldEligible=!!culling&&!!culling.eligible(r.data),newEligible=!!remainingCulling&&!!remainingCulling.eligible(r.data);\n  if(oldEligible!==!!(culling&&western)||newEligible!==!!(remainingCulling&&rest))throw Error('Unexpected local culling eligibility: '+r.data.id);\n  const eligible=oldEligible||newEligible;\n  if(!western&&!rest)continue;\n  const s=r.item?.mesh.boundingSphere;\n  if(s&&(!Number.isFinite(s.radius)||s.radius<=0||!s.center.toArray().every(Number.isFinite)))throw Error('Invalid actual mesh sphere');\n  spheres.push({id:r.data.id,pack:r.pack,family:western?'acceptedWestern':'remainingWoodland',eligible,resident:!!r.item,wanted:r.wanted,level:r.level,\n   sphere:s?{center:s.center.toArray(),radius:s.radius}:null,\n   actualWindEnvelope:eligible&&s?actualOutside(r.data,s):null});\n }\n spheres.sort((a,b)=>a.id.localeCompare(b.id));\n const ledgerRows=[...ledger.values()].map(x=>({bytes:x.bytes,owners:[...x.owners].sort()})).sort((a,b)=>a.owners[0].localeCompare(b.owners[0]));\n const native=R.packs.get('muenzuka');let nativeGeometrySHA256=null;\n if(native){const encoder=new TextEncoder(),parts=[];let length=0;\n  for(const m of native.meshes){const header=encoder.encode(JSON.stringify([m.id,m.material,m.center,m.radius,m.lod]));parts.push(header);length+=header.byteLength;\n   for(const key of ['vertices','farVertices','instances','instanceColors','index'])if(m[key]){const a=m[key],bytes=new Uint8Array(a.buffer,a.byteOffset,a.byteLength);parts.push(bytes);length+=bytes.byteLength;}}\n  const joined=new Uint8Array(length);let offset=0;for(const p of parts){joined.set(p,offset);offset+=p.byteLength;}\n  nativeGeometrySHA256=await crypto.subtle.digest('SHA-256',joined).then(hex);\n }\n const cold=records.filter(r=>r.pack==='overview'&&r.metadata.owner==='muenzuka');\n return{records,dataArrays,privatePrototypes,prototypeResidency,spheres,nativeGeometrySHA256,\n  remainingAvailable:!!remaining,remainingCullingAvailable:!!remainingCulling,\n  cullingAvailable:!!culling,privateGetterAlreadyRetained:!!edge,\n  counts:{publicRecords:records.filter(r=>r.pack==='overview').length,nativeRecords:records.filter(r=>r.pack==='muenzuka').length,\n   muenzukaColdRecords:cold.length,coldOrdinaryTrees:R.records.filter(r=>r.pack==='overview'&&r.data.owner==='muenzuka'&&r.data.material==='forestLeaf').reduce((n,r)=>n+r.data.instances.length/16,0),\n   sourceViews:views.size,uniqueBackings:ledger.size,uniqueBackingBytes:ledgerRows.reduce((n,x)=>n+x.bytes,0)},\n  backingLedger:ledgerRows,\n  readOnlyMeaning:'No draw, finish, ensure, envelope, forced garbage collection or strong source/GPU references retained by probe. Managed native ownership can be proven clear; JavaScript collection timing is not asserted.'};\n}\n"
+  },
+  {
+    "kind": "external probe",
+    "path": "/workspace/muenzuka-woodland-evidence/resident-source-inventory.js",
+    "source": "// Synchronous, bounded, observation-only managed GPU attribution. Event\n// listeners record scalar dispose timestamps; weak keys retain no mesh/array.\n// No draw/finish/ensure/trim or production function override is performed.\n(function(){\n // This factory lives outside each inventory activation: persistent event\n // listeners close over weak/scalar state and scalar IDs, never its local maps\n // of source arrays or GPU objects.\n function disposeListener(S,kind,id,recordId,geometryId){return()=>{\n  if(S.disposeEvents.length>=10000)throw Error('Dispose inventory bound exceeded');\n  S.disposeEvents.push({kind,id,recordId,geometryId,atSeconds:performance.now()/1000,\n   phase:globalThis.__muenWoodlandInventoryPhase||null,\n   lastObservedGeometryOwners:(S.geometryOwners.get(geometryId)||[]).map(o=>({...o}))});\n };}\n return label => {\n const A=ATLAS,R=A.renderer,E=R.engine,MAX_RECORDS=2300,MAX_GEOMETRIES=1024,MAX_EVENTS=10000;\n if(R.records.length>MAX_RECORDS||R.geometryRefs.size>MAX_GEOMETRIES)throw Error('Resident inventory bound exceeded');\n const S=globalThis.__muenWoodlandResidentTokens||(globalThis.__muenWoodlandResidentTokens={\n  views:new WeakMap(),attributes:new WeakMap(),observedGeometry:new WeakSet(),observedMesh:new WeakSet(),\n  nextView:1,nextAttribute:1,disposeEvents:[],geometryOwners:new Map()});\n const token=(map,o,next)=>{if(!map.has(o))map.set(o,S[next]++);return map.get(o);};\n const desc=a=>a?{viewToken:token(S.views,a,'nextView'),type:a.constructor.name,bytes:a.byteLength,\n  length:a.length,byteOffset:a.byteOffset}:null;\n const now=performance.now()/1000,rows=[],owners=new Map(),attributes=new Map(),sourceViews=new Map();\n const addAttribute=(a,owner,role)=>{\n  if(!a)return null;const key=a.isInterleavedBufferAttribute?a.data:a;\n  if(!attributes.has(key))attributes.set(key,{attributeToken:token(S.attributes,key,'nextAttribute'),\n    array:desc(key.array),roles:new Set(),owners:new Set()});\n  const q=attributes.get(key);q.roles.add(role);q.owners.add(owner);sourceViews.set(key.array,q.array);\n  return q.attributeToken;\n };\n globalThis.__muenWoodlandInventoryPhase=label;\n for(const r of R.records){if(!r.item)continue;\n  const m=r.data,mesh=r.item.mesh,g=mesh.geometry,pack=r.pack||'overview';\n  const row={id:m.id,pack,owner:m.owner||null,component:m.component||null,material:m.material||null,\n   level:r.level,wanted:!!r.wanted,objectVisible:!!mesh.visible,shadowOnly:!!r.shadowOnly,lastUsedSeconds:r.lastUsed,\n   unusedAgeSeconds:now-r.lastUsed,geometryId:g.id,meshId:mesh.id,sourceArray:desc(r.array),\n   instanceBytes:m.instances?m.instances.byteLength+(m.instanceColors?.byteLength||0):0,\n   instanceMatrix:desc(m.instances),instanceColors:desc(m.instanceColors),attributeTokens:[]};\n  for(const[name,a]of Object.entries(g.attributes))row.attributeTokens.push(addAttribute(a,pack+':'+m.id,'geometry/'+name));\n  if(g.index)row.attributeTokens.push(addAttribute(g.index,pack+':'+m.id,'geometry/index'));\n  if(mesh.isInstancedMesh){row.attributeTokens.push(addAttribute(mesh.instanceMatrix,pack+':'+m.id,'instanceMatrix'));\n   if(mesh.instanceColor)row.attributeTokens.push(addAttribute(mesh.instanceColor,pack+':'+m.id,'instanceColor'));}\n  row.attributeTokens=[...new Set(row.attributeTokens)];rows.push(row);\n  if(!owners.has(r.array))owners.set(r.array,[]);owners.get(r.array).push({id:m.id,pack,level:r.level,wanted:!!r.wanted,lastUsedSeconds:r.lastUsed});\n  if(mesh.isInstancedMesh&&!S.observedMesh.has(mesh)){S.observedMesh.add(mesh);const id=mesh.id,rid=m.id,gid=g.id;\n   mesh.addEventListener('dispose',disposeListener(S,'instancedMesh',id,rid,gid));}\n }\n const geometries=[];\n for(const[a,value]of R.geometryRefs){\n  const list=(owners.get(a)||[]).sort((a,b)=>a.id.localeCompare(b.id));\n  if(list.length!==value.refs)throw Error('Managed geometry reference/owner mismatch '+value.geo.id);\n  if(!list.length)throw Error('Unowned managed geometry '+value.geo.id);\n  S.geometryOwners.set(value.geo.id,list.map(o=>({...o})));\n  geometries.push({geometryId:value.geo.id,bytes:value.bytes,refs:value.refs,array:desc(a),owners:list});\n  if(!S.observedGeometry.has(value.geo)){S.observedGeometry.add(value.geo);const id=value.geo.id;\n   value.geo.addEventListener('dispose',disposeListener(S,'geometry',id,null,id));}\n }\n const attributeRows=[...attributes.values()].map(q=>({...q,roles:[...q.roles].sort(),owners:[...q.owners].sort()}));\n const uniqueAttributeBytes=attributeRows.reduce((n,q)=>n+q.array.bytes,0),instanceCountedBytes=rows.reduce((n,q)=>n+q.instanceBytes,0);\n const geometryCountedBytes=geometries.reduce((n,q)=>n+q.bytes,0),reconciledResidentBytes=geometryCountedBytes+instanceCountedBytes;\n if(reconciledResidentBytes!==R.residentBytes)throw Error('Managed geometry+instance byte ledger does not reconcile');\n // For these sources no special renderer-only attributes are allowed to hide\n // outside the ordinary managed count. CPU alias bytes are reported separately.\n if(uniqueAttributeBytes!==R.residentBytes)throw Error('Actual unique GPU attribute-object ledger does not reconcile');\n const unownedSceneGeometry=[];\n const managedIDs=new Set(geometries.map(x=>x.geometryId));\n R.scene.traverse(o=>{if(o.isMesh&&o.geometry&&!managedIDs.has(o.geometry.id))unownedSceneGeometry.push({\n  meshId:o.id,name:o.name||null,geometryId:o.geometry.id,owner:o.userData?.owner||null,visible:!!o.visible});});\n rows.sort((a,b)=>a.pack.localeCompare(b.pack)||a.id.localeCompare(b.id));geometries.sort((a,b)=>a.geometryId-b.geometryId);\n return{label,atSeconds:now,drawnFrames:A.state.drawnFrames,pose:{eye:A.rig.eye.slice(),target:A.rig.target.slice(),fov:A.rig.fov},\n  settings:{clock:A.state.clock,quality:A.state.quality,rendererQuality:R.quality,weather:A.state.weather,lighting:A.state.lighting,\n   ao:A.state.ao,motion:A.state.motion,bloom:A.state.bloom,reflections:A.state.reflections,characters:A.state.characters,labels:A.state.labels},\n  stats:{...R.info().stats},engineMemory:{...E.info.memory},residentAttributeBytes:R.residentBytes,\n  limit:{records:MAX_RECORDS,geometries:MAX_GEOMETRIES,disposeEvents:MAX_EVENTS},complete:true,\n  residentRows:rows,managedGeometries:geometries,uniqueGPUAttributeObjects:attributeRows,\n  uniqueGPUAttributeBytes:uniqueAttributeBytes,uniqueCPUSourceViewBytes:[...sourceViews.values()].reduce((n,a)=>n+a.bytes,0),\n  byteReconciliation:{geometryCountedBytes,instanceCountedBytes,reconciledResidentBytes,exact:true},\n  sceneGeometryOutsideRecordOwnership:unownedSceneGeometry,disposeEvents:S.disposeEvents.map(x=>({...x})),\n  inferenceLimits:'Managed record/geometry ownership and actual attribute object bytes are exhaustive here. Engine memory.geometries may also count sky/sign/post/shadow resources. Disposal timestamps do not by themselves prove a caller or the historical A/B cause. No JavaScript GC or physical VRAM assertion.'};\n };\n})()\n"
+  },
+  {
+    "kind": "external probe",
+    "path": "/workspace/muenzuka-woodland-evidence/lod-route-observer.js",
+    "source": "// Read-only frame/actual-draw observer for a fixed production camera route.\n// Temporary mesh callbacks invoke their originals and are restored on cleanup.\n// This does not call render/finish/ensure, assign LOD, or alter any model bound.\nspec => {\n const A=ATLAS,R=A.renderer,ids=new Set(spec.targetIDs),MAX_FRAMES=512,MAX_DRAWS=20000;\n if(globalThis.__muenWoodlandLOD)throw Error('LOD observer collision');\n const snapshots=[],observed=new WeakSet(),restores=[],sphereTokens=new WeakMap();let nextSphere=1;\n const S={active:false,frames:snapshots,pendingDraws:[],allDraws:[],watching:false,routeSegment:null,\n  targetIDs:spec.targetIDs,legResults:[],maxFrames:MAX_FRAMES,failed:null};\n function attach(){for(const r of R.records)if(r.pack==='muenzuka'&&ids.has(r.data.id)&&r.item?.mesh&&!observed.has(r.item.mesh)){\n  const mesh=r.item.mesh,original=mesh.onBeforeRender;observed.add(mesh);\n  mesh.onBeforeRender=function(...args){\n   if(S.pendingDraws.length+S.allDraws.length>=MAX_DRAWS)throw Error('LOD actual-draw bound exceeded');\n   const row={frame:A.state.drawnFrames+1,id:r.data.id,level:r.level,instances:r.data.instances.length/16,\n    atMs:performance.now(),segment:S.routeSegment};S.pendingDraws.push(row);S.allDraws.push(row);original?.apply(this,args);\n  };\n  restores.push(()=>{mesh.onBeforeRender=original});\n }}\n function capture(label){attach();const n=A.state.drawnFrames;\n  if(snapshots.length>=MAX_FRAMES)throw Error('LOD frame bound exceeded');\n  if(snapshots.at(-1)?.drawnFrames===n)return snapshots.at(-1);\n  const records=R.records.filter(r=>r.pack==='muenzuka'&&ids.has(r.data.id)).map(r=>{\n   const m=r.data,s=r.item?.mesh.boundingSphere;\n   if(s&&!sphereTokens.has(s))sphereTokens.set(s,nextSphere++);\n   const family=spec.remainingIDs.includes(m.id)?'remainingWoodland':'acceptedWestern';\n   const expectedCulling=family==='acceptedWestern'||!!GA.MUENZUKA_WOODLAND_CULLING;\n   return{id:m.id,family,instances:m.instances.length/16,level:r.level,wanted:!!r.wanted,\n    resident:!!r.item,meshId:r.item?.mesh.id||null,objectVisible:!!r.item?.mesh.visible,distance:r.distance,\n    sphereToken:s?sphereTokens.get(s):null,sphere:s?{center:s.center.toArray(),radius:s.radius}:null,\n    expectedCulling};\n  });\n  const row={label,segment:S.routeSegment,drawnFrames:n,atMs:performance.now(),transitioning:!!A.rig.transition,\n   eye:A.rig.eye.slice(),target:A.rig.target.slice(),focus:A.state.focus,\n   required:[...A.stream.required],records,\n   actualDraws:S.pendingDraws.filter(d=>d.frame===n).map(d=>({...d})),stats:{...R.info().stats}};\n  S.pendingDraws=[];snapshots.push(row);return row;\n }\n function watch(){if(!S.active){S.watching=false;return;}\n  try{capture('continuous production transition');if(!A.rig.transition){S.active=false;S.watching=false;return;}}\n  catch(e){S.failed=String(e.stack||e);S.active=false;S.watching=false;return;}\n  requestAnimationFrame(watch);\n }\n S.begin=label=>{if(S.active)throw Error('Previous LOD leg still active');S.routeSegment=label;attach();S.active=true;S.watching=true;requestAnimationFrame(watch)};\n S.capture=capture;\n S.result=()=>({frames:snapshots.map(x=>({...x})),allDraws:S.allDraws.map(x=>({...x})),failed:S.failed,\n  active:S.active,observerMeshCount:restores.length,maxFrames:MAX_FRAMES,maxDraws:MAX_DRAWS,\n  meaning:'Actual production RAF transition frames and mesh submission callbacks, not hardware FPS. No forced LOD or sphere change.'});\n S.cleanup=()=>{S.active=false;const n=restores.length;for(const f of restores)f();restores.length=0;\n  snapshots.length=0;S.pendingDraws.length=0;S.allDraws.length=0;\n  return{restoredCallbacks:n,strongMeshReferencesReleased:true,productionFunctionsReplaced:false}};\n globalThis.__muenWoodlandLOD=S;attach();return{targetRecords:ids.size,observerMeshCount:restores.length};\n}\n"
+  },
+  {
+    "kind": "unchanged helper literal with original Muenzuka additions",
+    "source": "label => {\n const A=ATLAS,R=A.renderer,E=R.engine,limit=1024,owners=new Map();\n for(const r of R.records) if(r.item&&r.array){\n   if(!owners.has(r.array))owners.set(r.array,[]);\n   owners.get(r.array).push({id:r.data.id,pack:r.pack,level:r.level,wanted:!!r.wanted});\n }\n const geometry=[];let n=0;\n for(const [a,value]of R.geometryRefs){\n   if(n++>=limit)break;\n   geometry.push({id:value.geo.id,bytes:value.bytes,refs:value.refs,\n     owners:(owners.get(a)||[]).sort((a,b)=>a.id.localeCompare(b.id))});\n }\n const programs=E.info.programs.slice(0,limit).map(p=>({cacheKey:p.cacheKey,id:p.id,\n   usedTimes:p.usedTimes,type:p.type,name:p.name})).sort((a,b)=>a.cacheKey.localeCompare(b.cacheKey));\n const wanted=R.records.filter(r=>r.wanted&&r.item?.mesh.visible).map(r=>({id:r.data.id,pack:r.pack,level:r.level})).sort((a,b)=>a.id.localeCompare(b.id));\n return {label,at:performance.now(),testPause:!!globalThis.ATLAS_TEST_PAUSE,\n   snapshot:R.captureDiagnostics(label),diagnosticCounters:{...R.info().diagnostics.counters},stats:{...R.info().stats},\n   rig:{eye:A.rig.eye.slice(),target:A.rig.target.slice(),fov:A.rig.fov,mode:A.rig.mode},\n   drawnFrames:A.state.drawnFrames,clock:A.state.clock,view:A.state.view,\n   detailNeighbors:A.state.detailNeighbors.slice(),rendererPackIds:[...R.packs.keys()].sort(),recordMapNativeIds:[...R.recordMap.values()].filter(r=>r.pack!=='overview').map(r=>r.data.id).sort(),visibleNativePacks:[...new Set(R.records.filter(r=>r.wanted&&r.item?.mesh.visible&&r.pack!=='overview').map(r=>r.pack))],quality:A.state.quality,rendererQuality:R.quality,cutaway:A.state.cutaway,\n   memory:{...E.info.memory},residentAttributeBytes:R.residentBytes,\n   detailIds:R.records.filter(r=>r.pack!=='overview').map(r=>r.data.id).sort(),\n   publicIds:R.records.filter(r=>r.pack==='overview').map(r=>r.data.id).sort(),wanted,\n   geometryInventory:{limit,count:R.geometryRefs.size,complete:R.geometryRefs.size<=limit,entries:geometry},\n   programInventory:{limit,count:E.info.programs.length,complete:E.info.programs.length<=limit,entries:programs},\n   contextLost:E.getContext().isContextLost(),stream:A.stream.info()};\n}"
+  }
+]

@@ -1,0 +1,51 @@
+--- /workspace/muenzuka-evidence/native-source-probe.js
++++ /workspace/muenzuka-woodland-evidence/woodland-native-source-probe.js
+@@ -61,6 +61,11 @@
+    }
+   }
+  }
++ const remaining=G.MUENZUKA_WOODLAND,remainingCulling=G.MUENZUKA_WOODLAND_CULLING;
++ if(!!remaining!==!!remainingCulling)throw Error('Partial remaining Muenzuka extension installation');
++ const remainingNativeIDs=new Set(['-22:6:1','-22:7:0','-21:6:1','-22:8:0','-21:7:0',
++  '-22:6:0','-22:7:1','-22:8:1','-21:7:1','-21:6:0'].map(k=>'muenzuka:trees:'+k+':leaf'));
++ const remainingColdIDs=new Set(['overview016:muenzuka|forestLeaf|vegetation|I7','overview016:muenzuka|forestLeaf|vegetation|I9']);
+  const targetNative=/^muenzuka:trees:-23:[678]:[01]:leaf$/;
+  const targetCold=/^overview016:muenzuka\|forestLeaf\|vegetation\|I[79]:muenzuka-west-edge$/;
+  function actualOutside(m,s){
+@@ -78,20 +83,30 @@
+  }
+  const spheres=[];
+  for(const r of R.records){
+-  const expected=targetNative.test(r.data.id)||targetCold.test(r.data.id);
+-  const eligible=!!culling&&!!culling.eligible(r.data);
+-  if(eligible!==!!(culling&&expected))throw Error('Unexpected local culling eligibility: '+r.data.id);
+-  if(!expected)continue;
++  const western=targetNative.test(r.data.id)||targetCold.test(r.data.id);
++  const rest=remainingNativeIDs.has(r.data.id)||remainingColdIDs.has(r.data.id);
++  const oldEligible=!!culling&&!!culling.eligible(r.data),newEligible=!!remainingCulling&&!!remainingCulling.eligible(r.data);
++  if(oldEligible!==!!(culling&&western)||newEligible!==!!(remainingCulling&&rest))throw Error('Unexpected local culling eligibility: '+r.data.id);
++  const eligible=oldEligible||newEligible;
++  if(!western&&!rest)continue;
+   const s=r.item?.mesh.boundingSphere;
+   if(s&&(!Number.isFinite(s.radius)||s.radius<=0||!s.center.toArray().every(Number.isFinite)))throw Error('Invalid actual mesh sphere');
+-  spheres.push({id:r.data.id,pack:r.pack,eligible,resident:!!r.item,wanted:r.wanted,level:r.level,
++  spheres.push({id:r.data.id,pack:r.pack,family:western?'acceptedWestern':'remainingWoodland',eligible,resident:!!r.item,wanted:r.wanted,level:r.level,
+    sphere:s?{center:s.center.toArray(),radius:s.radius}:null,
+    actualWindEnvelope:eligible&&s?actualOutside(r.data,s):null});
+  }
+  spheres.sort((a,b)=>a.id.localeCompare(b.id));
+  const ledgerRows=[...ledger.values()].map(x=>({bytes:x.bytes,owners:[...x.owners].sort()})).sort((a,b)=>a.owners[0].localeCompare(b.owners[0]));
++ const native=R.packs.get('muenzuka');let nativeGeometrySHA256=null;
++ if(native){const encoder=new TextEncoder(),parts=[];let length=0;
++  for(const m of native.meshes){const header=encoder.encode(JSON.stringify([m.id,m.material,m.center,m.radius,m.lod]));parts.push(header);length+=header.byteLength;
++   for(const key of ['vertices','farVertices','instances','instanceColors','index'])if(m[key]){const a=m[key],bytes=new Uint8Array(a.buffer,a.byteOffset,a.byteLength);parts.push(bytes);length+=bytes.byteLength;}}
++  const joined=new Uint8Array(length);let offset=0;for(const p of parts){joined.set(p,offset);offset+=p.byteLength;}
++  nativeGeometrySHA256=await crypto.subtle.digest('SHA-256',joined).then(hex);
++ }
+  const cold=records.filter(r=>r.pack==='overview'&&r.metadata.owner==='muenzuka');
+- return{records,dataArrays,privatePrototypes,prototypeResidency,spheres,
++ return{records,dataArrays,privatePrototypes,prototypeResidency,spheres,nativeGeometrySHA256,
++  remainingAvailable:!!remaining,remainingCullingAvailable:!!remainingCulling,
+   cullingAvailable:!!culling,privateGetterAlreadyRetained:!!edge,
+   counts:{publicRecords:records.filter(r=>r.pack==='overview').length,nativeRecords:records.filter(r=>r.pack==='muenzuka').length,
+    muenzukaColdRecords:cold.length,coldOrdinaryTrees:R.records.filter(r=>r.pack==='overview'&&r.data.owner==='muenzuka'&&r.data.material==='forestLeaf').reduce((n,r)=>n+r.data.instances.length/16,0),

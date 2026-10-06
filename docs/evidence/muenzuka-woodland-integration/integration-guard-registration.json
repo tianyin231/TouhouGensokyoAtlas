@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "kind": "Explicit integration changes; runtime remains the visually reviewed artifact",
+  "inputCount": 211,
+  "htmlSHA256": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45",
+  "changes": {
+    "tools/check-muenzuka-woodland.mjs": "8b3787e3cb518109f992e540aadaa6578a52d69b900d8d5e863bdc8f4e5d12a3",
+    "tools/check.mjs": "8ad18034095ed70de6376549f34ced60bbebfa3f3ed5179573bb916d6b49d28a",
+    "tools/check-flower-hill-entry.mjs": "91d395a6418adfcf8c2dba9b16fff60a99bc23722e68fc0180794805d3715b4e",
+    "tools/build.py": "0f36e0a26138b532ed600ce31912c5dc2918adb8eff39b98e9136ca43b1d0039",
+    "tools/hakurei-baseline.json": "862b82de80e9449962af2036be3fc1b279de8e4b9b547125d78e704969957669"
+  },
+  "newNativeOrPublicBuildsIntroducedByWoodlandChecker": 0,
+  "note": "The new check reuses the actual public hook and the already fixed-digest-checked native region. The integration public loop is not relabeled as the complete production boot; the latter is separately verified in the independent source report. Original stem/leaf matrices have separate arrays and identical values; their values are compared, not a newly invented reference-identity requirement.",
+  "frozenInputsStillMatch": true
+}

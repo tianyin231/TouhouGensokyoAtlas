@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-10-06T01:55:30.807862+00:00",
+  "firstDist": "/workspace/muenzuka-woodland-integration/dist",
+  "secondDist": "/workspace/muenzuka-woodland-evidence/integration-rebuild",
+  "inputCount": 211,
+  "identicalInputs": true,
+  "identicalArtifactBytes": true,
+  "bytes": 36472193,
+  "sha256": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45",
+  "releaseSHAs": [
+    "b243e06b2c1958394ee62352dabe03f2fcc6870b694b6a2cfd91201bca5765ff",
+    "b243e06b2c1958394ee62352dabe03f2fcc6870b694b6a2cfd91201bca5765ff"
+  ],
+  "measuredBrowserArtifactUnchanged": true,
+  "modelOrGPUSessions": 0
+}

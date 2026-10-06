@@ -1,0 +1,245 @@
+--- /workspace/muenzuka-evidence/check-native-draft.py
++++ /workspace/muenzuka-woodland-evidence/check-native-woodland.py
+@@ -1,4 +1,4 @@
+-"""One bounded Muenzuka native interaction/unload/reentry cycle, preparation only.
++"""One paired Muenzuka woodland native interaction/unload/reentry cycle.
+ 
+ Preparation only until explicitly executed. Production RAF, real pointer/wheel
+ and cache-clear UI; no manual rendering or GPU finish. Comparison anchors both
+@@ -19,12 +19,15 @@
+ 
+ from playwright.sync_api import sync_playwright
+ 
+-SOURCE_PATH = Path(__file__).with_name('native-source-probe.js')
++SOURCE_PATH = Path(__file__).with_name('woodland-native-source-probe.js')
++RESIDENT_PATH = Path(__file__).with_name('resident-source-inventory.js')
++RESIDENT_JS = RESIDENT_PATH.read_text()
++LOD_PATH = Path(__file__).with_name('lod-route-observer.js')
++LOD_JS = LOD_PATH.read_text()
++SPEC_PATH = Path(__file__).with_name('native-lifecycle-spec.json')
++SPEC = json.loads(SPEC_PATH.read_text())
+ SOURCE_JS = SOURCE_PATH.read_text()
+-PROFILES = {
+-    'baseline': dict(inputs=202, html='402224fe67018c0fc33c6820f09d04cdea33b80914a79e62ca54de0e627bf8f8', publicRecords=2154, coldRecords=13, extension=False),
+-    'candidate': dict(inputs=204, html='ce843445fca81f3e3cef42ac1b58ed16870ba43ed251d23b2e2e4928caf12a97', publicRecords=2156, coldRecords=15, extension=True),
+-}
++PROFILES = SPEC['profiles']
+ HELPER_SHA = 'ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4'
+ 
+ 
+@@ -46,6 +49,11 @@
+     release = json.loads((dist / 'release.json').read_text())
+     artifact = dist / release['artifact']
+     profile = PROFILES[args.variant]
++    assert sha(dist/'release.json') == profile['releaseSHA256'], 'Release metadata differs from reviewed profile'
++    for field in ('originProtocol','originSourceProbe'):
++        assert sha(Path(SPEC[field])) == SPEC[field+'SHA256'], 'Original protocol/probe changed'
++    for filename, digest in SPEC['probeSHA256'].items():
++        assert sha(Path(__file__).with_name(filename)) == digest
+     assert sha(artifact) == release['sha256'] == profile['html']
+     assert len(release['inputs']) == profile['inputs']
+     source_hashes = lambda: {p: sha(repo / p) for p in release['inputs']}
+@@ -53,6 +61,10 @@
+     assert inputs_before == release['inputs']
+     helper = repo / 'tools/check-sunflower-browser.py'
+     assert sha(helper) == HELPER_SHA
++    assert ('src/muenzuka-woodland.js' in release['inputs']) == profile['remaining']
++    assert ('src/muenzuka-woodland-renderer.js' in release['inputs']) == profile['remaining']
++    for name, digest in profile['sourceSHA256'].items():
++        assert release['inputs'][name] == digest
+     assert ('src/muenzuka-edge.js' in release['inputs']) == profile['extension']
+     assert ('src/muenzuka-edge-renderer.js' in release['inputs']) == profile['extension']
+     if profile['extension']:
+@@ -62,12 +74,19 @@
+     common = importlib.util.module_from_spec(module_spec)
+     module_spec.loader.exec_module(common)
+     assert common.STATE_JS.count('quality:A.state.quality,') == 1
++    assert hashlib.sha256(common.STATE_JS.encode()).hexdigest() == SPEC['stateHelperLiteralSHA256']
+     state_js = common.STATE_JS.replace('quality:A.state.quality,',
+         "detailNeighbors:A.state.detailNeighbors.slice(),rendererPackIds:[...R.packs.keys()].sort(),recordMapNativeIds:[...R.recordMap.values()].filter(r=>r.pack!=='overview').map(r=>r.data.id).sort(),visibleNativePacks:[...new Set(R.records.filter(r=>r.wanted&&r.item?.mesh.visible&&r.pack!=='overview').map(r=>r.pack))],quality:A.state.quality,")
+     pose = dict(space='surface', eye=[-1898,106,565], target=[-1775,82,583])
+     report = dict(schema=1, kind='Bounded Muenzuka native lifecycle',
+         startedUTC=datetime.now(timezone.utc).isoformat(),
+         protocolSHA256=sha(Path(__file__)), sourceProbeSHA256=sha(SOURCE_PATH), stateHelperSHA256=sha(helper),
++        residentProbeSHA256=sha(RESIDENT_PATH),specSHA256=sha(SPEC_PATH),
++        lodProbeSHA256=sha(LOD_PATH),cpuOverlap=SPEC['cpuOverlap'],
++        originalProtocolSHA256=SPEC['originProtocolSHA256'],
++        originalSourceProbeSHA256=SPEC['originSourceProbeSHA256'],
++        residencyObservations=[],historicalObservations=SPEC['historicalResidencyObservations'],
++        historicalAttributionLimit=SPEC['historicalAttributionLimit'],
+         variant=args.variant, expectedProfile=profile,
+         designOrigin='Six-second plus 250ms anchor from prior Flower/Solar protocol only; no prior result is a Muenzuka baseline result.',
+         invocation=dict(argv=sys.argv, cwd=str(Path.cwd())),
+@@ -79,6 +98,8 @@
+         cameraFixture=dict(id='muenzukaNativeCheck',region='muenzuka',detailNeighbors=[],requiredRegions=['muenzuka'],pose=pose),
+         cameraFixtureMeaning='A test-session-only camera preset uses the real ATLAS.setView path to initialize autoFocus origin and only the required Muenzuka bank; production functions and repository presets are unchanged.',
+         anchorProtocol='overview -> actual native-clear UI -> test camera via production setView -> three production wakes -> existing graceSeconds plus250ms -> three production wakes',
++        declaredSessionOrder=SPEC['sessionOrder'],
++        declaredProductionNativeLoads=4,
+         anchorDesign='Both anchors use the same predeclared expiry wait. Read-only source probes retain only hashes/scalars and weak-key tokens. Strict resource/program assertions are retained; no tolerance or source/renderer change.',
+         errors=[], httpFailures=[], contextEvents=[], states=[], checks=[])
+     started = time.monotonic()
+@@ -121,6 +142,8 @@
+                 report['browser']=browser.version
+                 report['driver']=page.evaluate('ATLAS.renderer.info().driver')
+                 page.evaluate("p=>{if(GA.PRESETS.muenzukaNativeCheck)throw Error('Camera fixture collision');GA.PRESETS.muenzukaNativeCheck={...p,label:'Muenzuka native check',region:'muenzuka',detailNeighbors:[],requiredRegions:['muenzuka'],fov:49};}",pose)
++                page.evaluate("""p=>{for(const [id,pose]of Object.entries(p)){if(GA.PRESETS[id])throw Error('Residency camera fixture collision');GA.PRESETS[id]={...pose,label:id,region:'muenzuka',detailNeighbors:[],requiredRegions:['muenzuka'],fov:49};}}""",SPEC['residencyPoses'])
++                page.evaluate("""p=>{for(const [id,pose]of Object.entries(p)){if(GA.PRESETS[id])throw Error('LOD camera fixture collision');GA.PRESETS[id]={...pose,label:id,region:'muenzuka',detailNeighbors:[],requiredRegions:['muenzuka'],fov:49};}}""",SPEC['lodRoute']['poses'])
+                 check('Production balanced quality and both memory budgets',page.evaluate("ATLAS.state.quality==='balanced'&&ATLAS.renderer.quality==='balanced'&&ATLAS.renderer.attributeBudget===160*1048576&&ATLAS.stream.budget===220*1048576"))
+                 grace = page.evaluate('ATLAS.renderer.graceSeconds')
+                 check('Existing bounded public retention remains six seconds',grace==6,grace)
+@@ -170,6 +193,75 @@
+                     save()
+                     return value
+ 
++                def inventory(label):
++                    value=page.evaluate(RESIDENT_JS,label)
++                    report['residencyObservations'].append(value)
++                    guard()
++                    assert value['complete'] and value['byteReconciliation']['exact']
++                    assert value['settings']==SPEC['residencySettings']
++                    save()
++                    return value
++
++                # This newly observed prefix is prospective, not a reconstruction
++                # of the missing historical A/B object inventories. Natural expiry
++                # is allowed once, identically in both variants, with no trim call.
++                visit('muenzukaWoodlandInventoryOverview');settle()
++                overview_inventory=inventory('overview warmup prospective inventory')
++                check('Prospective overview pose and single Muenzuka bank',
++                    overview_inventory['pose']==SPEC['residencyExpectedPoses']['overview'] and
++                    page.evaluate("[...ATLAS.stream.required].join('|')==='muenzuka'"))
++                visit('muenzukaWoodlandInventorySouthEast');settle()
++                southeast_inventory=inventory('southEast immediate prospective inventory')
++                check('Prospective southEast uses original camera without forced LOD',
++                    southeast_inventory['pose']==SPEC['residencyExpectedPoses']['southEast'])
++                mature()
++                mature_inventory=inventory('southEast after one declared natural retention wait')
++                check('Natural retention observation keeps exact camera and settings',
++                    mature_inventory['pose']==southeast_inventory['pose'] and
++                    mature_inventory['settings']==southeast_inventory['settings'])
++
++                # The fixed route is new evidence, not an interpretation of the
++                # old mouse test. CameraRig interpolates real production frames.
++                # Mesh observers call originals and are always restored.
++                route=SPEC['lodRoute']
++                page.evaluate(LOD_JS,route)
++                try:
++                    visit(route['order'][0]);settle()
++                    page.evaluate("()=>__muenWoodlandLOD.capture('initial far endpoint')")
++                    leg_labels=[]
++                    for leg_index,destination in enumerate(route['order'][1:],1):
++                        leg_label=f'leg{leg_index}:{destination}';leg_labels.append(leg_label)
++                        n=page.evaluate("""p=>{const n=ATLAS.state.drawnFrames;ATLAS.setView(p.destination,true);ATLAS.state.labels=false;ATLAS.state.characters=false;
++                          if(!ATLAS.rig.transition)throw Error('Production animated route did not start');__muenWoodlandLOD.begin(p.label);return n;}""",dict(destination=destination,label=leg_label))
++                        page.wait_for_function("n=>ATLAS.state.drawnFrames>n&&!ATLAS.rig.transition&&!__muenWoodlandLOD.active",arg=n)
++                        settle()
++                        page.evaluate("v=>__muenWoodlandLOD.capture(v+' endpoint')",destination)
++                    route_result=page.evaluate('()=>__muenWoodlandLOD.result()')
++                finally:
++                    report['lodObserverCleanup']=page.evaluate("()=>{const q=__muenWoodlandLOD.cleanup();delete globalThis.__muenWoodlandLOD;return{...q,globalObserverRemoved:!('__muenWoodlandLOD'in globalThis)}}")
++                    save()
++                report['continuousLOD']=route_result;save()
++                check('Continuous route samples real interpolated production RAF on every leg',
++                    not route_result['failed'] and
++                    all(any(f['segment']==leg and f['transitioning'] for f in route_result['frames']) for leg in leg_labels) and
++                    all(f['focus']=='muenzuka' and f['required']==['muenzuka'] for f in route_result['frames']),
++                    dict(frames=len(route_result['frames']),legInteriorCounts={leg:sum(f['segment']==leg and f['transitioning'] for f in route_result['frames']) for leg in leg_labels}))
++                submitted={rid:{d['level'] for d in route_result['allDraws'] if d['id']==rid} for rid in route['targetIDs']}
++                check('All ten remaining and six accepted western leaf batches submit near and far on the fixed return route',
++                    all(levels=={0,1} for levels in submitted.values()),{rid:sorted(levels) for rid,levels in submitted.items()})
++                sphere_rows={}
++                for frame in route_result['frames']:
++                    for row in frame['records']:
++                        if row['resident'] and row['expectedCulling']:
++                            sphere_rows.setdefault((row['id'],row['meshId']),[]).append(row)
++                sphere_changes=[]
++                for key,rows in sphere_rows.items():
++                    if not all(row['sphere'] and row['sphereToken']==rows[0]['sphereToken'] and row['sphere']==rows[0]['sphere'] for row in rows):
++                        sphere_changes.append(dict(id=key[0],meshId=key[1]))
++                check('Eligible actual both-LOD cached spheres remain identical across route switches',not sphere_changes,sphere_changes)
++                check('Temporary actual-draw callbacks restore without retaining native meshes',
++                    report['lodObserverCleanup']['strongMeshReferencesReleased'] and report['lodObserverCleanup']['globalObserverRemoved'] and report['lodObserverCleanup']['restoredCallbacks']>0)
++
+                 visit('diorama');clear();detail();mature()
+                 input_before=state('before actual input')
+                 page.mouse.move(640,390);page.mouse.down();page.mouse.move(660,394,steps=4);page.mouse.up()
+@@ -185,6 +277,10 @@
+                 check('Only Muenzuka is required, cached, installed and actually visible',set(before['stream']['required'])==set(before['stream']['cached'])==set(before['rendererPackIds'])==set(before['visibleNativePacks'])=={'muenzuka'} and not before['detailNeighbors'] and before['stream']['detailSourceMiB']>0)
+                 check('Exact comparison pose',before['rig']['eye']==pose['eye'] and before['rig']['target']==pose['target'] and before['rig']['fov']==49)
+                 source_before=page.evaluate(SOURCE_JS);report['sourceBefore']=source_before
++                inventory('detail before native unload ownership')
++                check('Real Worker native geometry matches the declared accepted or candidate value',
++                    source_before['nativeGeometrySHA256']==profile['nativeGeometrySHA256'],
++                    dict(actual=source_before['nativeGeometrySHA256'],expected=profile['nativeGeometrySHA256']))
+                 counts=source_before['counts']
+                 check('Complete Muenzuka native, all public and independent cold sources inventoried',
+                     counts['nativeRecords']==63 and counts['publicRecords']==profile['publicRecords'] and
+@@ -196,13 +292,22 @@
+                         len(private)==4 and sum(p['array']['bytes'] for p in private)==287712 and
+                         all(not p['residentInGPU'] and not p['publicArrayOwners'] for p in source_before['prototypeResidency'] if p['id'].endswith(':near')),
+                         dict(arrays=private,residency=source_before['prototypeResidency']))
+-                    installed=[x for x in source_before['spheres'] if x['pack']=='muenzuka']
++                    installed=[x for x in source_before['spheres'] if x['pack']=='muenzuka' and x['family']=='acceptedWestern']
+                     check('Six actual native mesh spheres installed by production ensure contain both LODs and all wind phases',
+                         len(installed)==6 and all(x['eligible'] and x['resident'] and x['sphere'] and
+                         x['actualWindEnvelope']['maximumOutside']<=1e-7 for x in installed),installed)
+                 else:
+-                    check('Original baseline has no Muenzuka private prototype or culling extension',
+-                        not private and not source_before['cullingAvailable'] and not source_before['privateGetterAlreadyRetained'])
++                    raise AssertionError('This paired baseline already includes the accepted western arc')
++                remaining_spheres=[x for x in source_before['spheres'] if x['pack']=='muenzuka' and x['family']=='remainingWoodland']
++                check('Remaining 37 sources have exact stage availability and ten independent records',
++                    len(remaining_spheres)==10 and source_before['remainingAvailable']==profile['remaining'] and
++                    source_before['remainingCullingAvailable']==profile['remaining'])
++                if profile['remaining']:
++                    check('Ten actual remaining native mesh spheres contain both LODs and every wind phase',
++                        all(x['eligible'] and x['resident'] and x['sphere'] and x['actualWindEnvelope']['maximumOutside']<=1e-7 for x in remaining_spheres),remaining_spheres)
++                else:
++                    check('Accepted baseline does not apply remaining woodland culling',
++                        all(not x['eligible'] for x in remaining_spheres))
+                 native_backing=[x for x in source_before['backingLedger'] if x['owners'] and all(o.startswith('muenzuka:') for o in x['owners'])]
+                 check('All native source bytes have explicit bank-only backing ownership',
+                     bool(native_backing) and sum(x['bytes'] for x in native_backing)==before['snapshot']['streaming']['sourceBytes'],
+@@ -217,6 +322,8 @@
+                 retained=owned & {e['id'] for e in dropped['geometryInventory']['entries']}
+                 check('All exclusively native GPU geometries are released',not retained,dict(count=len(owned),retained=sorted(retained)))
+                 dropped_source=page.evaluate(SOURCE_JS);report['sourceWhileUnloaded']=dropped_source
++                inventory('native unloaded ownership and disposal times')
++                check('Unloaded source probe has no remaining native geometry digest',dropped_source['nativeGeometrySHA256'] is None)
+                 public_before=[r for r in source_before['records'] if r['pack']=='overview']
+                 check('All public arrays, metadata and source identities survive unload unchanged',
+                     dropped_source['records']==public_before and dropped_source['counts']['nativeRecords']==0 and
+@@ -233,6 +340,9 @@
+                 detail();mature()
+                 after=state('detail after native reentry')
+                 source_after=page.evaluate(SOURCE_JS);report['sourceAfter']=source_after
++                inventory('native reentry ownership')
++                check('Real Worker native geometry restores its exact digest',
++                    source_before['nativeGeometrySHA256']==source_after['nativeGeometrySHA256']==profile['nativeGeometrySHA256'])
+                 check('Every native/public source value, public identity and private cache restores exactly',all(source_before[k]==source_after[k] for k in ['records','dataArrays','privatePrototypes','counts','backingLedger']))
+                 check('Actual sphere values, residency and prototype GPU status restore exactly',source_before['spheres']==source_after['spheres'] and source_before['prototypeResidency']==source_after['prototypeResidency'])
+                 check('Camera, neighbors, wanted identities and LOD restore',before['rig']==after['rig'] and before['detailNeighbors']==after['detailNeighbors'] and before['wanted']==after['wanted'])
+@@ -248,6 +358,7 @@
+                 page.wait_for_timeout(1000)
+                 idle_after=state('one second idle')
+                 check('One second static view draws zero frames at paused clock',idle_before['frames']==idle_after['drawnFrames'] and idle_before['clock']==idle_after['clock']==12.5)
++                check('Only the declared four native loads occur; one measured unload/reentry cycle',after['stream']['builds']==4,after['stream']['builds'])
+                 guard();report.update(passed=True,exitCode=0)
+             except BaseException as error:
+                 report.update(passed=False,exitCode=1,failure=repr(error))
+@@ -268,9 +379,13 @@
+         report['protocolUnchanged']=sha(Path(__file__))==report['protocolSHA256']
+         report['helperUnchanged']=sha(helper)==report['stateHelperSHA256']
+         report['sourceProbeUnchanged']=sha(SOURCE_PATH)==report['sourceProbeSHA256']
++        report['residentProbeUnchanged']=sha(RESIDENT_PATH)==report['residentProbeSHA256']
++        report['lodProbeUnchanged']=sha(LOD_PATH)==report['lodProbeSHA256']
++        report['specUnchanged']=sha(SPEC_PATH)==report['specSHA256']
++        report['releaseUnchanged']=sha(dist/'release.json')==report['releaseSHA256']
+         report['sourceHEADAfter']=subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip()
+         save();server.shutdown();server.server_close()
+-        assert all(report[k] for k in ('inputsUnchanged','artifactUnchanged','protocolUnchanged','helperUnchanged','sourceProbeUnchanged'))
++        assert all(report[k] for k in ('inputsUnchanged','artifactUnchanged','protocolUnchanged','helperUnchanged','sourceProbeUnchanged','residentProbeUnchanged','lodProbeUnchanged','specUnchanged','releaseUnchanged'))
+ 
+ 
+ if __name__=='__main__':

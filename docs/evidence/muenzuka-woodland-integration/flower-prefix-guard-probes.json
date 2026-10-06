@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "kind": "Registration helper probes only; no scene or candidate acceptance",
+  "nodeVersion": "v22.23.3",
+  "sourceSHA": "91d395a6418adfcf8c2dba9b16fff60a99bc23722e68fc0180794805d3715b4e",
+  "projectSHA": "73ce158eea969afddb42b53424180b30b9782609dcf46797f3f8fc2953c3bf4d",
+  "checks": [
+    {
+      "name": "Actual 49 registration returns 47 Flower predecessors and one exact deferred successor",
+      "passed": true
+    },
+    {
+      "name": "Controlled historical 48 registration remains supported",
+      "passed": true
+    },
+    {
+      "name": "Substituted project is rejected",
+      "passed": true
+    },
+    {
+      "name": "Reordered accepted prefix is rejected",
+      "passed": true
+    },
+    {
+      "name": "Duplicated successor is rejected",
+      "passed": true
+    },
+    {
+      "name": "Unreviewed successor is rejected",
+      "passed": true
+    },
+    {
+      "name": "Missing Muenzuka predecessor is rejected",
+      "passed": true
+    },
+    {
+      "name": "Successor before Flower is rejected",
+      "passed": true
+    },
+    {
+      "name": "Duplicate Flower is rejected",
+      "passed": true
+    },
+    {
+      "name": "Changed protected source is rejected: src/muenzuka-woodland.js",
+      "passed": true
+    },
+    {
+      "name": "Changed protected source is rejected: src/muenzuka-edge.js",
+      "passed": true
+    },
+    {
+      "name": "Changed protected source is rejected: src/sunflower-entry.js",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "elapsedMs": 5.4988639999999975,
+  "builds": 0,
+  "hooks": 0,
+  "nativeBuilds": 0,
+  "GPU": 0,
+  "fixtureChanges": 0,
+  "fullFlowerCheckRun": false
+}

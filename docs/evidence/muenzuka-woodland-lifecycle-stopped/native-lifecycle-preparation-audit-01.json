@@ -1,0 +1,14 @@
+{
+  "kind": "Preparation metadata audit, no product execution",
+  "exitCode": 1,
+  "failure": "Expected obsolete baseline check-label literal did not match historic literal",
+  "actualRemovedLabel": "Original baseline has no Muenzuka private prototype or culling extension",
+  "protocolSHA256": "c04d119da405ee70a5c47f3e537e49a4e8942f3d452100a2f31f02cdd29d4b6c",
+  "specSHA256": "441e9976a40e2d8ee8147d0c081e6877170edfe87bde78071ade54ebcfcdcf22",
+  "syntaxPythonPassedBeforeMetadataFailure": true,
+  "syntaxJSPassedBeforeMetadataFailure": true,
+  "browserSessions": 0,
+  "nativeBuilds": 0,
+  "GPUCalls": 0,
+  "productAssertionsChanged": false
+}

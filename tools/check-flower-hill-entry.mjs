@@ -19,7 +19,13 @@ const ACCEPTED_SOLAR_SOURCE_SHA='7110e70da5feb19c8e163470c1d266e37ca40e8507e6829
 // Solar. Execute its real hook; never remove it from a substituted project.
 const MUENZUKA='src/muenzuka-edge.js';
 const MUENZUKA_SOURCE_SHA='b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045';
+// The remaining Muenzuka crowns are a separately checked, exact successor.
+// Keep Flower's actual predecessor boundary while checking real registration.
+const WOODLAND='src/muenzuka-woodland.js';
+const WOODLAND_SOURCE_SHA='0fbef3bef0b1641e5d542c5b924e95c939762b3d78014f90867138e8e7be12cd';
+const ACCEPTED_FLOWER_REGISTRATION_SHA='b832685d8db4ae0b59ffe3a4eed7e19d4ce4ccde3d506a0e84b0f4a94ba2dee6';
 export function registeredFlowerHillPredecessors(read,project){
+ same(project,JSON.parse(read('project.json')),'Use the real project, not a substituted predecessor list');
  const all=project.worldBuilders;
  assert(Array.isArray(all)&&all.every(p=>typeof p==='string'),'Actual worldBuilders required');
  const solar=all.indexOf(SOLAR),flower=all.indexOf(SOURCE);
@@ -27,11 +33,20 @@ export function registeredFlowerHillPredecessors(read,project){
  assert.equal(all.filter(p=>p===SOLAR).length,1);
  assert.equal(sha(JSON.stringify(all.slice(0,solar+1))),ACCEPTED_SOLAR_PREFIX_SHA,'Delivered prefix registration/order changed');
  assert.equal(sha(read(SOLAR)),ACCEPTED_SOLAR_SOURCE_SHA,'Accepted Solar source changed');
- assert.equal(all.filter(p=>p===SOURCE).length,1);assert.equal(flower,all.length-1,'Flower must remain the final actual hook');
+ assert.equal(all.filter(p=>p===SOURCE).length,1);
+ const successors=all.slice(flower+1);
+ if(successors.length){
+  assert.equal(all.length,49,'Only the reviewed woodland successor is registered');
+  assert.equal(flower,47,'Delivered Flower predecessor boundary changed');
+  assert.equal(sha(JSON.stringify(all.slice(0,48))),ACCEPTED_FLOWER_REGISTRATION_SHA,'Delivered 48-module registration changed');
+  same(successors,[WOODLAND],'Unexpected unreviewed Flower successor');
+  assert.equal(sha(read(WOODLAND)),WOODLAND_SOURCE_SHA,'Reviewed woodland successor source changed');
+ }
  const between=all.slice(solar+1,flower);
  assert(between.length===0||between.length===1&&between[0]===MUENZUKA,'Unexpected unreviewed successor');
  if(between.length)assert.equal(sha(read(MUENZUKA)),MUENZUKA_SOURCE_SHA,'Reviewed Muenzuka source changed');
- return{modules:all.slice(0,flower),reviewedAfterSolar:between,prefixSHA256:sha(JSON.stringify(all.slice(0,flower)))};
+ return{modules:all.slice(0,flower),reviewedAfterSolar:between,prefixSHA256:sha(JSON.stringify(all.slice(0,flower))),
+  deferredSuccessors:successors.map(path=>({path,sourceSHA256:sha(read(path)),execution:'Deferred to the independent full-production successor check'}))};
 }
 const SCOPE=[-1280,960,-928,1376],BENCH={x:-1251,z:987,w:9,d:10};
 const FIELDS=['vertices','farVertices','index','instances','instanceColors'];
@@ -145,10 +160,10 @@ export async function checkFlowerHillEntry(read,{sourceSHA}={}){
   assert(sourceSHA,'An exact --source-sha is required');assert.equal(report.sourceSHA256,sourceSHA,'Candidate changed before preflight');const p=JSON.parse(read('project.json'));report.actualPredecessors=registeredFlowerHillPredecessors(read,p);return p;
  });if(!prerequisites)return finish();
  const project=prerequisites,context=vm.createContext({performance,TextDecoder,TextEncoder});
- for(const p of project.worldBuilders.slice(0,-1))vm.runInContext(String(read(p)),context,{filename:p});const G=context.GA,acceptedHeight=G.Terrain.prototype.height,acceptedBuilder=G.buildRegion,acceptedHooks=G.extraOverviewBuilders.slice(),loadedPaths=JSON.stringify(G.FLOWERLANDS.paths);
+ for(const p of report.actualPredecessors.modules)vm.runInContext(String(read(p)),context,{filename:p});const G=context.GA,acceptedHeight=G.Terrain.prototype.height,acceptedBuilder=G.buildRegion,acceptedHooks=G.extraOverviewBuilders.slice(),loadedPaths=JSON.stringify(G.FLOWERLANDS.paths);
  vm.runInContext(String(read(SOURCE)),context,{filename:SOURCE});const U=G.FLOWER_HILL_ENTRY;assert(U,'Missing Flower Hill API');same(Array.from(U.scope),SCOPE,'Approved scope');assert.equal(U.previousHeight,acceptedHeight,'Surface fallback bypasses accepted Solar');assert.equal(U.originalBuildRegion,acceptedBuilder,'Native builder fallback bypasses accepted Solar');assert.equal(G.extraOverviewBuilders.length,acceptedHooks.length+1);for(let i=0;i<acceptedHooks.length;i++)assert.equal(G.extraOverviewBuilders[i],acceptedHooks[i],'Predecessor hook order changed');
  context.inputAtlas=JSON.stringify(mergedAtlas(read,project));const data=vm.runInContext('JSON.parse(inputAtlas)',context),raw=gunzipSync(read('assets/packs/overview.pack.gz')),pack=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength));
- const boot=await check('actual full production predecessors including accepted Solar',()=>{bootPredecessors(G,data,pack);assert(G.SUNFLOWER_ENTRY.metadata.has(pack),'Solar actual prepare not executed');assert(data.sunflowerEntry?.contact?.length>0,'Accepted Solar contact absent');assert(!data.flowerHillEntry,'Flower Hill executed before baseline capture');return {modules:project.worldBuilders,overviewHooks:acceptedHooks.length,records:pack.meshes.length,SolarSourceSHA256:ACCEPTED_SOLAR_SOURCE_SHA,meaning:'Actual boot additions, LANDSCAPE, highland and every reviewed registered predecessor hook; the new final hook is not yet run.'};});if(!boot)return finish();
+ const boot=await check('actual full production predecessors including accepted Solar',()=>{bootPredecessors(G,data,pack);assert(G.SUNFLOWER_ENTRY.metadata.has(pack),'Solar actual prepare not executed');assert(data.sunflowerEntry?.contact?.length>0,'Accepted Solar contact absent');assert(!data.flowerHillEntry,'Flower Hill executed before baseline capture');return {modules:report.actualPredecessors.modules,registeredModules:project.worldBuilders,deferredSuccessors:report.actualPredecessors.deferredSuccessors,overviewHooks:acceptedHooks.length,records:pack.meshes.length,SolarSourceSHA256:ACCEPTED_SOLAR_SOURCE_SHA,meaning:'Actual boot additions, LANDSCAPE, highland and every reviewed registered predecessor hook; the new final hook is not yet run.'};});if(!boot)return finish();
  if(report.actualPredecessors.reviewedAfterSolar.length){const muen=await check('registered Muenzuka predecessor executes before Flower Hill',()=>{const m=G.MUENZUKA_EDGE?.metadata(pack);assert(m,'Muenzuka registered hook did not execute');assert.equal(m.cold.length,2);assert.equal(m.cold.reduce((s,p)=>s+p.trees,0),10);return{sourceSHA256:MUENZUKA_SOURCE_SHA,coldRecords:m.cold.map(p=>p.addedId),originalColdPlants:10};});if(!muen)return finish();}
  const old=snapshot(pack),oldIDs=pack.meshes.map(m=>m.id),oldBuffers=backingBuffers(pack,data),solarContact=data.sunflowerEntry.contact,solarContactSHA=arraySHA(solarContact),solarState=plain(data.sunflowerEntry),solarMeta=plain(G.SUNFLOWER_ENTRY.metadata.get(pack)),oldData=plain(data),oldPaths=JSON.stringify(G.FLOWERLANDS.paths),oldRoutes=JSON.stringify(G.ISLAND.allRoutes),terrain=new G.Terrain(data),base=(x,z)=>acceptedHeight.call(terrain,x,z);
  const protectedQueries=[];for(let x=-928;x<=-128;x+=16)for(let z=576;z<=1376;z+=16)protectedQueries.push({x,z,y:base(x,z)});for(const p of [[-1280,960],[-928,1376],[-1400,1100],[-1100,1450],[-900,1200],[-896,900],[-512,1024]])protectedQueries.push({x:p[0],z:p[1],y:base(...p)});

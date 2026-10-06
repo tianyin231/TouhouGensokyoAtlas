@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-10-06T02:04:26.566071+00:00",
+  "passed": true,
+  "nodeGroups": 46,
+  "nodeCLI": 0,
+  "elapsedSeconds": 979.7081694179997,
+  "sourceRuntimeSHA256": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45",
+  "inputCount": 211,
+  "localOriginalLog": "/workspace/muenzuka-woodland-evidence/integrated-regression-01.log",
+  "localOriginalLogSHA256": "2dd072ed6bfff9e27dfa9a02ccc9b61749af48c4630ade8af5c43893aa2f49ca",
+  "files": {
+    "run-integrated-regression.py": "f99976c7ad6c3a920c8923c4bba4c06cf4670f738af7a2fecfc6c173ca0156a1",
+    "integration-guard-registration.json": "6416c65181543f43e1e2171ea6004892f893e5fe28e82a1d804f59c0a4270a82",
+    "integration-rebuild-proof.json": "3566a2265ee8bea8ac4265c181ab1902d50ed572f14de90ce3b061be42c5458c",
+    "flower-prefix-guard-probes.mjs": "9abbe31a8b4b2a0abcadcf9759d5432d0b6b41ef924c7c2d8fb9b87ad635ab49",
+    "flower-prefix-guard-probes.json": "4167ddffc17d06e5835826030c5fab5ae39fc47b35ad27f23fe5e63e2e84efdb",
+    "six-view-cost-summary.json": "654c2b6ddcb853c7cba7853f88b791c3bc35dc4e6a08565967441b1b062d5710",
+    "checkpoint-5ea8027-ci.json": "84d116086825b9dc804510e88b08e1a55edb681d7b569e6393b8cd4ff85a3b1e",
+    "integrated-regression-01.log": "2dd072ed6bfff9e27dfa9a02ccc9b61749af48c4630ade8af5c43893aa2f49ca"
+  },
+  "finalAcceptance": false,
+  "remaining": [
+    "baseline lifecycle original CLI1 retained; candidate not started",
+    "continuous LOD/interaction/unload/reentry not executed",
+    "two original A/B resource anomalies unresolved",
+    "no candidate CI/deployment"
+  ]
+}

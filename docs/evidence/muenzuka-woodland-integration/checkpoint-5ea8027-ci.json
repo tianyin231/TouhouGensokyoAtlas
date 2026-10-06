@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-10-06 01:52:29 UTC",
+  "repository": "tianyin231/TouhouGensokyoAtlas",
+  "headSHA": "5ea8027dbc81c6d6aed82e68ca9f61cd3305df48",
+  "request": "https://api.github.com/repos/tianyin231/TouhouGensokyoAtlas/actions/runs?head_sha=5ea8027dbc81c6d6aed82e68ca9f61cd3305df48&per_page=100",
+  "total_count": 0,
+  "workflow_runs": [],
+  "meaning": "Candidate checkpoint has zero exact-commit workflow runs; no CI or deployment success claimed."
+}

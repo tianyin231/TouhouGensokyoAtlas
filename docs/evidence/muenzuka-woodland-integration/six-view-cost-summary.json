@@ -1,0 +1,146 @@
+[
+  {
+    "view": "overview",
+    "baseline": {
+      "calls": 275,
+      "triangles": 546620,
+      "attributeBytes": 12950352,
+      "geometries": 163,
+      "textures": 11
+    },
+    "candidate": {
+      "calls": 275,
+      "triangles": 545288,
+      "attributeBytes": 12903696,
+      "geometries": 161,
+      "textures": 11
+    },
+    "delta": {
+      "calls": 0,
+      "triangles": -1332,
+      "attributeBytes": -46656,
+      "geometries": -2,
+      "textures": 0
+    }
+  },
+  {
+    "view": "southEast",
+    "baseline": {
+      "calls": 128,
+      "triangles": 678332,
+      "attributeBytes": 6883504,
+      "geometries": 72,
+      "textures": 11
+    },
+    "candidate": {
+      "calls": 128,
+      "triangles": 649804,
+      "attributeBytes": 13736448,
+      "geometries": 171,
+      "textures": 11
+    },
+    "delta": {
+      "calls": 0,
+      "triangles": -28528,
+      "attributeBytes": 6852944,
+      "geometries": 99,
+      "textures": 0
+    }
+  },
+  {
+    "view": "northReverse",
+    "baseline": {
+      "calls": 117,
+      "triangles": 692557,
+      "attributeBytes": 8789392,
+      "geometries": 68,
+      "textures": 11
+    },
+    "candidate": {
+      "calls": 117,
+      "triangles": 660891,
+      "attributeBytes": 8260192,
+      "geometries": 64,
+      "textures": 11
+    },
+    "delta": {
+      "calls": 0,
+      "triangles": -31666,
+      "attributeBytes": -529200,
+      "geometries": -4,
+      "textures": 0
+    }
+  },
+  {
+    "view": "cold",
+    "baseline": {
+      "calls": 225,
+      "triangles": 313071,
+      "attributeBytes": 9900632,
+      "geometries": 158,
+      "textures": 8
+    },
+    "candidate": {
+      "calls": 225,
+      "triangles": 312315,
+      "attributeBytes": 9853976,
+      "geometries": 156,
+      "textures": 8
+    },
+    "delta": {
+      "calls": 0,
+      "triangles": -756,
+      "attributeBytes": -46656,
+      "geometries": -2,
+      "textures": 0
+    }
+  },
+  {
+    "view": "low",
+    "baseline": {
+      "calls": 127,
+      "triangles": 397892,
+      "attributeBytes": 13524540,
+      "geometries": 189,
+      "textures": 8
+    },
+    "candidate": {
+      "calls": 127,
+      "triangles": 396560,
+      "attributeBytes": 13431228,
+      "geometries": 185,
+      "textures": 8
+    },
+    "delta": {
+      "calls": 0,
+      "triangles": -1332,
+      "attributeBytes": -93312,
+      "geometries": -4,
+      "textures": 0
+    }
+  },
+  {
+    "view": "night",
+    "baseline": {
+      "calls": 117,
+      "triangles": 671371,
+      "attributeBytes": 8789392,
+      "geometries": 67,
+      "textures": 11
+    },
+    "candidate": {
+      "calls": 117,
+      "triangles": 649119,
+      "attributeBytes": 10042476,
+      "geometries": 93,
+      "textures": 11
+    },
+    "delta": {
+      "calls": 0,
+      "triangles": -22252,
+      "attributeBytes": 1253084,
+      "geometries": 26,
+      "textures": 0
+    }
+  }
+]

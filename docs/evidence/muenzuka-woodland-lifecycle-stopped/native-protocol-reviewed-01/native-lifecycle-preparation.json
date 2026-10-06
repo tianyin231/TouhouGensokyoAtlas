@@ -1,0 +1,206 @@
+{
+  "schema": 1,
+  "kind": "Frozen Muenzuka woodland lifecycle preparation, not execution",
+  "preparedUTC": "2026-10-06T02:00:12.580818+00:00",
+  "status": "Await parent final protocol review; no browser launched",
+  "files": {
+    "check-native-woodland.py": {
+      "path": "/workspace/muenzuka-woodland-evidence/check-native-woodland.py",
+      "sha256": "64b55249583f379d5d9377e5e7db1d365003c5131e34e86c5fb4999aa8a8ce0b",
+      "bytes": 31123
+    },
+    "native-lifecycle-spec.json": {
+      "path": "/workspace/muenzuka-woodland-evidence/native-lifecycle-spec.json",
+      "sha256": "441e9976a40e2d8ee8147d0c081e6877170edfe87bde78071ade54ebcfcdcf22",
+      "bytes": 16051
+    },
+    "woodland-native-source-probe.js": {
+      "path": "/workspace/muenzuka-woodland-evidence/woodland-native-source-probe.js",
+      "sha256": "cfd59c41d0c36e4d8859ef7e5ab813748554ac37e607d59f7b228692a486cc83",
+      "bytes": 8746
+    },
+    "resident-source-inventory.js": {
+      "path": "/workspace/muenzuka-woodland-evidence/resident-source-inventory.js",
+      "sha256": "07f43bd6c2caa90efc22ad6dd8a562711c0332ff20182d809471b1c2d16c8c4e",
+      "bytes": 6849
+    },
+    "lod-route-observer.js": {
+      "path": "/workspace/muenzuka-woodland-evidence/lod-route-observer.js",
+      "sha256": "ab2f2d4c2cc5b73c1452ed0867c927f1d71ef8e986ebd857d70c32a792ba5465",
+      "bytes": 3800
+    },
+    "native-lifecycle-protocol.diff": {
+      "path": "/workspace/muenzuka-woodland-evidence/native-lifecycle-protocol.diff",
+      "sha256": "b1e92208b8a1aca304899a2ae1b571f0c3933d83b1e76df66540f249a660f6c0",
+      "bytes": 20559
+    },
+    "native-lifecycle-source-probe.diff": {
+      "path": "/workspace/muenzuka-woodland-evidence/native-lifecycle-source-probe.diff",
+      "sha256": "9f4b772d5b7735256560a950ebf15ece82dc7ed815f71885d5fad7481cf981a0",
+      "bytes": 3910
+    },
+    "native-lifecycle-js-parse-input.json": {
+      "path": "/workspace/muenzuka-woodland-evidence/native-lifecycle-js-parse-input.json",
+      "sha256": "bc8312098f3b6bbe82ce3dc11f43ccb89cd43dfedffb52da50151387781dc2cb",
+      "bytes": 27722
+    },
+    "native-lifecycle-syntax.json": {
+      "path": "/workspace/muenzuka-woodland-evidence/native-lifecycle-syntax.json",
+      "sha256": "72bb89e034fa8aa2a7f264666b276ea8cbd95bfcf4ff5e9c7aeb2be92a6c643f",
+      "bytes": 687
+    },
+    "native-lifecycle-preparation-audit-01.json": {
+      "path": "/workspace/muenzuka-woodland-evidence/native-lifecycle-preparation-audit-01.json",
+      "sha256": "00873618098a0e8537d51f5c2ea0a5ca67e2c4df7342dfe974382aa1ffe3b69f",
+      "bytes": 645
+    }
+  },
+  "syntaxChecks": [
+    {
+      "name": "Python syntax only",
+      "passed": true,
+      "browserExecution": false
+    },
+    {
+      "name": "Node22 all inline and external probe syntax only",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "{\"expressions\":34,\"parsed\":true,\"executed\":false}\n",
+      "stderr": "",
+      "browserExecution": false
+    },
+    {
+      "name": "Historic strict check labels retained",
+      "passed": true,
+      "oldCheckCalls": 25,
+      "newCheckCalls": 38,
+      "removed": [
+        "Original baseline has no Muenzuka private prototype or culling extension"
+      ],
+      "replacement": "Both current variants require accepted old-west exact builder/culler hashes. Obsolete pre-old-west baseline declaration replaced; original resource/source/LOD/program/image/idle checks retained."
+    }
+  ],
+  "profiles": {
+    "baseline": {
+      "repo": "/workspace/main-island-next",
+      "dist": "/workspace/main-island-next-evidence/combined-final-dist",
+      "output": "/workspace/muenzuka-woodland-evidence/baseline-native",
+      "html": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+      "inputs": 208,
+      "extension": true,
+      "remaining": false,
+      "publicRecords": 2156,
+      "coldRecords": 15,
+      "nativeGeometrySHA256": "c0f2f1378ec19e5e10be8dc5e21240390315e4eddbd616c4eccc4dc8db6123b2",
+      "sourceSHA256": {
+        "project.json": "fd2555966bc8b3cc45afc6e076bde296adc948288fbb380dd3ce0db4b2e8e9b5",
+        "src/muenzuka-edge.js": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+        "src/muenzuka-edge-renderer.js": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4"
+      },
+      "releaseSHA256": "9ca2ffe7710bbcda299d0e5f8ad255b814609cb5e73c8149ca12415daf5b747b",
+      "sourceHEADAtPreparation": "2a5ac93e8aebbf539feec8a1e9408a0a6ebea02d"
+    },
+    "candidate": {
+      "repo": "/workspace/muenzuka-canopy-refinement",
+      "dist": "/workspace/muenzuka-woodland-evidence/v1-dist",
+      "output": "/workspace/muenzuka-woodland-evidence/candidate-native",
+      "html": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45",
+      "inputs": 210,
+      "extension": true,
+      "remaining": true,
+      "publicRecords": 2156,
+      "coldRecords": 15,
+      "nativeGeometrySHA256": "7e24a87d60bc286337bf9adb447656d39c858fc6e41208535afa4872aa4066a2",
+      "sourceSHA256": {
+        "project.json": "73ce158eea969afddb42b53424180b30b9782609dcf46797f3f8fc2953c3bf4d",
+        "src/muenzuka-edge.js": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+        "src/muenzuka-edge-renderer.js": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4",
+        "src/muenzuka-woodland.js": "0fbef3bef0b1641e5d542c5b924e95c939762b3d78014f90867138e8e7be12cd",
+        "src/muenzuka-woodland-renderer.js": "679b6d1d0f0702ad113baf9735ed10a14a3d4f90253448f14cadeb4417a60e26"
+      },
+      "releaseSHA256": "896b09748714950593379f77ec1ac213caf9a9b57f308a23e044f1ee6f5b3d7e",
+      "sourceHEADAtPreparation": "5ea8027dbc81c6d6aed82e68ca9f61cd3305df48"
+    }
+  },
+  "commands": {
+    "baseline": [
+      "python",
+      "/workspace/muenzuka-woodland-evidence/check-native-woodland.py",
+      "--variant",
+      "baseline",
+      "--repo",
+      "/workspace/main-island-next",
+      "--dist",
+      "/workspace/main-island-next-evidence/combined-final-dist",
+      "--output",
+      "/workspace/muenzuka-woodland-evidence/baseline-native"
+    ],
+    "candidate": [
+      "python",
+      "/workspace/muenzuka-woodland-evidence/check-native-woodland.py",
+      "--variant",
+      "candidate",
+      "--repo",
+      "/workspace/muenzuka-canopy-refinement",
+      "--dist",
+      "/workspace/muenzuka-woodland-evidence/v1-dist",
+      "--output",
+      "/workspace/muenzuka-woodland-evidence/candidate-native"
+    ]
+  },
+  "GPURequirement": {
+    "browserSessions": 2,
+    "serial": [
+      "baseline",
+      "candidate"
+    ],
+    "executable": "/usr/bin/chromium",
+    "backend": "SwiftShader",
+    "nativeLoadsPerSession": 4,
+    "measuredUnloadReentryCyclesPerSession": 1,
+    "additionalRegions": 0,
+    "estimatedTotalMinutes": [
+      8,
+      12
+    ],
+    "estimateNotMeasurement": true,
+    "noExtraGPUProbes": true
+  },
+  "diffDeclaration": [
+    "Exact input/source binding updated from historic202/204 to current208/210.",
+    "Original strict lifecycle assertions retained; obsolete original no-old-extension baseline declaration replaced by accepted western-source guards.",
+    "Prospective overview→southEast inventory and one6250ms natural wait are new observations, not a historic A/B reconstruction.",
+    "Four fixed real CameraRig transitions added; new10 and old6 must actually submit bothLOD levels; observers restored/deleted before unload.",
+    "Bounded managed geometry/instance attribute ownership and scalar disposal times added, no direct collector/render/ensure/LOD override.",
+    "Original static anchor pose, real input, UI clear,6250ms mature interval,PNG/program/resource/wanted/source/idle checks unchanged.",
+    "Reviewed release metadata SHA now required against each fixed profile, in addition to every source input and HTML."
+  ],
+  "CPUConcurrency": {
+    "parentFullNodeStartedUTC": "2026-10-06T01:46:40Z",
+    "possibleConcurrentFullNode": true,
+    "wallAndInputCPUSamples": "Raw observations only; no hardware FPS, CPU speedup, loading speedup or cross-session performance claim."
+  },
+  "historicalAttributionLimit": "Original A/B report did not capture a complete object/geometry ownership ledger at the anomalous instant. The new prospective session may show natural expiry/owners, but cannot retrospectively prove the old A/B exact owners or cause. Six-second LRU is a source-supported hypothesis, not a predeclared conclusion.",
+  "originalFilesUnchanged": true,
+  "executionDuringPreparation": {
+    "browserSessions": 0,
+    "productionHooks": 0,
+    "nativeBuilds": 0,
+    "GPUCalls": 0,
+    "fullNodeRunsBySol": 0,
+    "productionEdits": 0
+  },
+  "notMeasured": [
+    "historical A/B per-object attribution",
+    "driver/physical VRAM and hardware FPS",
+    "JavaScript garbage-collection time",
+    "long-term leak stability",
+    "dynamic wind screenshots across all phases (actual array all-phase containment tested instead)"
+  ],
+  "pending": [
+    "parent final review/exclusiveGPU authorization",
+    "one actual baseline lifecycle",
+    "one actual candidate lifecycle",
+    "prospective bounded resource attribution"
+  ]
+}

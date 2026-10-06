@@ -1,0 +1,22 @@
+--- reviewed-01/check-native-woodland.py
++++ check-native-woodland.py
+@@ -332,11 +332,17 @@
+                     source_before['privatePrototypes']==dropped_source['privatePrototypes'] and
+                     not any(x['owners'] and all(o.startswith('muenzuka:') for o in x['owners']) for x in dropped_source['backingLedger']))
+                 if profile['extension']:
+-                    cold_installed=[x for x in dropped_source['spheres'] if x['pack']=='overview' and x['resident']]
++                    local_cold=[x for x in dropped_source['spheres'] if x['pack']=='overview' and
++                                (x['family']=='acceptedWestern' or profile['remaining'])]
++                    cold_installed=[x for x in local_cold if x['resident']]
+                     check('Every resident local cold mesh uses its actual complete wind sphere',
+                         all(x['eligible'] and x['sphere'] and x['actualWindEnvelope']['maximumOutside']<=1e-7 for x in cold_installed),
+-                        dict(residentColdSpheres=cold_installed,unresidentColdIds=[x['id'] for x in dropped_source['spheres'] if x['pack']=='overview' and not x['resident']],
++                        dict(residentColdSpheres=cold_installed,unresidentColdIds=[x['id'] for x in local_cold if not x['resident']],
+                              meaning='Only actual resident spheres checked here; all cold CPU arrays are checked regardless of residency. Fixed cold view and independent source checks cover the full cold pair.'))
++                    if not profile['remaining']:
++                        remaining_cold=[x for x in dropped_source['spheres'] if x['pack']=='overview' and x['family']=='remainingWoodland']
++                        check('Accepted baseline remaining cold records have no uninstalled woodland culling',
++                            len(remaining_cold)==2 and all(not x['eligible'] for x in remaining_cold),remaining_cold)
+                 detail();mature()
+                 after=state('detail after native reentry')
+                 source_after=page.evaluate(SOURCE_JS);report['sourceAfter']=source_after

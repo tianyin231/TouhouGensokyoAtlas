@@ -13,7 +13,7 @@
     "nameless": "d76dc3a609bafd73ce25e51bdbd93ab1cd7defa11f49d0aac65ad5ca1a519ea3",
     "mountain": "60c85c21d85ad70b158155458d9b35c66a51e19aa8fc7b2f094dfce8458de521",
     "forest": "3140bd2856d80b9191ef2e7203d2e128662d34a3ee0fe1b361140fa461c1b710",
-    "muenzuka": "c0f2f1378ec19e5e10be8dc5e21240390315e4eddbd616c4eccc4dc8db6123b2",
+    "muenzuka": "7e24a87d60bc286337bf9adb447656d39c858fc6e41208535afa4872aa4066a2",
     "genbu": "f6a4a51132c512ff3087115e67c5ed1497f51ddde07995eceda55825826ca188"
   },
   "reviewedUpstreamChanges": {
@@ -107,6 +107,17 @@
       "retainedNativeCLI": 1,
       "derivedNormalGuardSHA256": "0394f8ce56675d1aad1a68ff4b25f66177c1968400f18c14cc042797c585e35c",
       "review": "docs/flower-hill-handoff.md",
+      "reviewer": "root",
+      "automaticRefresh": false
+    },
+    "muenzukaWoodland": {
+      "base": "2a5ac93e8aebbf539feec8a1e9408a0a6ebea02d",
+      "before": "c0f2f1378ec19e5e10be8dc5e21240390315e4eddbd616c4eccc4dc8db6123b2",
+      "after": "7e24a87d60bc286337bf9adb447656d39c858fc6e41208535afa4872aa4066a2",
+      "sourceSHA256": "0fbef3bef0b1641e5d542c5b924e95c939762b3d78014f90867138e8e7be12cd",
+      "reason": "Only ten remaining ordinary leaf records (37 trees) share the accepted two western crown prototypes. All 63 native identities, placements, colors, original stems, three purple cherries, props, terrain and paths remain protected. The separate independent actual 49-definition/21-hook production check built both native packs, passed ten checks, and measured zero additional typed backing in main and Worker realms. Six fixed view pairs passed scoped root/Astra art review. Public cold 21 retain independent identities; the accepted native west25/coldwest10 remain unchanged. Current expected output is manually reviewed; original west-edge history is retained. Lifecycle and complete integrated regression are recorded separately, not presumed by this registration.",
+      "evidenceSHA256": "ce41b7d82a3599edd05b1cb893d1a76d44174b60bf362bee81aa944eb7a3a9fd",
+      "review": "docs/muenzuka-woodland-handoff.md",
       "reviewer": "root",
       "automaticRefresh": false
     }

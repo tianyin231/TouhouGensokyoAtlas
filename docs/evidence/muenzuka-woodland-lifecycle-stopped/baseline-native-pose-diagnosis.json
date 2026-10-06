@@ -1,0 +1,115 @@
+{
+  "kind": "Bounded offline diagnosis of retained CLI1, not lifecycle acceptance",
+  "originalCLIExitCode": 1,
+  "originalFailure": "AssertionError('Prospective southEast uses original camera without forced LOD')",
+  "bindings": {
+    "/workspace/muenzuka-woodland-evidence/baseline-native/report.json": "bf26c658291b66142df38a00721f36654dcfeea40a052f7f63402f04be7ad633",
+    "/workspace/muenzuka-woodland-evidence/baseline-native/execution.json": "6492ba2f2437d3e33c126b1e747537f6ac75f39d1600d863e02e54f04fcbd2ae",
+    "/workspace/muenzuka-woodland-evidence/baseline-A/report.json": "8e437b6dc456573a923a4018dd48ba4064c9f0c95a4098ae9d25b2a75e37ce8a",
+    "/workspace/muenzuka-woodland-evidence/native-lifecycle-spec.json": "6bd4f3806a042298c3918050a8665396ed4b608df8f5d055f615bc37be80cd24",
+    "/workspace/main-island-next/src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
+    "/workspace/main-island-next/src/camera.js": "0bc9225d4a9b3eff946464b36619b7d17da180d4ca43a6dd31f1e3e160f6d721",
+    "/workspace/muenzuka-woodland-evidence/diagnose-baseline-native-pose.mjs": "247898006610a123473393d9f02a5bec3951f7d0bb347ea7e02d5ca3695909c0"
+  },
+  "nominal": {
+    "eye": [
+      -1621,
+      110,
+      693
+    ],
+    "target": [
+      -1710,
+      82,
+      618
+    ],
+    "fov": 49
+  },
+  "actual": {
+    "eye": [
+      -1621,
+      110.00000000000001,
+      693
+    ],
+    "target": [
+      -1710,
+      82,
+      618
+    ],
+    "fov": 49
+  },
+  "eyeDelta": [
+    0,
+    1.4210854715202004e-14,
+    0
+  ],
+  "reconstructed": {
+    "eye": [
+      -1621,
+      110.00000000000001,
+      693
+    ],
+    "target": [
+      -1710,
+      82,
+      618
+    ],
+    "fov": 49
+  },
+  "exactUnmodifiedCameraReconstruction": true,
+  "nominalVsReconstructedFloat32ViewByteExact": true,
+  "nominalVsReconstructedFloat32VPByteExact": true,
+  "originalAActualPose": {
+    "eye": [
+      -1621,
+      110,
+      693
+    ],
+    "target": [
+      -1710,
+      82,
+      618
+    ],
+    "fov": 49
+  },
+  "sourceExplanation": "CameraRig.fromEye then ordinary production update(0) reconstructs orbit via sin/cos. The new real RAF inventory preserves that orbit eye; original A used renderOnce/updateMatrices without ordinary orbit reconstruction. New exact integer-expected assertion fails by one binary64 ULP at Y110.",
+  "prospectivelyObserved": {
+    "inventories": [
+      {
+        "label": "overview warmup prospective inventory",
+        "resident": 291,
+        "uniqueGPUAttributeBytes": 12950352,
+        "geometryCount": 161,
+        "byteExact": true
+      },
+      {
+        "label": "southEast immediate prospective inventory",
+        "resident": 137,
+        "uniqueGPUAttributeBytes": 6883504,
+        "geometryCount": 71,
+        "byteExact": true
+      }
+    ],
+    "noApplicationErrors": true,
+    "noContextEvents": true,
+    "allFrozenFilesUnchanged": true
+  },
+  "candidateStarted": false,
+  "originalReportChanged": false,
+  "tolerancesChanged": false,
+  "productionChanged": false,
+  "notExecuted": [
+    "declared southEast natural wait",
+    "continuous LOD route",
+    "actual input",
+    "strict unload/reentry",
+    "image/program/idle restoration"
+  ],
+  "proposedNextStep": "If parent approves a protocol correction, compare this new prospective pose to exact deterministic unmodified CameraRig reconstruction and exact Float32 view/VP, while retaining original before/after rig equality. Preserve original CLI1. Do not change runtime/LOD/counter/PNG tolerances.",
+  "execution": {
+    "sceneBuilds": 0,
+    "modellingHooks": 0,
+    "nativeBuilds": 0,
+    "GPU": 0,
+    "productionCameraUtilityDefinitions": 1
+  }
+}

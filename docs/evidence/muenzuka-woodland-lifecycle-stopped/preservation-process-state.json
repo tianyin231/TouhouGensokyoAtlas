@@ -1,0 +1,7 @@
+{
+  "recordedUTC": "2026-10-06T02:37:55.007654+00:00",
+  "scope": "Only task script processes with exact workspace evidence script arguments",
+  "matchedProcesses": [],
+  "modelOrTestRunsStarted": 0,
+  "agents": "Collaboration list reports only root; both previous child interrupt calls returned not_found."
+}

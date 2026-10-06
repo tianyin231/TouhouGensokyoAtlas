@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/workspace/muenzuka-woodland-evidence/check-native-woodland.py", line 398, in <module>
+    main()
+  File "/workspace/muenzuka-woodland-evidence/check-native-woodland.py", line 215, in main
+    check('Prospective southEast uses original camera without forced LOD',
+  File "/workspace/muenzuka-woodland-evidence/check-native-woodland.py", line 113, in check
+    assert passed, name
+           ^^^^^^
+AssertionError: Prospective southEast uses original camera without forced LOD

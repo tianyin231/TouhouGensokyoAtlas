@@ -1,0 +1,16 @@
+{
+  "kind": "Immutable reviewed preparation before narrow unexecuted cold-scope correction",
+  "files": {
+    "check-native-woodland.py": "64b55249583f379d5d9377e5e7db1d365003c5131e34e86c5fb4999aa8a8ce0b",
+    "native-lifecycle-spec.json": "441e9976a40e2d8ee8147d0c081e6877170edfe87bde78071ade54ebcfcdcf22",
+    "native-lifecycle-preparation.json": "c005ee2a133fcc86b13ff2a7928128fb65d0cbe09d324e2aa37e8ba95c3b5cc4",
+    "native-lifecycle-protocol.diff": "b1e92208b8a1aca304899a2ae1b571f0c3933d83b1e76df66540f249a660f6c0",
+    "native-lifecycle-source-probe.diff": "9f4b772d5b7735256560a950ebf15ece82dc7ed815f71885d5fad7481cf981a0",
+    "woodland-native-source-probe.js": "cfd59c41d0c36e4d8859ef7e5ab813748554ac37e607d59f7b228692a486cc83",
+    "resident-source-inventory.js": "07f43bd6c2caa90efc22ad6dd8a562711c0332ff20182d809471b1c2d16c8c4e",
+    "lod-route-observer.js": "ab2f2d4c2cc5b73c1452ed0867c927f1d71ef8e986ebd857d70c32a792ba5465",
+    "native-lifecycle-syntax.json": "72bb89e034fa8aa2a7f264666b276ea8cbd95bfcf4ff5e9c7aeb2be92a6c643f",
+    "native-lifecycle-js-parse-input.json": "bc8312098f3b6bbe82ce3dc11f43ccb89cd43dfedffb52da50151387781dc2cb"
+  },
+  "executed": false
+}

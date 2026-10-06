@@ -1,0 +1,449 @@
+{
+  "schema": 1,
+  "kind": "Fixed two-session Muenzuka remaining-canopy lifecycle specification",
+  "preparedUTC": "2026-10-06T01:57:24.858086+00:00",
+  "executionStatus": "Prepared only; parent final review and exclusive GPU authorization required",
+  "originProtocol": "/workspace/muenzuka-evidence/check-native-draft.py",
+  "originProtocolSHA256": "885eb056a8f8b2ccd300b66b1d38ae3e203fcbdad2882ea98587bf95df48bb77",
+  "originSourceProbe": "/workspace/muenzuka-evidence/native-source-probe.js",
+  "originSourceProbeSHA256": "cb46a92390e9d7a3696d0408273c57899dd2a7b716244b9978b199721b4999a7",
+  "stateHelperLiteralSHA256": "69f24536f79d721fe4de576f55663d1380032214a068f5fe784021e8624f9f7a",
+  "profiles": {
+    "baseline": {
+      "repo": "/workspace/main-island-next",
+      "dist": "/workspace/main-island-next-evidence/combined-final-dist",
+      "output": "/workspace/muenzuka-woodland-evidence/baseline-native",
+      "html": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+      "inputs": 208,
+      "extension": true,
+      "remaining": false,
+      "publicRecords": 2156,
+      "coldRecords": 15,
+      "nativeGeometrySHA256": "c0f2f1378ec19e5e10be8dc5e21240390315e4eddbd616c4eccc4dc8db6123b2",
+      "sourceSHA256": {
+        "project.json": "fd2555966bc8b3cc45afc6e076bde296adc948288fbb380dd3ce0db4b2e8e9b5",
+        "src/muenzuka-edge.js": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+        "src/muenzuka-edge-renderer.js": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4"
+      },
+      "releaseSHA256": "9ca2ffe7710bbcda299d0e5f8ad255b814609cb5e73c8149ca12415daf5b747b",
+      "sourceHEADAtPreparation": "2a5ac93e8aebbf539feec8a1e9408a0a6ebea02d"
+    },
+    "candidate": {
+      "repo": "/workspace/muenzuka-canopy-refinement",
+      "dist": "/workspace/muenzuka-woodland-evidence/v1-dist",
+      "output": "/workspace/muenzuka-woodland-evidence/candidate-native",
+      "html": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45",
+      "inputs": 210,
+      "extension": true,
+      "remaining": true,
+      "publicRecords": 2156,
+      "coldRecords": 15,
+      "nativeGeometrySHA256": "7e24a87d60bc286337bf9adb447656d39c858fc6e41208535afa4872aa4066a2",
+      "sourceSHA256": {
+        "project.json": "73ce158eea969afddb42b53424180b30b9782609dcf46797f3f8fc2953c3bf4d",
+        "src/muenzuka-edge.js": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+        "src/muenzuka-edge-renderer.js": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4",
+        "src/muenzuka-woodland.js": "0fbef3bef0b1641e5d542c5b924e95c939762b3d78014f90867138e8e7be12cd",
+        "src/muenzuka-woodland-renderer.js": "679b6d1d0f0702ad113baf9735ed10a14a3d4f90253448f14cadeb4417a60e26"
+      },
+      "releaseSHA256": "896b09748714950593379f77ec1ac213caf9a9b57f308a23e044f1ee6f5b3d7e",
+      "sourceHEADAtPreparation": "5ea8027dbc81c6d6aed82e68ca9f61cd3305df48"
+    }
+  },
+  "helper": "tools/check-sunflower-browser.py",
+  "helperSHA256": "ec5aa6354922fefc7ce364085ce22504b16d9cb864d5117f2149372b321b1ac4",
+  "probeSHA256": {
+    "woodland-native-source-probe.js": "cfd59c41d0c36e4d8859ef7e5ab813748554ac37e607d59f7b228692a486cc83",
+    "resident-source-inventory.js": "07f43bd6c2caa90efc22ad6dd8a562711c0332ff20182d809471b1c2d16c8c4e",
+    "lod-route-observer.js": "ab2f2d4c2cc5b73c1452ed0867c927f1d71ef8e986ebd857d70c32a792ba5465"
+  },
+  "scope": {
+    "bank": "muenzuka",
+    "neighbors": [],
+    "viewport": [
+      1280,
+      720
+    ],
+    "dpr": 1,
+    "fov": 49,
+    "quality": "balanced",
+    "clock": 12.5,
+    "weather": "clear",
+    "lighting": "neutral",
+    "ao": true,
+    "motion": false,
+    "labels": false,
+    "characters": false,
+    "bloom": false,
+    "reflections": false,
+    "retentionWaitMs": 6250,
+    "productionWakeCount": 3,
+    "productionRAF": true,
+    "manualDraw": false,
+    "GPUFinish": false,
+    "forcedLOD": false
+  },
+  "residencySettings": {
+    "clock": 12.5,
+    "quality": "balanced",
+    "rendererQuality": "balanced",
+    "weather": "clear",
+    "lighting": "neutral",
+    "ao": true,
+    "motion": false,
+    "bloom": false,
+    "reflections": false,
+    "characters": false,
+    "labels": false
+  },
+  "residencyPoses": {
+    "muenzukaWoodlandInventoryOverview": {
+      "space": "surface",
+      "eye": [
+        -1533,
+        221,
+        789
+      ],
+      "target": [
+        -1710,
+        79,
+        565
+      ]
+    },
+    "muenzukaWoodlandInventorySouthEast": {
+      "space": "surface",
+      "eye": [
+        -1621,
+        110,
+        693
+      ],
+      "target": [
+        -1710,
+        82,
+        618
+      ]
+    }
+  },
+  "residencyExpectedPoses": {
+    "overview": {
+      "eye": [
+        -1533,
+        221,
+        789
+      ],
+      "target": [
+        -1710,
+        79,
+        565
+      ],
+      "fov": 49
+    },
+    "southEast": {
+      "eye": [
+        -1621,
+        110,
+        693
+      ],
+      "target": [
+        -1710,
+        82,
+        618
+      ],
+      "fov": 49
+    }
+  },
+  "lodRoute": {
+    "firstSelection": true,
+    "poses": {
+      "muenzukaWoodlandFar": {
+        "space": "surface",
+        "eye": [
+          -1390,
+          145,
+          575
+        ],
+        "target": [
+          -1740,
+          82,
+          575
+        ]
+      },
+      "muenzukaWoodlandRemainingNear": {
+        "space": "surface",
+        "eye": [
+          -1610,
+          110,
+          575
+        ],
+        "target": [
+          -1740,
+          82,
+          575
+        ]
+      },
+      "muenzukaWoodlandWesternNear": {
+        "space": "surface",
+        "eye": [
+          -1690,
+          110,
+          575
+        ],
+        "target": [
+          -1740,
+          82,
+          575
+        ]
+      }
+    },
+    "order": [
+      "muenzukaWoodlandFar",
+      "muenzukaWoodlandRemainingNear",
+      "muenzukaWoodlandWesternNear",
+      "muenzukaWoodlandRemainingNear",
+      "muenzukaWoodlandFar"
+    ],
+    "targetIDs": [
+      "muenzuka:trees:-23:7:0:leaf",
+      "muenzuka:trees:-23:6:1:leaf",
+      "muenzuka:trees:-23:7:1:leaf",
+      "muenzuka:trees:-23:6:0:leaf",
+      "muenzuka:trees:-23:8:0:leaf",
+      "muenzuka:trees:-23:8:1:leaf",
+      "muenzuka:trees:-22:6:1:leaf",
+      "muenzuka:trees:-22:7:0:leaf",
+      "muenzuka:trees:-21:6:1:leaf",
+      "muenzuka:trees:-22:8:0:leaf",
+      "muenzuka:trees:-21:7:0:leaf",
+      "muenzuka:trees:-22:6:0:leaf",
+      "muenzuka:trees:-22:7:1:leaf",
+      "muenzuka:trees:-22:8:1:leaf",
+      "muenzuka:trees:-21:7:1:leaf",
+      "muenzuka:trees:-21:6:0:leaf"
+    ],
+    "remainingIDs": [
+      "muenzuka:trees:-22:6:1:leaf",
+      "muenzuka:trees:-22:7:0:leaf",
+      "muenzuka:trees:-21:6:1:leaf",
+      "muenzuka:trees:-22:8:0:leaf",
+      "muenzuka:trees:-21:7:0:leaf",
+      "muenzuka:trees:-22:6:0:leaf",
+      "muenzuka:trees:-22:7:1:leaf",
+      "muenzuka:trees:-22:8:1:leaf",
+      "muenzuka:trees:-21:7:1:leaf",
+      "muenzuka:trees:-21:6:0:leaf"
+    ],
+    "counts": {
+      "muenzuka:trees:-23:7:0:leaf": 7,
+      "muenzuka:trees:-23:6:1:leaf": 5,
+      "muenzuka:trees:-23:7:1:leaf": 6,
+      "muenzuka:trees:-23:6:0:leaf": 5,
+      "muenzuka:trees:-23:8:0:leaf": 1,
+      "muenzuka:trees:-23:8:1:leaf": 1,
+      "muenzuka:trees:-22:6:1:leaf": 7,
+      "muenzuka:trees:-22:7:0:leaf": 4,
+      "muenzuka:trees:-21:6:1:leaf": 4,
+      "muenzuka:trees:-22:8:0:leaf": 5,
+      "muenzuka:trees:-21:7:0:leaf": 3,
+      "muenzuka:trees:-22:6:0:leaf": 4,
+      "muenzuka:trees:-22:7:1:leaf": 2,
+      "muenzuka:trees:-22:8:1:leaf": 3,
+      "muenzuka:trees:-21:7:1:leaf": 3,
+      "muenzuka:trees:-21:6:0:leaf": 2
+    },
+    "cameraAnimation": "ATLAS.setView(preset,true), unmodified CameraRig 1400ms interpolation and production RAF",
+    "observerLimits": {
+      "frames": 512,
+      "actualDraws": 20000,
+      "overflow": "fail, no silent truncation"
+    },
+    "assertions": [
+      "Every animated leg has at least one actually drawn interior transition frame; endpoints alone do not prove continuous LOD.",
+      "All 10 remaining and 6 accepted west leaf batches submit both near and far naturally; no forced LOD, quality change or bounds rewrite.",
+      "Eligible actual mesh sphere object/value remains identical while that mesh lives across LOD changes.",
+      "Original onBeforeRender callbacks restored; closures/observation arrays cleared and observer global deleted before strict unload anchors."
+    ],
+    "viewSelectionBasis": {
+      "inventorySHA256": "58fbcb34269b8a6d7cf8e90e13292bbd64e0a4262a3e05a5d8d352caec968e88",
+      "farDistanceMin": 259.4746769957317,
+      "remainingNearDistanceMax": 149.132335080557,
+      "westernNearDistanceMax": 130.02377862073385,
+      "meaning": "Distances from authenticated stored centres only; actual visibility/near-far hits remain assertions to be executed."
+    }
+  },
+  "sessionOrder": [
+    "real HTTP/Worker boot on existing pause seam; select balanced UI then unpause production RAF",
+    "overview 3 wakes + bounded ownership inventory",
+    "southEast 3 wakes + immediate inventory, one identical 6250ms natural grace wait + 3 wakes + inventory",
+    "fixed far→remainingNear→westernNear→remainingNear→far camera route; actual RAF/draw/LOD observations",
+    "diorama→actual UI cache clear→fixed lifecycle detail→6250ms mature; real mouse orbit then wheel",
+    "diorama→UI clear→same detail→mature; strict before anchor/source/native digest/ownership/PNG",
+    "diorama→UI clear→mature; assert all native CPU/GPU/maps clear, public/cache identities retained",
+    "same detail→mature; strict restored source/rig/wanted/LOD/resource/program/PNG; 1s static zero-frame check"
+  ],
+  "nativeLoadBudget": {
+    "sessions": 2,
+    "serialOrder": [
+      "baseline",
+      "candidate"
+    ],
+    "nativeLoadsPerSession": 4,
+    "nativeLoadsTotal": 8,
+    "measuredUnloadReentryCyclesPerSession": 1,
+    "newInitialResidencyLoad": 1,
+    "originalLifecycleLoads": 3,
+    "noExtraRegions": true,
+    "noRetryLoop": true
+  },
+  "strictCheckFamiliesRetained": [
+    "actual boot/errors/context/production quality and memory budgets",
+    "real pointer orbit/wheel production wake and raw CPU samples",
+    "63 native /2156 public /15 cold records and independent31 cold trees",
+    "private2variant near/far cached arrays already retained; accepted west25 and new37 availability independent",
+    "native bank-only source ownership reconciles true Worker bytes",
+    "real resident eligible near/far/all-wind sphere containment",
+    "native CPU cache,pending,required,renderer packs/maps actually clear",
+    "nonempty owned native GPU geometries all released",
+    "all public arrays/identities and main-thread private caches exact through unload/reentry",
+    "real Worker native digest c0f2 or7e24 exact before/after",
+    "rig/neighbors/wanted/LOD and sphere residency exact",
+    "six GPU resource fields exact plus shader program keys/reference counts exact",
+    "PNG byte exact; static 1-second clock12.5 produces zero frames",
+    "every full release input /HTML/protocol/spec/probe/helper immutable before/after"
+  ],
+  "residencyObservationContract": {
+    "maximumRecords": 2300,
+    "maximumManagedGeometries": 1024,
+    "maximumDisposeEvents": 10000,
+    "truncation": "fail",
+    "observe": [
+      "resident IDs/pack/public-vs-native/owner/material/LOD/wanted/shadow and lastUsed seconds",
+      "actual geometry IDs/refcounts and live resident owners",
+      "actual unique BufferAttribute or InterleavedBuffer objects; distinguish instance attribute copies from shared CPU source views",
+      "all owned managed geometry bytes + instance bytes reconcile exactly with renderer residentBytes",
+      "ordinary dispose event timestamps and last observed owners, scalar-only persistent state",
+      "scene geometry outside managed record ownership listed separately"
+    ],
+    "naturalWait": "One prospective southEast6250ms interval identically in both versions, with existing3 production wakes; no direct trim/collector call. Strict anchors use original same mature interval.",
+    "noHistoricalReconstruction": true,
+    "noGCOrDriverVRAMAssertion": true
+  },
+  "historicalResidencyObservations": {
+    "reports": [
+      {
+        "kind": "A baseline",
+        "path": "/workspace/muenzuka-woodland-evidence/baseline-A/report.json",
+        "sha256": "8e437b6dc456573a923a4018dd48ba4064c9f0c95a4098ae9d25b2a75e37ce8a",
+        "runtime": "208/c532"
+      },
+      {
+        "kind": "A candidate",
+        "path": "/workspace/muenzuka-woodland-evidence/v1-A/report.json",
+        "sha256": "df58cac94ebe9acf9ea1091f313d31a0ff51373962a94be686562a0da5dd4fe1",
+        "runtime": "210/e295"
+      },
+      {
+        "kind": "B baseline",
+        "path": "/workspace/muenzuka-woodland-evidence/baseline-B/report.json",
+        "sha256": "4dc185b0b8c5fce412af934ad35047880eee3956cbe17a8a883dbb9f046d8b4b",
+        "runtime": "208/c532"
+      },
+      {
+        "kind": "B candidate",
+        "path": "/workspace/muenzuka-woodland-evidence/v1-B/report.json",
+        "sha256": "273386d0baec62227b5376569b2ee2f9aea11e412871882fdd1d855ddaa675ed",
+        "runtime": "210/e295"
+      }
+    ],
+    "A_southEast": {
+      "candidateMinusBaselineAttributeBytes": 6852944,
+      "candidateMinusBaselineGeometries": 99,
+      "residentObjects": [
+        137,
+        297
+      ],
+      "evictions": [
+        1147,
+        987
+      ],
+      "uploads": [
+        1284,
+        1284
+      ]
+    },
+    "A_northReverse": {
+      "candidateMinusBaselineAttributeBytes": -529200,
+      "candidateMinusBaselineGeometries": -4,
+      "residentObjects": [
+        122,
+        122
+      ],
+      "evictions": [
+        1202,
+        1202
+      ],
+      "uploads": [
+        1324,
+        1324
+      ]
+    },
+    "B_night": {
+      "candidateMinusBaselineAttributeBytes": 1253084,
+      "candidateMinusBaselineGeometries": 26,
+      "residentObjects": [
+        122,
+        177
+      ],
+      "evictions": [
+        1193,
+        1138
+      ],
+      "uploads": [
+        1315,
+        1315
+      ]
+    }
+  },
+  "historicalAttributionLimit": "Original A/B report did not capture a complete object/geometry ownership ledger at the anomalous instant. The new prospective session may show natural expiry/owners, but cannot retrospectively prove the old A/B exact owners or cause. Six-second LRU is a source-supported hypothesis, not a predeclared conclusion.",
+  "sourceReferences": {
+    "inventory": {
+      "path": "/workspace/muenzuka-woodland-evidence/read-inventory.json",
+      "sha256": "58fbcb34269b8a6d7cf8e90e13292bbd64e0a4262a3e05a5d8d352caec968e88"
+    },
+    "priorActualProduction": {
+      "path": "/workspace/muenzuka-woodland-evidence/independent-production-source.json",
+      "sha256": "ce41b7d82a3599edd05b1cb893d1a76d44174b60bf362bee81aa944eb7a3a9fd",
+      "checks": [
+        10,
+        10
+      ],
+      "execution": false,
+      "meaning": "Existing once-executed production source evidence is referenced; no source/native build during this preparation."
+    }
+  },
+  "cpuOverlap": {
+    "parentFullNodeStartedUTC": "2026-10-06T01:46:40Z",
+    "possibleConcurrentFullNode": true,
+    "wallAndInputCPUSamples": "Raw observations only; no hardware FPS, CPU speedup, loading speedup or cross-session performance claim."
+  },
+  "notMeasured": [
+    "historical A/B per-object attribution",
+    "driver/physical VRAM and hardware FPS",
+    "JavaScript garbage-collection time",
+    "long-term leak stability",
+    "dynamic wind screenshots across all phases (actual array all-phase containment tested instead)"
+  ],
+  "executionDuringPreparation": {
+    "browserSessions": 0,
+    "productionHooks": 0,
+    "nativeBuilds": 0,
+    "GPUCalls": 0,
+    "fullNodeRunsBySol": 0,
+    "productionEdits": 0
+  },
+  "pending": [
+    "parent final spec/protocol review",
+    "one baseline session",
+    "one candidate session",
+    "bounded post-session residency attribution and explicit unknowns"
+  ]
+}

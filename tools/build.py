@@ -225,6 +225,7 @@ def build(output_dir):
     read_bytes('tools/check-sunflower-entry.mjs')
     read_bytes('tools/check-sunflower-browser.py')
     read_bytes('tools/check-muenzuka-edge.mjs')
+    read_bytes('tools/check-muenzuka-woodland.mjs')
     read_bytes('tools/check-flower-hill-entry.mjs')
     read_bytes('tools/check-flower-hill-browser.py')
     read_bytes('tools/check-forest-path-renderer.mjs')

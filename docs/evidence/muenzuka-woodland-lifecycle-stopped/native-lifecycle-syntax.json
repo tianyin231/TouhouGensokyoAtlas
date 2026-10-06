@@ -1,0 +1,18 @@
+{
+  "pythonSyntax": true,
+  "wrapperPythonSyntax": true,
+  "JS": {
+    "name": "Node22 all inline/external probe syntax only",
+    "passed": true,
+    "exitCode": 0,
+    "stdout": "{\"expressions\":34,\"parsed\":true,\"executed\":false}\n",
+    "stderr": "",
+    "browserExecution": false
+  },
+  "protocolSHA256": "9167eec1fa2afc5d560d50ca643be911202351c99073cd2c2062972032fd902a",
+  "probeSHA256": {
+    "woodland-native-source-probe.js": "cfd59c41d0c36e4d8859ef7e5ab813748554ac37e607d59f7b228692a486cc83",
+    "resident-source-inventory.js": "07f43bd6c2caa90efc22ad6dd8a562711c0332ff20182d809471b1c2d16c8c4e",
+    "lod-route-observer.js": "ab2f2d4c2cc5b73c1452ed0867c927f1d71ef8e986ebd857d70c32a792ba5465"
+  }
+}
