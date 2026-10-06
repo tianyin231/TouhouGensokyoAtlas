@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "reviewUTC": "2026-10-06T01:42:03.026318+00:00",
+  "decision": "pass scoped cold, low-quality and night art gate; resource ownership observations remain open",
+  "baselineHTML": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+  "candidateHTML": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45",
+  "protocolSHA256": "8e174da5916dbd71380947640d52781803b703991f598fb89edf7c9884a34733",
+  "specSHA256": "558bcf00b629c2dbd4aa563491d3bf2f6b055cfff9f6d090acda1f22d5fdc303",
+  "actualSixImagesOpened": true,
+  "images": [
+    {
+      "variant": "baseline-B",
+      "view": "cold",
+      "sha256": "34abb2225df9fb6d7b2d8ccb01e190659301d3cb3132556f8619a8224b792ed8"
+    },
+    {
+      "variant": "baseline-B",
+      "view": "low",
+      "sha256": "d599fca8e6b329d5974cdf33c17231c44bc0d5a8aebf40005626b953e687a0c1"
+    },
+    {
+      "variant": "baseline-B",
+      "view": "night",
+      "sha256": "9776e5be0e58fd69bbf2ed69f1a4418ac119540f045d96c1130704f17f1b1735"
+    },
+    {
+      "variant": "v1-B",
+      "view": "cold",
+      "sha256": "2e5e677c4797f567f93c7a2d3f796eda55b3e70758f5537f660d8c5d40a37e48"
+    },
+    {
+      "variant": "v1-B",
+      "view": "low",
+      "sha256": "1837d515ec5f7b46c7ac99b28b2ae76df3ca666a73d7fd8952d4b58c32f2f14c"
+    },
+    {
+      "variant": "v1-B",
+      "view": "night",
+      "sha256": "4907b8064bc7929c224190d1007bcc07cd3e3c88bbd8dfa12e1e72a5493a8da6"
+    }
+  ],
+  "reports": [
+    {
+      "variant": "baseline-B",
+      "sha256": "4dc185b0b8c5fce412af934ad35047880eee3956cbe17a8a883dbb9f046d8b4b"
+    },
+    {
+      "variant": "v1-B",
+      "sha256": "273386d0baec62227b5376569b2ee2f9aea11e412871882fdd1d855ddaa675ed"
+    }
+  ],
+  "observations": [
+    "Cold overview shows a coherent continuous crown language around the original sparse ring; the unchanged difference between 31 cold proxies and 62 native ordinary trees remains.",
+    "Low quality retains crown volume and branch attachment instead of stacked flat plates, while paths, hut and purple cherries remain legible.",
+    "Night silhouettes remain coherent without new glowing edges or detached foliage; the original very dark lighting remains unrefined.",
+    "Rounded repetition, bare ground, understory and stand density remain unfinished."
+  ],
+  "comparisons": [
+    {
+      "view": "cold",
+      "delta": {
+        "calls": 0,
+        "triangles": -756,
+        "attributeBytes": -46656,
+        "geometries": -2,
+        "textures": 0
+      },
+      "budgetPassed": true
+    },
+    {
+      "view": "low",
+      "delta": {
+        "calls": 0,
+        "triangles": -1332,
+        "attributeBytes": -93312,
+        "geometries": -4,
+        "textures": 0
+      },
+      "budgetPassed": true
+    },
+    {
+      "view": "night",
+      "delta": {
+        "calls": 0,
+        "triangles": -22252,
+        "attributeBytes": 1253084,
+        "geometries": 26,
+        "textures": 0
+      },
+      "budgetPassed": true
+    }
+  ],
+  "openResourceObservations": [
+    {
+      "session": "A southEast",
+      "attributeBytesDelta": 6852944,
+      "geometryDelta": 99,
+      "residentObjectsBaseline": 137,
+      "residentObjectsCandidate": 297,
+      "uploadsBoth": 1284,
+      "evictionsBaseline": 1147,
+      "evictionsCandidate": 987
+    },
+    {
+      "session": "B night",
+      "attributeBytesDelta": 1253084,
+      "geometryDelta": 26,
+      "residentObjectsBaseline": 122,
+      "residentObjectsCandidate": 177,
+      "uploadsBoth": 1315,
+      "evictionsBaseline": 1193,
+      "evictionsCandidate": 1138
+    }
+  ],
+  "resourceAttributionLimit": "The original A/B sessions did not record complete per-object inventories. Planned bounded lifecycle observation may establish behavior in a new controlled session, but cannot retroactively identify every original resident object. LRU timing remains a hypothesis until measured. Original values and reports remain retained.",
+  "hardwareFPSMeasured": false,
+  "finalAcceptance": false,
+  "nextStep": "Review and execute the paired fixed interaction/LOD/unload/reentry protocol with bounded object ownership, then final integration regression."
+}

@@ -1,0 +1,242 @@
+{
+  "kind": "Author actual six-image cold/low/night comparison",
+  "sourceSHA": "0fbef3bef0b1641e5d542c5b924e95c939762b3d78014f90867138e8e7be12cd",
+  "candidateHTML": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45",
+  "baselineHTML": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+  "protocolSHA256": "8e174da5916dbd71380947640d52781803b703991f598fb89edf7c9884a34733",
+  "specSHA256": "558bcf00b629c2dbd4aa563491d3bf2f6b055cfff9f6d090acda1f22d5fdc303",
+  "baselineReportSHA256": "4dc185b0b8c5fce412af934ad35047880eee3956cbe17a8a883dbb9f046d8b4b",
+  "candidateReportSHA256": "273386d0baec62227b5376569b2ee2f9aea11e412871882fdd1d855ddaa675ed",
+  "rows": [
+    {
+      "view": "cold",
+      "baselinePNG": "34abb2225df9fb6d7b2d8ccb01e190659301d3cb3132556f8619a8224b792ed8",
+      "candidatePNG": "2e5e677c4797f567f93c7a2d3f796eda55b3e70758f5537f660d8c5d40a37e48",
+      "decision": "Pass scoped view gate",
+      "observed": "Independent coarse trees now have consistent closed crown volume across the entire original 31-tree ring. Original sparse proxy distribution remains.",
+      "actualDrawRecords": [
+        {
+          "id": "overview016:muenzuka|forestLeaf|vegetation|I9",
+          "pack": "overview",
+          "level": 0,
+          "instances": 11,
+          "vertexTriangles": 180
+        },
+        {
+          "id": "overview016:muenzuka|forestLeaf|vegetation|I7",
+          "pack": "overview",
+          "level": 0,
+          "instances": 10,
+          "vertexTriangles": 180
+        }
+      ]
+    },
+    {
+      "view": "low",
+      "baselinePNG": "d599fca8e6b329d5974cdf33c17231c44bc0d5a8aebf40005626b953e687a0c1",
+      "candidatePNG": "1837d515ec5f7b46c7ac99b28b2ae76df3ca666a73d7fd8952d4b58c32f2f14c",
+      "decision": "Pass scoped view gate",
+      "observed": "Far crowns keep legible depth and bough silhouettes instead of stacked platters, consistent with the accepted western low-detail form.",
+      "actualDrawRecords": [
+        {
+          "id": "muenzuka:trees:-21:7:0:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 3,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-22:7:1:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 2,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-22:8:0:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 5,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-21:7:1:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 3,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-21:6:1:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 4,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-22:8:1:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 3,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-21:6:0:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 2,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-22:7:0:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 4,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-22:6:0:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 4,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-22:6:1:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 7,
+          "vertexTriangles": 1152
+        }
+      ]
+    },
+    {
+      "view": "night",
+      "baselinePNG": "9776e5be0e58fd69bbf2ed69f1a4418ac119540f045d96c1130704f17f1b1735",
+      "candidatePNG": "4907b8064bc7929c224190d1007bcc07cd3e3c88bbd8dfa12e1e72a5493a8da6",
+      "decision": "Pass scoped view gate",
+      "observed": "Closed near crowns and their silhouettes remain coherent; no new bright edge, missing branch or detached patch observed. Existing overall darkness is unchanged.",
+      "actualDrawRecords": [
+        {
+          "id": "muenzuka:trees:-22:6:0:leaf",
+          "pack": "muenzuka",
+          "level": 0,
+          "instances": 4,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-22:6:1:leaf",
+          "pack": "muenzuka",
+          "level": 0,
+          "instances": 7,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-21:6:0:leaf",
+          "pack": "muenzuka",
+          "level": 0,
+          "instances": 2,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-21:6:1:leaf",
+          "pack": "muenzuka",
+          "level": 0,
+          "instances": 4,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-21:7:1:leaf",
+          "pack": "muenzuka",
+          "level": 0,
+          "instances": 3,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-21:7:0:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 3,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-22:7:0:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 4,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-22:7:1:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 2,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-22:8:1:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 3,
+          "vertexTriangles": 1152
+        },
+        {
+          "id": "muenzuka:trees:-22:8:0:leaf",
+          "pack": "muenzuka",
+          "level": 1,
+          "instances": 5,
+          "vertexTriangles": 1152
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "view": "cold",
+      "delta": {
+        "calls": 0,
+        "triangles": -756,
+        "attributeBytes": -46656,
+        "geometries": -2,
+        "textures": 0
+      },
+      "budgetPassed": true
+    },
+    {
+      "view": "low",
+      "delta": {
+        "calls": 0,
+        "triangles": -1332,
+        "attributeBytes": -93312,
+        "geometries": -4,
+        "textures": 0
+      },
+      "budgetPassed": true
+    },
+    {
+      "view": "night",
+      "delta": {
+        "calls": 0,
+        "triangles": -22252,
+        "attributeBytes": 1253084,
+        "geometries": 26,
+        "textures": 0
+      },
+      "budgetPassed": true
+    }
+  ],
+  "passedArtGate": true,
+  "notFinalAcceptance": true,
+  "residencyObservation": {
+    "nightAttributesDelta": 1253084,
+    "nightGeometryDelta": 26,
+    "status": "Recorded as measured; individual cached-object and grace-period attribution still required together with southEast A difference."
+  },
+  "remaining": [
+    "Original sparse 31-tree cold distribution and its difference from 62 native trees are retained; no one-to-one identity claim.",
+    "Rounded/repeated crown language, understory and bare ground remain.",
+    "Night retains the existing dark lighting; no local night relighting claim.",
+    "Continuous LOD, production interaction/unload/reentry, complete Node and CI remain pending."
+  ],
+  "hardwareFPSMeasured": false
+}

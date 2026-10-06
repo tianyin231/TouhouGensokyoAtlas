@@ -1,0 +1,321 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-10-06T01:47:20.411445+00:00",
+  "status": "Scoped overview, new close/reverse and cold/low/night art gates passed; independent source 10/10 passed; candidate is not finally accepted or merged.",
+  "firstCheckpoint": "d8f692dfcee0030ecec7c102afb61f7d5cc89d99",
+  "previousEvidenceManifest": "../muenzuka-woodland-v1/evidence-manifest.json",
+  "sourceBase": "b303ddc6cd4580a9cfe5c78bd6a6006af6c66951",
+  "sourceSHA256": {
+    "src/muenzuka-woodland.js": "0fbef3bef0b1641e5d542c5b924e95c939762b3d78014f90867138e8e7be12cd",
+    "src/muenzuka-woodland-renderer.js": "679b6d1d0f0702ad113baf9735ed10a14a3d4f90253448f14cadeb4417a60e26",
+    "project.json": "73ce158eea969afddb42b53424180b30b9782609dcf46797f3f8fc2953c3bf4d"
+  },
+  "candidateInputCount": 210,
+  "candidateHTMLSHA256": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45",
+  "fullInputBinding": "../muenzuka-woodland-v1/v1-source/binding.json",
+  "baselineInputCount": 208,
+  "baselineHTMLSHA256": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+  "files": [
+    {
+      "path": "baseline-A/southEast.png",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/baseline-A/southEast.png",
+      "bytes": 558866,
+      "sha256": "2ef9d378e1947e8be76b7e4000515531049aa6fe33b20fff74090f4d1f4f683f"
+    },
+    {
+      "path": "v1-A/southEast.png",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/v1-A/southEast.png",
+      "bytes": 565319,
+      "sha256": "7bf75450133b63eeb9222ad8855bb45524fb0ac82b2480c0a398426d45ba5aa1"
+    },
+    {
+      "path": "baseline-B/cold.png",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/baseline-B/cold.png",
+      "bytes": 400647,
+      "sha256": "34abb2225df9fb6d7b2d8ccb01e190659301d3cb3132556f8619a8224b792ed8"
+    },
+    {
+      "path": "v1-B/cold.png",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/v1-B/cold.png",
+      "bytes": 412955,
+      "sha256": "2e5e677c4797f567f93c7a2d3f796eda55b3e70758f5537f660d8c5d40a37e48"
+    },
+    {
+      "path": "baseline-A/report.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/baseline-A/report.json",
+      "bytes": 108024,
+      "sha256": "8e437b6dc456573a923a4018dd48ba4064c9f0c95a4098ae9d25b2a75e37ce8a"
+    },
+    {
+      "path": "v1-A/report.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/v1-A/report.json",
+      "bytes": 109017,
+      "sha256": "df58cac94ebe9acf9ea1091f313d31a0ff51373962a94be686562a0da5dd4fe1"
+    },
+    {
+      "path": "baseline-B/report.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/baseline-B/report.json",
+      "bytes": 117630,
+      "sha256": "4dc185b0b8c5fce412af934ad35047880eee3956cbe17a8a883dbb9f046d8b4b"
+    },
+    {
+      "path": "v1-B/report.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/v1-B/report.json",
+      "bytes": 118788,
+      "sha256": "273386d0baec62227b5376569b2ee2f9aea11e412871882fdd1d855ddaa675ed"
+    },
+    {
+      "path": "baseline-A.log",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/baseline-A.log",
+      "bytes": 3269,
+      "sha256": "7a699112cb6f70bd3d8f0ad4494c551fab6f1da9defb31790221ec148421ac89"
+    },
+    {
+      "path": "v1-A.log",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/v1-A.log",
+      "bytes": 3255,
+      "sha256": "c8725f851a8b5dd0989d6d6cf05ac442cf5baa32b46e0c8ae335df03aa4b8033"
+    },
+    {
+      "path": "baseline-B.log",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/baseline-B.log",
+      "bytes": 5329,
+      "sha256": "0ae23ced7939d587c0ca35f60695f69bc70dc55c54c23f6886daf8d38f1ee86e"
+    },
+    {
+      "path": "v1-B.log",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/v1-B.log",
+      "bytes": 5296,
+      "sha256": "cd12309db754bff635e3581a8b587d57793a0321966c3df762608533f0291115"
+    },
+    {
+      "path": "author-art-review-A.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/author-art-review-A.json",
+      "bytes": 3672,
+      "sha256": "906686901c35ba5ce5ef2c6380e1500d7f046821c10bc32f8b8d32be69a2ca70"
+    },
+    {
+      "path": "root-art-review-A.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/root-art-review-A.json",
+      "bytes": 3251,
+      "sha256": "9b7e53d37aa378619073ccc71c55539fabc0eb3c7fdafd636cc80c8d09aa92a6"
+    },
+    {
+      "path": "author-art-review-B.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/author-art-review-B.json",
+      "bytes": 7503,
+      "sha256": "ae67ef7528877808b0d1a62a65451a4f8c42e77f6845afa5b68d8f5f22b854c5"
+    },
+    {
+      "path": "root-art-review-B.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/root-art-review-B.json",
+      "bytes": 4167,
+      "sha256": "0c5f37e0e6aa4c58bd96853306cbe6c19e149523f51f869a41bbf4e824a73ad6"
+    },
+    {
+      "path": "capture-paired-views.py",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/capture-paired-views.py",
+      "bytes": 12302,
+      "sha256": "fceec6e201633ea69a1da0cbe02371913a6c586b09d16f2990c503e7f77fc5e8"
+    },
+    {
+      "path": "paired-views-spec.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/paired-views-spec.json",
+      "bytes": 2814,
+      "sha256": "535d8637849c69f7fd54bcadc3ec438a10dc78bdc87d7750f3907a21286a9099"
+    },
+    {
+      "path": "paired-views-preparation.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/paired-views-preparation.json",
+      "bytes": 2629,
+      "sha256": "882b76e40bc6df1c6d71919e950facb3b9cb62976a78188445549a03de4987ed"
+    },
+    {
+      "path": "paired-views-protocol.diff",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/paired-views-protocol.diff",
+      "bytes": 21964,
+      "sha256": "c8489d996a0a2ee2f9041be94fbbc425f814600417d536eb00a21fdea28c2639"
+    },
+    {
+      "path": "paired-views-js-parse-input.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/paired-views-js-parse-input.json",
+      "bytes": 2601,
+      "sha256": "4724647e4803f2d85e31cf26ca5e0adf8404ea5d231257c4da3e6f93c85046f0"
+    },
+    {
+      "path": "capture-view-B.py",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/capture-view-B.py",
+      "bytes": 13485,
+      "sha256": "8e174da5916dbd71380947640d52781803b703991f598fb89edf7c9884a34733"
+    },
+    {
+      "path": "view-spec-B.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/view-spec-B.json",
+      "bytes": 3439,
+      "sha256": "558bcf00b629c2dbd4aa563491d3bf2f6b055cfff9f6d090acda1f22d5fdc303"
+    },
+    {
+      "path": "view-B-protocol.diff",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/view-B-protocol.diff",
+      "bytes": 10371,
+      "sha256": "9c433607ddd689c38c841555a9bd98de1af812f1c136ed03d1ba0040c0e2bf33"
+    },
+    {
+      "path": "prepare-view-B.py",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/prepare-view-B.py",
+      "bytes": 7072,
+      "sha256": "39817679b21298c08389d04476e090e4dc49f9b906d053be3cedc351f9626dbd"
+    },
+    {
+      "path": "prepare-view-B.log",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/prepare-view-B.log",
+      "bytes": 251,
+      "sha256": "11cc5c39497e20602fb289798816ea440d989ff6b6980b1f4653b812f8d2935d"
+    },
+    {
+      "path": "view-B-javascript.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/view-B-javascript.json",
+      "bytes": 2915,
+      "sha256": "55cd4fd207647eedb8a1c6437c026115d43b11b84cea1c749219ddae2ce668d7"
+    },
+    {
+      "path": "check-production-source.mjs",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/check-production-source.mjs",
+      "bytes": 26802,
+      "sha256": "b5dee925c604fc9725f7145416cf330f4493b99c9122b8ba6cbf23bab291fafc"
+    },
+    {
+      "path": "run-independent-production.py",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/run-independent-production.py",
+      "bytes": 3303,
+      "sha256": "ab326f673910fecc5907e6ccb23aaf0bf401ab8ebdfb64529b7ef0d1d6c95db0"
+    },
+    {
+      "path": "independent-production-source.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/independent-production-source.json",
+      "bytes": 57005,
+      "sha256": "ce41b7d82a3599edd05b1cb893d1a76d44174b60bf362bee81aa944eb7a3a9fd"
+    },
+    {
+      "path": "independent-production-execution.json",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/independent-production-execution.json",
+      "bytes": 43234,
+      "sha256": "857265009f5afbae8abb6f5aca0e935c8dbef944ba89c9f09082dbe86d4fbbb5"
+    },
+    {
+      "path": "independent-production.stdout.log",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/independent-production.stdout.log",
+      "bytes": 1428,
+      "sha256": "2a55e9bb745eb9ab745cab2be40bd139cd42c67dc63cc900177376600e6278ef"
+    },
+    {
+      "path": "independent-production.stderr.log",
+      "originalPath": "/workspace/muenzuka-woodland-evidence/independent-production.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "localOnlyOriginalImages": [
+    {
+      "originalPath": "/workspace/muenzuka-woodland-evidence/baseline-A/northReverse.png",
+      "bytes": 721423,
+      "sha256": "e8bdc132004ca77cbe37de2d64fdea6a8d7022404a39a71dce483bf224a54389",
+      "archivedInRepository": false,
+      "reason": "Original retained locally; selected overview/southEast/cold pairs are the six repository PNGs."
+    },
+    {
+      "originalPath": "/workspace/muenzuka-woodland-evidence/v1-A/northReverse.png",
+      "bytes": 746090,
+      "sha256": "38a0ff33ec289a8319bf9ff0682fa337fc7985afb3f3d34f233f9ee58ef03f15",
+      "archivedInRepository": false,
+      "reason": "Original retained locally; selected overview/southEast/cold pairs are the six repository PNGs."
+    },
+    {
+      "originalPath": "/workspace/muenzuka-woodland-evidence/baseline-B/low.png",
+      "bytes": 327242,
+      "sha256": "d599fca8e6b329d5974cdf33c17231c44bc0d5a8aebf40005626b953e687a0c1",
+      "archivedInRepository": false,
+      "reason": "Original retained locally; selected overview/southEast/cold pairs are the six repository PNGs."
+    },
+    {
+      "originalPath": "/workspace/muenzuka-woodland-evidence/baseline-B/night.png",
+      "bytes": 466904,
+      "sha256": "9776e5be0e58fd69bbf2ed69f1a4418ac119540f045d96c1130704f17f1b1735",
+      "archivedInRepository": false,
+      "reason": "Original retained locally; selected overview/southEast/cold pairs are the six repository PNGs."
+    },
+    {
+      "originalPath": "/workspace/muenzuka-woodland-evidence/v1-B/low.png",
+      "bytes": 404657,
+      "sha256": "1837d515ec5f7b46c7ac99b28b2ae76df3ca666a73d7fd8952d4b58c32f2f14c",
+      "archivedInRepository": false,
+      "reason": "Original retained locally; selected overview/southEast/cold pairs are the six repository PNGs."
+    },
+    {
+      "originalPath": "/workspace/muenzuka-woodland-evidence/v1-B/night.png",
+      "bytes": 489284,
+      "sha256": "4907b8064bc7929c224190d1007bcc07cd3e3c88bbd8dfa12e1e72a5493a8da6",
+      "archivedInRepository": false,
+      "reason": "Original retained locally; selected overview/southEast/cold pairs are the six repository PNGs."
+    }
+  ],
+  "selectedImagesInRepository": [
+    "../muenzuka-woodland-v1/baseline/muenzukaOverview.png",
+    "../muenzuka-woodland-v1/v1/muenzukaOverview.png",
+    "baseline-A/southEast.png",
+    "v1-A/southEast.png",
+    "baseline-B/cold.png",
+    "v1-B/cold.png"
+  ],
+  "openResourceObservations": [
+    {
+      "session": "A southEast",
+      "attributeBytesDelta": 6852944,
+      "geometryDelta": 99,
+      "residentObjectsBaseline": 137,
+      "residentObjectsCandidate": 297,
+      "uploadsBoth": 1284,
+      "evictionsBaseline": 1147,
+      "evictionsCandidate": 987
+    },
+    {
+      "session": "B night",
+      "attributeBytesDelta": 1253084,
+      "geometryDelta": 26,
+      "residentObjectsBaseline": 122,
+      "residentObjectsCandidate": 177,
+      "uploadsBoth": 1315,
+      "evictionsBaseline": 1193,
+      "evictionsCandidate": 1138
+    }
+  ],
+  "resourceAttributionLimit": "The original A/B sessions did not record complete per-object inventories. Planned bounded lifecycle observation may establish behavior in a new controlled session, but cannot retroactively identify every original resident object. LRU timing remains a hypothesis until measured. Original values and reports remain retained.",
+  "sourceChecks": {
+    "checks": 10,
+    "passed": 10,
+    "exitCode": 0,
+    "worldDefinitions": 49,
+    "actualPublicHooks": 21,
+    "actualNativeBuilds": 2,
+    "incrementalTypedBackingMainAndWorker": 0
+  },
+  "scopeLimits": [
+    "Rounded repeated crowns remain visible.",
+    "Stand density, understory, bare ground, far hills and original night lighting remain unrefined.",
+    "Cold 31 proxies have independent identities, not one-to-one native 62 roots."
+  ],
+  "notRunAtCheckpoint": [
+    "Continuous LOD route",
+    "Production interaction and unload/reentry",
+    "Complete Node regression",
+    "CI/deployment of this candidate"
+  ],
+  "noNewExperimentsForCheckpoint": true,
+  "hardwareFPSMeasured": false,
+  "omitted": [
+    "dist HTML",
+    "V8 snapshots",
+    "unselected original image files; hashes retained above",
+    "unexecuted lifecycle probes under development"
+  ]
+}

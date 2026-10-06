@@ -1,0 +1,121 @@
+--- /workspace/muenzuka-woodland-evidence/capture-paired-views.py
++++ /workspace/muenzuka-woodland-evidence/capture-view-B.py
+@@ -1,4 +1,4 @@
+-"""New Muenzuka woodland views: overview warm-up, south-east, north reverse.
++"""Muenzuka woodland cold overview, low south-east and night north reverse.
+ 
+ Both artifacts must be newly captured with this exact protocol and spec. This is
+ an observation protocol, not a hardware FPS or parallel CPU speed benchmark.
+@@ -53,13 +53,13 @@
+ assert before == release['inputs'] and len(before) == args.expected_input_count
+ OUT.mkdir(parents=True, exist_ok=True)
+ assert not (OUT/'report.json').exists(), 'Preserve earlier execution'
+-report = {'schema':1, 'purpose':'Newly selected paired woodland views; no historical near-image reuse',
++report = {'schema':1, 'purpose':'Cold, low and night woodland views; fresh paired current artifacts',
+           'variant':args.variant, 'startedUTC':datetime.now(timezone.utc).isoformat(),
+           'sourceHEADBefore':subprocess.check_output(['git','rev-parse','HEAD'],cwd=REPO,text=True).strip(),
+           'artifactSHA256':EXPECTED, 'releaseSHA256':RELEASE_SHA, 'protocolSHA256':PROTOCOL_SHA,
+           'specSHA256':SPEC_SHA, 'inputsBefore':before, 'settings':spec['settings'],
+-          'sessionOrder':['muenzukaOverview','southEast','northReverse'], 'views':[],
+-          'warmupSamples':[], 'errors':[], 'httpFailures':[], 'contextEvents':[],
++          'sessionOrder':['cold','low','night'], 'views':[],
++          'coldBeforeNative':True, 'errors':[], 'httpFailures':[], 'contextEvents':[],
+           'cpuLoadOverlap':'May overlap bounded Sol source work. Wall times and CPU samples are not performance comparisons.',
+           'hardwareFPSMeasured':False}
+ began = time.monotonic()
+@@ -71,9 +71,9 @@
+ server = ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(DIST)))
+ threading.Thread(target=server.serve_forever,daemon=True).start()
+ sample_js = """targets=>{const A=ATLAS,R=A.renderer,draws=[],restore=[];
+-  for(const r of R.records)if(r.pack==='muenzuka'&&targets.includes(r.data.id)&&r.item?.mesh){
++  for(const r of R.records)if(targets.includes(r.data.id)&&r.item?.mesh){
+     const mesh=r.item.mesh,prior=mesh.onBeforeRender;
+-    mesh.onBeforeRender=function(...args){draws.push({id:r.data.id,level:r.level,instances:r.data.instances.length/16});prior?.apply(this,args)};
++    mesh.onBeforeRender=function(...args){draws.push({id:r.data.id,pack:r.pack,level:r.level,instances:r.data.instances.length/16,vertexTriangles:r.data.vertices.length/27});prior?.apply(this,args)};
+     restore.push(()=>mesh.onBeforeRender=prior)}
+   try{A.renderOnce();R.engine.getContext().finish()}finally{restore.forEach(f=>f())}
+   return {stats:R.info().stats,memory:{...R.engine.info.memory},residentAttributeBytes:R.residentBytes,
+@@ -82,15 +82,19 @@
+     bloom:A.state.bloom,reflections:A.state.reflections,labels:A.state.labels,characters:A.state.characters,
+     view:A.state.view,displayMode:A.state.displayMode,focus:A.state.focus,detailNeighbors:A.state.detailNeighbors,
+     stream:A.stream.info(),visibleNativePacks:[...new Set(R.records.filter(r=>r.wanted&&r.item?.mesh.visible&&r.pack!=='overview').map(r=>r.pack))],
+-    targetLevels:R.records.filter(r=>r.pack==='muenzuka'&&targets.includes(r.data.id)).map(r=>({id:r.data.id,level:r.level,wanted:r.wanted,
++    targetLevels:R.records.filter(r=>targets.includes(r.data.id)).map(r=>({id:r.data.id,pack:r.pack,level:r.level,wanted:r.wanted,
+       objectVisible:r.item?.mesh.visible||false,instances:r.data.instances.length/16})),actualTargetDraws:draws};}"""
+ def verify(sample, pose):
+     assert sample['eye'] == pose['eye'] and sample['target'] == pose['target'] and sample['fov'] == 49
+-    assert sample['quality'] == sample['rendererQuality'] == 'balanced'
+-    assert sample['clock'] == 12.5 and sample['weather'] == 'clear' and sample['lighting'] == 'neutral' and sample['ao']
++    assert sample['quality'] == sample['rendererQuality'] == pose['quality']
++    assert sample['clock'] == 12.5 and sample['weather'] == 'clear' and sample['lighting'] == pose['lighting'] and sample['ao']
+     assert not any(sample[k] for k in ['motion','bloom','reflections','labels','characters'])
+-    assert 'muenzuka' in sample['visibleNativePacks'] and sample['focus'] == 'muenzuka'
+-    assert sample['displayMode'] == 'focus' and not sample['detailNeighbors']
++    assert not sample['detailNeighbors']
++    if pose['native']:
++        assert 'muenzuka' in sample['visibleNativePacks'] and sample['focus'] == 'muenzuka' and sample['displayMode'] == 'focus'
++    else:
++        assert not sample['visibleNativePacks'] and not sample['stream']['cached'] and not sample['stream']['building']
++        assert sample['displayMode'] == 'atlas' and sample['focus'] is None
+ def stable(samples):
+     return all(samples[-2]['stats'][k] == samples[-1]['stats'][k] for k in ['totalCalls','totalTriangles'])
+ try:
+@@ -110,30 +114,43 @@
+               weather:'clear',lighting:'neutral',ao:true,bloom:false,reflections:false,uiHidden:true});
+               document.body.classList.add('ui-hidden');globalThis.__surveyEvents=[];
+               for(const e of ['webglcontextlost','webglcontextrestored'])document.querySelector('#scene').addEventListener(e,()=>__surveyEvents.push(e));
+-              ATLAS.setView('muenzukaOverview',false);ATLAS.state.detailNeighbors=[];ATLAS.stream.focus(['muenzuka']);ATLAS.renderOnce();}""")
+-            page.wait_for_function("!ATLAS.stream.pending&&ATLAS.stream.cache.has('muenzuka')",polling=250,timeout=180000)
+-            set_pose = """p=>{const q=document.querySelector('#quality');q.value='balanced';q.dispatchEvent(new Event('change',{bubbles:true}));
+-              ATLAS.state.labels=false;ATLAS.state.characters=false;ATLAS.rig.setView(p,false);ATLAS.rig.fov=49;ATLAS.rig.updateMatrices();}"""
+-            page.evaluate(set_pose,spec['warmupPose'])
++              ATLAS.state.detailNeighbors=[];}""")
++            set_pose = """p=>{const A=ATLAS,q=document.querySelector('#quality');q.value=p.quality;q.dispatchEvent(new Event('change',{bubbles:true}));
++              Object.assign(A.state,{motion:false,clock:12.5,labels:false,characters:false,weather:'clear',lighting:p.lighting,
++               ao:true,bloom:false,reflections:false,uiHidden:true});A.rig.setView(p,false);A.rig.fov=49;A.rig.updateMatrices();}"""
+             report['browser'] = browser.version
+             report['driver'] = page.evaluate('ATLAS.renderer.info().driver')
+-            report['warmupSamples'] = [page.evaluate(sample_js,spec['targetIDs']) for _ in range(3)]
+-            verify(report['warmupSamples'][-1],spec['warmupPose'])
+-            assert stable(report['warmupSamples']), 'Original warm-up costs must settle'
++            targets = spec['targetIDs'] + spec['coldTargetIDs']
+             for view in spec['views']:
++                if view['native']:
++                    page.evaluate("()=>{ATLAS.setView('muenzukaOverview',false);ATLAS.state.detailNeighbors=[];ATLAS.stream.focus(['muenzuka']);}")
++                    page.wait_for_function("!ATLAS.stream.pending&&ATLAS.stream.cache.has('muenzuka')",polling=250,timeout=180000)
++                else:
++                    assert not page.evaluate('ATLAS.stream.cache.size||ATLAS.stream.pending'), 'Cold before any native region'
++                    page.evaluate("()=>{ATLAS.setView('diorama',false);ATLAS.state.detailNeighbors=[];ATLAS.stream.focus([]);}")
+                 page.evaluate(set_pose,view)
+-                samples = [page.evaluate(sample_js,spec['targetIDs']) for _ in range(3)]
++                samples = [page.evaluate(sample_js,targets) for _ in range(3)]
+                 final = samples[-1]
+                 verify(final,view)
+                 assert stable(samples), 'Original steady capture cost assertion'
+-                assert len(final['targetLevels']) == 10 and sum(r['instances'] for r in final['targetLevels']) == 37
+-                assert any(r['level']==0 for r in final['actualTargetDraws']), 'New near view must actually submit a target near leaf batch'
+-                png = OUT/(view['id']+'.png')
++                if view['native']:
++                    rows=[r for r in final['targetLevels'] if r['id'] in spec['targetIDs']]
++                    draws=[r for r in final['actualTargetDraws'] if r['id'] in spec['targetIDs']]
++                    assert len(rows)==10 and sum(r['instances'] for r in rows)==37
++                    assert draws, 'Requested native target actually submitted'
++                    if view['id']=='low':
++                        assert all(r['level']==1 for r in draws), 'Low uses actual far geometry'
++                    else:
++                        assert any(r['level']==0 for r in draws), 'Night actually submits newly upgraded near crowns'
++                else:
++                    draws={r['id']:r for r in final['actualTargetDraws'] if r['id'] in spec['coldTargetIDs']}
++                    assert set(draws)==set(spec['coldTargetIDs']) and sum(r['instances'] for r in draws.values())==21
++                    assert all(r['vertexTriangles']==(180 if args.variant=='candidate' else 216) for r in draws.values())
++                png=OUT/(view['id']+'.png')
+                 page.locator('#scene').screenshot(path=str(png),timeout=120000)
+-                report['views'].append({'spec':view,'samples':samples,'final':final,'pngSHA256':sha(png),
+-                                        'lastTwoCostsStable':True,'nearTargetActuallyDrawn':True})
++                report['views'].append({'spec':view,'samples':samples,'final':final,'pngSHA256':sha(png),'lastTwoCostsStable':True})
+                 print(json.dumps({'view':view['id'],'png':str(png),'stats':final['stats'],'memory':final['memory'],
+-                                  'attributeBytes':final['residentAttributeBytes'],'actualTargetDraws':final['actualTargetDraws']},ensure_ascii=False),flush=True)
++                  'attributeBytes':final['residentAttributeBytes'],'actualTargetDraws':final['actualTargetDraws']},ensure_ascii=False),flush=True)
+             report['contextEvents'] = page.evaluate('__surveyEvents.slice()')
+             assert not report['errors'] and not report['contextEvents']
+             assert not page.evaluate('ATLAS.renderer.engine.getContext().isContextLost()')

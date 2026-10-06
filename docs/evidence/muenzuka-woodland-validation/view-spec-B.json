@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "firstSelectedUTC": "2026-10-06",
+  "firstSelection": true,
+  "priorNearImagesReused": false,
+  "originProtocol": "/workspace/muenzuka-evidence/capture-bounds-views.py",
+  "originProtocolSHA256": "a55b69b69e78e11ef3478ee6221c7f23043b3b1893815cbf5b777813da3d98f9",
+  "artifacts": {
+    "baseline": {
+      "htmlSHA256": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+      "inputCount": 208
+    },
+    "candidate": {
+      "htmlSHA256": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45",
+      "inputCount": 210
+    }
+  },
+  "acceptedSourceSHA256": "b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045",
+  "acceptedRendererSHA256": "49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4",
+  "candidateSources": {
+    "src/muenzuka-woodland.js": "0fbef3bef0b1641e5d542c5b924e95c939762b3d78014f90867138e8e7be12cd",
+    "src/muenzuka-woodland-renderer.js": "679b6d1d0f0702ad113baf9735ed10a14a3d4f90253448f14cadeb4417a60e26",
+    "project.json": "73ce158eea969afddb42b53424180b30b9782609dcf46797f3f8fc2953c3bf4d"
+  },
+  "settings": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "dpr": 1,
+    "fov": 49,
+    "quality": "per-view",
+    "clock": 12.5,
+    "weather": "clear",
+    "lighting": "per-view",
+    "ao": true,
+    "motion": false,
+    "characters": false,
+    "labels": false,
+    "bloom": false,
+    "reflections": false,
+    "framesPerPose": 3,
+    "productionRegionOrder": [
+      "muenzuka"
+    ],
+    "captureOrder": [
+      "cold",
+      "low",
+      "night"
+    ]
+  },
+  "views": [
+    {
+      "space": "surface",
+      "eye": [
+        -1533,
+        221,
+        789
+      ],
+      "target": [
+        -1710,
+        79,
+        565
+      ],
+      "id": "cold",
+      "native": false,
+      "quality": "balanced",
+      "lighting": "neutral"
+    },
+    {
+      "id": "low",
+      "space": "surface",
+      "eye": [
+        -1621,
+        110,
+        693
+      ],
+      "target": [
+        -1710,
+        82,
+        618
+      ],
+      "native": true,
+      "quality": "low",
+      "lighting": "neutral"
+    },
+    {
+      "id": "night",
+      "space": "surface",
+      "eye": [
+        -1715,
+        105,
+        453
+      ],
+      "target": [
+        -1718,
+        81,
+        551
+      ],
+      "native": true,
+      "quality": "balanced",
+      "lighting": "night"
+    }
+  ],
+  "targetIDs": [
+    "muenzuka:trees:-22:6:1:leaf",
+    "muenzuka:trees:-22:7:0:leaf",
+    "muenzuka:trees:-21:6:1:leaf",
+    "muenzuka:trees:-22:8:0:leaf",
+    "muenzuka:trees:-21:7:0:leaf",
+    "muenzuka:trees:-22:6:0:leaf",
+    "muenzuka:trees:-22:7:1:leaf",
+    "muenzuka:trees:-22:8:1:leaf",
+    "muenzuka:trees:-21:7:1:leaf",
+    "muenzuka:trees:-21:6:0:leaf"
+  ],
+  "costBudgets": {
+    "maxCallsDelta": 4,
+    "maxTrianglesDelta": 4000,
+    "textureDelta": 0,
+    "uniqueSourceBackingLimitBytes": 629145.6,
+    "uniqueSourceBackingMeasurement": "Separate source/native validation; attribute residency is recorded, not the source-allocation measure."
+  },
+  "coldTargetIDs": [
+    "overview016:muenzuka|forestLeaf|vegetation|I7",
+    "overview016:muenzuka|forestLeaf|vegetation|I9"
+  ],
+  "stageAProtocolSHA256": "fceec6e201633ea69a1da0cbe02371913a6c586b09d16f2990c503e7f77fc5e8",
+  "oldBFlow": "Cold atlas with zero native cache, then low native, then near native night. Current artifacts and newly selected cameras require fresh paired captures."
+}

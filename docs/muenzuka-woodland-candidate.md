@@ -36,8 +36,32 @@
 
 稳定帧为 275 全通道 calls / 545288 三角 / 12903696 属性字节 / 161 geometry / 11 texture；相对当前基线为 0 calls、−1332 三角、−46656 属性字节、−2 geometry、0 texture。首帧阴影刷新数据另列原报告，不能混作稳定帧。未测硬件 FPS，也不比较这两次墙钟时间。
 
-近景、背面、低档、冷总览、夜间、连续 LOD、生产交互和卸载重入、完整 Node、CI / 部署均未运行。本范围只完成冠形候选，不宣称林下、空地、远坡树群或整区精修完成。
+首图检查点时，近景、背面及其余验收尚未运行；以下为后续进度，原报告不覆盖。本范围不宣称林下、空地、远坡树群或整区精修完成。
 
 本评审检查点收录[当前基线原图](evidence/muenzuka-woodland-v1/baseline/muenzukaOverview.png)、[候选原图](evidence/muenzuka-woodland-v1/v1/muenzukaOverview.png)、准确脚本、210 输入绑定、原始有限检查及双方图审。[证据清单](evidence/muenzuka-woodland-v1/evidence-manifest.json)绑定各文件 SHA；无 dist / V8。绝不把此检查点直接作为最终发布。
 
-后续先检查两组新机位，均重新拍摄当前 208 基线与 210 候选：南东 `[-1621,110,693]→[-1710,82,618]`，北背 `[-1715,105,453]→[-1718,81,551]`。原西弧被遮挡的近景不替代本范围验收。
+首图时预声明的后续机位是南东 `[-1621,110,693]→[-1710,82,618]`、北背 `[-1715,105,453]→[-1718,81,551]`；下节记录已执行结果。原西弧被遮挡的近景不替代本范围验收。
+
+## 新近景与背面 A
+
+上述两机位均已按新冻结协议 `fceec6e2…` / spec `535d8637…` 实际配对取图，208 基线与 210 候选各独立一会话，同 overview 热身、南东、北背顺序；双方 CLI0，源与制品不变。作者逐对打开四张原图，限定近背冠层门通过：厚冠与原枝干相接，北东与南端均有可读体量，原紫樱、根、路和棚屋保持。原协议的 `onBeforeRender` 仅观测，证实两产物同样提交新增目标近档 8 批 / 26 株、8 批 / 29 株，没有强制近档。
+
+两视角调用数均无增加，提交三角分别 −28528 / −31666，纹理不增。但南东候选属性驻留 +6852944B、geometry +99：两边 uploads 均1284，基线 evictions1147 / 候选987，少释放160个旧对象；到北背两边 evictions均1202、residentObjects均122，候选属性 −529200B、geometry −4。此为完整保留的真实观测，尚待有界对象/回收时点归属，不直接称泄漏或改善，不把源码新增预算与瞬时驻留混为一谈。
+
+根代理也逐对查看 A 四原图并通过限定门槛，独立报告 SHA `9b7e53d3…`，驻留差仍未归属。已有源码/首图评审提交 `d8f692dfcee0030ecec7c102afb61f7d5cc89d99`，普通推送远端独立分支，未合 main。
+
+## 独立完整源链及 B 视图
+
+Sol 的 `independent-production-source.json` 实际 10/10 / CLI0（39.217 秒），49 定义 / 21 个真正执行的公共 hook / 两次真实无缘塚 native 构造。2156 个原公共记录、原25冠和冷西10、原生全部身份及非目标源受保护；仅既有 `trailUpgrade.prepareMs` 计时遥测从持久 manifest 比较中排除。主线程与 Worker 都实测复用暖缓存、新增唯一 typed backing 为 0；native 摘要由 c0f2 变为 `7e24a87d60bc286337bf9adb447656d39c858fc6e41208535afa4872aa4066a2`，字节 5006504→4477304，63 条记录不变。报告 SHA `ce41b7d8…`，未自动改 fixture，尚未完整 Node。
+
+B 已按新冻结 `8e174da5…` 协议 / `558bcf00…` spec 真正配对拍完：新会话冷 atlas（零 native cache）→南东 low→北背 night。当前 208 基线与 210 候选分别 CLI0，输入/成品前后不变；实际冷层 I7 / I9 21 株提交、low 新冠 far、night 新冠 near 均有观测记录。
+
+作者与根代理分别逐对查看六原图，通过限定 B 门：冷层冠形统一，低档保留体积与枝端轮廓，夜间未见新增异常。根代理原报告 SHA `0c5f37e0…`。冷层原31代理的稀疏分布、夜间原有整体偏暗均保留，不写成全域完成或夜景精调。
+
+冷 / 低 / 夜调用与纹理均不增加，提交三角分别 −756 / −1332 / −22252。属性驻留分别 −46656 / −93312 / +1253084B，geometry −2 / −4 / +26；夜间的正增量与 A 南东差一起保留，待生产生命周期做对象归属，不能称 GPU 释放已验收。
+
+第二检查点收录 [A/B 与独立源证据清单](evidence/muenzuka-woodland-validation/evidence-manifest.json)、四份完整原始取图报告、双方原始评审、准确协议及 [独立 10/10 原报告](evidence/muenzuka-woodland-validation/independent-production-source.json)。仓库保留的本阶段原图共六张：首检查点 overview 两张，本次 [南东基线](evidence/muenzuka-woodland-validation/baseline-A/southEast.png) / [候选](evidence/muenzuka-woodland-validation/v1-A/southEast.png) 和 [冷总览基线](evidence/muenzuka-woodland-validation/baseline-B/cold.png) / [候选](evidence/muenzuka-woodland-validation/v1-B/cold.png)。其余北背、低档及夜间原图只在本地保留，清单列出实际路径、字节数和 SHA；无 dist 或 V8 入库。
+
+A/B 原会话没有逐对象完整库存，因此后续受控生命周期即使通过，也不能回溯认定原先所有正驻留差的对象。原数值、报告和未决状态保持；LRU 时点仍只是待测假说。该分支为候选检查点，未合 main；当前全景、近背和冷低夜局部门槛通过，不等于最终交付或整个无缘塚已完成。
+
+连续 LOD、生产交互/卸载重入、完整 Node 及 CI / 部署仍未运行。源、renderer、project、210 输入 HTML 在上述所有画面与独立检查中保持冻结。

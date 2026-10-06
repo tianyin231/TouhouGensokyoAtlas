@@ -1,0 +1,91 @@
+{
+  "kind": "Author actual four-image close/reverse comparison",
+  "sourceSHA": "0fbef3bef0b1641e5d542c5b924e95c939762b3d78014f90867138e8e7be12cd",
+  "candidateHTML": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45",
+  "baselineHTML": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+  "protocolSHA256": "fceec6e201633ea69a1da0cbe02371913a6c586b09d16f2990c503e7f77fc5e8",
+  "specSHA256": "535d8637849c69f7fd54bcadc3ec438a10dc78bdc87d7750f3907a21286a9099",
+  "baselineReportSHA256": "8e437b6dc456573a923a4018dd48ba4064c9f0c95a4098ae9d25b2a75e37ce8a",
+  "candidateReportSHA256": "df58cac94ebe9acf9ea1091f313d31a0ff51373962a94be686562a0da5dd4fe1",
+  "rows": [
+    {
+      "view": "southEast",
+      "baselinePNG": "2ef9d378e1947e8be76b7e4000515531049aa6fe33b20fff74090f4d1f4f683f",
+      "candidatePNG": "7bf75450133b63eeb9222ad8855bb45524fb0ac82b2480c0a398426d45ba5aa1",
+      "actualNearRecords": {
+        "muenzuka:trees:-21:7:0:leaf": 3,
+        "muenzuka:trees:-22:7:1:leaf": 2,
+        "muenzuka:trees:-22:8:0:leaf": 5,
+        "muenzuka:trees:-21:7:1:leaf": 3,
+        "muenzuka:trees:-21:6:1:leaf": 4,
+        "muenzuka:trees:-22:8:1:leaf": 3,
+        "muenzuka:trees:-21:6:0:leaf": 2,
+        "muenzuka:trees:-22:7:0:leaf": 4
+      },
+      "nearTreeCount": 26,
+      "decision": "Pass scoped close/reverse canopy art gate",
+      "visible": "Replacement crowns are visible at near LOD with connected branch support; original roots, purple cherry, paths and the shed remain."
+    },
+    {
+      "view": "northReverse",
+      "baselinePNG": "e8bdc132004ca77cbe37de2d64fdea6a8d7022404a39a71dce483bf224a54389",
+      "candidatePNG": "38a0ff33ec289a8319bf9ff0682fa337fc7985afb3f3d34f233f9ee58ef03f15",
+      "actualNearRecords": {
+        "muenzuka:trees:-22:6:0:leaf": 4,
+        "muenzuka:trees:-22:6:1:leaf": 7,
+        "muenzuka:trees:-21:6:0:leaf": 2,
+        "muenzuka:trees:-21:6:1:leaf": 4,
+        "muenzuka:trees:-21:7:1:leaf": 3,
+        "muenzuka:trees:-21:7:0:leaf": 3,
+        "muenzuka:trees:-22:7:0:leaf": 4,
+        "muenzuka:trees:-22:7:1:leaf": 2
+      },
+      "nearTreeCount": 29,
+      "decision": "Pass scoped close/reverse canopy art gate",
+      "visible": "Replacement crowns are visible at near LOD with connected branch support; original roots, purple cherry, paths and the shed remain."
+    }
+  ],
+  "comparisons": [
+    {
+      "view": "southEast",
+      "delta": {
+        "calls": 0,
+        "triangles": -28528,
+        "attributeBytes": 6852944,
+        "geometries": 99,
+        "textures": 0
+      },
+      "budgetPassed": true
+    },
+    {
+      "view": "northReverse",
+      "delta": {
+        "calls": 0,
+        "triangles": -31666,
+        "attributeBytes": -529200,
+        "geometries": -4,
+        "textures": 0
+      },
+      "budgetPassed": true
+    }
+  ],
+  "passedArtGate": true,
+  "notFinalAcceptance": true,
+  "residencyObservation": {
+    "southEastAttributesDelta": 6852944,
+    "southEastGeometryDelta": 99,
+    "baselineEvictions": 1147,
+    "candidateEvictions": 987,
+    "sameUploads": 1284,
+    "northReverseBothEvictions": 1202,
+    "northReverseBothResidentObjects": 122,
+    "hypothesis": "Different expiry timing of 160 previously used records under the existing grace period. Exact ownership is unproved; no leak or speed claim.",
+    "requiresBoundedAttribution": true
+  },
+  "remaining": [
+    "Globular crowns retain the already accepted style; not a new tree species design.",
+    "Understory, distribution and open ground remain unfinished.",
+    "Cold/low/night, continuous LOD, lifetime and full Node checks remain pending."
+  ],
+  "hardwareFPSMeasured": false
+}

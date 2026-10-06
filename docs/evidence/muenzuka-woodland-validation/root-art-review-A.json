@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "reviewUTC": "2026-10-06T01:34:22.654878+00:00",
+  "decision": "pass scoped close and reverse art gate; resource ownership observation remains open",
+  "baselineHTML": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+  "candidateHTML": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45",
+  "protocolSHA": "fceec6e201633ea69a1da0cbe02371913a6c586b09d16f2990c503e7f77fc5e8",
+  "specSHA": "535d8637849c69f7fd54bcadc3ec438a10dc78bdc87d7750f3907a21286a9099",
+  "actualFourImagesOpened": true,
+  "images": [
+    {
+      "variant": "baseline-A",
+      "view": "southEast",
+      "sha": "2ef9d378e1947e8be76b7e4000515531049aa6fe33b20fff74090f4d1f4f683f"
+    },
+    {
+      "variant": "baseline-A",
+      "view": "northReverse",
+      "sha": "e8bdc132004ca77cbe37de2d64fdea6a8d7022404a39a71dce483bf224a54389"
+    },
+    {
+      "variant": "v1-A",
+      "view": "southEast",
+      "sha": "7bf75450133b63eeb9222ad8855bb45524fb0ac82b2480c0a398426d45ba5aa1"
+    },
+    {
+      "variant": "v1-A",
+      "view": "northReverse",
+      "sha": "38a0ff33ec289a8319bf9ff0682fa337fc7985afb3f3d34f233f9ee58ef03f15"
+    }
+  ],
+  "reports": [
+    {
+      "variant": "baseline-A",
+      "sha": "8e437b6dc456573a923a4018dd48ba4064c9f0c95a4098ae9d25b2a75e37ce8a"
+    },
+    {
+      "variant": "v1-A",
+      "sha": "df58cac94ebe9acf9ea1091f313d31a0ff51373962a94be686562a0da5dd4fe1"
+    }
+  ],
+  "observations": [
+    "Both views visibly show the newly replaced ordinary crowns at close range, with branches joining the deeper foliage masses.",
+    "The eastern and northern arcs now connect with the accepted western crowns, while original purple cherries and routes remain legible.",
+    "The crown lobes remain rounded and repeated; ground cover, stand layout and understory remain unfinished."
+  ],
+  "comparisons": [
+    {
+      "view": "southEast",
+      "delta": {
+        "calls": 0,
+        "triangles": -28528,
+        "attributeBytes": 6852944,
+        "geometries": 99,
+        "textures": 0
+      },
+      "budgetPassed": true
+    },
+    {
+      "view": "northReverse",
+      "delta": {
+        "calls": 0,
+        "triangles": -31666,
+        "attributeBytes": -529200,
+        "geometries": -4,
+        "textures": 0
+      },
+      "budgetPassed": true
+    }
+  ],
+  "resourceIssue": {
+    "view": "southEast",
+    "observedAttributeByteDelta": 6852944,
+    "observedGeometryDelta": 99,
+    "candidateResidentObjects": 297,
+    "baselineResidentObjects": 137,
+    "candidateEvictions": 987,
+    "baselineEvictions": 1147,
+    "uploadsBoth": 1284,
+    "northReverseBothEvictions": 1202,
+    "northReverseBothResidentObjects": 122,
+    "northReverseAttributeByteDelta": -529200,
+    "status": "Original unexplained residency observation retained; timing/LRU is a hypothesis only, not object attribution or a leak verdict. Resolve with bounded object ownership in the planned lifecycle work; do not repeat these art captures to obtain green counters."
+  },
+  "hardwareFPSMeasured": false,
+  "finalAcceptance": false,
+  "nextStep": "Proceed with the fixed cold/low/night B pair and production-source check; require bounded object ownership and interaction/unload/reentry before publication."
+}
