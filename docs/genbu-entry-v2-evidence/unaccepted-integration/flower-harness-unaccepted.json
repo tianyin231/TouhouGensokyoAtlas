@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "purpose": "Unmerged integration helper prepared before the Genbu close-view art rejection. This patch is evidence only, not an accepted main change.",
+  "baseCommit": "5f30bca598a24d648aa06edaccb613fb2c8dda69",
+  "candidateSourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "patchedHarnessSHA256": "5216fc867a13abbdb0aca29aff09c0b784a248fa8f6d4174be88edfa73aa5cbc",
+  "patchSHA256": "18d70ac5203ff6a87ec6e494a000113ae812aa5ecfd3cddf06dc512e2381df08",
+  "boundedRegistrationProbe": "flower-prefix-check.json",
+  "independentReadOnlyReview": "Sol reviewed the diff without rerunning Flower geometry. Original geometry assertions unchanged.",
+  "fullNodeRun": false,
+  "fullFlowerRun": false,
+  "expectationFixturesChanged": false,
+  "mergedToMain": false,
+  "nextAction": "Do not apply for rejected Genbu V2. If a new accepted successor exists, update exact source binding after source and art review."
+}

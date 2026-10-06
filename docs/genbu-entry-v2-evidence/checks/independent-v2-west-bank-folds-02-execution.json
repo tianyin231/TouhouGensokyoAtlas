@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "command": [
+    "/tmp/node-v22.23.3-linux-x64/bin/node",
+    "/workspace/genbu-entry-evidence/diagnose-v2-west-bank-folds-02.mjs"
+  ],
+  "cwd": "/workspace/genbu-entry-refinement",
+  "startedUTC": "2026-10-06T00:15:11.110808+00:00",
+  "protocolSHA256": "ae719d96e9c5fc50e8618048b53d4ee1be0c3ef7188f4bbd57c58546b57fd94f",
+  "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "projectSHA256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "timeoutSeconds": 27,
+  "builds": 0,
+  "hooks": 0,
+  "nativeBuilds": 0,
+  "GPUFrames": 0,
+  "candidateAcceptance": false,
+  "authorizedContinuation": "One necessary continuation within original30-second diagnostic budget; explicit zero-area classification keeps original strict failure.",
+  "exitCode": 1,
+  "endedUTC": "2026-10-06T00:15:11.827475+00:00",
+  "elapsedWallSeconds": 0.7165336359903449,
+  "protocolUnchanged": true,
+  "sourceUnchanged": true,
+  "projectUnchanged": true,
+  "stdoutSHA256": "6e1ea589ae59d372b932318162c63292043ee1675c58a71c32762230d1d01a85",
+  "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "reportSHA256": "63c8f2fecb352c8e17607aed439905aadb82e141bc36fdb754694471a40c92d5",
+  "reportBytes": 45211
+}

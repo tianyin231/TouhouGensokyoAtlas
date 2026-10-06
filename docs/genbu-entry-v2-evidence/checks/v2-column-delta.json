@@ -1,0 +1,102 @@
+{
+  "kind": "V1 to V2 exact changed terminal-column identities; no new tree or column identities",
+  "oldSourceSHA": "519dc52242b35f7d1f8e03a92ea918b95dd3f2bd6bcec97d0e942b3662e6fabb",
+  "sourceSHA": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "columns": {
+    "native": [
+      {
+        "id": "native:west:layer0:26",
+        "ordinal": 26,
+        "center": [
+          -991.6790464376645,
+          40.63339999999996,
+          -541.2999999999988
+        ],
+        "v1Height": 6.159497810845876,
+        "v2Height": 4.4,
+        "bodyTriangleCount": 204,
+        "capTriangleCount": 0
+      },
+      {
+        "id": "native:west:layer1:25",
+        "ordinal": 52,
+        "center": [
+          -994.3360869789618,
+          40.73409999999996,
+          -543.9499999999989
+        ],
+        "v1Height": 8.640990978528023,
+        "v2Height": 4.550000000000001,
+        "bodyTriangleCount": 204,
+        "capTriangleCount": 42
+      },
+      {
+        "id": "native:west:layer1:26",
+        "ordinal": 53,
+        "center": [
+          -996.1338358406952,
+          40.56499999999996,
+          -539.4999999999989
+        ],
+        "v1Height": 5.065320676162045,
+        "v2Height": 4.550000000000001,
+        "bodyTriangleCount": 204,
+        "capTriangleCount": 42
+      },
+      {
+        "id": "native:west:layer2:24",
+        "ordinal": 78,
+        "center": [
+          -997.0895516433254,
+          40.83479999999996,
+          -546.5999999999989
+        ],
+        "v1Height": 11.680260602216677,
+        "v2Height": 4.7,
+        "bodyTriangleCount": 204,
+        "capTriangleCount": 42
+      },
+      {
+        "id": "native:west:layer2:25",
+        "ordinal": 79,
+        "center": [
+          -998.7350175776244,
+          40.66569999999996,
+          -542.1499999999988
+        ],
+        "v1Height": 7.0399653962789035,
+        "v2Height": 4.7,
+        "bodyTriangleCount": 204,
+        "capTriangleCount": 0
+      },
+      {
+        "id": "native:west:layer2:26",
+        "ordinal": 80,
+        "center": [
+          -1000.6195555440678,
+          40.49659999999996,
+          -537.6999999999988
+        ],
+        "v1Height": 4.8,
+        "v2Height": 4.7,
+        "bodyTriangleCount": 204,
+        "capTriangleCount": 0
+      }
+    ],
+    "cold": [
+      {
+        "id": "coarse:west:layer1:17",
+        "ordinal": 35,
+        "center": [
+          -995.3790464376644,
+          40.63339999999997,
+          -541.2999999999993
+        ],
+        "v1Height": 6.04558754035944,
+        "v2Height": 4.550000000000001,
+        "bodyTriangleCount": 42,
+        "capTriangleCount": 0
+      }
+    ]
+  }
+}

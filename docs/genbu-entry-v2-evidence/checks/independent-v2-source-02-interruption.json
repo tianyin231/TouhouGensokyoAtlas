@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "stopUTC": "2026-10-06T00:07:31.625011+00:00",
+  "reason": "Parent stopped this design after failed low/back art gates. Revised bounded execution had started; stop before any native generator or Genbu hook, no new experiment.",
+  "signal": "SIGTERM",
+  "pid": 37002,
+  "lastSavedActualCounters": {
+    "definitionModules": 49,
+    "productionOverviewHooks": 20,
+    "nativeGeneratorCalls": 0,
+    "nativeApplyDetailCalls": 0,
+    "outerBuildRegionWrapperCalls": 0,
+    "GPUFrames": 0,
+    "fullNodeSuites": 0,
+    "baselineBuilds": 0
+  },
+  "lastSavedChecks": [
+    [
+      "Frozen source/project and all 208 accepted inputs except the reviewed registration",
+      true
+    ],
+    [
+      "Actual fixed 48 accepted definitions plus only the reviewed Genbu successor",
+      true
+    ],
+    [
+      "Production function chain identity and nonempty accepted Solar/Muen/Flower modules",
+      true
+    ],
+    [
+      "All actual accepted predecessor records match the immutable b9ff production snapshot",
+      true
+    ]
+  ],
+  "partialReportCompleted": false,
+  "partialPassedFlagIsNotAFinalSuccess": true,
+  "operatorWordingCorrection": {
+    "initialReasonRetained": true,
+    "GenbuHook21Completed": false,
+    "GenbuHook21Started": "Not instrumented; may have entered prepare before SIGTERM. Only completed counter20 can be proven.",
+    "nativeGeneratorCalls": 0,
+    "nativeApplyDetailCalls": 0,
+    "reason": "Public hook counter increments after successful return, so zero completion is not evidence of zero invocation."
+  }
+}

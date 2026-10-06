@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "kind": "Only original V1 22 normal faces and 819 support probes on V2 value snapshot",
+  "protocolSHA256": "08e7554b9641e71aade4c3739f31ebf7e8c55f22313c2cdd4d1874cbf0f7ef45",
+  "sourceBeforeSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "projectBeforeSHA256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "startUTC": "2026-10-05T23:48:21.301925+00:00",
+  "nativeBuilds": 0,
+  "overviewHooks": 0,
+  "GPUFrames": 0,
+  "exitCode": 1,
+  "endUTC": "2026-10-05T23:48:22.544893+00:00",
+  "elapsedSeconds": 1.2429781059909146,
+  "sourceAfterSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "projectAfterSHA256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "stdoutSHA256": "7212080bc2228337f73eb940dff6fcc008881f81efd37683434be69fc4bc98ca",
+  "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "inputsUnchanged": true,
+  "reportSHA256": "e805450a02391e95ebc4f37dae5a2e2a346437d4bfceeacb9b8df3c673c12cc8"
+}

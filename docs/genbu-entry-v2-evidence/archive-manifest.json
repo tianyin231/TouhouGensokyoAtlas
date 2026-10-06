@@ -1,0 +1,490 @@
+{
+  "schema": 1,
+  "createdUTC": "2026-10-06T00:18:42.609562+00:00",
+  "status": "rejected V2 preserved; not for merge",
+  "baseCommit": "b9ff4a369080e861027966c13d071d08716a1348",
+  "priorV1ReviewHead": "623442588cc580767fc3ed57f021c188dae4ac26",
+  "runtimeInputCount": 209,
+  "runtimeInputsMatchExecutedCandidateRelease": true,
+  "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "projectSHA256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "candidateHTMLSHA256": "5480b1a3cca167bc49a1e20fe3f6601e9077bfc725f28f5eeee0e9332d2d4bbd",
+  "newRuntimeOrGPUExperimentsForArchiving": 0,
+  "checkedLocalLinks": [
+    [
+      "docs/genbu-entry-method-diagnosis.md",
+      "../src/genbu-entry.js"
+    ],
+    [
+      "docs/genbu-entry-method-diagnosis.md",
+      "genbu-entry-v2-evidence/checks/independent-v2-degenerate-face.json"
+    ],
+    [
+      "docs/genbu-entry-method-diagnosis.md",
+      "genbu-entry-v2-evidence/checks/independent-v2-west-bank-folds-summary.json"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "../../src/genbu-entry.js"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "binding/candidate-release.json"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "binding/baseline-release.json"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "../genbu-entry-candidate.md"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "../genbu-entry-method-diagnosis.md"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "images/baseline-overview.png"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "images/v2-overview.png"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "images/baseline-frontLow.png"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "images/v2-frontLow.png"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "images/baseline-reverse.png"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "images/v2-reverse.png"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "protocols/capture-overview.py"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "protocols/capture-view-A.py"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "protocols/view-A-spec.json"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "art/root-view-A-review.json"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "checks/author-prepare-06.json"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "checks/author-seams-06.json"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "checks/independent-v1-road-normal.json"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "checks/independent-v2-same-road-edge-summary.json"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "checks/independent-v2-west-bank-folds-summary.json"
+    ],
+    [
+      "docs/genbu-entry-v2-evidence/README.md",
+      "checks/independent-v2-source-final-ledger.json"
+    ]
+  ],
+  "topLevelFiles": [
+    {
+      "path": "src/genbu-entry.js",
+      "sha256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+      "bytes": 30071
+    },
+    {
+      "path": "project.json",
+      "sha256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+      "bytes": 2421
+    },
+    {
+      "path": "docs/genbu-entry-candidate.md",
+      "sha256": "861a6945a7b3d25aa2629deeb81e22f0d292a561546d94bc95a1602b6ef60547",
+      "bytes": 13123
+    },
+    {
+      "path": "docs/genbu-entry-method-diagnosis.md",
+      "sha256": "2e92093228de5f14a3ab716dfeb8a678e333126a71dc49f702cfb3d16f1d07b3",
+      "bytes": 8277
+    }
+  ],
+  "evidenceFiles": [
+    {
+      "path": "docs/genbu-entry-v2-evidence/README.md",
+      "sha256": "bddf236b955266674330a47eabe1bb9ea20118aeeab580ec47ccb493678db22a",
+      "bytes": 4950
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/art/astra-v1-review.json",
+      "sha256": "8989b8b61c7bf5d1c681f8f9c97016f2a3f535640e1493e978dd2bd810f20fd4",
+      "bytes": 2371
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/art/astra-v2-review.json",
+      "sha256": "6e4c43da057b8f45e9f097e532839d738be256a06bdd3a470d65217fedad2154",
+      "bytes": 3428
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/art/astra-view-A-review.json",
+      "sha256": "f92a1e8359affda1cc9874da1a8cdc116c1e99a4140240b3e7d71c2e9b6341ad",
+      "bytes": 6953
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/art/root-v1-review.json",
+      "sha256": "a774a5bd142adec330e9bb55d7def875848906af0ddd7a101f50df50d0d9951c",
+      "bytes": 2667
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/art/root-v2-review.json",
+      "sha256": "7d5ba4c5be239eabe216491092e012f7f7cd038f429d1cb9561abdd0bf26d2ee",
+      "bytes": 2711
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/art/root-view-A-review.json",
+      "sha256": "df9646b8657f12d4e316918aa1ad6f3b29417432fceadb10889ae2206e03f2f5",
+      "bytes": 3945
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/binding/baseline-release.json",
+      "sha256": "9ca2ffe7710bbcda299d0e5f8ad255b814609cb5e73c8149ca12415daf5b747b",
+      "bytes": 20925
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/binding/candidate-release.json",
+      "sha256": "530bc27f8a9caf08bc453266a4a174f52dfe38f29c725cba4950a82c900120c9",
+      "bytes": 21019
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/binding/frozen-v2-source-manifest.json",
+      "sha256": "afb603cbd4547889442b36cfa7620269d6df4e251424faf3010a1ab834097b14",
+      "bytes": 21667
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/captures/A-baseline-execution.json",
+      "sha256": "ebe3269546a36d2f33d5550051815815a56d41ebef6c8289e3fb052cdd34d85d",
+      "bytes": 770
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/captures/A-baseline-report.json",
+      "sha256": "f2e141297425cb7b6cfdf842f4f60164730ac592b0da2ba532f9f7e9e931708f",
+      "bytes": 61275
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/captures/A-v2-execution.json",
+      "sha256": "15b7b5e3c5f745270a696ebfac1443dfff8a4dd4448dba34b9ded90e42743174",
+      "bytes": 773
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/captures/A-v2-report.json",
+      "sha256": "114638f47411ca055aee2b24c102a1e1d8f7777bb995f77e9a11d7982ea61f7b",
+      "bytes": 61805
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/captures/overview-baseline-execution.json",
+      "sha256": "92f94d42888bd7fe351a6db307a3de9454b919a0202c8eb20240f9e7ccd95c86",
+      "bytes": 1219
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/captures/overview-baseline-report.json",
+      "sha256": "301705e79964807e7596f71bfc6e58fb3ec68ec52a7ac45b97bf286b09f49318",
+      "bytes": 104960
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/captures/overview-v2-execution.json",
+      "sha256": "600c837242f4b3353f772b4bcc81375e26ab88f8688018aa2e33e263088ff22b",
+      "bytes": 932
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/captures/overview-v2-report.json",
+      "sha256": "14158fbf7c3565c8d548a6bfc2ed1d7c502e8c6f58efe755256f7606d65da943",
+      "bytes": 105190
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/author-prepare-01.json",
+      "sha256": "da896f01f113446349f381bfcd098b0822afdadb0638e84e02d8273aa9fd48c1",
+      "bytes": 13152
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/author-prepare-02-interrupted.json",
+      "sha256": "1b2e37a8c666e1ba372f9cc85f557ad69e5b1201392cbccf054066271e803112",
+      "bytes": 443
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/author-prepare-04.json",
+      "sha256": "7ca1a298b5ff701a667d3a123dfa1de86ab79c67514aea867f26a00a2364be85",
+      "bytes": 13145
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/author-prepare-06.json",
+      "sha256": "76b2e71044a48d077a1a93a0fd48426ff41515335d4a7279be49df5575c3be59",
+      "bytes": 230174
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/author-seams-03.json",
+      "sha256": "d50b25fed77a92a4b53540b9bdc7471cbac41e2e704d520089dcdbc29b97cb6c",
+      "bytes": 2175
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/author-seams-06.json",
+      "sha256": "dcb070c591ac0d3ef1fb3174ceeced6f95503121e82963c0d2fca58faa58eef2",
+      "bytes": 2705
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v1-road-normal-execution.json",
+      "sha256": "c27806736ab915f3d394c5734b5e08e826befe2ea5e815ca55145b00badc5f15",
+      "bytes": 585
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v1-road-normal.json",
+      "sha256": "e8ee3fc5e754461c4def01c6576e3a1a43dff0fe4dfeb27ac20545a33c495f18",
+      "bytes": 41272
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-degenerate-face.json",
+      "sha256": "71a0d68633ed5304511f12068c8ff4d1a529f99129800ea3ea3d2ff02ca34e7f",
+      "bytes": 2434
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-same-road-edge-execution.json",
+      "sha256": "a85588bf940eade2a93823e0e0c39b3f2a25cf4826790d56c830a496b56c0965",
+      "bytes": 1065
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-same-road-edge-summary.json",
+      "sha256": "f8ade1e6ea7c26b0811693396ce85d8272dcbae3a001edb3e9c8ff25c7527fe9",
+      "bytes": 5508
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-source-02-execution.json",
+      "sha256": "96d988b079eb12ee730872fd03c0059e56c51e55db450b98de1a406552288a6d",
+      "bytes": 43089
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-source-02-interruption.json",
+      "sha256": "a10ee5c0d9d1ab010a315545530d7a50ca4d1c95b843f74e4402e7df9a3743b2",
+      "bytes": 1554
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-source-02.json",
+      "sha256": "994e2d0f3ccf5968ce137bca3516073164cfcb3515a17b8b12800e50efc9a685",
+      "bytes": 28722
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-source-execution.json",
+      "sha256": "2720dba7a841718c0975ffe57f1db6e9aab48e2e73d3480fb67de0be33730c94",
+      "bytes": 43084
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-source-final-ledger.json",
+      "sha256": "d907181c78de947066c2079b70c2353e2e2305d54e211d202067ebba9e6e8688",
+      "bytes": 8904
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-source-protocol-correction.json",
+      "sha256": "09173abba7c6b95a2aa4126eb71e1cf8e65145e5bb3b071adeb364b08150836e",
+      "bytes": 1221
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-source.json",
+      "sha256": "db77a5b3d92b0b38b976f9c1daf75f4cf07046b04185850ea44e9b726638d087",
+      "bytes": 61859
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-west-bank-folds-02-execution.json",
+      "sha256": "1bc48e3d45a6c174450fbb3a5201ccb913df7eb571f68d593401e640b5d81777",
+      "bytes": 1283
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-west-bank-folds-02.json",
+      "sha256": "63c8f2fecb352c8e17607aed439905aadb82e141bc36fdb754694471a40c92d5",
+      "bytes": 45211
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-west-bank-folds-02.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-west-bank-folds-02.stdout.log",
+      "sha256": "6e1ea589ae59d372b932318162c63292043ee1675c58a71c32762230d1d01a85",
+      "bytes": 4642
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-west-bank-folds-execution.json",
+      "sha256": "d299cd377ada3fc29654a4e56dbd8d01af75da8f7391112e39aeba792adacea1",
+      "bytes": 1003
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-west-bank-folds-summary.json",
+      "sha256": "2e55a4e6075131604cbcb2e832f64d06a2b00d42a0b036d5cf3f75bdb45342df",
+      "bytes": 22634
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-west-bank-folds.stderr.log",
+      "sha256": "239d9ab513a7cf7171cbafd0c5ef934e81853a07b03ae10562f7da518e84259f",
+      "bytes": 719
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/independent-v2-west-bank-folds.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/readonly-v2-snapshot-ownership-summary.json",
+      "sha256": "96bede6b04fca158ac04a97e4af53b1e709b89b86ba9511dcfe145592d806843",
+      "bytes": 7163
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/checks/v2-column-delta.json",
+      "sha256": "ddd2de4fff481e756efd9b4157d6a7e3833b6f2f457663a49c32877c9e5caf1e",
+      "bytes": 2644
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/images/baseline-frontLow.png",
+      "sha256": "c213d7e18dc77c77d4eb33dfe933ebe80b517238d723b3b947fd8a6e4d3e5b5d",
+      "bytes": 383770
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/images/baseline-overview.png",
+      "sha256": "d25394ef427ab708a5bfd97a149aecec398c746f552093ce8f9942403876684d",
+      "bytes": 667265
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/images/baseline-reverse.png",
+      "sha256": "0c5061489197d7f0c38a79efbca37a529c8f946b6109cdce0b0757bf080eda3c",
+      "bytes": 552688
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/images/v2-frontLow.png",
+      "sha256": "bfe311f4c6152f1065d4e28e6cbbc91e9d5354ea6b8446090e2a5d502ecf004b",
+      "bytes": 453565
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/images/v2-overview.png",
+      "sha256": "1c76951543ec01107f5adb8271a5982da7660ff5f5831cfc218d8275cb2bc080",
+      "bytes": 669220
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/images/v2-reverse.png",
+      "sha256": "606a2a42cffec310d18a3edee3a6578dcb72b5905e5cc1e6f062633a4b38946c",
+      "bytes": 578626
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/author-prepare-06.mjs",
+      "sha256": "32d0dca6fc5d8c19a2c8528e28d9c1f10d63c2383491b2c323b855d9a52aaaf7",
+      "bytes": 8442
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/author-seams-06.mjs",
+      "sha256": "4a41b6a303abf123d76515f3079ba9fd0d8aea890fa16c056489b05ef7f2a680",
+      "bytes": 5682
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/capture-overview.py",
+      "sha256": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc",
+      "bytes": 9623
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/capture-view-A.py",
+      "sha256": "3f8f997c59fc2547f89a8fd0c9db5fd3805f6b748eee5a342aa691c3d0e988fd",
+      "bytes": 7390
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/check-independent-v2-source-02.mjs",
+      "sha256": "3629aabfddb483351e874bb558a6d5581786945200ce63f041cd76ea888b0e87",
+      "bytes": 45468
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/check-independent-v2-source.mjs",
+      "sha256": "1cc21d2597d9b058a9cceee92727b7dbc1041b3adcd32f459e583ee781f9054f",
+      "bytes": 44190
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/check-v1-road-normal.py",
+      "sha256": "2ed521b5fd09c856e88983b94f710733cd896ee164f388eed3a5928bf1832de6",
+      "bytes": 5323
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/check-v2-same-road-edge.mjs",
+      "sha256": "08e7554b9641e71aade4c3739f31ebf7e8c55f22313c2cdd4d1874cbf0f7ef45",
+      "bytes": 9622
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/diagnose-v2-snapshot-ownership.mjs",
+      "sha256": "094288c01433d888114193d7f618becdd805d30f5ebc3dc870c8d8eb2d40f5ed",
+      "bytes": 7874
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/diagnose-v2-west-bank-folds-02.mjs",
+      "sha256": "ae719d96e9c5fc50e8618048b53d4ee1be0c3ef7188f4bbd57c58546b57fd94f",
+      "bytes": 13520
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/diagnose-v2-west-bank-folds.mjs",
+      "sha256": "d0ed3cd20dca960c8c5c059ff4f541deaee5536179824b04686810bb65c0f1bf",
+      "bytes": 11398
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/locate-v2-degenerate-face.mjs",
+      "sha256": "47064da924606484fea7094654c695ded614b10edc92257713fedb2971eb1870",
+      "bytes": 2828
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/run-independent-v2-source-02.py",
+      "sha256": "07628c23384edc0adba995c64fdaff84b999c6574e6b11e9078bb4a8d996c243",
+      "bytes": 2518
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/run-independent-v2-source.py",
+      "sha256": "5df46f3cd9efbeff895408b5ee98493c9cf793c94991bc3ae5282cf672c8c61a",
+      "bytes": 2497
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/protocols/view-A-spec.json",
+      "sha256": "e307ef15ddc428b67a63613af450de0686af086c21d01f875648ebd25c58d664",
+      "bytes": 2228
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/unaccepted-integration/check-flower-prefix.mjs",
+      "sha256": "b17f299cdc23ee8e52c3600900c3ffa10b582d04d3633da023a5fa6741474830",
+      "bytes": 4106
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/unaccepted-integration/flower-harness-unaccepted.json",
+      "sha256": "e5852cc1484f1378f0e7f4f8d3d26b43a8cd191a98acb4ef3fde9fbb8688c7a7",
+      "bytes": 957
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/unaccepted-integration/flower-harness-unaccepted.patch",
+      "sha256": "18d70ac5203ff6a87ec6e494a000113ae812aa5ecfd3cddf06dc512e2381df08",
+      "bytes": 7875
+    },
+    {
+      "path": "docs/genbu-entry-v2-evidence/unaccepted-integration/flower-prefix-check.json",
+      "sha256": "28d46a5fb8cd2a1c9390d89f2d9e1fbd192df3bec37c586170c4f649c0cb3c3a",
+      "bytes": 4638
+    }
+  ]
+}

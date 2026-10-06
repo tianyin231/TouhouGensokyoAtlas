@@ -50,7 +50,8 @@
     "src/bamboo-entry-upgrade.js",
     "src/sunflower-entry.js",
     "src/muenzuka-edge.js",
-    "src/flower-hill-entry.js"
+    "src/flower-hill-entry.js",
+    "src/genbu-entry.js"
   ],
   "extensionRenderers": [
     "src/asama-renderer.js",

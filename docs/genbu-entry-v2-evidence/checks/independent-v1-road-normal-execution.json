@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "kind": "Original bounded V1 signed-normal failure execution",
+  "protocolSHA256": "2ed521b5fd09c856e88983b94f710733cd896ee164f388eed3a5928bf1832de6",
+  "startUTC": "2026-10-05T23:39:43.508672+00:00",
+  "exitCode": 1,
+  "endUTC": "2026-10-05T23:39:43.581265+00:00",
+  "elapsedSeconds": 0.07260137400589883,
+  "stdoutSHA256": "97a4d6452918650112bbc944ceda90aecad76750fe419f5f37512499522ec6d9",
+  "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "reportSHA256": "e8ee3fc5e754461c4def01c6576e3a1a43dff0fe4dfeb27ac20545a33c495f18"
+}

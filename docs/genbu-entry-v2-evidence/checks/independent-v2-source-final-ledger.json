@@ -1,0 +1,212 @@
+{
+  "schema": 1,
+  "kind": "Final execution ledger after Genbu V2 low/back art rejection; no further tests",
+  "savedUTC": "2026-10-06T00:08:44.909054+00:00",
+  "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "projectSHA256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "frozen": true,
+  "authorizationAfterArtRejection": "Stop new source/cost/native/GPU/lifecycle/fullNode experiments. Only preserve existing results.",
+  "attempts": [
+    {
+      "name": "Original complete-prefix attempt",
+      "checkerSHA256": "1cc21d2597d9b058a9cceee92727b7dbc1041b3adcd32f459e583ee781f9054f",
+      "wrapperExitCode": 1,
+      "startUTC": "2026-10-06T00:05:05.870265+00:00",
+      "endUTC": "2026-10-06T00:05:42.263940+00:00",
+      "elapsedWallSeconds": 36.39321445900714,
+      "all209InputsUnchanged": true,
+      "protocolUnchanged": true,
+      "completedChecks": 4,
+      "checksPassed": 3,
+      "actualCounters": {
+        "definitionModules": 49,
+        "productionOverviewHooks": 20,
+        "nativeGeneratorCalls": 0,
+        "nativeApplyDetailCalls": 0,
+        "outerBuildRegionWrapperCalls": 0,
+        "GPUFrames": 0,
+        "fullNodeSuites": 0,
+        "baselineBuilds": 0
+      },
+      "failure": "Whole-manifest equality compared the per-run accepted trailUpgrade.prepareMs timer. All2156 record comparisons ran successfully before that assertion.",
+      "GenbuHook21Invocations": 0,
+      "candidateNativeBuilds": 0,
+      "productSourceProtectionComplete": false
+    },
+    {
+      "name": "Explicit timer-separated revision, interrupted at parent stop gate",
+      "checkerSHA256": "3629aabfddb483351e874bb558a6d5581786945200ce63f041cd76ea888b0e87",
+      "wrapperExitCode": -15,
+      "shellExitCode": 241,
+      "startUTC": "2026-10-06T00:06:49.922219+00:00",
+      "endUTC": "2026-10-06T00:07:31.677039+00:00",
+      "elapsedWallSeconds": 41.75439537600323,
+      "all209InputsUnchanged": true,
+      "protocolUnchanged": true,
+      "completedChecks": 4,
+      "checksPassed": 4,
+      "actualCompletedCounters": {
+        "definitionModules": 49,
+        "productionOverviewHooks": 20,
+        "nativeGeneratorCalls": 0,
+        "nativeApplyDetailCalls": 0,
+        "outerBuildRegionWrapperCalls": 0,
+        "GPUFrames": 0,
+        "fullNodeSuites": 0,
+        "baselineBuilds": 0
+      },
+      "candidateHook21Completed": false,
+      "candidateHook21Started": "Unknown; no invocation-start marker. Do not interpret completion counter20 as zero invocation.",
+      "nativeGeneratorCalls": 0,
+      "nativeApplyDetailCalls": 0,
+      "productSourceProtectionComplete": false,
+      "partialPassedField": "Intermediate save only; report has no endUTC and is NOT a completed success."
+    }
+  ],
+  "predecessorProof": {
+    "realDefinitionModulesPerAttempt": 49,
+    "acceptedHooksCompletedPerAttempt": 20,
+    "acceptedPublicRecords": 2156,
+    "originalRecordFieldsAndTypedSourceBytes": "All compared exactly in both attempts before any Genbu source acceptance.",
+    "secondAttemptPersistentManifestExactExceptNamedTelemetry": true,
+    "explicitTelemetry": {
+      "path": "trailUpgrade.prepareMs",
+      "baseline": 2.9045850000002247,
+      "current": 3.314684999997553,
+      "source": "src/trail-upgrade.js (unchanged accepted input)",
+      "meaning": "Execution wall-clock telemetry, not source/protection state"
+    },
+    "unchangedSourceTimerDefinition": "src/trail-upgrade.js:43: prepareMs:performance.now()-start",
+    "GenbuFullCandidateChecksExecuted": false
+  },
+  "preservedPriorIndependentFindings": {
+    "V1NormalStrictReportCLI": 1,
+    "V1NormalPassed": 2,
+    "V1NormalTotal": 3,
+    "V1OpposingActualFaces": 22,
+    "V2LimitedStrictReportCLI": 1,
+    "V2LimitedPassed": 3,
+    "V2LimitedTotal": 4,
+    "sameFaceRepairPassed": {
+      "faces": 22,
+      "vertices": 66,
+      "mixedFaces": 2,
+      "minNormalDotActualWinding": 0.9968674513352423
+    },
+    "same819SupportPassed": true,
+    "extraWholeFourTerrainEqualityFailure": "Guard scope assumption error: V2 expressly changed bounded receiving bed; original failed assertion/report not rewritten."
+  },
+  "sourceByteAttribution": {
+    "actualBaselineWorkerBytes": 6278784,
+    "actualV2WorkerBytesAsReportedByAstraBrowser": 6293376,
+    "WorkerSourceNetBytesDelta": 14592,
+    "authorLiveNewPersistentAllocations": 598212,
+    "authorContactCopyBytes": 203616,
+    "authorConservativeIncrementalPeakBytes": 801828,
+    "independentCurrentCandidateLiveAllocationNotCompleted": true,
+    "V8SlabClarificationReport": {
+      "path": "/workspace/genbu-entry-evidence/readonly-v2-snapshot-ownership.json",
+      "bytes": 720212,
+      "sha256": "cde51017c795bf1fc93a5556f8d1aa6c943d765d1462b66d0055d905a6ee5146"
+    },
+    "V8WholeSerializedSlabCountIsNotProductionMemory": true
+  },
+  "notMeasured": [
+    "Complete candidate public source identity/outside protection and full near/far/root/query checks in the new49-chain checker",
+    "Candidate actual native generator/applyDetail/full identity and collision checks in this new protocol",
+    "Independent candidate live owned backing budget in the new real production chain",
+    "Full Node/CI/fixture update",
+    "Worker contact release, cancel/unload/reenter or additional GPU lifecycle",
+    "Hardware FPS or interactive performance improvement"
+  ],
+  "noNewProductionMutation": true,
+  "noFixtureUpdate": true,
+  "noAdditionalGPU": true,
+  "rawFiles": [
+    {
+      "path": "/workspace/genbu-entry-evidence/check-independent-v2-source.mjs",
+      "bytes": 44190,
+      "sha256": "1cc21d2597d9b058a9cceee92727b7dbc1041b3adcd32f459e583ee781f9054f"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/run-independent-v2-source.py",
+      "bytes": 2497,
+      "sha256": "5df46f3cd9efbeff895408b5ee98493c9cf793c94991bc3ae5282cf672c8c61a"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-source.json",
+      "bytes": 61859,
+      "sha256": "db77a5b3d92b0b38b976f9c1daf75f4cf07046b04185850ea44e9b726638d087"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-source-execution.json",
+      "bytes": 43084,
+      "sha256": "2720dba7a841718c0975ffe57f1db6e9aab48e2e73d3480fb67de0be33730c94"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-source.stdout.log",
+      "bytes": 34910,
+      "sha256": "2c4963404aa732e90e6fab4fe259b4adf768e1a0d8d5ec94d9e39d25a4d60fa1"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-source.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/check-independent-v2-source-02.mjs",
+      "bytes": 45468,
+      "sha256": "3629aabfddb483351e874bb558a6d5581786945200ce63f041cd76ea888b0e87"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/run-independent-v2-source-02.py",
+      "bytes": 2518,
+      "sha256": "07628c23384edc0adba995c64fdaff84b999c6574e6b11e9078bb4a8d996c243"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-source-02.json",
+      "bytes": 28722,
+      "sha256": "994e2d0f3ccf5968ce137bca3516073164cfcb3515a17b8b12800e50efc9a685"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-source-02-execution.json",
+      "bytes": 43089,
+      "sha256": "96d988b079eb12ee730872fd03c0059e56c51e55db450b98de1a406552288a6d"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-source-02.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-source-02.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-source-02-interruption.json",
+      "bytes": 1554,
+      "sha256": "a10ee5c0d9d1ab010a315545530d7a50ca4d1c95b843f74e4402e7df9a3743b2"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-source-protocol-correction.json",
+      "bytes": 1221,
+      "sha256": "09173abba7c6b95a2aa4126eb71e1cf8e65145e5bb3b071adeb364b08150836e"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v1-road-normal.json",
+      "bytes": 41272,
+      "sha256": "e8ee3fc5e754461c4def01c6576e3a1a43dff0fe4dfeb27ac20545a33c495f18"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-same-road-edge.json",
+      "bytes": 1222270,
+      "sha256": "e805450a02391e95ebc4f37dae5a2e2a346437d4bfceeacb9b8df3c673c12cc8"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/readonly-v2-snapshot-ownership.json",
+      "bytes": 720212,
+      "sha256": "cde51017c795bf1fc93a5556f8d1aa6c943d765d1462b66d0055d905a6ee5146"
+    }
+  ]
+}

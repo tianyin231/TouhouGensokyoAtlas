@@ -1,0 +1,145 @@
+{
+  "schema": 1,
+  "kind": "Bounded Flower successor integration guard; no geometry generation",
+  "startedUTC": "2026-10-05T23:55:33.745Z",
+  "endedUTC": "2026-10-05T23:55:33.845Z",
+  "protocolSHA256": "b17f299cdc23ee8e52c3600900c3ffa10b582d04d3633da023a5fa6741474830",
+  "checkerSHA256": "5216fc867a13abbdb0aca29aff09c0b784a248fa8f6d4174be88edfa73aa5cbc",
+  "projectSHA256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "checks": [
+    {
+      "name": "True project retains accepted 48-module prefix and explicit Genbu binding",
+      "passed": true,
+      "result": {
+        "modules": [
+          "src/world-builder.js",
+          "src/old-hell.js",
+          "src/kishinjou.js",
+          "src/lunar.js",
+          "src/makai.js",
+          "src/netherworld.js",
+          "src/landmarks.js",
+          "src/heaven.js",
+          "src/higan.js",
+          "src/landscape.js",
+          "src/animal.js",
+          "src/backdoor.js",
+          "src/kasen.js",
+          "src/current-hell.js",
+          "src/rainbow-mine.js",
+          "src/highland.js",
+          "src/hakurei-plants.js",
+          "src/hakurei-transition.js",
+          "src/asama.js",
+          "src/asama-roads.js",
+          "src/surface-contact.js",
+          "src/hiten.js",
+          "src/mayohiga.js",
+          "src/peony.js",
+          "src/waterfall-cave.js",
+          "src/cucumber-farm.js",
+          "src/wind-cave.js",
+          "src/geyser.js",
+          "src/geyser-center.js",
+          "src/kourindou-upgrade.js",
+          "src/forest-upgrade.js",
+          "src/village-upgrade.js",
+          "src/trail-upgrade.js",
+          "src/trail-plants.js",
+          "src/trail-landscape.js",
+          "src/forest-entrance-plants.js",
+          "src/forest-entrance-ground.js",
+          "src/forest-entrance.js",
+          "src/forest-canopy-plants.js",
+          "src/forest-canopy-ground.js",
+          "src/forest-canopy-road.js",
+          "src/forest-crown-rollout.js",
+          "src/forest-canopy.js",
+          "src/bamboo-entry-plants.js",
+          "src/bamboo-entry-upgrade.js",
+          "src/sunflower-entry.js",
+          "src/muenzuka-edge.js"
+        ],
+        "reviewedAfterSolar": [
+          "src/muenzuka-edge.js"
+        ],
+        "prefixSHA256": "98ac8c332722a91f575758494241a4e5e82ab218dba3e08724af6f60ec548acf",
+        "actualProjectSHA256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+        "actualWorldBuildersSHA256": "1a8218c21457beb7cab31dd7893c3c7c6d7b50daebb4ef0b626f29fa4002a871",
+        "throughFlowerSHA256": "b832685d8db4ae0b59ffe3a4eed7e19d4ce4ccde3d506a0e84b0f4a94ba2dee6",
+        "deferredSuccessors": [
+          {
+            "path": "src/genbu-entry.js",
+            "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544"
+          }
+        ],
+        "stageBoundary": "Execute the actual registered prefix through Flower exactly once; later Genbu runs in its own full-chain check."
+      }
+    },
+    {
+      "name": "Dropping delivered Muen before the Genbu successor is rejected",
+      "passed": true,
+      "result": {
+        "invalidRegistrationRejected": true
+      }
+    },
+    {
+      "name": "Reordering accepted prefix is rejected",
+      "passed": true,
+      "result": {
+        "invalidRegistrationRejected": true
+      }
+    },
+    {
+      "name": "Duplicate Flower registration is rejected",
+      "passed": true,
+      "result": {
+        "invalidRegistrationRejected": true
+      }
+    },
+    {
+      "name": "Duplicate Genbu successor is rejected",
+      "passed": true,
+      "result": {
+        "invalidRegistrationRejected": true
+      }
+    },
+    {
+      "name": "Unreviewed successor is rejected",
+      "passed": true,
+      "result": {
+        "invalidRegistrationRejected": true
+      }
+    },
+    {
+      "name": "Changed Genbu source binding is rejected",
+      "passed": true,
+      "result": {
+        "invalidRegistrationRejected": true
+      }
+    },
+    {
+      "name": "Substituted project cannot conceal the actual successor",
+      "passed": true,
+      "result": {
+        "fakeProjectRejected": true
+      }
+    },
+    {
+      "name": "Definitions execute the real pre-Flower prefix and load Flower once",
+      "passed": true,
+      "result": {
+        "loadedModules": 48,
+        "hooksBefore": 19,
+        "hooksAfter": 20,
+        "overviewHooksExecuted": 0,
+        "nativeBuilds": 0,
+        "GPUFrames": 0
+      }
+    }
+  ],
+  "passed": true,
+  "fixtureChanges": 0,
+  "fullNodeRuns": 0
+}

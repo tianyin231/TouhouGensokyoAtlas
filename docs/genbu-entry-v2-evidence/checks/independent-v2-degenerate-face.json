@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "kind": "Exact zero-area face which stopped the frozen west-bank fold diagnostic",
+  "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "protocolSHA256": "47064da924606484fea7094654c695ded614b10edc92257713fedb2971eb1870",
+  "originalFailedProtocolSHA256": "d0ed3cd20dca960c8c5c059ff4f541deaee5536179824b04686810bb65c0f1bf",
+  "oldPublicSnapshotSHA256": "91c20c7b34a3db561f9b14f87bc9e1c6c53120fd2958012daf0e85b10f55acc7",
+  "candidateSnapshotSHA256": "bc92f9bdec1a72b934392d176bca13580c00f3a11ed3e0acc078f3c225984f6f",
+  "recordId": "island:terrain:-1024:-512",
+  "triangleOrdinal": 1220,
+  "indexValues": [
+    867,
+    868,
+    869
+  ],
+  "actualAttributes": [
+    [
+      -1018.4000244140625,
+      50.68687438964844,
+      -506.3999938964844,
+      0.3723450005054474,
+      0.927964985370636,
+      -0.015497294254601002,
+      0.1537846475839615,
+      0.22712776064872742,
+      0.08877817541360855
+    ],
+    [
+      -1018.4000244140625,
+      50.68687438964844,
+      -506.3999938964844,
+      0.3723450005054474,
+      0.927964985370636,
+      -0.015497295185923576,
+      0.1537846475839615,
+      0.22712776064872742,
+      0.08877817541360855
+    ],
+    [
+      -1016,
+      49.755165100097656,
+      -507.69232177734375,
+      0.3637809753417969,
+      0.9313200116157532,
+      -0.017506813630461693,
+      0.15445490181446075,
+      0.227715402841568,
+      0.08875551074743271
+    ]
+  ],
+  "center": [
+    -1017.6000162760417,
+    50.376304626464844,
+    -506.8307698567708
+  ],
+  "cross": [
+    0,
+    0,
+    0
+  ],
+  "triangleDoubleArea": 0,
+  "insideRequestedDomain": false,
+  "baselineFacesAtSameXZ": [
+    {
+      "recordId": "island:terrain:-1024:-512",
+      "triangleOrdinal": 7,
+      "points": [
+        [
+          -1018.4000244140625,
+          50.6868782043457,
+          -506.3999938964844
+        ],
+        [
+          -1008,
+          46.64875793457031,
+          -512
+        ],
+        [
+          -1012,
+          48.09283447265625,
+          -512
+        ]
+      ],
+      "oldActualHeight": 50.3762509912967
+    }
+  ],
+  "executed": {
+    "builds": 0,
+    "hooks": 0,
+    "nativeBuilds": 0,
+    "GPUFrames": 0
+  },
+  "foldAndNormalStatisticsNotCompleted": true,
+  "notClaimed": [
+    "Zero-area face caused the raster wrinkles",
+    "Projection overlap is real occlusion",
+    "Candidate acceptance passed"
+  ],
+  "elapsedWallMs": 478.36587
+}

@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "sourceCommit": "b9ff4a369080e861027966c13d071d08716a1348",
+  "command": [
+    "python",
+    "/workspace/genbu-entry-evidence/capture-overview.py",
+    "--repo",
+    "/workspace/genbu-entry-refinement",
+    "--dist",
+    "/workspace/main-island-next-evidence/combined-final-dist",
+    "--output",
+    "/workspace/genbu-entry-evidence/baseline",
+    "--expected-sha",
+    "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+    "--label",
+    "b9ff4a3-baseline"
+  ],
+  "exitCode": 0,
+  "report": {
+    "path": "/workspace/genbu-entry-evidence/baseline/report.json",
+    "sha256": "301705e79964807e7596f71bfc6e58fb3ec68ec52a7ac45b97bf286b09f49318"
+  },
+  "protocolSHA256": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc",
+  "artifactSHA256": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+  "inputsCount": 208,
+  "inputsUnchanged": true,
+  "artifactUnchanged": true,
+  "stdoutSHA256": "fb5f9bf3b2fde9f50923baae23b5c712aa9601b80784b4939d7720acc9832313",
+  "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "noNewBuild": true,
+  "nativeWorkerBank": "genbu",
+  "GPUClosed": true,
+  "hardwareFPSMeasured": false
+}

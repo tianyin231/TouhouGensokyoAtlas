@@ -1,0 +1,181 @@
+{
+  "schema": 1,
+  "createdUTC": "2026-10-06T00:03:42.140360+00:00",
+  "reviewer": "Astra implementation lead; actual separate image review, not an independent source test",
+  "scope": "Genbu southern mouth only; two supplementary views after the scoped overview gate",
+  "sourceSHA": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "projectSHA": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "candidateHTMLSHA": "5480b1a3cca167bc49a1e20fe3f6601e9077bfc725f28f5eeee0e9332d2d4bbd",
+  "baselineHTMLSHA": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+  "baselineInputCount": 208,
+  "candidateInputCount": 209,
+  "baselineHead": "5f30bca598a24d648aa06edaccb613fb2c8dda69",
+  "protocol": {
+    "path": "/workspace/genbu-entry-evidence/capture-view-A.py",
+    "sha256": "3f8f997c59fc2547f89a8fd0c9db5fd3805f6b748eee5a342aa691c3d0e988fd"
+  },
+  "spec": {
+    "path": "/workspace/genbu-entry-evidence/view-A-spec.json",
+    "sha256": "e307ef15ddc428b67a63613af450de0686af086c21d01f875648ebd25c58d664"
+  },
+  "sourceFrozen": true,
+  "viewsActuallyReviewed": [
+    "baseline frontLow",
+    "candidate frontLow",
+    "baseline reverse",
+    "candidate reverse"
+  ],
+  "decision": "Hold the supplementary near-bank art gate; do not start B or claim delivery readiness. The earlier scoped overview gain remains real, but it does not establish adequate near-bank form.",
+  "retainedGains": [
+    "Lowered terminal columns open both bridge banks and the creek mouth; the bridge is no longer visually swallowed by the former wall ends.",
+    "The public approach reaches the first wooden landing without the V1 black shoulder band.",
+    "Reverse view preserves the bridge, upstream water and original tree composition while making the southern opening readable."
+  ],
+  "blockingObservations": [
+    "frontLow shows new fan-shaped/triangular depressions or shading on the western bank and the near side of the extended water tail; the baseline bank does not show these folds. The image alone does not distinguish a normal defect from actual surface shape.",
+    "The extended water tail still reads as a long pointed flat blue sheet in both views. The new banks do not yet provide a clearly legible continuous bed-to-shore cross-section at low view."
+  ],
+  "inheritedOrOutsideScope": [
+    "Wooden path segment gaps are already visible in the baseline; no claim that the entire boardwalk has become continuous.",
+    "Original flattened bed hexagons, distant unrefined trees and broad bare slopes remain; they are not counted as newly fixed."
+  ],
+  "runtimeResults": {
+    "baselineCLI": 0,
+    "candidateCLI": 0,
+    "baselineInputsUnchanged": true,
+    "candidateInputsUnchanged": true,
+    "baselineArtifactUnchanged": true,
+    "candidateArtifactUnchanged": true,
+    "candidateBudgetFailures": [],
+    "candidateErrors": [],
+    "candidateContextEvents": [],
+    "candidateHTTPFailures": [
+      {
+        "path": "/favicon.ico",
+        "status": 404
+      }
+    ],
+    "hardwareFPSMeasured": false,
+    "timingInterpretation": "May overlap independent bounded CPU work; no speed comparison."
+  },
+  "comparisons": [
+    {
+      "name": "frontLow",
+      "camera": {
+        "name": "frontLow",
+        "eye": [
+          -942,
+          57,
+          -487
+        ],
+        "target": [
+          -975,
+          42,
+          -537
+        ],
+        "purpose": "Approach to first board, both bridge banks and whole southern water tail at low angle"
+      },
+      "baselinePNG": {
+        "path": "/workspace/genbu-entry-evidence/baseline-view-A/frontLow.png",
+        "sha256": "c213d7e18dc77c77d4eb33dfe933ebe80b517238d723b3b947fd8a6e4d3e5b5d"
+      },
+      "candidatePNG": {
+        "path": "/workspace/genbu-entry-evidence/candidate-view-A/frontLow.png",
+        "sha256": "bfe311f4c6152f1065d4e28e6cbbc91e9d5354ea6b8446090e2a5d502ecf004b"
+      },
+      "baselineLastFrame": {
+        "totalCalls": 290,
+        "totalTriangles": 511115,
+        "residentAttributeBytes": 24416624,
+        "geometries": 200,
+        "textures": 11
+      },
+      "candidateLastFrame": {
+        "totalCalls": 290,
+        "totalTriangles": 511727,
+        "residentAttributeBytes": 24495944,
+        "geometries": 200,
+        "textures": 11
+      },
+      "delta": {
+        "totalCalls": 0,
+        "totalTriangles": 612,
+        "geometries": 0,
+        "textures": 0,
+        "residentAttributeBytes": 79320
+      },
+      "lastTwoCostsStable": true
+    },
+    {
+      "name": "reverse",
+      "camera": {
+        "name": "reverse",
+        "eye": [
+          -968,
+          68,
+          -592
+        ],
+        "target": [
+          -972,
+          42,
+          -521
+        ],
+        "purpose": "Look back from inside the columns along both bridge ends to the water tail and banks"
+      },
+      "baselinePNG": {
+        "path": "/workspace/genbu-entry-evidence/baseline-view-A/reverse.png",
+        "sha256": "0c5061489197d7f0c38a79efbca37a529c8f946b6109cdce0b0757bf080eda3c"
+      },
+      "candidatePNG": {
+        "path": "/workspace/genbu-entry-evidence/candidate-view-A/reverse.png",
+        "sha256": "606a2a42cffec310d18a3edee3a6578dcb72b5905e5cc1e6f062633a4b38946c"
+      },
+      "baselineLastFrame": {
+        "totalCalls": 299,
+        "totalTriangles": 550130,
+        "residentAttributeBytes": 17399376,
+        "geometries": 222,
+        "textures": 11
+      },
+      "candidateLastFrame": {
+        "totalCalls": 299,
+        "totalTriangles": 550742,
+        "residentAttributeBytes": 17478696,
+        "geometries": 222,
+        "textures": 11
+      },
+      "delta": {
+        "totalCalls": 0,
+        "totalTriangles": 612,
+        "geometries": 0,
+        "textures": 0,
+        "residentAttributeBytes": 79320
+      },
+      "lastTwoCostsStable": true
+    }
+  ],
+  "reports": [
+    {
+      "path": "/workspace/genbu-entry-evidence/baseline-view-A/report.json",
+      "sha256": "f2e141297425cb7b6cfdf842f4f60164730ac592b0da2ba532f9f7e9e931708f",
+      "executionPath": "/workspace/genbu-entry-evidence/baseline-view-A/execution.json",
+      "executionSHA": "ebe3269546a36d2f33d5550051815815a56d41ebef6c8289e3fb052cdd34d85d"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/candidate-view-A/report.json",
+      "sha256": "114638f47411ca055aee2b24c102a1e1d8f7777bb995f77e9a11d7982ea61f7b",
+      "executionPath": "/workspace/genbu-entry-evidence/candidate-view-A/execution.json",
+      "executionSHA": "15b7b5e3c5f745270a696ebfac1443dfff8a4dd4448dba34b9ded90e42743174"
+    }
+  ],
+  "notRun": [
+    "coldOverview",
+    "low quality",
+    "night",
+    "continuous LOD traversal",
+    "production interaction/unload/re-entry",
+    "full Node regression",
+    "candidate CI/deployment"
+  ],
+  "nextAction": "Keep source/project frozen and let the parent independently review the exact images. No unapproved V3, decoration or camera change to hide the problem."
+}

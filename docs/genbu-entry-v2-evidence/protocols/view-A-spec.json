@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "purpose": "Only two supplementary Genbu southern-mouth visual gates",
+  "initialPreset": "genbuOverview",
+  "productionRegionOrder": [
+    "genbu"
+  ],
+  "sequence": [
+    "genbuOverview stable",
+    "frontLow",
+    "reverse"
+  ],
+  "settings": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "dpr": 1,
+    "fov": 49,
+    "quality": "balanced",
+    "clock": 12.5,
+    "weather": "clear",
+    "lighting": "neutral",
+    "ao": true,
+    "bloom": false,
+    "motion": false,
+    "characters": false,
+    "labels": false,
+    "reflections": false
+  },
+  "views": [
+    {
+      "name": "frontLow",
+      "eye": [
+        -942,
+        57,
+        -487
+      ],
+      "target": [
+        -975,
+        42,
+        -537
+      ],
+      "purpose": "Approach to first board, both bridge banks and whole southern water tail at low angle"
+    },
+    {
+      "name": "reverse",
+      "eye": [
+        -968,
+        68,
+        -592
+      ],
+      "target": [
+        -972,
+        42,
+        -521
+      ],
+      "purpose": "Look back from inside the columns along both bridge ends to the water tail and banks"
+    }
+  ],
+  "baseline": {
+    "sourceHead": "b9ff4a369080e861027966c13d071d08716a1348",
+    "repository": "/workspace/main-island-next",
+    "dist": "/workspace/main-island-next-evidence/combined-final-dist",
+    "HTMLSHA": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+    "inputCount": 208
+  },
+  "candidate": {
+    "sourceSHA": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+    "repository": "/workspace/genbu-entry-refinement",
+    "dist": "/workspace/genbu-entry-evidence/v2-dist",
+    "HTMLSHA": "5480b1a3cca167bc49a1e20fe3f6601e9077bfc725f28f5eeee0e9332d2d4bbd",
+    "inputCount": 209
+  },
+  "notInThisBatch": [
+    "coldOverview",
+    "low quality",
+    "night",
+    "continuous LOD traversal",
+    "interaction/unload/re-entry",
+    "fullNode"
+  ],
+  "timingUse": "May overlap independent bounded CPU source work; no speed comparison or hardware FPS claim",
+  "revisionReason": "Before any new GPU capture, original reverse point projection put east bridge end outside the viewport. Move eye back to include both endpoints; do not change geometry."
+}

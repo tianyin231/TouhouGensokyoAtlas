@@ -1,0 +1,7 @@
+{
+  "status": "interrupted-author-protocol",
+  "reason": "Inspection found repeated hashing of the full public inventory inside each instance loop. Stop redundant CPU work; prepare and native transformation had completed, but later checks are not completed. No assertion was weakened.",
+  "reportSHA256": "2200691ba749588249a9b9e0fbbbccb3b6d7258ece998c7318821d85421ef2e4",
+  "completedChecks": 5,
+  "utc": "2026-10-05T23:22:03.849378+00:00"
+}

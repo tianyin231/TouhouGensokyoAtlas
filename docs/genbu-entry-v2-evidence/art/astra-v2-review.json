@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "reviewUTC": "2026-10-05T23:51:05.772441+00:00",
+  "reviewer": "Astra art lead; actually viewed baseline, V1 and V2 original full PNGs",
+  "decision": "Accept scoped southern-mouth overview gate for supplementary near/back/cold inspection; not final delivery or whole-region completion",
+  "sourceSHA": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "projectSHA": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "HTMLSHA": "5480b1a3cca167bc49a1e20fe3f6601e9077bfc725f28f5eeee0e9332d2d4bbd",
+  "protocolSHA": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc",
+  "candidatePNG": {
+    "path": "/workspace/genbu-entry-evidence/v2-capture/genbuOverview.png",
+    "SHA256": "1c76951543ec01107f5adb8271a5982da7660ff5f5831cfc218d8275cb2bc080"
+  },
+  "baselinePNG": {
+    "path": "/workspace/genbu-entry-evidence/baseline/genbuOverview.png",
+    "SHA256": "d25394ef427ab708a5bfd97a149aecec398c746f552093ce8f9942403876684d"
+  },
+  "reportSHA": "14158fbf7c3565c8d548a6bfc2ed1d7c502e8c6f58efe755256f7606d65da943",
+  "executionSHA": "600c837242f4b3353f772b4bcc81375e26ab88f8688018aa2e33e263088ff22b",
+  "observedGain": [
+    "The new black strip is gone; the public approach connects visibly to the existing boardwalk.",
+    "Lower terminal columns reveal the bridge and creek, and the west isolated stub no longer interrupts the grouped foot.",
+    "The water tail narrows toward the actual bank and reads more coherently than the rejected broad leaf-shaped V1."
+  ],
+  "limits": [
+    "Low-level bank thickness and exact shoreline are only partly legible in this overview; require an actual lower view.",
+    "Cold/far, back, night and route traversal are not yet visually accepted.",
+    "The upper barren slope, upstream cliff/cave and wider tree distribution remain outside this stage."
+  ],
+  "cost": {
+    "totalCalls": {
+      "baseline": 333,
+      "candidate": 333,
+      "delta": 0
+    },
+    "totalTriangles": {
+      "baseline": 473175,
+      "candidate": 473787,
+      "delta": 612
+    },
+    "geometries": {
+      "baseline": 222,
+      "candidate": 222,
+      "delta": 0
+    },
+    "textures": {
+      "baseline": 11,
+      "candidate": 11,
+      "delta": 0
+    }
+  },
+  "residentAttributes": {
+    "baseline": 23158184,
+    "candidate": 23237504,
+    "delta": 79320
+  },
+  "realReturnedWorkerStreamObservation": {
+    "requests": 1,
+    "builds": 1,
+    "cancelled": 0,
+    "evictions": 0,
+    "cacheHits": 0,
+    "staleDropped": 0,
+    "cached": [
+      "genbu"
+    ],
+    "building": null,
+    "required": [
+      "genbu"
+    ],
+    "detailSourceMiB": 6.0018310546875,
+    "softBudgetMiB": 220,
+    "log": [
+      {
+        "region": "genbu",
+        "buildMs": 360.3999999910593,
+        "sourceBytes": 6293376,
+        "epoch": 1
+      }
+    ]
+  },
+  "independentSourceStatus": "Original 22 failed shoulder faces/66 normals including mixed transitions and 819 support samples passed the bounded V2 differential. Entire independent protocol remained CLI1 because it additionally asserted all four terrain arrays unchanged, conflicting with authorized V2 water-bed edits; retain the original 3/4 report.",
+  "notRun": [
+    "Independent full candidate source check",
+    "Other visual views",
+    "True interaction/unload/re-entry",
+    "FullNode",
+    "Candidate CI/deployment"
+  ],
+  "rootDecision": "Pending parent independent review"
+}

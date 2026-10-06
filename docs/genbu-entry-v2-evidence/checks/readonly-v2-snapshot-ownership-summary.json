@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "kind": "Independent bounded V8 typed-range versus backing attribution; no production memory remeasurement",
+  "startedUTC": "2026-10-05T23:51:04.327Z",
+  "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "protocolSHA256": "094288c01433d888114193d7f618becdd805d30f5ebc3dc870c8d8eb2d40f5ed",
+  "bindings": {
+    "/workspace/genbu-entry-refinement/src/genbu-entry.js": {
+      "bytes": 30071,
+      "sha256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544"
+    },
+    "/workspace/genbu-entry-evidence/baseline-native-source-v2.json": {
+      "bytes": 77836,
+      "sha256": "b4486cb1505fb440e09e41f0dc9ad0eb091a2f3542e838efe673eb1004673349"
+    },
+    "/workspace/genbu-entry-evidence/author-prepare-06.json": {
+      "bytes": 230174,
+      "sha256": "76b2e71044a48d077a1a93a0fd48426ff41515335d4a7279be49df5575c3be59"
+    },
+    "/workspace/genbu-entry-evidence/baseline-native-arrays-v2/genbu-native.v8": {
+      "bytes": 6294971,
+      "sha256": "4625901dd3481ea1d05bb7c420bc7b4f39453d86e445bd9688774586f8f4b38e"
+    },
+    "/workspace/genbu-entry-evidence/author-prepare-06-arrays/native.v8": {
+      "bytes": 6312408,
+      "sha256": "86016e26f1911dfb4018cf8809ac91fcb98996de8ebb9e9f15a6b65b927947b6"
+    },
+    "/workspace/genbu-entry-evidence/author-prepare-05-arrays/public.v8": {
+      "bytes": 142860698,
+      "sha256": "63403600d8ece9116b96f6726bf939cf7eb35adc7f5dffdcc5871b977a2da658"
+    },
+    "/workspace/genbu-entry-evidence/author-prepare-06-arrays/public.v8": {
+      "bytes": 142872938,
+      "sha256": "bc92f9bdec1a72b934392d176bca13580c00f3a11ed3e0acc078f3c225984f6f"
+    },
+    "/workspace/genbu-entry-evidence/independent-v2-same-road-edge.json": {
+      "bytes": 1222270,
+      "sha256": "e805450a02391e95ebc4f37dae5a2e2a346437d4bfceeacb9b8df3c673c12cc8"
+    }
+  },
+  "executed": {
+    "overviewHooks": 0,
+    "nativeBuilds": 0,
+    "candidatePrepare": 0,
+    "GPUFrames": 0
+  },
+  "actualLiveBaseline": {
+    "reportSHA256": "b4486cb1505fb440e09e41f0dc9ad0eb091a2f3542e838efe673eb1004673349",
+    "source": {
+      "wallMs": 549.849000000002,
+      "records": 32,
+      "id": "genbu",
+      "geometrySHA256": "f6a4a51132c512ff3087115e67c5ed1497f51ddde07995eceda55825826ca188",
+      "reportedBytes": 6278784,
+      "liveRecursiveBackingBytes": 6278784
+    },
+    "meaning": "Single original true Genbu build before V8 serialization; production ownership value."
+  },
+  "newExclusiveAllocationBudget": {
+    "publicNewBuffersBytes": 568932,
+    "nativeNewTailBuffersBytes": 29280,
+    "totalPersistentSourceBytes": 598212,
+    "limitBytes": 629145.6,
+    "newContactsBytes": 203616,
+    "conservativeIncrementalPeakBytes": 801828,
+    "provenance": "Author06 live Set difference before/after prepare on accepted snapshots. New source allocations are Float32Array.from/Uint32Array.from-owned buffers and not views into the prior serialized input slab. Old slab is already in the before set and is not added again.",
+    "independentScope": "Read allocation sites and actual array buffers; did not regenerate candidate or repeat full production counters. Real Worker memory and release remain unmeasured.",
+    "peakInsideStandingSourceBudgetClaimed": false
+  },
+  "extraGuardScopeAttribution": {
+    "originalReport": "independent-v2-same-road-edge.json",
+    "originalReportSHA256": "e805450a02391e95ebc4f37dae5a2e2a346437d4bfceeacb9b8df3c673c12cc8",
+    "originalCLI": 1,
+    "checksPassed": 3,
+    "checksTotal": 4,
+    "reason": "The extra whole-four-terrain-byte-equality guard exceeds the delegated same-22-face/same-819-point scope and contradicts the explicitly authorized V2 terminal water-bed revision. Original CLI1 and guard are not changed or relabelled as CLI0.",
+    "coreRequestedResults": "All original22/66 normal points now have positive normal/winding dot, including2 mixed faces. All819 same old/new support probes have exact0 near/far delta and no missing support. Those successful checks are retained rather than rerun.",
+    "deltaDoesNotConstituteFullNonTargetPass": "The listed byte deltas are attribution only; full V2 exterior/source protection remains deferred until visual gate."
+  },
+  "notMeasured": [
+    "Actual new native Worker total source bytes",
+    "Actual serialization transport peak heap",
+    "Worker disposal/reentry",
+    "Full new candidate ownership/source protection",
+    "New art/culling/cost acceptance"
+  ],
+  "endedUTC": "2026-10-05T23:51:04.753Z",
+  "elapsedWallMs": 424.59064,
+  "archiveExtraction": {
+    "original": "/workspace/genbu-entry-evidence/readonly-v2-snapshot-ownership.json",
+    "originalSHA256": "cde51017c795bf1fc93a5556f8d1aa6c943d765d1462b66d0055d905a6ee5146",
+    "omittedLargeArrayKeys": [
+      "snapshotBefore",
+      "snapshotAfter",
+      "authorAfterBeforeSecondSerialization",
+      "V1ToV2TerrainDelta"
+    ],
+    "originalUnmodified": true,
+    "thisFileIsSummary": true
+  },
+  "V1ToV2TerrainDeltaSummary": [
+    {
+      "id": "island:terrain:-1024:-768",
+      "vertexLayoutUnchanged": true,
+      "indexValuesUnchanged": true,
+      "changedVertices": 78,
+      "changedBounds": {
+        "min": [
+          -994,
+          37.48033905029297,
+          -530
+        ],
+        "max": [
+          -962,
+          44.883018493652344,
+          -512
+        ]
+      },
+      "attributeNames": [
+        "x",
+        "y",
+        "z",
+        "nx",
+        "ny",
+        "nz",
+        "r",
+        "g",
+        "b"
+      ]
+    },
+    {
+      "id": "island:terrain:-1024:-768:far",
+      "vertexLayoutUnchanged": true,
+      "indexValuesUnchanged": true,
+      "changedVertices": 118,
+      "changedBounds": {
+        "min": [
+          -995.6363525390625,
+          37.54142379760742,
+          -530
+        ],
+        "max": [
+          -961.8181762695312,
+          44.53139877319336,
+          -512
+        ]
+      },
+      "attributeNames": [
+        "x",
+        "y",
+        "z",
+        "nx",
+        "ny",
+        "nz",
+        "r",
+        "g",
+        "b"
+      ]
+    },
+    {
+      "id": "island:terrain:-1024:-512",
+      "vertexLayoutUnchanged": true,
+      "indexValuesUnchanged": true,
+      "changedVertices": 321,
+      "changedBounds": {
+        "min": [
+          -992,
+          37.561607360839844,
+          -512
+        ],
+        "max": [
+          -962.5454711914062,
+          42.30051040649414,
+          -498.3529357910156
+        ]
+      },
+      "attributeNames": [
+        "x",
+        "y",
+        "z",
+        "nx",
+        "ny",
+        "nz",
+        "r",
+        "g",
+        "b"
+      ]
+    },
+    {
+      "id": "island:terrain:-1024:-512:far",
+      "vertexLayoutUnchanged": true,
+      "indexValuesUnchanged": true,
+      "changedVertices": 143,
+      "changedBounds": {
+        "min": [
+          -992,
+          37.561607360839844,
+          -512
+        ],
+        "max": [
+          -962.5454711914062,
+          42.30051040649414,
+          -497.3793029785156
+        ]
+      },
+      "attributeNames": [
+        "x",
+        "y",
+        "z",
+        "nx",
+        "ny",
+        "nz",
+        "r",
+        "g",
+        "b"
+      ]
+    }
+  ]
+}

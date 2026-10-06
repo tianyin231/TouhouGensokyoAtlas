@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "createdUTC": "2026-10-06T00:07:52.609821+00:00",
+  "reviewer": "root",
+  "baselineCommit": "b9ff4a369080e861027966c13d071d08716a1348",
+  "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "projectSHA256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "baselineHTMLSHA256": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+  "candidateHTMLSHA256": "5480b1a3cca167bc49a1e20fe3f6601e9077bfc725f28f5eeee0e9332d2d4bbd",
+  "protocolSHA256": "3f8f997c59fc2547f89a8fd0c9db5fd3805f6b748eee5a342aa691c3d0e988fd",
+  "specSHA256": "e307ef15ddc428b67a63613af450de0686af086c21d01f875648ebd25c58d664",
+  "actualImagesOpened": [
+    {
+      "view": "frontLow",
+      "mode": "baseline",
+      "path": "/workspace/genbu-entry-evidence/baseline-view-A/frontLow.png",
+      "sha256": "c213d7e18dc77c77d4eb33dfe933ebe80b517238d723b3b947fd8a6e4d3e5b5d",
+      "actuallyOpenedByRoot": true
+    },
+    {
+      "view": "frontLow",
+      "mode": "candidate",
+      "path": "/workspace/genbu-entry-evidence/candidate-view-A/frontLow.png",
+      "sha256": "bfe311f4c6152f1065d4e28e6cbbc91e9d5354ea6b8446090e2a5d502ecf004b",
+      "actuallyOpenedByRoot": true
+    },
+    {
+      "view": "reverse",
+      "mode": "baseline",
+      "path": "/workspace/genbu-entry-evidence/baseline-view-A/reverse.png",
+      "sha256": "0c5061489197d7f0c38a79efbca37a529c8f946b6109cdce0b0757bf080eda3c",
+      "actuallyOpenedByRoot": true
+    },
+    {
+      "view": "reverse",
+      "mode": "candidate",
+      "path": "/workspace/genbu-entry-evidence/candidate-view-A/reverse.png",
+      "sha256": "606a2a42cffec310d18a3edee3a6578dcb72b5905e5cc1e6f062633a4b38946c",
+      "actuallyOpenedByRoot": true
+    }
+  ],
+  "generatedOrEditedImages": false,
+  "decision": "reject-v2-close-shore-art-gate-and-isolate",
+  "retainedGains": [
+    "Lower terminal columns reveal both bridgeheads and the southern creek opening.",
+    "The former dark road shoulder is corrected in the overview and the front road reaches the first original plank."
+  ],
+  "blockingObservations": [
+    "The front-low view reveals new repeated triangular depressions and folded grass shading along the west shore and near the water tail. The shore reads as a wrinkled surface rather than a complete bank.",
+    "In both close views the extended water tail still reads as a flat pointed blue sheet; the bank/bed cross-section does not provide convincing visible support."
+  ],
+  "inheritedLimits": [
+    "Gaps between original boardwalk segments exist in the baseline; this change does not establish continuity of the whole boardwalk.",
+    "Newly exposed original tree shapes and upper slopes remain outside this stage; no claim that they were improved."
+  ],
+  "technicalCauseProven": false,
+  "sameViewMeasuredDeltaEach": {
+    "allPassDrawCalls": 0,
+    "submittedTriangles": 612,
+    "residentGeometryAttributeBytes": 79320,
+    "geometries": 0,
+    "textures": 0
+  },
+  "reports": [
+    {
+      "file": "baseline-view-A/report.json",
+      "sha256": "f2e141297425cb7b6cfdf842f4f60164730ac592b0da2ba532f9f7e9e931708f"
+    },
+    {
+      "file": "candidate-view-A/report.json",
+      "sha256": "114638f47411ca055aee2b24c102a1e1d8f7777bb995f77e9a11d7982ea61f7b"
+    },
+    {
+      "file": "astra-view-A-review.json",
+      "sha256": "f92a1e8359affda1cc9874da1a8cdc116c1e99a4140240b3e7d71c2e9b6341ad"
+    }
+  ],
+  "hardwareFPSMeasured": false,
+  "sourceCandidateAccepted": false,
+  "candidatePublishedToMain": false,
+  "notRun": [
+    "cold/low/night supplemental batch",
+    "continuous LOD walk",
+    "production input/unload/reentry",
+    "full Node regression",
+    "candidate CI/deployment"
+  ],
+  "nextAction": "Save exact V2 source and original evidence on isolated review branch. Do not start same-method V3 or expensive regression; diagnose shared landform design failure before selecting the next implementation."
+}

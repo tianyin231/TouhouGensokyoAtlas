@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "command": [
+    "/tmp/node-v22.23.3-linux-x64/bin/node",
+    "/workspace/genbu-entry-evidence/diagnose-v2-west-bank-folds.mjs"
+  ],
+  "cwd": "/workspace/genbu-entry-refinement",
+  "startedUTC": "2026-10-06T00:12:38.902972+00:00",
+  "protocolSHA256": "d0ed3cd20dca960c8c5c059ff4f541deaee5536179824b04686810bb65c0f1bf",
+  "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "projectSHA256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "timeoutSeconds": 30,
+  "builds": 0,
+  "hooks": 0,
+  "nativeBuilds": 0,
+  "GPUFrames": 0,
+  "candidateAcceptance": false,
+  "exitCode": 1,
+  "endedUTC": "2026-10-06T00:12:39.569064+00:00",
+  "elapsedWallSeconds": 0.6659050419984851,
+  "protocolUnchanged": true,
+  "sourceUnchanged": true,
+  "projectUnchanged": true,
+  "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrSHA256": "239d9ab513a7cf7171cbafd0c5ef934e81853a07b03ae10562f7da518e84259f"
+}

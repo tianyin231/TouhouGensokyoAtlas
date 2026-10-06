@@ -1,0 +1,19 @@
+{
+  "startUTC": "2026-10-05T23:56:28.950831+00:00",
+  "command": [
+    "python",
+    "/workspace/genbu-entry-evidence/capture-view-A.py",
+    "--mode",
+    "baseline",
+    "--output",
+    "/workspace/genbu-entry-evidence/baseline-view-A"
+  ],
+  "protocolSHA": "3f8f997c59fc2547f89a8fd0c9db5fd3805f6b748eee5a342aa691c3d0e988fd",
+  "specSHA": "e307ef15ddc428b67a63613af450de0686af086c21d01f875648ebd25c58d664",
+  "CPUOverlap": "Independent agent may inspect saved sources; no speed claim.",
+  "exitCode": 0,
+  "elapsedSeconds": 51.92413181600568,
+  "endUTC": "2026-10-05T23:57:20.874966+00:00",
+  "protocolAfterSHA": "3f8f997c59fc2547f89a8fd0c9db5fd3805f6b748eee5a342aa691c3d0e988fd",
+  "specAfterSHA": "e307ef15ddc428b67a63613af450de0686af086c21d01f875648ebd25c58d664"
+}

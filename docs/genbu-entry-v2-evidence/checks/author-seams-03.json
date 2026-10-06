@@ -1,0 +1,61 @@
+{
+  "kind": "Author bounded actual-face/entry seam check, saved candidate03 only",
+  "protocolSHA": "13aa14c0794728cc37cce59f483b1ecc59995668868045bbd325bb376246ab70",
+  "sourceSHA": "90090097a0ca247fe23225fc4c3a84e3437dd5f83fc9d4b0c9e73dcd614c9c77",
+  "checks": [
+    {
+      "name": "Actual terrain exterior and both old LOD edges remain the same planes",
+      "passed": true,
+      "result": {
+        "samples": 2232,
+        "near": 0,
+        "far": 0.000001573271489974104
+      }
+    },
+    {
+      "name": "Actual original native-root footprint triangle support is retained",
+      "passed": true,
+      "result": {
+        "footprintSamples": 502,
+        "max": 0
+      }
+    },
+    {
+      "name": "Actual LOD height residual is preserved through every 2m ROI sample",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: LOD residual delta 0.039214628419507847\n    at file:///workspace/genbu-entry-evidence/author-seams-03.mjs:10:357\n    at check (file:///workspace/genbu-entry-evidence/author-seams-03.mjs:7:67)\n    at file:///workspace/genbu-entry-evidence/author-seams-03.mjs:10:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)"
+    },
+    {
+      "name": "Actual unchanged first board front corners meet complete public road edge",
+      "passed": true,
+      "result": {
+        "corners": [
+          [
+            -948.0928344726562,
+            41.13199996948242,
+            -525.3493041992188
+          ],
+          [
+            -945.7454833984375,
+            41.13199996948242,
+            -526.2094116210938
+          ]
+        ],
+        "distances": [
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "passed": false,
+  "nativeBuilds": 0,
+  "overviewHooks": 0,
+  "GPUFrames": 0,
+  "notMeasured": [
+    "Full native/cold actual passage prism test for columns not in original conflicts",
+    "Actual WebGL visual acceptance and culling cost",
+    "Transient Worker clone and unload/re-entry",
+    "FullNode regression"
+  ]
+}

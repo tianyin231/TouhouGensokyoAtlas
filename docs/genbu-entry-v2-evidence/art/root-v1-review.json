@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "kind": "Independent actual original-image first-visual gate",
+  "reviewedUTC": "2026-10-05 23:34:30 UTC",
+  "baseline": {
+    "commit": "b9ff4a369080e861027966c13d071d08716a1348",
+    "artifactSHA256": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+    "image": "baseline/genbuOverview.png",
+    "pngSHA256": "d25394ef427ab708a5bfd97a149aecec398c746f552093ce8f9942403876684d"
+  },
+  "candidate": {
+    "sourceSHA256": "519dc52242b35f7d1f8e03a92ea918b95dd3f2bd6bcec97d0e942b3662e6fabb",
+    "projectSHA256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+    "inputs": 209,
+    "artifactSHA256": "339cb490862c41b98d442a18c5d921ed0a11440efe0bc54b9313d6f29b860f83",
+    "image": "v1-capture/genbuOverview.png",
+    "pngSHA256": "73cf6edbf83611bf3bfcad8d35813dccca148b822c6025c46fde6990ff3ba77f"
+  },
+  "actualImagesOpened": true,
+  "generatedOrEditedImages": false,
+  "protocolSHA256": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc",
+  "sameCameraAndSettings": true,
+  "result": "rejected; retain V1 and allow one targeted V2 before any long regression",
+  "visibleGains": [
+    "Lower southern column ends expose the existing bridge and creek, improving entry readability."
+  ],
+  "blockingFindings": [
+    "New long near-black edge along the west/left side of the foreground public approach; absent from baseline. Actual geometry or shading cause not yet measured.",
+    "Terminal water now reads as a flat leaf-like patch without convincing bank support.",
+    "A small isolated pillar beside the west bridgehead weakens the continuous terminal-wall shape."
+  ],
+  "sameViewMeasuredDelta": {
+    "allPassCalls": 0,
+    "submittedTriangles": 510,
+    "residentAttributeBytes": 67080,
+    "geometries": 0,
+    "textures": 0
+  },
+  "costGate": true,
+  "visualGate": false,
+  "sourceCosts": {
+    "uniqueAddedPersistentBytes": 570060,
+    "constructionWorkerContactCopyBytes": 199944,
+    "conservativeSumBytes": 770004,
+    "transientWorkerReleaseRuntimeVerified": false
+  },
+  "limits": [
+    "Only one native balanced day overview captured for candidate.",
+    "No hardware FPS measurement.",
+    "Capture protocol regionMeta read uses cacheEntry.meta and is null in both original reports; actual source metadata is separately bound by author/source checks.",
+    "No additional viewpoints, full regression or production lifecycle executed for V1."
+  ],
+  "next": "Bounded actual-triangle attribution of the approach edge and support; preserve exact V1 source/protocol/image/failures, repair complete bank/landing form once without scattered decorative assets."
+}

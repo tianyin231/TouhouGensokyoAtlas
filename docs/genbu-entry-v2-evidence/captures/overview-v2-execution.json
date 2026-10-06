@@ -1,0 +1,23 @@
+{
+  "startedUTC": "2026-10-05T23:48:17.005576+00:00",
+  "command": [
+    "python",
+    "/workspace/genbu-entry-evidence/capture-overview.py",
+    "--repo",
+    "/workspace/genbu-entry-refinement",
+    "--dist",
+    "/workspace/genbu-entry-evidence/v2-dist",
+    "--output",
+    "/workspace/genbu-entry-evidence/v2-capture",
+    "--expected-sha",
+    "5480b1a3cca167bc49a1e20fe3f6601e9077bfc725f28f5eeee0e9332d2d4bbd",
+    "--label",
+    "Genbu southern mouth V2; source dd991fad, same d38ad9 protocol"
+  ],
+  "protocolSHA256": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc",
+  "CPUConcurrency": "May overlap Sol bounded offline source review. No heavy native/fullNode scheduled. Timings are not speed claims.",
+  "exitCode": 0,
+  "elapsedSeconds": 31.251329566002823,
+  "endedUTC": "2026-10-05T23:48:48.256907+00:00",
+  "protocolAfterSHA256": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc"
+}

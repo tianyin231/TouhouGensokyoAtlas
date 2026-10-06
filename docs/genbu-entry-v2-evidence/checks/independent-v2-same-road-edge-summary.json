@@ -1,0 +1,125 @@
+{
+  "schema": 1,
+  "kind": "Independent V2 same-face normal repair and same-point bounded support recheck",
+  "startUTC": "2026-10-05T23:48:21.327Z",
+  "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "protocolSHA256": "08e7554b9641e71aade4c3739f31ebf7e8c55f22313c2cdd4d1874cbf0f7ef45",
+  "projectSHA256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "baselineAcceptedNativeReportSHA256": "b4486cb1505fb440e09e41f0dc9ad0eb091a2f3542e838efe673eb1004673349",
+  "originalV1Failure": {
+    "reportSHA256": "e8ee3fc5e754461c4def01c6576e3a1a43dff0fe4dfeb27ac20545a33c495f18",
+    "CLI": 1,
+    "checksPassed": 2,
+    "checksTotal": 3,
+    "faces": 22,
+    "overwritten": false
+  },
+  "reusedV1ArtifactSHA256": "339cb490862c41b98d442a18c5d921ed0a11440efe0bc54b9313d6f29b860f83",
+  "candidateArtifactNotMeasured": true,
+  "executed": {
+    "definitionModules": 0,
+    "overviewHooks": 0,
+    "nativeBuilds": 0,
+    "GPUFrames": 0
+  },
+  "bindings": {
+    "/workspace/genbu-entry-evidence/independent-v1-road-normal.json": {
+      "bytes": 41272,
+      "sha256": "e8ee3fc5e754461c4def01c6576e3a1a43dff0fe4dfeb27ac20545a33c495f18"
+    },
+    "/workspace/genbu-entry-evidence/independent-v1-road-edge.json": {
+      "bytes": 3507197,
+      "sha256": "9206b68f3816105fdd2a10b4d334f5c68ca79d7089f5c7a52f76458ce1a031df"
+    },
+    "/workspace/genbu-entry-evidence/author-prepare-05.json": {
+      "bytes": 230168,
+      "sha256": "2f99f12d8f06a380c82fb4f02087c8bf4b25a32fee2bf8eb31eae5f5070116ad"
+    },
+    "/workspace/genbu-entry-evidence/author-prepare-06.json": {
+      "bytes": 230174,
+      "sha256": "76b2e71044a48d077a1a93a0fd48426ff41515335d4a7279be49df5575c3be59"
+    },
+    "/workspace/genbu-entry-refinement/src/genbu-entry.js": {
+      "bytes": 30071,
+      "sha256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544"
+    },
+    "/workspace/genbu-entry-refinement/project.json": {
+      "bytes": 2421,
+      "sha256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148"
+    },
+    "/workspace/genbu-entry-evidence/baseline-native-arrays-v2/public-overview.v8": {
+      "bytes": 142649321,
+      "sha256": "91c20c7b34a3db561f9b14f87bc9e1c6c53120fd2958012daf0e85b10f55acc7"
+    },
+    "/workspace/genbu-entry-evidence/author-prepare-06-arrays/public.v8": {
+      "bytes": 142872938,
+      "sha256": "bc92f9bdec1a72b934392d176bca13580c00f3a11ed3e0acc078f3c225984f6f"
+    },
+    "/workspace/genbu-entry-evidence/baseline-native-source-v2.json": {
+      "bytes": 77836,
+      "sha256": "b4486cb1505fb440e09e41f0dc9ad0eb091a2f3542e838efe673eb1004673349"
+    }
+  },
+  "checks": [
+    {
+      "name": "Original true road indices and all near/far source geometry are unchanged from frozen V1",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: New terrain changed during the normal correction island:terrain:-1024:-768\n+ actual - expected\n\n+ '22d7bdf139bb1c7dbaab11430d9f723a2eb932766b8193bc8510aea8c3ff4a32'\n- '34c0223a7f8eb38a76a92c86be962dd1c2cdb4dc99ee52191bc922654b1fbfb1'\n\n    at file:///workspace/genbu-entry-evidence/check-v2-same-road-edge.mjs:41:132\n    at check (file:///workspace/genbu-entry-evidence/check-v2-same-road-edge.mjs:38:42)\n    at file:///workspace/genbu-entry-evidence/check-v2-same-road-edge.mjs:39:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)"
+    },
+    {
+      "name": "All original 22 failing faces, including mixed old/new vertices, have normals agreeing with actual winding",
+      "passed": true,
+      "result": {
+        "faces": 22,
+        "vertices": 66,
+        "mixedFaces": 2,
+        "minimumV2DotGeometric": 0.9968674513352423,
+        "minimumOriginalDotGeometric": 0.9999999706184985,
+        "strictOriginalCondition": "Every normal dot actual face normal > 0; unchanged from V1 strict probe"
+      }
+    },
+    {
+      "name": "All same 819 edge samples preserve V1 near/far support and original baseline reference",
+      "passed": true,
+      "result": {
+        "samples": 819,
+        "missingNear": 0,
+        "missingFar": 0,
+        "maximumV1ToV2NearDelta": 0,
+        "maximumV1ToV2FarDelta": 0,
+        "maximumRoadAboveNear": 0.19531523092882708,
+        "minimumRoadAboveNear": 0.03329660545568913,
+        "maximumRoadAboveFar": 0.2520780713105779,
+        "noWholeSurfaceProofClaimed": true
+      }
+    },
+    {
+      "name": "Frozen candidate source and original failed evidence remain unchanged",
+      "passed": true,
+      "result": {
+        "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+        "priorEvidenceUnchanged": true
+      }
+    }
+  ],
+  "passed": false,
+  "notMeasured": [
+    "V2 raster art acceptance or actual cost",
+    "Full Genbu public/native source checks",
+    "Water/column V2 changes",
+    "Worker release/reentry",
+    "Hardware FPS"
+  ],
+  "endUTC": "2026-10-05T23:48:22.504Z",
+  "elapsedWallMs": 1177.616588,
+  "archiveExtraction": {
+    "original": "/workspace/genbu-entry-evidence/independent-v2-same-road-edge.json",
+    "originalSHA256": "e805450a02391e95ebc4f37dae5a2e2a346437d4bfceeacb9b8df3c673c12cc8",
+    "omittedLargeArrayKeys": [
+      "faceComparisons",
+      "supportComparisons"
+    ],
+    "originalUnmodified": true,
+    "thisFileIsSummary": true
+  }
+}

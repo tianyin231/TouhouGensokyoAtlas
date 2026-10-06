@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "reason": "The first attempt matched all 2156 actual predecessor records, then rejected a whole-manifest comparison of the per-run trailUpgrade.prepareMs timer. It did not execute Genbu prepare or any native generator.",
+  "priorCLI": 1,
+  "originalReport": "/workspace/genbu-entry-evidence/independent-v2-source.json",
+  "originalReportSHA256": "db77a5b3d92b0b38b976f9c1daf75f4cf07046b04185850ea44e9b726638d087",
+  "originalProtocolSHA256": "1cc21d2597d9b058a9cceee92727b7dbc1041b3adcd32f459e583ee781f9054f",
+  "reviewedChange": "One named telemetry path is reported with both values; all other manifest fields and typed data require exact equality. No production code, source budget, geometry, query, collision or fixture assertion changed.",
+  "newChecker": "/workspace/genbu-entry-evidence/check-independent-v2-source-02.mjs",
+  "newCheckerSHA256": "3629aabfddb483351e874bb558a6d5581786945200ce63f041cd76ea888b0e87",
+  "needForExecution": "The first failed attempt did not save a complete live production prefix or run any candidate operations. A new real prefix is needed to execute the already authorized candidate public hook and the only native generator; no baseline generator is repeated."
+}

@@ -1,0 +1,774 @@
+{
+  "schema": 1,
+  "kind": "Bounded west-bank fold diagnostic conclusion; Genbu V2 remains visually rejected",
+  "savedUTC": "2026-10-06T00:16:41.341638+00:00",
+  "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "projectSHA256": "1e816ddf9d81b8508c210982170442b11f9eaab56b7558a5d0482fb62bec2148",
+  "AProtocolSHA256": "3f8f997c59fc2547f89a8fd0c9db5fd3805f6b748eee5a342aa691c3d0e988fd",
+  "ASpecSHA256": "e307ef15ddc428b67a63613af450de0686af086c21d01f875648ebd25c58d664",
+  "HTMLSHA256": "5480b1a3cca167bc49a1e20fe3f6601e9077bfc725f28f5eeee0e9332d2d4bbd",
+  "domain": [
+    -1014,
+    -556,
+    -965,
+    -498
+  ],
+  "builds": 0,
+  "hooks": 0,
+  "nativeBuilds": 0,
+  "GPUFrames": 0,
+  "sourceUnchanged": true,
+  "projectUnchanged": true,
+  "actualExecution": {
+    "firstStrictCLI": 1,
+    "firstSeconds": 0.6659050419984851,
+    "zeroFaceAttributionSeconds": 0.47836586999999997,
+    "authorizedContinuationStrictCLI": 1,
+    "continuationSeconds": 0.7165336359903449,
+    "totalObservedWallSeconds": 1.86080454798883,
+    "limitSeconds": 30,
+    "originalStrictNondegenerateFailurePreserved": true,
+    "diagnosticStatisticsCompletedOnDefinedNonzeroFaces": true,
+    "candidateAcceptancePassed": false
+  },
+  "counts": {
+    "actualBaselineFacesInPaddedDomain": 1258,
+    "actualCandidateFacesInPaddedDomain": 1608,
+    "candidateFaceCentresInDomain": 768,
+    "actualPairedCandidateEdgesInDomain": 1164,
+    "unpairedFullEdgesInDomain": 0,
+    "moreThanTwoFaceFullEdges": 2,
+    "candidateNormalsOpposingActualWinding": 3,
+    "baselineNormalsOpposingSameReferenceWinding": 0,
+    "addedFoldAngleHistogramDegrees": {
+      "greaterThan5": 253,
+      "greaterThan10": 167,
+      "greaterThan20": 61,
+      "greaterThan30": 26,
+      "greaterThan45": 4,
+      "greaterThan60": 1,
+      "greaterThan90": 1
+    },
+    "addedStoredNormalMismatchHistogramDegrees": {
+      "greaterThan5": 200,
+      "greaterThan10": 143,
+      "greaterThan20": 55,
+      "greaterThan30": 31,
+      "greaterThan45": 4,
+      "greaterThan60": 2,
+      "greaterThan90": 0
+    },
+    "storedEndpointNormalJumpHistogramDegrees": {
+      "greaterThan5": 0,
+      "greaterThan10": 0,
+      "greaterThan20": 0,
+      "greaterThan30": 0,
+      "greaterThan45": 0,
+      "greaterThan60": 0,
+      "greaterThan90": 0
+    },
+    "exactXZSharedEdgesWithDifferentEndpointY": 1,
+    "maximumMatchedEndpointHeightGap": 3.814697265625e-06
+  },
+  "zeroArea": {
+    "baselineInPaddedDomain": 0,
+    "candidateInPaddedDomain": 2,
+    "baselineInRequestedDomain": 0,
+    "candidateInRequestedDomain": 1,
+    "classifications": {
+      "Candidate zero-area triangle absent from baseline zero-face set at same XZ; retriangulation creates this primitive": 2
+    },
+    "normalUndefinedForTheseActualFaces": true,
+    "normalStatisticsExcludeUndefinedFacesExplicitly": true,
+    "originalStrictNondegenerateConditionPassed": false,
+    "originalCLI1Preserved": {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-west-bank-folds-execution.json",
+      "sha256": "d299cd377ada3fc29654a4e56dbd8d01af75da8f7391112e39aeba792adacea1"
+    }
+  },
+  "zeroAreaExamples": [
+    {
+      "recordId": "island:terrain:-1024:-512",
+      "triangleOrdinal": 1244,
+      "points": [
+        [
+          -1012,
+          48.395469665527344,
+          -500,
+          0.3431393802165985,
+          0.9388841390609741,
+          -0.011608012020587921,
+          0.15124548971652985,
+          0.2247965931892395,
+          0.08882971853017807
+        ],
+        [
+          -1012,
+          48.395469665527344,
+          -500,
+          0.3431393802165985,
+          0.9388841390609741,
+          -0.011608002707362175,
+          0.15124548971652985,
+          0.2247965782880783,
+          0.08882971853017807
+        ],
+        [
+          -1008,
+          46.96334457397461,
+          -496,
+          0.32488518953323364,
+          0.9457089900970459,
+          -0.00916991475969553,
+          0.14965851604938507,
+          0.22333960235118866,
+          0.08886193484067917
+        ]
+      ],
+      "center": [
+        -1010.6666666666666,
+        47.918094635009766,
+        -498.66666666666663
+      ],
+      "insideRequestedDomain": true,
+      "classification": "Candidate zero-area triangle absent from baseline zero-face set at same XZ; retriangulation creates this primitive",
+      "baselineAtSameCentre": {
+        "recordId": "island:terrain:-1024:-512",
+        "triangleOrdinal": 8,
+        "points": [
+          [
+            -1018.4000244140625,
+            50.6868782043457,
+            -506.3999938964844
+          ],
+          [
+            -1008,
+            46.96334457397461,
+            -496
+          ],
+          [
+            -1008,
+            46.64875793457031,
+            -512
+          ]
+        ],
+        "geometricNormal": [
+          0.3532712836536273,
+          0.9353401495549579,
+          -0.018390344646775417
+        ],
+        "height": 47.9180943917564
+      },
+      "noHoleOrRasterCauseClaim": true
+    },
+    {
+      "recordId": "island:terrain:-1024:-512",
+      "triangleOrdinal": 1220,
+      "points": [
+        [
+          -1018.4000244140625,
+          50.68687438964844,
+          -506.3999938964844,
+          0.3723450005054474,
+          0.927964985370636,
+          -0.015497294254601002,
+          0.1537846475839615,
+          0.22712776064872742,
+          0.08877817541360855
+        ],
+        [
+          -1018.4000244140625,
+          50.68687438964844,
+          -506.3999938964844,
+          0.3723450005054474,
+          0.927964985370636,
+          -0.015497295185923576,
+          0.1537846475839615,
+          0.22712776064872742,
+          0.08877817541360855
+        ],
+        [
+          -1016,
+          49.755165100097656,
+          -507.69232177734375,
+          0.3637809753417969,
+          0.9313200116157532,
+          -0.017506813630461693,
+          0.15445490181446075,
+          0.227715402841568,
+          0.08875551074743271
+        ]
+      ],
+      "center": [
+        -1017.6000162760417,
+        50.376304626464844,
+        -506.8307698567708
+      ],
+      "insideRequestedDomain": false,
+      "classification": "Candidate zero-area triangle absent from baseline zero-face set at same XZ; retriangulation creates this primitive",
+      "baselineAtSameCentre": {
+        "recordId": "island:terrain:-1024:-512",
+        "triangleOrdinal": 7,
+        "points": [
+          [
+            -1018.4000244140625,
+            50.6868782043457,
+            -506.3999938964844
+          ],
+          [
+            -1008,
+            46.64875793457031,
+            -512
+          ],
+          [
+            -1012,
+            48.09283447265625,
+            -512
+          ]
+        ],
+        "geometricNormal": [
+          0.33918358794540726,
+          0.9395169272536781,
+          -0.04756508249007033
+        ],
+        "height": 50.3762509912967
+      },
+      "noHoleOrRasterCauseClaim": true
+    }
+  ],
+  "strongFiniteLengthGeometricFolds": [
+    {
+      "edge": [
+        [
+          -992,
+          46.19098663330078,
+          -540
+        ],
+        [
+          -992,
+          43.428565979003906,
+          -544
+        ]
+      ],
+      "midpointXZ": [
+        -992,
+        -542
+      ],
+      "adjacentCandidateFaces": [
+        {
+          "recordId": "island:terrain:-1024:-768",
+          "triangleOrdinal": 14366,
+          "center": [
+            -992.6666666666667,
+            45.57960001627604,
+            -542
+          ],
+          "geometricNormal": [
+            0.6888146238142712,
+            0.5965128680379651,
+            -0.41195486680548526
+          ]
+        },
+        {
+          "recordId": "island:terrain:-1024:-768",
+          "triangleOrdinal": 14368,
+          "center": [
+            -991.3333333333335,
+            45.04785410563151,
+            -542
+          ],
+          "geometricNormal": [
+            -0.28193218168770795,
+            0.789467931083816,
+            -0.5452106296827388
+          ]
+        }
+      ],
+      "baselineFacesAtSameTwoCentroids": [
+        {
+          "recordId": "island:terrain:-1024:-768",
+          "triangleOrdinal": 14366,
+          "geometricNormal": [
+            0.28778111899131464,
+            0.9557424117372115,
+            0.06114302870193064
+          ]
+        },
+        {
+          "recordId": "island:terrain:-1024:-768",
+          "triangleOrdinal": 14368,
+          "geometricNormal": [
+            0.1406763051262669,
+            0.988035830324191,
+            0.06320898015003908
+          ]
+        }
+      ],
+      "candidateFoldAngleDegrees": 59.91190642131611,
+      "baselineFoldAngleDegrees": 8.638178399574036,
+      "addedFoldAngleDegrees": 51.27372802174207,
+      "storedEndpointNormalJumpDegrees": 8.537736462515939e-07,
+      "baselineEndpointNormalJumpDegrees": 8.537736462515939e-07,
+      "addedStoredEndpointNormalJumpDegrees": 0,
+      "actualSharedEndpointHeightGap": 0
+    },
+    {
+      "edge": [
+        [
+          -992,
+          43.25613021850586,
+          -552
+        ],
+        [
+          -992,
+          44.93124771118164,
+          -556
+        ]
+      ],
+      "midpointXZ": [
+        -992,
+        -554
+      ],
+      "adjacentCandidateFaces": [
+        {
+          "recordId": "island:terrain:-1024:-768",
+          "triangleOrdinal": 13598,
+          "center": [
+            -992.6666666666667,
+            44.83946228027344,
+            -554
+          ],
+          "geometricNormal": [
+            0.7180971886310548,
+            0.6419262384194347,
+            0.2688254677459898
+          ]
+        },
+        {
+          "recordId": "island:terrain:-1024:-768",
+          "triangleOrdinal": 13600,
+          "center": [
+            -991.3333333333335,
+            44.266760508219406,
+            -554
+          ],
+          "geometricNormal": [
+            -0.2328740919320425,
+            0.8970243842131431,
+            0.37565530933803926
+          ]
+        }
+      ],
+      "baselineFacesAtSameTwoCentroids": [
+        {
+          "recordId": "island:terrain:-1024:-768",
+          "triangleOrdinal": 13598,
+          "geometricNormal": [
+            0.26733035314824305,
+            0.9561133912360953,
+            -0.11992358143688439
+          ]
+        },
+        {
+          "recordId": "island:terrain:-1024:-768",
+          "triangleOrdinal": 13600,
+          "geometricNormal": [
+            0.08814132802760043,
+            0.9883637345111178,
+            -0.12396868393577264
+          ]
+        }
+      ],
+      "candidateFoldAngleDegrees": 59.3639442737841,
+      "baselineFoldAngleDegrees": 10.448780822554763,
+      "addedFoldAngleDegrees": 48.91516345122933,
+      "storedEndpointNormalJumpDegrees": 1.2074182697257333e-06,
+      "baselineEndpointNormalJumpDegrees": 8.537736462515939e-07,
+      "addedStoredEndpointNormalJumpDegrees": 3.536446234741395e-07,
+      "actualSharedEndpointHeightGap": 0
+    },
+    {
+      "edge": [
+        [
+          -992,
+          46.19098663330078,
+          -540
+        ],
+        [
+          -990,
+          45.524009704589844,
+          -542
+        ]
+      ],
+      "midpointXZ": [
+        -991,
+        -541
+      ],
+      "adjacentCandidateFaces": [
+        {
+          "recordId": "island:terrain:-1024:-768",
+          "triangleOrdinal": 14368,
+          "center": [
+            -991.3333333333335,
+            45.04785410563151,
+            -542
+          ],
+          "geometricNormal": [
+            -0.28193218168770795,
+            0.789467931083816,
+            -0.5452106296827388
+          ]
+        },
+        {
+          "recordId": "island:terrain:-1024:-768",
+          "triangleOrdinal": 14371,
+          "center": [
+            -990,
+            45.447392781575516,
+            -540.6666666666666
+          ],
+          "geometricNormal": [
+            0.36359373656297334,
+            0.9300234323642279,
+            0.053441650289224804
+          ]
+        }
+      ],
+      "baselineFacesAtSameTwoCentroids": [
+        {
+          "recordId": "island:terrain:-1024:-768",
+          "triangleOrdinal": 14368,
+          "geometricNormal": [
+            0.1406763051262669,
+            0.988035830324191,
+            0.06320898015003908
+          ]
+        },
+        {
+          "recordId": "island:terrain:-1024:-768",
+          "triangleOrdinal": 14371,
+          "geometricNormal": [
+            0.0769131905257294,
+            0.9970369972271537,
+            -0.0012598743642101083
+          ]
+        }
+      ],
+      "candidateFoldAngleDegrees": 52.94524675626226,
+      "baselineFoldAngleDegrees": 5.222641622063302,
+      "addedFoldAngleDegrees": 47.72260513419896,
+      "storedEndpointNormalJumpDegrees": 8.537736462515939e-07,
+      "baselineEndpointNormalJumpDegrees": 0,
+      "addedStoredEndpointNormalJumpDegrees": 8.537736462515939e-07,
+      "actualSharedEndpointHeightGap": 0
+    }
+  ],
+  "strongActualFaceNormalMismatch": [
+    {
+      "recordId": "island:terrain:-1024:-768",
+      "triangleOrdinal": 14368,
+      "center": [
+        -991.3333333333335,
+        45.04785410563151,
+        -542
+      ],
+      "points": [
+        [
+          -990,
+          45.524009704589844,
+          -542
+        ],
+        [
+          -992,
+          43.428565979003906,
+          -544
+        ],
+        [
+          -992,
+          46.19098663330078,
+          -540
+        ]
+      ],
+      "candidateGeometricNormal": [
+        -0.28193218168770795,
+        0.789467931083816,
+        -0.5452106296827388
+      ],
+      "candidateStoredNormals": [
+        [
+          0.3086959719657898,
+          0.9511063694953918,
+          -0.01017296314239502
+        ],
+        [
+          0.23025421798229218,
+          0.9721686840057373,
+          0.04325583204627037
+        ],
+        [
+          0.33783870935440063,
+          0.9405437707901001,
+          0.035248883068561554
+        ]
+      ],
+      "candidateStoredToActualFaceAnglesDegrees": [
+        47.98053381980001,
+        47.23473377198033,
+        51.09260815102683
+      ],
+      "oldReference": {
+        "recordId": "island:terrain:-1024:-768",
+        "triangleOrdinal": 14368,
+        "actualOriginalPoints": [
+          [
+            -990,
+            43.0158576965332,
+            -542
+          ],
+          [
+            -992,
+            43.428565979003906,
+            -544
+          ],
+          [
+            -992,
+            43.17266845703125,
+            -540
+          ]
+        ],
+        "geometricNormal": [
+          0.1406763051262669,
+          0.988035830324191,
+          0.06320898015003908
+        ],
+        "storedNormalsAtSameCandidateXZ": [
+          [
+            0.0868786871433258,
+            0.995159387588501,
+            0.0459330677986145
+          ],
+          [
+            0.23025421798229218,
+            0.9721686840057373,
+            0.04325583204627037
+          ],
+          [
+            0.19231106340885162,
+            0.9784758687019348,
+            0.07484282553195953
+          ]
+        ],
+        "storedToOriginalFaceAnglesDegrees": [
+          3.263477768547836,
+          5.338163276655313,
+          3.082057694840055
+        ]
+      },
+      "candidateHeightChangeAtCentroid": 1.842156728108698,
+      "geometricNormalChangeDegrees": 45.097763691318626,
+      "maximumStoredNormalMismatchDegrees": 51.09260815102683,
+      "baselineMaximumStoredNormalMismatchAtSameXZDegrees": 5.338163276655313,
+      "addedMaximumStoredNormalMismatchDegrees": 45.754444874371515
+    },
+    {
+      "recordId": "island:terrain:-1024:-768",
+      "triangleOrdinal": 15927,
+      "center": [
+        -970,
+        39.4641596476237,
+        -516.6666666666666
+      ],
+      "points": [
+        [
+          -970,
+          40.05924606323242,
+          -518
+        ],
+        [
+          -972,
+          39.96255111694336,
+          -516
+        ],
+        [
+          -968,
+          38.37068176269531,
+          -516
+        ]
+      ],
+      "candidateGeometricNormal": [
+        0.3415588389658979,
+        0.8582584696524683,
+        0.3830534672784871
+      ],
+      "candidateStoredNormals": [
+        [
+          0.12089190632104874,
+          0.989076554775238,
+          0.08433710783720016
+        ],
+        [
+          -0.26214373111724854,
+          0.9511243104934692,
+          -0.16322751343250275
+        ],
+        [
+          0.47880473732948303,
+          0.8328427076339722,
+          0.2777031660079956
+        ]
+      ],
+      "candidateStoredToActualFaceAnglesDegrees": [
+        22.708528604498365,
+        48.37533110619176,
+        10.032380792558685
+      ],
+      "oldReference": {
+        "recordId": "island:terrain:-1024:-768",
+        "triangleOrdinal": 15927,
+        "actualOriginalPoints": [
+          [
+            -970,
+            38.279876708984375,
+            -518
+          ],
+          [
+            -972,
+            38.25029754638672,
+            -516
+          ],
+          [
+            -968,
+            37.89570999145508,
+            -516
+          ]
+        ],
+        "geometricNormal": [
+          0.08783563573260096,
+          0.9908484887410605,
+          0.10248987001165787
+        ],
+        "storedNormalsAtSameCandidateXZ": [
+          [
+            0.057890307158231735,
+            0.9899998307228088,
+            0.12864315509796143
+          ],
+          [
+            0.0918407216668129,
+            0.9945647120475769,
+            0.049054212868213654
+          ],
+          [
+            0.07430964708328247,
+            0.9920907616615295,
+            0.10116305947303772
+          ]
+        ],
+        "storedToOriginalFaceAnglesDegrees": [
+          2.2786479573303615,
+          3.0779698354375644,
+          0.7819539641438396
+        ]
+      },
+      "candidateHeightChangeAtCentroid": 1.3221982320149834,
+      "geometricNormalChangeDegrees": 23.122953832615973,
+      "maximumStoredNormalMismatchDegrees": 48.37533110619176,
+      "baselineMaximumStoredNormalMismatchAtSameXZDegrees": 3.0779698354375644,
+      "addedMaximumStoredNormalMismatchDegrees": 45.297361270754195
+    }
+  ],
+  "interpretation": {
+    "supported": "Both real added geometric crease and smooth stored-normal mismatch occur in the bounded west bank. Shared finite-length edges have zero actual endpoint gap; folds are not inferred from screenshots.",
+    "primaryExample": {
+      "recordId": "island:terrain:-1024:-768",
+      "adjacentFaces": [
+        14366,
+        14368
+      ],
+      "edgeXZ": [
+        [
+          -992,
+          -540
+        ],
+        [
+          -992,
+          -544
+        ]
+      ],
+      "candidateFoldDegrees": 59.91190642131611,
+      "baselineFoldDegrees": 8.638178399574036,
+      "addedFoldDegrees": 51.27372802174207,
+      "actualEndpointGap": 0,
+      "storedEndpointNormalJumpDegrees": 8.537736462515939e-07,
+      "face14368CandidateMaximumNormalMismatchDegrees": 51.09260815102683,
+      "face14368BaselineMaximumNormalMismatchDegrees": 5.338163276655313
+    },
+    "microFragmentCaution": "The largest135-degree observation is on an XZ-collapsed edge at(-1012,-500) with3.814697e-6m Y separation. It is a tiny vertical sliver, not evidence of a broad visible ridge. The two actual zero-area primitives have no defined geometric normal and keep the strict CLI1.",
+    "zeroClassification": "Baseline padded domain has0 zero-area faces, candidate has2, one centred inside requested domain at(-1010.6667,-498.6667). Neither matches a baseline zero-area triangle at same XZ; old covering planes are nonzero. This is a new triangulation primitive condition, not proof of a hole or visible wrinkle cause.",
+    "normalJump": "No added edge endpoint stored-normal jump exceeded5degrees. Large differences are smooth stored normals versus actual bent face planes, rather than a newly broken normal seam.",
+    "designImplication": "Changing normals alone cannot remove the finite-length59-degree geometric crease. A different control surface should give support guards and bank/bed slopes one coherent cross-section, then derive normals from that actual geometry; retain current source as rejected evidence.",
+    "notProven": [
+      "Which specific face creates each raster wrinkle",
+      "Actual occlusion of water by projected overlaps",
+      "WholeGenbu completeness or acceptance",
+      "No holes across untested triangles orLOD/cut variants"
+    ]
+  },
+  "rawFiles": [
+    {
+      "path": "/workspace/genbu-entry-evidence/diagnose-v2-west-bank-folds.mjs",
+      "bytes": 11398,
+      "sha256": "d0ed3cd20dca960c8c5c059ff4f541deaee5536179824b04686810bb65c0f1bf"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-west-bank-folds-execution.json",
+      "bytes": 1003,
+      "sha256": "d299cd377ada3fc29654a4e56dbd8d01af75da8f7391112e39aeba792adacea1"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-west-bank-folds.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-west-bank-folds.stderr.log",
+      "bytes": 719,
+      "sha256": "239d9ab513a7cf7171cbafd0c5ef934e81853a07b03ae10562f7da518e84259f"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/locate-v2-degenerate-face.mjs",
+      "bytes": 2828,
+      "sha256": "47064da924606484fea7094654c695ded614b10edc92257713fedb2971eb1870"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-degenerate-face.json",
+      "bytes": 2434,
+      "sha256": "71a0d68633ed5304511f12068c8ff4d1a529f99129800ea3ea3d2ff02ca34e7f"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/diagnose-v2-west-bank-folds-02.mjs",
+      "bytes": 13520,
+      "sha256": "ae719d96e9c5fc50e8618048b53d4ee1be0c3ef7188f4bbd57c58546b57fd94f"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-west-bank-folds-02.json",
+      "bytes": 45211,
+      "sha256": "63c8f2fecb352c8e17607aed439905aadb82e141bc36fdb754694471a40c92d5"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-west-bank-folds-02-execution.json",
+      "bytes": 1283,
+      "sha256": "1bc48e3d45a6c174450fbb3a5201ccb913df7eb571f68d593401e640b5d81777"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-west-bank-folds-02.stdout.log",
+      "bytes": 4642,
+      "sha256": "6e1ea589ae59d372b932318162c63292043ee1675c58a71c32762230d1d01a85"
+    },
+    {
+      "path": "/workspace/genbu-entry-evidence/independent-v2-west-bank-folds-02.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

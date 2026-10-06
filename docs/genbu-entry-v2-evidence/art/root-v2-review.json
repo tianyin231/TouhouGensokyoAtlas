@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "kind": "Independent actual original-image second visual gate",
+  "baselineCommit": "b9ff4a369080e861027966c13d071d08716a1348",
+  "sourceSHA256": "dd991fadfa7ef3339ec0afe26fa10e9dd6ddcc09fcd41536f3501e4e874d3544",
+  "artifactSHA256": "5480b1a3cca167bc49a1e20fe3f6601e9077bfc725f28f5eeee0e9332d2d4bbd",
+  "image": "v2-capture/genbuOverview.png",
+  "pngSHA256": "1c76951543ec01107f5adb8271a5982da7660ff5f5831cfc218d8275cb2bc080",
+  "protocolSHA256": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc",
+  "actualImagesOpened": ["baseline/genbuOverview.png", "v1-capture/genbuOverview.png", "v2-capture/genbuOverview.png"],
+  "generatedOrEditedImages": false,
+  "decision": "Pass the first-view gate for the limited southern mouth; proceed to low and reverse views and independent source protection. This is not final visual acceptance or deployment authorization for the candidate.",
+  "visibleGains": [
+    "The new black band is gone; the dirt approach visibly joins the original boardwalk.",
+    "Lower terminal columns expose the existing bridge and creek and make the entry more readable than baseline.",
+    "The formerly isolated western low column no longer dominates the terminal shape.",
+    "The narrower water ending has a more continuous creek outline than V1's broad leaf-like patch."
+  ],
+  "remainingVisualLimits": [
+    "The overview cannot fully establish bank thickness or low-angle water/ground contact; these need actual close and reverse views.",
+    "Shoreline remains simplified, and upstream walls, bare surrounding slopes, original crowns and forest density are outside this delivered scope.",
+    "Cold, low-quality and night candidate comparisons and a continuous LOD traversal have not yet run."
+  ],
+  "sameViewMeasuredDelta": {"allPassCalls": 0, "submittedTriangles": 612, "residentAttributeBytes": 79320, "geometries": 0, "textures": 0},
+  "authorSourceBudget": {"uniqueAddedPersistentBytes": 598212, "workerContactCloneBytes": 203616, "conservativeCombinedBytes": 801828, "actualWorkerReleaseVerified": false},
+  "actualCapturedWorkerSourceBytes": {"baseline": 6278784, "candidate": 6293376, "delta": 14592, "meaning": "Actual production stream result; serialized V8 whole-buffer sizes are not used as live source memory."},
+  "failureHistory": "V1 remains rejected at review branch commit 623442588cc580767fc3ed57f021c188dae4ac26. Its 22-face normal failure is preserved. V2's independent same-face/support checks passed, but their full 3/4 CLI1 from an extra whole-terrain equality assumption remains recorded separately.",
+  "hardwareFPSMeasured": false,
+  "fullNodeRegressionRun": false,
+  "candidatePublished": false
+}
