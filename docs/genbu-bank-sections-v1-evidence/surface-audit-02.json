@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "sourceSHA": "a4f6ebd9549990110c234436d429d23e13fd8817e4e9b8d0186a4bda08850266",
+  "scriptSHA": "bf67f6c43ff4a0a4dbb04ad80bca3d29e7b19dec4fe8bb3a7c1460a5a715aed1",
+  "hooks": 0,
+  "nativeBuilds": 0,
+  "GPUFrames": 0,
+  "checks": [
+    {
+      "name": "outer own LOD boundary",
+      "passed": true,
+      "result": {
+        "samples": 3208,
+        "missing": 0,
+        "maxNear": 0.0000019073486399179274,
+        "maxFar": 0.0000033069000551222416
+      }
+    },
+    {
+      "name": "all final patch faces and vertex normals",
+      "passed": true,
+      "result": {
+        "zero": 0,
+        "minDot": 0.7843582515990141,
+        "worst": {
+          "id": "genbu:bank-sections:-768:near",
+          "i": 133,
+          "dot": 0.7843582515990141,
+          "p": [
+            -976,
+            41.103187561035156,
+            -544,
+            0,
+            1,
+            0,
+            0.1474696397781372,
+            0.21178483963012695,
+            0.12515440583229065
+          ]
+        }
+      }
+    },
+    {
+      "name": "first board actual two-corner terrain clearance",
+      "passed": false,
+      "result": [
+        {
+          "p": [
+            -948.09283447,
+            41.13199997,
+            -525.3493042
+          ],
+          "near": 41.1618901159043,
+          "far": 41.1618901159043,
+          "nearGap": -0.029890145904296617,
+          "farGap": -0.029890145904296617
+        },
+        {
+          "p": [
+            -945.7454834,
+            41.13199997,
+            -526.2094116
+          ],
+          "near": 41.16060985068226,
+          "far": 41.16060985068226,
+          "nearGap": -0.02860988068226078,
+          "farGap": -0.02860988068226078
+        }
+      ]
+    },
+    {
+      "name": "single actual wet-line soil intersection",
+      "passed": true,
+      "result": {
+        "wetPoints": 85,
+        "wetMax": 0.000004430928456145011
+      }
+    }
+  ],
+  "passed": false,
+  "elapsedMs": 2813.074196
+}

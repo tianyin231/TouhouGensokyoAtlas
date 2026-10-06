@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "kind": "Astra actual V1 review; root independently also rejected",
+  "sourceSHA": "803b575f7522fd2927b7d7453c9f4903a3f1b990138cc495e0b79b01c59aff93",
+  "artifactSHA": "c82f56c2d821b656b493104d11bc808f9b84ba7aaed068772610c8d74bdeccaa",
+  "protocolSHA": "d38ad9ffc6d131d61c3fbd1c22da45e10179d084ac2d3509be471770203894bc",
+  "baselinePNG": "d25394ef427ab708a5bfd97a149aecec398c746f552093ce8f9942403876684d",
+  "candidatePNG": "9d2d047521b13f3bef4b37c7c2d4826b5fe7ee56433af49d020ad7e4bcae7174",
+  "observations": [
+    "柱口递降、桥与来路开放有收益。",
+    "南岸在全景较dd99平顺，未见原扇状斑皱；低位尚未验证。",
+    "水尾仍像长蓝片，浅床与岸肩的厚度不足，首图拒收。"
+  ],
+  "decision": "Rejected. 保留唯一V2授权：短而宽的完整浅盆；若仍平片/缺岸脚停止共同地形任务。",
+  "capture": {
+    "passed": true,
+    "exitCode": 0,
+    "elapsedSeconds": 28.873454455009778,
+    "inputsUnchanged": true,
+    "artifactUnchanged": true,
+    "errors": [],
+    "httpFailures": [
+      {
+        "path": "/favicon.ico",
+        "status": 404
+      }
+    ],
+    "contextEvents": [],
+    "delta": {
+      "allCalls": 2,
+      "allTriangles": 253,
+      "attributeBytes": 32532,
+      "geometry": 2,
+      "texture": 0
+    },
+    "nativeWorkerBytes": 6284976
+  },
+  "notRun": [
+    "A近/背",
+    "cold/low/night",
+    "continuous LOD",
+    "独立完整源检查",
+    "生产交互/清退重入",
+    "完整Node",
+    "CI/部署"
+  ],
+  "wallTimeNotSpeedComparison": true
+}

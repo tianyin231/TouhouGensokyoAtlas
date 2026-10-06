@@ -1,0 +1,2406 @@
+{
+  "schema": 1,
+  "sourceSHA": "91c20c7b34a3db561f9b14f87bc9e1c6c53120fd2958012daf0e85b10f55acc7",
+  "contractSHA": "d3c625e645b1bc7e81ef8ac9f55c48dc6d8a725a1874b8ea8a6fca40fa7307e7",
+  "scriptSHA": "58081e22a8c161928fbf84c44b67f30314379adc9000c5ab71e670d1345ec5e1",
+  "scope": [
+    -1008,
+    -544,
+    -928,
+    -484
+  ],
+  "bridge": [
+    -990.606,
+    -549.951,
+    -944.154,
+    -546.049
+  ],
+  "roots": [
+    [
+      -1023.5230102539062,
+      -565.8628540039062,
+      2.3918511243970175
+    ],
+    [
+      -916.44873046875,
+      -560.626708984375,
+      2.4714969353276777
+    ],
+    [
+      -914.0435791015625,
+      -552.8604125976562,
+      1.90212625838567
+    ],
+    [
+      -913.2149658203125,
+      -557.4935913085938,
+      2.258949365144074
+    ],
+    [
+      -910.0957641601562,
+      -557.6333618164062,
+      2.832073947967128
+    ],
+    [
+      -1025.4102783203125,
+      -551.2803344726562,
+      2.3850609665643008
+    ],
+    [
+      -1018.5606079101562,
+      -585.3674926757812,
+      2.119397275410111
+    ]
+  ],
+  "protectedFaces": [
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 11521,
+      "bb": [
+        -1024,
+        -588,
+        -1020,
+        -586
+      ],
+      "labels": [
+        "root6"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 11522,
+      "bb": [
+        -1022,
+        -588,
+        -1020,
+        -584
+      ],
+      "labels": [
+        "root6"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 11523,
+      "bb": [
+        -1024,
+        -586,
+        -1020,
+        -584
+      ],
+      "labels": [
+        "root6"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 11524,
+      "bb": [
+        -1020,
+        -588,
+        -1018,
+        -584
+      ],
+      "labels": [
+        "root6"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 11525,
+      "bb": [
+        -1020,
+        -588,
+        -1016,
+        -586
+      ],
+      "labels": [
+        "root6"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 11526,
+      "bb": [
+        -1018,
+        -588,
+        -1016,
+        -584
+      ],
+      "labels": [
+        "root6"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 11527,
+      "bb": [
+        -1020,
+        -586,
+        -1016,
+        -584
+      ],
+      "labels": [
+        "root6"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 11777,
+      "bb": [
+        -1024,
+        -584,
+        -1020,
+        -582
+      ],
+      "labels": [
+        "root6"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 11778,
+      "bb": [
+        -1022,
+        -584,
+        -1020,
+        -580
+      ],
+      "labels": [
+        "root6"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 11780,
+      "bb": [
+        -1020,
+        -584,
+        -1018,
+        -580
+      ],
+      "labels": [
+        "root6"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 11781,
+      "bb": [
+        -1020,
+        -584,
+        -1016,
+        -582
+      ],
+      "labels": [
+        "root6"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 11782,
+      "bb": [
+        -1018,
+        -584,
+        -1016,
+        -580
+      ],
+      "labels": [
+        "root6"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 12544,
+      "bb": [
+        -1024,
+        -572,
+        -1022,
+        -568
+      ],
+      "labels": [
+        "root0"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 12546,
+      "bb": [
+        -1022,
+        -572,
+        -1020,
+        -568
+      ],
+      "labels": [
+        "root0"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 12547,
+      "bb": [
+        -1024,
+        -570,
+        -1020,
+        -568
+      ],
+      "labels": [
+        "root0"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 12800,
+      "bb": [
+        -1024,
+        -568,
+        -1022,
+        -564
+      ],
+      "labels": [
+        "root0"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 12801,
+      "bb": [
+        -1024,
+        -568,
+        -1020,
+        -566
+      ],
+      "labels": [
+        "root0"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 12802,
+      "bb": [
+        -1022,
+        -568,
+        -1020,
+        -564
+      ],
+      "labels": [
+        "root0"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 12803,
+      "bb": [
+        -1024,
+        -566,
+        -1020,
+        -564
+      ],
+      "labels": [
+        "root0"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13056,
+      "bb": [
+        -1024,
+        -564,
+        -1022,
+        -560
+      ],
+      "labels": [
+        "root0"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13057,
+      "bb": [
+        -1024,
+        -564,
+        -1020,
+        -562
+      ],
+      "labels": [
+        "root0"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13058,
+      "bb": [
+        -1022,
+        -564,
+        -1020,
+        -560
+      ],
+      "labels": [
+        "root0"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13160,
+      "bb": [
+        -920,
+        -564,
+        -918,
+        -560
+      ],
+      "labels": [
+        "root1"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13161,
+      "bb": [
+        -920,
+        -564,
+        -916,
+        -562
+      ],
+      "labels": [
+        "root1"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13162,
+      "bb": [
+        -918,
+        -564,
+        -916,
+        -560
+      ],
+      "labels": [
+        "root1"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13163,
+      "bb": [
+        -920,
+        -562,
+        -916,
+        -560
+      ],
+      "labels": [
+        "root1"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13164,
+      "bb": [
+        -916,
+        -564,
+        -914,
+        -560
+      ],
+      "labels": [
+        "root1"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13165,
+      "bb": [
+        -916,
+        -564,
+        -912,
+        -562
+      ],
+      "labels": [
+        "root1"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13166,
+      "bb": [
+        -914,
+        -564,
+        -912,
+        -560
+      ],
+      "labels": [
+        "root1",
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13167,
+      "bb": [
+        -916,
+        -562,
+        -912,
+        -560
+      ],
+      "labels": [
+        "root1",
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13168,
+      "bb": [
+        -912,
+        -564,
+        -910,
+        -560
+      ],
+      "labels": [
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13170,
+      "bb": [
+        -910,
+        -564,
+        -908,
+        -560
+      ],
+      "labels": [
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13171,
+      "bb": [
+        -912,
+        -562,
+        -908,
+        -560
+      ],
+      "labels": [
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13172,
+      "bb": [
+        -908,
+        -564,
+        -906,
+        -560
+      ],
+      "labels": [
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13175,
+      "bb": [
+        -908,
+        -562,
+        -904,
+        -560
+      ],
+      "labels": [
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13416,
+      "bb": [
+        -920,
+        -560,
+        -918,
+        -556
+      ],
+      "labels": [
+        "root1"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13417,
+      "bb": [
+        -920,
+        -560,
+        -916,
+        -558
+      ],
+      "labels": [
+        "root1"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13418,
+      "bb": [
+        -918,
+        -560,
+        -916,
+        -556
+      ],
+      "labels": [
+        "root1"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13420,
+      "bb": [
+        -916,
+        -560,
+        -914,
+        -556
+      ],
+      "labels": [
+        "root1",
+        "root3"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13421,
+      "bb": [
+        -916,
+        -560,
+        -912,
+        -558
+      ],
+      "labels": [
+        "root1",
+        "root3",
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13422,
+      "bb": [
+        -914,
+        -560,
+        -912,
+        -556
+      ],
+      "labels": [
+        "root1",
+        "root3",
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13423,
+      "bb": [
+        -916,
+        -558,
+        -912,
+        -556
+      ],
+      "labels": [
+        "root3",
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13424,
+      "bb": [
+        -912,
+        -560,
+        -910,
+        -556
+      ],
+      "labels": [
+        "root3",
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13425,
+      "bb": [
+        -912,
+        -560,
+        -908,
+        -558
+      ],
+      "labels": [
+        "root3",
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13426,
+      "bb": [
+        -910,
+        -560,
+        -908,
+        -556
+      ],
+      "labels": [
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13427,
+      "bb": [
+        -912,
+        -558,
+        -908,
+        -556
+      ],
+      "labels": [
+        "root3",
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13428,
+      "bb": [
+        -908,
+        -560,
+        -906,
+        -556
+      ],
+      "labels": [
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13429,
+      "bb": [
+        -908,
+        -560,
+        -904,
+        -558
+      ],
+      "labels": [
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13431,
+      "bb": [
+        -908,
+        -558,
+        -904,
+        -556
+      ],
+      "labels": [
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13568,
+      "bb": [
+        -1024,
+        -556,
+        -1022,
+        -552
+      ],
+      "labels": [
+        "root5"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13571,
+      "bb": [
+        -1024,
+        -554,
+        -1020,
+        -552
+      ],
+      "labels": [
+        "root5"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13676,
+      "bb": [
+        -916,
+        -556,
+        -914,
+        -552
+      ],
+      "labels": [
+        "root2",
+        "root3"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13677,
+      "bb": [
+        -916,
+        -556,
+        -912,
+        -554
+      ],
+      "labels": [
+        "root2",
+        "root3",
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13678,
+      "bb": [
+        -914,
+        -556,
+        -912,
+        -552
+      ],
+      "labels": [
+        "root2",
+        "root3",
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13679,
+      "bb": [
+        -916,
+        -554,
+        -912,
+        -552
+      ],
+      "labels": [
+        "root2"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13680,
+      "bb": [
+        -912,
+        -556,
+        -910,
+        -552
+      ],
+      "labels": [
+        "root3",
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13681,
+      "bb": [
+        -912,
+        -556,
+        -908,
+        -554
+      ],
+      "labels": [
+        "root3",
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13682,
+      "bb": [
+        -910,
+        -556,
+        -908,
+        -552
+      ],
+      "labels": [
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13684,
+      "bb": [
+        -908,
+        -556,
+        -906,
+        -552
+      ],
+      "labels": [
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13685,
+      "bb": [
+        -908,
+        -556,
+        -904,
+        -554
+      ],
+      "labels": [
+        "root4"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13824,
+      "bb": [
+        -1024,
+        -552,
+        -1022,
+        -548
+      ],
+      "labels": [
+        "root5"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13825,
+      "bb": [
+        -1024,
+        -552,
+        -1020,
+        -550
+      ],
+      "labels": [
+        "root5"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13827,
+      "bb": [
+        -1024,
+        -550,
+        -1020,
+        -548
+      ],
+      "labels": [
+        "root5"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13856,
+      "bb": [
+        -992,
+        -552,
+        -990,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13858,
+      "bb": [
+        -990,
+        -552,
+        -988,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13859,
+      "bb": [
+        -992,
+        -550,
+        -988,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13860,
+      "bb": [
+        -988,
+        -552,
+        -986,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13862,
+      "bb": [
+        -986,
+        -552,
+        -984,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13863,
+      "bb": [
+        -988,
+        -550,
+        -984,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13864,
+      "bb": [
+        -984,
+        -552,
+        -982,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13866,
+      "bb": [
+        -982,
+        -552,
+        -980,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13867,
+      "bb": [
+        -984,
+        -550,
+        -980,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13868,
+      "bb": [
+        -980,
+        -552,
+        -978,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13870,
+      "bb": [
+        -978,
+        -552,
+        -976,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13871,
+      "bb": [
+        -980,
+        -550,
+        -976,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13872,
+      "bb": [
+        -976,
+        -552,
+        -974,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13874,
+      "bb": [
+        -974,
+        -552,
+        -972,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13875,
+      "bb": [
+        -976,
+        -550,
+        -972,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13876,
+      "bb": [
+        -972,
+        -552,
+        -970,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13878,
+      "bb": [
+        -970,
+        -552,
+        -968,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13879,
+      "bb": [
+        -972,
+        -550,
+        -968,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13880,
+      "bb": [
+        -968,
+        -552,
+        -966,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13882,
+      "bb": [
+        -966,
+        -552,
+        -964,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13883,
+      "bb": [
+        -968,
+        -550,
+        -964,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13884,
+      "bb": [
+        -964,
+        -552,
+        -962,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13886,
+      "bb": [
+        -962,
+        -552,
+        -960,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13887,
+      "bb": [
+        -964,
+        -550,
+        -960,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13888,
+      "bb": [
+        -960,
+        -552,
+        -958,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13890,
+      "bb": [
+        -958,
+        -552,
+        -956,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13891,
+      "bb": [
+        -960,
+        -550,
+        -956,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13892,
+      "bb": [
+        -956,
+        -552,
+        -954,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13894,
+      "bb": [
+        -954,
+        -552,
+        -952,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13895,
+      "bb": [
+        -956,
+        -550,
+        -952,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13896,
+      "bb": [
+        -952,
+        -552,
+        -950,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13898,
+      "bb": [
+        -950,
+        -552,
+        -948,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13899,
+      "bb": [
+        -952,
+        -550,
+        -948,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13900,
+      "bb": [
+        -948,
+        -552,
+        -946,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13902,
+      "bb": [
+        -946,
+        -552,
+        -944,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13903,
+      "bb": [
+        -948,
+        -550,
+        -944,
+        -548
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13932,
+      "bb": [
+        -916,
+        -552,
+        -914,
+        -548
+      ],
+      "labels": [
+        "root2"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13933,
+      "bb": [
+        -916,
+        -552,
+        -912,
+        -550
+      ],
+      "labels": [
+        "root2"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 13934,
+      "bb": [
+        -914,
+        -552,
+        -912,
+        -548
+      ],
+      "labels": [
+        "root2"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14112,
+      "bb": [
+        -992,
+        -548,
+        -990,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14113,
+      "bb": [
+        -992,
+        -548,
+        -988,
+        -546
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14114,
+      "bb": [
+        -990,
+        -548,
+        -988,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14116,
+      "bb": [
+        -988,
+        -548,
+        -986,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14117,
+      "bb": [
+        -988,
+        -548,
+        -984,
+        -546
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14118,
+      "bb": [
+        -986,
+        -548,
+        -984,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14120,
+      "bb": [
+        -984,
+        -548,
+        -982,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14121,
+      "bb": [
+        -984,
+        -548,
+        -980,
+        -546
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14122,
+      "bb": [
+        -982,
+        -548,
+        -980,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14124,
+      "bb": [
+        -980,
+        -548,
+        -978,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14125,
+      "bb": [
+        -980,
+        -548,
+        -976,
+        -546
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14126,
+      "bb": [
+        -978,
+        -548,
+        -976,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14128,
+      "bb": [
+        -976,
+        -548,
+        -974,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14129,
+      "bb": [
+        -976,
+        -548,
+        -972,
+        -546
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14130,
+      "bb": [
+        -974,
+        -548,
+        -972,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14132,
+      "bb": [
+        -972,
+        -548,
+        -970,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14133,
+      "bb": [
+        -972,
+        -548,
+        -968,
+        -546
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14134,
+      "bb": [
+        -970,
+        -548,
+        -968,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14136,
+      "bb": [
+        -968,
+        -548,
+        -966,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14137,
+      "bb": [
+        -968,
+        -548,
+        -964,
+        -546
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14138,
+      "bb": [
+        -966,
+        -548,
+        -964,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14140,
+      "bb": [
+        -964,
+        -548,
+        -962,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14141,
+      "bb": [
+        -964,
+        -548,
+        -960,
+        -546
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14142,
+      "bb": [
+        -962,
+        -548,
+        -960,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14144,
+      "bb": [
+        -960,
+        -548,
+        -958,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14145,
+      "bb": [
+        -960,
+        -548,
+        -956,
+        -546
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14146,
+      "bb": [
+        -958,
+        -548,
+        -956,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14148,
+      "bb": [
+        -956,
+        -548,
+        -954,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14149,
+      "bb": [
+        -956,
+        -548,
+        -952,
+        -546
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14150,
+      "bb": [
+        -954,
+        -548,
+        -952,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14152,
+      "bb": [
+        -952,
+        -548,
+        -950,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14153,
+      "bb": [
+        -952,
+        -548,
+        -948,
+        -546
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14154,
+      "bb": [
+        -950,
+        -548,
+        -948,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14156,
+      "bb": [
+        -948,
+        -548,
+        -946,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14157,
+      "bb": [
+        -948,
+        -548,
+        -944,
+        -546
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    },
+    {
+      "id": "island:terrain:-1024:-768",
+      "ordinal": 14158,
+      "bb": [
+        -946,
+        -548,
+        -944,
+        -544
+      ],
+      "labels": [
+        "bridge"
+      ],
+      "interiorOverlap": false
+    }
+  ],
+  "conflicts": [],
+  "sections": [
+    {
+      "z": -544,
+      "points": [
+        [
+          -1008,
+          49.44777297973633
+        ],
+        [
+          -1000,
+          46.43425369262695
+        ],
+        [
+          -992,
+          43.428565979003906
+        ],
+        [
+          -984,
+          43.01599884033203
+        ],
+        [
+          -976,
+          41.103187561035156
+        ],
+        [
+          -968,
+          39.075870513916016
+        ],
+        [
+          -960,
+          41.358177185058594
+        ],
+        [
+          -952,
+          43.01599884033203
+        ],
+        [
+          -944,
+          42.11198043823242
+        ],
+        [
+          -936,
+          42.345420837402344
+        ],
+        [
+          -928,
+          43.22408676147461
+        ]
+      ]
+    },
+    {
+      "z": -536,
+      "points": [
+        [
+          -1008,
+          48.7858772277832
+        ],
+        [
+          -1000,
+          45.94110107421875
+        ],
+        [
+          -992,
+          42.85992431640625
+        ],
+        [
+          -984,
+          42.63315963745117
+        ],
+        [
+          -976,
+          38.89194107055664
+        ],
+        [
+          -968,
+          38.85255432128906
+        ],
+        [
+          -960,
+          41.883670806884766
+        ],
+        [
+          -952,
+          42.66373825073242
+        ],
+        [
+          -944,
+          40.595176696777344
+        ],
+        [
+          -936,
+          40.55741882324219
+        ],
+        [
+          -928,
+          40.79708480834961
+        ]
+      ]
+    },
+    {
+      "z": -524,
+      "points": [
+        [
+          -1008,
+          47.25893020629883
+        ],
+        [
+          -1000,
+          44.19145965576172
+        ],
+        [
+          -992,
+          42.29932403564453
+        ],
+        [
+          -984,
+          40.717628479003906
+        ],
+        [
+          -976,
+          38.83582305908203
+        ],
+        [
+          -968,
+          39.247196197509766
+        ],
+        [
+          -960,
+          39.95696258544922
+        ],
+        [
+          -952,
+          39.11037063598633
+        ],
+        [
+          -944,
+          38.05122756958008
+        ],
+        [
+          -936,
+          38.182498931884766
+        ],
+        [
+          -928,
+          38.29146957397461
+        ]
+      ]
+    },
+    {
+      "z": -516,
+      "points": [
+        [
+          -1008,
+          46.667423248291016
+        ],
+        [
+          -1000,
+          43.99299621582031
+        ],
+        [
+          -992,
+          41.846195220947266
+        ],
+        [
+          -984,
+          40.0698356628418
+        ],
+        [
+          -976,
+          38.71368408203125
+        ],
+        [
+          -968,
+          37.89570999145508
+        ],
+        [
+          -960,
+          37.48896789550781
+        ],
+        [
+          -952,
+          37.400142669677734
+        ],
+        [
+          -944,
+          37.44770050048828
+        ],
+        [
+          -936,
+          37.54844665527344
+        ],
+        [
+          -928,
+          37.62535858154297
+        ]
+      ]
+    },
+    {
+      "z": -512,
+      "points": [
+        [
+          -1008,
+          46.64875793457031
+        ],
+        [
+          -1000,
+          44.05158996582031
+        ],
+        [
+          -992,
+          41.85807418823242
+        ],
+        [
+          -984,
+          40.0820426940918
+        ],
+        [
+          -976,
+          38.73234558105469
+        ],
+        [
+          -968,
+          37.81975173950195
+        ],
+        [
+          -960,
+          37.37593460083008
+        ],
+        [
+          -952,
+          37.38042449951172
+        ],
+        [
+          -944,
+          37.446205139160156
+        ],
+        [
+          -936,
+          37.53324508666992
+        ],
+        [
+          -928,
+          37.59613037109375
+        ]
+      ]
+    },
+    {
+      "z": -504,
+      "points": [
+        [
+          -1008,
+          46.80605125427246
+        ],
+        [
+          -1000,
+          44.29610467655685
+        ],
+        [
+          -992,
+          42.02903175354004
+        ],
+        [
+          -984,
+          40.32761558147304
+        ],
+        [
+          -976,
+          38.89716148376465
+        ],
+        [
+          -968,
+          38.077644173474056
+        ],
+        [
+          -960,
+          37.55391883850098
+        ],
+        [
+          -952,
+          37.57572362682256
+        ],
+        [
+          -944,
+          37.61810874938965
+        ],
+        [
+          -936,
+          37.68718836129907
+        ],
+        [
+          -928,
+          37.737632751464844
+        ]
+      ]
+    },
+    {
+      "z": -496,
+      "points": [
+        [
+          -1008,
+          46.96334457397461
+        ],
+        [
+          -1000,
+          44.58166694641113
+        ],
+        [
+          -992,
+          42.199989318847656
+        ],
+        [
+          -984,
+          40.63098335266113
+        ],
+        [
+          -976,
+          39.06197738647461
+        ],
+        [
+          -968,
+          38.39694023132324
+        ],
+        [
+          -960,
+          37.731903076171875
+        ],
+        [
+          -952,
+          37.76095771789551
+        ],
+        [
+          -944,
+          37.79001235961914
+        ],
+        [
+          -936,
+          37.83457374572754
+        ],
+        [
+          -928,
+          37.87913513183594
+        ]
+      ]
+    },
+    {
+      "z": -484,
+      "points": [
+        [
+          -1008,
+          46.882906913757324
+        ],
+        [
+          -1000,
+          44.45356464385986
+        ],
+        [
+          -992,
+          42.14157581329346
+        ],
+        [
+          -984,
+          40.512657165527344
+        ],
+        [
+          -976,
+          39.03133583068848
+        ],
+        [
+          -968,
+          38.29632091522217
+        ],
+        [
+          -960,
+          37.70551872253418
+        ],
+        [
+          -952,
+          37.75670051574707
+        ],
+        [
+          -944,
+          37.747586250305176
+        ],
+        [
+          -936,
+          37.81968975067139
+        ],
+        [
+          -928,
+          37.80346965789795
+        ]
+      ]
+    }
+  ],
+  "elapsedMs": 360.56456399999996,
+  "hooks": 0,
+  "nativeBuilds": 0,
+  "GPUFrames": 0
+}
