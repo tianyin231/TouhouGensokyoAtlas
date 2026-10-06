@@ -1,0 +1,25 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+import {deserialize} from 'node:v8';
+import {createHash} from 'node:crypto';
+import {performance} from 'node:perf_hooks';
+import {geometryDigest} from '/workspace/muenzuka-canopy-refinement/tools/check-hakurei.mjs';
+const ROOT='/workspace/muenzuka-canopy-refinement',OUT='/workspace/muenzuka-woodland-evidence/read-inventory.json';
+assert(!fs.existsSync(OUT));assert.equal(process.versions.node.split('.')[0],'22');
+const sha=b=>createHash('sha256').update(b).digest('hex'),inputs={},read=p=>{const b=fs.readFileSync(p);inputs[p]=sha(b);return b;};
+const began=performance.now(),project=JSON.parse(read(ROOT+'/project.json')),c=vm.createContext({performance,TextDecoder,TextEncoder});
+for(const p of project.worldBuilders)vm.runInContext(String(read(ROOT+'/'+p)),c,{filename:p});
+const E=c.GA.MUENZUKA_EDGE,old=deserialize(read('/workspace/muenzuka-evidence/original-native-504808e.v8'));
+assert.equal(geometryDigest(old),'fce019a1625ad753025841ebb396bf84a5844c9d9284dce9f45250789514a058');
+const native=E.applyDetail(old);assert.equal(geometryDigest(native),'c0f2f1378ec19e5e10be8dc5e21240390315e4eddbd616c4eccc4dc8db6123b2');
+const bound=JSON.parse(read('/workspace/genbu-entry-evidence/baseline-native-source-v2.json')),p=bound.snapshots.find(s=>s.label==='public-overview'),pb=read(p.path);
+assert.equal(sha(pb),p.sha256);const pack=deserialize(pb);
+const matrixSHA=m=>sha(Buffer.from(m.instances.buffer,m.instances.byteOffset,m.instances.byteLength));
+function row(m){const roots=[];for(let i=0;i<m.instances.length;i+=16)roots.push([m.instances[i+12],m.instances[i+13],m.instances[i+14]]);return{id:m.id,count:roots.length,near:m.vertices.length/27,far:m.farVertices?.length/27,matrixSHA256:matrixSHA(m),roots,center:m.center,radius:m.radius,lodDistance:m.lodDistance};}
+const all=native.meshes.filter(m=>/^muenzuka:trees:.*:leaf$/.test(m.id)),west=all.filter(m=>E.target(m)),rest=all.filter(m=>!E.target(m));
+assert.equal(west.reduce((n,m)=>n+m.instances.length/16,0),25);assert.equal(rest.length,10);assert.equal(rest.reduce((n,m)=>n+m.instances.length/16,0),37);
+const cold=E.coldIDs.map(id=>pack.meshes.find(m=>m.id===id)),coldWest=E.coldIDs.map(id=>pack.meshes.find(m=>m.id===id+':muenzuka-west-edge'));
+assert.equal(cold.reduce((n,m)=>n+m.instances.length/16,0),21);assert.equal(coldWest.reduce((n,m)=>n+m.instances.length/16,0),10);
+const report={kind:'Read-only authenticated stored source inventory; zero native builds, hooks or GPU',head:'b303ddc6cd4580a9cfe5c78bd6a6006af6c66951',acceptedNativeDigest:geometryDigest(native),publicRecords:pack.meshes.length,nativeRecords:native.meshes.length,retainedWest:west.map(row),nativeTargets:rest.map(row),coldTargets:cold.map(row),retainedColdWest:coldWest.map(row),sourceMeaning:'Native values replay accepted applyDetail against exact original digest. Public values reuse exact b9ff full-boot snapshot. V8 buffer/cache identity is not runtime allocation evidence.',inputs,protocolSHA256:sha(fs.readFileSync(import.meta.filename)),elapsedMs:performance.now()-began,passed:true};
+fs.writeFileSync(OUT,JSON.stringify(report,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({out:OUT,passed:true,native:rest.map(m=>[m.id,m.instances.length/16]),cold:cold.map(m=>[m.id,m.instances.length/16]),elapsedMs:report.elapsedMs}));

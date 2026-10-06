@@ -1,0 +1,77 @@
+--- /workspace/muenzuka-evidence/capture-bounds-overview.py
++++ /workspace/muenzuka-woodland-evidence/capture-overview.py
+@@ -1,8 +1,9 @@
+-"""One authorized native Muenzuka candidate; no source edits during capture.
++"""One immutable native Muenzuka overview, baseline or candidate.
+ 
+ The software-GPU capture can overlap Sol's bounded CPU diagnostic. Its wall time
+ and Worker duration are traceability only, not comparable performance results.
+ """
++import argparse
+ import hashlib
+ import json
+ import subprocess
+@@ -14,10 +15,19 @@
+ from pathlib import Path
+ from playwright.sync_api import sync_playwright
+ 
+-REPO = Path('/workspace/muenzuka-refinement')
+-DIST = Path('/workspace/muenzuka-evidence/bounds-dist')
+-OUT = Path('/workspace/muenzuka-evidence/bounds-overview')
+-EXPECTED = 'ce843445fca81f3e3cef42ac1b58ed16870ba43ed251d23b2e2e4928caf12a97'
++# Only input/report binding is adapted; the execution body is unchanged.
++parser = argparse.ArgumentParser(description=__doc__)
++parser.add_argument('--repo', type=Path, required=True)
++parser.add_argument('--dist', type=Path, required=True)
++parser.add_argument('--output', type=Path, required=True)
++parser.add_argument('--expected-sha', required=True)
++parser.add_argument('--expected-input-count', type=int, required=True)
++parser.add_argument('--label', required=True)
++args = parser.parse_args()
++REPO, DIST, OUT = args.repo.resolve(), args.dist.resolve(), args.output.resolve()
++EXPECTED = args.expected_sha
++ORIGINAL_PROTOCOL = Path('/workspace/muenzuka-evidence/capture-bounds-overview.py')
++ORIGINAL_PROTOCOL_SHA = '666a3f01c0863ef8c408e352d27c06728192cddbe92d918f448ddb3222d32809'
+ POSE = {'space': 'surface', 'eye': [-1533, 221, 789], 'target': [-1710, 79, 565]}
+ OUT.mkdir(parents=True, exist_ok=True)
+ assert not (OUT/'report.json').exists(), 'Keep original evidence'
+@@ -25,20 +35,35 @@
+ release = json.loads((DIST/'release.json').read_text())
+ artifact = DIST/release['artifact']
+ assert sha(artifact) == release['sha256'] == EXPECTED
+-inputs = lambda: {p: sha(REPO/p) for p in release['inputs']}
++assert args.expected_input_count > 0
++assert sha(ORIGINAL_PROTOCOL) == ORIGINAL_PROTOCOL_SHA, 'Original declared capture flow changed'
++assert not any(p in release['inputs'] for p in ['src/genbu-entry.js','src/genbu-bank-sections.js']), 'Rejected Genbu source is outside this stage'
++assert release['inputs']['src/muenzuka-edge.js'] == 'b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045'
++assert release['inputs']['src/muenzuka-edge-renderer.js'] == '49edfb8f6828894c3691e974b33b7b44560d48b96b7593bde2489734b79803c4'
++PROTOCOL_SHA = sha(Path(__file__)); RELEASE_SHA = sha(DIST/'release.json')
++original_text = ORIGINAL_PROTOCOL.read_text(); adapted_text = Path(__file__).read_text()
++body_marker = '\nclass Quiet('
++original_body = original_text[original_text.index(body_marker):]
++adapted_body = adapted_text[adapted_text.index(body_marker):]
++assert original_body == adapted_body, 'Camera/settings/session/frames/error/input assertions changed'
++def inputs():
++    assert sha(Path(__file__)) == PROTOCOL_SHA and sha(ORIGINAL_PROTOCOL) == ORIGINAL_PROTOCOL_SHA
++    assert sha(DIST/'release.json') == RELEASE_SHA
++    return {name: sha(REPO/name) for name in release['inputs']}
+ before = inputs()
+-assert before == release['inputs'] and len(before) == 204
+-report = {'schema': 1, 'purpose': 'Read-only completed western-arc Muenzuka candidate',
++assert before == release['inputs'] and len(before) == args.expected_input_count
++report = {'schema': 1, 'purpose': 'Immutable single-view Muenzuka woodland baseline or candidate', 'candidateLabel': args.label,
+           'startedUTC': datetime.now(timezone.utc).isoformat(),
+           'sourceHEADBefore': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=REPO, text=True).strip(),
+           'artifactSHA256': EXPECTED, 'releaseSHA256': sha(DIST/'release.json'),
+           'protocolSHA256': sha(Path(__file__)), 'inputsBefore': before,
+-          'parallelFlowerStatus': 'Separately authorised source work; not part of this build or capture freeze', 'view': 'muenzukaOverview', 'initialPreset': 'muenzukaOverview',
++          'bindingScope': 'Only the declared release inputs; old ce843 overview is a reference and is not a current baseline', 'view': 'muenzukaOverview', 'initialPreset': 'muenzukaOverview',
+           'pose': POSE, 'viewport': [1280, 720], 'dpr': 1, 'fov': 49, 'clock': 12.5,
+           'quality': 'balanced', 'lighting': 'neutral', 'ao': True,
+           'productionRegionOrder': ['muenzuka'],
+           'cpuLoadOverlap': 'May overlap Sol bounded CPU native diagnostic; no wall-time/Worker speed comparison.',
+           'hardwareFPSMeasured': False, 'errors': [], 'httpFailures': [], 'contextEvents': []}
++report['executionParity'] = {'originalProtocolSHA': ORIGINAL_PROTOCOL_SHA, 'adaptedProtocolSHA': PROTOCOL_SHA, 'bodyExact': True, 'baselineReusedFromCe843': False}
+ began = time.monotonic()
+ class Quiet(SimpleHTTPRequestHandler):
+     def log_message(self, *_args): pass

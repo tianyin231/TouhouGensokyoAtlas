@@ -1,0 +1,63 @@
+{
+  "kind": "Author actual same-camera image review, local crown stage only",
+  "decision": "Pass single-overview visual gate; further views and production verification required",
+  "baseline": {
+    "imageSHA256": "d6996022734954334f22adcbad6f18bc9f7997ab01640e2d3344910d19f47145",
+    "reportSHA256": "209267a3ba60109eb37d8c623a4dde56ce594f419aa7333cf964aec0ea7eb756",
+    "HTML": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a"
+  },
+  "candidate": {
+    "imageSHA256": "5fc54593184b9504d0a767d1dfa68ac3dd647f81df6fd05cf367873b19151664",
+    "reportSHA256": "6d4ccaf6562ebbdd2221dc6b918757b65e9bff891c7252f44aee35aea2e4933e",
+    "HTML": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45"
+  },
+  "protocolSHA256": "d5c83cb43a6a645e1eb8b81aa9eb49f30cba5890cf306a3b79ba2f8732c36b37",
+  "sameCameraSettings": true,
+  "visibleGains": [
+    "South/east/north ordinary crowns have clear volume instead of flat platter rims.",
+    "The north/east junction continues the accepted western crown language without an abrupt shape boundary.",
+    "Southern crowns frame the shed and entrance while the purple cherries and central paths remain legible."
+  ],
+  "limitations": [
+    "This overview does not establish close/back/cold/low/night or continuous LOD acceptance.",
+    "Understory, open ground, distant slope trees and complete landscape composition remain unfinished.",
+    "No hardware FPS measurement; frame cost counts do not establish interaction performance."
+  ],
+  "costRows": [
+    {
+      "frame": 0,
+      "delta": {
+        "totalCalls": 0,
+        "totalTriangles": -2664,
+        "geometries": -2,
+        "textures": 0,
+        "residentAttributeBytes": -46656
+      },
+      "meaning": "First frame includes shadow refresh"
+    },
+    {
+      "frame": 1,
+      "delta": {
+        "totalCalls": 0,
+        "totalTriangles": -1332,
+        "geometries": -2,
+        "textures": 0,
+        "residentAttributeBytes": -46656
+      },
+      "meaning": "Stable frame"
+    },
+    {
+      "frame": 2,
+      "delta": {
+        "totalCalls": 0,
+        "totalTriangles": -1332,
+        "geometries": -2,
+        "textures": 0,
+        "residentAttributeBytes": -46656
+      },
+      "meaning": "Stable frame"
+    }
+  ],
+  "inputsUnchanged": true,
+  "nativeBuilds": "One actual Worker build per capture; author source checks used prior native value snapshots."
+}

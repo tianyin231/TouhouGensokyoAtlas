@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "preparedUTC": "2026-10-06T01:14:57.373863+00:00",
+  "protocol": "/workspace/muenzuka-woodland-evidence/capture-overview.py",
+  "protocolSHA": "d5c83cb43a6a645e1eb8b81aa9eb49f30cba5890cf306a3b79ba2f8732c36b37",
+  "originalProtocol": "/workspace/muenzuka-evidence/capture-bounds-overview.py",
+  "originalProtocolSHA": "666a3f01c0863ef8c408e352d27c06728192cddbe92d918f448ddb3222d32809",
+  "diff": "/workspace/muenzuka-woodland-evidence/capture-overview-input-binding.diff",
+  "diffSHA": "180108bad181e75145dbd3fd6b6fbe4b2ab0cd42196d91e400dbd3ea462c0a5a",
+  "executionBodyExact": true,
+  "markerSyntaxReviewed": true,
+  "pyCompile": {
+    "exitCode": 0
+  },
+  "baselineBinding": {
+    "repository": "/workspace/main-island-next",
+    "commit": "b303ddc6cd4580a9cfe5c78bd6a6006af6c66951",
+    "dist": "/workspace/main-island-next-evidence/combined-final-dist",
+    "releaseSHA": "9ca2ffe7710bbcda299d0e5f8ad255b814609cb5e73c8149ca12415daf5b747b",
+    "inputCount": 208,
+    "everyCurrentInputMatchesRelease": true,
+    "HTMLSHA": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a"
+  },
+  "captureParameters": {
+    "preset": "muenzukaOverview",
+    "eye": [
+      -1533,
+      221,
+      789
+    ],
+    "target": [
+      -1710,
+      79,
+      565
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "dpr": 1,
+    "fov": 49,
+    "quality": "balanced",
+    "clock": 12.5,
+    "weather": "clear",
+    "lighting": "neutral",
+    "ao": true,
+    "motion": false,
+    "bloom": false,
+    "reflections": false,
+    "labels": false,
+    "characters": false,
+    "streamFocus": [
+      "muenzuka"
+    ],
+    "samples": 3,
+    "flow": "Original preset/focus/wait, quality event, fixed pose, three original renderOnce/finish samples, screenshot"
+  },
+  "baselineCommand": [
+    "python",
+    "/workspace/muenzuka-woodland-evidence/capture-overview.py",
+    "--repo",
+    "/workspace/main-island-next",
+    "--dist",
+    "/workspace/main-island-next-evidence/combined-final-dist",
+    "--expected-sha",
+    "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+    "--expected-input-count",
+    "208",
+    "--output",
+    "/workspace/muenzuka-woodland-evidence/baseline",
+    "--label",
+    "b303-current-c532-baseline"
+  ],
+  "status": "Prepared and syntax/static-source reviewed only; baseline has not been captured by Sol",
+  "browserSessions": 0,
+  "nativeBuilds": 0,
+  "hooks": 0,
+  "fullNode": 0,
+  "oldCe843ImageMeaning": "Historical reference only; cannot stand in for this c532 baseline"
+}

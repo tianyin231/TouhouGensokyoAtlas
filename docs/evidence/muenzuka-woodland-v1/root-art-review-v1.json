@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "reviewUTC": "2026-10-06T01:23:31.929271+00:00",
+  "decision": "pass scoped overview art gate; not final acceptance",
+  "sourceSHA": "0fbef3bef0b1641e5d542c5b924e95c939762b3d78014f90867138e8e7be12cd",
+  "rendererSHA": "679b6d1d0f0702ad113baf9735ed10a14a3d4f90253448f14cadeb4417a60e26",
+  "projectSHA": "73ce158eea969afddb42b53424180b30b9782609dcf46797f3f8fc2953c3bf4d",
+  "baselineHTML": "c5327ca02eb542ea4f5816e445d4e1720628626bab01f39e9558cbefedc5286a",
+  "candidateHTML": "e2956858b9b588ee787ead21eec4cfd79ef63a5c0fbe6d472621a44823a92d45",
+  "protocolSHA": "d5c83cb43a6a645e1eb8b81aa9eb49f30cba5890cf306a3b79ba2f8732c36b37",
+  "images": [
+    {
+      "kind": "baseline",
+      "path": "/workspace/muenzuka-woodland-evidence/baseline/muenzukaOverview.png",
+      "sha": "d6996022734954334f22adcbad6f18bc9f7997ab01640e2d3344910d19f47145",
+      "reportSHA": "209267a3ba60109eb37d8c623a4dde56ce594f419aa7333cf964aec0ea7eb756"
+    },
+    {
+      "kind": "v1",
+      "path": "/workspace/muenzuka-woodland-evidence/v1/muenzukaOverview.png",
+      "sha": "5fc54593184b9504d0a767d1dfa68ac3dd647f81df6fd05cf367873b19151664",
+      "reportSHA": "6d4ccaf6562ebbdd2221dc6b918757b65e9bff891c7252f44aee35aea2e4933e"
+    }
+  ],
+  "actualImagesOpened": true,
+  "generatedOrEditedImages": false,
+  "observedGains": [
+    "The eastern, southern and northern ordinary crowns have visible volume instead of thin stacked plates.",
+    "The unmodified accepted western arc and new remainder now read as one woodland canopy.",
+    "The hut approach and central memorial clearing remain legible at this view."
+  ],
+  "remaining": [
+    "The crowns remain rounded in the existing accepted style.",
+    "Stand distribution, bare ground, understory and surrounding slopes are not addressed.",
+    "This overview predominantly validates far crowns; close and reverse views and low/night/cold behavior remain untested."
+  ],
+  "sameViewMeasuredDelta": {
+    "allPassCalls": 0,
+    "submittedTriangles": -1332,
+    "residentGeometryAttributeBytes": -46656,
+    "geometries": -2,
+    "textures": 0
+  },
+  "hardwareFPSMeasured": false,
+  "publishedToMain": false,
+  "nextStep": "Preserve the first review checkpoint; freeze two new same-camera baseline/candidate close/reverse pairs; verify the exact 49-definition/21-hook production chain and only then remaining view and lifecycle checks."
+}
