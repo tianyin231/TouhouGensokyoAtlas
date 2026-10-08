@@ -1,0 +1,68 @@
+{
+  "id": "flower-concert",
+  "renderer": "XSXB-Band",
+  "engineCommit": "ff39f88e6c28fefa2f7b1bebe2eee41a00b761ee",
+  "recordingType": "Arrangement rendered with CC0 recordings of real instruments; not a live ensemble session",
+  "bpm": 112,
+  "seconds": 51.42857142857143,
+  "sampleRate": 44100,
+  "frames": 2268000,
+  "linearGainDb": 2.1,
+  "loudnessLUFS": -21.0,
+  "truePeakDbFS": -6.1,
+  "saturatedFrames": 0,
+  "boundaryStep": 0.0,
+  "edgeRampMs": 5,
+  "rawRenderPeakDbFS": -8.157,
+  "stems": [
+    {
+      "id": "piano",
+      "instrumentId": "piano",
+      "peakDbFS": -13.553,
+      "scoreRmsDbFS": -32.406,
+      "saturatedFrames": 0
+    },
+    {
+      "id": "lead",
+      "instrumentId": "trumpet",
+      "peakDbFS": -10.34,
+      "scoreRmsDbFS": -28.693,
+      "saturatedFrames": 0
+    },
+    {
+      "id": "strings",
+      "instrumentId": "strings",
+      "peakDbFS": -12.054,
+      "scoreRmsDbFS": -36.56,
+      "saturatedFrames": 0
+    },
+    {
+      "id": "cello",
+      "instrumentId": "cello-section",
+      "peakDbFS": -24.9,
+      "scoreRmsDbFS": -44.521,
+      "saturatedFrames": 0
+    },
+    {
+      "id": "harp",
+      "instrumentId": "harp",
+      "peakDbFS": -17.648,
+      "scoreRmsDbFS": -36.695,
+      "saturatedFrames": 0
+    }
+  ],
+  "runtimeErrors": [],
+  "sampleResponsesOK": true,
+  "scoreSha256": "5bbfdfa1a4627e7a0cb69535a879ecf5b879fcbf3a8d0199fbbf05135f8cdf7c",
+  "assets": {
+    "ogg": {
+      "bytes": 933068,
+      "sha256": "30bf653bd379e69d04105ad6f8c0d01af4307b2bec642652fce343a1f2e3b591"
+    },
+    "mp3": {
+      "bytes": 1090163,
+      "sha256": "4dd5605b27dc00e9a2a9fe916399c695e1d1eae27742c0425c4a57700687c681"
+    }
+  },
+  "listeningStatus": "Human audition pending; numerical checks are not an aesthetic verdict"
+}

@@ -1,0 +1,1620 @@
+{
+  "schemaVersion": 1,
+  "id": "atlas-hell-lullaby",
+  "title": "旧地狱 · 遗落的摇篮",
+  "bpm": 68,
+  "key": "Source modal harmony / chamber revoicing",
+  "bars": 24,
+  "timeSignature": [
+    4,
+    4
+  ],
+  "updatedAt": "2026-10-08T00:00:00.000Z",
+  "tracks": [
+    {
+      "id": "piano",
+      "name": "立式钢琴 · 主题与回应",
+      "instrumentId": "piano",
+      "color": "#647B72",
+      "volume": 1,
+      "pan": -0.18,
+      "reverb": 0.26,
+      "humanize": 0.25,
+      "release": 0.22,
+      "muted": false,
+      "solo": false,
+      "notes": [
+        {
+          "id": "piano-0000",
+          "start": 32.0,
+          "duration": 0.945,
+          "midi": 76,
+          "velocity": 0.8434
+        },
+        {
+          "id": "piano-0001",
+          "start": 33.0,
+          "duration": 1.445,
+          "midi": 75,
+          "velocity": 0.8513
+        },
+        {
+          "id": "piano-0002",
+          "start": 34.5,
+          "duration": 0.445,
+          "midi": 73,
+          "velocity": 0.8649
+        },
+        {
+          "id": "piano-0003",
+          "start": 35.0,
+          "duration": 0.945,
+          "midi": 71,
+          "velocity": 0.8694
+        },
+        {
+          "id": "piano-0004",
+          "start": 36.0,
+          "duration": 1.32,
+          "midi": 73,
+          "velocity": 0.8771
+        },
+        {
+          "id": "piano-0005",
+          "start": 37.5,
+          "duration": 0.445,
+          "midi": 66,
+          "velocity": 0.8841
+        },
+        {
+          "id": "piano-0006",
+          "start": 38.0,
+          "duration": 0.945,
+          "midi": 73,
+          "velocity": 0.8849
+        },
+        {
+          "id": "piano-0007",
+          "start": 39.0,
+          "duration": 0.945,
+          "midi": 71,
+          "velocity": 0.8839
+        },
+        {
+          "id": "piano-0008",
+          "start": 40.0,
+          "duration": 0.945,
+          "midi": 69,
+          "velocity": 0.8797
+        },
+        {
+          "id": "piano-0009",
+          "start": 41.0,
+          "duration": 0.945,
+          "midi": 68,
+          "velocity": 0.8728
+        },
+        {
+          "id": "piano-0010",
+          "start": 42.0,
+          "duration": 1.7,
+          "midi": 66,
+          "velocity": 0.8642
+        },
+        {
+          "id": "piano-0011",
+          "start": 44.0,
+          "duration": 0.445,
+          "midi": 69,
+          "velocity": 0.8465
+        },
+        {
+          "id": "piano-0012",
+          "start": 44.5,
+          "duration": 0.445,
+          "midi": 73,
+          "velocity": 0.8428
+        },
+        {
+          "id": "piano-0013",
+          "start": 45.0,
+          "duration": 1.695,
+          "midi": 71,
+          "velocity": 0.8398
+        },
+        {
+          "id": "piano-0014",
+          "start": 47.0,
+          "duration": 0.945,
+          "midi": 71,
+          "velocity": 0.8352
+        },
+        {
+          "id": "piano-0015",
+          "start": 48.0,
+          "duration": 1.445,
+          "midi": 70,
+          "velocity": 0.8378
+        },
+        {
+          "id": "piano-0016",
+          "start": 49.5,
+          "duration": 0.445,
+          "midi": 68,
+          "velocity": 0.8473
+        },
+        {
+          "id": "piano-0017",
+          "start": 50.0,
+          "duration": 0.945,
+          "midi": 70,
+          "velocity": 0.8514
+        },
+        {
+          "id": "piano-0018",
+          "start": 51.0,
+          "duration": 2.7,
+          "midi": 66,
+          "velocity": 0.8605
+        },
+        {
+          "id": "piano-0019",
+          "start": 54.0,
+          "duration": 1.695,
+          "midi": 66,
+          "velocity": 0.8826
+        },
+        {
+          "id": "piano-0020",
+          "start": 56.0,
+          "duration": 0.445,
+          "midi": 66,
+          "velocity": 0.8839
+        },
+        {
+          "id": "piano-0021",
+          "start": 56.5,
+          "duration": 0.445,
+          "midi": 68,
+          "velocity": 0.8821
+        },
+        {
+          "id": "piano-0022",
+          "start": 57.0,
+          "duration": 0.945,
+          "midi": 69,
+          "velocity": 0.8796
+        },
+        {
+          "id": "piano-0023",
+          "start": 58.0,
+          "duration": 0.445,
+          "midi": 69,
+          "velocity": 0.8727
+        },
+        {
+          "id": "piano-0024",
+          "start": 58.5,
+          "duration": 0.445,
+          "midi": 71,
+          "velocity": 0.8685
+        },
+        {
+          "id": "piano-0025",
+          "start": 59.0,
+          "duration": 0.945,
+          "midi": 73,
+          "velocity": 0.864
+        },
+        {
+          "id": "piano-0026",
+          "start": 60.0,
+          "duration": 1.445,
+          "midi": 71,
+          "velocity": 0.8548
+        },
+        {
+          "id": "piano-0027",
+          "start": 61.5,
+          "duration": 0.445,
+          "midi": 73,
+          "velocity": 0.8427
+        },
+        {
+          "id": "piano-0028",
+          "start": 62.0,
+          "duration": 0.945,
+          "midi": 69,
+          "velocity": 0.8397
+        },
+        {
+          "id": "piano-0029",
+          "start": 63.0,
+          "duration": 0.945,
+          "midi": 68,
+          "velocity": 0.8358
+        },
+        {
+          "id": "piano-0030",
+          "start": 0.035,
+          "duration": 1.4,
+          "midi": 54,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0031",
+          "start": 0.035,
+          "duration": 1.4,
+          "midi": 61,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0032",
+          "start": 4.035,
+          "duration": 1.4,
+          "midi": 57,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0033",
+          "start": 4.035,
+          "duration": 1.4,
+          "midi": 64,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0034",
+          "start": 8.035,
+          "duration": 1.4,
+          "midi": 50,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0035",
+          "start": 8.035,
+          "duration": 1.4,
+          "midi": 57,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0036",
+          "start": 12.035,
+          "duration": 1.4,
+          "midi": 54,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0037",
+          "start": 12.035,
+          "duration": 1.4,
+          "midi": 61,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0038",
+          "start": 16.035,
+          "duration": 1.4,
+          "midi": 57,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0039",
+          "start": 16.035,
+          "duration": 1.4,
+          "midi": 64,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0040",
+          "start": 20.035,
+          "duration": 1.4,
+          "midi": 57,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0041",
+          "start": 20.035,
+          "duration": 1.4,
+          "midi": 64,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0042",
+          "start": 24.035,
+          "duration": 1.4,
+          "midi": 61,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0043",
+          "start": 24.035,
+          "duration": 1.4,
+          "midi": 68,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0044",
+          "start": 28.035,
+          "duration": 1.4,
+          "midi": 53,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0045",
+          "start": 28.035,
+          "duration": 1.4,
+          "midi": 60,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0046",
+          "start": 64.035,
+          "duration": 1.4,
+          "midi": 54,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0047",
+          "start": 64.035,
+          "duration": 1.4,
+          "midi": 61,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0048",
+          "start": 68.035,
+          "duration": 1.4,
+          "midi": 57,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0049",
+          "start": 68.035,
+          "duration": 1.4,
+          "midi": 64,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0050",
+          "start": 72.035,
+          "duration": 1.4,
+          "midi": 50,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0051",
+          "start": 72.035,
+          "duration": 1.4,
+          "midi": 57,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0052",
+          "start": 76.035,
+          "duration": 1.4,
+          "midi": 54,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0053",
+          "start": 76.035,
+          "duration": 1.4,
+          "midi": 61,
+          "velocity": 0.49
+        },
+        {
+          "id": "piano-0054",
+          "start": 80.035,
+          "duration": 1.4,
+          "midi": 57,
+          "velocity": 0.4165
+        },
+        {
+          "id": "piano-0055",
+          "start": 80.035,
+          "duration": 1.4,
+          "midi": 64,
+          "velocity": 0.4165
+        },
+        {
+          "id": "piano-0056",
+          "start": 84.035,
+          "duration": 1.4,
+          "midi": 57,
+          "velocity": 0.4165
+        },
+        {
+          "id": "piano-0057",
+          "start": 84.035,
+          "duration": 1.4,
+          "midi": 64,
+          "velocity": 0.4165
+        },
+        {
+          "id": "piano-0058",
+          "start": 88.035,
+          "duration": 1.4,
+          "midi": 61,
+          "velocity": 0.4165
+        },
+        {
+          "id": "piano-0059",
+          "start": 88.035,
+          "duration": 1.4,
+          "midi": 68,
+          "velocity": 0.4165
+        },
+        {
+          "id": "piano-0060",
+          "start": 92.035,
+          "duration": 1.4,
+          "midi": 53,
+          "velocity": 0.4165
+        },
+        {
+          "id": "piano-0061",
+          "start": 92.035,
+          "duration": 1.4,
+          "midi": 60,
+          "velocity": 0.4165
+        }
+      ]
+    },
+    {
+      "id": "lead",
+      "name": "长笛 · 主题",
+      "instrumentId": "flute",
+      "color": "#647B72",
+      "volume": 0.4,
+      "pan": 0.1,
+      "reverb": 0.36,
+      "humanize": 0.25,
+      "release": 0.22,
+      "muted": false,
+      "solo": false,
+      "notes": [
+        {
+          "id": "lead-0000",
+          "start": 0.0,
+          "duration": 1.695,
+          "midi": 66,
+          "velocity": 0.65
+        },
+        {
+          "id": "lead-0001",
+          "start": 2.0,
+          "duration": 0.445,
+          "midi": 66,
+          "velocity": 0.6669
+        },
+        {
+          "id": "lead-0002",
+          "start": 2.5,
+          "duration": 0.445,
+          "midi": 68,
+          "velocity": 0.67
+        },
+        {
+          "id": "lead-0003",
+          "start": 3.0,
+          "duration": 0.945,
+          "midi": 69,
+          "velocity": 0.6724
+        },
+        {
+          "id": "lead-0004",
+          "start": 4.0,
+          "duration": 0.445,
+          "midi": 69,
+          "velocity": 0.6749
+        },
+        {
+          "id": "lead-0005",
+          "start": 4.5,
+          "duration": 0.445,
+          "midi": 71,
+          "velocity": 0.6749
+        },
+        {
+          "id": "lead-0006",
+          "start": 5.0,
+          "duration": 0.945,
+          "midi": 73,
+          "velocity": 0.674
+        },
+        {
+          "id": "lead-0007",
+          "start": 6.0,
+          "duration": 1.445,
+          "midi": 71,
+          "velocity": 0.6699
+        },
+        {
+          "id": "lead-0008",
+          "start": 7.5,
+          "duration": 0.445,
+          "midi": 73,
+          "velocity": 0.659
+        },
+        {
+          "id": "lead-0009",
+          "start": 8.0,
+          "duration": 0.945,
+          "midi": 69,
+          "velocity": 0.6545
+        },
+        {
+          "id": "lead-0010",
+          "start": 9.0,
+          "duration": 1.445,
+          "midi": 68,
+          "velocity": 0.6453
+        },
+        {
+          "id": "lead-0011",
+          "start": 10.5,
+          "duration": 0.445,
+          "midi": 69,
+          "velocity": 0.6331
+        },
+        {
+          "id": "lead-0012",
+          "start": 11.0,
+          "duration": 0.945,
+          "midi": 68,
+          "velocity": 0.63
+        },
+        {
+          "id": "lead-0013",
+          "start": 12.0,
+          "duration": 1.695,
+          "midi": 66,
+          "velocity": 0.6259
+        },
+        {
+          "id": "lead-0014",
+          "start": 14.0,
+          "duration": 0.445,
+          "midi": 66,
+          "velocity": 0.6277
+        },
+        {
+          "id": "lead-0015",
+          "start": 14.5,
+          "duration": 0.445,
+          "midi": 68,
+          "velocity": 0.6301
+        },
+        {
+          "id": "lead-0016",
+          "start": 15.0,
+          "duration": 0.945,
+          "midi": 69,
+          "velocity": 0.6333
+        },
+        {
+          "id": "lead-0017",
+          "start": 16.0,
+          "duration": 0.945,
+          "midi": 73,
+          "velocity": 0.6411
+        },
+        {
+          "id": "lead-0018",
+          "start": 17.0,
+          "duration": 0.945,
+          "midi": 76,
+          "velocity": 0.6502
+        },
+        {
+          "id": "lead-0019",
+          "start": 18.0,
+          "duration": 1.445,
+          "midi": 78,
+          "velocity": 0.6592
+        },
+        {
+          "id": "lead-0020",
+          "start": 19.5,
+          "duration": 0.445,
+          "midi": 80,
+          "velocity": 0.6701
+        },
+        {
+          "id": "lead-0021",
+          "start": 20.0,
+          "duration": 0.82,
+          "midi": 76,
+          "velocity": 0.6725
+        },
+        {
+          "id": "lead-0022",
+          "start": 21.0,
+          "duration": 1.445,
+          "midi": 75,
+          "velocity": 0.6749
+        },
+        {
+          "id": "lead-0023",
+          "start": 22.5,
+          "duration": 0.445,
+          "midi": 76,
+          "velocity": 0.6723
+        },
+        {
+          "id": "lead-0024",
+          "start": 23.0,
+          "duration": 0.945,
+          "midi": 75,
+          "velocity": 0.6698
+        },
+        {
+          "id": "lead-0025",
+          "start": 24.0,
+          "duration": 3.575,
+          "midi": 73,
+          "velocity": 0.663
+        },
+        {
+          "id": "lead-0026",
+          "start": 28.0,
+          "duration": 0.945,
+          "midi": 73,
+          "velocity": 0.6299
+        },
+        {
+          "id": "lead-0027",
+          "start": 29.0,
+          "duration": 0.945,
+          "midi": 76,
+          "velocity": 0.6259
+        },
+        {
+          "id": "lead-0028",
+          "start": 30.0,
+          "duration": 1.445,
+          "midi": 78,
+          "velocity": 0.6251
+        },
+        {
+          "id": "lead-0029",
+          "start": 31.5,
+          "duration": 0.445,
+          "midi": 80,
+          "velocity": 0.6302
+        },
+        {
+          "id": "lead-0030",
+          "start": 64.0,
+          "duration": 1.695,
+          "midi": 66,
+          "velocity": 0.65
+        },
+        {
+          "id": "lead-0031",
+          "start": 66.0,
+          "duration": 0.445,
+          "midi": 66,
+          "velocity": 0.6669
+        },
+        {
+          "id": "lead-0032",
+          "start": 66.5,
+          "duration": 0.445,
+          "midi": 68,
+          "velocity": 0.67
+        },
+        {
+          "id": "lead-0033",
+          "start": 67.0,
+          "duration": 0.945,
+          "midi": 69,
+          "velocity": 0.6724
+        },
+        {
+          "id": "lead-0034",
+          "start": 68.0,
+          "duration": 0.445,
+          "midi": 69,
+          "velocity": 0.6749
+        },
+        {
+          "id": "lead-0035",
+          "start": 68.5,
+          "duration": 0.445,
+          "midi": 71,
+          "velocity": 0.6749
+        },
+        {
+          "id": "lead-0036",
+          "start": 69.0,
+          "duration": 0.945,
+          "midi": 73,
+          "velocity": 0.674
+        },
+        {
+          "id": "lead-0037",
+          "start": 70.0,
+          "duration": 1.445,
+          "midi": 71,
+          "velocity": 0.6699
+        },
+        {
+          "id": "lead-0038",
+          "start": 71.5,
+          "duration": 0.445,
+          "midi": 73,
+          "velocity": 0.659
+        },
+        {
+          "id": "lead-0039",
+          "start": 72.0,
+          "duration": 0.945,
+          "midi": 69,
+          "velocity": 0.6545
+        },
+        {
+          "id": "lead-0040",
+          "start": 73.0,
+          "duration": 1.445,
+          "midi": 68,
+          "velocity": 0.6453
+        },
+        {
+          "id": "lead-0041",
+          "start": 74.5,
+          "duration": 0.445,
+          "midi": 69,
+          "velocity": 0.6331
+        },
+        {
+          "id": "lead-0042",
+          "start": 75.0,
+          "duration": 0.945,
+          "midi": 68,
+          "velocity": 0.63
+        },
+        {
+          "id": "lead-0043",
+          "start": 76.0,
+          "duration": 1.695,
+          "midi": 66,
+          "velocity": 0.6259
+        },
+        {
+          "id": "lead-0044",
+          "start": 78.0,
+          "duration": 0.445,
+          "midi": 66,
+          "velocity": 0.6277
+        },
+        {
+          "id": "lead-0045",
+          "start": 78.5,
+          "duration": 0.445,
+          "midi": 68,
+          "velocity": 0.6301
+        },
+        {
+          "id": "lead-0046",
+          "start": 79.0,
+          "duration": 0.945,
+          "midi": 69,
+          "velocity": 0.6333
+        },
+        {
+          "id": "lead-0047",
+          "start": 80.0,
+          "duration": 0.945,
+          "midi": 73,
+          "velocity": 0.577
+        },
+        {
+          "id": "lead-0048",
+          "start": 81.0,
+          "duration": 0.945,
+          "midi": 76,
+          "velocity": 0.5852
+        },
+        {
+          "id": "lead-0049",
+          "start": 82.0,
+          "duration": 1.445,
+          "midi": 78,
+          "velocity": 0.5933
+        },
+        {
+          "id": "lead-0050",
+          "start": 83.5,
+          "duration": 0.445,
+          "midi": 80,
+          "velocity": 0.6031
+        },
+        {
+          "id": "lead-0051",
+          "start": 84.0,
+          "duration": 0.82,
+          "midi": 76,
+          "velocity": 0.6052
+        },
+        {
+          "id": "lead-0052",
+          "start": 85.0,
+          "duration": 1.445,
+          "midi": 75,
+          "velocity": 0.6074
+        },
+        {
+          "id": "lead-0053",
+          "start": 86.5,
+          "duration": 0.445,
+          "midi": 76,
+          "velocity": 0.605
+        },
+        {
+          "id": "lead-0054",
+          "start": 87.0,
+          "duration": 0.945,
+          "midi": 75,
+          "velocity": 0.6028
+        },
+        {
+          "id": "lead-0055",
+          "start": 88.0,
+          "duration": 3.575,
+          "midi": 73,
+          "velocity": 0.5967
+        },
+        {
+          "id": "lead-0056",
+          "start": 92.0,
+          "duration": 0.945,
+          "midi": 73,
+          "velocity": 0.5669
+        },
+        {
+          "id": "lead-0057",
+          "start": 93.0,
+          "duration": 0.945,
+          "midi": 76,
+          "velocity": 0.5633
+        },
+        {
+          "id": "lead-0058",
+          "start": 94.0,
+          "duration": 1.445,
+          "midi": 78,
+          "velocity": 0.5626
+        },
+        {
+          "id": "lead-0059",
+          "start": 95.5,
+          "duration": 0.445,
+          "midi": 80,
+          "velocity": 0.5672
+        }
+      ],
+      "articulation": "sustain-nv"
+    },
+    {
+      "id": "strings",
+      "name": "小提琴组 · 内声与对答",
+      "instrumentId": "strings",
+      "color": "#647B72",
+      "volume": 0.57,
+      "pan": 0.25,
+      "reverb": 0.32,
+      "humanize": 0.25,
+      "release": 0.22,
+      "muted": false,
+      "solo": false,
+      "notes": [
+        {
+          "id": "strings-0000",
+          "start": 0.1,
+          "duration": 2.6,
+          "midi": 55,
+          "velocity": 0.4
+        },
+        {
+          "id": "strings-0001",
+          "start": 0.1,
+          "duration": 2.6,
+          "midi": 61,
+          "velocity": 0.4
+        },
+        {
+          "id": "strings-0002",
+          "start": 8.1,
+          "duration": 2.6,
+          "midi": 55,
+          "velocity": 0.4
+        },
+        {
+          "id": "strings-0003",
+          "start": 8.1,
+          "duration": 2.6,
+          "midi": 57,
+          "velocity": 0.4
+        },
+        {
+          "id": "strings-0004",
+          "start": 16.1,
+          "duration": 2.6,
+          "midi": 57,
+          "velocity": 0.4
+        },
+        {
+          "id": "strings-0005",
+          "start": 16.1,
+          "duration": 2.6,
+          "midi": 64,
+          "velocity": 0.4
+        },
+        {
+          "id": "strings-0006",
+          "start": 24.1,
+          "duration": 2.6,
+          "midi": 61,
+          "velocity": 0.4
+        },
+        {
+          "id": "strings-0007",
+          "start": 24.1,
+          "duration": 2.6,
+          "midi": 68,
+          "velocity": 0.4
+        },
+        {
+          "id": "strings-0008",
+          "start": 32.1,
+          "duration": 2.6,
+          "midi": 57,
+          "velocity": 0.348
+        },
+        {
+          "id": "strings-0009",
+          "start": 32.1,
+          "duration": 2.6,
+          "midi": 64,
+          "velocity": 0.348
+        },
+        {
+          "id": "strings-0010",
+          "start": 40.1,
+          "duration": 2.6,
+          "midi": 61,
+          "velocity": 0.348
+        },
+        {
+          "id": "strings-0011",
+          "start": 40.1,
+          "duration": 2.6,
+          "midi": 68,
+          "velocity": 0.348
+        },
+        {
+          "id": "strings-0012",
+          "start": 48.1,
+          "duration": 2.6,
+          "midi": 55,
+          "velocity": 0.348
+        },
+        {
+          "id": "strings-0013",
+          "start": 48.1,
+          "duration": 2.6,
+          "midi": 61,
+          "velocity": 0.348
+        },
+        {
+          "id": "strings-0014",
+          "start": 56.1,
+          "duration": 2.6,
+          "midi": 55,
+          "velocity": 0.348
+        },
+        {
+          "id": "strings-0015",
+          "start": 56.1,
+          "duration": 2.6,
+          "midi": 61,
+          "velocity": 0.348
+        },
+        {
+          "id": "strings-0016",
+          "start": 64.1,
+          "duration": 2.6,
+          "midi": 55,
+          "velocity": 0.4
+        },
+        {
+          "id": "strings-0017",
+          "start": 64.1,
+          "duration": 2.6,
+          "midi": 61,
+          "velocity": 0.4
+        },
+        {
+          "id": "strings-0018",
+          "start": 72.1,
+          "duration": 2.6,
+          "midi": 55,
+          "velocity": 0.4
+        },
+        {
+          "id": "strings-0019",
+          "start": 72.1,
+          "duration": 2.6,
+          "midi": 57,
+          "velocity": 0.4
+        },
+        {
+          "id": "strings-0020",
+          "start": 80.1,
+          "duration": 2.6,
+          "midi": 57,
+          "velocity": 0.34
+        },
+        {
+          "id": "strings-0021",
+          "start": 80.1,
+          "duration": 2.6,
+          "midi": 64,
+          "velocity": 0.34
+        },
+        {
+          "id": "strings-0022",
+          "start": 88.1,
+          "duration": 2.6,
+          "midi": 61,
+          "velocity": 0.34
+        },
+        {
+          "id": "strings-0023",
+          "start": 88.1,
+          "duration": 2.6,
+          "midi": 68,
+          "velocity": 0.34
+        }
+      ],
+      "articulation": "sustain"
+    },
+    {
+      "id": "cello",
+      "name": "大提琴组 · 地面脉动",
+      "instrumentId": "cello-section",
+      "color": "#647B72",
+      "volume": 0.085,
+      "pan": -0.12,
+      "reverb": 0.24,
+      "humanize": 0.25,
+      "release": 0.22,
+      "muted": false,
+      "solo": false,
+      "notes": [
+        {
+          "id": "cello-0000",
+          "start": 0,
+          "duration": 2.0,
+          "midi": 42,
+          "velocity": 0.52
+        },
+        {
+          "id": "cello-0001",
+          "start": 2.15,
+          "duration": 1.5,
+          "midi": 42,
+          "velocity": 0.44
+        },
+        {
+          "id": "cello-0002",
+          "start": 4,
+          "duration": 2.0,
+          "midi": 45,
+          "velocity": 0.52
+        },
+        {
+          "id": "cello-0003",
+          "start": 8,
+          "duration": 2.0,
+          "midi": 50,
+          "velocity": 0.52
+        },
+        {
+          "id": "cello-0004",
+          "start": 10.15,
+          "duration": 1.5,
+          "midi": 50,
+          "velocity": 0.44
+        },
+        {
+          "id": "cello-0005",
+          "start": 12,
+          "duration": 2.0,
+          "midi": 42,
+          "velocity": 0.52
+        },
+        {
+          "id": "cello-0006",
+          "start": 16,
+          "duration": 2.0,
+          "midi": 45,
+          "velocity": 0.52
+        },
+        {
+          "id": "cello-0007",
+          "start": 18.15,
+          "duration": 1.5,
+          "midi": 45,
+          "velocity": 0.44
+        },
+        {
+          "id": "cello-0008",
+          "start": 20,
+          "duration": 2.0,
+          "midi": 45,
+          "velocity": 0.52
+        },
+        {
+          "id": "cello-0009",
+          "start": 24,
+          "duration": 2.0,
+          "midi": 49,
+          "velocity": 0.52
+        },
+        {
+          "id": "cello-0010",
+          "start": 26.15,
+          "duration": 1.5,
+          "midi": 49,
+          "velocity": 0.44
+        },
+        {
+          "id": "cello-0011",
+          "start": 28,
+          "duration": 2.0,
+          "midi": 53,
+          "velocity": 0.52
+        },
+        {
+          "id": "cello-0012",
+          "start": 32,
+          "duration": 2.0,
+          "midi": 45,
+          "velocity": 0.4524
+        },
+        {
+          "id": "cello-0013",
+          "start": 34.15,
+          "duration": 1.5,
+          "midi": 45,
+          "velocity": 0.3828
+        },
+        {
+          "id": "cello-0014",
+          "start": 36,
+          "duration": 2.0,
+          "midi": 42,
+          "velocity": 0.4524
+        },
+        {
+          "id": "cello-0015",
+          "start": 40,
+          "duration": 2.0,
+          "midi": 49,
+          "velocity": 0.4524
+        },
+        {
+          "id": "cello-0016",
+          "start": 42.15,
+          "duration": 1.5,
+          "midi": 49,
+          "velocity": 0.3828
+        },
+        {
+          "id": "cello-0017",
+          "start": 44,
+          "duration": 2.0,
+          "midi": 50,
+          "velocity": 0.4524
+        },
+        {
+          "id": "cello-0018",
+          "start": 48,
+          "duration": 2.0,
+          "midi": 42,
+          "velocity": 0.4524
+        },
+        {
+          "id": "cello-0019",
+          "start": 50.15,
+          "duration": 1.5,
+          "midi": 42,
+          "velocity": 0.3828
+        },
+        {
+          "id": "cello-0020",
+          "start": 52,
+          "duration": 2.0,
+          "midi": 46,
+          "velocity": 0.4524
+        },
+        {
+          "id": "cello-0021",
+          "start": 56,
+          "duration": 2.0,
+          "midi": 42,
+          "velocity": 0.4524
+        },
+        {
+          "id": "cello-0022",
+          "start": 58.15,
+          "duration": 1.5,
+          "midi": 42,
+          "velocity": 0.3828
+        },
+        {
+          "id": "cello-0023",
+          "start": 60,
+          "duration": 2.0,
+          "midi": 50,
+          "velocity": 0.4524
+        },
+        {
+          "id": "cello-0024",
+          "start": 64,
+          "duration": 2.0,
+          "midi": 42,
+          "velocity": 0.52
+        },
+        {
+          "id": "cello-0025",
+          "start": 66.15,
+          "duration": 1.5,
+          "midi": 42,
+          "velocity": 0.44
+        },
+        {
+          "id": "cello-0026",
+          "start": 68,
+          "duration": 2.0,
+          "midi": 45,
+          "velocity": 0.52
+        },
+        {
+          "id": "cello-0027",
+          "start": 72,
+          "duration": 2.0,
+          "midi": 50,
+          "velocity": 0.52
+        },
+        {
+          "id": "cello-0028",
+          "start": 74.15,
+          "duration": 1.5,
+          "midi": 50,
+          "velocity": 0.44
+        },
+        {
+          "id": "cello-0029",
+          "start": 76,
+          "duration": 2.0,
+          "midi": 42,
+          "velocity": 0.52
+        },
+        {
+          "id": "cello-0030",
+          "start": 80,
+          "duration": 2.0,
+          "midi": 45,
+          "velocity": 0.442
+        },
+        {
+          "id": "cello-0031",
+          "start": 82.15,
+          "duration": 1.5,
+          "midi": 45,
+          "velocity": 0.374
+        },
+        {
+          "id": "cello-0032",
+          "start": 84,
+          "duration": 2.0,
+          "midi": 45,
+          "velocity": 0.442
+        },
+        {
+          "id": "cello-0033",
+          "start": 88,
+          "duration": 2.0,
+          "midi": 49,
+          "velocity": 0.442
+        },
+        {
+          "id": "cello-0034",
+          "start": 90.15,
+          "duration": 1.5,
+          "midi": 49,
+          "velocity": 0.374
+        },
+        {
+          "id": "cello-0035",
+          "start": 92,
+          "duration": 2.0,
+          "midi": 53,
+          "velocity": 0.442
+        }
+      ],
+      "articulation": "sustain"
+    },
+    {
+      "id": "harp",
+      "name": "竖琴 · 空间与流动",
+      "instrumentId": "harp",
+      "color": "#647B72",
+      "volume": 0.11,
+      "pan": -0.3,
+      "reverb": 0.38,
+      "humanize": 0.25,
+      "release": 0.22,
+      "muted": false,
+      "solo": false,
+      "notes": [
+        {
+          "id": "harp-0000",
+          "start": 0.518,
+          "duration": 0.8,
+          "midi": 73,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0001",
+          "start": 2.518,
+          "duration": 0.8,
+          "midi": 78,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0002",
+          "start": 5.518,
+          "duration": 0.8,
+          "midi": 81,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0003",
+          "start": 8.518,
+          "duration": 0.8,
+          "midi": 69,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0004",
+          "start": 10.518,
+          "duration": 0.8,
+          "midi": 81,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0005",
+          "start": 13.518,
+          "duration": 0.8,
+          "midi": 78,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0006",
+          "start": 16.518,
+          "duration": 0.8,
+          "midi": 76,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0007",
+          "start": 18.518,
+          "duration": 0.8,
+          "midi": 73,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0008",
+          "start": 21.518,
+          "duration": 0.8,
+          "midi": 81,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0009",
+          "start": 24.518,
+          "duration": 0.8,
+          "midi": 80,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0010",
+          "start": 26.518,
+          "duration": 0.8,
+          "midi": 73,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0011",
+          "start": 29.518,
+          "duration": 0.8,
+          "midi": 77,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0012",
+          "start": 32.518,
+          "duration": 0.8,
+          "midi": 76,
+          "velocity": 0.3828
+        },
+        {
+          "id": "harp-0013",
+          "start": 34.518,
+          "duration": 0.8,
+          "midi": 76,
+          "velocity": 0.3828
+        },
+        {
+          "id": "harp-0014",
+          "start": 37.518,
+          "duration": 0.8,
+          "midi": 78,
+          "velocity": 0.3828
+        },
+        {
+          "id": "harp-0015",
+          "start": 40.518,
+          "duration": 0.8,
+          "midi": 80,
+          "velocity": 0.3828
+        },
+        {
+          "id": "harp-0016",
+          "start": 42.518,
+          "duration": 0.8,
+          "midi": 81,
+          "velocity": 0.3828
+        },
+        {
+          "id": "harp-0017",
+          "start": 45.518,
+          "duration": 0.8,
+          "midi": 74,
+          "velocity": 0.3828
+        },
+        {
+          "id": "harp-0018",
+          "start": 48.518,
+          "duration": 0.8,
+          "midi": 73,
+          "velocity": 0.3828
+        },
+        {
+          "id": "harp-0019",
+          "start": 50.518,
+          "duration": 0.8,
+          "midi": 82,
+          "velocity": 0.3828
+        },
+        {
+          "id": "harp-0020",
+          "start": 53.518,
+          "duration": 0.8,
+          "midi": 82,
+          "velocity": 0.3828
+        },
+        {
+          "id": "harp-0021",
+          "start": 56.518,
+          "duration": 0.8,
+          "midi": 73,
+          "velocity": 0.3828
+        },
+        {
+          "id": "harp-0022",
+          "start": 58.518,
+          "duration": 0.8,
+          "midi": 78,
+          "velocity": 0.3828
+        },
+        {
+          "id": "harp-0023",
+          "start": 61.518,
+          "duration": 0.8,
+          "midi": 74,
+          "velocity": 0.3828
+        },
+        {
+          "id": "harp-0024",
+          "start": 64.518,
+          "duration": 0.8,
+          "midi": 73,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0025",
+          "start": 66.518,
+          "duration": 0.8,
+          "midi": 78,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0026",
+          "start": 69.518,
+          "duration": 0.8,
+          "midi": 81,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0027",
+          "start": 72.518,
+          "duration": 0.8,
+          "midi": 69,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0028",
+          "start": 74.518,
+          "duration": 0.8,
+          "midi": 81,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0029",
+          "start": 77.518,
+          "duration": 0.8,
+          "midi": 78,
+          "velocity": 0.44
+        },
+        {
+          "id": "harp-0030",
+          "start": 80.518,
+          "duration": 0.8,
+          "midi": 76,
+          "velocity": 0.374
+        },
+        {
+          "id": "harp-0031",
+          "start": 82.518,
+          "duration": 0.8,
+          "midi": 73,
+          "velocity": 0.374
+        },
+        {
+          "id": "harp-0032",
+          "start": 85.518,
+          "duration": 0.8,
+          "midi": 81,
+          "velocity": 0.374
+        },
+        {
+          "id": "harp-0033",
+          "start": 88.518,
+          "duration": 0.8,
+          "midi": 80,
+          "velocity": 0.374
+        },
+        {
+          "id": "harp-0034",
+          "start": 90.518,
+          "duration": 0.8,
+          "midi": 73,
+          "velocity": 0.374
+        },
+        {
+          "id": "harp-0035",
+          "start": 93.518,
+          "duration": 0.8,
+          "midi": 77,
+          "velocity": 0.374
+        }
+      ],
+      "articulation": "pluck"
+    }
+  ]
+}

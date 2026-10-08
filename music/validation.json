@@ -1,0 +1,122 @@
+{
+  "browser": "151.0.7922.173",
+  "artifactSha256": "bc79da3db82cc855a3543053874a3954cbb5ede79d391545162eaad16860aba9",
+  "defaultOff": true,
+  "mapFrameLoopPaused": true,
+  "outputGraphRms": 0.0224816208641599,
+  "sceneCuesTested": [
+    "hakurei-dusk",
+    "hakurei-night",
+    "forest-dolls",
+    "bamboo-moon",
+    "scarlet-evening",
+    "mountain-stream",
+    "flower-concert",
+    "nether-sakura",
+    "nether-bloom",
+    "hell-lullaby"
+  ],
+  "unscoredStops": true,
+  "disableReleasesVoices": true,
+  "decodedCacheLimit": 2,
+  "nativeContextSuspendResume": true,
+  "decoded": [
+    {
+      "id": "hakurei-dusk",
+      "duration": 96,
+      "expected": 96,
+      "peak": 0.4769877791404724,
+      "boundaryStep": 0.00021368492161855102,
+      "scheduledJoinStep": 0.00021368492161855102
+    },
+    {
+      "id": "hakurei-night",
+      "duration": 116.36362811791383,
+      "expected": 116.36362811791383,
+      "peak": 0.5477607846260071,
+      "boundaryStep": 0.0002646967095643049,
+      "scheduledJoinStep": 0.00014025181565102685
+    },
+    {
+      "id": "forest-dolls",
+      "duration": 62.60868480725624,
+      "expected": 62.60868480725624,
+      "peak": 0.4328749179840088,
+      "boundaryStep": 0.0001919190544867888,
+      "scheduledJoinStep": 0.0001919190544867888
+    },
+    {
+      "id": "mountain-stream",
+      "duration": 65.45453514739229,
+      "expected": 65.45453514739229,
+      "peak": 0.3832426369190216,
+      "boundaryStep": 0.00025959972117561847,
+      "scheduledJoinStep": 7.05221391399391e-05
+    },
+    {
+      "id": "bamboo-moon",
+      "duration": 80,
+      "expected": 80,
+      "peak": 0.5695485472679138,
+      "boundaryStep": 0.00025282151182182133,
+      "scheduledJoinStep": 0.00014445713611621613
+    },
+    {
+      "id": "scarlet-evening",
+      "duration": 68.57142857142857,
+      "expected": 68.57142857142857,
+      "peak": 0.6274154186248779,
+      "boundaryStep": 5.688991222996265e-05,
+      "scheduledJoinStep": 5.688991222996265e-05
+    },
+    {
+      "id": "nether-sakura",
+      "duration": 75.78947845804989,
+      "expected": 75.78947845804989,
+      "peak": 0.5002511143684387,
+      "boundaryStep": 0.00036870779877062887,
+      "scheduledJoinStep": 0.00022705973242409527
+    },
+    {
+      "id": "nether-bloom",
+      "duration": 57.6,
+      "expected": 57.6,
+      "peak": 0.4214833378791809,
+      "boundaryStep": 0.000866172721998737,
+      "scheduledJoinStep": 0.000866172721998737
+    },
+    {
+      "id": "hell-lullaby",
+      "duration": 84.70587301587301,
+      "expected": 84.70587301587301,
+      "peak": 0.4397321045398712,
+      "boundaryStep": 0.00041663229785626754,
+      "scheduledJoinStep": 0.00041663229785626754
+    },
+    {
+      "id": "flower-concert",
+      "duration": 51.42857142857143,
+      "expected": 51.42857142857143,
+      "peak": 0.49731820821762085,
+      "boundaryStep": 0.00014918155829946045,
+      "scheduledJoinStep": 0.00013523746929422487
+    }
+  ],
+  "runtimeErrors": [],
+  "listeningStatus": "Human listening pending; decoding and output energy are not audition",
+  "sourceBaseCommit": "2a5ac93e8aebbf539feec8a1e9408a0a6ebea02d",
+  "playerUnitTestsPassed": 5,
+  "midiPitchAndStartMatchScores": true,
+  "finalRenderInputMatchesScores": true,
+  "allScoresReproduceByteForByte": true,
+  "realSampleHashesVerified": 93,
+  "fullProjectRegression": {
+    "command": "node tools/check.mjs",
+    "node": "22.23.3",
+    "exitCode": 0,
+    "checkedArtifactSha256": "eadfe07b723d7507f1380708c60b262486eb0b1daf9b4de59b1d10626a5279a7",
+    "laterChanges": "Only catalog rights/release metadata changed in build inputs; native browser tests cover the final artifact and all 221 final input hashes were revalidated."
+  },
+  "firstDeliveredMp3Sha256": "1804edf46bedd2e7296bc769802a53bca6d01c6b3c39683780dee2f3bd5e833c",
+  "edgeGuardedMp3Sha256": "1714e0521b386115a76cbafa42dd1098f5907764d7030b363fb49b8bcc3b8319"
+}

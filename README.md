@@ -4,6 +4,8 @@
 
 在线体验：[幻想乡立体风物志](https://tianyin231.github.io/TouhouGensokyoAtlas/)。下载版本请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 获取 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
+本分支加入 10 段东方原曲室内乐改编，设置面板可开启随场景切换的配乐。[试听、曲目出处、音源与验收状态](docs/music.md)包含 MP3／MIDI／可编辑乐谱入口。使用真实乐器录音采样渲染；音乐实听待验收。
+
 ## 逐区画面升级：博丽神社试点
 
 在 v0.29 高地版本上合入神社的木石瓦材质、立面进深、枝叶与庭院植被、周边林带过渡，以及可切换的月光夜景。晴天仍为默认；夜晚的暖灯与纸门目前仅对神社精调。后续区域按[画面升级策略](docs/visual-upgrade.md)逐步推进，保留各自建筑和环境特色。

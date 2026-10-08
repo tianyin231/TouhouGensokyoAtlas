@@ -115,8 +115,15 @@ def build(output_dir):
 
     # 同一个字符串同时用于主线程与 Worker，避免两个模型注册表出现差异。
     world_builder = '\n'.join(source(name) for name in project['worldBuilders'])
+    music = json.loads(data('music/catalog.json'))
+    for cue in music['cues']:
+        audio = read_bytes(cue['file'])
+        if hashlib.sha256(audio).hexdigest() != cue['sha256']:
+            raise ValueError('配乐成品散列不符：' + cue['id'])
+        cue['audio'] = base64.b64encode(audio).decode('ascii')
+    music_runtime = 'globalThis.ATLAS_MUSIC_DATA=' + json.dumps(music, ensure_ascii=True) + ';\n' + source('src/music.js')
     parts = {
-        'STYLES': read_text('src/styles.css'),
+        'STYLES': read_text('src/styles.css') + '\n' + read_text('src/music.css'),
         'CHARACTER_DATA': json.dumps(characters, ensure_ascii=False),
         'ATLAS_DATA': json.dumps(atlas, ensure_ascii=False),
         'EXPANSION_DATA': data('data/expansion.json'),
@@ -146,7 +153,7 @@ def build(output_dir):
         'NIGHT_RENDERER': '\n'.join([source('src/night-renderer.js'), *[source(name) for name in project.get('extensionRenderers', [])]]),
         'CHARACTERS': source('src/characters.js'),
         'STREAMING': source('src/streaming.js'),
-        'APP': source('src/app.js'),
+        'APP': source('src/app.js') + '\n' + music_runtime,
     }
     template = read_text('src/index.html')
     for token in parts:

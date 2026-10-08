@@ -1,0 +1,6 @@
+.music-controls{border-top:1px solid rgba(113,136,122,.3);margin-top:18px;padding-top:12px}
+.music-controls h3{font-size:14px;margin:0 0 10px}
+.music-controls p{margin:10px 0 6px;line-height:1.5}
+.music-controls a{font-size:11px;line-height:1.5;color:inherit;display:inline-block}
+.music-controls a[hidden]{display:none}
+.music-controls input[type=range]{width:130px;max-width:50%;accent-color:#647b72}

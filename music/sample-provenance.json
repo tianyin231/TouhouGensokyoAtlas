@@ -1,0 +1,1639 @@
+{
+  "engine": "XSXB-Band",
+  "engineCommit": "ff39f88e6c28fefa2f7b1bebe2eee41a00b761ee",
+  "recordingType": "Recorded instrument samples; no live ensemble session commissioned",
+  "filesVerifiedBySha256": 93,
+  "instruments": [
+    {
+      "id": "piano",
+      "name": "立式钢琴",
+      "englishName": "Upright Piano",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/sgossner/VSCO-2-CE",
+      "licenseUrl": "https://github.com/sgossner/VSCO-2-CE/blob/440300901dfe9275fd84e0b7763af1f8443ae62e/LICENSE",
+      "samples": [
+        {
+          "midi": 53,
+          "url": "/samples/piano/53.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Piano/Player_dyn2_rr1_016.wav",
+          "bytes": 4643212,
+          "sha256": "87b90b8161b5ddac5f1e81cce7895c726aff220e735586059c7ed684a5ae82dc",
+          "duration": 17.54526,
+          "usedBy": [
+            "flower-concert",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 61,
+          "url": "/samples/piano/61.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Piano/Player_dyn2_rr1_020.wav",
+          "bytes": 4346848,
+          "sha256": "dc314226819e7af0768cd7fc08933f5e5b550083145e05af630fd7556f4d3913",
+          "duration": 16.42522,
+          "usedBy": [
+            "bamboo-moon",
+            "flower-concert",
+            "forest-dolls",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 69,
+          "url": "/samples/piano/69.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Piano/Player_dyn2_rr1_024.wav",
+          "bytes": 3204940,
+          "sha256": "a00ae1a2b2a78c154b067a9709afc1ce2d3be9f08d9f4ad3c9c869a7db80eb75",
+          "duration": 12.10961,
+          "usedBy": [
+            "bamboo-moon",
+            "flower-concert",
+            "forest-dolls",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 77,
+          "url": "/samples/piano/77.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Piano/Player_dyn2_rr1_028.wav",
+          "bytes": 3008866,
+          "sha256": "84fe87bd24dc93d354213f730517a29f485c40715d5959af97976b364110b70a",
+          "duration": 11.36859,
+          "usedBy": [
+            "bamboo-moon",
+            "flower-concert",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 85,
+          "url": "/samples/piano/85.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Piano/Player_dyn2_rr1_032.wav",
+          "bytes": 2888572,
+          "sha256": "8a4b127b8420c276d8935495d13b4e493c3eaa8f8aaef75bbc4f74d6437160f2",
+          "duration": 10.91397,
+          "usedBy": [
+            "bamboo-moon",
+            "mountain-stream"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "strings",
+      "name": "弦乐 · 小提琴组",
+      "englishName": "Violin Section",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/sgossner/VSCO-2-CE",
+      "licenseUrl": "https://github.com/sgossner/VSCO-2-CE/blob/440300901dfe9275fd84e0b7763af1f8443ae62e/LICENSE",
+      "samples": [
+        {
+          "midi": 55,
+          "url": "/samples/strings/VlnEns_Pizz_G2_v1_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Pizz/VlnEns_Pizz_G2_v1_rr1.wav",
+          "bytes": 409242,
+          "sha256": "7e424e4d35016be590f352eb9961e9175d6ecfceb31c010dd9f38d5905e518f6",
+          "articulation": "pizzicato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 55,
+          "url": "/samples/strings/VlnEns_Pizz_G2_v1_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Pizz/VlnEns_Pizz_G2_v1_rr2.wav",
+          "bytes": 459646,
+          "sha256": "80df42a5f496d3f41a13345239baa41ab454bf000c95272eb1690e1a2905a3a7",
+          "articulation": "pizzicato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 2,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 57,
+          "url": "/samples/strings/VlnEns_Pizz_A2_v1_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Pizz/VlnEns_Pizz_A2_v1_rr1.wav",
+          "bytes": 220926,
+          "sha256": "056e2e28e989446da8cdda21f62211a7a30699ea03f4ea074045e85c708a0ea8",
+          "articulation": "pizzicato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 57,
+          "url": "/samples/strings/VlnEns_Pizz_A2_v1_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Pizz/VlnEns_Pizz_A2_v1_rr2.wav",
+          "bytes": 247290,
+          "sha256": "3f795534c596db359e7675f99b877a3b05bf8475e0a392cc1dc258e16c75e282",
+          "articulation": "pizzicato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 2,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 59,
+          "url": "/samples/strings/VlnEns_Pizz_B2_v1_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Pizz/VlnEns_Pizz_B2_v1_rr1.wav",
+          "bytes": 124886,
+          "sha256": "6c6e279b3013700f7b0d47042b58679c5d4788637860f6a4788ee6ae7fa25940",
+          "articulation": "pizzicato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 59,
+          "url": "/samples/strings/VlnEns_Pizz_B2_v1_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Pizz/VlnEns_Pizz_B2_v1_rr2.wav",
+          "bytes": 116098,
+          "sha256": "f01036c3a58c277e487070603c81658ff07e9e1ca8bdfa0e22dd1c9f65c2b432",
+          "articulation": "pizzicato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 2,
+          "usedBy": [
+            "flower-concert",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 62,
+          "url": "/samples/strings/VlnEns_Pizz_D3_v1_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Pizz/VlnEns_Pizz_D3_v1_rr1.wav",
+          "bytes": 280306,
+          "sha256": "fb8819b3626d141393a6bd25daaba728dade39b9f611e6ec449d9018fb3f699c",
+          "articulation": "pizzicato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 62,
+          "url": "/samples/strings/VlnEns_Pizz_D3_v1_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Pizz/VlnEns_Pizz_D3_v1_rr2.wav",
+          "bytes": 375514,
+          "sha256": "82cca3cf7e1d9893cedc42b23c5ee4cfcfce1f9d764936e5f72977857c998e13",
+          "articulation": "pizzicato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 2,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 66,
+          "url": "/samples/strings/VlnEns_Pizz_Fs3_v1_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Pizz/VlnEns_Pizz_F%233_v1_rr1.wav",
+          "bytes": 197422,
+          "sha256": "a4b60e0fe3090df0282dfd78eb74ac0a4977d8029ed69dd1d67d736e76d33362",
+          "articulation": "pizzicato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 66,
+          "url": "/samples/strings/VlnEns_Pizz_Fs3_v1_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Pizz/VlnEns_Pizz_F%233_v1_rr2.wav",
+          "bytes": 135562,
+          "sha256": "bfbdce2c919c8959ec11b49224736af943253b31427577ff6e073f0a20f90b74",
+          "articulation": "pizzicato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 2,
+          "usedBy": [
+            "flower-concert",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 69,
+          "url": "/samples/strings/VlnEns_Pizz_A3_v1_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Pizz/VlnEns_Pizz_A3_v1_rr1.wav",
+          "bytes": 163490,
+          "sha256": "6807c9f8a2b8851e866e1f9bb92e9809982693e3593882673d0fe6dedf9b7a96",
+          "articulation": "pizzicato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert"
+          ]
+        },
+        {
+          "midi": 69,
+          "url": "/samples/strings/VlnEns_Pizz_A3_v1_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Pizz/VlnEns_Pizz_A3_v1_rr2.wav",
+          "bytes": 180382,
+          "sha256": "aa4d92ddd001ca80737ffcd3aa6a10f6e1b27192bb47a184c05f183475343385",
+          "articulation": "pizzicato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 2,
+          "usedBy": [
+            "flower-concert"
+          ]
+        },
+        {
+          "midi": 59,
+          "url": "/samples/strings/VlnEns_Spic_B2_v1_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_B2_v1_rr1.wav",
+          "bytes": 115554,
+          "sha256": "1fce12df9044e8d1d297d1da19f4e51c46bdbdf980523063bb338cd06b6ecc1f",
+          "articulation": "spiccato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 59,
+          "url": "/samples/strings/VlnEns_Spic_B2_v1_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_B2_v1_rr2.wav",
+          "bytes": 131774,
+          "sha256": "1afaa65435782188b63357bfa355cc79a93d63f7255da427523ac4562d71ed1d",
+          "articulation": "spiccato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 2,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 59,
+          "url": "/samples/strings/VlnEns_Spic_B2_v2_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_B2_v2_rr1.wav",
+          "bytes": 160826,
+          "sha256": "ee4aa779919171e33053b71c02691f026fd0b13c299da86f84c066e52ce3a4ec",
+          "articulation": "spiccato",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 59,
+          "url": "/samples/strings/VlnEns_Spic_B2_v2_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_B2_v2_rr2.wav",
+          "bytes": 172390,
+          "sha256": "a67bd97acd98c3e22c70b1ec2ff9090ab4355ddc76bae87dcdf1a4adf1c2208f",
+          "articulation": "spiccato",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 2,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 62,
+          "url": "/samples/strings/VlnEns_Spic_D3_v1_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_D3_v1_rr1.wav",
+          "bytes": 212730,
+          "sha256": "d94e088560784d6ecd6a927e8101d7e460e6d79168ab9eb52842c58891fae8da",
+          "articulation": "spiccato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 62,
+          "url": "/samples/strings/VlnEns_Spic_D3_v1_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_D3_v1_rr2.wav",
+          "bytes": 251726,
+          "sha256": "bb8a8c6661e060c3fddf5d66880c6789c16139747caaa121133f2a03a27fe605",
+          "articulation": "spiccato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 2,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 62,
+          "url": "/samples/strings/VlnEns_Spic_D3_v2_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_D3_v2_rr1.wav",
+          "bytes": 311850,
+          "sha256": "36105c7bc208181a10b41a468aab1e8ca4f31a9eae43834dd90d8d533a48e650",
+          "articulation": "spiccato",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 62,
+          "url": "/samples/strings/VlnEns_Spic_D3_v2_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_D3_v2_rr2.wav",
+          "bytes": 290746,
+          "sha256": "d456becd26000dce6e7b9551f4d2b0ce6160f823d49a21d1580a26ad260d5a71",
+          "articulation": "spiccato",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 2,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 66,
+          "url": "/samples/strings/VlnEns_Spic_Fs3_v1_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_F%233_v1_rr1.wav",
+          "bytes": 126294,
+          "sha256": "ea4dca06c96de2c0f5fd88c4dcd75ecc505898b648b2847810bf1a0817333de8",
+          "articulation": "spiccato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 66,
+          "url": "/samples/strings/VlnEns_Spic_Fs3_v1_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_F%233_v1_rr2.wav",
+          "bytes": 112254,
+          "sha256": "ce6cb6f8fe7be4d70e602e38f5cf3dd85390ef7d0e9522d76ed5c62ae5176c31",
+          "articulation": "spiccato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 2,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 66,
+          "url": "/samples/strings/VlnEns_Spic_Fs3_v2_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_F%233_v2_rr1.wav",
+          "bytes": 166870,
+          "sha256": "b24b5f833660b73c9ea8beade5faa73989a7016916cf5f1bece93bdb4938b221",
+          "articulation": "spiccato",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 66,
+          "url": "/samples/strings/VlnEns_Spic_Fs3_v2_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_F%233_v2_rr2.wav",
+          "bytes": 192442,
+          "sha256": "c310364866ff7e0c15a442bf23ba2d4b2bc874682d35a44817d1b00d19e215a7",
+          "articulation": "spiccato",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 2,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 69,
+          "url": "/samples/strings/VlnEns_Spic_A3_v1_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_A3_v1_rr1.wav",
+          "bytes": 167582,
+          "sha256": "63ac2de6113b1f12822ea84a30a49c4a326e89027139b8a5e0369542ce6f74ad",
+          "articulation": "spiccato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 69,
+          "url": "/samples/strings/VlnEns_Spic_A3_v1_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_A3_v1_rr2.wav",
+          "bytes": 158622,
+          "sha256": "bbbd7d67ea45c17958828efe4c3a5059d85e67be80bbdb637031bcce01bc412c",
+          "articulation": "spiccato",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 2,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 69,
+          "url": "/samples/strings/VlnEns_Spic_A3_v2_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_A3_v2_rr1.wav",
+          "bytes": 213126,
+          "sha256": "ce5d025e7c2ac71e220a3f6487c5a2ce431a150e808c93276570f19536568a5e",
+          "articulation": "spiccato",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 69,
+          "url": "/samples/strings/VlnEns_Spic_A3_v2_rr2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/Spic/VlnEns_Spic_A3_v2_rr2.wav",
+          "bytes": 246210,
+          "sha256": "f64465f4248514f785abab573a3b1440ee016b525f6550612c0fcb189e67ba47",
+          "articulation": "spiccato",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 2,
+          "usedBy": [
+            "nether-bloom"
+          ]
+        },
+        {
+          "midi": 55,
+          "url": "/samples/strings/VlnEns_susVib_G2_v1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_G2_v1.wav",
+          "bytes": 2341712,
+          "sha256": "feb96c5064fbef43087c495d61a9cab9f70ff1be5b22905147c1f86d5f89547c",
+          "articulation": "sustain",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "hell-lullaby",
+            "mountain-stream",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 57,
+          "url": "/samples/strings/VlnEns_susVib_A2_v1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_A2_v1.wav",
+          "bytes": 1979216,
+          "sha256": "5b3ff9f991642a6dc2fdad56a7d94f581077d2c4082cc1ed89156737716ff22c",
+          "articulation": "sustain",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "mountain-stream",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 59,
+          "url": "/samples/strings/VlnEns_susVib_B2_v1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_B2_v1.wav",
+          "bytes": 2314360,
+          "sha256": "1a873970a86da78ed8c9aa068303958496c34eee6fa94fcab39d499dbdfb7826",
+          "articulation": "sustain",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "hakurei-dusk",
+            "hakurei-night",
+            "mountain-stream",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 62,
+          "url": "/samples/strings/VlnEns_susVib_D3_v1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_D3_v1.wav",
+          "bytes": 2061808,
+          "sha256": "583e660bc5daa4e094aef5fc014fbb92751040be8741ed7a16847306a1fe0a99",
+          "articulation": "sustain",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "mountain-stream",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 62,
+          "url": "/samples/strings/VlnEns_susVib_D3_v2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_D3_v2.wav",
+          "bytes": 2457908,
+          "sha256": "77893dbf1ea1be8c40ad756d16b916298e6b1b0742495e9853e020375592357c",
+          "articulation": "sustain",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 66,
+          "url": "/samples/strings/VlnEns_susVib_Fs3_v1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_F%233_v1.wav",
+          "bytes": 1585612,
+          "sha256": "8dc13d197373f0d1fe1b0744de57796800bde372906d3667398c55d473a383ea",
+          "articulation": "sustain",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "hakurei-dusk",
+            "hakurei-night",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 66,
+          "url": "/samples/strings/VlnEns_susVib_Fs3_v2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_F%233_v2.wav",
+          "bytes": 1720800,
+          "sha256": "d7bc6b4c259b9543de4fe66228ee107205b8f539c8d7c1de71f5781d45a14fc7",
+          "articulation": "sustain",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 69,
+          "url": "/samples/strings/VlnEns_susVib_A3_v1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_A3_v1.wav",
+          "bytes": 1890316,
+          "sha256": "72817a53dfd2eb61eca94658c14e1cab6017629ca2f27bab8e394c6675bfaad7",
+          "articulation": "sustain",
+          "velocityMin": 0,
+          "velocityMax": 0.499,
+          "velocityReference": 0.499,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "hell-lullaby",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 69,
+          "url": "/samples/strings/VlnEns_susVib_A3_v2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_A3_v2.wav",
+          "bytes": 1671704,
+          "sha256": "3fc4a9e22037643fce11e755da72c61c664893f83e637c24a7b5c2d3824ab986",
+          "articulation": "sustain",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 72,
+          "url": "/samples/strings/VlnEns_susVib_C4_v2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_C4_v2.wav",
+          "bytes": 2017512,
+          "sha256": "5857387b40c412f756ef281c1171247664432a4e5078c98142d595d15cd92ef9",
+          "articulation": "sustain",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 76,
+          "url": "/samples/strings/VlnEns_susVib_E4_v2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_E4_v2.wav",
+          "bytes": 1702620,
+          "sha256": "030c09a631ebbc7304fc0b47bb5c346cd646e7451d9fdc531870f2534c60d9e9",
+          "articulation": "sustain",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 79,
+          "url": "/samples/strings/VlnEns_susVib_G4_v2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_G4_v2.wav",
+          "bytes": 2150136,
+          "sha256": "a1d6d5a0397541692e2f88a0cd9820eabe90407784ee631aa3bfa74772637a65",
+          "articulation": "sustain",
+          "velocityMin": 0.5,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "nether-bloom",
+            "nether-sakura"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cello-section",
+      "name": "大提琴组",
+      "englishName": "Cello Section",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/sgossner/VSCO-2-CE",
+      "licenseUrl": "https://github.com/sgossner/VSCO-2-CE/blob/440300901dfe9275fd84e0b7763af1f8443ae62e/LICENSE",
+      "samples": [
+        {
+          "midi": 43,
+          "url": "/samples/cello-section/pizzT_G1_v2_RR1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_G1_v2_RR1.wav",
+          "bytes": 884180,
+          "sha256": "a12366cff3dd68c4a1622bd504161caa9ed18d23f9d03ed413936a0829188cf1",
+          "articulation": "pizzicato",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 43,
+          "url": "/samples/cello-section/pizzT_G1_v2_RR2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_G1_v2_RR2.wav",
+          "bytes": 977798,
+          "sha256": "0d56d33e6665fd25f7d2aa7e97cc918fe26ab81a956cfefcadd6e17a4f116193",
+          "articulation": "pizzicato",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 2,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 47,
+          "url": "/samples/cello-section/pizzT_B1_v2_RR1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_B1_v2_RR1.wav",
+          "bytes": 1058144,
+          "sha256": "d5898f41739b4929530aa7d4a3f1660ee2bb6096b375c1f034eb6d26cbb10623",
+          "articulation": "pizzicato",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 47,
+          "url": "/samples/cello-section/pizzT_B1_v2_RR2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_B1_v2_RR2.wav",
+          "bytes": 851390,
+          "sha256": "675a55fce6f23a97281704024ed01e69cc8699fd3458fe76f22ba19b91c20348",
+          "articulation": "pizzicato",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 2,
+          "usedBy": [
+            "flower-concert",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 50,
+          "url": "/samples/cello-section/pizzT_D2_v2_RR1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_D2_v2_RR1.wav",
+          "bytes": 770222,
+          "sha256": "5f80f5fd2f8f3f2cc33b8e7cdba1c5984b5a8158d6d34cd03fe48ae46b335461",
+          "articulation": "pizzicato",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 50,
+          "url": "/samples/cello-section/pizzT_D2_v2_RR2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_D2_v2_RR2.wav",
+          "bytes": 686930,
+          "sha256": "2b25fcdf1958fabbd54f1f64b620df12af5436d074da6b5030c5f0b2dad4a250",
+          "articulation": "pizzicato",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 2,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 53,
+          "url": "/samples/cello-section/pizzT_F2_v1_RR1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_F2_v1_RR1.wav",
+          "bytes": 662600,
+          "sha256": "ff44e135372083b7c7989fc741c2ebc97bf91f11c5ba7d3c99bcf2c967f6c4e8",
+          "articulation": "pizzicato",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 53,
+          "url": "/samples/cello-section/pizzT_F2_v2_RR1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_F2_v2_RR1.wav",
+          "bytes": 479312,
+          "sha256": "eb5b95b1f7b22370ad00713db544f2eb3cae6b70a29fcaf673c54d485e73c8a3",
+          "articulation": "pizzicato",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 53,
+          "url": "/samples/cello-section/pizzT_F2_v1_RR2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_F2_v1_RR2.wav",
+          "bytes": 446198,
+          "sha256": "f8a1804d48d1b0dfc48ec63e8f8de07834ed1efc83fa9a25584bc295235cc196",
+          "articulation": "pizzicato",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 2,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 53,
+          "url": "/samples/cello-section/pizzT_F2_v2_RR2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_F2_v2_RR2.wav",
+          "bytes": 537716,
+          "sha256": "2114b5d349fad4c99ae5cc12080dc0fb838490fb9f79b707446d9a5e59826859",
+          "articulation": "pizzicato",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 2,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 57,
+          "url": "/samples/cello-section/pizzT_A2_v2_RR1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_A2_v2_RR1.wav",
+          "bytes": 748484,
+          "sha256": "187df4d1d5621877d32cbfb3d174dcacb85aa59caf3359d9ce398bec4f7ccf56",
+          "articulation": "pizzicato",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 57,
+          "url": "/samples/cello-section/pizzT_A2_v2_RR2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_A2_v2_RR2.wav",
+          "bytes": 757718,
+          "sha256": "b297e7396e6b5a327a069c8eaa378a2a1c7ce4dd3da7ba3fbc5f3c66c07e16d1",
+          "articulation": "pizzicato",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 2,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 60,
+          "url": "/samples/cello-section/pizzT_C3_v2_RR1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_C3_v2_RR1.wav",
+          "bytes": 762122,
+          "sha256": "fbc86686ef092e92e473dce4d1ff5f1e351dcc76ed2d94b0d336c1346f314e59",
+          "articulation": "pizzicato",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 60,
+          "url": "/samples/cello-section/pizzT_C3_v2_RR2.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/pizzT/pizzT_C3_v2_RR2.wav",
+          "bytes": 717008,
+          "sha256": "7287080f6071252812a8b88bf21c32e0985b0a584eccc4487fb282ec1211195c",
+          "articulation": "pizzicato",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 2,
+          "usedBy": [
+            "forest-dolls",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 43,
+          "url": "/samples/cello-section/susvib_G1_v3_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_G1_v3_1.wav",
+          "bytes": 3370496,
+          "sha256": "e4c61d4ab855ec20ddb69ff608a1c066ff8a779ddd08d1dfe1d534d3a4563ad0",
+          "articulation": "sustain",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "mountain-stream"
+          ]
+        },
+        {
+          "midi": 47,
+          "url": "/samples/cello-section/susvib_B1_v3_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_B1_v3_1.wav",
+          "bytes": 3372962,
+          "sha256": "8331a0e13f41243efab111f9b5e9185524c27ee48631269acecafc954ab7eaa8",
+          "articulation": "sustain",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "nether-bloom",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 50,
+          "url": "/samples/cello-section/susvib_D2_v3_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_D2_v3_1.wav",
+          "bytes": 3291368,
+          "sha256": "fc946615cd6550570c8f05d61c0d59b9079bf9daba8bf25be7943487fea5a7ae",
+          "articulation": "sustain",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 53,
+          "url": "/samples/cello-section/susvib_F2_v1_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_F2_v1_1.wav",
+          "bytes": 2186012,
+          "sha256": "162054eab4ba118924f8f8986cf1b17ccfd65211d1945743ffbae30b4953f901",
+          "articulation": "sustain",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 53,
+          "url": "/samples/cello-section/susvib_F2_v3_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_F2_v3_1.wav",
+          "bytes": 3062696,
+          "sha256": "d965197faf2e6ab8675f1d65505e5ba934a5ab769412d314bad94133e18f24d0",
+          "articulation": "sustain",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura"
+          ]
+        },
+        {
+          "midi": 57,
+          "url": "/samples/cello-section/susvib_A2_v3_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_A2_v3_1.wav",
+          "bytes": 3082676,
+          "sha256": "b7f226f19b9616abe5fa4a27ef50116667e19eb0127f30eacfa6d1a83e9149f0",
+          "articulation": "sustain",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "hakurei-dusk",
+            "hakurei-night"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "harp",
+      "name": "竖琴",
+      "englishName": "Concert Harp",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/sgossner/VCSL",
+      "licenseUrl": "https://github.com/sgossner/VCSL/blob/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/LICENSE",
+      "samples": [
+        {
+          "midi": 48,
+          "url": "/samples/harp/KSHarp_C3_mf3.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_C3_mf3.wav",
+          "bytes": 1886028,
+          "sha256": "18e6222e8fc11a8106e8d7a875d208835eb5b45598f010b21c786b1482e09869",
+          "articulation": "pluck",
+          "velocityMin": 0.5,
+          "velocityMax": 0.749,
+          "velocityReference": 0.749,
+          "roundRobin": 1,
+          "usedBy": [
+            "forest-dolls"
+          ]
+        },
+        {
+          "midi": 52,
+          "url": "/samples/harp/KSHarp_E3_mf1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_E3_mf1.wav",
+          "bytes": 2461138,
+          "sha256": "aafa9d41ec0f77da8f2891055af8b3f9557e0ba1f1df93d53ae6e1fda07afae5",
+          "articulation": "pluck",
+          "velocityMin": 0.5,
+          "velocityMax": 0.749,
+          "velocityReference": 0.749,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 55,
+          "url": "/samples/harp/KSHarp_G3_mf1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_G3_mf1.wav",
+          "bytes": 1806874,
+          "sha256": "62600eb1b37bc2829ca65351f7ca7e506c9ae472abd5bea0765a8b8fa7df2772",
+          "articulation": "pluck",
+          "velocityMin": 0.5,
+          "velocityMax": 0.749,
+          "velocityReference": 0.749,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "mountain-stream",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 59,
+          "url": "/samples/harp/KSHarp_B3_mf1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_B3_mf1.wav",
+          "bytes": 1981130,
+          "sha256": "f6f71be8c640822ef48a448b245585659acdfcc7ed5774e10f37be2fc02fcab4",
+          "articulation": "pluck",
+          "velocityMin": 0.5,
+          "velocityMax": 0.749,
+          "velocityReference": 0.749,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 62,
+          "url": "/samples/harp/KSHarp_D4_mf1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_D4_mf1.wav",
+          "bytes": 1921690,
+          "sha256": "ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7",
+          "articulation": "pluck",
+          "velocityMin": 0.5,
+          "velocityMax": 0.749,
+          "velocityReference": 0.749,
+          "roundRobin": 1,
+          "tuneCents": 12,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 65,
+          "url": "/samples/harp/KSHarp_F4_f1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_F4_f1.wav",
+          "bytes": 1873242,
+          "sha256": "990a38119a68a4b84166080be13027cfbbb4eb17333f8914c9e1a89884521155",
+          "articulation": "pluck",
+          "velocityMin": 0.75,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "hakurei-dusk",
+            "hakurei-night",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 65,
+          "url": "/samples/harp/KSHarp_F4_mf1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_F4_mf1.wav",
+          "bytes": 1913498,
+          "sha256": "db27ebbb37334c10e06f2ae63f4d9ff555e4d11704fcc6f0bcf503863867e577",
+          "articulation": "pluck",
+          "velocityMin": 0.75,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "hakurei-dusk",
+            "hakurei-night",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 69,
+          "url": "/samples/harp/KSHarp_A4_mf1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_A4_mf1.wav",
+          "bytes": 2143618,
+          "sha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23",
+          "articulation": "pluck",
+          "velocityMin": 0.5,
+          "velocityMax": 0.749,
+          "velocityReference": 0.749,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert",
+            "forest-dolls",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "mountain-stream",
+            "nether-bloom",
+            "nether-sakura",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 72,
+          "url": "/samples/harp/KSHarp_C5_mf1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_C5_mf1.wav",
+          "bytes": 1237142,
+          "sha256": "7c8b862f6fd3f1442ed87537af976d84bda8c05a5b4900e8907d570b5202a517",
+          "articulation": "pluck",
+          "velocityMin": 0.5,
+          "velocityMax": 0.749,
+          "velocityReference": 0.749,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "flower-concert",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby",
+            "nether-bloom",
+            "nether-sakura",
+            "scarlet-evening"
+          ]
+        },
+        {
+          "midi": 76,
+          "url": "/samples/harp/KSHarp_E5_mf1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_E5_mf1.wav",
+          "bytes": 1171586,
+          "sha256": "95dd9ddb0bd15bee7687906e00f25aafcaa43020cc9501f0e8b6cabf0e9a53ec",
+          "articulation": "pluck",
+          "velocityMin": 0.5,
+          "velocityMax": 0.749,
+          "velocityReference": 0.749,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby"
+          ]
+        },
+        {
+          "midi": 79,
+          "url": "/samples/harp/KSHarp_G5_mf1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_G5_mf1.wav",
+          "bytes": 1049778,
+          "sha256": "f2004dfc617997fbabc6f849add2af06f4f859361c44a8fca0f993dc7f999540",
+          "articulation": "pluck",
+          "velocityMin": 0.5,
+          "velocityMax": 0.749,
+          "velocityReference": 0.749,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby"
+          ]
+        },
+        {
+          "midi": 83,
+          "url": "/samples/harp/KSHarp_B5_mf1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_B5_mf1.wav",
+          "bytes": 779058,
+          "sha256": "f2757b674c6b7301bed52e17a1ae3e3d34d628b3f7edc5773ebb25798d2541f7",
+          "articulation": "pluck",
+          "velocityMin": 0.5,
+          "velocityMax": 0.749,
+          "velocityReference": 0.749,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "hakurei-dusk",
+            "hakurei-night",
+            "hell-lullaby"
+          ]
+        },
+        {
+          "midi": 86,
+          "url": "/samples/harp/KSHarp_D6_mf1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_D6_mf1.wav",
+          "bytes": 687750,
+          "sha256": "b040b61fb279efa1a9b9c60dcbd8626a37f57ffb30f3b50747a2123ee4db5bd2",
+          "articulation": "pluck",
+          "velocityMin": 0.5,
+          "velocityMax": 0.749,
+          "velocityReference": 0.749,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flute",
+      "name": "长笛",
+      "englishName": "Concert Flute",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/sgossner/VSCO-2-CE",
+      "licenseUrl": "https://github.com/sgossner/VSCO-2-CE/blob/440300901dfe9275fd84e0b7763af1f8443ae62e/LICENSE",
+      "samples": [
+        {
+          "midi": 60,
+          "url": "/samples/flute/LDFlute_susNV_C3_v3_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_C3_v3_1.wav",
+          "bytes": 2729730,
+          "sha256": "8e0549fb44827c7379b74bba4d8402671c863e483cc1ea85a73407ce27ca3bd6",
+          "articulation": "sustain-nv",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "forest-dolls"
+          ]
+        },
+        {
+          "midi": 64,
+          "url": "/samples/flute/LDFlute_susNV_E3_v3_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_E3_v3_1.wav",
+          "bytes": 2814822,
+          "sha256": "3226ecd95142e09f1c1b6db0834265da845ea0ce48ea2570131c558eb8ad8f66",
+          "articulation": "sustain-nv",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "forest-dolls",
+            "hakurei-dusk",
+            "hell-lullaby"
+          ]
+        },
+        {
+          "midi": 69,
+          "url": "/samples/flute/LDFlute_susNV_A3_v3_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_A3_v3_1.wav",
+          "bytes": 2765718,
+          "sha256": "8a24758e25e1b6036fc8ca55cdff129d18d70b0719cdb63f6eb6dc756b41cfc7",
+          "articulation": "sustain-nv",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "forest-dolls",
+            "hakurei-dusk",
+            "hell-lullaby"
+          ]
+        },
+        {
+          "midi": 72,
+          "url": "/samples/flute/LDFlute_susNV_C4_v3_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_C4_v3_1.wav",
+          "bytes": 2539512,
+          "sha256": "9e09ce606f8fe31c8dd071c717de54d40c38029e3c2e947500defac474e8cd7d",
+          "articulation": "sustain-nv",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "forest-dolls",
+            "hakurei-dusk",
+            "hell-lullaby"
+          ]
+        },
+        {
+          "midi": 76,
+          "url": "/samples/flute/LDFlute_susNV_E4_v3_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_E4_v3_1.wav",
+          "bytes": 2449278,
+          "sha256": "670c72afcd4d437236f0a9f33a532c46fd56145615aad775eb7aab1c5ab6c24d",
+          "articulation": "sustain-nv",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "hakurei-dusk",
+            "hell-lullaby",
+            "mountain-stream"
+          ]
+        },
+        {
+          "midi": 81,
+          "url": "/samples/flute/LDFlute_susNV_A4_v3_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_A4_v3_1.wav",
+          "bytes": 2147490,
+          "sha256": "9958014f58a16b5b28b8a8b3afe2e28a9f5af5b68c9bc9057ea2cbdfcadbf4df",
+          "articulation": "sustain-nv",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "bamboo-moon",
+            "hakurei-dusk",
+            "hell-lullaby",
+            "mountain-stream"
+          ]
+        },
+        {
+          "midi": 84,
+          "url": "/samples/flute/LDFlute_susNV_C5_v2_1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_C5_v2_1.wav",
+          "bytes": 2382720,
+          "sha256": "7c9414267bade75f432e38aa893edea9fb7146b5b1b3e0ae1f97a475fa89db0f",
+          "articulation": "sustain-nv",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "mountain-stream"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trumpet",
+      "name": "小号",
+      "englishName": "Trumpet",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/sgossner/VSCO-2-CE",
+      "licenseUrl": "https://github.com/sgossner/VSCO-2-CE/blob/440300901dfe9275fd84e0b7763af1f8443ae62e/LICENSE",
+      "samples": [
+        {
+          "midi": 60,
+          "url": "/samples/trumpet/Sum_SHTrumpet_sus_C3_v3_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_C3_v3_rr1.wav",
+          "bytes": 1234136,
+          "sha256": "4a55ab4d867cfa3499fbcf1c5d8d530f757621a9979aee5b46d3fd69a2931c99",
+          "articulation": "sustain",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert"
+          ]
+        },
+        {
+          "midi": 63,
+          "url": "/samples/trumpet/Sum_SHTrumpet_sus_Ds3_v3_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_D%233_v3_rr1.wav",
+          "bytes": 1654796,
+          "sha256": "8cf8ffb7948c8d787fa9dd2469ff7fc60ad26f079721ed038c9d6a9d6b402318",
+          "articulation": "sustain",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert"
+          ]
+        },
+        {
+          "midi": 67,
+          "url": "/samples/trumpet/Sum_SHTrumpet_sus_G3_v3_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_G3_v3_rr1.wav",
+          "bytes": 1638452,
+          "sha256": "e916631d4ef5c7d2afa356b76cb0d3a18ba2702d1229535edf4fb6d73c2e521c",
+          "articulation": "sustain",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert"
+          ]
+        },
+        {
+          "midi": 70,
+          "url": "/samples/trumpet/Sum_SHTrumpet_sus_As3_v3_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_A%233_v3_rr1.wav",
+          "bytes": 1667240,
+          "sha256": "c931621fae92e22cc73ee43924c0d30ee629764bb37c30cc427b59411198461d",
+          "articulation": "sustain",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert"
+          ]
+        },
+        {
+          "midi": 74,
+          "url": "/samples/trumpet/Sum_SHTrumpet_sus_D4_v3_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_D4_v3_rr1.wav",
+          "bytes": 1422408,
+          "sha256": "71d77fc5c3c43b9453f17293c6039bf8554dec6581ca15c14c45893f8bc57566",
+          "articulation": "sustain",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert"
+          ]
+        },
+        {
+          "midi": 77,
+          "url": "/samples/trumpet/Sum_SHTrumpet_sus_F4_v1_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_F4_v1_rr1.wav",
+          "bytes": 2442252,
+          "sha256": "81954b71f23a9ebe3ea02c7c9c6cfb68a3904a965bc916bc27f061e643604992",
+          "articulation": "sustain",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert"
+          ]
+        },
+        {
+          "midi": 77,
+          "url": "/samples/trumpet/Sum_SHTrumpet_sus_F4_v3_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_F4_v3_rr1.wav",
+          "bytes": 1269372,
+          "sha256": "4138d1dc994d485f8b7deecbe7811c2152006d5e8cde8d4c1256c72be7179af3",
+          "articulation": "sustain",
+          "velocityMin": 0.667,
+          "velocityMax": 1,
+          "velocityReference": 1,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert"
+          ]
+        },
+        {
+          "midi": 81,
+          "url": "/samples/trumpet/Sum_SHTrumpet_sus_A4_v3_rr1.wav",
+          "downloadUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_A4_v3_rr1.wav",
+          "bytes": 1730412,
+          "sha256": "0cd9d6d4dedadc6bfb9625045e632f84f6cd7b2a005f72b7efd198e5b0571172",
+          "articulation": "sustain",
+          "velocityMin": 0.333,
+          "velocityMax": 0.666,
+          "velocityReference": 0.666,
+          "roundRobin": 1,
+          "usedBy": [
+            "flower-concert"
+          ]
+        }
+      ]
+    }
+  ]
+}

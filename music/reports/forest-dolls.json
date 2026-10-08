@@ -1,67 +1,67 @@
 {
-  "id": "hakurei-dusk",
+  "id": "forest-dolls",
   "renderer": "XSXB-Band",
   "engineCommit": "ff39f88e6c28fefa2f7b1bebe2eee41a00b761ee",
   "recordingType": "Arrangement rendered with CC0 recordings of real instruments; not a live ensemble session",
-  "bpm": 80,
-  "seconds": 96.0,
+  "bpm": 92,
+  "seconds": 62.60868480725624,
   "sampleRate": 44100,
-  "frames": 4233600,
-  "linearGainDb": 5.2,
+  "frames": 2761043,
+  "linearGainDb": 4.5,
   "loudnessLUFS": -21.0,
-  "truePeakDbFS": -6.4,
+  "truePeakDbFS": -7.3,
   "saturatedFrames": 0,
   "boundaryStep": 0.0,
   "edgeRampMs": 5,
-  "rawRenderPeakDbFS": -11.618,
+  "rawRenderPeakDbFS": -11.791,
   "stems": [
     {
       "id": "piano",
       "instrumentId": "piano",
-      "peakDbFS": -13.013,
-      "scoreRmsDbFS": -33.924,
+      "peakDbFS": -14.883,
+      "scoreRmsDbFS": -29.257,
       "saturatedFrames": 0
     },
     {
-      "id": "flute",
+      "id": "lead",
       "instrumentId": "flute",
-      "peakDbFS": -16.808,
-      "scoreRmsDbFS": -33.348,
-      "saturatedFrames": 0
-    },
-    {
-      "id": "harp",
-      "instrumentId": "harp",
-      "peakDbFS": -16.657,
-      "scoreRmsDbFS": -38.375,
+      "peakDbFS": -14.871,
+      "scoreRmsDbFS": -35.668,
       "saturatedFrames": 0
     },
     {
       "id": "strings",
       "instrumentId": "strings",
-      "peakDbFS": -21.019,
-      "scoreRmsDbFS": -40.39,
+      "peakDbFS": -20.904,
+      "scoreRmsDbFS": -45.875,
       "saturatedFrames": 0
     },
     {
       "id": "cello",
       "instrumentId": "cello-section",
-      "peakDbFS": -22.35,
-      "scoreRmsDbFS": -36.359,
+      "peakDbFS": -24.872,
+      "scoreRmsDbFS": -45.301,
+      "saturatedFrames": 0
+    },
+    {
+      "id": "harp",
+      "instrumentId": "harp",
+      "peakDbFS": -19.41,
+      "scoreRmsDbFS": -39.549,
       "saturatedFrames": 0
     }
   ],
   "runtimeErrors": [],
   "sampleResponsesOK": true,
-  "scoreSha256": "f14f8f217517c87ffa2c635f5bbab5f0bfa6b68682226bde3ec347e18ea5c4ee",
+  "scoreSha256": "9573aaa9f4d7dbd32af49a227406ba7cb6f3f321089507bbbcb2ea9f977cbb89",
   "assets": {
     "ogg": {
-      "bytes": 1612462,
-      "sha256": "1c59a5bfae638e6ee92df2a4865b1a2a88fb9f4a4127e2b7f7c58610494ee792"
+      "bytes": 1069377,
+      "sha256": "4f71201e66e5871916d08663c88dc4c3d4593049b7494f0aa886dc5375338c92"
     },
     "mp3": {
-      "bytes": 2082476,
-      "sha256": "1714e0521b386115a76cbafa42dd1098f5907764d7030b363fb49b8bcc3b8319"
+      "bytes": 1257339,
+      "sha256": "77e0dedb54fd662aa0bf152a0e4cfe0004f7e9991c77a285800a4b063f641ef9"
     }
   },
   "listeningStatus": "Human audition pending; numerical checks are not an aesthetic verdict"

@@ -48,6 +48,12 @@ def master(render, slug, target):
     for offset in range(0, len(tail), frames):
         chunk = tail[offset:offset+frames]
         loop[:len(chunk)] += chunk
+    # A 5 ms edge ramp removes a residual sample discontinuity without shifting the bar grid.
+    # This is a click guard, not evidence that the harmonic transition sounds seamless.
+    ramp_frames = round(sr*.005)
+    ramp = np.sin(np.linspace(0, np.pi/2, ramp_frames))**2
+    loop[:ramp_frames] *= ramp[:, None]
+    loop[-ramp_frames:] *= ramp[::-1, None]
     intermediate = render/'loop-unmastered.wav'
     write(intermediate, sr, loop)
     loudness, peak = measure(intermediate)
@@ -58,7 +64,7 @@ def master(render, slug, target):
     loop_path = render/'loop.wav'
     write(loop_path, sr, loop)
     write(render/'listen.wav', sr, pcm*gain)
-    # Two uninterrupted loops let a listener judge the actual 96-second boundary.
+    # Two uninterrupted loops let a listener judge the actual bar-aligned boundary.
     write(render/'loop-twice.wav', sr, np.tile(loop, (2, 1)))
     assets = ROOT/'assets/music'
     assets.mkdir(parents=True, exist_ok=True)
@@ -74,7 +80,7 @@ def master(render, slug, target):
                  bpm=score['bpm'], seconds=frames/sr, sampleRate=sr, frames=frames,
                  linearGainDb=round(gain_db, 3), loudnessLUFS=measure(loop_path)[0],
                  truePeakDbFS=measure(loop_path)[1], saturatedFrames=int(np.count_nonzero(np.max(abs(loop), axis=1)>=1)),
-                 boundaryStep=float(np.max(np.abs(loop[0]-loop[-1]))),
+                 boundaryStep=float(np.max(np.abs(loop[0]-loop[-1]))), edgeRampMs=5,
                  rawRenderPeakDbFS=report['mix']['peakDbFS'],
                  stems=[{k:s[k] for k in ['id','instrumentId','peakDbFS','scoreRmsDbFS','saturatedFrames']} for s in report['stems']],
                  runtimeErrors=report['runtimeErrors'], sampleResponsesOK=all(s['status']==200 for s in report['sampleResponses']),

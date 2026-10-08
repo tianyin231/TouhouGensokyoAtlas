@@ -1,0 +1,61 @@
+{
+  "id": "scarlet-evening",
+  "renderer": "XSXB-Band",
+  "engineCommit": "ff39f88e6c28fefa2f7b1bebe2eee41a00b761ee",
+  "recordingType": "Arrangement rendered with CC0 recordings of real instruments; not a live ensemble session",
+  "bpm": 84,
+  "seconds": 68.57142857142857,
+  "sampleRate": 44100,
+  "frames": 3024000,
+  "linearGainDb": 6.9,
+  "loudnessLUFS": -21.0,
+  "truePeakDbFS": -4.0,
+  "saturatedFrames": 0,
+  "boundaryStep": 0.0,
+  "edgeRampMs": 5,
+  "rawRenderPeakDbFS": -10.93,
+  "stems": [
+    {
+      "id": "piano",
+      "instrumentId": "piano",
+      "peakDbFS": -12.685,
+      "scoreRmsDbFS": -31.825,
+      "saturatedFrames": 0
+    },
+    {
+      "id": "strings",
+      "instrumentId": "strings",
+      "peakDbFS": -12.194,
+      "scoreRmsDbFS": -42.072,
+      "saturatedFrames": 0
+    },
+    {
+      "id": "cello",
+      "instrumentId": "cello-section",
+      "peakDbFS": -24.989,
+      "scoreRmsDbFS": -46.565,
+      "saturatedFrames": 0
+    },
+    {
+      "id": "harp",
+      "instrumentId": "harp",
+      "peakDbFS": -19.248,
+      "scoreRmsDbFS": -39.402,
+      "saturatedFrames": 0
+    }
+  ],
+  "runtimeErrors": [],
+  "sampleResponsesOK": true,
+  "scoreSha256": "e14215727e033088450246472d8355753c9ecd62de3c902a712f2f673a9aea62",
+  "assets": {
+    "ogg": {
+      "bytes": 1172651,
+      "sha256": "42e596fa7977945b7ddd1abd586c306de0418c1d74b128eab0e6622c3f527050"
+    },
+    "mp3": {
+      "bytes": 1336563,
+      "sha256": "cc72acf46c30d57dcf05496ff6cfea3fcb379365fbbd38c694b9ee6f508d0cff"
+    }
+  },
+  "listeningStatus": "Human audition pending; numerical checks are not an aesthetic verdict"
+}

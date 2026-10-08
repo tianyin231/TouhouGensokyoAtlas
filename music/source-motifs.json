@@ -7,7 +7,7 @@
   "referencePath": "1 - Shooter Games/8 - Imperishable Night/9. Maiden's Capriccio ~ Dream Battle (Hisaraito).mid",
   "referenceSha256": "69df1c976724e83be9a38206d34e78421e4b8b360bc21e930e3a8521c301665e",
   "repository": "https://github.com/AyHa1810/touhou-midi-collection",
-  "usagePolicy": "https://github.com/AyHa1810/touhou-midi-collection#usage-policy",
+  "usagePolicy": "https://github.com/AyHa1810/touhou-midi-collection/blob/5a11a0a184102aa28ea85605e20a678fe68ea42e/README.md#usage-policy",
   "noteFormat": [
     "quarterBeatStart",
     "quarterBeatDuration",
@@ -409,5 +409,6 @@
         208
       ]
     }
-  }
+  },
+  "authorizationLimit": "Collection maintainer permits attributed modification; original transcriber authorization chain has not been verified. Collection is a repost; generic copyright text in MIDI is not a complete license. Confirm original author permission or use independent transcription before distribution."
 }
