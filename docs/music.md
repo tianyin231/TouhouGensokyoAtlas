@@ -2,6 +2,8 @@
 
 这是《幻想乡立体风物志》的东方 Project 同人改编配乐。原作音乐由 ZUN／上海アリス幻樂団创作；场景绑定与改编意图属于本项目创作，不表示这些原曲原本就是对应地图的环境 BGM。
 
+现成完整试听包已保存为 [touhou-music-review-154fbb1.zip](../music/downloads/touhou-music-review-154fbb1.zip)，包含 10 首 MP3、MIDI、JSON 乐谱及来源记录。[下载与本地拉取说明](../music/downloads/README.md)附文件散列。本次仓库交付保留原音频字节，不重新渲染。
+
 ## 第一首试听：博丽神社 · 暮色绮想
 
 - [试听／下载 MP3](../assets/music/hakurei-dusk.mp3) · [循环 OGG](../assets/music/hakurei-dusk.ogg) · [MIDI](../music/midi/hakurei-dusk.mid) · [可编辑 XSXB 工程](../music/scores/hakurei-dusk.json)
