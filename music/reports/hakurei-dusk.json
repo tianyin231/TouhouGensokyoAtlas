@@ -1,0 +1,67 @@
+{
+  "id": "hakurei-dusk",
+  "renderer": "XSXB-Band",
+  "engineCommit": "ff39f88e6c28fefa2f7b1bebe2eee41a00b761ee",
+  "recordingType": "Arrangement rendered with CC0 recordings of real instruments; not a live ensemble session",
+  "bpm": 80,
+  "seconds": 96.0,
+  "sampleRate": 44100,
+  "frames": 4233600,
+  "linearGainDb": 5.2,
+  "loudnessLUFS": -21.0,
+  "truePeakDbFS": -6.4,
+  "saturatedFrames": 0,
+  "boundaryStep": 0.0003331971787005582,
+  "rawRenderPeakDbFS": -11.618,
+  "stems": [
+    {
+      "id": "piano",
+      "instrumentId": "piano",
+      "peakDbFS": -13.013,
+      "scoreRmsDbFS": -33.924,
+      "saturatedFrames": 0
+    },
+    {
+      "id": "flute",
+      "instrumentId": "flute",
+      "peakDbFS": -16.808,
+      "scoreRmsDbFS": -33.348,
+      "saturatedFrames": 0
+    },
+    {
+      "id": "harp",
+      "instrumentId": "harp",
+      "peakDbFS": -16.657,
+      "scoreRmsDbFS": -38.375,
+      "saturatedFrames": 0
+    },
+    {
+      "id": "strings",
+      "instrumentId": "strings",
+      "peakDbFS": -21.019,
+      "scoreRmsDbFS": -40.39,
+      "saturatedFrames": 0
+    },
+    {
+      "id": "cello",
+      "instrumentId": "cello-section",
+      "peakDbFS": -22.35,
+      "scoreRmsDbFS": -36.359,
+      "saturatedFrames": 0
+    }
+  ],
+  "runtimeErrors": [],
+  "sampleResponsesOK": true,
+  "scoreSha256": "f14f8f217517c87ffa2c635f5bbab5f0bfa6b68682226bde3ec347e18ea5c4ee",
+  "assets": {
+    "ogg": {
+      "bytes": 1612521,
+      "sha256": "39a59c8b71975cc5e7435948d73f7ae18616d19fc4af22bad046a634e11bcfb7"
+    },
+    "mp3": {
+      "bytes": 2082894,
+      "sha256": "1804edf46bedd2e7296bc769802a53bca6d01c6b3c39683780dee2f3bd5e833c"
+    }
+  },
+  "listeningStatus": "Human audition pending; numerical checks are not an aesthetic verdict"
+}
