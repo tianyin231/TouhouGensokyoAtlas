@@ -1,9 +1,39 @@
 /* A detail task owns its worker and buffers. Overview is available independently.
    Cancellation terminates that task; late results are never installed. */
 (function(G){'use strict';
+// 在线森林包与原建模共用一个任务 Worker；终止任务同时停止下载、解压和回退建模。
+async function loadRegionRequest(G,request){
+ const started=performance.now(),entry=request.prebuilt;let failure=null;
+ if(entry){
+  const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),8000);
+  try{
+   const response=await fetch(entry.url,{signal:controller.signal});
+   if(!response.ok)throw Error('预建包 HTTP '+response.status);
+   const compressed=await response.arrayBuffer();
+   if(globalThis.crypto?.subtle){
+    const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',compressed))].map(v=>v.toString(16).padStart(2,'0')).join('');
+    if(hash!==entry.sha256)throw Error('预建包校验失败');
+   }
+   const buffer=await new Response(new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
+   const pack=G.decodePack(buffer);
+   if(pack.id!==request.id||pack.prebuilt?.schema!==1||pack.prebuilt.sourceHash!==entry.sourceHash||!pack.meshes?.length)
+    throw Error('预建包版本或区域不匹配');
+   pack.geometrySourceBytes=pack.bytes;pack.bytes=buffer.byteLength;
+   pack.delivery='prebuilt';pack.builtMs=0;pack.loadMs=performance.now()-started;
+   return pack;
+  }catch(error){failure=error.message;}
+  finally{clearTimeout(timeout);}
+ }
+ const pack=await G.buildRegion(request.data,request.id,request.legacy);
+ if(entry){pack.delivery='generated-fallback';pack.prebuiltError=failure;pack.loadMs=performance.now()-started;}
+ return pack;
+}
 class RegionStreaming{
- constructor(data,renderer,source,legacy,onChange=()=>{}){this.data=data;this.renderer=renderer;this.source=source;this.legacy=legacy;this.changed=onChange;this.cache=new Map();this.epoch=0;this.pending=null;this.disposed=false;this.required=new Set();this.budget=220*1048576;this.metrics={requests:0,builds:0,cancelled:0,evictions:0,cacheHits:0,staleDropped:0};this.log=[];this.timer=setInterval(()=>this.trim(),2000);}
- async focus(ids){if(this.disposed)return;const key=ids.join('|');if(this.focusKey===key&&this.pending)return;this.focusKey=key;const token=++this.epoch;this.cancel();this.required=new Set(ids);this.trim();for(const id of ids){if(this.disposed||token!==this.epoch)return;if(this.cache.has(id)){this.cache.get(id).last=performance.now();this.metrics.cacheHits++;continue;}try{const p=await this.task(id,token);if(this.disposed)return;if(!p||token!==this.epoch){this.metrics.staleDropped++;continue;}this.renderer.attachPack(p);this.cache.set(id,{pack:p,last:performance.now()});this.metrics.builds++;this.log.push({region:id,buildMs:p.builtMs,sourceBytes:p.bytes,epoch:token});this.log=this.log.slice(-80);this.changed({region:id,ready:true});this.trim();}catch(e){if(e.name==='AbortError'||this.disposed||token!==this.epoch)return;this.changed({region:id,error:e.message});console.error('Region build:',id,e);}}
+ constructor(data,renderer,source,legacy,onChange=()=>{}){this.data=data;this.renderer=renderer;this.source=source;this.legacy=legacy;this.changed=onChange;this.cache=new Map();this.epoch=0;this.pending=null;this.disposed=false;this.required=new Set();this.budget=220*1048576;this.metrics={requests:0,builds:0,cancelled:0,evictions:0,cacheHits:0,staleDropped:0,prebuiltLoads:0,prebuiltFallbacks:0};this.log=[];this.timer=setInterval(()=>this.trim(),2000);}
+ async focus(ids){if(this.disposed)return;const key=ids.join('|');if(this.focusKey===key&&(this.pending||this.preparing))return;this.focusKey=key;const token=++this.epoch;this.cancel();this.required=new Set(ids);this.trim();for(const id of ids){if(this.disposed||token!==this.epoch)return;if(this.cache.has(id)){this.cache.get(id).last=performance.now();this.metrics.cacheHits++;continue;}try{const p=await this.task(id,token);if(this.disposed)return;if(!p||token!==this.epoch){this.metrics.staleDropped++;continue;}
+   // 新区域的着色器先并行编译完，再替换总览代理，主线程不因此冻结。
+   if(this.renderer.prepareAttach){this.preparing=token;try{await this.renderer.prepareAttach(p,()=>!this.disposed&&token===this.epoch);}finally{if(this.preparing===token)this.preparing=0;}if(this.disposed)return;if(token!==this.epoch){this.metrics.staleDropped++;continue;}}
+   this.renderer.attachPack(p);this.cache.set(id,{pack:p,last:performance.now()});this.metrics.builds++;if(p.delivery==='prebuilt')this.metrics.prebuiltLoads++;if(p.delivery==='generated-fallback')this.metrics.prebuiltFallbacks++;this.log.push({region:id,buildMs:p.builtMs,loadMs:p.loadMs,delivery:p.delivery||'generated',prebuiltError:p.prebuiltError,sourceBytes:p.bytes,epoch:token});this.log=this.log.slice(-80);this.changed({region:id,ready:true});this.trim();}catch(e){if(e.name==='AbortError'||this.disposed||token!==this.epoch)return;this.changed({region:id,error:e.message});console.error('Region build:',id,e);}}
  }
  task(id,token){
   if(this.disposed)return Promise.reject(new DOMException('区域构建器已关闭','AbortError'));
@@ -22,14 +52,16 @@ class RegionStreaming{
     revoke();if(error)reject(error);else resolve(pack);
    };
    try{
-    const workerText=this.source+`\nself.onmessage=async e=>{try{const p=await GA.buildRegion(e.data.data,e.data.id,e.data.legacy);const buffers=new Set();for(const m of p.meshes)for(const k of ['vertices','farVertices','instances','instanceColors','index'])if(m[k])buffers.add(m[k].buffer);self.postMessage({epoch:e.data.epoch,pack:p},[...buffers]);}catch(e){self.postMessage({error:e.message,stack:e.stack});}};`;
+    const workerText=this.source+`\nconst loadRegionRequest=${loadRegionRequest.toString()};\nself.onmessage=async e=>{try{const p=await loadRegionRequest(GA,e.data);const buffers=new Set();for(const m of p.meshes)for(const k of ['vertices','farVertices','instances','instanceColors','index'])if(m[k])buffers.add(m[k].buffer);self.postMessage({epoch:e.data.epoch,pack:p},[...buffers]);}catch(e){self.postMessage({error:e.message,stack:e.stack});}};`;
     url=URL.createObjectURL(new Blob([workerText],{type:'text/javascript'}));
     try{worker=new Worker(url);}catch(e){settle(new Error('浏览器未允许本地模型构建 Worker：'+e.message));return;}
     task.worker=worker;this.pending=task;
     worker.onmessage=e=>{if(e.data.error)settle(new Error(e.data.error));else settle(null,e.data.pack);};
     worker.onerror=e=>settle(new Error(e.message||'区域构建 Worker 出错'));
     worker.onmessageerror=()=>settle(new Error('区域构建 Worker 消息无法解码'));
-    worker.postMessage({data:this.data,id,epoch:token,legacy:this.legacy});revoke();
+    const manifest=G.REGION_PACK_MANIFEST,entry=manifest?.schema===1?manifest.regions?.[id]:null;
+    const prebuilt=entry&&['http:','https:'].includes(globalThis.location?.protocol)?{...entry,url:new URL(entry.url,document.baseURI).href}:null;
+    worker.postMessage({data:this.data,id,epoch:token,legacy:this.legacy,prebuilt});revoke();
    }catch(e){settle(e);}
   });
  }
@@ -40,4 +72,5 @@ class RegionStreaming{
  dispose(){if(this.disposed)return;this.disposed=true;this.epoch++;this.cancel();clearInterval(this.timer);this.required.clear();this.trim(true);this.legacy='';this.source='';}
 }
 G.RegionStreaming=RegionStreaming;
+G.loadRegionRequest=loadRegionRequest;
 })(globalThis.GA);

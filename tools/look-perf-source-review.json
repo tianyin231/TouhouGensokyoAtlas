@@ -1,0 +1,89 @@
+{
+  "base": "2a5ac93e8aebbf539feec8a1e9408a0a6ebea02d",
+  "date": "2026-11-04",
+  "note": "全局性能与光影优化的源码保护更新：新逻辑位于 src/render-look.js 与 src/render-programs.js。现有几何、人物、导航和其他期望值未改变，正常检查不重写基线。",
+  "changes": {
+    "src/renderer.js": {
+      "before": "f8be9b7f7ed3e0a12292ace83e432a97a89680f1266d1fdd777c55f2deefe29f",
+      "after": "4fc631d1d995256425228bc8b1d3156cb071ca5c4f97f8461a1ed85d252deb39",
+      "reason": "渲染器级修复，几何与地区内容不变：默认帧缓冲去掉 MSAA 与保留缓冲（只接收全屏后期四边形）；反射改用斜近裁剪面并走已有 12Hz 节流（修复绕过节流的调用），不再产生裁剪平面程序变体；阴影程序只随画质变化，开关改用强度 uniform；阴影盒向镜头偏移、覆盖上限提高到 720，移动阈值按比例；主通道前增加 holdPasses 钩子；嵌入数据解码改为普通循环。",
+      "protectedBy": [
+        "tools/animal-baseline.json",
+        "tools/backdoor-baseline.json",
+        "tools/cucumber-farm-baseline.json",
+        "tools/current-hell-baseline.json",
+        "tools/geyser-baseline.json",
+        "tools/heaven-baseline.json",
+        "tools/higan-baseline.json",
+        "tools/highland-baseline.json",
+        "tools/kasen-baseline.json",
+        "tools/kishinjou-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/makai-baseline.json",
+        "tools/mayohiga-baseline.json",
+        "tools/netherworld-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/rainbow-mine-baseline.json",
+        "tools/village-baseline.json",
+        "tools/waterfall-cave-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    },
+    "src/streaming.js": {
+      "before": "02cd75ae7b951ab3934453e558f6ec2dcf00b037936932d43b16125821c0db00",
+      "after": "bcce660d3c77b96c3be1d9ed394421c1a43751b9ea92e9693cfb0d79380b44c5",
+      "reason": "详情包替换总览代理前先调用 prepareAttach 并行编译着色器，过期任务按原 epoch 机制丢弃；不改变取消、预算与资源回收语义。",
+      "protectedBy": [
+        "tools/animal-baseline.json",
+        "tools/backdoor-baseline.json",
+        "tools/cucumber-farm-baseline.json",
+        "tools/current-hell-baseline.json",
+        "tools/geyser-baseline.json",
+        "tools/heaven-baseline.json",
+        "tools/higan-baseline.json",
+        "tools/highland-baseline.json",
+        "tools/kasen-baseline.json",
+        "tools/kishinjou-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/makai-baseline.json",
+        "tools/netherworld-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/rainbow-mine-baseline.json",
+        "tools/waterfall-cave-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    },
+    "src/app.js": {
+      "before": "80a10c87d0cb1eedc9b814c23f80c3896bf0f80e83f9eaeeff69feb47825b45c",
+      "after": "ae4b53f4e61307784d2c0a6e8eba813e4bea532dc13eed74cca1e56fd1214c5a",
+      "reason": "首帧前调用 prepareFirstFrame 批量编译地表总览材质并更新加载进度；总览包 base64 转字节改用普通循环（解压与解码沿用原函数，结果不变），其余启动顺序不变。",
+      "protectedBy": [
+        "tools/cucumber-farm-baseline.json",
+        "tools/geyser-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    },
+    "src/styles.css": {
+      "before": "b1e9f17efcfb21d3e806e2fc19c74cfbc381e59f6a0b417c81e74b48b77091e7",
+      "after": "92409251d43514d4d3eb7bd0333e0c038612b9127adcbee0f2efa35cbbad01af",
+      "reason": "窄窗口下标题不折行，避免与副标题重叠。",
+      "protectedBy": [
+        "tools/geyser-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/waterfall-cave-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    },
+    "tools/geyser-baseline.json": {
+      "before": "db79dab8b06bc04c1098cd6d54747fa83aac0b9809c5818cacdaff0f60854871",
+      "after": "ee2131da0aa4d0b2c84dd92b0abfae0aabc27e88d7798af13991db83e65661e1",
+      "reason": "仅随上述源码散列更新；其中的几何、人物、导航和其他期望值未改变。",
+      "protectedBy": [
+        "tools/geyser-center-baseline.json"
+      ]
+    }
+  }
+}

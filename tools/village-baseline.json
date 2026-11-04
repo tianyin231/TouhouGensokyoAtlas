@@ -9,7 +9,7 @@
   },
   "protectedFiles": {
     "src/world-builder.js": "d724340f60e9b759d68803ddfe1c4e16048272e6f8e2bb81bfa6e273ffe7378e",
-    "src/renderer.js": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+    "src/renderer.js": "4fc631d1d995256425228bc8b1d3156cb071ca5c4f97f8461a1ed85d252deb39",
     "src/surface-contact.js": "719a315917b55fa5025ec32659509b5be8965d8a577cdfc92c63c96db4dedf5e",
     "src/landmarks.js": "04b8e640ca0fc597f889625b8a8173a767eced751355e5dbe034f44fadfd7ff9",
     "src/landscape.js": "4ef7b6f8076842506e8cac09086db4aa8277f92468e08aa0069c326f77ef35dc",

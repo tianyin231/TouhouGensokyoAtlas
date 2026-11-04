@@ -19,6 +19,7 @@ const ACCEPTED_SOLAR_SOURCE_SHA='7110e70da5feb19c8e163470c1d266e37ca40e8507e6829
 // Solar. Execute its real hook; never remove it from a substituted project.
 const MUENZUKA='src/muenzuka-edge.js';
 const MUENZUKA_SOURCE_SHA='b2ef1b7c4acbc917fcaffba2fadb73ec775fc201e9bdeb0df375fa1680556045';
+const FOREST_PILOT='src/forest-pilot.js';
 export function registeredFlowerHillPredecessors(read,project){
  const all=project.worldBuilders;
  assert(Array.isArray(all)&&all.every(p=>typeof p==='string'),'Actual worldBuilders required');
@@ -27,11 +28,13 @@ export function registeredFlowerHillPredecessors(read,project){
  assert.equal(all.filter(p=>p===SOLAR).length,1);
  assert.equal(sha(JSON.stringify(all.slice(0,solar+1))),ACCEPTED_SOLAR_PREFIX_SHA,'Delivered prefix registration/order changed');
  assert.equal(sha(read(SOLAR)),ACCEPTED_SOLAR_SOURCE_SHA,'Accepted Solar source changed');
- assert.equal(all.filter(p=>p===SOURCE).length,1);assert.equal(flower,all.length-1,'Flower must remain the final actual hook');
+ assert.equal(all.filter(p=>p===SOURCE).length,1);
+ const successors=all.slice(flower+1);
+ assert(successors.length===0||successors.length===1&&successors[0]===FOREST_PILOT,'Only the reviewed Forest Pilot may follow Flower');
  const between=all.slice(solar+1,flower);
  assert(between.length===0||between.length===1&&between[0]===MUENZUKA,'Unexpected unreviewed successor');
  if(between.length)assert.equal(sha(read(MUENZUKA)),MUENZUKA_SOURCE_SHA,'Reviewed Muenzuka source changed');
- return{modules:all.slice(0,flower),reviewedAfterSolar:between,prefixSHA256:sha(JSON.stringify(all.slice(0,flower)))};
+ return{modules:all.slice(0,flower),reviewedAfterSolar:between,reviewedAfterFlower:successors,prefixSHA256:sha(JSON.stringify(all.slice(0,flower)))};
 }
 const SCOPE=[-1280,960,-928,1376],BENCH={x:-1251,z:987,w:9,d:10};
 const FIELDS=['vertices','farVertices','index','instances','instanceColors'];
@@ -91,7 +94,7 @@ function mergedAtlas(read,project){
   for(const c of add.verifiedLocationCorrections||[]){const l=locations.get(c.id);for(const[k,v]of Object.entries(c.expected))same(l[k],v,'Location correction prerequisite');Object.assign(l,c.replace);}
  }return atlas;
 }
-function bootPredecessors(G,data,pack){
+function bootPredecessors(G,data,pack,acceptedHooks){
  pack.meshes.push(...G.buildKishinjouOverview().meshes);
  for(const build of [G.buildLunarOverviews,G.buildMakaiOverviews])for(const p of build())pack.meshes.push(...p.meshes);
  pack.meshes.push(...G.buildNetherworldOverview().meshes);
@@ -100,8 +103,8 @@ function bootPredecessors(G,data,pack){
  for(const p of G.buildCurrentHellOverviews())pack.meshes.push(...p.meshes);
  pack.meshes.push(...G.buildRainbowMineOverview().meshes);
  G.LANDSCAPE.apply(pack,new G.Terrain(data));const t=new G.Terrain(data);G.applyHighlandGround(pack,t);pack.meshes.push(...G.highlandGround(t,pack),...G.buildHighland(t,true).meshes);
- assert(G.extraOverviewBuilders.length>1,'Missing actual predecessor hooks');
- for(const build of G.extraOverviewBuilders.slice(0,-1))pack.meshes.push(...build(data,pack));
+ assert(acceptedHooks.length>0,'Missing actual predecessor hooks');
+ for(const build of acceptedHooks)pack.meshes.push(...build(data,pack));
 }
 function surfaceSanity(m){
  assert.equal(m.vertices.constructor.name,'Float32Array');assert.equal(m.vertices.length%9,0);assert(m.vertices.every(Number.isFinite),'Nonfinite attributes '+m.id);
@@ -145,14 +148,20 @@ export async function checkFlowerHillEntry(read,{sourceSHA}={}){
   assert(sourceSHA,'An exact --source-sha is required');assert.equal(report.sourceSHA256,sourceSHA,'Candidate changed before preflight');const p=JSON.parse(read('project.json'));report.actualPredecessors=registeredFlowerHillPredecessors(read,p);return p;
  });if(!prerequisites)return finish();
  const project=prerequisites,context=vm.createContext({performance,TextDecoder,TextEncoder});
- for(const p of project.worldBuilders.slice(0,-1))vm.runInContext(String(read(p)),context,{filename:p});const G=context.GA,acceptedHeight=G.Terrain.prototype.height,acceptedBuilder=G.buildRegion,acceptedHooks=G.extraOverviewBuilders.slice(),loadedPaths=JSON.stringify(G.FLOWERLANDS.paths);
+ for(const p of report.actualPredecessors.modules)vm.runInContext(String(read(p)),context,{filename:p});const G=context.GA,acceptedHeight=G.Terrain.prototype.height,acceptedBuilder=G.buildRegion,acceptedHooks=G.extraOverviewBuilders.slice(),loadedPaths=JSON.stringify(G.FLOWERLANDS.paths);
  vm.runInContext(String(read(SOURCE)),context,{filename:SOURCE});const U=G.FLOWER_HILL_ENTRY;assert(U,'Missing Flower Hill API');same(Array.from(U.scope),SCOPE,'Approved scope');assert.equal(U.previousHeight,acceptedHeight,'Surface fallback bypasses accepted Solar');assert.equal(U.originalBuildRegion,acceptedBuilder,'Native builder fallback bypasses accepted Solar');assert.equal(G.extraOverviewBuilders.length,acceptedHooks.length+1);for(let i=0;i<acceptedHooks.length;i++)assert.equal(G.extraOverviewBuilders[i],acceptedHooks[i],'Predecessor hook order changed');
+ // 冻结无名之丘的真实入口；后继只核对注册身份，不混入它的几何基线阶段。
+ const flowerHooks=G.extraOverviewBuilders.slice(),flowerHook=flowerHooks.at(-1);
+ for(const p of report.actualPredecessors.reviewedAfterFlower)vm.runInContext(String(read(p)),context,{filename:p});
+ assert.equal(G.extraOverviewBuilders.length,flowerHooks.length+report.actualPredecessors.reviewedAfterFlower.length,'Unexpected successor hook count');
+ for(let i=0;i<flowerHooks.length;i++)assert.equal(G.extraOverviewBuilders[i],flowerHooks[i],'Accepted hook identity/order changed after Flower');
+ if(report.actualPredecessors.reviewedAfterFlower.length)assert.equal(G.extraOverviewBuilders.at(-1),G.FOREST_PILOT?.prepare,'Forest Pilot must register its exact prepare hook');
  context.inputAtlas=JSON.stringify(mergedAtlas(read,project));const data=vm.runInContext('JSON.parse(inputAtlas)',context),raw=gunzipSync(read('assets/packs/overview.pack.gz')),pack=G.decodePack(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength));
- const boot=await check('actual full production predecessors including accepted Solar',()=>{bootPredecessors(G,data,pack);assert(G.SUNFLOWER_ENTRY.metadata.has(pack),'Solar actual prepare not executed');assert(data.sunflowerEntry?.contact?.length>0,'Accepted Solar contact absent');assert(!data.flowerHillEntry,'Flower Hill executed before baseline capture');return {modules:project.worldBuilders,overviewHooks:acceptedHooks.length,records:pack.meshes.length,SolarSourceSHA256:ACCEPTED_SOLAR_SOURCE_SHA,meaning:'Actual boot additions, LANDSCAPE, highland and every reviewed registered predecessor hook; the new final hook is not yet run.'};});if(!boot)return finish();
+ const boot=await check('actual full production predecessors including accepted Solar',()=>{bootPredecessors(G,data,pack,acceptedHooks);assert(G.SUNFLOWER_ENTRY.metadata.has(pack),'Solar actual prepare not executed');assert(data.sunflowerEntry?.contact?.length>0,'Accepted Solar contact absent');assert(!data.flowerHillEntry,'Flower Hill executed before baseline capture');return {modules:report.actualPredecessors.modules,overviewHooks:acceptedHooks.length,records:pack.meshes.length,SolarSourceSHA256:ACCEPTED_SOLAR_SOURCE_SHA,meaning:'Actual boot additions, LANDSCAPE, highland and every reviewed registered predecessor hook; Flower and its reviewed successor are not yet run.'};});if(!boot)return finish();
  if(report.actualPredecessors.reviewedAfterSolar.length){const muen=await check('registered Muenzuka predecessor executes before Flower Hill',()=>{const m=G.MUENZUKA_EDGE?.metadata(pack);assert(m,'Muenzuka registered hook did not execute');assert.equal(m.cold.length,2);assert.equal(m.cold.reduce((s,p)=>s+p.trees,0),10);return{sourceSHA256:MUENZUKA_SOURCE_SHA,coldRecords:m.cold.map(p=>p.addedId),originalColdPlants:10};});if(!muen)return finish();}
  const old=snapshot(pack),oldIDs=pack.meshes.map(m=>m.id),oldBuffers=backingBuffers(pack,data),solarContact=data.sunflowerEntry.contact,solarContactSHA=arraySHA(solarContact),solarState=plain(data.sunflowerEntry),solarMeta=plain(G.SUNFLOWER_ENTRY.metadata.get(pack)),oldData=plain(data),oldPaths=JSON.stringify(G.FLOWERLANDS.paths),oldRoutes=JSON.stringify(G.ISLAND.allRoutes),terrain=new G.Terrain(data),base=(x,z)=>acceptedHeight.call(terrain,x,z);
  const protectedQueries=[];for(let x=-928;x<=-128;x+=16)for(let z=576;z<=1376;z+=16)protectedQueries.push({x,z,y:base(x,z)});for(const p of [[-1280,960],[-928,1376],[-1400,1100],[-1100,1450],[-900,1200],[-896,900],[-512,1024]])protectedQueries.push({x:p[0],z:p[1],y:base(...p)});
- const prepare=await check('candidate production hook and independent contact publication',()=>{pack.meshes.push(...G.extraOverviewBuilders.at(-1)(data,pack));assert(U.metadata.has(pack));assert(data.flowerHillEntry?.contact?.length>0);assert.notEqual(data.flowerHillEntry.contact,solarContact);return {records:pack.meshes.length,metadata:U.metadata.get(pack),contactBytes:data.flowerHillEntry.contact.byteLength};});if(!prepare)return finish();
+ const prepare=await check('candidate production hook and independent contact publication',()=>{pack.meshes.push(...flowerHook(data,pack));assert(U.metadata.has(pack));assert(data.flowerHillEntry?.contact?.length>0);assert.notEqual(data.flowerHillEntry.contact,solarContact);return {records:pack.meshes.length,metadata:U.metadata.get(pack),contactBytes:data.flowerHillEntry.contact.byteLength};});if(!prepare)return finish();
  const meta=U.metadata.get(pack),height=(x,z)=>terrain.height(x,z),near=pack.meshes.filter(m=>selected(m)&&m.globalNear),far=pack.meshes.filter(m=>selected(m)&&m.globalFar),neighbours=pack.meshes.filter(terrainNeighbour),oldNear=neighbours.filter(m=>m.globalNear).map(m=>retained(old.get(m.id))),oldFar=neighbours.filter(m=>m.globalFar).map(m=>retained(old.get(m.id))),newNearSurface=meshSampler(neighbours.filter(m=>m.globalNear)),newFarSurface=meshSampler(neighbours.filter(m=>m.globalFar)),oldNearSurface=meshSampler(oldNear),oldFarSurface=meshSampler(oldFar),active=new Set();
  for(const m of near){const a=old.get(m.id).arrays.vertices.original;for(let i=0;i<triangles(m)*3;i+=3){if(![0,1,2].some(k=>{const j=m.index[i+k]*9;return [1,3,4,5].some(q=>m.vertices[j+q]!==a[j+q]);}))continue;const ps=attributes(m,i);active.add(cellKey(ps.reduce((s,p)=>s+p[0],0)/3,ps.reduce((s,p)=>s+p[2],0)/3));}}
  const edges=borderEdges(active),contact=U.sampler(data.flowerHillEntry.contact);

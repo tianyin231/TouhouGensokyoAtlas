@@ -68,3 +68,6 @@
 .in-mine .weather-switch,.in-mine #light-neutral,.in-mine #light-dusk{display:none}#mine-nav{max-width:calc(100vw - 32px);overflow-x:auto}
 
 #highland-nav{max-width:calc(100vw - 28px);overflow-x:auto;white-space:nowrap}
+
+/* 窄窗口下标题不折行，横向空间让给可滚动的区域导航。 */
+.brand{flex:none;white-space:nowrap}

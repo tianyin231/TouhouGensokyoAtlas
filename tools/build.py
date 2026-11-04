@@ -6,6 +6,7 @@ import hashlib
 import html
 import json
 import re
+import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,7 +37,7 @@ def apply_verified_corrections(atlas, modules):
             target.update(replacement)
 
 
-def build(output_dir):
+def build(output_dir, web=False):
     inputs = {}
 
     def read_bytes(name):
@@ -146,7 +147,7 @@ def build(output_dir):
         'NIGHT_RENDERER': '\n'.join([source('src/night-renderer.js'), *[source(name) for name in project.get('extensionRenderers', [])]]),
         'CHARACTERS': source('src/characters.js'),
         'STREAMING': source('src/streaming.js'),
-        'APP': source('src/app.js'),
+        'APP': source('src/prepare-overview.js') + '\n' + source('src/app.js'),
     }
     template = read_text('src/index.html')
     for token in parts:
@@ -240,6 +241,15 @@ def build(output_dir):
     read_bytes('tools/check-render-ownership.mjs')
     read_bytes('tools/render-lifecycle-source-review.json')
     read_bytes('tools/check-streaming-lifecycle.mjs')
+    read_bytes('tools/check-region-packs.mjs')
+    read_bytes('tools/build-region-packs.mjs')
+    read_bytes('tools/region-pack-codec.mjs')
+    read_bytes('tools/check-forest-pilot-batching.mjs')
+    read_bytes('tools/check-forest-pilot.mjs')
+    read_bytes('tools/measure-forest-pilot.mjs')
+    read_bytes('tools/run-forest-pilot-measurement.mjs')
+    read_bytes('tools/forest-pilot-source-review.json')
+    read_bytes('tools/look-perf-source-review.json')
     read_bytes('tools/check-render-lifecycle-browser.py')
     read_bytes('tools/check-hakurei.mjs')
     read_bytes('tools/hakurei-baseline.json')
@@ -250,8 +260,29 @@ def build(output_dir):
     output.write_bytes(content)
     digest = hashlib.sha256(content).hexdigest()
     info = {'version': version, 'tag': tag, 'artifact': filename, 'sha256': digest, 'inputs': inputs}
+    if web:
+        web_dir = output_dir / 'web'
+        payload = {'builder': world_builder, 'prepareOverview': source('src/prepare-overview.js'),
+                   'data': atlas, 'overview': parts['OVERVIEW_PACK']}
+        payload['sourceHash'] = hashlib.sha256(json.dumps(payload, ensure_ascii=False).encode('utf-8')).hexdigest()
+        result = subprocess.run(['node', str(ROOT / 'tools/build-region-packs.mjs'), '--output-dir', str(web_dir)],
+                                input=json.dumps(payload, ensure_ascii=False), text=True, encoding='utf-8',
+                                stdout=subprocess.PIPE, check=True)
+        prebuilt = json.loads(result.stdout)
+        web_parts = {**parts, 'STREAMING': 'globalThis.GA.REGION_PACK_MANIFEST=' +
+                     json.dumps(prebuilt['manifest'], ensure_ascii=False, separators=(',', ':')) + ';\n' + parts['STREAMING']}
+        web_content = substitute(template, {**metadata, **web_parts}).encode('utf-8')
+        (web_dir / 'index.html').write_bytes(web_content)
+        info['web'] = {'artifact': 'web/index.html', 'sha256': hashlib.sha256(web_content).hexdigest(),
+                       'manifest': prebuilt['manifest']}
+        print('森林在线预建：' + json.dumps(prebuilt['report'], ensure_ascii=False))
     (output_dir / 'release.json').write_bytes((json.dumps(info, ensure_ascii=False, indent=2) + '\n').encode('utf-8'))
-    (output_dir / 'SHA256SUMS.txt').write_bytes(f'{digest}  {filename}\n'.encode('utf-8'))
+    checksums = f'{digest}  {filename}\n'
+    if web:
+        checksums += f"{info['web']['sha256']}  web/index.html\n"
+        for entry in info['web']['manifest']['regions'].values():
+            checksums += f"{entry['sha256']}  web/{entry['url']}\n"
+    (output_dir / 'SHA256SUMS.txt').write_bytes(checksums.encode('utf-8'))
     print(f'已构建 {output.relative_to(ROOT) if output.is_relative_to(ROOT) else output}（{len(content):,} 字节）')
     print(f'SHA-256: {digest}')
     return output
@@ -261,5 +292,6 @@ if __name__ == '__main__':
     sys.stdout.reconfigure(encoding='utf-8')
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output-dir', type=Path, default=ROOT / 'dist')
+    parser.add_argument('--web', action='store_true', help='额外生成 web/index.html 和森林预建包，需要 Node.js 22')
     args = parser.parse_args()
-    build(args.output_dir.resolve())
+    build(args.output_dir.resolve(), web=args.web)

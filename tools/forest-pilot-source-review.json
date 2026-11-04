@@ -1,0 +1,82 @@
+{
+  "base": "2a5ac93e8aebbf539feec8a1e9408a0a6ebea02d",
+  "date": "2026-10-11",
+  "note": "本轮明确审阅后的源码保护更新；历史审阅记录保持不变。现有几何、人物、导航和其他期望值未改变，正常检查不重写基线。",
+  "changes": {
+    "src/app.js": {
+      "before": "a5810a049c3ff33d4e9a3987acc1827f390e1a0d4ef1f97079dd9f1d7c68b0c3",
+      "after": "80a10c87d0cb1eedc9b814c23f80c3896bf0f80e83f9eaeeff69feb47825b45c",
+      "reason": "仅把既有总览准备链等价提取到 src/prepare-overview.js，页面与离线森林预建共用相同顺序及接地数据；默认首帧流程、场景与交互不变。",
+      "protectedBy": [
+        "tools/cucumber-farm-baseline.json",
+        "tools/geyser-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    },
+    "src/streaming.js": {
+      "before": "3ae540dd6a1ca4878ca73ef18a628903dcef7b6866c3753a54ac0f11d435a5dd",
+      "after": "02cd75ae7b951ab3934453e558f6ec2dcf00b037936932d43b16125821c0db00",
+      "reason": "仅在线变体的森林任务优先获取、校验并解压预建包，错误回退同源 Worker 建模；file:// 保留原路径，共用取消与幂等资源清理，并按实际保留的解码缓冲记账。",
+      "protectedBy": [
+        "tools/animal-baseline.json",
+        "tools/backdoor-baseline.json",
+        "tools/cucumber-farm-baseline.json",
+        "tools/current-hell-baseline.json",
+        "tools/geyser-baseline.json",
+        "tools/heaven-baseline.json",
+        "tools/higan-baseline.json",
+        "tools/highland-baseline.json",
+        "tools/kasen-baseline.json",
+        "tools/kishinjou-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/makai-baseline.json",
+        "tools/netherworld-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/rainbow-mine-baseline.json",
+        "tools/waterfall-cave-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    },
+    "src/renderer.js": {
+      "before": "d3e931570d12177269d8bd99d4a7bd6808584ac002c9cca9ae789a7a34bb3d36",
+      "after": "f8be9b7f7ed3e0a12292ace83e432a97a89680f1266d1fdd777c55f2deefe29f",
+      "reason": "仅在主场景提交前增加可选 beforeSceneSubmit 钩子，并在 finally 恢复源网格显隐；反射仍先提交原网格，原几何、LOD、材质参数和预算不改。",
+      "protectedBy": [
+        "tools/animal-baseline.json",
+        "tools/backdoor-baseline.json",
+        "tools/cucumber-farm-baseline.json",
+        "tools/current-hell-baseline.json",
+        "tools/geyser-baseline.json",
+        "tools/heaven-baseline.json",
+        "tools/higan-baseline.json",
+        "tools/highland-baseline.json",
+        "tools/kasen-baseline.json",
+        "tools/kishinjou-baseline.json",
+        "tools/kourindou-baseline.json",
+        "tools/makai-baseline.json",
+        "tools/mayohiga-baseline.json",
+        "tools/netherworld-baseline.json",
+        "tools/peony-baseline.json",
+        "tools/rainbow-mine-baseline.json",
+        "tools/village-baseline.json",
+        "tools/waterfall-cave-baseline.json",
+        "tools/wind-cave-baseline.json"
+      ]
+    }
+  },
+  "protectedFieldUpdates": 41,
+  "fixtureInheritance": {
+    "path": "tools/geyser-center-baseline.json",
+    "inherits": "tools/geyser-baseline.json",
+    "before": "cd8106c9c4a6c5ab6b970ac587b0d3f59951b0d2564b3caab5e8451873457df0",
+    "after": "db79dab8b06bc04c1098cd6d54747fa83aac0b9809c5818cacdaff0f60854871",
+    "reason": "被继承基线仅更新上述三个已审阅源码保护值，同步整文件指纹；几何与导航期望不变。"
+  },
+  "validation": {
+    "onlyReviewedProtectedFilesChanged": true,
+    "existingGeometryExpectationsUnchanged": true,
+    "historicalReviewsUnchanged": true
+  }
+}
