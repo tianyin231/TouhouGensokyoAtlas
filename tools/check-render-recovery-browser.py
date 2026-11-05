@@ -37,7 +37,7 @@ try:
   assert d=={'samples':0,'sameSize':True,'oldFramebufferAlive':False,'newFramebuffer':False};passed('Same-size quality change releases obsolete MSAA framebuffer',d)
   for q in ['balanced','low','high','low','balanced']:
    page.evaluate("q=>{ATLAS.state.quality=q;ATLAS.renderer.setQuality(q);ATLAS.renderOnce()}",q)
-   assert page.evaluate('ATLAS.renderer.sceneTarget.samples')==(0 if q=='low' else 2)
+   assert page.evaluate('ATLAS.renderer.sceneTarget.samples')==(0 if q=='low' else 4)
   passed('Five quality round trips with correct sample count')
   visit('shrineFront','hakurei');page.locator('#scene').screenshot(path=str(a.output/'shrine-before-loss.png'))
   page.evaluate("globalThis.recoveryLoss=ATLAS.renderer.engine.getContext().getExtension('WEBGL_lose_context')");assert page.evaluate('!!recoveryLoss')

@@ -244,7 +244,20 @@ class LookRenderer extends Base{
   return texture;
  }
  // 种植树按批次中心算距离时，镜头在批次边缘会看到六边形低模，这里按批次最近边缘算。
- levelFor(record,distance){const m=record.data;return super.levelFor(record,m.material==='landscapeLeaf'&&m.instances?Math.max(0,distance-m.radius):distance);}
+ // 按批次里最近一棵树的实际距离选精度。批次半径可达 477 米：按中心算，近处的树会留在六边形低模；
+ // 按包围球算，整批远树都会切到高模。阈值不能再收紧，否则六边形会回到中景。
+ nearestTree(record,distance){
+  const m=record.data,eye=this.lookEye,bound=Math.max(0,distance-m.radius);
+  if(!eye||bound>400)return bound;
+  const a=m.instances,scale=record.xf?.scale||1,offset=record.xf?.offset||[0,0,0];
+  let best=Infinity;
+  for(let i=12;i<a.length;i+=16){
+   const x=a[i]*scale+offset[0]-eye[0],y=a[i+1]*scale+offset[1]-eye[1],z=a[i+2]*scale+offset[2]-eye[2],d=x*x+y*y+z*z;
+   if(d<best)best=d;
+  }
+  return Math.sqrt(best);
+ }
+ levelFor(record,distance){const m=record.data;return super.levelFor(record,m.material==='landscapeLeaf'&&m.instances?this.nearestTree(record,distance):distance);}
  // 轮廓由绘画滤镜接管，边缘更依赖原始采样，非低画质用 4 倍。
  applyLookMsaa(){const t=this.sceneTarget,want=this.quality==='low'?0:4;if(t&&t.samples!==want){this.engine.setRenderTarget(null);t.dispose();t.samples=want;}}
  setSize(w,h,dpr=1){super.setSize(w,h,dpr);this.applyLookMsaa();}
@@ -499,6 +512,7 @@ class LookRenderer extends Base{
   s.shadow.normalBias=G.clamp(texel*1.15,.05,.9);
  }
  render(rig,opts={}){
+  this.lookEye=rig.eye;
   const lowOverGround=rig.eye[1]-(this.world?.terrain?.height(rig.eye[0],rig.eye[2])??Infinity)<26;
   const motes=this.motes.visible=this.quality!=='low'&&!this.planOnly&&opts.motion!==false&&(opts.space||'surface')==='surface'&&opts.displayMode!=='atlas'&&opts.lighting!=='night'&&(opts.weather||'clear')==='clear'&&lowOverGround;
   if(motes){const u=this.motes.material.uniforms;u.uEye.value.fromArray(rig.eye);u.uPixel.value=this.engine.getPixelRatio();u.uTint.value.setRGB(...(opts.lighting==='dusk'?[1.5,.85,.42]:[1.2,1.1,.8]));}

@@ -417,7 +417,7 @@ def main():
                 wait('p => ATLAS.state.drawnFrames>p.frames && ATLAS.renderer.quality===p.quality && '
                      'ATLAS.renderer.currentOptions.quality===p.quality',
                      {'frames': before, 'quality': value})
-                require(page.evaluate('ATLAS.renderer.sceneTarget.samples') == (0 if value == 'low' else 2),
+                require(page.evaluate('ATLAS.renderer.sceneTarget.samples') == (0 if value == 'low' else 4),
                         'Quality switch left the wrong post-target MSAA sample count')
 
             def climate(lighting, weather):

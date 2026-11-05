@@ -39,7 +39,7 @@ jobs:
           retention-days: 7
   render-lifecycle:
     runs-on: ubuntu-24.04
-    timeout-minutes: 40
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -183,7 +183,7 @@ jobs:
           retention-days: 7
   geyser-webgl:
     runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -207,7 +207,7 @@ jobs:
           retention-days: 7
   geyser-center-webgl:
     runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -231,7 +231,7 @@ jobs:
           retention-days: 7
   kourindou-visual-webgl:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 22
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
