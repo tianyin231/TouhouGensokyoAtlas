@@ -1,5 +1,7 @@
 # 区域画面升级交接
 
+> **2026-11-05：本页的工作流程和技术记录可用，审美判断不再是验收依据，先读[画面方向重审](art-direction-review.md)。**
+
 > 2026-09-29：以博丽神社为画面试点，整合远端 `ca737d6`（v0.29）的伪天棚与山地赌场。后续按区域逐渐提升，保留高地及全部已有场景。最终构建 SHA、合并后核验与未测项见[当前状态](current-status.md)，本页不代替验收记录。
 
 浏览器 Chat 接手时，先读根目录 [AGENTS.md](../AGENTS.md)、本页和[当前状态](current-status.md)，再定位实际源码。不要仅凭旧对话或预览图判断当前实现。基础要求继续遵守[美术规范](art-and-modeling.md)、[工程约定](engineering.md)和[开发流程](development-workflow.md)。

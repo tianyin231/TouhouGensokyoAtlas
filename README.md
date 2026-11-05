@@ -18,7 +18,8 @@
 ```text
 请继续优化 https://github.com/tianyin231/TouhouGensokyoAtlas 的【填写区域】。
 先读取当前分支的 AGENTS.md、project.json、docs/current-status.md、
-docs/visual-upgrade.md，再核对目标区域源码、已有美术/工程规范及必要考据。
+docs/art-direction-review.md、docs/visual-upgrade.md，再核对目标区域源码、
+已有美术/工程规范及必要考据。审美问题以 art-direction-review.md 为准。
 保留远端新增地区和博丽神社试点成果，不从旧聊天或历史 HTML 覆盖当前工程。
 先用真实浏览器查看总览、近景、背面和连接路，说明质感问题的具体原因，
 再小步实施，兼顾性能和周边过渡；有能力时直接完成构建及视觉验证。
