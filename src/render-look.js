@@ -1,4 +1,5 @@
-/* 地表整体光影：统一日光比、空气透视、全岛地形远距阴影、地表与树冠的细节。
+/* 地表整体光影与画风：统一日光比、空气透视、全岛地形远距阴影、地表与树冠的细节，
+ * 以及 2026-11-05 用户定稿的二次元动画背景画风（绘画滤镜、分层光影、手绘积云、彩色轮廓线）。
  * 只作用于连续地表；独立空间沿用各自的天空、灯光与色调。
  * 所有细节来自一张程序生成的噪声纹理，不引入外部贴图或新几何。 */
 (function(G){'use strict';
@@ -37,6 +38,106 @@ uniform vec2 aoTexel,farTexel;uniform vec3 hazeColor,hazeSunColor,sunDir;
 uniform mat4 inverseProjection,cameraWorld,farMatrix,nearMatrix;
 vec3 aces(vec3 x){return clamp((x*(2.51*x+.03))/(x*(2.43*x+.59)+.14),0.,1.);}
 vec3 srgb(vec3 x){return mix(x*12.92,1.055*pow(max(x,vec3(0.)),vec3(1./2.4))-.055,step(vec3(.0031308),x));}
+
+uniform float sharper,styleTime,styleDusk,styleNight,styleWide,styleWet,styleDetail,dayBloom;uniform vec2 texel;uniform mat4 viewProj;uniform sampler2D paperTex;
+float viewZ(vec2 uv){vec4 v=inverseProjection*vec4(0.,0.,texture2D(sceneDepth,uv).r*2.-1.,1.);return max(-v.z/v.w,.01);}
+// 四象限 Kuwahara：取方差最小的象限均值，把细碎多边形合成一笔一笔的色块。
+vec3 kuwa(vec2 uv,int r){
+ vec3 best=textureLod(tex,uv,0.).rgb;float bestV=1e9;
+ for(int q=0;q<4;q++){
+  vec2 s=vec2((q==0||q==2)?-1.:1.,q<2?-1.:1.);vec3 m=vec3(0.),m2=vec3(0.);float n=0.;
+  for(int y=0;y<=r;y++)for(int x=0;x<=r;x++){
+   vec3 k=textureLod(tex,uv+s*vec2(float(x),float(y))*texel,0.).rgb;k=k/(1.+k);m+=k;m2+=k*k;n+=1.;
+  }
+  m/=n;vec3 v=abs(m2/n-m*m);float vv=v.r+v.g+v.b;
+  if(vv<bestV){bestV=vv;best=m;}
+ }
+ return best/(1.-min(best,vec3(.985)));
+}
+vec3 skyRay(vec2 uv){vec4 v=inverseProjection*vec4(uv*2.-1.,1.,1.);return normalize(mat3(cameraWorld)*(v.xyz/v.w));}
+float cloudField(vec2 p,vec2 w){return texture2D(paperTex,p*.085+w).r*.64+texture2D(paperTex,p*.23+w*1.7).g*.27+texture2D(paperTex,p*.62+w*2.6).b*.09;}
+// 岛下云海。
+vec3 cloudSea(vec3 d){
+ float m=styleDusk;vec2 w=vec2(styleTime*.0030,styleTime*.0011);
+ vec3 low=mix(vec3(.640,.800,.930),vec3(1.150,.560,.230),m),bright=mix(vec3(1.02,1.00,.97),vec3(1.40,.80,.52),m);
+ vec2 p=d.xz/(-d.y+.16);
+ float n=cloudField(p*.75,w);
+ vec3 gap=mix(vec3(.13,.36,.72),vec3(.42,.22,.38),m);
+ vec3 c=mix(low,mix(gap,bright,smoothstep(.45,.64,n)),smoothstep(0.,.20,-d.y));
+ c+=mix(vec3(1.5,1.3,.95),vec3(2.2,1.0,.45),m)*pow(max(dot(d,sunDir),0.),520.);
+ c+=mix(vec3(.16,.13,.08),vec3(.6,.25,.08),m)*pow(max(dot(d,sunDir),0.),9.);
+ return c;
+}
+// 地表上空飘过的云影，全部物体一起受影响。
+float cloudShade(vec3 w){
+ vec2 p=(w.xz+sunDir.xz*w.y*.55+vec2(styleTime*9.,styleTime*3.5))/1500.;
+ float n=texture2D(paperTex,p).r*.68+texture2D(paperTex,p*3.1).g*.32;
+ return smoothstep(.50,.64,n);
+}
+// 山谷与区域之间横向的霞。
+float kasumi(vec3 w,float dist){
+ vec2 q=vec2(w.x/2300.+styleTime*.0014,w.z/760.);
+ float n=texture2D(paperTex,q).r*.66+texture2D(paperTex,q*vec2(3.1,2.7)-styleTime*.0009).g*.34;
+ return smoothstep(.52,.72,n)*(1.-smoothstep(58.,175.,w.y))*smoothstep(-2.,26.,w.y)*smoothstep(260.,1300.,dist)*(1.-.75*smoothstep(1900.,4200.,dist));
+}
+vec3 wpos(vec2 uv){vec4 v=inverseProjection*vec4(uv*2.-1.,texture2D(sceneDepth,uv).r*2.-1.,1.);return (cameraWorld*vec4(v.xyz/v.w,1.)).xyz;}
+vec3 wideN(vec2 uv){vec2 t=texel*5.;vec3 a=wpos(uv-vec2(t.x,0.)),b=wpos(uv+vec2(t.x,0.)),c=wpos(uv-vec2(0.,t.y)),d=wpos(uv+vec2(0.,t.y));return normalize(cross(b-a,d-c));}
+float inkEdge(vec2 uv,float dist){
+ float wob=.8+1.0*texture2D(paperTex,uv*vec2(5.,3.)).r;vec2 t=texel*wob;
+ float o=log(viewZ(uv)),l=abs(log(viewZ(uv+t*vec2(-1.,-1.)))+log(viewZ(uv+t*vec2(1.,1.)))-2.*o)+abs(log(viewZ(uv+t*vec2(-1.,1.)))+log(viewZ(uv+t*vec2(1.,-1.)))-2.*o);
+ return smoothstep(.012,.052,l)*(1.-smoothstep(300.,1700.,dist));
+}
+vec3 gradeAnime(vec3 c,float sky){
+ float l=dot(c,vec3(.2126,.7152,.0722));
+ c=mix(vec3(l),c,mix(1.20,1.04,sky));
+ c=mix(c*vec3(.74,.82,1.08),c,smoothstep(.015,.40,l));
+ c*=mix(vec3(1.),vec3(1.075,1.02,.90),smoothstep(.40,.92,l));
+ return max(c,vec3(0.));
+}
+// 二次元积云：边缘清楚，顶亮底蓝。
+vec3 animeSky(vec3 d){
+ float h=max(d.y,0.),m=styleDusk;
+ vec3 top=mix(vec3(.030,.130,.470),vec3(.095,.095,.285),m);
+ vec3 mid=mix(vec3(.095,.330,.800),vec3(.520,.285,.300),m);
+ vec3 low=mix(vec3(.560,.790,.960),vec3(1.180,.640,.270),m);
+ vec3 c=mix(low,mid,smoothstep(0.,.24,h));c=mix(c,top,smoothstep(.16,.82,h));
+ vec2 w=vec2(styleTime*.0028,styleTime*.0010);
+ vec3 bright=mix(vec3(1.26,1.26,1.26),vec3(1.36,.80,.50),m),shade=mix(vec3(.50,.64,.92),vec3(.44,.28,.42),m);
+ vec2 p=d.xz/(d.y+.20);
+ p+=(texture2D(paperTex,p*.045+w).rg-.5)*.85;
+ float n=texture2D(paperTex,p*.055+w).r*.72+texture2D(paperTex,p*.17+w*1.6).g*.28;
+ vec2 s=normalize(sunDir.xz+.001)*.20;
+ float n2=texture2D(paperTex,(p+s)*.055+w).r*.72+texture2D(paperTex,(p+s)*.17+w*1.6).g*.28;
+ n+=(texture2D(paperTex,p*.62+w*3.).r-.5)*.055;
+ float cover=smoothstep(.572,.598,n)*smoothstep(.015,.12,d.y);
+ c=mix(c,mix(bright,shade,smoothstep(-.012,.045,n2-n)),cover);
+ c+=mix(vec3(1.6,1.4,1.0),vec3(2.4,1.1,.5),m)*pow(max(dot(d,sunDir),0.),620.);
+ c+=mix(vec3(.20,.17,.10),vec3(.7,.28,.09),m)*pow(max(dot(d,sunDir),0.),8.);
+ return c;
+}
+// 从太阳方向穿过枝叶和山脊的光束。
+float sunShafts(vec2 uv,vec3 eye){
+ vec4 sp=viewProj*vec4(eye+sunDir*3000.,1.);
+ if(sp.w<=0.)return 0.;
+ vec2 s=sp.xy/sp.w*.5+.5,d=(s-uv)/22.,q=uv;
+ float sum=0.,wt=1.,j=.7+.6*fract(sin(dot(uv,vec2(12.9898,78.233)))*43758.5453);
+ q+=d*j;
+ for(int i=0;i<22;i++){sum+=step(.99999,textureLod(sceneDepth,q,0.).r)*wt;wt*=.955;q+=d;}
+ return sum/14.;
+}
+// 赛璐璐分层：明暗推向几档，色相不变；地面弱一些，避免出现色带。
+vec3 gradeStrong(vec3 c,float sky,float flatG){
+ float l=dot(c,vec3(.2126,.7152,.0722));
+ if(sky<.5){
+  float r=.045+.125*smoothstep(.055,.095,l)+.215*smoothstep(.17,.23,l)+.255*smoothstep(.38,.46,l)+.30*smoothstep(.64,.74,l);
+  float nl=mix(l,r,mix(.62,.20,flatG));
+  c*=nl/max(l,.004);l=nl;
+ }
+ c=mix(vec3(l),c,mix(mix(1.16,1.07,flatG),1.06,sky));
+ c=mix(c*vec3(.70,.78,1.12)+vec3(.012,.018,.045),c,smoothstep(.02,.34,l));
+ c*=mix(vec3(1.),vec3(1.06,1.02,.93),smoothstep(.42,.90,l)*(1.-sky));
+ return max(c,vec3(0.));
+}
 float farShadow(vec3 p,vec3 n){
  float facing=dot(n,sunDir);
  // 掠射面本身已经变暗，且总览与可见地形 LOD 不同，在这里比较深度只会得到锯齿。
@@ -53,7 +154,18 @@ float farShadow(vec3 p,vec3 n){
 void main(){
  float ao=1.;
  if(aoEnabled>.5){ao=(texture2D(aoTex,uvP).r*2.+texture2D(aoTex,uvP+aoTexel).r+texture2D(aoTex,uvP-aoTexel).r+texture2D(aoTex,uvP+vec2(aoTexel.x,-aoTexel.y)).r+texture2D(aoTex,uvP+vec2(-aoTexel.x,aoTexel.y)).r)/6.;}
- vec3 c=texture2D(tex,uvP).rgb*ao;
+ float edge=0.,skyMask=0.,flatG=0.;
+ int kr=0;if(lookOn>.5&&styleDetail>.5){float vz0=viewZ(uvP);kr=sharper>.5?(vz0<260.?1:0):(vz0<130.?2:vz0<600.?1:0);}
+ vec3 raw=texture2D(tex,uvP).rgb,c=kr>0?kuwa(uvP,kr):raw;
+ if(lookOn>.5&&styleDetail>.5){
+  // 清晰度：混回一部分原始像素，再按亮度轻锐化一次，只动明暗不动色相。
+  c=mix(c,raw,mix(.22,.42,sharper));
+  vec3 lw=vec3(.2126,.7152,.0722);
+  vec3 a=texture2D(tex,uvP+vec2(texel.x,0.)).rgb,b=texture2D(tex,uvP-vec2(texel.x,0.)).rgb,e=texture2D(tex,uvP+vec2(0.,texel.y)).rgb,f=texture2D(tex,uvP-vec2(0.,texel.y)).rgb;
+  float l0=dot(raw/(1.+raw),lw),avg=(dot(a/(1.+a),lw)+dot(b/(1.+b),lw)+dot(e/(1.+e),lw)+dot(f/(1.+f),lw))*.25;
+  c*=1.+clamp((l0-avg)*mix(.9,1.5,sharper)/max(l0,.05),-.30,.30);
+ }
+ c*=ao;
  if(lookOn>.5){
   float d=texture2D(sceneDepth,uvP).r;
   if(d<.99999){
@@ -64,6 +176,7 @@ void main(){
     float nearMask=nearActive*(1.-smoothstep(.72,.98,max(near.x,near.y)));
     if(nearMask<.999){vec3 faceN=normalize(cross(dFdx(world),dFdy(world)));if(dot(faceN,ray)>0.)faceN=-faceN;c*=1.-farStrength*(1.-farShadow(world,faceN))*(1.-nearMask);}
    }
+   c*=mix(mix(vec3(.74,.77,.86),vec3(.66,.58,.68),styleDusk),vec3(1.),cloudShade(world));
    if(hazeDensity>0.){
     vec3 dir=ray/max(dist,.001);
     float travel=max(dist-hazeStart,0.),fall=hazeFalloff*dir.y,base=hazeDensity*exp(-hazeFalloff*max(eye.y,0.));
@@ -72,14 +185,37 @@ void main(){
     float toward=pow(max(dot(dir,sunDir),0.),6.);
     c=mix(c,mix(hazeColor,hazeSunColor,toward),fog);
    }
+   if(styleNight<.5){
+    float aerial=smoothstep(60.,230.,cameraWorld[3].y),start=styleWide>.5?hazeStart:mix(36.,hazeStart*.55,aerial);
+    float ap=1.-exp(-max(dist-start,0.)*(styleWide>.5?.00016:mix(.00042,.00010,aerial))*mix(.78,.60,sharper)*exp(-max(world.y,0.)/1100.));
+    vec3 apC=mix(vec3(.46,.68,.98),vec3(1.05,.60,.40),styleDusk);
+    apC=mix(apC,mix(vec3(1.05,.98,.86),vec3(1.5,.80,.42),styleDusk),pow(max(dot(ray/max(dist,.001),sunDir),0.),4.));
+    apC=mix(apC,vec3(.50,.56,.62),styleWet);c=mix(c,apC,ap);
+    if(styleDetail>.5){
+     vec3 wn=wideN(uvP);flatG=smoothstep(.72,.90,abs(wn.y));
+     edge=inkEdge(uvP,dist)*(1.-smoothstep(.60,.82,abs(wn.y)))*(1.-smoothstep(mix(220.,300.,sharper),mix(900.,1200.,sharper),dist));
+    }else flatG=.5;
+   }
+   c=mix(c,mix(vec3(.80,.90,1.02),vec3(1.20,.72,.50),styleDusk),(styleNight>.5?0.:kasumi(world,dist))*.24*mix(.8,.6,sharper));
+  }else if(styleNight<.5){
+   skyMask=1.;// 阴雨沿用自然天空的层云，只有晴天换成手绘积云。
+   if(styleWet<.5){vec3 sky=skyRay(uvP);c=sky.y<0.?cloudSea(sky):animeSky(sky);}
   }
  }
- c+=texture2D(bloomTex,uvP).rgb*strength;
+ c+=texture2D(bloomTex,uvP).rgb*(strength*(lookOn>.5?1.25:1.)+dayBloom);
+ if(lookOn>.5&&styleNight<.5&&styleDetail>.5){
+  float fade=smoothstep(.10,.72,dot(skyRay(vec2(.5)),sunDir));
+  if(fade>0.)c+=mix(vec3(1.0,.93,.78),vec3(1.4,.72,.36),styleDusk)*sunShafts(uvP,cameraWorld[3].xyz)*.11*fade;
+ }
  c=aces(c*exposure);
  if(grade>0.){
   float luma=dot(c,vec3(.2126,.7152,.0722));
   c=mix(c,mix(vec3(luma),c,1.06),grade);
   c*=mix(vec3(1.),mix(vec3(.985,.995,1.02),vec3(1.012,1.,.975),smoothstep(.08,.55,luma)),grade);
+ }
+ if(lookOn>.5){
+  if(styleNight<.5){c=gradeStrong(c,skyMask,flatG);c=mix(c,c*vec3(.42,.44,.62),edge*mix(.72,.85,sharper));}
+  else c=gradeAnime(c,skyMask);
  }
  vec3 display=srgb(clamp(c,0.,1.));
  if(grade>0.)display=mix(display,display*display*(3.-2.*display),.20*grade);
@@ -95,7 +231,7 @@ class LookRenderer extends Base{
   this.lookNoise={value:this.makeLookNoise()};
   this.farKey=null;this.farTimer=0;this.shadowDeferTimer=0;this.lastShadowAt=0;this.shadowSnap={};
   this.sun.shadow.mapSize.set(4096,4096);this.sun.shadow.radius=1.35;
-  this.setupLookOutput();
+  this.setupLookOutput();this.makeMotes();this.applyLookMsaa();this.addSharperOption();
   this.onLookContextRestored=()=>{this.farKey=null;};canvas.addEventListener('webglcontextrestored',this.onLookContextRestored);this.lookCanvas=canvas;
  }
  makeLookNoise(){
@@ -107,9 +243,32 @@ class LookRenderer extends Base{
   texture.anisotropy=Math.min(8,this.engine.capabilities.getMaxAnisotropy());texture.needsUpdate=true;
   return texture;
  }
+ // 种植树按批次中心算距离时，镜头在批次边缘会看到六边形低模，这里按批次最近边缘算。
+ levelFor(record,distance){const m=record.data;return super.levelFor(record,m.material==='landscapeLeaf'&&m.instances?Math.max(0,distance-m.radius):distance);}
+ // 轮廓由绘画滤镜接管，边缘更依赖原始采样，非低画质用 4 倍。
+ applyLookMsaa(){const t=this.sceneTarget,want=this.quality==='low'?0:4;if(t&&t.samples!==want){this.engine.setRenderTarget(null);t.dispose();t.samples=want;}}
+ setSize(w,h,dpr=1){super.setSize(w,h,dpr);this.applyLookMsaa();}
+ setQuality(q){super.setQuality(q);this.applyLookMsaa();}
+ // 默认是“清晰”档；设置面板的这一行由这里加入，不改动受保护的页面文件。
+ addSharperOption(){
+  const anchor=globalThis.document?.getElementById?.('opt-bloom')?.closest?.('label');if(!anchor)return;
+  const row=document.createElement('label'),box=document.createElement('input');
+  box.type='checkbox';box.id='opt-sharper';row.append('更清晰',box);
+  box.onchange=()=>{this.outputMat.uniforms.sharper.value=box.checked?1:0;globalThis.ATLAS?.wake?.();};
+  anchor.after(row);this.sharperRow=row;
+ }
+ makeMotes(){
+  const T=this.T,n=460,pos=new Float32Array(n*3),size=new Float32Array(n),r=G.rng(771);
+  for(let i=0;i<n;i++){pos[i*3]=r()*64;pos[i*3+1]=r()*26;pos[i*3+2]=r()*64;size[i]=.6+r();}
+  const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(pos,3));g.setAttribute('aSize',new T.BufferAttribute(size,1));
+  const m=new T.ShaderMaterial({transparent:true,depthWrite:false,blending:T.AdditiveBlending,toneMapped:false,uniforms:{uTime:this.timeUniform,uEye:{value:new T.Vector3()},uPixel:{value:1},uTint:{value:new T.Color(1.2,1.1,.8)}},
+   vertexShader:`attribute float aSize;uniform float uTime,uPixel;uniform vec3 uEye;varying float vA;void main(){vec3 q=position+vec3(sin(uTime*.31+position.z)*2.2+uTime*.9,sin(uTime*.23+position.x)*1.4+uTime*.12,cos(uTime*.27+position.y)*2.2+uTime*.35);vec3 rel=mod(q-uEye,vec3(64.,26.,64.))-vec3(32.,13.,32.);vec4 mv=viewMatrix*vec4(uEye+rel,1.);gl_Position=projectionMatrix*mv;gl_PointSize=clamp(aSize*uPixel*30./max(-mv.z,1.),2.,8.);vA=(1.-smoothstep(16.,30.,length(rel)))*(.55+.45*sin(uTime*1.7+position.x*3.));}`,
+   fragmentShader:`precision highp float;uniform vec3 uTint;varying float vA;void main(){float d=length(gl_PointCoord-.5)*2.;float a=smoothstep(1.,.15,d)*vA;if(a<.01)discard;gl_FragColor=vec4(uTint*a*.62,a);}`});
+  this.motes=new T.Points(g,m);this.motes.frustumCulled=false;this.motes.visible=false;this.moteScene=new T.Scene();this.moteScene.add(this.motes);
+ }
  setupLookOutput(){
   const T=this.T,m=this.outputMat;
-  Object.assign(m.uniforms,{sceneDepth:{value:this.sceneTarget.depthTexture},farDepth:{value:null},inverseProjection:{value:new T.Matrix4()},cameraWorld:{value:new T.Matrix4()},farMatrix:{value:new T.Matrix4()},nearMatrix:{value:new T.Matrix4()},lookOn:{value:0},hazeDensity:{value:0},hazeFalloff:{value:.0021},hazeStart:{value:0},farStrength:{value:0},nearActive:{value:0},grade:{value:0},farTexel:{value:new T.Vector2(1/3072,1/3072)},hazeColor:{value:new T.Color()},hazeSunColor:{value:new T.Color()},sunDir:{value:new T.Vector3(0,1,0)}});
+  Object.assign(m.uniforms,{sceneDepth:{value:this.sceneTarget.depthTexture},farDepth:{value:null},inverseProjection:{value:new T.Matrix4()},cameraWorld:{value:new T.Matrix4()},farMatrix:{value:new T.Matrix4()},nearMatrix:{value:new T.Matrix4()},lookOn:{value:0},hazeDensity:{value:0},hazeFalloff:{value:.0021},hazeStart:{value:0},farStrength:{value:0},nearActive:{value:0},grade:{value:0},farTexel:{value:new T.Vector2(1/3072,1/3072)},styleTime:{value:0},styleDusk:{value:0},styleNight:{value:0},styleWide:{value:0},styleWet:{value:0},styleDetail:{value:1},dayBloom:{value:0},sharper:{value:0},viewProj:{value:new T.Matrix4()},texel:{value:new T.Vector2(1/1920,1/1080)},paperTex:{value:this.lookNoise.value},hazeColor:{value:new T.Color()},hazeSunColor:{value:new T.Color()},sunDir:{value:new T.Vector3(0,1,0)}});
   m.fragmentShader=outputShader;m.needsUpdate=true;
  }
  // 同一材质可被多条记录共用：就地追加一次，后续克隆体由着色器文本判重。
@@ -120,7 +279,7 @@ class LookRenderer extends Base{
   mat.onBeforeCompile=(s,r)=>{
    prior?.call(mat,s,r);
    if(s.fragmentShader.includes('uLookNoise'))return;
-   s.uniforms.uLookNoise=this.lookNoise;s.uniforms.uLookGround=this.lookGround;
+   s.uniforms.uLookNoise=this.lookNoise;s.uniforms.uLookGround=this.lookGround;s.uniforms.uLookTime=this.timeUniform;
    s.vertexShader='varying vec3 vLookWorld;\n'+s.vertexShader;
    s.vertexShader=s.vertexShader.replace('#include <project_vertex>',`#include <project_vertex>
     vec4 lookP=vec4(transformed,1.);
@@ -128,7 +287,7 @@ class LookRenderer extends Base{
      lookP=instanceMatrix*lookP;
     #endif
     vLookWorld=(modelMatrix*lookP).xyz;`);
-   s.fragmentShader='varying vec3 vLookWorld;uniform sampler2D uLookNoise;uniform float uLookGround;\n'+s.fragmentShader;
+   s.fragmentShader='varying vec3 vLookWorld;uniform sampler2D uLookNoise;uniform float uLookGround,uLookTime;\n'+s.fragmentShader;
    if(kind!=='leaf')s.fragmentShader=s.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
     float lookMask=uLookGround*${kind==='shrineGround'?`smoothstep(${SHRINE_KEEP[0]}.,${SHRINE_KEEP[1]}.,length(vLookWorld.xz-vec2(${SHRINE[0]}.,${SHRINE[1]}.)))`:'1.'};
     if(lookMask>.001){
@@ -149,20 +308,48 @@ class LookRenderer extends Base{
      vec3 lookGrass=mix(diffuseColor.rgb,diffuseColor.rgb*vec3(.70,.83,.70),lookGreen);
      lookGrass*=mix(vec3(.86,.94,.88),vec3(1.09,1.04,.92),smoothstep(.28,.72,lookMacro))*lookGreen+vec3(.93+.14*lookMacro)*(1.-lookGreen);
      lookGrass*=1.+(lookB.g-.5)*.24*lookMid+(lookC.b-.5)*.30*lookFine;
+     vec4 e1=texture2D(uLookNoise,vLookWorld.xz/1750.+.31),e2=texture2D(uLookNoise,vLookWorld.xz/540.+.13);
+     float alt=smoothstep(55.,340.,vLookWorld.y);
+     // 魔法森林的地面整片压暗，土路按 g-r 保住。
+     float magic=1.-smoothstep(.70,1.02,length((vLookWorld.xz-vec2(-1100.,-50.))/vec2(570.,490.)));
+     float paintWood=max(smoothstep(.555,.665,e1.r*.60+e2.g*.40+alt*.34+lookSlope*.62)*lookGreen,magic*.96);
+     float paintMask=max(lookGreen,magic*.94*smoothstep(.0,.035,diffuseColor.g-diffuseColor.r*.94));
+     paintWood*=paintMask;
+     vec3 meadow=mix(vec3(.066,.165,.052),vec3(.150,.255,.072),smoothstep(.28,.72,e2.r*.6+lookB.g*.4));
+     meadow=mix(meadow,vec3(.285,.295,.105),smoothstep(.62,.84,e2.g*.55+lookA.g*.45)*.55);
+     meadow=mix(meadow,vec3(.05,.20,.10),smoothstep(.60,.82,lookA.b)*.4);
+     meadow*=1.+(lookC.b-.5)*.34*lookFine;
+     float wave=texture2D(uLookNoise,(vLookWorld.xz+vec2(uLookTime*15.,uLookTime*6.))/170.).g;
+     meadow*=1.+(wave-.5)*.42*(1.-paintWood)*lookMid;
+     float paintFade=smoothstep(120.,380.,lookDist);
+     // 单层噪声俯瞰时成格子，用旋转加不同周期的两层打散；不要用大幅扭曲，会出等高线花纹。
+     vec2 rotW=vec2(vLookWorld.x*.8-vLookWorld.z*.6,vLookWorld.x*.6+vLookWorld.z*.8);
+     vec4 c1=mix(texture2D(uLookNoise,rotW/53.),texture2D(uLookNoise,vLookWorld.xz/37.3+.37),.5)*1.25-.125,c2=mix(texture2D(uLookNoise,rotW/13.7+.21),texture2D(uLookNoise,vLookWorld.xz/9.1),.5);
+     float clump=smoothstep(.32,.70,c1.r*.62+c2.g*.38);
+     vec3 canopy=mix(vec3(.012,.042,.040),vec3(.085,.170,.055),clump);
+     vec3 woodFloor=mix(vec3(.030,.062,.032),vec3(.088,.094,.042),lookB.g*.7+lookC.b*.3);
+     lookGrass=mix(lookGrass,mix(meadow,mix(woodFloor,canopy,paintFade),paintWood),paintMask);
+     vec2 paintTilt=(c1.rg-.5)*1.25*paintWood*paintFade;
      // 陡坡露出土岩，以噪声打散边界。
      float lookRock=smoothstep(.34,.72,lookSlope+(lookB.r-.5)*.30+(lookC.g-.5)*.12);
      lookGrass=mix(lookGrass,vec3(lookLuma)*vec3(.90,.84,.76)*(.80+.34*lookB.g),lookRock*.62);
      diffuseColor.rgb=mix(lookOriginal,lookGrass,lookMask);
-     vec2 lookTilt=((texture2D(uLookNoise,vLookWorld.xz/2.9).ab-.5)*lookFine*.46+(lookC.rg-.5)*lookMid*.30)*lookW.y;
+     vec2 lookTilt=((texture2D(uLookNoise,vLookWorld.xz/2.9).ab-.5)*lookFine*.46+(lookC.rg-.5)*lookMid*.30)*lookW.y+paintTilt;
      normal=normalize(lookBaseNormal+(viewMatrix*vec4(lookTilt.x,0.,lookTilt.y,0.)).xyz*lookMask);
     }`);
    if(kind==='leaf'){
     s.fragmentShader=s.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
      if(uLookGround>.5){
-      // 碎叶片法线向上收拢，避免相邻面明暗翻转成纸片感；同时给树冠上下明暗。
-      normal=normalize(mix(normal,(viewMatrix*vec4(0.,1.,0.,0.)).xyz,.16));
       vec4 lookLeaf=texture2D(uLookNoise,vLookWorld.xz/23.+vLookWorld.y/41.);
       diffuseColor.rgb*=.84+.34*lookLeaf.g;
+      vec4 tone=texture2D(uLookNoise,vLookWorld.xz/170.+.47);
+      vec3 deep=diffuseColor.rgb*vec3(.50,.72,.52);
+      diffuseColor.rgb=mix(deep,deep*vec3(1.55,1.22,.72),smoothstep(.38,.70,tone.r));
+      // 法线改由世界空间噪声决定：一团一团受光，不再看得出单片叶子的朝向。
+      vec4 blobA=texture2D(uLookNoise,vLookWorld.xz/10.5+vLookWorld.y/15.),blobB=texture2D(uLookNoise,vLookWorld.xz/3.6-vLookWorld.y/6.);
+      vec3 blobN=normalize(vec3((blobA.r-.5)*1.9+(blobB.g-.5)*.8,.85,(blobA.g-.5)*1.9+(blobB.r-.5)*.8));
+      normal=normalize((viewMatrix*vec4(blobN,0.)).xyz);
+      diffuseColor.rgb=mix(diffuseColor.rgb,vec3(dot(diffuseColor.rgb,vec3(.3,.59,.11)))*vec3(.70,1.22,.62),.35);
      }`);
     s.fragmentShader=s.fragmentShader.replace('#include <lights_fragment_end>',`#include <lights_fragment_end>
      #if NUM_DIR_LIGHTS>0
@@ -173,7 +360,7 @@ class LookRenderer extends Base{
      #endif`);
    }
   };
-  mat.customProgramCacheKey=()=>(key?key():'')+'-look-1-'+kind;mat.needsUpdate=true;
+  mat.customProgramCacheKey=()=>(key?key():'')+'-look-2-'+kind;mat.needsUpdate=true;
   return mat;
  }
  material(m){
@@ -191,7 +378,7 @@ class LookRenderer extends Base{
   const surface=(opts.space||'surface')==='surface'&&!opts.cutaway;
   this.lookGround.value=surface?1:0;
   if(!surface)return;
-  const clear=(opts.weather||'clear')==='clear';
+  const clear=(opts.weather||'clear')==='clear';if(this.sun.shadow.intensity>0)this.sun.shadow.intensity=.70;
   if(opts.lighting==='neutral'){
    this.sun.color.set(clear?0xfff0da:0xfff4e4);this.sun.intensity=clear?2.6:opts.weather==='cloudy'?1.25:.28;
    this.hemisphere.color.set(clear?0xb4d4f4:0xc4d4e0);this.hemisphere.groundColor.set(0x8f9a6e);this.hemisphere.intensity=clear?.80:opts.weather==='cloudy'?1.02:1.0;
@@ -213,6 +400,13 @@ class LookRenderer extends Base{
  post(enabled,exposure){
   const u=this.outputMat.uniforms,o=this.currentOptions,surface=(o.space||'surface')==='surface'&&!o.cutaway;
   u.lookOn.value=surface?1:0;u.grade.value=surface&&o.lighting!=='night'?1:0;
+  u.styleTime.value=this.timeUniform.value;u.styleDusk.value=o.lighting==='dusk'?1:0;u.styleNight.value=o.lighting==='night'?1:0;
+  u.styleWide.value=o.displayMode==='atlas'?1:0;u.styleWet.value=o.weather==='rain'||o.weather==='cloudy'?1:0;u.styleDetail.value=this.quality==='low'?0:1;
+  u.viewProj.value.multiplyMatrices(this.camera.projectionMatrix,this.camera.matrixWorldInverse);
+  u.texel.value.set(1/this.sceneTarget.width,1/this.sceneTarget.height);
+  this.brightMat.uniforms.threshold.value=surface&&o.lighting!=='night'?.98:1.25;
+  const dayGlow=surface&&enabled&&o.lighting==='neutral';
+  u.dayBloom.value=dayGlow?(u.sharper.value>.5?.13:.18):0;if(dayGlow)this.dayBloomPass();
   if(surface){
    this.lookHaze(o,G.length(G.sub(o.lookEye||[0,0,0],o.lookTarget||[0,0,0])));
    u.inverseProjection.value.copy(this.camera.projectionMatrixInverse);
@@ -227,7 +421,13 @@ class LookRenderer extends Base{
   }else{u.farStrength.value=0;u.hazeDensity.value=0;}
   // 全新曝光链：日光比提高后整体略收。
   const scale=surface&&o.lighting==='neutral'?.95:1;
-  return super.post(enabled,exposure*scale);
+  return super.post(enabled,exposure*scale)+(dayGlow?3:0);
+ }
+ dayBloomPass(){
+  const e=this.engine,blur=this.blurMat.uniforms;
+  this.quad.material=this.brightMat;e.setRenderTarget(this.blurA);e.render(this.postScene,this.postCamera);
+  this.quad.material=this.blurMat;blur.tex.value=this.blurA.texture;blur.dir.value.set(1/this.blurA.width,0);e.setRenderTarget(this.blurB);e.render(this.postScene,this.postCamera);
+  blur.tex.value=this.blurB.texture;blur.dir.value.set(0,1/this.blurA.height);e.setRenderTarget(this.blurA);e.render(this.postScene,this.postCamera);
  }
  lookFarKey(o){return (this.weatherSunOffset||[]).join(',')+'|'+this.quality;}
  // 全岛静态太阳深度：只含地形，山体投影覆盖整岛；太阳方向不变时不重绘。
@@ -299,14 +499,19 @@ class LookRenderer extends Base{
   s.shadow.normalBias=G.clamp(texel*1.15,.05,.9);
  }
  render(rig,opts={}){
+  const lowOverGround=rig.eye[1]-(this.world?.terrain?.height(rig.eye[0],rig.eye[2])??Infinity)<26;
+  const motes=this.motes.visible=this.quality!=='low'&&!this.planOnly&&opts.motion!==false&&(opts.space||'surface')==='surface'&&opts.displayMode!=='atlas'&&opts.lighting!=='night'&&(opts.weather||'clear')==='clear'&&lowOverGround;
+  if(motes){const u=this.motes.material.uniforms;u.uEye.value.fromArray(rig.eye);u.uPixel.value=this.engine.getPixelRatio();u.uTint.value.setRGB(...(opts.lighting==='dusk'?[1.5,.85,.42]:[1.2,1.1,.8]));}
   super.render(rig,{...opts,lookEye:rig.eye,lookTarget:rig.target});
+  // 光点叠在后期之后，否则几像素的点会被绘画滤镜抹掉。
+  if(motes&&!this.contextLost){const e=this.engine,keep=e.autoClear;e.autoClear=false;e.setRenderTarget(null);e.render(this.moteScene,this.camera);e.autoClear=keep;}
   const o=this.currentOptions;
   if(!this.planOnly&&!this.farTimer&&this.quality!=='low'&&(o?.space||'surface')==='surface'&&this.farKey!==this.lookFarKey(o))
    this.farTimer=setTimeout(()=>this.renderFarShadow(),globalThis.ATLAS_TEST_PAUSE?0:240);
  }
  dispose(){
   clearTimeout(this.farTimer);clearTimeout(this.shadowDeferTimer);this.lookCanvas.removeEventListener('webglcontextrestored',this.onLookContextRestored);
-  this.lookNoise.value.dispose();this.farDepthMaterial?.dispose();this.farTarget?.depthTexture?.dispose();this.farTarget?.dispose();super.dispose();
+  this.sharperRow?.remove();this.motes.geometry.dispose();this.motes.material.dispose();this.lookNoise.value.dispose();this.farDepthMaterial?.dispose();this.farTarget?.depthTexture?.dispose();this.farTarget?.dispose();super.dispose();
  }
 }
 G.DioramaRenderer=LookRenderer;

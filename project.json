@@ -76,6 +76,7 @@
     "src/muenzuka-edge-renderer.js",
     "src/forest-pilot-renderer.js",
     "src/forest-pilot-batching.js",
+    "src/camera-feel.js",
     "src/render-look.js",
     "src/render-programs.js"
   ],
