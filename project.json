@@ -1,6 +1,6 @@
 {
-  "version": "0.29.0",
-  "title": "伪天棚 · 残雪高地与驹草旧屋",
+  "version": "0.30.0",
+  "title": "画风重整",
   "threeRevision": "185",
   "worldBuilders": [
     "src/world-builder.js",

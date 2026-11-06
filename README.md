@@ -4,6 +4,10 @@
 
 在线体验：[幻想乡立体风物志](https://tianyin231.github.io/TouhouGensokyoAtlas/)。下载版本请到 [Releases](https://github.com/tianyin231/TouhouGensokyoAtlas/releases) 获取 HTML。仓库维护当前源码和必需资源，完整 HTML 是构建产物。
 
+## 画风重整（0.30.0）
+
+地表定稿二次元动画背景画风，并延伸到天界、冥界、月都、彼岸、魔界等全部异界空间。修了放错位置的模型和被挡住的机位，切换空间时有隙间转场。界面改成浮在画上的细字，鼠标停下后控件退下。实现和验收状态见[当前状态](docs/current-status.md)与[画面方向重审](docs/art-direction-review.md)。
+
 ## 逐区画面升级：博丽神社试点
 
 在 v0.29 高地版本上合入神社的木石瓦材质、立面进深、枝叶与庭院植被、周边林带过渡，以及可切换的月光夜景。晴天仍为默认；夜晚的暖灯与纸门目前仅对神社精调。后续区域按[画面升级策略](docs/visual-upgrade.md)逐步推进，保留各自建筑和环境特色。

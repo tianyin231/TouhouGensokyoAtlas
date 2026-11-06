@@ -16,7 +16,7 @@ project.json + src/index.html/styles.css
 
 命令是 `python tools/build.py`，随后 `node tools/check.mjs`。Python构建不读取旧HTML／Git历史、不临时下载依赖。`dist/` 是产物，不人工修改或提交；使用标签与Release分发成品，不恢复根目录版本化HTML集合。
 
-`project.json` 当前为0.29.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`、`src/landscape.js`、`src/animal.js`、`src/backdoor.js`、`src/kasen.js`、`src/current-hell.js`、`src/rainbow-mine.js`、`src/highland.js`、`src/hakurei-plants.js`、`src/hakurei-transition.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
+`project.json` 当前为0.30.0、Three.js185，worldBuilders依次为 `src/world-builder.js`、`src/old-hell.js`、`src/kishinjou.js`、`src/lunar.js`、`src/makai.js`、`src/netherworld.js`、`src/landmarks.js`、`src/heaven.js`、`src/higan.js`、`src/landscape.js`、`src/animal.js`、`src/backdoor.js`、`src/kasen.js`、`src/current-hell.js`、`src/rainbow-mine.js`、`src/highland.js`、`src/hakurei-plants.js`、`src/hakurei-transition.js`。构建将同一建模字符串写入主线程和Worker；新增模块必须登记顺序，不能手工维护两个不同副本。模板 `{{...}}` 不是可直接运行的页面。
 
 神社精修的渲染尾链为 `HighlandRenderer → HakureiRenderer → NightRenderer`，具体由 `src/index.html` 与 `tools/build.py` 接入，不能只登记建模模块。`NightRenderer` 仅在地表夜晚覆盖光照，离开时恢复环境强度、环境光颜色、天空及灯参数；高地室内补光和独立空间继续走原继承链。神社总览通过 `node tools/update-hakurei-overview.mjs` 显式更新，不由普通构建或测试重写；其余源包几何受保护。材质、LOD与灯光预算见[画面升级策略](visual-upgrade.md)。
 
