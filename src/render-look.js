@@ -1,6 +1,6 @@
 /* 地表整体光影与画风：统一日光比、空气透视、全岛地形远距阴影、地表与树冠的细节，
  * 以及 2026-11-05 用户定稿的二次元动画背景画风（绘画滤镜、分层光影、手绘积云、彩色轮廓线）。
- * 只作用于连续地表；独立空间沿用各自的天空、灯光与色调。
+ * 这里的地表调整只作用于连续地表；独立空间的色调、天穹和地面画笔在 src/realm-look.js。
  * 所有细节来自一张程序生成的噪声纹理，不引入外部贴图或新几何。 */
 (function(G){'use strict';
 const Base=G.DioramaRenderer;
@@ -40,6 +40,8 @@ vec3 aces(vec3 x){return clamp((x*(2.51*x+.03))/(x*(2.43*x+.59)+.14),0.,1.);}
 vec3 srgb(vec3 x){return mix(x*12.92,1.055*pow(max(x,vec3(0.)),vec3(1./2.4))-.055,step(vec3(.0031308),x));}
 
 uniform float sharper,styleTime,styleDusk,styleNight,styleWide,styleWet,styleDetail,dayBloom;uniform vec2 texel;uniform mat4 viewProj;uniform sampler2D paperTex;
+// 独立空间沿用同一套画风，色调由 src/realm-look.js 按空间给出；地表保持下面的默认值。
+uniform float realmOn,realmApStart,realmApDensity,realmShaft,realmGain;uniform vec2 realmFade;uniform vec3 realmHaze,shadeTint,shadeLift,highTint,inkTint,realmShaftColor;uniform vec2 satGain;
 float viewZ(vec2 uv){vec4 v=inverseProjection*vec4(0.,0.,texture2D(sceneDepth,uv).r*2.-1.,1.);return max(-v.z/v.w,.01);}
 // 四象限 Kuwahara：取方差最小的象限均值，把细碎多边形合成一笔一笔的色块。
 vec3 kuwa(vec2 uv,int r){
@@ -133,9 +135,9 @@ vec3 gradeStrong(vec3 c,float sky,float flatG){
   float nl=mix(l,r,mix(.62,.20,flatG));
   c*=nl/max(l,.004);l=nl;
  }
- c=mix(vec3(l),c,mix(mix(1.16,1.07,flatG),1.06,sky));
- c=mix(c*vec3(.70,.78,1.12)+vec3(.012,.018,.045),c,smoothstep(.02,.34,l));
- c*=mix(vec3(1.),vec3(1.06,1.02,.93),smoothstep(.42,.90,l)*(1.-sky));
+ c=mix(vec3(l),c,mix(mix(satGain.x,satGain.y,flatG),1.06,sky));
+ c=mix(c*shadeTint+shadeLift,c,smoothstep(.02,.34,l));
+ c*=mix(vec3(1.),highTint,smoothstep(.42,.90,l)*(1.-sky));
  return max(c,vec3(0.));
 }
 float farShadow(vec3 p,vec3 n){
@@ -176,7 +178,7 @@ void main(){
     float nearMask=nearActive*(1.-smoothstep(.72,.98,max(near.x,near.y)));
     if(nearMask<.999){vec3 faceN=normalize(cross(dFdx(world),dFdy(world)));if(dot(faceN,ray)>0.)faceN=-faceN;c*=1.-farStrength*(1.-farShadow(world,faceN))*(1.-nearMask);}
    }
-   c*=mix(mix(vec3(.74,.77,.86),vec3(.66,.58,.68),styleDusk),vec3(1.),cloudShade(world));
+   if(realmOn<.5)c*=mix(mix(vec3(.74,.77,.86),vec3(.66,.58,.68),styleDusk),vec3(1.),cloudShade(world));
    if(hazeDensity>0.){
     vec3 dir=ray/max(dist,.001);
     float travel=max(dist-hazeStart,0.),fall=hazeFalloff*dir.y,base=hazeDensity*exp(-hazeFalloff*max(eye.y,0.));
@@ -185,7 +187,14 @@ void main(){
     float toward=pow(max(dot(dir,sunDir),0.),6.);
     c=mix(c,mix(hazeColor,hazeSunColor,toward),fog);
    }
-   if(styleNight<.5){
+   if(realmOn>.5){
+    float ap=max(1.-exp(-max(dist-realmApStart,0.)*realmApDensity),smoothstep(realmFade.x,realmFade.y,dist));
+    c=mix(c,realmHaze,ap);
+    if(styleDetail>.5){
+     vec3 wn=wideN(uvP);flatG=smoothstep(.72,.90,abs(wn.y));
+     edge=inkEdge(uvP,dist)*(1.-smoothstep(.60,.82,abs(wn.y)))*(1.-smoothstep(mix(220.,300.,sharper),mix(900.,1200.,sharper),dist));
+    }else flatG=.5;
+   }else if(styleNight<.5){
     float aerial=smoothstep(60.,230.,cameraWorld[3].y),start=styleWide>.5?hazeStart:mix(36.,hazeStart*.55,aerial);
     float ap=1.-exp(-max(dist-start,0.)*(styleWide>.5?.00016:mix(.00042,.00010,aerial))*mix(.78,.60,sharper)*exp(-max(world.y,0.)/1100.));
     vec3 apC=mix(vec3(.46,.68,.98),vec3(1.05,.60,.40),styleDusk);
@@ -196,25 +205,26 @@ void main(){
      edge=inkEdge(uvP,dist)*(1.-smoothstep(.60,.82,abs(wn.y)))*(1.-smoothstep(mix(220.,300.,sharper),mix(900.,1200.,sharper),dist));
     }else flatG=.5;
    }
-   c=mix(c,mix(vec3(.80,.90,1.02),vec3(1.20,.72,.50),styleDusk),(styleNight>.5?0.:kasumi(world,dist))*.24*mix(.8,.6,sharper));
-  }else if(styleNight<.5){
+   if(realmOn<.5)c=mix(c,mix(vec3(.80,.90,1.02),vec3(1.20,.72,.50),styleDusk),(styleNight>.5?0.:kasumi(world,dist))*.24*mix(.8,.6,sharper));
+  }else if(realmOn>.5)skyMask=1.;// 天空已由 realm-look 的手绘天穹画好。
+  else if(styleNight<.5){
    skyMask=1.;// 阴雨沿用自然天空的层云，只有晴天换成手绘积云。
    if(styleWet<.5){vec3 sky=skyRay(uvP);c=sky.y<0.?cloudSea(sky):animeSky(sky);}
   }
  }
  c+=texture2D(bloomTex,uvP).rgb*(strength*(lookOn>.5?1.25:1.)+dayBloom);
- if(lookOn>.5&&styleNight<.5&&styleDetail>.5){
+ if(lookOn>.5&&styleNight<.5&&styleDetail>.5&&(realmOn<.5||realmShaft>0.)){
   float fade=smoothstep(.10,.72,dot(skyRay(vec2(.5)),sunDir));
-  if(fade>0.)c+=mix(vec3(1.0,.93,.78),vec3(1.4,.72,.36),styleDusk)*sunShafts(uvP,cameraWorld[3].xyz)*.11*fade;
+  if(fade>0.)c+=(realmOn>.5?realmShaftColor:mix(vec3(1.0,.93,.78),vec3(1.4,.72,.36),styleDusk))*sunShafts(uvP,cameraWorld[3].xyz)*(realmOn>.5?realmShaft:.11)*fade;
  }
- c=aces(c*exposure);
+ c=aces(c*exposure*realmGain);
  if(grade>0.){
   float luma=dot(c,vec3(.2126,.7152,.0722));
   c=mix(c,mix(vec3(luma),c,1.06),grade);
   c*=mix(vec3(1.),mix(vec3(.985,.995,1.02),vec3(1.012,1.,.975),smoothstep(.08,.55,luma)),grade);
  }
  if(lookOn>.5){
-  if(styleNight<.5){c=gradeStrong(c,skyMask,flatG);c=mix(c,c*vec3(.42,.44,.62),edge*mix(.72,.85,sharper));}
+  if(styleNight<.5||realmOn>.5){c=gradeStrong(c,skyMask,flatG);c=mix(c,c*inkTint,edge*mix(.72,.85,sharper));}
   else c=gradeAnime(c,skyMask);
  }
  vec3 display=srgb(clamp(c,0.,1.));
@@ -223,11 +233,41 @@ void main(){
  gl_FragColor=vec4(display*vig,1.);
 }`;
 
+// 独立空间的地面：不换绿，只按本空间的色板铺大色块、颜料斑和陡坡岩层，并打散低模折面。
+const REALM_GROUND=`if(uRealmPaint>.5){
+ float rDist=length(vViewPosition),rFine=1.-smoothstep(30.,170.,rDist),rMid=1.-smoothstep(200.,1100.,rDist);
+ vec3 rN=inverseTransformDirection(normal,viewMatrix),rW=pow(abs(rN),vec3(4.));rW/=rW.x+rW.y+rW.z;
+ vec4 rA=texture2D(uLookNoise,vLookWorld.xz/410.);
+ vec4 rB=texture2D(uLookNoise,vLookWorld.zy/67.)*rW.x+texture2D(uLookNoise,vLookWorld.xz/67.)*rW.y+texture2D(uLookNoise,vLookWorld.xy/67.)*rW.z;
+ vec4 rC=texture2D(uLookNoise,vLookWorld.zy/9.3)*rW.x+texture2D(uLookNoise,vLookWorld.xz/9.3)*rW.y+texture2D(uLookNoise,vLookWorld.xy/9.3)*rW.z;
+ float rSlope=1.-clamp(rN.y,0.,1.);
+ vec3 rc=diffuseColor.rgb*mix(uRealmLo,uRealmHi,smoothstep(.28,.72,rA.r*.62+rB.g*.38));
+ rc*=1.+(rB.g-.5)*.28*rMid+(rC.b-.5)*.32*rFine;
+ vec2 rRot=vec2(vLookWorld.x*.8-vLookWorld.z*.6,vLookWorld.x*.6+vLookWorld.z*.8);
+ float rDabN=texture2D(uLookNoise,vLookWorld.xz/uRealmDabP.z).r*.40+texture2D(uLookNoise,rRot/(uRealmDabP.z*2.63)+.37).g*.34+rB.g*.26;
+ float rDab=smoothstep(uRealmDabP.x,uRealmDabP.y,rDabN+(rC.b-.5)*.10*rFine)*(1.-smoothstep(.22,.50,rSlope));
+ rc=mix(rc,uRealmDab*(.82+.36*rC.g),rDab*uRealmDabP.w);
+ float rRock=smoothstep(.30,.66,rSlope+(rB.r-.5)*.30+(rC.g-.5)*.12);
+ float rStrata=.5+.5*sin(vLookWorld.y*.21+(rB.g-.5)*9.);
+ rc=mix(rc,rc*uRealmRock*(.72+.40*rStrata),rRock*.72);
+ diffuseColor.rgb=rc;
+ vec2 rTilt=(texture2D(uLookNoise,vLookWorld.xz/2.9).ab-.5)*rFine*.40+(rC.rg-.5)*rFine*.34+(rB.rg-.5)*.30*rMid;
+ normal=normalize(mix(normal,(viewMatrix*vec4(0.,1.,0.,0.)).xyz,.18*(1.-rRock))+(viewMatrix*vec4(rTilt.x,0.,rTilt.y,0.)).xyz);
+}`;
+// 独立空间的树冠：保留本来的颜色，受光改成一团一团。
+const REALM_LEAF=`if(uRealmPaint>.5){
+ vec4 rBlobA=texture2D(uLookNoise,vLookWorld.xz/10.5+vLookWorld.y/15.),rBlobB=texture2D(uLookNoise,vLookWorld.xz/3.6-vLookWorld.y/6.);
+ vec3 rLeafN=normalize(inverseTransformDirection(normal,viewMatrix)*.72+vec3((rBlobA.r-.5)*1.5+(rBlobB.g-.5)*.7,.32,(rBlobA.g-.5)*1.5+(rBlobB.r-.5)*.7));
+ normal=normalize((viewMatrix*vec4(rLeafN,0.)).xyz);
+ diffuseColor.rgb*=.86+.30*rBlobA.b;
+}`;
+
 class LookRenderer extends Base{
  constructor(T,canvas,world){
   super(T,canvas,world);
   this.lookPatched=new WeakSet();
   this.lookGround={value:1};
+  this.realmU={paint:{value:0},lo:{value:new T.Vector3(1,1,1)},hi:{value:new T.Vector3(1,1,1)},dab:{value:new T.Vector3(1,1,1)},dabP:{value:new T.Vector4(.6,.8,120,0)},rock:{value:new T.Vector3(.8,.82,.9)}};
   this.lookNoise={value:this.makeLookNoise()};
   this.farKey=null;this.farTimer=0;this.shadowDeferTimer=0;this.lastShadowAt=0;this.shadowSnap={};
   this.sun.shadow.mapSize.set(4096,4096);this.sun.shadow.radius=1.35;
@@ -281,7 +321,7 @@ class LookRenderer extends Base{
  }
  setupLookOutput(){
   const T=this.T,m=this.outputMat;
-  Object.assign(m.uniforms,{sceneDepth:{value:this.sceneTarget.depthTexture},farDepth:{value:null},inverseProjection:{value:new T.Matrix4()},cameraWorld:{value:new T.Matrix4()},farMatrix:{value:new T.Matrix4()},nearMatrix:{value:new T.Matrix4()},lookOn:{value:0},hazeDensity:{value:0},hazeFalloff:{value:.0021},hazeStart:{value:0},farStrength:{value:0},nearActive:{value:0},grade:{value:0},farTexel:{value:new T.Vector2(1/3072,1/3072)},styleTime:{value:0},styleDusk:{value:0},styleNight:{value:0},styleWide:{value:0},styleWet:{value:0},styleDetail:{value:1},dayBloom:{value:0},sharper:{value:0},viewProj:{value:new T.Matrix4()},texel:{value:new T.Vector2(1/1920,1/1080)},paperTex:{value:this.lookNoise.value},hazeColor:{value:new T.Color()},hazeSunColor:{value:new T.Color()},sunDir:{value:new T.Vector3(0,1,0)}});
+  Object.assign(m.uniforms,{sceneDepth:{value:this.sceneTarget.depthTexture},farDepth:{value:null},inverseProjection:{value:new T.Matrix4()},cameraWorld:{value:new T.Matrix4()},farMatrix:{value:new T.Matrix4()},nearMatrix:{value:new T.Matrix4()},lookOn:{value:0},hazeDensity:{value:0},hazeFalloff:{value:.0021},hazeStart:{value:0},farStrength:{value:0},nearActive:{value:0},grade:{value:0},farTexel:{value:new T.Vector2(1/3072,1/3072)},styleTime:{value:0},styleDusk:{value:0},styleNight:{value:0},styleWide:{value:0},styleWet:{value:0},styleDetail:{value:1},dayBloom:{value:0},sharper:{value:0},realmOn:{value:0},realmGain:{value:1},realmFade:{value:new T.Vector2(1e6,2e6)},realmApStart:{value:0},realmApDensity:{value:0},realmShaft:{value:0},realmHaze:{value:new T.Color()},realmShaftColor:{value:new T.Color()},shadeTint:{value:new T.Vector3()},shadeLift:{value:new T.Vector3()},highTint:{value:new T.Vector3()},inkTint:{value:new T.Vector3()},satGain:{value:new T.Vector2()},viewProj:{value:new T.Matrix4()},texel:{value:new T.Vector2(1/1920,1/1080)},paperTex:{value:this.lookNoise.value},hazeColor:{value:new T.Color()},hazeSunColor:{value:new T.Color()},sunDir:{value:new T.Vector3(0,1,0)}});
   m.fragmentShader=outputShader;m.needsUpdate=true;
  }
  // 同一材质可被多条记录共用：就地追加一次，后续克隆体由着色器文本判重。
@@ -300,8 +340,18 @@ class LookRenderer extends Base{
      lookP=instanceMatrix*lookP;
     #endif
     vLookWorld=(modelMatrix*lookP).xyz;`);
-   s.fragmentShader='varying vec3 vLookWorld;uniform sampler2D uLookNoise;uniform float uLookGround,uLookTime;\n'+s.fragmentShader;
-   if(kind!=='leaf')s.fragmentShader=s.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
+   const R=this.realmU;Object.assign(s.uniforms,{uRealmPaint:R.paint,uRealmLo:R.lo,uRealmHi:R.hi,uRealmDab:R.dab,uRealmDabP:R.dabP,uRealmRock:R.rock});
+   s.fragmentShader='varying vec3 vLookWorld;uniform sampler2D uLookNoise;uniform float uLookGround,uLookTime,uRealmPaint;uniform vec3 uRealmLo,uRealmHi,uRealmDab,uRealmRock;uniform vec4 uRealmDabP;\n'+s.fragmentShader;
+   // 大面积金顶没有瓦的起伏，会读成一块黄木板：朝上的面压出瓦垄。只在异界生效。
+   if(kind==='realmRoof')s.fragmentShader=s.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
+    if(uRealmPaint>.5){vec3 rtN=inverseTransformDirection(normal,viewMatrix);float rtUp=smoothstep(.55,.8,rtN.y)*(1.-smoothstep(120.,320.,length(vViewPosition)));
+     if(rtUp>.001){float rtV=1.-smoothstep(.72,.98,abs(fract(vLookWorld.x/1.5)-.5)*2.),rtH=1.-smoothstep(.86,.98,abs(fract(vLookWorld.z/3.1)-.5)*2.);
+      diffuseColor.rgb*=mix(1.,(.56+.52*rtV)*(.82+.18*rtH),rtUp);}}`);
+   if(kind==='ground'||kind==='realmGround')s.fragmentShader=s.fragmentShader.replace('#include <normal_fragment_maps>','#include <normal_fragment_maps>\n'+REALM_GROUND);
+   if(kind==='leaf'||kind==='realmLeaf'||kind==='realmCard')s.fragmentShader=s.fragmentShader.replace('#include <normal_fragment_maps>','#include <normal_fragment_maps>\n'+REALM_LEAF);
+   // 低模树冠收进绒叶卡片里面，只当暗部，不露折面。
+   if(kind==='realmLeaf'){s.vertexShader=s.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\ntransformed-=objectNormal*.42;');s.fragmentShader=s.fragmentShader.replace('#include <color_fragment>','#include <color_fragment>\ndiffuseColor.rgb*=.80;');}
+   if(kind==='ground'||kind==='shrineGround')s.fragmentShader=s.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
     float lookMask=uLookGround*${kind==='shrineGround'?`smoothstep(${SHRINE_KEEP[0]}.,${SHRINE_KEEP[1]}.,length(vLookWorld.xz-vec2(${SHRINE[0]}.,${SHRINE[1]}.)))`:'1.'};
     if(lookMask>.001){
      vec3 lookOriginal=diffuseColor.rgb,lookBaseNormal=normal;
@@ -373,7 +423,7 @@ class LookRenderer extends Base{
      #endif`);
    }
   };
-  mat.customProgramCacheKey=()=>(key?key():'')+'-look-2-'+kind;mat.needsUpdate=true;
+  mat.customProgramCacheKey=()=>(key?key():'')+'-look-4-'+kind;mat.needsUpdate=true;
   return mat;
  }
  material(m){
@@ -411,20 +461,23 @@ class LookRenderer extends Base{
   u.hazeStart.value=wide?distance*.70:Math.min(420,distance*.75);
  }
  post(enabled,exposure){
-  const u=this.outputMat.uniforms,o=this.currentOptions,surface=(o.space||'surface')==='surface'&&!o.cutaway;
-  u.lookOn.value=surface?1:0;u.grade.value=surface&&o.lighting!=='night'?1:0;
-  u.styleTime.value=this.timeUniform.value;u.styleDusk.value=o.lighting==='dusk'?1:0;u.styleNight.value=o.lighting==='night'?1:0;
-  u.styleWide.value=o.displayMode==='atlas'?1:0;u.styleWet.value=o.weather==='rain'||o.weather==='cloudy'?1:0;u.styleDetail.value=this.quality==='low'?0:1;
+  const u=this.outputMat.uniforms,o=this.currentOptions,surface=(o.space||'surface')==='surface'&&!o.cutaway,realm=surface?null:this.realmTone(o,u);
+  u.lookOn.value=surface||realm?1:0;u.realmOn.value=realm?1:0;u.grade.value=surface&&o.lighting!=='night'?1:0;
+  if(!realm)this.surfaceTone(u);
+  u.styleTime.value=this.timeUniform.value;u.styleDusk.value=!realm&&o.lighting==='dusk'?1:0;u.styleNight.value=!realm&&o.lighting==='night'?1:0;
+  u.styleWide.value=o.displayMode==='atlas'?1:0;u.styleWet.value=!realm&&(o.weather==='rain'||o.weather==='cloudy')?1:0;u.styleDetail.value=this.quality==='low'?0:1;
   u.viewProj.value.multiplyMatrices(this.camera.projectionMatrix,this.camera.matrixWorldInverse);
   u.texel.value.set(1/this.sceneTarget.width,1/this.sceneTarget.height);
-  this.brightMat.uniforms.threshold.value=surface&&o.lighting!=='night'?.98:1.25;
-  const dayGlow=surface&&enabled&&o.lighting==='neutral';
-  u.dayBloom.value=dayGlow?(u.sharper.value>.5?.13:.18):0;if(dayGlow)this.dayBloomPass();
-  if(surface){
-   this.lookHaze(o,G.length(G.sub(o.lookEye||[0,0,0],o.lookTarget||[0,0,0])));
+  this.brightMat.uniforms.threshold.value=realm?realm.bloomAt:surface&&o.lighting!=='night'?.98:1.25;
+  const dayGlow=enabled&&(realm?realm.glow>0:surface&&o.lighting==='neutral');
+  u.dayBloom.value=dayGlow?(realm?realm.glow:u.sharper.value>.5?.13:.18):0;if(dayGlow)this.dayBloomPass();
+  if(surface||realm){
    u.inverseProjection.value.copy(this.camera.projectionMatrixInverse);
    u.cameraWorld.value.copy(this.camera.matrixWorld);
    u.sunDir.value.fromArray(this.weatherSunOffset||[-430,760,320]).normalize();
+  }
+  if(surface){
+   this.lookHaze(o,G.length(G.sub(o.lookEye||[0,0,0],o.lookTarget||[0,0,0])));
    const sunShadow=this.sun.castShadow&&this.sun.shadow.intensity>0;
    u.nearActive.value=sunShadow?1:0;
    if(sunShadow)u.nearMatrix.value.copy(this.sun.shadow.matrix);
@@ -436,6 +489,9 @@ class LookRenderer extends Base{
   const scale=surface&&o.lighting==='neutral'?.95:1;
   return super.post(enabled,exposure*scale)+(dayGlow?3:0);
  }
+ // 地表的色调；数值就是 2026-11-05 用户定稿的结果。
+ surfaceTone(u){u.realmGain.value=1;u.shadeTint.value.set(.70,.78,1.12);u.shadeLift.value.set(.012,.018,.045);u.highTint.value.set(1.06,1.02,.93);u.inkTint.value.set(.42,.44,.62);u.satGain.value.set(1.16,1.07);}
+ realmTone(){return null;}
  dayBloomPass(){
   const e=this.engine,blur=this.blurMat.uniforms;
   this.quad.material=this.brightMat;e.setRenderTarget(this.blurA);e.render(this.postScene,this.postCamera);

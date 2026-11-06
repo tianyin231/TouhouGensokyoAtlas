@@ -270,7 +270,7 @@ function th01(far=false){const B=bank('makai01',far),R=G.rng(100928),h=(x,z)=>14
  const cross=B.get('sanctuary','makaiMetal');cross.box(0,88,-294,3.2,29,3.2,C.pale);cross.box(0,103,-294,18,3,3.2,C.pale);
  for(const x of[-83,83]){
   const t=B.get('bellTowers');t.box(x,25,-324,24,56,29,C.ochre);arch(B,'bellTowers',x,81,-324,18,23,7,far);gable(B,'bellTowers',x,105,-324,33,38,18,far);
-  t.box(x,52,-436,15,21,23,C.ochre);
+  t.box(x,25,-436,15,48,23,C.ochre);
  }
  const floor=B.get('sanctuary','makaiPaving','interior');floor.box(0,25,-390,114,.6,168,C.dark);
  if(!far){
