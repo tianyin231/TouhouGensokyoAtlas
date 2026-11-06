@@ -108,7 +108,7 @@ jobs:
       - name: Install optional browser regression dependencies
         run: |
           python3 -m pip install playwright==1.57.0
-          python3 -m playwright install --with-deps chromium
+          bash tools/ci-install-browser.sh
       - name: Verify real HTTP WebGL and native Worker integration
         run: python3 tools/${{ matrix.script }}
       - uses: actions/upload-artifact@v4

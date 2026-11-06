@@ -89,7 +89,7 @@ try:
             records=visit(v['id'],v['region']);assert records
             assert all(m['space']==v['region'] and not m['overview'] for m in records)
             assert not page.evaluate('ATLAS.renderer.sky.visible||ATLAS.renderer.rain.visible||ATLAS.renderer.lunarSky.visible||ATLAS.renderer.lunarEarth.visible||ATLAS.renderer.castleFill.visible')
-            assert page.evaluate('ATLAS.renderer.makaiSky.visible')
+            assert page.evaluate('ATLAS.renderer.realmSky.visible')
             if v['id'] in ['makaiSeal','makaiSealClose']:
                 assert any(m['part']=='seal' for m in records) and not any(m['part']=='spectrum' for m in records)
                 assert not page.evaluate('ATLAS.renderer.hokkaiLuminary.visible')

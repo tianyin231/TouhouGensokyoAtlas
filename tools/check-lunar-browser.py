@@ -95,7 +95,7 @@ try:
             assert all(m['space']==v['space'] and not m['overview'] for m in records)
             assert all(m['face'] in ['both',v['face']] for m in records)
             assert not page.evaluate('ATLAS.renderer.sky.visible||ATLAS.renderer.rain.visible||ATLAS.renderer.castleFill.visible')
-            assert page.evaluate('ATLAS.renderer.lunarSky.visible')
+            assert page.evaluate('ATLAS.renderer.realmSky.visible')
             if v['id']=='moonSealed':
                 assert not any(m['part']=='daily' for m in records)
                 assert not page.evaluate('ATLAS.renderer.lunarFill.visible')

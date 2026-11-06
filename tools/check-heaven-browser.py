@@ -66,7 +66,7 @@ try:
    records=visit(v['id'],v['region']);assert records
    assert all(m['space']==v['region'] and not m['overview'] for m in records)
    assert all(m['edition'] in ['both',v['edition']] for m in records)
-   assert page.evaluate('ATLAS.renderer.heavenSky.visible')
+   assert page.evaluate('ATLAS.renderer.realmSky.visible')
    assert not page.evaluate('ATLAS.renderer.sky.visible||ATLAS.renderer.rain.visible||ATLAS.renderer.netherSky.visible||ATLAS.renderer.netherFill.visible||ATLAS.renderer.lunarSky.visible||ATLAS.renderer.makaiSky.visible')
    if v['edition']=='th155':
     assert any(m['part']=='aurora' for m in records)

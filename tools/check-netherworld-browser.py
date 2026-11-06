@@ -91,7 +91,7 @@ try:
             records=visit(v,'netherworld');assert records
             assert all(m['owner']=='netherworld' and not m['overview'] for m in records)
             assert not page.evaluate('ATLAS.renderer.sky.visible||ATLAS.renderer.rain.visible||ATLAS.renderer.lunarSky.visible||ATLAS.renderer.makaiSky.visible')
-            assert page.evaluate('ATLAS.renderer.netherSky.visible')
+            assert page.evaluate('ATLAS.renderer.realmSky.visible')
             if v=='saigyouBuds':assert any(m['part']=='buds' for m in records)
             else:assert not any(m['part']=='buds' for m in records)
             if v=='hakugyokuSnow':assert not any(m['part'] in ['flowers','petals','buds'] for m in records)

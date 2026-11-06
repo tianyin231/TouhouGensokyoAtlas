@@ -70,7 +70,7 @@ try:
    records=visit(v['id'],v['space']);assert records
    assert all(r['space']==v['space'] and not r['overview'] for r in records)
    assert all(r['era'] in ['both',v['era']] for r in records)
-   assert page.evaluate('ATLAS.renderer.animalSky.visible')
+   assert page.evaluate('ATLAS.renderer.realmSky.visible')
    assert not page.evaluate('ATLAS.renderer.sky.visible||ATLAS.renderer.rain.visible||ATLAS.renderer.higanSky.visible||ATLAS.renderer.heavenSky.visible||ATLAS.renderer.netherSky.visible||ATLAS.renderer.lunarSky.visible||ATLAS.renderer.makaiSky.visible')
    assert page.evaluate('ATLAS.renderer.animalLights.filter(l=>l.visible).length')==(3 if v['space']=='primate_core' else 0)
    if v['section']:assert not any(r['part'] in ['front','right','roof'] for r in records)

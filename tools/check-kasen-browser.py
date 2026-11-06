@@ -50,7 +50,7 @@ try:
   views=page.evaluate('Object.keys(GA.KASEN.views)')
   for v in views:
    rows=visit(v,'kasen');assert rows and all(r['owner']=='kasen' and not r['far'] for r in rows)
-   assert page.evaluate('ATLAS.renderer.kasenSky.visible') and not page.evaluate('ATLAS.renderer.sky.visible||ATLAS.renderer.rain.visible')
+   assert page.evaluate('ATLAS.renderer.realmSky.visible') and not page.evaluate('ATLAS.renderer.sky.visible||ATLAS.renderer.rain.visible')
    if v=='kasenInk':
     assert all(r['edition']=='both' for r in rows);assert not page.evaluate('ATLAS.renderer.kasenFill.visible')
    if v=='kasenSection':assert not any(r['part'] in ['roof0','roof1','roof2','upper','front'] for r in rows)

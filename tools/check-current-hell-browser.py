@@ -48,7 +48,7 @@ try:
   views=page.evaluate('Object.entries(GA.CURRENT_HELL.views).map(([id,p])=>({id,region:p.region,space:p.space,storm:!!p.jigokuStorm}))')
   for v in views:
    rows=visit(v['id'],v['region']);assert rows and all(r['owner']==v['region'] and not r['far'] for r in rows)
-   assert page.evaluate('ATLAS.renderer.jigokuSky.visible') and not page.evaluate('ATLAS.renderer.sky.visible||ATLAS.renderer.rain.visible')
+   assert page.evaluate('ATLAS.renderer.realmSky.visible') and not page.evaluate('ATLAS.renderer.sky.visible||ATLAS.renderer.rain.visible')
    assert any(r['part']=='storm' for r in rows)==v['storm']
    if v['region']=='avici':assert all(r['part'] not in ['wind','storm'] for r in rows) and not page.evaluate('ATLAS.renderer.hasVisibleAnimation')
    if v['id'] in ['jigokuOverview','jigokuBonefield','jigokuSkull','jigokuRidge','jigokuStorm','aviciOverview','aviciRemains']:

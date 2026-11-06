@@ -65,7 +65,7 @@ try:
   for v in views:
    records=visit(v['id'],v['space']);assert records
    assert all(r['space']==v['space'] and not r['overview'] for r in records)
-   assert page.evaluate('ATLAS.renderer.higanSky.visible')
+   assert page.evaluate('ATLAS.renderer.realmSky.visible')
    assert not page.evaluate('ATLAS.renderer.sky.visible||ATLAS.renderer.rain.visible||ATLAS.renderer.heavenSky.visible||ATLAS.renderer.netherSky.visible||ATLAS.renderer.lunarSky.visible||ATLAS.renderer.makaiSky.visible')
    assert not any(r['part']=='contest' for r in records) or v['contest']
    assert page.evaluate('ATLAS.renderer.higanFill.visible')==v['inside']
